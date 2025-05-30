@@ -1,0 +1,231 @@
+[
+  {
+    "id": 1,
+    "name": "Rajgad Fort",
+    "category": "fort",
+    "location": "Pune District",
+    "difficulty": "Moderate",
+    "duration": "6-7 hours",
+    "elevation": "1376 meters",
+    "description": "Rajgad was the capital of the Maratha Empire under Chhatrapati Shivaji Maharaj for almost 26 years. The fort is known for its historical significance and stunning views.",
+    "howToReach": {
+      "byTrain": {
+        "description": "Nearest railway station is Pune",
+        "distance": "60 km",
+        "time": "1.5 hours",
+        "steps": [
+          "Take train to Pune Railway Station",
+          "From Pune, take local transport to Gunjavane village",
+          "Trek starts from Gunjavane village base"
+        ]
+      },
+      "byBus": {
+        "description": "Regular buses available to Gunjavane village",
+        "distance": "65 km from Pune",
+        "time": "2 hours",
+        "steps": [
+          "Take MSRTC bus from Pune to Gunjavane",
+          "Get down at Gunjavane village",
+          "Trek starts from village base"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive to Gunjavane village base",
+        "distance": "60 km from Pune",
+        "time": "1.5 hours",
+        "steps": [
+          "Take Pune-Satara highway",
+          "Turn towards Gunjavane village",
+          "Parking available at village base"
+        ]
+      }
+    },
+    "bestTimeToVisit": "October to March",
+    "localContacts": [
+      {
+        "name": "Rajesh Patil",
+        "phone": "+91 9876543210",
+        "service": "Local Guide"
+      },
+      {
+        "name": "Gunjavane Village Sarpanch",
+        "phone": "+91 9876543211",
+        "service": "Emergency Contact"
+      }
+    ],
+    "imageKey": "rajgad",
+    "coordinates": {
+      "latitude": 18.2467,
+      "longitude": 73.6815
+    },
+    "featured": true,
+    "rating": 4.5,
+    "reviewCount": 234
+  },
+  {
+    "id": 2,
+    "name": "Dudhsagar Waterfalls",
+    "category": "waterfall",
+    "location": "Goa-Karnataka Border",
+    "difficulty": "Easy",
+    "duration": "4-5 hours",
+    "elevation": "310 meters",
+    "description": "One of India's tallest waterfalls, Dudhsagar creates a spectacular milky cascade. Best visited during monsoon season.",
+    "howToReach": {
+      "byTrain": {
+        "description": "Direct train to Dudhsagar Railway Station",
+        "distance": "From Mumbai: 450 km",
+        "time": "8-10 hours",
+        "steps": [
+          "Take train from Mumbai to Dudhsagar Station",
+          "Get down at Dudhsagar Railway Station",
+          "Short walk to waterfall viewpoint"
+        ]
+      },
+      "byBus": {
+        "description": "Bus to Collem, then jeep safari",
+        "distance": "460 km from Mumbai",
+        "time": "10-12 hours",
+        "steps": [
+          "Take bus from Mumbai to Collem",
+          "Book jeep safari from Collem",
+          "Jeep ride through forest to falls"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive to Collem, then jeep required",
+        "distance": "450 km from Mumbai",
+        "time": "8-9 hours",
+        "steps": [
+          "Drive to Collem village",
+          "Park vehicle at designated area",
+          "Take jeep safari to waterfall"
+        ]
+      }
+    },
+    "bestTimeToVisit": "June to September",
+    "localContacts": [
+      {
+        "name": "Goa Tourism Office",
+        "phone": "+91 9876543212",
+        "service": "Information & Permits"
+      },
+      {
+        "name": "Local Jeep Association",
+        "phone": "+91 9876543213",
+        "service": "Transportation"
+      }
+    ],
+    "imageKey": "dudhsagar",
+    "coordinates": {
+      "latitude": 15.3144,
+      "longitude": 74.3144
+    },
+    "featured": true,
+    "rating": 4.8,
+    "reviewCount": 456
+  },
+  {
+    "id": 3,
+    "name": "Harishchandragad",
+    "category": "trek",
+    "location": "Ahmednagar District",
+    "difficulty": "Difficult",
+    "duration": "2 days",
+    "elevation": "1424 meters",
+    "description": "Famous for the Konkan Kada cliff and ancient Kedareshwar temple. Known for spectacular sunrise views and challenging terrain.",
+    "howToReach": {
+      "byTrain": "Nearest station is Kalyan (120 km)",
+      "byBus": "Bus to Khireshwar village, then trek",
+      "byPrivateVehicle": "Drive to Khireshwar base village"
+    },
+    "bestTimeToVisit": "October to February",
+    "localContacts": [
+      {
+        "name": "Khireshwar Village Guide",
+        "phone": "+91 9876543214",
+        "service": "Local Guide & Accommodation"
+      },
+      {
+        "name": "Forest Department",
+        "phone": "+91 9876543215",
+        "service": "Permits & Safety"
+      }
+    ],
+    "imageKey": "harishchandragad",
+    "coordinates": {
+      "latitude": 19.3833,
+      "longitude": 73.8167
+    },
+    "featured": true,
+    "rating": 4.7,
+    "reviewCount": 189
+  },
+  {
+    "id": 4,
+    "name": "Sinhagad Fort",
+    "category": "fort",
+    "location": "Pune District",
+    "difficulty": "Easy",
+    "duration": "3-4 hours",
+    "elevation": "1312 meters",
+    "description": "Historic fort known for the battle between Tanaji Malusare and Udaybhan. Easy trek suitable for beginners with great views of Pune city.",
+    "howToReach": {
+      "byTrain": "Nearest station is Pune (30 km)",
+      "byBus": "Regular buses from Pune to Sinhagad",
+      "byPrivateVehicle": "Well-connected road, parking available at base"
+    },
+    "bestTimeToVisit": "October to March",
+    "localContacts": [
+      {
+        "name": "Sinhagad Tourism",
+        "phone": "+91 9876543216",
+        "service": "Information & Guides"
+      }
+    ],
+    "imageKey": "sinhagad",
+    "coordinates": {
+      "latitude": 18.3664,
+      "longitude": 73.7562
+    },
+    "featured": false,
+    "rating": 4.2,
+    "reviewCount": 312
+  },
+  {
+    "id": 5,
+    "name": "Bhimashankar Trek",
+    "category": "trek",
+    "location": "Pune District",
+    "difficulty": "Moderate",
+    "duration": "5-6 hours",
+    "elevation": "1033 meters",
+    "description": "One of the 12 Jyotirlingas, this trek combines spirituality with nature. Dense forests and wildlife sanctuary.",
+    "howToReach": {
+      "byTrain": "Nearest station is Pune (110 km)",
+      "byBus": "Bus to Bhimashankar temple, trek routes available",
+      "byPrivateVehicle": "Drive to Bhimashankar temple base"
+    },
+    "bestTimeToVisit": "October to March",
+    "localContacts": [
+      {
+        "name": "Temple Committee",
+        "phone": "+91 9876543217",
+        "service": "Information & Accommodation"
+      },
+      {
+        "name": "Wildlife Sanctuary Office",
+        "phone": "+91 9876543218",
+        "service": "Permits & Wildlife Info"
+      }
+    ],
+    "imageKey": "bhimashankar",
+    "coordinates": {
+      "latitude": 19.0717,
+      "longitude": 73.5333
+    },
+    "featured": false,
+    "rating": 4.4,
+    "reviewCount": 156
+  }
+]
