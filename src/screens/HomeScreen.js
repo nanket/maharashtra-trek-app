@@ -13,7 +13,7 @@ import {
   TextInput,
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { COLORS, CATEGORIES, CATEGORY_COLORS, SHADOWS, SPACING, BORDER_RADIUS, IMAGES } from '../utils/constants';
+import { COLORS, CATEGORIES, CATEGORY_COLORS, SHADOWS, SPACING, BORDER_RADIUS, IMAGES, FONTS, TYPOGRAPHY, createTextStyle } from '../utils/constants';
 import treksData from '../data/treksData.json';
 
 const { width, height } = Dimensions.get('window');
@@ -60,45 +60,68 @@ const HomeScreen = ({ navigation }) => {
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="dark-content" backgroundColor={COLORS.background} />
 
-      {/* Header with App Name and Profile */}
+      {/* Clean Modern Header */}
       <View style={styles.header}>
-        <View style={styles.headerLeft}>
-          <Text style={styles.appName}>TREK</Text>
-          <Text style={styles.appNameHighlight}>MATE</Text>
-        </View>
-        <TouchableOpacity style={styles.profileButton}>
-          <Image
-            source={IMAGES.defaultImage}
-            style={styles.profileImage}
-          />
-        </TouchableOpacity>
-      </View>
-
-      {/* Search Bar */}
-      <View style={styles.searchContainer}>
-        <View style={styles.searchBar}>
-          <Text style={styles.searchIcon}>🔍</Text>
-          <TextInput
-            style={styles.searchInput}
-            placeholder="Search for treks, kits and more"
-            placeholderTextColor={COLORS.textSecondary}
-            value={searchText}
-            onChangeText={setSearchText}
-            onSubmitEditing={handleSearchPress}
-          />
-          <TouchableOpacity style={styles.micButton}>
-            <Text style={styles.micIcon}>🎤</Text>
+        <View style={styles.headerTop}>
+          <View>
+            <Text style={styles.greeting}>Good morning 👋</Text>
+            <Text style={styles.appName}>Explore Maharashtra</Text>
+          </View>
+          <TouchableOpacity style={styles.profileButton}>
+            <Image
+              source={IMAGES.defaultImage}
+              style={styles.profileImage}
+            />
           </TouchableOpacity>
+        </View>
+
+        {/* Clean Search Bar */}
+        <View style={styles.searchContainer}>
+          <View style={styles.searchBar}>
+            <Text style={styles.searchIcon}>🔍</Text>
+            <TextInput
+              style={styles.searchInput}
+              placeholder="Search treks, forts, waterfalls..."
+              placeholderTextColor={COLORS.textLight}
+              value={searchText}
+              onChangeText={setSearchText}
+              onSubmitEditing={handleSearchPress}
+            />
+          </View>
         </View>
       </View>
 
       <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
-        {/* Top DIY Treks Section */}
+        {/* Categories - Clean Icons */}
+        <View style={styles.categoriesSection}>
+          <View style={styles.categoriesGrid}>
+            {[
+              { id: 'forts', title: 'Forts', icon: '🏰', color: COLORS.fort },
+              { id: 'waterfalls', title: 'Waterfalls', icon: '💧', color: COLORS.waterfall },
+              { id: 'treks', title: 'Treks', icon: '🥾', color: COLORS.trek },
+              { id: 'temples', title: 'Temples', icon: '🛕', color: COLORS.accent },
+            ].map((category, index) => (
+              <TouchableOpacity
+                key={category.id}
+                style={styles.categoryItem}
+                onPress={() => navigation.navigate('TrekList', { category: category.id })}
+                activeOpacity={0.7}
+              >
+                <View style={[styles.categoryIconContainer, { backgroundColor: category.color + '15' }]}>
+                  <Text style={styles.categoryIcon}>{category.icon}</Text>
+                </View>
+                <Text style={styles.categoryLabel}>{category.title}</Text>
+              </TouchableOpacity>
+            ))}
+          </View>
+        </View>
+
+        {/* Featured Destinations - Clean Cards */}
         <View style={styles.section}>
           <View style={styles.sectionHeader}>
-            <Text style={styles.sectionTitle}>Top DIY Treks</Text>
+            <Text style={styles.sectionTitle}>Featured Destinations</Text>
             <TouchableOpacity onPress={handleViewAllPress}>
-              <Text style={styles.exploreAllButton}>Explore all</Text>
+              <Text style={styles.viewAllText}>View all</Text>
             </TouchableOpacity>
           </View>
 
@@ -106,26 +129,25 @@ const HomeScreen = ({ navigation }) => {
             data={topTreks}
             renderItem={({ item }) => (
               <TouchableOpacity
-                style={styles.trekCard}
+                style={styles.featuredCard}
                 onPress={() => handleTrekPress(item)}
-                activeOpacity={0.9}
+                activeOpacity={0.8}
               >
                 <Image
                   source={getImageSource(item)}
-                  style={styles.trekCardImage}
+                  style={styles.featuredImage}
                 />
-                <View style={styles.trekCardOverlay}>
-                  <View style={styles.trekCardRating}>
-                    <Text style={styles.ratingIcon}>⭐</Text>
-                    <Text style={styles.ratingText}>{item.rating}</Text>
-                    <Text style={styles.reviewCount}>({item.reviewCount})</Text>
+                <View style={styles.featuredContent}>
+                  <View style={styles.featuredHeader}>
+                    <Text style={styles.featuredTitle}>{item.name}</Text>
+                    <View style={styles.ratingContainer}>
+                      <Text style={styles.ratingText}>⭐ {item.rating}</Text>
+                    </View>
                   </View>
-                </View>
-                <View style={styles.trekCardContent}>
-                  <Text style={styles.trekCardTitle}>{item.name}</Text>
-                  <View style={styles.trekCardMeta}>
-                    <Text style={styles.trekCardDifficulty}>{item.difficulty}</Text>
-                    <Text style={styles.trekCardLocation}>{item.location}</Text>
+                  <Text style={styles.featuredLocation}>{item.location}</Text>
+                  <View style={styles.featuredFooter}>
+                    <Text style={styles.featuredDifficulty}>{item.difficulty}</Text>
+                    <Text style={styles.featuredDuration}>{item.duration}</Text>
                   </View>
                 </View>
               </TouchableOpacity>
@@ -133,24 +155,24 @@ const HomeScreen = ({ navigation }) => {
             keyExtractor={(item) => item.id.toString()}
             horizontal
             showsHorizontalScrollIndicator={false}
-            contentContainerStyle={styles.trekCardsList}
+            contentContainerStyle={styles.featuredList}
           />
         </View>
 
-        {/* Popular near you Section */}
+        {/* Popular This Week - Enhanced Design */}
         <View style={styles.section}>
           <View style={styles.sectionHeader}>
-            <Text style={styles.sectionTitle}>Popular near you</Text>
+            <Text style={styles.sectionTitle}>Popular This Week</Text>
             <TouchableOpacity onPress={handleViewAllPress}>
               <Text style={styles.viewAllText}>View all</Text>
             </TouchableOpacity>
           </View>
 
-          <View style={styles.popularGrid}>
-            {popularNearby.map((item, index) => (
+          <FlatList
+            data={popularNearby}
+            renderItem={({ item }) => (
               <TouchableOpacity
-                key={item.id}
-                style={styles.popularItem}
+                style={styles.popularCard}
                 onPress={() => handleTrekPress(item)}
                 activeOpacity={0.8}
               >
@@ -158,45 +180,39 @@ const HomeScreen = ({ navigation }) => {
                   source={getImageSource(item)}
                   style={styles.popularImage}
                 />
-                <Text style={styles.popularName}>{item.shortName}</Text>
+                <View style={styles.popularContent}>
+                  <View style={styles.popularHeader}>
+                    <Text style={styles.popularName}>{item.name}</Text>
+                    <View style={styles.popularRatingContainer}>
+                      <Text style={styles.popularRating}>⭐ {item.rating}</Text>
+                    </View>
+                  </View>
+                  <Text style={styles.popularLocation}>{item.location}</Text>
+                  <View style={styles.popularFooter}>
+                    <Text style={styles.popularDifficulty}>{item.difficulty}</Text>
+                    <Text style={styles.popularDuration}>{item.duration}</Text>
+                  </View>
+                </View>
               </TouchableOpacity>
-            ))}
-          </View>
+            )}
+            keyExtractor={(item) => item.id.toString()}
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            contentContainerStyle={styles.popularList}
+          />
         </View>
 
-        {/* Referral Section */}
-        <View style={styles.referralSection}>
-          <Text style={styles.referralText}>
-            Refer the app to your friends and get Rs. 100 off on your next booking.{' '}
-            <Text style={styles.learnMoreText}>Learn more</Text>
-          </Text>
+        {/* Simple CTA */}
+        <View style={styles.ctaSection}>
+          <Text style={styles.ctaTitle}>Ready to explore?</Text>
+          <Text style={styles.ctaSubtitle}>Discover 65+ amazing destinations across Maharashtra</Text>
+          <TouchableOpacity style={styles.ctaButton} onPress={handleViewAllPress}>
+            <Text style={styles.ctaButtonText}>View All Destinations</Text>
+          </TouchableOpacity>
         </View>
 
-        {/* Resources Section */}
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Resources for you</Text>
-          <View style={styles.resourcesContainer}>
-            <View style={styles.resourceItem}>
-              <View style={styles.resourceIcon}>
-                <Text style={styles.resourceEmoji}>📚</Text>
-              </View>
-              <Text style={styles.resourceText}>Trek Guides</Text>
-            </View>
-            <View style={styles.resourceItem}>
-              <View style={styles.resourceIcon}>
-                <Text style={styles.resourceEmoji}>🎒</Text>
-              </View>
-              <Text style={styles.resourceText}>Gear Lists</Text>
-            </View>
-            <View style={styles.resourceItem}>
-              <View style={styles.resourceIcon}>
-                <Text style={styles.resourceEmoji}>🗺️</Text>
-              </View>
-              <Text style={styles.resourceText}>Maps</Text>
-            </View>
-          </View>
-        </View>
-
+        {/* Bottom Spacing */}
+        <View style={styles.bottomSpacing} />
       </ScrollView>
     </SafeAreaView>
   );
@@ -208,30 +224,28 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.background,
   },
 
-  // Header Styles
+  // Clean Header Styles
   header: {
+    backgroundColor: COLORS.background,
+    paddingHorizontal: SPACING.xl,
+    paddingTop: SPACING.lg,
+    paddingBottom: SPACING.lg,
+  },
+  headerTop: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center',
-    paddingHorizontal: SPACING.lg,
-    paddingTop: SPACING.md,
-    paddingBottom: SPACING.md,
+    alignItems: 'flex-start',
+    marginBottom: SPACING.lg,
   },
-  headerLeft: {
-    flexDirection: 'row',
-    alignItems: 'center',
+  greeting: {
+    ...createTextStyle(14, 'regular'),
+    color: COLORS.textSecondary,
+    marginBottom: SPACING.xs,
   },
   appName: {
-    fontSize: 24,
-    fontWeight: '900',
+    ...createTextStyle(28, 'bold'),
     color: COLORS.text,
-    letterSpacing: 1,
-  },
-  appNameHighlight: {
-    fontSize: 24,
-    fontWeight: '900',
-    color: COLORS.primary,
-    letterSpacing: 1,
+    letterSpacing: -0.5,
   },
   profileButton: {
     width: 40,
@@ -244,45 +258,71 @@ const styles = StyleSheet.create({
     height: '100%',
   },
 
-  // Search Styles
+  // Clean Search Styles
   searchContainer: {
-    paddingHorizontal: SPACING.lg,
-    paddingBottom: SPACING.lg,
+    marginTop: SPACING.sm,
   },
   searchBar: {
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: COLORS.backgroundCard,
     borderRadius: BORDER_RADIUS.lg,
-    paddingHorizontal: SPACING.md,
-    paddingVertical: SPACING.sm,
-    borderWidth: 1,
-    borderColor: COLORS.surfaceBorder,
+    paddingHorizontal: SPACING.lg,
+    paddingVertical: SPACING.md,
     ...SHADOWS.small,
   },
   searchIcon: {
     fontSize: 16,
-    marginRight: SPACING.sm,
+    color: COLORS.textLight,
+    marginRight: SPACING.md,
   },
   searchInput: {
     flex: 1,
-    fontSize: 16,
+    ...createTextStyle(16, 'regular'),
     color: COLORS.text,
-    paddingVertical: SPACING.xs,
-  },
-  micButton: {
-    padding: SPACING.xs,
-  },
-  micIcon: {
-    fontSize: 16,
+    paddingVertical: 0,
   },
 
   // Content Styles
   scrollView: {
     flex: 1,
   },
+
+  // Categories Section
+  categoriesSection: {
+    paddingHorizontal: SPACING.xl,
+    paddingTop: SPACING.lg,
+    paddingBottom: SPACING.xl,
+  },
+  categoriesGrid: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  categoryItem: {
+    flex: 1,
+    alignItems: 'center',
+    marginHorizontal: SPACING.xs,
+  },
+  categoryIconContainer: {
+    width: 56,
+    height: 56,
+    borderRadius: BORDER_RADIUS.lg,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: SPACING.sm,
+  },
+  categoryIcon: {
+    fontSize: 24,
+  },
+  categoryLabel: {
+    ...createTextStyle(12, 'medium'),
+    color: COLORS.text,
+    textAlign: 'center',
+  },
+
+  // Section Styles
   section: {
-    paddingHorizontal: SPACING.lg,
+    paddingHorizontal: SPACING.xl,
     marginBottom: SPACING.xl,
   },
   sectionHeader: {
@@ -292,174 +332,184 @@ const styles = StyleSheet.create({
     marginBottom: SPACING.lg,
   },
   sectionTitle: {
-    fontSize: 18,
-    fontWeight: '700',
+    ...createTextStyle(20, 'bold'),
     color: COLORS.text,
   },
-  exploreAllButton: {
-    fontSize: 14,
-    fontWeight: '600',
-    color: COLORS.primary,
-    backgroundColor: COLORS.primary + '15',
-    paddingHorizontal: SPACING.md,
-    paddingVertical: SPACING.sm,
-    borderRadius: BORDER_RADIUS.full,
-  },
   viewAllText: {
-    fontSize: 14,
-    fontWeight: '600',
+    ...createTextStyle(14, 'medium'),
     color: COLORS.primary,
   },
 
-  // Trek Cards Styles
-  trekCardsList: {
-    paddingLeft: SPACING.lg,
+  // Featured Cards Styles
+  featuredList: {
+    paddingLeft: SPACING.xl,
   },
-  trekCard: {
-    width: width * 0.4,
-    marginRight: SPACING.md,
+  featuredCard: {
+    width: width * 0.7,
+    marginRight: SPACING.lg,
     backgroundColor: COLORS.backgroundCard,
     borderRadius: BORDER_RADIUS.lg,
     overflow: 'hidden',
     ...SHADOWS.medium,
   },
-  trekCardImage: {
+  featuredImage: {
     width: '100%',
-    height: 120,
+    height: 140,
     backgroundColor: COLORS.backgroundSecondary,
   },
-  trekCardOverlay: {
-    position: 'absolute',
-    top: SPACING.sm,
-    left: SPACING.sm,
+  featuredContent: {
+    padding: SPACING.lg,
   },
-  trekCardRating: {
+  featuredHeader: {
     flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: 'rgba(0,0,0,0.7)',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
+    marginBottom: SPACING.sm,
+  },
+  featuredTitle: {
+    ...createTextStyle(16, 'bold'),
+    color: COLORS.text,
+    flex: 1,
+    marginRight: SPACING.sm,
+  },
+  ratingContainer: {
+    backgroundColor: COLORS.backgroundSecondary,
     paddingHorizontal: SPACING.sm,
     paddingVertical: SPACING.xs,
     borderRadius: BORDER_RADIUS.sm,
   },
-  ratingIcon: {
-    fontSize: 12,
-    marginRight: SPACING.xs,
-  },
   ratingText: {
-    fontSize: 12,
-    fontWeight: '700',
-    color: COLORS.textInverse,
-    marginRight: SPACING.xs,
-  },
-  reviewCount: {
-    fontSize: 10,
-    color: COLORS.textInverse,
-    opacity: 0.8,
-  },
-  trekCardContent: {
-    padding: SPACING.md,
-  },
-  trekCardTitle: {
-    fontSize: 14,
-    fontWeight: '700',
+    ...createTextStyle(12, 'medium'),
     color: COLORS.text,
-    marginBottom: SPACING.xs,
   },
-  trekCardMeta: {
+  featuredLocation: {
+    ...createTextStyle(13, 'regular'),
+    color: COLORS.textSecondary,
+    marginBottom: SPACING.md,
+  },
+  featuredFooter: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
   },
-  trekCardDifficulty: {
-    fontSize: 11,
-    fontWeight: '600',
+  featuredDifficulty: {
+    ...createTextStyle(12, 'medium'),
     color: COLORS.success,
     backgroundColor: COLORS.success + '15',
     paddingHorizontal: SPACING.sm,
     paddingVertical: SPACING.xs,
     borderRadius: BORDER_RADIUS.sm,
   },
-  trekCardLocation: {
-    fontSize: 11,
+  featuredDuration: {
+    ...createTextStyle(12, 'regular'),
     color: COLORS.textSecondary,
-    fontWeight: '500',
   },
 
-  // Popular Section Styles
-  popularGrid: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    paddingHorizontal: SPACING.md,
+  // Enhanced Popular Section Styles
+  popularList: {
+    paddingLeft: SPACING.xl,
   },
-  popularItem: {
-    alignItems: 'center',
-    flex: 1,
+  popularCard: {
+    width: width * 0.65, // Larger cards for better visual appeal
+    marginRight: SPACING.lg,
+    backgroundColor: COLORS.backgroundCard,
+    borderRadius: BORDER_RADIUS.lg,
+    overflow: 'hidden',
+    ...SHADOWS.medium, // Better shadow for depth
   },
   popularImage: {
-    width: 60,
-    height: 60,
-    borderRadius: 30,
+    width: '100%',
+    height: 120, // Larger image for better visual impact
     backgroundColor: COLORS.backgroundSecondary,
+  },
+  popularContent: {
+    padding: SPACING.lg, // Generous padding for breathing room
+  },
+  popularHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
     marginBottom: SPACING.sm,
   },
   popularName: {
-    fontSize: 12,
-    fontWeight: '600',
+    ...createTextStyle(15, 'bold'), // Larger, bolder text
     color: COLORS.text,
-    textAlign: 'center',
-  },
-
-  // Referral Section Styles
-  referralSection: {
-    backgroundColor: COLORS.backgroundCard,
-    marginHorizontal: SPACING.lg,
-    marginBottom: SPACING.xl,
-    padding: SPACING.lg,
-    borderRadius: BORDER_RADIUS.lg,
-    borderWidth: 1,
-    borderColor: COLORS.surfaceBorder,
-  },
-  referralText: {
-    fontSize: 14,
-    color: COLORS.text,
-    lineHeight: 20,
-    fontWeight: '500',
-  },
-  learnMoreText: {
-    color: COLORS.primary,
-    fontWeight: '700',
-  },
-
-  // Resources Section Styles
-  resourcesContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    paddingTop: SPACING.md,
-  },
-  resourceItem: {
-    alignItems: 'center',
     flex: 1,
+    marginRight: SPACING.sm,
+    lineHeight: 20,
   },
-  resourceIcon: {
-    width: 48,
-    height: 48,
-    borderRadius: 24,
-    backgroundColor: COLORS.backgroundCard,
-    justifyContent: 'center',
+  popularRatingContainer: {
+    backgroundColor: COLORS.backgroundSecondary,
+    paddingHorizontal: SPACING.sm,
+    paddingVertical: SPACING.xs,
+    borderRadius: BORDER_RADIUS.sm,
+  },
+  popularRating: {
+    ...createTextStyle(11, 'medium'),
+    color: COLORS.text,
+  },
+  popularLocation: {
+    ...createTextStyle(12, 'regular'),
+    color: COLORS.textSecondary,
+    marginBottom: SPACING.md,
+    lineHeight: 16,
+  },
+  popularFooter: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     alignItems: 'center',
-    marginBottom: SPACING.sm,
-    borderWidth: 1,
-    borderColor: COLORS.surfaceBorder,
+  },
+  popularDifficulty: {
+    ...createTextStyle(11, 'medium'),
+    color: COLORS.success,
+    backgroundColor: COLORS.success + '15',
+    paddingHorizontal: SPACING.sm,
+    paddingVertical: SPACING.xs,
+    borderRadius: BORDER_RADIUS.sm,
+  },
+  popularDuration: {
+    ...createTextStyle(11, 'regular'),
+    color: COLORS.textSecondary,
+  },
+
+  // CTA Section Styles
+  ctaSection: {
+    backgroundColor: COLORS.backgroundCard,
+    marginHorizontal: SPACING.xl,
+    marginBottom: SPACING.xl,
+    padding: SPACING.xl,
+    borderRadius: BORDER_RADIUS.lg,
+    alignItems: 'center',
     ...SHADOWS.small,
   },
-  resourceEmoji: {
-    fontSize: 20,
-  },
-  resourceText: {
-    fontSize: 12,
-    fontWeight: '600',
+  ctaTitle: {
+    ...createTextStyle(20, 'bold'),
     color: COLORS.text,
     textAlign: 'center',
+    marginBottom: SPACING.sm,
+  },
+  ctaSubtitle: {
+    ...createTextStyle(14, 'regular'),
+    color: COLORS.textSecondary,
+    textAlign: 'center',
+    marginBottom: SPACING.lg,
+    lineHeight: 20,
+  },
+  ctaButton: {
+    backgroundColor: COLORS.primary,
+    paddingHorizontal: SPACING.xl,
+    paddingVertical: SPACING.md,
+    borderRadius: BORDER_RADIUS.lg,
+  },
+  ctaButtonText: {
+    ...createTextStyle(14, 'medium'),
+    color: COLORS.textInverse,
+    textAlign: 'center',
+  },
+
+  // Bottom Spacing
+  bottomSpacing: {
+    height: SPACING.xl,
   },
 });
 

@@ -11,58 +11,58 @@ export const DIFFICULTY_LEVELS = {
 };
 
 export const COLORS = {
-  // Primary brand colors - Clean and minimal
-  primary: '#1B4332',
-  primaryLight: '#2D5A47',
-  primaryDark: '#081C15',
+  // Modern, beautiful color palette
+  primary: '#6366F1',        // Beautiful indigo
+  primaryLight: '#818CF8',   // Lighter indigo
+  primaryDark: '#4F46E5',    // Darker indigo
 
-  // Secondary colors - Subtle accent
-  secondary: '#D2691E',
-  secondaryLight: '#DEB887',
-  secondaryDark: '#A0522D',
+  // Secondary colors - Nature inspired
+  secondary: '#10B981',      // Emerald green
+  secondaryLight: '#34D399', // Light emerald
+  secondaryDark: '#059669',  // Dark emerald
 
-  // Accent colors - Minimal usage
-  accent: '#F4A261',
-  accentLight: '#F4A261',
-  accentDark: '#E76F51',
+  // Accent colors - Warm and inviting
+  accent: '#F59E0B',         // Amber
+  accentLight: '#FBBF24',    // Light amber
+  accentDark: '#D97706',     // Dark amber
 
-  // Background colors
-  background: '#FAFAFA',
-  backgroundSecondary: '#F5F5F5',
-  backgroundCard: '#FFFFFF',
+  // Background colors - Ultra clean
+  background: '#FAFBFC',     // Almost white with hint of blue
+  backgroundSecondary: '#F1F5F9', // Light slate
+  backgroundCard: '#FFFFFF', // Pure white
 
   // Surface colors
   surface: '#FFFFFF',
   surfaceElevated: '#FFFFFF',
-  surfaceBorder: '#E5E7EB',
+  surfaceBorder: '#E2E8F0',
 
-  // Text colors
-  text: '#111827',
-  textSecondary: '#6B7280',
-  textLight: '#9CA3AF',
+  // Text colors - Perfect contrast
+  text: '#1E293B',           // Slate 800
+  textSecondary: '#64748B',  // Slate 500
+  textLight: '#94A3B8',      // Slate 400
   textInverse: '#FFFFFF',
 
-  // Status colors
-  success: '#10B981',
-  warning: '#F59E0B',
-  error: '#EF4444',
-  info: '#3B82F6',
+  // Status colors - Modern and clear
+  success: '#10B981',        // Emerald
+  warning: '#F59E0B',        // Amber
+  error: '#EF4444',          // Red
+  info: '#3B82F6',           // Blue
 
-  // Category colors - solid colors only
-  fort: '#8B4513',
-  waterfall: '#1E40AF',
-  trek: '#059669',
+  // Category colors - Beautiful and distinct
+  fort: '#DC2626',           // Red for historic forts
+  waterfall: '#0EA5E9',      // Sky blue for waterfalls
+  trek: '#10B981',           // Emerald for treks
 
   // Difficulty colors
-  easy: '#10B981',
-  moderate: '#F59E0B',
-  difficult: '#EF4444',
+  easy: '#10B981',           // Green
+  moderate: '#F59E0B',       // Amber
+  difficult: '#EF4444',      // Red
 
-  // Shadow colors
+  // Shadow colors - Subtle and modern
   shadow: {
-    light: 'rgba(0, 0, 0, 0.05)',
-    medium: 'rgba(0, 0, 0, 0.1)',
-    dark: 'rgba(0, 0, 0, 0.15)',
+    light: 'rgba(0, 0, 0, 0.03)',
+    medium: 'rgba(0, 0, 0, 0.06)',
+    dark: 'rgba(0, 0, 0, 0.10)',
   },
 };
 
@@ -123,42 +123,42 @@ export const SHADOWS = {
     elevation: 0,
   },
   small: {
-    shadowColor: COLORS.shadow.light,
+    shadowColor: '#000000',
     shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 1,
-    shadowRadius: 3,
-    elevation: 2,
+    shadowOpacity: 0.05,
+    shadowRadius: 2,
+    elevation: 1,
   },
   medium: {
-    shadowColor: COLORS.shadow.medium,
+    shadowColor: '#000000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.08,
+    shadowRadius: 4,
+    elevation: 2,
+  },
+  large: {
+    shadowColor: '#000000',
     shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 1,
+    shadowOpacity: 0.12,
     shadowRadius: 8,
     elevation: 4,
   },
-  large: {
-    shadowColor: COLORS.shadow.dark,
+  xl: {
+    shadowColor: '#000000',
     shadowOffset: { width: 0, height: 8 },
-    shadowOpacity: 1,
+    shadowOpacity: 0.15,
     shadowRadius: 16,
     elevation: 8,
-  },
-  colored: {
-    shadowColor: COLORS.shadow.colored,
-    shadowOffset: { width: 0, height: 6 },
-    shadowOpacity: 1,
-    shadowRadius: 12,
-    elevation: 6,
   },
 };
 
 export const SPACING = {
   xs: 4,
   sm: 8,
-  md: 16,
-  lg: 24,
-  xl: 32,
-  xxl: 48,
+  md: 12,
+  lg: 16,
+  xl: 20,
+  xxl: 24,
 };
 
 export const BORDER_RADIUS = {
@@ -169,6 +169,9 @@ export const BORDER_RADIUS = {
   xxl: 24,
   full: 9999,
 };
+
+// Import font configuration
+export { FONTS, FONT_WEIGHTS, TYPOGRAPHY, getFontStyle, createTextStyle } from './fonts';
 
 export const IMAGES = {
   // Trek images from assets/img folder

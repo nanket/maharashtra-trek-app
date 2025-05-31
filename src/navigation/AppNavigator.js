@@ -6,7 +6,7 @@ import { Text, View } from 'react-native';
 import HomeScreen from '../screens/HomeScreen';
 import TrekListScreen from '../screens/TrekListScreen';
 import TrekDetailsScreen from '../screens/TrekDetailsScreen';
-import { COLORS } from '../utils/constants';
+import { COLORS, FONTS, createTextStyle } from '../utils/constants';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -60,8 +60,7 @@ const TabNavigator = () => {
         tabBarActiveTintColor: COLORS.primary,
         tabBarInactiveTintColor: COLORS.textSecondary,
         tabBarLabelStyle: {
-          fontSize: 12,
-          fontWeight: '600',
+          ...createTextStyle(12, 'medium'),
           marginTop: 4,
         },
       }}
