@@ -15,6 +15,7 @@ import {
 import { LinearGradient } from 'expo-linear-gradient';
 import { COLORS, CATEGORIES, CATEGORY_COLORS, SHADOWS, SPACING, BORDER_RADIUS, IMAGES, FONTS, TYPOGRAPHY, createTextStyle } from '../utils/constants';
 import treksData from '../data/treksData.json';
+import TrekPlannerQuickStart from '../components/TrekPlannerQuickStart';
 
 const { width, height } = Dimensions.get('window');
 
@@ -115,6 +116,9 @@ const HomeScreen = ({ navigation }) => {
             ))}
           </View>
         </View>
+
+        {/* Trek Planner Quick Start */}
+        <TrekPlannerQuickStart navigation={navigation} />
 
         {/* Featured Destinations - Clean Cards */}
         <View style={styles.section}>

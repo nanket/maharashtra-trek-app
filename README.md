@@ -9,7 +9,7 @@ A React Native mobile application for trek lovers in Maharashtra, featuring info
 - 💧 **Waterfalls**: Beautiful cascades and falls details
 - ⛰️ **Treks**: Adventure trails and peaks guide
 - 📍 **Location Details**: How to reach, difficulty levels, duration
-- 🗺️ **Offline Map Support**: Placeholder for future offline map integration
+- 🗺️ **Interactive Maps**: Google Maps/Apple Maps integration with offline demo
 - 📞 **Local Contacts**: Contact information for guides and emergency
 - 🎨 **Clean UI**: Modern and intuitive user interface
 
@@ -21,15 +21,20 @@ maharashtra-trek/
 ├── src/
 │   ├── components/
 │   │   ├── TrekCard.js             # Trek card component
-│   │   └── MapPlaceholder.js       # Offline map placeholder
+│   │   ├── MapView.js              # Interactive Mapbox component
+│   │   ├── LocationDetailsModal.js # Location popup modal
+│   │   └── OfflineMapManager.js    # Offline map downloads
 │   ├── screens/
 │   │   ├── HomeScreen.js           # Home screen with categories
 │   │   ├── TrekListScreen.js       # List of treks with filtering
-│   │   └── TrekDetailsScreen.js    # Detailed trek information
+│   │   ├── TrekDetailsScreen.js    # Detailed trek information
+│   │   └── MapScreen.js            # Interactive map screen
 │   ├── navigation/
 │   │   └── AppNavigator.js         # Navigation setup
 │   ├── data/
 │   │   └── treksData.json          # Static trek data
+│   ├── config/
+│   │   └── mapbox.js               # Mapbox configuration
 │   └── utils/
 │       └── constants.js            # App constants and colors
 ```
@@ -81,14 +86,30 @@ Each trek/destination includes:
 - **Waterfalls** 💧: Natural waterfalls and cascades
 - **Treks** ⛰️: Mountain trails and trekking routes
 
+## Map Features
+
+### 🗺️ **Interactive Maps**
+- **Google Maps/Apple Maps**: Native mapping with multiple types
+- **Offline Demo**: Simulated offline functionality for education
+- **Location Tracking**: Current position with navigation
+- **Search & Filter**: Find locations by name or category
+- **Custom Markers**: Category-specific markers (forts, waterfalls, treks)
+- **Route Planning**: Integration with external navigation apps
+
+### 📱 **Offline Demo Functionality**
+- **Regional Downloads**: Simulated downloads for Pune, Mumbai, Nashik, Kolhapur
+- **Storage Management**: Demo progress tracking and deletion
+- **Educational Purpose**: Shows how offline maps would work
+- **Future Enhancement**: Ready for real offline implementation
+
 ## Future Enhancements
 
-- [ ] Offline map integration with react-native-maps
+- [ ] Route planning between multiple locations
+- [ ] Elevation profiles for treks
+- [ ] Weather overlay integration
 - [ ] User reviews and ratings
-- [ ] Weather information integration
 - [ ] Photo gallery for each destination
 - [ ] Bookmark/favorites functionality
-- [ ] GPS navigation integration
 - [ ] Social sharing features
 - [ ] Push notifications for weather alerts
 
@@ -96,7 +117,9 @@ Each trek/destination includes:
 
 - **React Native**: Cross-platform mobile development
 - **Expo**: Development platform and tools
+- **React Native Maps**: Google Maps/Apple Maps integration
 - **React Navigation**: Navigation library
+- **Expo Location**: Device location services
 - **JavaScript**: Programming language
 
 ## Contributing

@@ -7,6 +7,7 @@ import {
   SafeAreaView,
   TouchableOpacity,
   StatusBar,
+  ScrollView,
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import TrekCard from '../components/TrekCard';
@@ -74,7 +75,11 @@ const TrekListScreen = ({ navigation, route }) => {
           {filteredTreks.length} destination{filteredTreks.length !== 1 ? 's' : ''} found
         </Text>
 
-        <View style={styles.filtersContainer}>
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={styles.filtersContainer}
+        >
           {filters.map((filter) => (
             <TouchableOpacity
               key={filter.id}
@@ -103,7 +108,7 @@ const TrekListScreen = ({ navigation, route }) => {
               )}
             </TouchableOpacity>
           ))}
-        </View>
+        </ScrollView>
       </View>
     </LinearGradient>
   );
@@ -154,9 +159,9 @@ const styles = StyleSheet.create({
   },
   filtersContainer: {
     flexDirection: 'row',
-    flexWrap: 'wrap',
     justifyContent: 'center',
     gap: 12,
+    paddingHorizontal: 20,
   },
   filterButton: {
     borderRadius: 20,
@@ -164,6 +169,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(255, 255, 255, 0.2)',
     borderWidth: 1,
     borderColor: 'rgba(255, 255, 255, 0.3)',
+    marginHorizontal: 4,
     ...SHADOWS.small,
   },
   filterButtonActive: {

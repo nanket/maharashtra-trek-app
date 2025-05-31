@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   View,
   Text,
@@ -7,14 +7,51 @@ import {
   Image,
   Dimensions,
 } from 'react-native';
-import { COLORS, CATEGORY_COLORS, DIFFICULTY_COLORS, SHADOWS, SPACING, BORDER_RADIUS, IMAGES } from '../utils/constants';
+import { COLORS, CATEGORIES, CATEGORY_COLORS, DIFFICULTY_COLORS, DIFFICULTY_LEVELS, SHADOWS, SPACING, BORDER_RADIUS, IMAGES } from '../utils/constants';
+import UserStorageService from '../utils/userStorage';
 
 const { width } = Dimensions.get('window');
 const CARD_WIDTH = width - (SPACING.lg * 2);
 
-const TrekCard = ({ trek, onPress }) => {
-  const categoryData = CATEGORY_COLORS[trek.category] || CATEGORY_COLORS.trek;
-  const difficultyData = DIFFICULTY_COLORS[trek.difficulty] || DIFFICULTY_COLORS.Easy;
+const TrekCard = ({ trek, onPress, showFavoriteButton = true }) => {
+  const [isFavorite, setIsFavorite] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const categoryData = CATEGORY_COLORS[trek.category] || CATEGORY_COLORS[CATEGORIES.TREK];
+  const difficultyData = DIFFICULTY_COLORS[trek.difficulty] || DIFFICULTY_COLORS[DIFFICULTY_LEVELS.EASY];
+
+  // Check if trek is in favorites
+  useEffect(() => {
+    checkFavoriteStatus();
+  }, [trek.id]);
+
+  const checkFavoriteStatus = async () => {
+    try {
+      const favoriteStatus = await UserStorageService.isFavorite(trek.id);
+      setIsFavorite(favoriteStatus);
+    } catch (error) {
+      console.error('Error checking favorite status:', error);
+    }
+  };
+
+  const handleFavoriteToggle = async () => {
+    if (loading) return;
+
+    setLoading(true);
+    try {
+      if (isFavorite) {
+        await UserStorageService.removeFromFavorites(trek.id);
+        setIsFavorite(false);
+      } else {
+        await UserStorageService.addToFavorites(trek.id);
+        setIsFavorite(true);
+      }
+    } catch (error) {
+      console.error('Error toggling favorite:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   // Get image from local assets
   const getImageSource = () => {
@@ -37,8 +74,8 @@ const TrekCard = ({ trek, onPress }) => {
           />
 
           {/* Category Badge */}
-          <View style={[styles.categoryBadge, { backgroundColor: categoryData.primary }]}>
-            <Text style={styles.categoryIcon}>{categoryData.emoji}</Text>
+          <View style={[styles.categoryBadge, { backgroundColor: categoryData?.primary || COLORS.primary }]}>
+            <Text style={styles.categoryIcon}>{categoryData?.emoji || '📍'}</Text>
             <Text style={styles.categoryText}>
               {trek.category.charAt(0).toUpperCase() + trek.category.slice(1)}
             </Text>
@@ -50,6 +87,20 @@ const TrekCard = ({ trek, onPress }) => {
               <Text style={styles.ratingIcon}>⭐</Text>
               <Text style={styles.ratingText}>{trek.rating}</Text>
             </View>
+          )}
+
+          {/* Favorite Button */}
+          {showFavoriteButton && (
+            <TouchableOpacity
+              style={styles.favoriteButton}
+              onPress={handleFavoriteToggle}
+              disabled={loading}
+              activeOpacity={0.8}
+            >
+              <Text style={styles.favoriteIcon}>
+                {isFavorite ? '❤️' : '🤍'}
+              </Text>
+            </TouchableOpacity>
           )}
         </View>
 
@@ -66,8 +117,8 @@ const TrekCard = ({ trek, onPress }) => {
           {/* Stats Row */}
           <View style={styles.statsContainer}>
             <View style={styles.statItem}>
-              <View style={[styles.difficultyBadge, { backgroundColor: difficultyData.background }]}>
-                <Text style={[styles.difficultyText, { color: difficultyData.color }]}>
+              <View style={[styles.difficultyBadge, { backgroundColor: difficultyData?.background || COLORS.backgroundSecondary }]}>
+                <Text style={[styles.difficultyText, { color: difficultyData?.color || COLORS.text }]}>
                   {trek.difficulty}
                 </Text>
               </View>
@@ -166,6 +217,21 @@ const styles = StyleSheet.create({
     fontSize: 12,
     fontWeight: '700',
     color: COLORS.text,
+  },
+  favoriteButton: {
+    position: 'absolute',
+    bottom: SPACING.md,
+    right: SPACING.md,
+    width: 40,
+    height: 40,
+    borderRadius: BORDER_RADIUS.full,
+    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+    justifyContent: 'center',
+    alignItems: 'center',
+    ...SHADOWS.medium,
+  },
+  favoriteIcon: {
+    fontSize: 20,
   },
 
   // Content section

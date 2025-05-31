@@ -6,6 +6,13 @@ import { Text, View } from 'react-native';
 import HomeScreen from '../screens/HomeScreen';
 import TrekListScreen from '../screens/TrekListScreen';
 import TrekDetailsScreen from '../screens/TrekDetailsScreen';
+import MapScreen from '../screens/MapScreen';
+import MyTreksScreen from '../screens/MyTreksScreen';
+import LoungeScreen from '../screens/LoungeScreen';
+import TrekPlannerScreen from '../screens/TrekPlannerScreen';
+import EmergencyScreen from '../screens/EmergencyScreen';
+import EmergencyContactsScreen from '../screens/EmergencyContactsScreen';
+import LiveTrackingScreen from '../screens/LiveTrackingScreen';
 import { COLORS, FONTS, createTextStyle } from '../utils/constants';
 
 const Stack = createStackNavigator();
@@ -18,17 +25,21 @@ const TrekScreen = () => (
   </View>
 );
 
-const LoungeScreen = () => (
-  <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-    <Text>Lounge Screen</Text>
-  </View>
-);
 
-const MyTreksScreen = () => (
-  <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-    <Text>My Treks Screen</Text>
-  </View>
-);
+
+// Map Stack Navigator
+const MapStack = () => {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <Stack.Screen name="MapMain" component={MapScreen} />
+      <Stack.Screen name="TrekDetails" component={TrekDetailsScreen} />
+    </Stack.Navigator>
+  );
+};
 
 const HomeStack = () => {
   return (
@@ -40,6 +51,10 @@ const HomeStack = () => {
       <Stack.Screen name="HomeMain" component={HomeScreen} />
       <Stack.Screen name="TrekList" component={TrekListScreen} />
       <Stack.Screen name="TrekDetails" component={TrekDetailsScreen} />
+      <Stack.Screen name="TrekPlanner" component={TrekPlannerScreen} />
+      <Stack.Screen name="Emergency" component={EmergencyScreen} />
+      <Stack.Screen name="EmergencyContacts" component={EmergencyContactsScreen} />
+      <Stack.Screen name="LiveTracking" component={LiveTrackingScreen} />
     </Stack.Navigator>
   );
 };
@@ -75,11 +90,11 @@ const TabNavigator = () => {
         }}
       />
       <Tab.Screen
-        name="Trek"
-        component={TrekScreen}
+        name="Map"
+        component={MapStack}
         options={{
           tabBarIcon: ({ color, size }) => (
-            <Text style={{ fontSize: 20, color }}>⛰️</Text>
+            <Text style={{ fontSize: 20, color }}>🗺️</Text>
           ),
         }}
       />

@@ -8,14 +8,14 @@ import {
   Dimensions,
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { COLORS, CATEGORY_COLORS, DIFFICULTY_COLORS, SHADOWS, SPACING, BORDER_RADIUS, IMAGES } from '../utils/constants';
+import { COLORS, CATEGORIES, CATEGORY_COLORS, DIFFICULTY_COLORS, DIFFICULTY_LEVELS, SHADOWS, SPACING, BORDER_RADIUS, IMAGES } from '../utils/constants';
 
 const { width } = Dimensions.get('window');
 const CARD_WIDTH = width * 0.75;
 
 const FeaturedTrekCard = ({ trek, onPress }) => {
-  const categoryData = CATEGORY_COLORS[trek.category] || CATEGORY_COLORS.trek;
-  const difficultyData = DIFFICULTY_COLORS[trek.difficulty] || DIFFICULTY_COLORS.Easy;
+  const categoryData = CATEGORY_COLORS[trek.category] || CATEGORY_COLORS[CATEGORIES.TREK];
+  const difficultyData = DIFFICULTY_COLORS[trek.difficulty] || DIFFICULTY_COLORS[DIFFICULTY_LEVELS.EASY];
   
   // Get image from local assets
   const getImageSource = () => {
@@ -55,8 +55,8 @@ const FeaturedTrekCard = ({ trek, onPress }) => {
           </LinearGradient>
 
           {/* Enhanced Category Badge */}
-          <View style={[styles.categoryBadge, { backgroundColor: categoryData.primary }]}>
-            <Text style={styles.categoryIcon}>{categoryData.emoji}</Text>
+          <View style={[styles.categoryBadge, { backgroundColor: categoryData?.primary || COLORS.primary }]}>
+            <Text style={styles.categoryIcon}>{categoryData?.emoji || '📍'}</Text>
           </View>
 
           {/* Quick Action Buttons */}
@@ -83,8 +83,8 @@ const FeaturedTrekCard = ({ trek, onPress }) => {
             </View>
 
             <View style={styles.statsRow}>
-              <View style={[styles.difficultyBadge, { backgroundColor: difficultyData.background }]}>
-                <Text style={[styles.difficultyText, { color: difficultyData.color }]}>
+              <View style={[styles.difficultyBadge, { backgroundColor: difficultyData?.background || COLORS.backgroundSecondary }]}>
+                <Text style={[styles.difficultyText, { color: difficultyData?.color || COLORS.text }]}>
                   {trek.difficulty}
                 </Text>
               </View>
