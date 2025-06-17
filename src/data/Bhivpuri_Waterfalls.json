@@ -1,0 +1,141 @@
+{
+  "id": 13,
+  "name": "Bhivpuri Waterfalls",
+  "category": "waterfall",
+  "location": "Raigad District",
+  "difficulty": "Easy",
+  "duration": "1-2 hours",
+  "elevation": "150 meters",
+  "description": "A popular waterfall destination near Karjat, perfect for day trips and family outings. Multiple small waterfalls create natural pools.",
+  "startingPoint": {
+    "name": "Bhivpuri Village",
+    "coordinates": {
+      "latitude": 18.9167,
+      "longitude": 73.3333
+    },
+    "facilities": [
+      "Parking",
+      "Restaurants",
+      "Changing rooms",
+      "Local guides"
+    ],
+    "description": "Well-developed base with good facilities for tourists"
+  },
+  "imageKey": "bhivpuri_falls",
+  "coordinates": {
+    "latitude": 18.9167,
+    "longitude": 73.3333
+  },
+  "featured": false,
+  "rating": 4.1,
+  "reviewCount": 156,
+  "foodAndWater": {
+    "atBase": {
+      "restaurants": [
+        "Bhivpuri village restaurants",
+        "Karjat station canteen"
+      ],
+      "shops": [
+        "Local shops",
+        "Water bottles",
+        "Basic snacks"
+      ],
+      "waterSources": [
+        "Packaged water available",
+        "Village wells"
+      ]
+    },
+    "duringTrek": {
+      "waterSources": [
+        "Natural waterfall pools",
+        "Carry 2 liters recommended"
+      ],
+      "foodOptions": [
+        "No food stalls on route",
+        "Carry packed meals"
+      ],
+      "recommendations": [
+        "Swimming gear",
+        "Waterproof bags",
+        "Change of clothes"
+      ]
+    },
+    "atWaterfall": {
+      "facilities": [
+        "Natural pools for swimming",
+        "No food facilities"
+      ],
+      "recommendations": [
+        "Carry packed lunch",
+        "Enjoy swimming",
+        "Be careful on wet rocks"
+      ]
+    }
+  },
+  "howToReach": {
+    "fromMumbai": {
+      "byTrain": {
+        "description": "Train to Karjat, then local transport",
+        "distance": "90 km",
+        "time": "3-4 hours",
+        "steps": [
+          "Take train from Mumbai CST to Karjat Railway Station",
+          "From Karjat, take auto/taxi to Bhivpuri Village",
+          "Short walk to waterfall area"
+        ]
+      },
+      "byBus": {
+        "description": "Bus to Karjat, then local transport",
+        "distance": "90 km",
+        "time": "4-5 hours",
+        "steps": [
+          "Take MSRTC bus from Mumbai to Karjat",
+          "From Karjat, take local transport to Bhivpuri Village",
+          "Walk to waterfall"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive via Mumbai-Pune Highway",
+        "distance": "90 km",
+        "time": "3-4 hours",
+        "steps": [
+          "Take Mumbai-Pune Highway to Karjat exit",
+          "Drive to Bhivpuri Village via local roads",
+          "Park at village and walk to falls"
+        ]
+      }
+    },
+    "fromPune": {
+      "byTrain": {
+        "description": "Train to Karjat via Lonavala",
+        "distance": "120 km",
+        "time": "4-5 hours",
+        "steps": [
+          "Take train from Pune to Lonavala, then to Karjat",
+          "From Karjat, take auto/taxi to Bhivpuri Village",
+          "Short walk to waterfall area"
+        ]
+      },
+      "byBus": {
+        "description": "Bus to Karjat via Mumbai route",
+        "distance": "120 km",
+        "time": "5-6 hours",
+        "steps": [
+          "Take PMPML bus from Pune to Mumbai, get down at Karjat",
+          "From Karjat, take local transport to Bhivpuri Village",
+          "Walk to waterfall"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive via Pune-Mumbai Highway",
+        "distance": "120 km",
+        "time": "4-5 hours",
+        "steps": [
+          "Take Pune-Mumbai Highway to Karjat",
+          "Drive to Bhivpuri Village via local roads",
+          "Park at village and walk to falls"
+        ]
+      }
+    }
+  }
+}

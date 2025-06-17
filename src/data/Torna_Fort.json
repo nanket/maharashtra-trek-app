@@ -1,0 +1,292 @@
+{
+  "id": 10,
+  "name": "Torna Fort",
+  "category": "fort",
+  "location": "Pune District",
+  "difficulty": "Moderate",
+  "duration": "4-5 hours",
+  "elevation": "1403 meters",
+  "description": "First fort captured by Chhatrapati Shivaji Maharaj at age 16. Also known as Prachandagad, it's the highest hill fort around Pune.",
+  "startingPoint": {
+    "name": "Velhe Village",
+    "coordinates": {
+      "latitude": 18.2833,
+      "longitude": 73.5167
+    },
+    "facilities": [
+      "Village shops",
+      "Local guides",
+      "Basic accommodation",
+      "Parking"
+    ],
+    "description": "Traditional village at the base with basic facilities and historical significance"
+  },
+  "networkAvailability": {
+    "baseVillage": {
+      "airtel": "Fair",
+      "jio": "Fair",
+      "vodafone": "Poor",
+      "bsnl": "Poor"
+    },
+    "duringTrek": {
+      "airtel": "Poor",
+      "jio": "Poor",
+      "vodafone": "No signal",
+      "bsnl": "No signal"
+    },
+    "atSummit": {
+      "airtel": "Good",
+      "jio": "Good",
+      "vodafone": "Fair",
+      "bsnl": "Fair"
+    },
+    "emergencyContact": "108 (works from summit)"
+  },
+  "foodAndWater": {
+    "atBase": {
+      "restaurants": [
+        "Hotel Torna Vihar",
+        "Village homes (on request)",
+        "Tea stalls"
+      ],
+      "shops": [
+        "Basic groceries",
+        "Trekking supplies",
+        "Water bottles"
+      ],
+      "waterSources": [
+        "Village wells",
+        "Packaged water available"
+      ]
+    },
+    "duringTrek": {
+      "waterSources": [
+        "Natural springs at 2 locations",
+        "Carry 4-5 liters recommended"
+      ],
+      "foodOptions": [
+        "No food stalls on route",
+        "Carry packed meals"
+      ],
+      "recommendations": [
+        "High-energy snacks",
+        "Dry fruits",
+        "Extra rations"
+      ]
+    },
+    "atSummit": {
+      "facilities": [
+        "Ancient water tanks",
+        "No food facilities"
+      ],
+      "recommendations": [
+        "Carry sufficient food",
+        "Water purification tablets"
+      ]
+    }
+  },
+  "accommodation": {
+    "camping": {
+      "allowed": true,
+      "locations": [
+        "Near Velhe village",
+        "Fort plateau (with permission)"
+      ],
+      "facilities": [
+        "Open camping grounds",
+        "Water sources",
+        "Basic shelter"
+      ],
+      "cost": "\u20b9200-400 per person"
+    },
+    "nearbyStays": [
+      {
+        "name": "Hotel Torna Vihar",
+        "distance": "0 km from base",
+        "cost": "\u20b91000-1800 per room",
+        "contact": "+91 9404232845",
+        "facilities": [
+          "Basic rooms",
+          "Restaurant",
+          "Guide services"
+        ]
+      },
+      {
+        "name": "Velhe Village Homestay",
+        "distance": "0 km from base",
+        "cost": "\u20b9600-1000 per person",
+        "contact": "+91 9850456123",
+        "facilities": [
+          "Village accommodation",
+          "Home-cooked meals",
+          "Local guides"
+        ]
+      }
+    ]
+  },
+  "permits": {
+    "required": false,
+    "forestDepartment": "Not required",
+    "entry": "Free entry",
+    "timings": "24 hours (night trek allowed)"
+  },
+  "safety": {
+    "riskLevel": "Moderate to High",
+    "commonRisks": [
+      "Steep climbs",
+      "Rock climbing sections",
+      "Weather changes"
+    ],
+    "precautions": [
+      "Experienced guide recommended",
+      "Proper climbing gear",
+      "Emergency whistle"
+    ],
+    "rescuePoints": [
+      "Velhe village",
+      "Midway rest point",
+      "Summit"
+    ],
+    "nearestHospital": {
+      "name": "Rural Hospital Bhor",
+      "distance": "30 km",
+      "contact": "+91 2113-222333"
+    }
+  },
+  "weather": {
+    "monsoon": {
+      "months": "June-September",
+      "conditions": "Heavy rainfall, slippery rocks, leeches",
+      "recommendation": "Avoid during heavy rains, experienced trekkers only"
+    },
+    "winter": {
+      "months": "November-February",
+      "conditions": "Cool and pleasant, clear views, perfect for camping",
+      "recommendation": "Best time to visit"
+    },
+    "summer": {
+      "months": "March-May",
+      "conditions": "Hot during day, carry extra water",
+      "recommendation": "Start very early morning"
+    }
+  },
+  "trekRoute": {
+    "totalDistance": "10 km (round trip)",
+    "ascent": "800 meters",
+    "difficulty": "Moderate to difficult",
+    "waypoints": [
+      {
+        "name": "Velhe Village",
+        "elevation": "603m",
+        "description": "Starting point with basic facilities"
+      },
+      {
+        "name": "Forest Trail",
+        "elevation": "900m",
+        "description": "Dense forest path with wildlife"
+      },
+      {
+        "name": "Rock Climbing Section",
+        "elevation": "1200m",
+        "description": "Steep rock patches requiring careful climbing"
+      },
+      {
+        "name": "Torna Summit",
+        "elevation": "1403m",
+        "description": "Highest hill fort around Pune with panoramic views"
+      }
+    ]
+  },
+  "howToReach": {
+    "fromMumbai": {
+      "byTrain": {
+        "description": "Train to Pune, then bus to Velhe",
+        "distance": "180 km",
+        "time": "5-6 hours",
+        "steps": [
+          "Take train from Mumbai CST to Pune Railway Station",
+          "From Pune, take MSRTC bus to Velhe village",
+          "Trek starts from Velhe village"
+        ]
+      },
+      "byBus": {
+        "description": "Bus to Pune, then local transport to Velhe",
+        "distance": "185 km",
+        "time": "6-7 hours",
+        "steps": [
+          "Take MSRTC bus from Mumbai to Pune",
+          "From Pune, take local bus to Velhe village",
+          "Trek starts from village"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive via Mumbai-Pune Expressway",
+        "distance": "180 km",
+        "time": "4-5 hours",
+        "steps": [
+          "Take Mumbai-Pune Expressway",
+          "Exit at Pune, drive towards Velhe via Bhor",
+          "Parking available at village"
+        ]
+      }
+    },
+    "fromPune": {
+      "byTrain": {
+        "description": "No direct train, use bus transport",
+        "distance": "50 km",
+        "time": "2-3 hours",
+        "steps": [
+          "Take local train to Pune Junction",
+          "From Pune, take MSRTC bus to Velhe",
+          "Trek starts from Velhe village"
+        ]
+      },
+      "byBus": {
+        "description": "Direct MSRTC bus to Velhe village",
+        "distance": "50 km",
+        "time": "2 hours",
+        "steps": [
+          "Take MSRTC bus from Pune to Velhe",
+          "Get down at Velhe village",
+          "Trek starts from village"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive directly to Velhe village",
+        "distance": "50 km",
+        "time": "1.5 hours",
+        "steps": [
+          "Take Pune-Satara highway",
+          "Turn towards Velhe village via Bhor",
+          "Parking available at village"
+        ]
+      }
+    }
+  },
+  "bestTimeToVisit": "October to March",
+  "localContacts": [
+    {
+      "name": "Hemant Kadam (Hotel Torna Vihar)",
+      "phone": "+91 9404232845",
+      "service": "Accommodation & Local Guide"
+    },
+    {
+      "name": "Bapu Sable",
+      "phone": "+91 9850789123",
+      "service": "Local Guide & Information"
+    },
+    {
+      "name": "Velhe Village Sarpanch",
+      "phone": "+91 9421345678",
+      "service": "Village Information & Emergency"
+    }
+  ],
+  "imageKey": "torna",
+  "coordinates": {
+    "latitude": 18.2833,
+    "longitude": 73.5167
+  },
+  "featured": true,
+  "rating": 4.5,
+  "reviewCount": 178
+}

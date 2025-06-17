@@ -1,0 +1,140 @@
+{
+  "id": 16,
+  "name": "Bhaja Caves",
+  "category": "cave",
+  "location": "Pune District",
+  "difficulty": "Easy",
+  "duration": "1-2 hours",
+  "elevation": "400 meters",
+  "description": "Ancient Buddhist caves dating from 2nd century BC, featuring beautiful stupas and intricate rock carvings. A UNESCO World Heritage site.",
+  "startingPoint": {
+    "name": "Bhaja Village",
+    "coordinates": {
+      "latitude": 18.7333,
+      "longitude": 73.4833
+    },
+    "facilities": [
+      "Parking",
+      "Archaeological guide",
+      "Basic refreshments"
+    ],
+    "description": "Historic village near Lonavala with ancient cave complex"
+  },
+  "imageKey": "bhaja_caves",
+  "coordinates": {
+    "latitude": 18.7333,
+    "longitude": 73.4833
+  },
+  "featured": false,
+  "rating": 4.2,
+  "reviewCount": 198,
+  "foodAndWater": {
+    "atBase": {
+      "restaurants": [
+        "Bhaja village tea stalls",
+        "Lonavala restaurants"
+      ],
+      "shops": [
+        "Basic village shops",
+        "Water bottles",
+        "Archaeological guides"
+      ],
+      "waterSources": [
+        "Village wells",
+        "Packaged water available"
+      ]
+    },
+    "duringTrek": {
+      "waterSources": [
+        "Carry 1-2 liters sufficient",
+        "Short walking distance"
+      ],
+      "foodOptions": [
+        "No food inside caves",
+        "Carry light snacks"
+      ],
+      "recommendations": [
+        "Light refreshments",
+        "Camera",
+        "Respect heritage site"
+      ]
+    },
+    "atWaterfall": {
+      "facilities": [
+        "Ancient Buddhist caves",
+        "UNESCO World Heritage site"
+      ],
+      "recommendations": [
+        "Learn about Buddhist history",
+        "Photography allowed",
+        "Peaceful meditation"
+      ]
+    }
+  },
+  "howToReach": {
+    "fromMumbai": {
+      "byTrain": {
+        "description": "Train to Lonavala, then local transport",
+        "distance": "110 km",
+        "time": "3-4 hours",
+        "steps": [
+          "Take train from Mumbai CST to Lonavala Railway Station",
+          "From Lonavala, take auto/taxi to Bhaja Village",
+          "Short walk to cave complex"
+        ]
+      },
+      "byBus": {
+        "description": "Bus to Lonavala, then local transport",
+        "distance": "110 km",
+        "time": "4-5 hours",
+        "steps": [
+          "Take MSRTC bus from Mumbai to Lonavala",
+          "From Lonavala, take local transport to Bhaja Village",
+          "Walk to cave entrance"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive via Mumbai-Pune Expressway",
+        "distance": "110 km",
+        "time": "3-4 hours",
+        "steps": [
+          "Take Mumbai-Pune Expressway to Lonavala exit",
+          "Drive to Bhaja Village via local roads",
+          "Park at village and walk to caves"
+        ]
+      }
+    },
+    "fromPune": {
+      "byTrain": {
+        "description": "Train to Lonavala, then local transport",
+        "distance": "65 km",
+        "time": "2-3 hours",
+        "steps": [
+          "Take train from Pune to Lonavala Railway Station",
+          "From Lonavala, take auto/taxi to Bhaja Village",
+          "Short walk to cave complex"
+        ]
+      },
+      "byBus": {
+        "description": "Bus to Lonavala, then local transport",
+        "distance": "65 km",
+        "time": "2.5-3 hours",
+        "steps": [
+          "Take PMPML/MSRTC bus from Pune to Lonavala",
+          "From Lonavala, take local transport to Bhaja Village",
+          "Walk to cave entrance"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive via Pune-Mumbai Highway",
+        "distance": "65 km",
+        "time": "2-2.5 hours",
+        "steps": [
+          "Take Pune-Mumbai Highway to Lonavala",
+          "Drive to Bhaja Village via local roads",
+          "Park at village and walk to caves"
+        ]
+      }
+    }
+  }
+}

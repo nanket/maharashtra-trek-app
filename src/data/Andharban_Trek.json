@@ -1,0 +1,285 @@
+{
+  "id": 11,
+  "name": "Andharban Trek",
+  "category": "trek",
+  "location": "Pune District",
+  "difficulty": "Moderate",
+  "duration": "6-7 hours",
+  "elevation": "700 meters",
+  "description": "Famous 'Dark Forest' trek through dense jungle canopy. Known for its unique descending trail and rich biodiversity in the Western Ghats.",
+  "startingPoint": {
+    "name": "Pimpri Village (Tamhini Ghat)",
+    "coordinates": {
+      "latitude": 18.4167,
+      "longitude": 73.4333
+    },
+    "facilities": [
+      "Village shops",
+      "Local guides",
+      "Parking",
+      "Basic refreshments"
+    ],
+    "description": "Small village on Tamhini Ghat road, gateway to the dark forest"
+  },
+  "networkAvailability": {
+    "baseVillage": {
+      "airtel": "Fair",
+      "jio": "Fair",
+      "vodafone": "Poor",
+      "bsnl": "Poor"
+    },
+    "duringTrek": {
+      "airtel": "No signal",
+      "jio": "No signal",
+      "vodafone": "No signal",
+      "bsnl": "No signal"
+    },
+    "atSummit": {
+      "airtel": "Poor",
+      "jio": "Poor",
+      "vodafone": "No signal",
+      "bsnl": "No signal"
+    },
+    "emergencyContact": "108 (works from Tamhini Ghat road)"
+  },
+  "foodAndWater": {
+    "atBase": {
+      "restaurants": [
+        "Andharban Resort",
+        "Local tea stalls",
+        "Village homes (on request)"
+      ],
+      "shops": [
+        "Basic groceries",
+        "Water bottles",
+        "Trekking supplies"
+      ],
+      "waterSources": [
+        "Village wells",
+        "Packaged water available"
+      ]
+    },
+    "duringTrek": {
+      "waterSources": [
+        "Multiple natural streams",
+        "Carry 4-5 liters recommended"
+      ],
+      "foodOptions": [
+        "No food stalls in forest",
+        "Carry packed meals"
+      ],
+      "recommendations": [
+        "High-energy snacks",
+        "Waterproof food storage",
+        "Extra rations"
+      ]
+    },
+    "atSummit": {
+      "facilities": [
+        "Natural water sources",
+        "No food facilities"
+      ],
+      "recommendations": [
+        "Carry sufficient food",
+        "Water purification tablets"
+      ]
+    }
+  },
+  "accommodation": {
+    "camping": {
+      "allowed": false,
+      "reason": "Dense forest area, camping not recommended for safety"
+    },
+    "nearbyStays": [
+      {
+        "name": "Andharban Resort",
+        "distance": "2 km from base",
+        "cost": "\u20b92000-3500 per room",
+        "contact": "+91 9850234567",
+        "facilities": [
+          "Comfortable rooms",
+          "Restaurant",
+          "Trekking packages"
+        ]
+      },
+      {
+        "name": "Tamhini Ghat Homestays",
+        "distance": "5 km from base",
+        "cost": "\u20b9800-1500 per room",
+        "contact": "+91 9421567890",
+        "facilities": [
+          "Basic accommodation",
+          "Local food",
+          "Nature views"
+        ]
+      }
+    ]
+  },
+  "permits": {
+    "required": false,
+    "forestDepartment": "Not required",
+    "entry": "Free entry",
+    "timings": "6:00 AM to 5:00 PM (daylight hours only)"
+  },
+  "safety": {
+    "riskLevel": "Moderate to High",
+    "commonRisks": [
+      "Dense forest",
+      "Getting lost",
+      "Wildlife encounters",
+      "Slippery paths"
+    ],
+    "precautions": [
+      "Experienced guide mandatory",
+      "Stay in group",
+      "Carry whistle",
+      "Inform someone about trek"
+    ],
+    "rescuePoints": [
+      "Pimpri village",
+      "Forest checkpoints",
+      "Bhira village"
+    ],
+    "nearestHospital": {
+      "name": "Khopoli Hospital",
+      "distance": "25 km",
+      "contact": "+91 2192-222333"
+    }
+  },
+  "weather": {
+    "monsoon": {
+      "months": "June-September",
+      "conditions": "Dense canopy, heavy rainfall, leeches, slippery paths",
+      "recommendation": "Best time for forest experience but requires caution"
+    },
+    "winter": {
+      "months": "November-February",
+      "conditions": "Cool and pleasant, clear forest paths, good visibility",
+      "recommendation": "Ideal time for beginners"
+    },
+    "summer": {
+      "months": "March-May",
+      "conditions": "Hot and humid, less water in streams",
+      "recommendation": "Early morning start essential"
+    }
+  },
+  "trekRoute": {
+    "totalDistance": "13 km (one way descending)",
+    "ascent": "Minimal (mostly descending)",
+    "difficulty": "Moderate due to forest navigation",
+    "waypoints": [
+      {
+        "name": "Pimpri Village",
+        "elevation": "700m",
+        "description": "Starting point on Tamhini Ghat"
+      },
+      {
+        "name": "Forest Entry",
+        "elevation": "650m",
+        "description": "Dense canopy begins, guide essential"
+      },
+      {
+        "name": "Stream Crossings",
+        "elevation": "400m",
+        "description": "Multiple stream crossings through forest"
+      },
+      {
+        "name": "Bhira Village",
+        "elevation": "200m",
+        "description": "End point near Kundalika river"
+      }
+    ]
+  },
+  "howToReach": {
+    "fromMumbai": {
+      "byTrain": {
+        "description": "Train to Karjat, then taxi to Pimpri village",
+        "distance": "120 km",
+        "time": "4-5 hours",
+        "steps": [
+          "Take train from Mumbai CST to Karjat Railway Station",
+          "From Karjat, take taxi to Pimpri village via Tamhini Ghat",
+          "Trek starts from Pimpri village"
+        ]
+      },
+      "byBus": {
+        "description": "Bus to Pune, then local transport to Tamhini Ghat",
+        "distance": "140 km",
+        "time": "5-6 hours",
+        "steps": [
+          "Take MSRTC bus from Mumbai to Pune",
+          "From Pune, take local transport to Tamhini Ghat",
+          "Get down at Pimpri village"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive via Mumbai-Pune Expressway",
+        "distance": "120 km",
+        "time": "3-4 hours",
+        "steps": [
+          "Take Mumbai-Pune Expressway",
+          "Exit at Tamhini Ghat road",
+          "Drive to Pimpri village, parking available"
+        ]
+      }
+    },
+    "fromPune": {
+      "byTrain": {
+        "description": "No direct train, use bus transport",
+        "distance": "70 km",
+        "time": "3-4 hours",
+        "steps": [
+          "Take local train to Pune Junction",
+          "From Pune, take bus to Tamhini Ghat",
+          "Get down at Pimpri village"
+        ]
+      },
+      "byBus": {
+        "description": "Direct bus to Tamhini Ghat",
+        "distance": "70 km",
+        "time": "2.5-3 hours",
+        "steps": [
+          "Take MSRTC bus from Pune to Tamhini Ghat",
+          "Get down at Pimpri village",
+          "Trek starts from village"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive directly via Tamhini Ghat road",
+        "distance": "70 km",
+        "time": "2-2.5 hours",
+        "steps": [
+          "Take Pune-Mumbai highway",
+          "Turn towards Tamhini Ghat road",
+          "Drive to Pimpri village"
+        ]
+      }
+    }
+  },
+  "bestTimeToVisit": "October to March",
+  "localContacts": [
+    {
+      "name": "Dhiraj Mengade (Andharban Resort)",
+      "phone": "+91 9850234567",
+      "service": "Accommodation & Trekking Guide"
+    },
+    {
+      "name": "Mahesh Kandhare",
+      "phone": "+91 9421567890",
+      "service": "Local Guide & Forest Navigation"
+    },
+    {
+      "name": "Tamhini Ghat Tourism Office",
+      "phone": "+91 2192-234567",
+      "service": "Tourism Information"
+    }
+  ],
+  "imageKey": "andharban",
+  "coordinates": {
+    "latitude": 18.4167,
+    "longitude": 73.4333
+  },
+  "featured": false,
+  "rating": 4.4,
+  "reviewCount": 267
+}

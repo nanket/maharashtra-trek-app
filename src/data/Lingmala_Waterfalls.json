@@ -1,0 +1,142 @@
+{
+  "id": 14,
+  "name": "Lingmala Waterfalls",
+  "category": "waterfall",
+  "location": "Satara District",
+  "difficulty": "Easy",
+  "duration": "1-2 hours",
+  "elevation": "1267 meters",
+  "description": "A scenic waterfall near Mahabaleshwar, cascading from a height of 500 feet. Surrounded by lush green valleys and strawberry farms.",
+  "startingPoint": {
+    "name": "Mahabaleshwar",
+    "coordinates": {
+      "latitude": 17.9167,
+      "longitude": 73.65
+    },
+    "facilities": [
+      "Hotels",
+      "Restaurants",
+      "Parking",
+      "Tourist facilities"
+    ],
+    "description": "Popular hill station with excellent tourist infrastructure"
+  },
+  "imageKey": "lingmala_falls",
+  "coordinates": {
+    "latitude": 17.9167,
+    "longitude": 73.65
+  },
+  "featured": true,
+  "rating": 4.4,
+  "reviewCount": 234,
+  "foodAndWater": {
+    "atBase": {
+      "restaurants": [
+        "Mahabaleshwar restaurants",
+        "Hotel dining",
+        "Street food stalls"
+      ],
+      "shops": [
+        "Tourist shops",
+        "Water bottles",
+        "Local strawberries"
+      ],
+      "waterSources": [
+        "Hotel water",
+        "Packaged water readily available"
+      ]
+    },
+    "duringTrek": {
+      "waterSources": [
+        "Natural waterfall",
+        "Carry 1-2 liters sufficient"
+      ],
+      "foodOptions": [
+        "No food stalls on route",
+        "Carry light snacks"
+      ],
+      "recommendations": [
+        "Local strawberries",
+        "Energy snacks",
+        "Camera for photos"
+      ]
+    },
+    "atWaterfall": {
+      "facilities": [
+        "Natural water source",
+        "Scenic viewpoints"
+      ],
+      "recommendations": [
+        "Carry packed snacks",
+        "Enjoy the 500ft cascade",
+        "Photography"
+      ]
+    }
+  },
+  "howToReach": {
+    "fromMumbai": {
+      "byTrain": {
+        "description": "Train to Pune, then bus to Mahabaleshwar",
+        "distance": "280 km",
+        "time": "7-8 hours",
+        "steps": [
+          "Take train from Mumbai CST to Pune Railway Station",
+          "From Pune, take MSRTC bus to Mahabaleshwar",
+          "Local transport to Lingmala Waterfalls"
+        ]
+      },
+      "byBus": {
+        "description": "Direct bus to Mahabaleshwar",
+        "distance": "280 km",
+        "time": "8-9 hours",
+        "steps": [
+          "Take MSRTC bus from Mumbai to Mahabaleshwar",
+          "From Mahabaleshwar, take local transport to falls",
+          "Short walk to waterfall viewpoint"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive via Mumbai-Pune-Satara route",
+        "distance": "280 km",
+        "time": "6-7 hours",
+        "steps": [
+          "Take Mumbai-Pune Expressway to Pune",
+          "Continue via Satara to Mahabaleshwar",
+          "Drive to Lingmala Falls parking area"
+        ]
+      }
+    },
+    "fromPune": {
+      "byTrain": {
+        "description": "Train to Satara, then bus to Mahabaleshwar",
+        "distance": "120 km",
+        "time": "4-5 hours",
+        "steps": [
+          "Take train from Pune to Satara Railway Station",
+          "From Satara, take MSRTC bus to Mahabaleshwar",
+          "Local transport to Lingmala Waterfalls"
+        ]
+      },
+      "byBus": {
+        "description": "Direct bus to Mahabaleshwar",
+        "distance": "120 km",
+        "time": "4-5 hours",
+        "steps": [
+          "Take PMPML/MSRTC bus from Pune to Mahabaleshwar",
+          "From Mahabaleshwar, take local transport to falls",
+          "Short walk to waterfall viewpoint"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive via Pune-Satara Highway",
+        "distance": "120 km",
+        "time": "3-4 hours",
+        "steps": [
+          "Take Pune-Satara Highway",
+          "Continue to Mahabaleshwar via ghat roads",
+          "Drive to Lingmala Falls parking area"
+        ]
+      }
+    }
+  }
+}

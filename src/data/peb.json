@@ -1,0 +1,107 @@
+{
+  "id": 12,
+  "name": "Peb Fort (Vikatgad)",
+  "category": "fort",
+  "location": "Raigad District, Maharashtra",
+  "difficulty": "Easy to Moderate",
+  "duration": "5 hours (round trip)",
+  "elevation": "640 meters",
+  "description": "Peb Fort, also known as Vikatgad, is a scenic hill fort near Matheran. The trail passes through lush forest, rocky patches, and features a thrilling ladder climb near the top. It offers views of Neral, Matheran hill station, and nearby Sahyadri ranges.",
+  "startingPoint": {
+    "name": "Neral (Anandwadi)",
+    "coordinates": { "latitude": 19.028694, "longitude": 73.279056 },
+    "facilities": ["Parking", "Local tea stalls", "Toilets at Neral station"],
+    "description": "Neral is well connected via local trains from Mumbai and Pune. Anandwadi is a 15–20 min walk from Neral station and serves as the entry point to the trail."
+  },
+  "networkAvailability": {
+    "baseVillage": {
+      "airtel": "Good",
+      "jio": "Good",
+      "vodafone": "Fair",
+      "bsnl": "Fair"
+    },
+    "duringTrek": {
+      "airtel": "Intermittent",
+      "jio": "Intermittent",
+      "vodafone": "Intermittent",
+      "bsnl": "Weak"
+    },
+    "atSummit": {
+      "airtel": "Weak",
+      "jio": "Intermittent",
+      "vodafone": "Intermittent",
+      "bsnl": "No signal"
+    },
+    "emergencyContact": "Pre-trek notification advised. Dial 108/112 in case of network availability. No dedicated medical/rescue post on trek."
+  },
+  "foodAccommodation": {
+    "homestays": [
+      {
+        "name": "Prerna Lodge",
+        "location": "Neral",
+        "contact": "9226417543"
+      },
+      {
+        "name": "Green Hill Homestay",
+        "location": "Matheran (top side)",
+        "contact": "9594561604"
+      }
+    ],
+    "foodOnTrek": "No food stalls mid-trek. Tea and snacks available in Neral only. Carry packed meals.",
+    "waterSources": "Small streams during monsoon; unreliable during dry season. Carry 2L minimum.",
+    "campingOptions": "Allowed near Anandwadi fields or summit cave with sleeping bags. No official campsites."
+  },
+  "safety": {
+    "currentRisks": ["Slippery rocks in monsoon", "Loose soil near ladder", "Wild bees near summit"],
+    "nearestMedicalFacility": {
+      "name": "Matheran PHC",
+      "location": "Matheran Market Area",
+      "contact": "02148-230123"
+    },
+    "emergencyNumbers": {
+      "ambulance": "108",
+      "police": "100",
+      "localRescueVolunteers": "Requires verification"
+    },
+    "rescuePoints": ["Matheran Hill Top", "Neral Station"]
+  },
+  "localGuides": [
+    {
+      "name": "Dnyaneshwar Mirashi",
+      "contact": "7400174767",
+      "ratePerPerson": "₹500–700",
+      "services": ["Guided trek", "Local route briefing"]
+    },
+    {
+      "name": "Nature Knights Trek Team",
+      "contact": "9619182010",
+      "ratePerPerson": "₹650–800",
+      "services": ["Group treks", "Rope/ladders", "Safety gear"]
+    }
+  ],
+  "routeDetails": {
+    "trail": [
+      "Start from Anandwadi village near Neral.",
+      "Walk along toy train track from marker 134 NM → 155 NM.",
+      "Turn into forest trail after marker 155.",
+      "Rocky climb with exposed ridge walk.",
+      "Reach iron ladder and climb to summit plateau.",
+      "Explore caves, Datta temple, and flagpole."
+    ],
+    "landmarks": [
+      "134 NM–155 NM Toy Train markers",
+      "Iron ladder",
+      "Flagpole at summit",
+      "Hanuman temple midway",
+      "Datta temple on top"
+    ],
+    "alternativeRoutes": ["From Matheran via Sunset Point ridge (longer)", "Steep ridge via Kadya Ganpati (technical)"],
+    "seasonalNotes": ["Monsoon: lush & slippery, Summer: dry but hot, Winter: best for clear views"]
+  },
+  "permitInfo": {
+    "required": false,
+    "fee": "None",
+    "howToApply": "No permit needed for individuals or groups.",
+    "timingRestrictions": "Avoid after sunset. Local police may stop overnight campers during monsoon."
+  }
+}

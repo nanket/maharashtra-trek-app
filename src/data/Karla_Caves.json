@@ -1,0 +1,290 @@
+{
+  "id": 18,
+  "name": "Karla Caves",
+  "category": "cave",
+  "location": "Pune District",
+  "difficulty": "Easy",
+  "duration": "2-3 hours",
+  "elevation": "550 meters",
+  "description": "Ancient Buddhist rock-cut caves dating back to 2nd century BCE. Famous for the largest chaitya hall in India with intricate carvings.",
+  "startingPoint": {
+    "name": "Karla Caves Parking",
+    "coordinates": {
+      "latitude": 18.7608,
+      "longitude": 73.4856
+    },
+    "facilities": [
+      "Large parking area",
+      "Restaurants",
+      "Souvenir shops",
+      "Restrooms",
+      "ATM"
+    ],
+    "description": "Well-developed tourist area with all facilities"
+  },
+  "networkAvailability": {
+    "baseVillage": {
+      "airtel": "Excellent",
+      "jio": "Excellent",
+      "vodafone": "Good",
+      "bsnl": "Good"
+    },
+    "duringTrek": {
+      "airtel": "Good",
+      "jio": "Good",
+      "vodafone": "Fair",
+      "bsnl": "Fair"
+    },
+    "atCaves": {
+      "airtel": "Good",
+      "jio": "Good",
+      "vodafone": "Fair",
+      "bsnl": "Fair"
+    },
+    "emergencyContact": "108 (works throughout)"
+  },
+  "foodAndWater": {
+    "atBase": {
+      "restaurants": [
+        "Karla Restaurant",
+        "Local food stalls",
+        "Tea vendors"
+      ],
+      "shops": [
+        "Souvenir shops",
+        "General stores",
+        "Water bottles",
+        "Snacks"
+      ],
+      "waterSources": [
+        "Municipal water supply",
+        "Packaged water readily available"
+      ]
+    },
+    "duringTrek": {
+      "waterSources": [
+        "Water taps at intervals",
+        "Carry 1-2 liters"
+      ],
+      "foodOptions": [
+        "Snack vendors on route",
+        "Tea stalls"
+      ],
+      "recommendations": [
+        "Light snacks",
+        "Energy drinks",
+        "Local specialties"
+      ]
+    },
+    "atCaves": {
+      "facilities": [
+        "Water points",
+        "Snack vendors"
+      ],
+      "recommendations": [
+        "Enjoy local food",
+        "Stay hydrated"
+      ]
+    }
+  },
+  "accommodation": {
+    "camping": {
+      "allowed": false,
+      "reason": "Protected archaeological site, camping not permitted"
+    },
+    "nearbyStays": [
+      {
+        "name": "Lonavala Hill Resort",
+        "distance": "8 km from caves",
+        "cost": "\u20b93000-5000 per room",
+        "contact": "+91 2114-273456",
+        "facilities": [
+          "Luxury rooms",
+          "Restaurant",
+          "Swimming pool",
+          "Spa"
+        ]
+      },
+      {
+        "name": "Karla Village Homestay",
+        "distance": "2 km from caves",
+        "cost": "\u20b91000-2000 per room",
+        "contact": "+91 9823456789",
+        "facilities": [
+          "Basic rooms",
+          "Home-cooked meals",
+          "Local experience"
+        ]
+      }
+    ]
+  },
+  "permits": {
+    "required": false,
+    "forestDepartment": "Not required",
+    "entry": "\u20b925 per person (Indians), \u20b9300 (Foreigners)",
+    "timings": "9:00 AM to 5:00 PM",
+    "photography": "\u20b925 extra for camera"
+  },
+  "safety": {
+    "riskLevel": "Low",
+    "commonRisks": [
+      "Steep steps",
+      "Crowded during weekends",
+      "Slippery in monsoon"
+    ],
+    "precautions": [
+      "Comfortable walking shoes",
+      "Avoid peak hours",
+      "Stay with group"
+    ],
+    "rescuePoints": [
+      "Base parking area",
+      "Cave entrance",
+      "Security posts"
+    ],
+    "nearestHospital": {
+      "name": "Lonavala Civil Hospital",
+      "distance": "10 km",
+      "contact": "+91 2114-273333"
+    }
+  },
+  "weather": {
+    "monsoon": {
+      "months": "June-September",
+      "conditions": "Lush green surroundings, slippery steps, heavy crowds",
+      "recommendation": "Beautiful but crowded, carry rainwear"
+    },
+    "winter": {
+      "months": "December-February",
+      "conditions": "Pleasant weather, clear views, moderate crowds",
+      "recommendation": "Best time to visit"
+    },
+    "summer": {
+      "months": "March-May",
+      "conditions": "Hot during day, less crowded",
+      "recommendation": "Visit early morning or evening"
+    }
+  },
+  "trekRoute": {
+    "totalDistance": "2 km (round trip)",
+    "ascent": "150 meters",
+    "difficulty": "Easy walk with steps",
+    "waypoints": [
+      {
+        "name": "Karla Parking Area",
+        "elevation": "400m",
+        "description": "Starting point with facilities"
+      },
+      {
+        "name": "Steps Beginning",
+        "elevation": "450m",
+        "description": "Start of stone steps to caves"
+      },
+      {
+        "name": "Ekvira Devi Temple",
+        "elevation": "520m",
+        "description": "Hindu temple on the way"
+      },
+      {
+        "name": "Karla Caves",
+        "elevation": "550m",
+        "description": "Ancient Buddhist caves complex"
+      }
+    ]
+  },
+  "howToReach": {
+    "fromMumbai": {
+      "byTrain": {
+        "description": "Train to Lonavala, then local transport",
+        "distance": "120 km",
+        "time": "3-4 hours",
+        "steps": [
+          "Take train from Mumbai to Lonavala Railway Station",
+          "Take auto/taxi to Karla Caves",
+          "Walk up the steps to caves"
+        ]
+      },
+      "byBus": {
+        "description": "Bus to Lonavala, then local transport",
+        "distance": "125 km",
+        "time": "4-5 hours",
+        "steps": [
+          "Take MSRTC bus from Mumbai to Lonavala",
+          "Take local transport to Karla Caves",
+          "Walk up to caves"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive via Mumbai-Pune Expressway",
+        "distance": "120 km",
+        "time": "2.5-3 hours",
+        "steps": [
+          "Take Mumbai-Pune Expressway",
+          "Exit at Lonavala, follow signs to Karla Caves",
+          "Parking available at base"
+        ]
+      }
+    },
+    "fromPune": {
+      "byTrain": {
+        "description": "Train to Lonavala, then local transport",
+        "distance": "65 km",
+        "time": "2-2.5 hours",
+        "steps": [
+          "Take train from Pune to Lonavala",
+          "Take auto/taxi to Karla Caves",
+          "Walk up the steps to caves"
+        ]
+      },
+      "byBus": {
+        "description": "Bus to Lonavala, then local transport",
+        "distance": "70 km",
+        "time": "2.5-3 hours",
+        "steps": [
+          "Take MSRTC bus from Pune to Lonavala",
+          "Take local transport to Karla Caves",
+          "Walk up to caves"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive directly to Karla Caves",
+        "distance": "65 km",
+        "time": "1.5-2 hours",
+        "steps": [
+          "Take Pune-Mumbai Expressway",
+          "Exit at Lonavala, drive to Karla Caves",
+          "Parking available at base"
+        ]
+      }
+    }
+  },
+  "bestTimeToVisit": "October to March",
+  "localContacts": [
+    {
+      "name": "Archaeological Survey of India",
+      "phone": "+91 2114-273000",
+      "service": "Cave Information & Permits"
+    },
+    {
+      "name": "Lonavala Tourism Office",
+      "phone": "+91 2114-273456",
+      "service": "Tourist Information"
+    },
+    {
+      "name": "Local Guide Association",
+      "phone": "+91 9823456789",
+      "service": "Guided Tours"
+    }
+  ],
+  "imageKey": "karla",
+  "videos": [
+    "https://www.youtube.com/watch?v=karla123"
+  ],
+  "coordinates": {
+    "latitude": 18.7608,
+    "longitude": 73.4856
+  },
+  "featured": false,
+  "rating": 4.1,
+  "reviewCount": 678
+}

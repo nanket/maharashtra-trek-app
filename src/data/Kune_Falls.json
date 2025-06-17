@@ -1,0 +1,139 @@
+{
+  "id": 12,
+  "name": "Kune Falls",
+  "category": "waterfall",
+  "location": "Pune District",
+  "difficulty": "Easy",
+  "duration": "2-3 hours",
+  "elevation": "625 meters",
+  "description": "A beautiful three-tiered waterfall near Lonavala, best visited during monsoon season. The falls cascade down from a height of 200 meters.",
+  "startingPoint": {
+    "name": "Kune Village",
+    "coordinates": {
+      "latitude": 18.75,
+      "longitude": 73.4167
+    },
+    "facilities": [
+      "Parking",
+      "Local tea stalls",
+      "Basic shops"
+    ],
+    "description": "Small village near Lonavala with basic amenities"
+  },
+  "imageKey": "kune_falls",
+  "coordinates": {
+    "latitude": 18.75,
+    "longitude": 73.4167
+  },
+  "featured": true,
+  "rating": 4.3,
+  "reviewCount": 189,
+  "foodAndWater": {
+    "atBase": {
+      "restaurants": [
+        "Local tea stalls",
+        "Lonavala restaurants"
+      ],
+      "shops": [
+        "General stores",
+        "Water bottles",
+        "Snacks"
+      ],
+      "waterSources": [
+        "Packaged water available",
+        "Village wells"
+      ]
+    },
+    "duringTrek": {
+      "waterSources": [
+        "Natural waterfall",
+        "Carry 2-3 liters recommended"
+      ],
+      "foodOptions": [
+        "No food stalls on route",
+        "Carry packed snacks"
+      ],
+      "recommendations": [
+        "Light snacks",
+        "Energy drinks",
+        "Waterproof bags"
+      ]
+    },
+    "atWaterfall": {
+      "facilities": [
+        "Natural water source",
+        "No food facilities"
+      ],
+      "recommendations": [
+        "Carry packed lunch",
+        "Enjoy the natural beauty"
+      ]
+    }
+  },
+  "howToReach": {
+    "fromMumbai": {
+      "byTrain": {
+        "description": "Train to Lonavala, then local transport",
+        "distance": "110 km",
+        "time": "3-4 hours",
+        "steps": [
+          "Take train from Mumbai CST to Lonavala Railway Station",
+          "From Lonavala, take auto/taxi to Kune Village",
+          "Short walk to waterfall viewpoint"
+        ]
+      },
+      "byBus": {
+        "description": "Direct bus to Lonavala, then local transport",
+        "distance": "110 km",
+        "time": "4-5 hours",
+        "steps": [
+          "Take MSRTC bus from Mumbai to Lonavala",
+          "From Lonavala, take local transport to Kune Village",
+          "Walk to waterfall"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive via Mumbai-Pune Expressway",
+        "distance": "110 km",
+        "time": "3-4 hours",
+        "steps": [
+          "Take Mumbai-Pune Expressway to Lonavala exit",
+          "Drive to Kune Village via local roads",
+          "Park at designated area and walk to falls"
+        ]
+      }
+    },
+    "fromPune": {
+      "byTrain": {
+        "description": "Train to Lonavala, then local transport",
+        "distance": "65 km",
+        "time": "2-3 hours",
+        "steps": [
+          "Take train from Pune to Lonavala Railway Station",
+          "From Lonavala, take auto/taxi to Kune Village",
+          "Short walk to waterfall viewpoint"
+        ]
+      },
+      "byBus": {
+        "description": "Direct bus to Lonavala",
+        "distance": "65 km",
+        "time": "2.5-3 hours",
+        "steps": [
+          "Take PMPML/MSRTC bus from Pune to Lonavala",
+          "From Lonavala, take local transport to Kune Village",
+          "Walk to waterfall"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive via Pune-Mumbai Highway",
+        "distance": "65 km",
+        "time": "2-2.5 hours",
+        "steps": [
+          "Take Pune-Mumbai Highway to Lonavala",
+          "Drive to Kune Village via local roads",
+          "Park at designated area and walk to falls"
+        ]
+      }
+    }
+  }
+}

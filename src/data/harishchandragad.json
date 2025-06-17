@@ -1,0 +1,91 @@
+{
+  "id": 13,
+  "name": "Harishchandragad",
+  "category": "fort",
+  "location": "Ahmednagar District, Maharashtra",
+  "difficulty": "Moderate to Difficult",
+  "duration": "8-10 hours (round trip from Pachnai/Khireshwar)",
+  "elevation": "1,422 meters (4,665 feet)",
+  "description": "Harishchandragad is a historic hill fort in the Sahyadri range, known for its challenging treks, ancient caves, and the magnificent Konkankada cliff. It offers panoramic views of the surrounding valleys and peaks, making it a popular destination for trekkers and nature enthusiasts. Key attractions include the Kedareshwar Cave, Harishchandreshwar Temple, and Taramati Shikhar.",
+  "startingPoint": {
+    "name": "Pachnai Village / Khireshwar Village",
+    "coordinates": {
+      "latitude": 19.388889,
+      "longitude": 73.785278
+    },
+    "facilities": ["Parking", "Local tea stalls", "Basic dhabas"],
+    "description": "There are two main starting points: Pachnai, which is the easiest route (2-3 hours to top), and Khireshwar, which is more challenging (4-5 hours to top) and passes through the Junnar region. Both are accessible by public transport and private vehicles."
+  },
+  "networkAvailability": {
+    "baseVillage": {
+      "airtel": "Good",
+      "jio": "Good",
+      "vodafone": "Fair",
+      "bsnl": "Fair"
+    },
+    "duringTrek": {
+      "airtel": "Intermittent",
+      "jio": "Intermittent",
+      "vodafone": "Weak",
+      "bsnl": "Weak"
+    },
+    "atSummit": {
+      "airtel": "Weak",
+      "jio": "Intermittent",
+      "vodafone": "No signal",
+      "bsnl": "No signal"
+    },
+    "emergencyContact": "Pre-trek notification advised. Dial 108/112 in case of network availability. No dedicated medical/rescue post on trek."
+  },
+  "foodAccommodation": {
+    "homestays": [{
+      "name": "Several local homestays",
+      "location": "Pachnai / Khireshwar",
+      "contact": "Check locally or through trek organizers"
+    }],
+    "foodOnTrek": "Basic food (Pithla Bhakri, Maggie, Tea) available at small shacks near the temple/caves on the fort. Carry packed meals for the trek.",
+    "waterSources": "Natural springs near the temple and Kedareshwar cave (reliable during and post-monsoon). Carry sufficient water (2-3L minimum).",
+    "campingOptions": "Allowed in the caves (like Kedareshwar cave surroundings) or open ground on the fort plateau. Bring your own tents and sleeping bags."
+  },
+  "safety": {
+    "currentRisks": ["Slippery rocks in monsoon", "Steep ascents and descents", "Foggy conditions", "Risk of falls near Konkankada"],
+    "nearestMedicalFacility": {
+      "name": "Primary Health Centre",
+      "location": "Junnar / Kotul (nearest towns)",
+      "contact": "Local emergency numbers will be provided by villagers."
+    },
+    "emergencyNumbers": {
+      "ambulance": "108",
+      "police": "100",
+      "localRescueVolunteers": "Local villagers are often the first responders; connect with them upon arrival."
+    },
+    "rescuePoints": ["Harishchandreshwar Temple area", "Pachnai base village", "Khireshwar base village"]
+  },
+  "localGuides": [{
+    "name": "Various local guides",
+    "contact": "Available in Pachnai and Khireshwar villages. Inquire upon arrival.",
+    "ratePerPerson": "₹500-1000 (negotiable based on group size and services)",
+    "services": ["Guided trek", "Route briefing", "Local insights"]
+  }],
+  "routeDetails": {
+    "trail": [
+      "Pachnai Route: Relatively straightforward climb from Pachnai village directly to the fort plateau.",
+      "Khireshwar Route: Begins from Khireshwar, passes through Tolar Khind, and involves a steep climb and rock patches before reaching the fort."
+    ],
+    "landmarks": [
+      "Kedareshwar Cave (with a Shiva Lingam surrounded by water)",
+      "Konkankada (huge semicircular cliff)",
+      "Taramati Shikhar (highest point)",
+      "Harishchandreshwar Temple",
+      "Saptatirtha Pushkarni (lake)"
+    ],
+    "alternativeRoutes": ["Nalichi Vaat (extremely difficult, requires technical climbing skills and equipment)", "Radeon via Belpada (moderate to difficult)"],
+    "seasonalNotes": ["Monsoon: Lush green, waterfalls, but very slippery and foggy. Best for views of Konkankada and clouds.", "Winter: Ideal for trekking with clear skies and pleasant weather.", "Summer: Very hot, carry extra water."]
+  },
+  "permitInfo": {
+    "required": false,
+    "fee": "None",
+    "howToApply": "No permit needed for individuals or groups.",
+    "timingRestrictions": "No specific timing restrictions, but advisable to start early for safety and to avoid heat. Overnight camping is common."
+  }
+}

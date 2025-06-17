@@ -1,0 +1,301 @@
+{
+  "id": 17,
+  "name": "Bhimashankar Waterfall",
+  "category": "waterfall",
+  "location": "Pune District",
+  "difficulty": "Easy to Moderate",
+  "duration": "3-4 hours",
+  "elevation": "1200 meters",
+  "description": "Beautiful waterfall near the famous Bhimashankar Temple, one of the 12 Jyotirlingas. Perfect combination of spirituality and nature.",
+  "startingPoint": {
+    "name": "Bhimashankar Temple",
+    "coordinates": {
+      "latitude": 19.0728,
+      "longitude": 73.5347
+    },
+    "facilities": [
+      "Temple complex",
+      "Restaurants",
+      "Accommodation",
+      "Parking",
+      "ATM"
+    ],
+    "description": "Famous temple complex with all modern facilities"
+  },
+  "networkAvailability": {
+    "baseTemple": {
+      "airtel": "Good",
+      "jio": "Good",
+      "vodafone": "Fair",
+      "bsnl": "Fair"
+    },
+    "duringTrek": {
+      "airtel": "Fair",
+      "jio": "Fair",
+      "vodafone": "Poor",
+      "bsnl": "Poor"
+    },
+    "atWaterfall": {
+      "airtel": "Poor",
+      "jio": "Poor",
+      "vodafone": "No signal",
+      "bsnl": "No signal"
+    },
+    "emergencyContact": "108 (works from temple area)"
+  },
+  "foodAndWater": {
+    "atBase": {
+      "restaurants": [
+        "Temple prasadam",
+        "Bhimashankar restaurants",
+        "Local food stalls"
+      ],
+      "shops": [
+        "Temple shops",
+        "General stores",
+        "Water bottles",
+        "Snacks"
+      ],
+      "waterSources": [
+        "Temple water supply",
+        "Packaged water available"
+      ]
+    },
+    "duringTrek": {
+      "waterSources": [
+        "Natural streams",
+        "Carry 2-3 liters recommended"
+      ],
+      "foodOptions": [
+        "Carry packed food",
+        "No stalls on waterfall route"
+      ],
+      "recommendations": [
+        "Light snacks",
+        "Energy bars",
+        "Glucose"
+      ]
+    },
+    "atWaterfall": {
+      "facilities": [
+        "Natural water source",
+        "No food facilities"
+      ],
+      "recommendations": [
+        "Carry packed lunch",
+        "Enjoy natural spring water"
+      ]
+    }
+  },
+  "accommodation": {
+    "camping": {
+      "allowed": false,
+      "reason": "Religious area, camping not permitted near temple"
+    },
+    "nearbyStays": [
+      {
+        "name": "Bhimashankar Temple Guest House",
+        "distance": "0 km from temple",
+        "cost": "\u20b9500-1000 per person",
+        "contact": "+91 2132-222456",
+        "facilities": [
+          "Basic rooms",
+          "Temple managed",
+          "Vegetarian meals"
+        ]
+      },
+      {
+        "name": "MTDC Resort Bhimashankar",
+        "distance": "1 km from temple",
+        "cost": "\u20b92000-3500 per room",
+        "contact": "+91 2132-222789",
+        "facilities": [
+          "Comfortable rooms",
+          "Restaurant",
+          "Garden",
+          "Conference hall"
+        ]
+      },
+      {
+        "name": "Forest Rest House",
+        "distance": "2 km from temple",
+        "cost": "\u20b91200-2000 per room",
+        "contact": "+91 2132-222333",
+        "facilities": [
+          "Forest department",
+          "Basic amenities",
+          "Nature surroundings"
+        ]
+      }
+    ]
+  },
+  "permits": {
+    "required": false,
+    "forestDepartment": "Not required for waterfall",
+    "entry": "Free entry to waterfall",
+    "timings": "6:00 AM to 6:00 PM",
+    "templeEntry": "Temple open 5:00 AM to 9:00 PM"
+  },
+  "safety": {
+    "riskLevel": "Low to Moderate",
+    "commonRisks": [
+      "Slippery rocks near waterfall",
+      "Steep forest path",
+      "Wildlife"
+    ],
+    "precautions": [
+      "Non-slip footwear",
+      "Stay on marked trails",
+      "Don't swim alone"
+    ],
+    "rescuePoints": [
+      "Bhimashankar temple",
+      "Forest checkpost",
+      "Waterfall base"
+    ],
+    "nearestHospital": {
+      "name": "Khed Civil Hospital",
+      "distance": "35 km",
+      "contact": "+91 2132-220000"
+    }
+  },
+  "weather": {
+    "monsoon": {
+      "months": "June-September",
+      "conditions": "Waterfall at full flow, heavy rainfall, lush green forest",
+      "recommendation": "Best time to visit for waterfall experience"
+    },
+    "winter": {
+      "months": "December-February",
+      "conditions": "Moderate water flow, pleasant weather, clear skies",
+      "recommendation": "Good for temple visit and light trekking"
+    },
+    "summer": {
+      "months": "March-May",
+      "conditions": "Reduced water flow, hot weather",
+      "recommendation": "Early morning visits recommended"
+    }
+  },
+  "trekRoute": {
+    "totalDistance": "4 km (round trip)",
+    "ascent": "200 meters",
+    "difficulty": "Easy to moderate forest trail",
+    "waypoints": [
+      {
+        "name": "Bhimashankar Temple",
+        "elevation": "1000m",
+        "description": "Starting point with temple darshan"
+      },
+      {
+        "name": "Forest Trail Start",
+        "elevation": "1050m",
+        "description": "Entry into forest area"
+      },
+      {
+        "name": "Stream Crossing",
+        "elevation": "1150m",
+        "description": "Cross small stream, follow water sound"
+      },
+      {
+        "name": "Bhimashankar Waterfall",
+        "elevation": "1200m",
+        "description": "Beautiful waterfall with natural pool"
+      }
+    ]
+  },
+  "howToReach": {
+    "fromMumbai": {
+      "byTrain": {
+        "description": "Train to Pune, then bus to Bhimashankar",
+        "distance": "220 km",
+        "time": "6-7 hours",
+        "steps": [
+          "Take train from Mumbai to Pune Railway Station",
+          "Take MSRTC bus from Pune to Bhimashankar",
+          "Walk to temple, then trek to waterfall"
+        ]
+      },
+      "byBus": {
+        "description": "Direct bus to Bhimashankar",
+        "distance": "230 km",
+        "time": "7-8 hours",
+        "steps": [
+          "Take MSRTC bus from Mumbai to Bhimashankar",
+          "Get down at Bhimashankar temple",
+          "Trek starts from temple complex"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive via Mumbai-Pune-Bhimashankar route",
+        "distance": "220 km",
+        "time": "5-6 hours",
+        "steps": [
+          "Take Mumbai-Pune Expressway",
+          "Drive via Pune to Bhimashankar",
+          "Parking available at temple"
+        ]
+      }
+    },
+    "fromPune": {
+      "byTrain": {
+        "description": "No direct train, bus recommended",
+        "distance": "110 km",
+        "time": "3-4 hours",
+        "steps": [
+          "Take local train to Pune station",
+          "Take MSRTC bus to Bhimashankar",
+          "Trek starts from temple"
+        ]
+      },
+      "byBus": {
+        "description": "Direct MSRTC bus to Bhimashankar",
+        "distance": "110 km",
+        "time": "3-4 hours",
+        "steps": [
+          "Take MSRTC bus from Pune to Bhimashankar",
+          "Get down at temple complex",
+          "Trek starts from temple"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive directly to Bhimashankar",
+        "distance": "110 km",
+        "time": "2.5-3 hours",
+        "steps": [
+          "Take Pune-Manchar-Bhimashankar route",
+          "Drive to temple complex",
+          "Parking available at temple"
+        ]
+      }
+    }
+  },
+  "bestTimeToVisit": "June to September",
+  "localContacts": [
+    {
+      "name": "Bhimashankar Temple Office",
+      "phone": "+91 2132-222456",
+      "service": "Temple Information & Accommodation"
+    },
+    {
+      "name": "MTDC Bhimashankar",
+      "phone": "+91 2132-222789",
+      "service": "Tourism Information & Booking"
+    },
+    {
+      "name": "Forest Department",
+      "phone": "+91 2132-222333",
+      "service": "Wildlife & Forest Information"
+    }
+  ],
+  "imageKey": "bhimashankar",
+  "videos": [
+    "https://www.youtube.com/watch?v=bhimashankar123"
+  ],
+  "coordinates": {
+    "latitude": 19.0728,
+    "longitude": 73.5347
+  },
+  "featured": false,
+  "rating": 4.2,
+  "reviewCount": 345
+}

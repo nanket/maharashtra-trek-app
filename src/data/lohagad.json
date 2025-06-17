@@ -1,0 +1,185 @@
+[
+  {
+    "id": 7,
+    "name": "Lohagad Fort",
+    "category": "fort",
+    "location": "Pune District",
+    "difficulty": "Easy",
+    "duration": "1.5–2 hours ascent (total 3–4 hours roundtrip)",
+    "elevation": "1,033 meters",
+    "description": "Historic 'Iron Fort' near Lonavala, known for its iconic four gates, Vinchu Kata spur, and lush monsoon views.",
+    "startingPoint": {
+      "name": "Lohagad Wadi (Base village)",
+      "coordinates": { "latitude": 18.7167, "longitude": 73.4833 },
+      "facilities": ["Parking", "Tea & snack stalls", "Shared autos from Malavli/Lonavala"],
+      "description": "Small village and trek base accessible from Malavli station or Lonavala."
+    },
+    "networkAvailability": {
+      "baseVillage": {
+        "airtel": "Good",
+        "jio": "Good",
+        "vodafone": "Fair",
+        "bsnl": "Fair"
+      },
+      "duringTrek": {
+        "airtel": "Fair",
+        "jio": "Fair",
+        "vodafone": "Poor",
+        "bsnl": "Poor"
+      },
+      "atSummit": {
+        "airtel": "Good",
+        "jio": "Good",
+        "vodafone": "Fair",
+        "bsnl": "Fair"
+      },
+      "emergencyContact": "108 (reachable intermittently)"
+    },
+    "foodAndWater": {
+      "atBase": {
+        "restaurants": ["Tea & snack stalls", "Small food carts"],
+        "shops": ["Packaged water", "Snacks"],
+        "waterSources": ["Tap water at base"]
+      },
+      "duringTrek": {
+        "waterSources": ["No formal sources"],
+        "foodOptions": ["Carry small packets or snacks"],
+        "recommendations": ["2 L water, energy bars"]
+      },
+      "atSummit": {
+        "facilities": ["Old water tank (monsoon-season only)"],
+        "recommendations": ["Carry food; water may be scarce"]
+      }
+    },
+    "accommodation": {
+      "camping": {
+        "allowed": false,
+        "reason": "Protected fort; no overnight camping permitted"
+      },
+      "nearbyStays": [
+        {
+          "name": "Lonavala Resorts / Hotels",
+          "distance": "10–15 km",
+          "cost": "₹1500–5000 per room",
+          "contact": "Various (book via Lonavala listings)",
+          "facilities": ["Multiple options from budget to luxury"]
+        }
+      ]
+    },
+    "permits": {
+      "required": false,
+      "forestDepartment": "Not required",
+      "entry": "Free",
+      "timings": "6 AM–6 PM"
+    },
+    "safety": {
+      "riskLevel": "Low",
+      "commonRisks": ["Slippery paths during monsoon", "Crowds on weekends"],
+      "precautions": ["Non-slip footwear", "Avoid rain-soaked sections", "Hydrate"],
+      "rescuePoints": ["Base village", "Along route with locals/guides"],
+      "nearestHospital": {
+        "name": "Lonavala Hospital",
+        "distance": "15 km",
+        "contact": "+91 2114‑273333"
+      }
+    },
+    "weather": {
+      "monsoon": {
+        "months": "June–September",
+        "conditions": "Heavy rain, lush greenery, slippery trail",
+        "recommendation": "Great scenic views but use caution"
+      },
+      "winter": {
+        "months": "October–February",
+        "conditions": "Cool, pleasant, clear views",
+        "recommendation": "Best season"
+      },
+      "summer": {
+        "months": "March–May",
+        "conditions": "Warm, early start recommended",
+        "recommendation": "Go early morning"
+      }
+    },
+    "trekRoute": {
+      "totalDistance": "≈5 km (roundtrip)",
+      "ascent": "≈300 m",
+      "difficulty": "Easy with well-marked steps",
+      "waypoints": [
+        {
+          "name": "Lohagad Wadi",
+          "elevation": "733 m",
+          "description": "Trek start; parking & stalls"
+        },
+        {
+          "name": "Ganesh, Narayan, Hanuman, Maha Darwaja",
+          "elevation": "850–950 m",
+          "description": "Four historic gates"
+        },
+        {
+          "name": "Laxmi Kothi & Dargah",
+          "elevation": "≈980 m",
+          "description": "Storerooms and old shrine"
+        },
+        {
+          "name": "Vinchu Kata",
+          "elevation": "1033 m",
+          "description": "Scorpion’s Tail viewpoint"
+        }
+      ]
+    },
+    "howToReach": {
+      "fromMumbai": {
+        "byTrain": {
+          "description": "Train to Malavli/Lonavala → shared auto to Lohagad Wadi",
+          "distance": "≈100 km",
+          "time": "3–4 hr"
+        },
+        "byBus": {
+          "description": "Bus to Lonavala → auto/taxi",
+          "distance": "≈105 km",
+          "time": "3.5–4.5 hr"
+        },
+        "byPrivateVehicle": {
+          "description": "Drive via Mumbai–Pune Expressway → exit at Lonavala/Malavli",
+          "distance": "≈100 km",
+          "time": "2.5–3 hr",
+          "steps": ["Park at Lohagad Wadi"]
+        }
+      },
+      "fromPune": {
+        "byTrain": {
+          "description": "Train to Lonavala/Malavli → shared auto",
+          "distance": "≈65 km",
+          "time": "1.5–2 hr"
+        },
+        "byBus": {
+          "description": "Bus to Lonavala → auto/taxi",
+          "distance": "≈70 km",
+          "time": "2–2.5 hr"
+        },
+        "byPrivateVehicle": {
+          "description": "Drive via Pune–Mumbai Expressway → exit at Lonavala/Malavli",
+          "distance": "≈65 km",
+          "time": "1.5 hr",
+          "steps": ["Park at Lohagad Wadi"]
+        }
+      }
+    },
+    "bestTimeToVisit": "October to February",
+    "localContacts": [
+      {
+        "name": "Shared Auto Drivers (Lonavala/Malavli)",
+        "phone": "No fixed number",
+        "service": "Transport base ↔ trek"
+      }
+    ],
+    "imageKey": "lohagad",
+    "coordinates": {
+      "latitude": 18.7167,
+      "longitude": 73.4833
+    },
+    "featured": false,
+    "rating": 4.3,
+    "reviewCount": 500
+  }
+]

@@ -1,0 +1,169 @@
+{
+  "id": 12,
+  "name": "Rajmachi Fort",
+  "category": "fort",
+  "location": "Pune District, Maharashtra",
+  "difficulty": "Easy to Moderate",
+  "duration": "11–12 hours (round trip)", 
+  "elevation": "900 meters (Shrivardhan Fort at ~3000 ft)", 
+  "description": "Rajmachi comprises two hill forts—Shrivardhan (~3000 ft) and Manaranjan (~2700 ft)—famous for lush forest trails, fireflies, camping, sunrise views, Kataldhar waterfall and twin fort ruins.",
+
+  "startingPoint": {
+    "name": "Udhewadi Village",
+    "coordinates": { "latitude": 18.8268, "longitude": 73.3948 },
+    "facilities": ["Parking", "Homestays/Tents", "Tea stalls"],
+    "description": "Udhewadi (Rajmachi village) lies 16 km from Lonavala by forest road or 10 km by Karjat route; it's the base for both forts." 
+  },
+
+  "networkAvailability": {
+    "baseVillage": {
+      "airtel": "Good",
+      "jio": "Good",
+      "vodafone": "Fair",
+      "bsnl": "Poor"
+    },
+    "duringTrek": {
+      "airtel": "Poor",
+      "jio": "Poor",
+      "vodafone": "Poor",
+      "bsnl": "No signal"
+    },
+    "atSummit": {
+      "airtel": "Intermittent",
+      "jio": "Intermittent",
+      "vodafone": "Intermittent",
+      "bsnl": "No signal"
+    },
+    "emergencyContact": "108/112; signal only near village or summit"
+  },
+
+  "foodAndWater": {
+    "atBase": {
+      "restaurants": ["Tea stalls", "Local village homes (homestay meals)"],
+      "shops": ["Small grocery", "Packaged water"],
+      "waterSources": ["Village wells", "Bottled water"]
+    },
+    "duringTrek": {
+      "waterSources": ["None mid-trail; streams at dry season unreliable"],
+      "foodOptions": ["Pack snacks; no stalls en route"],
+      "recommendations": ["Carry 3–4 L water, energy snacks, dry fruits"]
+    },
+    "atSummit": {
+      "facilities": ["Old water tanks on forts"],
+      "recommendations": ["Refill at summit tanks", "Carry lunch"]
+    }
+  },
+
+  "accommodation": {
+    "camping": {
+      "allowed": true,
+      "locations": ["Udhewadi plateau", "Fort caves"],
+      "facilities": ["Tent space", "Village-supplied dinner/breakfast ~₹600–700"],
+      "cost": "₹600–700 per person for food + ₹600 per tent"
+    },
+    "nearbyStays": [
+      {
+        "name": "Gonieda Wadi",
+        "distance": "0 km from base",
+        "contact": "9223579685",
+        "facilities": ["Tent, meals, jeep transport"]
+      }
+    ]
+  },
+
+  "permits": {
+    "required": false,
+    "forestDepartment": "None",
+    "entry": "₹5 per person + vehicle tax (₹100/4‑wheeler; ₹20/2‑wheeler) collected by locals",
+    "timings": "Trek is open year‑round; camping allowed; night trekking popular but riskier"
+  },
+
+  "safety": {
+    "riskLevel": "Moderate",
+    "commonRisks": ["Slippery stretches in monsoon", "Rough off‑road approach"],
+    "precautions": ["Non‑slip footwear", "Flashlights if camping", "Inform local guide"],
+    "rescuePoints": ["Udhewadi Village", "Shrivardhan Fort summit"],
+    "nearestHospital": {
+      "name": "Lonavala Hospital",
+      "distance": "15 km",
+      "contact": "+91 2114‑273333"
+    }
+  },
+
+  "weather": {
+    "monsoon": {
+      "months": "June–September",
+      "conditions": "Lush trails, fireflies, slippery rock sections",
+      "recommendation": "Ideal for campers; caution advised on trail"
+    },
+    "winter": {
+      "months": "October–February",
+      "conditions": "Clear skies, cool weather, perfect for trekking",
+      "recommendation": "Best season"
+    },
+    "summer": {
+      "months": "March–May",
+      "conditions": "Hot midday, easy daytime treks",
+      "recommendation": "Start early"
+    }
+  },
+
+  "trekRoute": {
+    "totalDistance": "16 km via Lonavala; 10 km via Karjat route",
+    "ascent": "350 m to Udhewadi + ~300 m to Shrivardhan",
+    "difficulty": "Easy to Moderate; forest roads and paved sections, mild rocky climb",
+    "waypoints": [
+      { "name": "Lonavala Station", "elevation": "650 m", "description": "Start point for Lonavala route" },
+      { "name": "Tungarli Dam", "elevation": "690 m", "description": "Water source near trail start" },
+      { "name": "Udhewadi Village", "elevation": "730 m", "description": "Base village, camp homestays" },
+      { "name": "Bhairavnath Temple", "elevation": "760 m", "description": "Small temple midway" },
+      { "name": "Manaranjan Fort", "elevation": "820 m", "description": "Lower fort with plateau view" },
+      { "name": "Shrivardhan Fort", "elevation": "900 m", "description": "Main fort with water tanks and view" }
+    ]
+  },
+
+  "howToReach": {
+    "fromMumbai": {
+      "byTrain": {
+        "description": "Mumbai to Lonavala (local/express); then auto/jeep to Tungarli dam/Udhewadi",
+        "distance": "100 km",
+        "time": "2.5–3 hrs",
+        "steps": ["Local train to Lonavala", "Auto to Tungarli dam/Udhewadi", "Trek to Udhewadi", "Continue to fort"]
+      },
+      "byBus": {
+        "description": "MSRTC to Lonavala, then local transport as above",
+        "time": "3–4 hrs"
+      },
+      "byPrivateVehicle": {
+        "description": "Drive via Mumbai–Pune Expressway, park at Lonavala or near village (off-road required)",
+        "warning": "16 km off-road; high‑clearance vehicle needed monsoon"
+      }
+    },
+    "fromPune": {
+      "byTrain": {
+        "description": "Pune → Lonavala train, then same local transport",
+        "distance": "65 km",
+        "time": "1.5–2 hrs"
+      },
+      "byBus": {
+        "description": "MSRTC to Lonavala + local transport"
+      },
+      "byPrivateVehicle": {
+        "description": "Drive via Expressway, same route"
+      }
+    }
+  },
+
+  "bestTimeToVisit": "October to February (winter); monsoon for fireflies experience",
+
+  "localContacts": [
+    { "name": "Gonieda Wadi Homestay", "phone": "9223579685", "service": "Meals, tents, jeep pickup" },
+    { "name": "TrekRajmachi (Trekking Organizer)", "phone": "+918484922623", "service": "Guided camping treks" }
+  ],
+
+  "imageKey": "rajmachi",
+  "coordinates": { "latitude": 18.849, "longitude": 73.405 },
+  "featured": true,
+  "rating": 4.7,
+  "reviewCount": 1054
+}

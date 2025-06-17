@@ -1,0 +1,296 @@
+{
+  "id": 19,
+  "name": "Kalsubai Peak",
+  "category": "trek",
+  "location": "Ahmednagar District",
+  "difficulty": "Moderate to Difficult",
+  "duration": "6-8 hours",
+  "elevation": "1646 meters",
+  "description": "Highest peak in Maharashtra, offering breathtaking 360-degree views. Famous for its challenging climb and spectacular sunrise views.",
+  "startingPoint": {
+    "name": "Bari Village",
+    "coordinates": {
+      "latitude": 19.5833,
+      "longitude": 73.7167
+    },
+    "facilities": [
+      "Village shops",
+      "Local guides",
+      "Basic accommodation",
+      "Parking"
+    ],
+    "description": "Traditional village at the base with basic trekking facilities"
+  },
+  "networkAvailability": {
+    "baseVillage": {
+      "airtel": "Fair",
+      "jio": "Fair",
+      "vodafone": "Poor",
+      "bsnl": "Poor"
+    },
+    "duringTrek": {
+      "airtel": "Poor",
+      "jio": "Poor",
+      "vodafone": "No signal",
+      "bsnl": "No signal"
+    },
+    "atSummit": {
+      "airtel": "Good",
+      "jio": "Good",
+      "vodafone": "Fair",
+      "bsnl": "Fair"
+    },
+    "emergencyContact": "108 (works from summit)"
+  },
+  "foodAndWater": {
+    "atBase": {
+      "restaurants": [
+        "Village tea stalls",
+        "Local food vendors"
+      ],
+      "shops": [
+        "Basic grocery",
+        "Water bottles",
+        "Snacks"
+      ],
+      "waterSources": [
+        "Village wells",
+        "Packaged water available"
+      ]
+    },
+    "duringTrek": {
+      "waterSources": [
+        "Natural springs at 2-3 locations",
+        "Carry 4-5 liters recommended"
+      ],
+      "foodOptions": [
+        "Carry packed food",
+        "No stalls on route"
+      ],
+      "recommendations": [
+        "High-energy snacks",
+        "Dry fruits",
+        "Electrolyte powder"
+      ]
+    },
+    "atSummit": {
+      "facilities": [
+        "Kalsubai temple",
+        "Water tank",
+        "Basic shelter"
+      ],
+      "recommendations": [
+        "Carry sufficient food",
+        "Temple prasadam available"
+      ]
+    }
+  },
+  "accommodation": {
+    "camping": {
+      "allowed": true,
+      "locations": [
+        "Near Kalsubai temple",
+        "Plateau areas"
+      ],
+      "facilities": [
+        "Open spaces",
+        "Water source",
+        "Temple shelter"
+      ],
+      "cost": "Free (own tent required)"
+    },
+    "nearbyStays": [
+      {
+        "name": "Bari Village Homestay",
+        "distance": "0 km from base",
+        "cost": "\u20b9600-1200 per person",
+        "contact": "+91 9823456789",
+        "facilities": [
+          "Basic rooms",
+          "Home-cooked meals",
+          "Local guides"
+        ]
+      },
+      {
+        "name": "Igatpuri Resort",
+        "distance": "25 km from base",
+        "cost": "\u20b92500-4000 per room",
+        "contact": "+91 2553-244567",
+        "facilities": [
+          "Comfortable rooms",
+          "Restaurant",
+          "Swimming pool"
+        ]
+      }
+    ]
+  },
+  "permits": {
+    "required": false,
+    "forestDepartment": "Not required",
+    "entry": "Free entry",
+    "timings": "24 hours (night trek popular for sunrise)"
+  },
+  "safety": {
+    "riskLevel": "Moderate to High",
+    "commonRisks": [
+      "Steep rocky sections",
+      "Weather changes",
+      "Loose rocks",
+      "Altitude"
+    ],
+    "precautions": [
+      "Proper trekking gear",
+      "Experienced guide recommended",
+      "Weather check"
+    ],
+    "rescuePoints": [
+      "Bari village",
+      "Midway plateau",
+      "Summit temple"
+    ],
+    "nearestHospital": {
+      "name": "Igatpuri Rural Hospital",
+      "distance": "30 km",
+      "contact": "+91 2553-244000"
+    }
+  },
+  "weather": {
+    "monsoon": {
+      "months": "June-September",
+      "conditions": "Extremely dangerous, heavy rains, landslides",
+      "recommendation": "Avoid completely during monsoon"
+    },
+    "winter": {
+      "months": "December-February",
+      "conditions": "Cold, clear views, best weather for trekking",
+      "recommendation": "Best time to visit, carry warm clothes"
+    },
+    "summer": {
+      "months": "March-May",
+      "conditions": "Hot during day, carry extra water",
+      "recommendation": "Start very early morning"
+    }
+  },
+  "trekRoute": {
+    "totalDistance": "12 km (round trip)",
+    "ascent": "1000 meters",
+    "difficulty": "Moderate to difficult with steep sections",
+    "waypoints": [
+      {
+        "name": "Bari Village",
+        "elevation": "646m",
+        "description": "Starting point with basic facilities"
+      },
+      {
+        "name": "Forest Entry",
+        "elevation": "800m",
+        "description": "Entry into forest area"
+      },
+      {
+        "name": "Rocky Patch",
+        "elevation": "1200m",
+        "description": "Steep rocky climb begins"
+      },
+      {
+        "name": "Kalsubai Temple",
+        "elevation": "1646m",
+        "description": "Summit with temple and 360-degree views"
+      }
+    ]
+  },
+  "howToReach": {
+    "fromMumbai": {
+      "byTrain": {
+        "description": "Train to Kasara, then bus to Bari village",
+        "distance": "165 km",
+        "time": "4-5 hours",
+        "steps": [
+          "Take train from Mumbai CST to Kasara Railway Station",
+          "Take MSRTC bus to Bari village",
+          "Trek starts from village"
+        ]
+      },
+      "byBus": {
+        "description": "Direct bus to Bari village via Igatpuri",
+        "distance": "170 km",
+        "time": "5-6 hours",
+        "steps": [
+          "Take MSRTC bus from Mumbai to Igatpuri",
+          "Change bus to Bari village",
+          "Trek starts from village"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive via Mumbai-Nashik Highway",
+        "distance": "165 km",
+        "time": "3.5-4 hours",
+        "steps": [
+          "Take Mumbai-Nashik Highway",
+          "Turn towards Igatpuri-Ghoti road",
+          "Drive to Bari village, parking available"
+        ]
+      }
+    },
+    "fromPune": {
+      "byTrain": {
+        "description": "Train via Mumbai to Kasara, then bus",
+        "distance": "220 km",
+        "time": "6-7 hours",
+        "steps": [
+          "Take train from Pune to Mumbai CST",
+          "Change to train going to Kasara",
+          "Take bus to Bari village"
+        ]
+      },
+      "byBus": {
+        "description": "Bus via Nashik to Bari village",
+        "distance": "200 km",
+        "time": "5-6 hours",
+        "steps": [
+          "Take bus from Pune to Nashik",
+          "Change to bus going to Bari village",
+          "Trek starts from village"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive via Pune-Nashik Highway",
+        "distance": "200 km",
+        "time": "4-5 hours",
+        "steps": [
+          "Take Pune-Nashik Highway",
+          "Turn towards Igatpuri-Ghoti road",
+          "Drive to Bari village"
+        ]
+      }
+    }
+  },
+  "bestTimeToVisit": "November to February",
+  "localContacts": [
+    {
+      "name": "Bari Village Guide",
+      "phone": "+91 9823456789",
+      "service": "Local Guide & Information"
+    },
+    {
+      "name": "Kalsubai Trek Association",
+      "phone": "+91 9876543210",
+      "service": "Organized Treks & Safety"
+    },
+    {
+      "name": "Emergency Contact",
+      "phone": "108",
+      "service": "Medical Emergency"
+    }
+  ],
+  "imageKey": "kalsubai",
+  "videos": [
+    "https://www.youtube.com/watch?v=kalsubai123"
+  ],
+  "coordinates": {
+    "latitude": 19.5833,
+    "longitude": 73.7167
+  },
+  "featured": true,
+  "rating": 4.6,
+  "reviewCount": 1234
+}
