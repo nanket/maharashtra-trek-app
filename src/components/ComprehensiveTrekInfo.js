@@ -17,6 +17,24 @@ const { width } = Dimensions.get('window');
 const ComprehensiveTrekInfo = ({ trek }) => {
   const [activeTab, setActiveTab] = useState('network');
 
+  // Safety check for trek object
+  if (!trek) {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.errorText}>Trek information not available</Text>
+      </View>
+    );
+  }
+
+  // Additional safety check for foodAndWater structure
+  if (!trek.foodAndWater) {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.errorText}>Food and water information not available</Text>
+      </View>
+    );
+  }
+
   const tabs = [
     { id: 'network', label: '📶 Network', icon: '📶', color: '#4CAF50', gradient: ['#4CAF50', '#45a049'] },
     { id: 'food', label: '🍽️ Food & Water', icon: '🍽️', color: '#FF9800', gradient: ['#FF9800', '#f57c00'] },
@@ -140,7 +158,7 @@ const ComprehensiveTrekInfo = ({ trek }) => {
                 <Text style={styles.foodCategoryTitle}>Restaurants</Text>
               </View>
               <View style={styles.foodItemsContainer}>
-                {trek.foodAndWater.atBase.restaurants?.map((restaurant, index) => (
+                {(trek.foodAndWater.atBase?.restaurants || []).map((restaurant, index) => (
                   <View key={index} style={styles.modernFoodItem}>
                     <Text style={styles.foodItemText}>{restaurant}</Text>
                   </View>
@@ -154,7 +172,7 @@ const ComprehensiveTrekInfo = ({ trek }) => {
                 <Text style={styles.foodCategoryTitle}>Shops</Text>
               </View>
               <View style={styles.foodItemsContainer}>
-                {trek.foodAndWater.atBase.shops?.map((shop, index) => (
+                {(trek.foodAndWater.atBase?.shops || []).map((shop, index) => (
                   <View key={index} style={styles.modernFoodItem}>
                     <Text style={styles.foodItemText}>{shop}</Text>
                   </View>
@@ -168,7 +186,7 @@ const ComprehensiveTrekInfo = ({ trek }) => {
                 <Text style={styles.foodCategoryTitle}>Water Sources</Text>
               </View>
               <View style={styles.foodItemsContainer}>
-                {trek.foodAndWater.atBase.waterSources?.map((source, index) => (
+                {trek.foodAndWater.atBase?.waterSources?.map((source, index) => (
                   <View key={index} style={styles.modernFoodItem}>
                     <Text style={styles.foodItemText}>{source}</Text>
                   </View>
@@ -189,7 +207,7 @@ const ComprehensiveTrekInfo = ({ trek }) => {
                 <Text style={styles.foodCategoryTitle}>Water Sources</Text>
               </View>
               <View style={styles.foodItemsContainer}>
-                {trek.foodAndWater.duringTrek.waterSources?.map((source, index) => (
+                {(trek.foodAndWater.duringTrek?.waterSources || trek.foodAndWater.duringJeepSafari?.waterSources || [])?.map((source, index) => (
                   <View key={index} style={styles.modernFoodItem}>
                     <Text style={styles.foodItemText}>{source}</Text>
                   </View>
@@ -203,7 +221,7 @@ const ComprehensiveTrekInfo = ({ trek }) => {
                 <Text style={styles.foodCategoryTitle}>Food Options</Text>
               </View>
               <View style={styles.foodItemsContainer}>
-                {trek.foodAndWater.duringTrek.foodOptions?.map((option, index) => (
+                {(trek.foodAndWater.duringTrek?.foodOptions || trek.foodAndWater.duringJeepSafari?.foodOptions || [])?.map((option, index) => (
                   <View key={index} style={styles.modernFoodItem}>
                     <Text style={styles.foodItemText}>{option}</Text>
                   </View>
@@ -217,7 +235,7 @@ const ComprehensiveTrekInfo = ({ trek }) => {
                 <Text style={styles.foodCategoryTitle}>Recommendations</Text>
               </View>
               <View style={styles.foodItemsContainer}>
-                {trek.foodAndWater.duringTrek.recommendations?.map((rec, index) => (
+                {(trek.foodAndWater.duringTrek?.recommendations || trek.foodAndWater.duringJeepSafari?.recommendations || [])?.map((rec, index) => (
                   <View key={index} style={[styles.modernFoodItem, styles.recommendationItem]}>
                     <Text style={styles.foodItemText}>{rec}</Text>
                   </View>
@@ -238,7 +256,7 @@ const ComprehensiveTrekInfo = ({ trek }) => {
                 <Text style={styles.foodCategoryTitle}>Facilities</Text>
               </View>
               <View style={styles.foodItemsContainer}>
-                {trek.foodAndWater.atSummit.facilities?.map((facility, index) => (
+                {(trek.foodAndWater.atSummit?.facilities || trek.foodAndWater.atWaterfall?.facilities || [])?.map((facility, index) => (
                   <View key={index} style={styles.modernFoodItem}>
                     <Text style={styles.foodItemText}>{facility}</Text>
                   </View>
@@ -252,7 +270,7 @@ const ComprehensiveTrekInfo = ({ trek }) => {
                 <Text style={styles.foodCategoryTitle}>Recommendations</Text>
               </View>
               <View style={styles.foodItemsContainer}>
-                {trek.foodAndWater.atSummit.recommendations?.map((rec, index) => (
+                {(trek.foodAndWater.atSummit?.recommendations || trek.foodAndWater.atWaterfall?.recommendations || [])?.map((rec, index) => (
                   <View key={index} style={[styles.modernFoodItem, styles.recommendationItem]}>
                     <Text style={styles.foodItemText}>{rec}</Text>
                   </View>
@@ -293,7 +311,7 @@ const ComprehensiveTrekInfo = ({ trek }) => {
                       <Text style={styles.accommodationCategoryTitle}>Locations</Text>
                     </View>
                     <View style={styles.accommodationItemsContainer}>
-                      {trek.accommodation.camping.locations?.map((location, index) => (
+                      {(trek.accommodation.camping.locations || []).map((location, index) => (
                         <View key={index} style={styles.modernAccommodationItem}>
                           <Text style={styles.accommodationItemText}>{location}</Text>
                         </View>
@@ -307,7 +325,7 @@ const ComprehensiveTrekInfo = ({ trek }) => {
                       <Text style={styles.accommodationCategoryTitle}>Facilities</Text>
                     </View>
                     <View style={styles.accommodationItemsContainer}>
-                      {trek.accommodation.camping.facilities?.map((facility, index) => (
+                      {(trek.accommodation.camping.facilities || []).map((facility, index) => (
                         <View key={index} style={styles.modernAccommodationItem}>
                           <Text style={styles.accommodationItemText}>{facility}</Text>
                         </View>
@@ -336,7 +354,7 @@ const ComprehensiveTrekInfo = ({ trek }) => {
               <Text style={styles.locationIcon}>🏨</Text>
               <Text style={styles.accommodationTitle}>Nearby Stays</Text>
             </View>
-            {trek.accommodation.nearbyStays?.map((stay, index) => (
+            {(trek.accommodation.nearbyStays || []).map((stay, index) => (
               <View key={index} style={styles.modernStayCard}>
                 <View style={styles.stayCardHeader}>
                   <Text style={styles.modernStayName}>{stay.name}</Text>
@@ -350,7 +368,7 @@ const ComprehensiveTrekInfo = ({ trek }) => {
                   <Text style={styles.modernContactButtonText}>📞 Call {stay.contact}</Text>
                 </TouchableOpacity>
                 <View style={styles.modernFacilitiesContainer}>
-                  {stay.facilities?.map((facility, fIndex) => (
+                  {(stay.facilities || []).map((facility, fIndex) => (
                     <View key={fIndex} style={styles.modernFacilityTag}>
                       <Text style={styles.modernFacilityText}>{facility}</Text>
                     </View>
@@ -364,53 +382,211 @@ const ComprehensiveTrekInfo = ({ trek }) => {
     </View>
   );
 
-  const renderSafetyInfo = () => (
-    <View style={styles.tabContent}>
-      <Text style={styles.sectionTitle}>🛡️ Safety Information</Text>
-      
-      {trek.safety && (
-        <>
-          <View style={styles.safetySection}>
-            <Text style={styles.safetyTitle}>⚠️ Risk Level: {trek.safety.riskLevel}</Text>
-            
-            <Text style={styles.safetySubtitle}>🚨 Common Risks</Text>
-            {trek.safety.commonRisks?.map((risk, index) => (
-              <Text key={index} style={styles.safetyItem}>• {risk}</Text>
-            ))}
-            
-            <Text style={styles.safetySubtitle}>🛡️ Precautions</Text>
-            {trek.safety.precautions?.map((precaution, index) => (
-              <Text key={index} style={styles.safetyItem}>• {precaution}</Text>
-            ))}
-            
-            <Text style={styles.safetySubtitle}>🆘 Rescue Points</Text>
-            {trek.safety.rescuePoints?.map((point, index) => (
-              <Text key={index} style={styles.safetyItem}>• {point}</Text>
-            ))}
-          </View>
+  const renderSafetyInfo = () => {
+    const getRiskLevelColor = (riskLevel) => {
+      switch (riskLevel?.toLowerCase()) {
+        case 'low': return { color: '#4CAF50', bg: '#E8F5E8', icon: '🟢' };
+        case 'moderate': return { color: '#FF9800', bg: '#FFF3E0', icon: '🟡' };
+        case 'moderate to high': return { color: '#FF5722', bg: '#FFEBEE', icon: '🟠' };
+        case 'high': return { color: '#f44336', bg: '#FFEBEE', icon: '🔴' };
+        default: return { color: '#757575', bg: '#F5F5F5', icon: '⚪' };
+      }
+    };
 
-          {trek.safety.nearestHospital && (
-            <View style={styles.hospitalInfo}>
-              <Text style={styles.hospitalTitle}>🏥 Nearest Hospital</Text>
-              <Text style={styles.hospitalName}>{trek.safety.nearestHospital.name}</Text>
-              <Text style={styles.hospitalDistance}>📍 {trek.safety.nearestHospital.distance}</Text>
-              <TouchableOpacity 
-                style={styles.hospitalContact}
-                onPress={() => Linking.openURL(`tel:${trek.safety.nearestHospital.contact}`)}
-              >
-                <Text style={styles.hospitalContactText}>📞 {trek.safety.nearestHospital.contact}</Text>
-              </TouchableOpacity>
+    const riskData = getRiskLevelColor(trek.safety?.riskLevel);
+
+    return (
+      <View style={styles.tabContent}>
+        <LinearGradient
+          colors={['#f44336', '#d32f2f']}
+          style={styles.sectionHeader}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 0 }}
+        >
+          <Text style={styles.sectionHeaderText}>🛡️ Safety Information</Text>
+          <Text style={styles.sectionSubtext}>Complete safety guide for your trek</Text>
+        </LinearGradient>
+
+        {trek.safety && (
+          <>
+            {/* Risk Level Card */}
+            <View style={[styles.modernSafetyCard, { backgroundColor: riskData.bg }]}>
+              <View style={styles.riskLevelHeader}>
+                <Text style={styles.riskLevelIcon}>{riskData.icon}</Text>
+                <View style={styles.riskLevelInfo}>
+                  <Text style={styles.riskLevelLabel}>Risk Level</Text>
+                  <Text style={[styles.riskLevelValue, { color: riskData.color }]}>
+                    {trek.safety.riskLevel}
+                  </Text>
+                </View>
+              </View>
             </View>
-          )}
-        </>
-      )}
-    </View>
-  );
+
+            {/* Safety Categories Grid */}
+            <View style={styles.safetyGrid}>
+              {/* Common Risks */}
+              <View style={styles.modernSafetySection}>
+                <View style={styles.safetySectionHeader}>
+                  <Text style={styles.safetySectionIcon}>🚨</Text>
+                  <Text style={styles.safetySectionTitle}>Common Risks</Text>
+                </View>
+                <View style={styles.safetyItemsContainer}>
+                  {(trek.safety.commonRisks || []).map((risk, index) => (
+                    <View key={index} style={styles.modernSafetyItem}>
+                      <Text style={styles.safetyItemIcon}>⚠️</Text>
+                      <Text style={styles.safetyItemText}>{risk}</Text>
+                    </View>
+                  ))}
+                </View>
+              </View>
+
+              {/* Precautions */}
+              <View style={styles.modernSafetySection}>
+                <View style={styles.safetySectionHeader}>
+                  <Text style={styles.safetySectionIcon}>🛡️</Text>
+                  <Text style={styles.safetySectionTitle}>Safety Precautions</Text>
+                </View>
+                <View style={styles.safetyItemsContainer}>
+                  {(trek.safety.precautions || []).map((precaution, index) => (
+                    <View key={index} style={styles.modernSafetyItem}>
+                      <Text style={styles.safetyItemIcon}>✅</Text>
+                      <Text style={styles.safetyItemText}>{precaution}</Text>
+                    </View>
+                  ))}
+                </View>
+              </View>
+
+              {/* Rescue Points */}
+              <View style={styles.modernSafetySection}>
+                <View style={styles.safetySectionHeader}>
+                  <Text style={styles.safetySectionIcon}>🆘</Text>
+                  <Text style={styles.safetySectionTitle}>Rescue Points</Text>
+                </View>
+                <View style={styles.safetyItemsContainer}>
+                  {(trek.safety.rescuePoints || []).map((point, index) => (
+                    <View key={index} style={styles.modernSafetyItem}>
+                      <Text style={styles.safetyItemIcon}>📍</Text>
+                      <Text style={styles.safetyItemText}>{point}</Text>
+                    </View>
+                  ))}
+                </View>
+              </View>
+            </View>
+
+            {/* Emergency Services Quick Access */}
+            <View style={styles.emergencyServicesSection}>
+              <Text style={styles.emergencyServicesTitle}>🚑 Emergency Services</Text>
+              <View style={styles.emergencyButtonsGrid}>
+                <TouchableOpacity
+                  style={[styles.emergencyButton, { backgroundColor: '#f44336' }]}
+                  onPress={() => Linking.openURL('tel:108')}
+                >
+                  <Text style={styles.emergencyButtonIcon}>🚑</Text>
+                  <Text style={styles.emergencyButtonText}>Ambulance</Text>
+                  <Text style={styles.emergencyButtonNumber}>108</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity
+                  style={[styles.emergencyButton, { backgroundColor: '#2196F3' }]}
+                  onPress={() => Linking.openURL('tel:100')}
+                >
+                  <Text style={styles.emergencyButtonIcon}>👮</Text>
+                  <Text style={styles.emergencyButtonText}>Police</Text>
+                  <Text style={styles.emergencyButtonNumber}>100</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity
+                  style={[styles.emergencyButton, { backgroundColor: '#FF9800' }]}
+                  onPress={() => Linking.openURL('tel:1363')}
+                >
+                  <Text style={styles.emergencyButtonIcon}>🏔️</Text>
+                  <Text style={styles.emergencyButtonText}>Tourist Help</Text>
+                  <Text style={styles.emergencyButtonNumber}>1363</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity
+                  style={[styles.emergencyButton, { backgroundColor: '#4CAF50' }]}
+                  onPress={() => Linking.openURL('tel:1926')}
+                >
+                  <Text style={styles.emergencyButtonIcon}>🌲</Text>
+                  <Text style={styles.emergencyButtonText}>Forest Dept</Text>
+                  <Text style={styles.emergencyButtonNumber}>1926</Text>
+                </TouchableOpacity>
+              </View>
+            </View>
+
+            {/* Nearest Hospital */}
+            {trek.safety.nearestHospital && (
+              <View style={styles.modernHospitalInfo}>
+                <LinearGradient
+                  colors={['#f44336', '#d32f2f']}
+                  style={styles.hospitalHeader}
+                  start={{ x: 0, y: 0 }}
+                  end={{ x: 1, y: 0 }}
+                >
+                  <Text style={styles.hospitalHeaderIcon}>🏥</Text>
+                  <Text style={styles.hospitalHeaderText}>Nearest Hospital</Text>
+                </LinearGradient>
+
+                <View style={styles.hospitalDetails}>
+                  <Text style={styles.modernHospitalName}>{trek.safety.nearestHospital.name}</Text>
+                  <View style={styles.hospitalInfoRow}>
+                    <Text style={styles.hospitalInfoIcon}>📍</Text>
+                    <Text style={styles.modernHospitalDistance}>{trek.safety.nearestHospital.distance}</Text>
+                  </View>
+
+                  <TouchableOpacity
+                    style={styles.modernHospitalContact}
+                    onPress={() => Linking.openURL(`tel:${trek.safety.nearestHospital.contact}`)}
+                  >
+                    <Text style={styles.hospitalContactIcon}>📞</Text>
+                    <Text style={styles.modernHospitalContactText}>Call Hospital</Text>
+                    <Text style={styles.hospitalContactNumber}>{trek.safety.nearestHospital.contact}</Text>
+                  </TouchableOpacity>
+                </View>
+              </View>
+            )}
+
+            {/* Safety Tips */}
+            <View style={styles.safetyTipsSection}>
+              <View style={styles.safetyTipsHeader}>
+                <Text style={styles.safetyTipsIcon}>💡</Text>
+                <Text style={styles.safetyTipsTitle}>Essential Safety Tips</Text>
+              </View>
+
+              <View style={styles.safetyTipsList}>
+                <View style={styles.safetyTip}>
+                  <Text style={styles.safetyTipIcon}>📱</Text>
+                  <Text style={styles.safetyTipText}>Keep your phone charged and carry a power bank</Text>
+                </View>
+                <View style={styles.safetyTip}>
+                  <Text style={styles.safetyTipIcon}>👥</Text>
+                  <Text style={styles.safetyTipText}>Never trek alone - always go with a group</Text>
+                </View>
+                <View style={styles.safetyTip}>
+                  <Text style={styles.safetyTipIcon}>🌦️</Text>
+                  <Text style={styles.safetyTipText}>Check weather forecast before starting</Text>
+                </View>
+                <View style={styles.safetyTip}>
+                  <Text style={styles.safetyTipIcon}>💧</Text>
+                  <Text style={styles.safetyTipText}>Carry sufficient water and stay hydrated</Text>
+                </View>
+                <View style={styles.safetyTip}>
+                  <Text style={styles.safetyTipIcon}>🧭</Text>
+                  <Text style={styles.safetyTipText}>Download offline maps and carry a compass</Text>
+                </View>
+              </View>
+            </View>
+          </>
+        )}
+      </View>
+    );
+  };
 
   const renderRouteInfo = () => (
     <View style={styles.tabContent}>
       <Text style={styles.sectionTitle}>🗺️ Trek Route Details</Text>
-      
+
       {trek.trekRoute && (
         <>
           <View style={styles.routeOverview}>
@@ -422,7 +598,7 @@ const ComprehensiveTrekInfo = ({ trek }) => {
 
           <View style={styles.waypointsSection}>
             <Text style={styles.waypointsTitle}>📍 Waypoints</Text>
-            {trek.trekRoute.waypoints?.map((waypoint, index) => (
+            {(trek.trekRoute.waypoints || []).map((waypoint, index) => (
               <View key={index} style={styles.waypointCard}>
                 <Text style={styles.waypointName}>{waypoint.name}</Text>
                 <Text style={styles.waypointElevation}>🏔️ {waypoint.elevation}</Text>
@@ -438,7 +614,7 @@ const ComprehensiveTrekInfo = ({ trek }) => {
   const renderPermitsInfo = () => (
     <View style={styles.tabContent}>
       <Text style={styles.sectionTitle}>📋 Permits & Entry Information</Text>
-      
+
       {trek.permits && (
         <View style={styles.permitsSection}>
           <View style={styles.permitItem}>
@@ -447,35 +623,35 @@ const ComprehensiveTrekInfo = ({ trek }) => {
               {trek.permits.required ? 'Yes' : 'No'}
             </Text>
           </View>
-          
+
           {trek.permits.entry && (
             <View style={styles.permitItem}>
               <Text style={styles.permitLabel}>Entry Fee:</Text>
               <Text style={styles.permitValue}>{trek.permits.entry}</Text>
             </View>
           )}
-          
+
           {trek.permits.timings && (
             <View style={styles.permitItem}>
               <Text style={styles.permitLabel}>Timings:</Text>
               <Text style={styles.permitValue}>{trek.permits.timings}</Text>
             </View>
           )}
-          
+
           {trek.permits.forestDepartment && (
             <View style={styles.permitItem}>
               <Text style={styles.permitLabel}>Forest Department:</Text>
               <Text style={styles.permitValue}>{trek.permits.forestDepartment}</Text>
             </View>
           )}
-          
+
           {trek.permits.jeepSafari && (
             <View style={styles.permitItem}>
               <Text style={styles.permitLabel}>Jeep Safari:</Text>
               <Text style={styles.permitValue}>{trek.permits.jeepSafari}</Text>
             </View>
           )}
-          
+
           {trek.permits.bookingRequired && (
             <View style={styles.permitItem}>
               <Text style={styles.permitLabel}>Booking:</Text>
@@ -1048,7 +1224,238 @@ const styles = StyleSheet.create({
     fontSize: 11,
     color: COLORS.textSecondary,
   },
-  // Safety styles
+  // Modern Safety styles
+  modernSafetyCard: {
+    borderRadius: BORDER_RADIUS.lg,
+    padding: SPACING.lg,
+    marginBottom: SPACING.lg,
+    ...SHADOWS.medium,
+  },
+  riskLevelHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  riskLevelIcon: {
+    fontSize: 24,
+    marginRight: SPACING.md,
+  },
+  riskLevelInfo: {
+    flex: 1,
+  },
+  riskLevelLabel: {
+    fontSize: 14,
+    fontWeight: '600',
+    color: COLORS.textSecondary,
+    marginBottom: 4,
+  },
+  riskLevelValue: {
+    fontSize: 18,
+    fontWeight: '800',
+  },
+  safetyGrid: {
+    marginBottom: SPACING.lg,
+  },
+  modernSafetySection: {
+    backgroundColor: COLORS.backgroundCard,
+    borderRadius: BORDER_RADIUS.lg,
+    padding: SPACING.lg,
+    marginBottom: SPACING.lg,
+    ...SHADOWS.medium,
+  },
+  safetySectionHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: SPACING.md,
+  },
+  safetySectionIcon: {
+    fontSize: 20,
+    marginRight: SPACING.sm,
+  },
+  safetySectionTitle: {
+    fontSize: 16,
+    fontWeight: '700',
+    color: COLORS.text,
+  },
+  safetyItemsContainer: {
+    gap: SPACING.sm,
+  },
+  modernSafetyItem: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    backgroundColor: COLORS.backgroundSecondary,
+    padding: SPACING.md,
+    borderRadius: BORDER_RADIUS.md,
+    borderLeftWidth: 3,
+    borderLeftColor: COLORS.primary,
+  },
+  safetyItemIcon: {
+    fontSize: 16,
+    marginRight: SPACING.sm,
+    marginTop: 2,
+  },
+  safetyItemText: {
+    fontSize: 14,
+    color: COLORS.text,
+    fontWeight: '500',
+    flex: 1,
+    lineHeight: 20,
+  },
+  emergencyServicesSection: {
+    backgroundColor: COLORS.backgroundCard,
+    borderRadius: BORDER_RADIUS.lg,
+    padding: SPACING.lg,
+    marginBottom: SPACING.lg,
+    ...SHADOWS.medium,
+  },
+  emergencyServicesTitle: {
+    fontSize: 16,
+    fontWeight: '700',
+    color: COLORS.text,
+    marginBottom: SPACING.md,
+    textAlign: 'center',
+  },
+  emergencyButtonsGrid: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: SPACING.sm,
+    justifyContent: 'space-between',
+  },
+  emergencyButton: {
+    width: '48%',
+    alignItems: 'center',
+    padding: SPACING.md,
+    borderRadius: BORDER_RADIUS.lg,
+    ...SHADOWS.medium,
+  },
+  emergencyButtonIcon: {
+    fontSize: 24,
+    marginBottom: SPACING.xs,
+  },
+  emergencyButtonText: {
+    color: COLORS.white,
+    fontSize: 12,
+    fontWeight: '700',
+    marginBottom: 2,
+  },
+  emergencyButtonNumber: {
+    color: COLORS.white,
+    fontSize: 16,
+    fontWeight: '800',
+  },
+  modernHospitalInfo: {
+    backgroundColor: COLORS.backgroundCard,
+    borderRadius: BORDER_RADIUS.lg,
+    marginBottom: SPACING.lg,
+    overflow: 'hidden',
+    ...SHADOWS.medium,
+  },
+  hospitalHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: SPACING.lg,
+  },
+  hospitalHeaderIcon: {
+    fontSize: 24,
+    marginRight: SPACING.sm,
+  },
+  hospitalHeaderText: {
+    fontSize: 18,
+    fontWeight: '700',
+    color: COLORS.white,
+  },
+  hospitalDetails: {
+    padding: SPACING.lg,
+  },
+  modernHospitalName: {
+    fontSize: 18,
+    fontWeight: '700',
+    color: COLORS.text,
+    marginBottom: SPACING.md,
+  },
+  hospitalInfoRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: SPACING.lg,
+  },
+  hospitalInfoIcon: {
+    fontSize: 16,
+    marginRight: SPACING.sm,
+  },
+  modernHospitalDistance: {
+    fontSize: 16,
+    color: COLORS.textSecondary,
+    fontWeight: '500',
+  },
+  modernHospitalContact: {
+    backgroundColor: '#f44336',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: SPACING.lg,
+    borderRadius: BORDER_RADIUS.lg,
+    ...SHADOWS.medium,
+  },
+  hospitalContactIcon: {
+    fontSize: 20,
+    marginRight: SPACING.sm,
+  },
+  modernHospitalContactText: {
+    color: COLORS.white,
+    fontSize: 16,
+    fontWeight: '700',
+    marginRight: SPACING.sm,
+  },
+  hospitalContactNumber: {
+    color: COLORS.white,
+    fontSize: 14,
+    fontWeight: '500',
+  },
+  safetyTipsSection: {
+    backgroundColor: COLORS.backgroundCard,
+    borderRadius: BORDER_RADIUS.lg,
+    padding: SPACING.lg,
+    ...SHADOWS.medium,
+  },
+  safetyTipsHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: SPACING.lg,
+  },
+  safetyTipsIcon: {
+    fontSize: 24,
+    marginRight: SPACING.sm,
+  },
+  safetyTipsTitle: {
+    fontSize: 18,
+    fontWeight: '700',
+    color: COLORS.text,
+  },
+  safetyTipsList: {
+    gap: SPACING.md,
+  },
+  safetyTip: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    backgroundColor: COLORS.backgroundSecondary,
+    padding: SPACING.md,
+    borderRadius: BORDER_RADIUS.md,
+    borderLeftWidth: 3,
+    borderLeftColor: '#4CAF50',
+  },
+  safetyTipIcon: {
+    fontSize: 16,
+    marginRight: SPACING.sm,
+    marginTop: 2,
+  },
+  safetyTipText: {
+    fontSize: 14,
+    color: COLORS.text,
+    fontWeight: '500',
+    flex: 1,
+    lineHeight: 20,
+  },
+
+  // Legacy Safety styles (keeping for backward compatibility)
   safetySection: {
     marginBottom: SPACING.lg,
   },
@@ -1186,6 +1593,12 @@ const styles = StyleSheet.create({
     color: COLORS.textSecondary,
     flex: 2,
     textAlign: 'right',
+  },
+  errorText: {
+    fontSize: 16,
+    color: COLORS.error,
+    textAlign: 'center',
+    padding: SPACING.lg,
   },
 });
 

@@ -110,11 +110,20 @@ const LiveTrackingScreen = ({ navigation, route }) => {
             text: 'Start Tracking',
             onPress: async () => {
               try {
-                await TrekTrackingService.startTracking(trek);
+                const result = await TrekTrackingService.startTracking(trek);
                 setIsTracking(true);
-                Alert.alert('Tracking Started', 'Your trek is now being tracked. Stay safe!');
+
+                if (result.isMockTracking) {
+                  Alert.alert(
+                    'Mock Tracking Started',
+                    'Development mode: Your trek is being simulated for testing. To use real GPS tracking, create a development build.',
+                    [{ text: 'OK' }]
+                  );
+                } else {
+                  Alert.alert('Tracking Started', 'Your trek is now being tracked. Stay safe!');
+                }
               } catch (error) {
-                Alert.alert('Error', 'Failed to start tracking: ' + error.message);
+                Alert.alert('Error starting trek tracking', error.message);
               }
             }
           }
@@ -342,7 +351,12 @@ const LiveTrackingScreen = ({ navigation, route }) => {
         >
           <Text style={styles.backButtonText}>← Back</Text>
         </TouchableOpacity>
-        <Text style={styles.headerTitle}>Live Tracking</Text>
+        <View style={styles.headerCenter}>
+          <Text style={styles.headerTitle}>Live Tracking</Text>
+          {trackingData?.isMockTracking && (
+            <Text style={styles.mockIndicator}>🧪 Development Mode</Text>
+          )}
+        </View>
         <View style={styles.headerSpacer} />
       </View>
 
@@ -407,9 +421,17 @@ const styles = StyleSheet.create({
     ...createTextStyle(16, 'medium'),
     color: COLORS.primary,
   },
+  headerCenter: {
+    alignItems: 'center',
+  },
   headerTitle: {
     ...createTextStyle(20, 'bold'),
     color: COLORS.text,
+  },
+  mockIndicator: {
+    ...createTextStyle(10, 'medium'),
+    color: COLORS.warning,
+    marginTop: 2,
   },
   headerSpacer: {
     width: 60,

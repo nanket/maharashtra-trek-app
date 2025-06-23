@@ -1,0 +1,38 @@
+{
+  "lastUpdated": "2025-06-17T17:23:19.501Z",
+  "totalCount": 20,
+  "categories": [
+    {
+      "name": "fort",
+      "count": 10
+    },
+    {
+      "name": "waterfall",
+      "count": 5
+    },
+    {
+      "name": "cave",
+      "count": 2
+    },
+    {
+      "name": "trek",
+      "count": 3
+    }
+  ],
+  "difficulties": [
+    {
+      "name": "Easy",
+      "count": 14
+    },
+    {
+      "name": "Moderate",
+      "count": 4
+    },
+    {
+      "name": "Difficult",
+      "count": 0
+    }
+  ],
+  "featured": 8,
+  "version": "1.0.0"
+}

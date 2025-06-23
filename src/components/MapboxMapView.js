@@ -115,14 +115,17 @@ const MapboxMapView = ({
   };
 
   // Create marker for location
-  const renderLocationMarker = (location) => {
+  const renderLocationMarker = (location, index) => {
     const category = LOCATION_CATEGORIES[location.category] || LOCATION_CATEGORIES.trek;
     const isSelected = selectedLocation?.id === location.id;
+    // Create unique key and id combining category, id, and index to prevent duplicates
+    const uniqueKey = `${location.category}-${location.id}-${index}`;
+    const uniqueId = `marker-${location.category}-${location.id}-${index}`;
 
     return (
       <Mapbox.PointAnnotation
-        key={location.id}
-        id={`marker-${location.id}`}
+        key={uniqueKey}
+        id={uniqueId}
         coordinate={[location.coordinates.longitude, location.coordinates.latitude]}
         onSelected={() => handleMarkerPress(location)}
       >
@@ -135,7 +138,7 @@ const MapboxMapView = ({
             <Text style={styles.markerIcon}>{category.icon}</Text>
           </View>
         </View>
-        
+
         <Mapbox.Callout title={location.name} />
       </Mapbox.PointAnnotation>
     );
@@ -209,7 +212,7 @@ const MapboxMapView = ({
         )}
 
         {/* Location markers */}
-        {locations.map(renderLocationMarker)}
+        {locations.map((location, index) => renderLocationMarker(location, index))}
       </Mapbox.MapView>
 
       {/* Offline Status */}

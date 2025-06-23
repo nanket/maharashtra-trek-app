@@ -13,7 +13,7 @@ import {
 import { LinearGradient } from 'expo-linear-gradient';
 import { COLORS, SHADOWS, SPACING, BORDER_RADIUS, createTextStyle, CATEGORY_COLORS } from '../utils/constants';
 import UserStorageService from '../utils/userStorage';
-import treksData from '../data/treksData.json';
+import LocalDataService from '../services/LocalDataService';
 
 const { width } = Dimensions.get('window');
 
@@ -30,14 +30,15 @@ const CompletedTreksTab = ({ navigation, completedTreks, onCompletedChange }) =>
   }, [completedTreks]);
 
   const loadCompletedTreksData = () => {
+    const allData = LocalDataService.getAllData();
     const completed = completedTreks.map(completed => {
-      const trekData = treksData.find(trek => trek.id === completed.trekId);
+      const trekData = allData.find(trek => trek.id === completed.trekId);
       return { ...trekData, completionData: completed };
     }).filter(Boolean);
-    
+
     // Sort by completion date (most recent first)
     completed.sort((a, b) => new Date(b.completionData.completedDate) - new Date(a.completionData.completedDate));
-    
+
     setCompletedTreksData(completed);
   };
 
@@ -63,7 +64,7 @@ const CompletedTreksTab = ({ navigation, completedTreks, onCompletedChange }) =>
         selectedTrek.id,
         completionData
       );
-      
+
       onCompletedChange(updatedCompleted);
       setModalVisible(false);
       setSelectedTrek(null);
@@ -160,7 +161,7 @@ const CompletedTreksTab = ({ navigation, completedTreks, onCompletedChange }) =>
 
   const renderCompletedCard = ({ item }) => {
     const categoryData = CATEGORY_COLORS[item.category];
-    
+
     return (
       <TouchableOpacity
         style={styles.completedCard}

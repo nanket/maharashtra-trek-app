@@ -1,0 +1,1024 @@
+[
+  {
+    "id": 2,
+    "name": "Dudhsagar Waterfalls",
+    "category": "waterfall",
+    "location": "Goa-Karnataka Border",
+    "difficulty": "Easy",
+    "duration": "4-5 hours",
+    "elevation": "310 meters",
+    "description": "One of India's tallest waterfalls, Dudhsagar creates a spectacular milky cascade. Best visited during monsoon season.",
+    "startingPoint": {
+      "name": "Collem Railway Station",
+      "coordinates": {
+        "latitude": 15.3144,
+        "longitude": 74.3144
+      },
+      "facilities": [
+        "Railway station",
+        "Jeep booking counter",
+        "Basic shops",
+        "Restrooms"
+      ],
+      "description": "Main entry point for Dudhsagar with jeep safari services"
+    },
+    "networkAvailability": {
+      "baseStation": {
+        "airtel": "Excellent",
+        "jio": "Excellent",
+        "vodafone": "Good",
+        "bsnl": "Good"
+      },
+      "duringJeepSafari": {
+        "airtel": "Good",
+        "jio": "Good",
+        "vodafone": "Fair",
+        "bsnl": "Fair"
+      },
+      "atWaterfall": {
+        "airtel": "Poor",
+        "jio": "Poor",
+        "vodafone": "No signal",
+        "bsnl": "No signal"
+      },
+      "emergencyContact": "108 (works from Collem station)"
+    },
+    "foodAndWater": {
+      "atBase": {
+        "restaurants": [
+          "Collem Station Canteen",
+          "Local Goan restaurants",
+          "Street food stalls"
+        ],
+        "shops": [
+          "General stores",
+          "Water bottles",
+          "Snacks",
+          "Rain gear"
+        ],
+        "waterSources": [
+          "Station water",
+          "Packaged water readily available"
+        ]
+      },
+      "duringJeepSafari": {
+        "waterSources": [
+          "Carry sufficient water",
+          "No sources during safari"
+        ],
+        "foodOptions": [
+          "Carry packed snacks",
+          "No food stalls on route"
+        ],
+        "recommendations": [
+          "Light snacks",
+          "Energy drinks",
+          "Waterproof bags"
+        ]
+      },
+      "atWaterfall": {
+        "facilities": [
+          "Natural water source",
+          "No food stalls"
+        ],
+        "recommendations": [
+          "Carry packed lunch",
+          "Waterproof food storage",
+          "Extra water"
+        ]
+      }
+    },
+    "accommodation": {
+      "camping": {
+        "allowed": false,
+        "reason": "Protected forest area, camping not permitted"
+      },
+      "nearbyStays": [
+        {
+          "name": "Collem Forest Rest House",
+          "distance": "0 km from station",
+          "cost": "₹1500-2500 per room",
+          "contact": "+91 832-2612021",
+          "facilities": [
+            "Basic rooms",
+            "Forest department managed",
+            "Advance booking required"
+          ]
+        },
+        {
+          "name": "Dudhsagar Spa Resort",
+          "distance": "8 km from Collem",
+          "cost": "₹4000-8000 per room",
+          "contact": "+91 832-2612345",
+          "facilities": [
+            "Luxury rooms",
+            "Spa",
+            "Restaurant",
+            "Swimming pool"
+          ]
+        },
+        {
+          "name": "Mollem National Park Guest House",
+          "distance": "12 km from Collem",
+          "cost": "₹1200-2000 per room",
+          "contact": "+91 832-2612567",
+          "facilities": [
+            "Government guest house",
+            "Basic amenities",
+            "Nature surroundings"
+          ]
+        }
+      ]
+    },
+    "permits": {
+      "required": true,
+      "forestDepartment": "Entry permit required",
+      "entry": "₹30 per person + ₹100 camera fee",
+      "timings": "6:00 AM to 5:00 PM",
+      "jeepSafari": "₹3000-4000 per jeep (6 persons)",
+      "bookingRequired": "Advance booking recommended during peak season"
+    },
+    "safety": {
+      "riskLevel": "Low to Moderate",
+      "commonRisks": [
+        "Slippery rocks near waterfall",
+        "Strong water currents",
+        "Wildlife in forest"
+      ],
+      "precautions": [
+        "Non-slip footwear",
+        "Life jacket if swimming",
+        "Stay in designated areas"
+      ],
+      "rescuePoints": [
+        "Collem station",
+        "Forest checkpost",
+        "Jeep safari route"
+      ],
+      "nearestHospital": {
+        "name": "Goa Medical College",
+        "distance": "45 km",
+        "contact": "+91 832-2458700"
+      }
+    },
+    "weather": {
+      "monsoon": {
+        "months": "June-September",
+        "conditions": "Waterfall at full flow, heavy rainfall, muddy paths",
+        "recommendation": "Best time to visit for waterfall experience"
+      },
+      "winter": {
+        "months": "December-February",
+        "conditions": "Reduced water flow, pleasant weather, clear skies",
+        "recommendation": "Good for photography and easy access"
+      },
+      "summer": {
+        "months": "March-May",
+        "conditions": "Minimal water flow, hot and humid",
+        "recommendation": "Not recommended, waterfall may be dry"
+      }
+    },
+    "trekRoute": {
+      "totalDistance": "2 km (from jeep drop point)",
+      "ascent": "Minimal",
+      "difficulty": "Easy walk through forest",
+      "waypoints": [
+        {
+          "name": "Collem Railway Station",
+          "elevation": "76m",
+          "description": "Starting point with jeep booking"
+        },
+        {
+          "name": "Forest Checkpost",
+          "elevation": "120m",
+          "description": "Entry permit verification point"
+        },
+        {
+          "name": "Jeep Drop Point",
+          "elevation": "280m",
+          "description": "End of jeep safari, start of walking trail"
+        },
+        {
+          "name": "Dudhsagar Waterfall",
+          "elevation": "310m",
+          "description": "Main waterfall viewing area"
+        }
+      ]
+    },
+    "howToReach": {
+      "fromMumbai": {
+        "byTrain": {
+          "description": "Direct train to Dudhsagar Railway Station",
+          "distance": "450 km",
+          "time": "8-10 hours",
+          "steps": [
+            "Take train from Mumbai CST to Dudhsagar Station",
+            "Get down at Dudhsagar Railway Station",
+            "Short walk to waterfall viewpoint"
+          ]
+        },
+        "byBus": {
+          "description": "Bus to Collem, then jeep safari",
+          "distance": "460 km",
+          "time": "10-12 hours",
+          "steps": [
+            "Take bus from Mumbai to Collem",
+            "Book jeep safari from Collem",
+            "Jeep ride through forest to falls"
+          ]
+        },
+        "byPrivateVehicle": {
+          "description": "Drive to Collem, then jeep required",
+          "distance": "450 km",
+          "time": "8-9 hours",
+          "steps": [
+            "Drive to Collem village",
+            "Park vehicle at designated area",
+            "Take jeep safari to waterfall"
+          ]
+        }
+      },
+      "fromPune": {
+        "byTrain": {
+          "description": "Train via Mumbai to Dudhsagar Station",
+          "distance": "560 km",
+          "time": "10-12 hours",
+          "steps": [
+            "Take train from Pune to Mumbai CST",
+            "Change to train going to Dudhsagar Station",
+            "Short walk to waterfall viewpoint"
+          ]
+        },
+        "byBus": {
+          "description": "Bus via Mumbai to Collem, then jeep safari",
+          "distance": "570 km",
+          "time": "12-14 hours",
+          "steps": [
+            "Take bus from Pune to Mumbai",
+            "Change to bus going to Collem",
+            "Book jeep safari from Collem"
+          ]
+        },
+        "byPrivateVehicle": {
+          "description": "Drive via Mumbai-Goa Highway",
+          "distance": "560 km",
+          "time": "10-11 hours",
+          "steps": [
+            "Take Pune-Mumbai-Goa Highway",
+            "Drive to Collem village",
+            "Take jeep safari to waterfall"
+          ]
+        }
+      }
+    },
+    "bestTimeToVisit": "June to September",
+    "localContacts": [
+      {
+        "name": "Goa Tourism Office",
+        "phone": "+91 832-2438866",
+        "service": "Information & Permits"
+      },
+      {
+        "name": "Dudhsagar Jeep Association",
+        "phone": "+91 9822667149",
+        "service": "Transportation & Guides"
+      },
+      {
+        "name": "Forest Department Goa",
+        "phone": "+91 832-2224747",
+        "service": "Wildlife Permits"
+      }
+    ],
+    "imageKey": "dudhsagar",
+    "coordinates": {
+      "latitude": 15.3144,
+      "longitude": 74.3144
+    },
+    "featured": true,
+    "rating": 4.8,
+    "reviewCount": 456
+  },
+  {
+    "id": 14,
+    "name": "Lingmala Waterfalls",
+    "category": "waterfall",
+    "location": "Satara District",
+    "difficulty": "Easy",
+    "duration": "1-2 hours",
+    "elevation": "1267 meters",
+    "description": "A scenic waterfall near Mahabaleshwar, cascading from a height of 500 feet. Surrounded by lush green valleys and strawberry farms.",
+    "startingPoint": {
+      "name": "Mahabaleshwar",
+      "coordinates": {
+        "latitude": 17.9167,
+        "longitude": 73.65
+      },
+      "facilities": [
+        "Hotels",
+        "Restaurants",
+        "Parking",
+        "Tourist facilities"
+      ],
+      "description": "Popular hill station with excellent tourist infrastructure"
+    },
+    "imageKey": "lingmala_falls",
+    "coordinates": {
+      "latitude": 17.9167,
+      "longitude": 73.65
+    },
+    "featured": true,
+    "rating": 4.4,
+    "reviewCount": 234,
+    "foodAndWater": {
+      "atBase": {
+        "restaurants": [
+          "Mahabaleshwar restaurants",
+          "Hotel dining",
+          "Street food stalls"
+        ],
+        "shops": [
+          "Tourist shops",
+          "Water bottles",
+          "Local strawberries"
+        ],
+        "waterSources": [
+          "Hotel water",
+          "Packaged water readily available"
+        ]
+      },
+      "duringTrek": {
+        "waterSources": [
+          "Natural waterfall",
+          "Carry 1-2 liters sufficient"
+        ],
+        "foodOptions": [
+          "No food stalls on route",
+          "Carry light snacks"
+        ],
+        "recommendations": [
+          "Local strawberries",
+          "Energy snacks",
+          "Camera for photos"
+        ]
+      },
+      "atWaterfall": {
+        "facilities": [
+          "Natural water source",
+          "Scenic viewpoints"
+        ],
+        "recommendations": [
+          "Carry packed snacks",
+          "Enjoy the 500ft cascade",
+          "Photography"
+        ]
+      }
+    },
+    "howToReach": {
+      "fromMumbai": {
+        "byTrain": {
+          "description": "Train to Pune, then bus to Mahabaleshwar",
+          "distance": "280 km",
+          "time": "7-8 hours",
+          "steps": [
+            "Take train from Mumbai CST to Pune Railway Station",
+            "From Pune, take MSRTC bus to Mahabaleshwar",
+            "Local transport to Lingmala Waterfalls"
+          ]
+        },
+        "byBus": {
+          "description": "Direct bus to Mahabaleshwar",
+          "distance": "280 km",
+          "time": "8-9 hours",
+          "steps": [
+            "Take MSRTC bus from Mumbai to Mahabaleshwar",
+            "From Mahabaleshwar, take local transport to falls",
+            "Short walk to waterfall viewpoint"
+          ]
+        },
+        "byPrivateVehicle": {
+          "description": "Drive via Mumbai-Pune-Satara route",
+          "distance": "280 km",
+          "time": "6-7 hours",
+          "steps": [
+            "Take Mumbai-Pune Expressway to Pune",
+            "Continue via Satara to Mahabaleshwar",
+            "Drive to Lingmala Falls parking area"
+          ]
+        }
+      },
+      "fromPune": {
+        "byTrain": {
+          "description": "Train to Satara, then bus to Mahabaleshwar",
+          "distance": "120 km",
+          "time": "4-5 hours",
+          "steps": [
+            "Take train from Pune to Satara Railway Station",
+            "From Satara, take MSRTC bus to Mahabaleshwar",
+            "Local transport to Lingmala Waterfalls"
+          ]
+        },
+        "byBus": {
+          "description": "Direct bus to Mahabaleshwar",
+          "distance": "120 km",
+          "time": "4-5 hours",
+          "steps": [
+            "Take PMPML/MSRTC bus from Pune to Mahabaleshwar",
+            "From Mahabaleshwar, take local transport to falls",
+            "Short walk to waterfall viewpoint"
+          ]
+        },
+        "byPrivateVehicle": {
+          "description": "Drive via Pune-Satara Highway",
+          "distance": "120 km",
+          "time": "3-4 hours",
+          "steps": [
+            "Take Pune-Satara Highway",
+            "Continue to Mahabaleshwar via ghat roads",
+            "Drive to Lingmala Falls parking area"
+          ]
+        }
+      }
+    }
+  },
+  {
+    "id": 15,
+    "name": "Kune Falls",
+    "category": "waterfall",
+    "location": "Pune District",
+    "difficulty": "Easy",
+    "duration": "2-3 hours",
+    "elevation": "625 meters",
+    "description": "A beautiful three-tiered waterfall near Lonavala, best visited during monsoon season. The falls cascade down from a height of 200 meters.",
+    "startingPoint": {
+      "name": "Kune Village",
+      "coordinates": {
+        "latitude": 18.75,
+        "longitude": 73.4167
+      },
+      "facilities": [
+        "Parking",
+        "Local tea stalls",
+        "Basic shops"
+      ],
+      "description": "Small village near Lonavala with basic amenities"
+    },
+    "imageKey": "kune_falls",
+    "coordinates": {
+      "latitude": 18.75,
+      "longitude": 73.4167
+    },
+    "featured": true,
+    "rating": 4.3,
+    "reviewCount": 189,
+    "foodAndWater": {
+      "atBase": {
+        "restaurants": [
+          "Local tea stalls",
+          "Lonavala restaurants"
+        ],
+        "shops": [
+          "General stores",
+          "Water bottles",
+          "Snacks"
+        ],
+        "waterSources": [
+          "Packaged water available",
+          "Village wells"
+        ]
+      },
+      "duringTrek": {
+        "waterSources": [
+          "Natural waterfall",
+          "Carry 2-3 liters recommended"
+        ],
+        "foodOptions": [
+          "No food stalls on route",
+          "Carry packed snacks"
+        ],
+        "recommendations": [
+          "Light snacks",
+          "Energy drinks",
+          "Waterproof bags"
+        ]
+      },
+      "atWaterfall": {
+        "facilities": [
+          "Natural water source",
+          "No food facilities"
+        ],
+        "recommendations": [
+          "Carry packed lunch",
+          "Enjoy the natural beauty"
+        ]
+      }
+    },
+    "howToReach": {
+      "fromMumbai": {
+        "byTrain": {
+          "description": "Train to Lonavala, then local transport",
+          "distance": "110 km",
+          "time": "3-4 hours",
+          "steps": [
+            "Take train from Mumbai CST to Lonavala Railway Station",
+            "From Lonavala, take auto/taxi to Kune Village",
+            "Short walk to waterfall viewpoint"
+          ]
+        },
+        "byBus": {
+          "description": "Direct bus to Lonavala, then local transport",
+          "distance": "110 km",
+          "time": "4-5 hours",
+          "steps": [
+            "Take MSRTC bus from Mumbai to Lonavala",
+            "From Lonavala, take local transport to Kune Village",
+            "Walk to waterfall"
+          ]
+        },
+        "byPrivateVehicle": {
+          "description": "Drive via Mumbai-Pune Expressway",
+          "distance": "110 km",
+          "time": "3-4 hours",
+          "steps": [
+            "Take Mumbai-Pune Expressway to Lonavala exit",
+            "Drive to Kune Village via local roads",
+            "Park at designated area and walk to falls"
+          ]
+        }
+      },
+      "fromPune": {
+        "byTrain": {
+          "description": "Train to Lonavala, then local transport",
+          "distance": "65 km",
+          "time": "2-3 hours",
+          "steps": [
+            "Take train from Pune to Lonavala Railway Station",
+            "From Lonavala, take auto/taxi to Kune Village",
+            "Short walk to waterfall viewpoint"
+          ]
+        },
+        "byBus": {
+          "description": "Direct bus to Lonavala",
+          "distance": "65 km",
+          "time": "2.5-3 hours",
+          "steps": [
+            "Take PMPML/MSRTC bus from Pune to Lonavala",
+            "From Lonavala, take local transport to Kune Village",
+            "Walk to waterfall"
+          ]
+        },
+        "byPrivateVehicle": {
+          "description": "Drive via Pune-Mumbai Highway",
+          "distance": "65 km",
+          "time": "2-2.5 hours",
+          "steps": [
+            "Take Pune-Mumbai Highway to Lonavala",
+            "Drive to Kune Village via local roads",
+            "Park at designated area and walk to falls"
+          ]
+        }
+      }
+    }
+  },
+  {
+    "id": 17,
+    "name": "Bhimashankar Waterfall",
+    "category": "waterfall",
+    "location": "Pune District",
+    "difficulty": "Easy to Moderate",
+    "duration": "3-4 hours",
+    "elevation": "1200 meters",
+    "description": "Beautiful waterfall near the famous Bhimashankar Temple, one of the 12 Jyotirlingas. Perfect combination of spirituality and nature.",
+    "startingPoint": {
+      "name": "Bhimashankar Temple",
+      "coordinates": {
+        "latitude": 19.0728,
+        "longitude": 73.5347
+      },
+      "facilities": [
+        "Temple complex",
+        "Restaurants",
+        "Accommodation",
+        "Parking",
+        "ATM"
+      ],
+      "description": "Famous temple complex with all modern facilities"
+    },
+    "networkAvailability": {
+      "baseTemple": {
+        "airtel": "Good",
+        "jio": "Good",
+        "vodafone": "Fair",
+        "bsnl": "Fair"
+      },
+      "duringTrek": {
+        "airtel": "Fair",
+        "jio": "Fair",
+        "vodafone": "Poor",
+        "bsnl": "Poor"
+      },
+      "atWaterfall": {
+        "airtel": "Poor",
+        "jio": "Poor",
+        "vodafone": "No signal",
+        "bsnl": "No signal"
+      },
+      "emergencyContact": "108 (works from temple area)"
+    },
+    "foodAndWater": {
+      "atBase": {
+        "restaurants": [
+          "Temple prasadam",
+          "Bhimashankar restaurants",
+          "Local food stalls"
+        ],
+        "shops": [
+          "Temple shops",
+          "General stores",
+          "Water bottles",
+          "Snacks"
+        ],
+        "waterSources": [
+          "Temple water supply",
+          "Packaged water available"
+        ]
+      },
+      "duringTrek": {
+        "waterSources": [
+          "Natural streams",
+          "Carry 2-3 liters recommended"
+        ],
+        "foodOptions": [
+          "Carry packed food",
+          "No stalls on waterfall route"
+        ],
+        "recommendations": [
+          "Light snacks",
+          "Energy bars",
+          "Glucose"
+        ]
+      },
+      "atWaterfall": {
+        "facilities": [
+          "Natural water source",
+          "No food facilities"
+        ],
+        "recommendations": [
+          "Carry packed lunch",
+          "Enjoy natural spring water"
+        ]
+      }
+    },
+    "accommodation": {
+      "camping": {
+        "allowed": false,
+        "reason": "Religious area, camping not permitted near temple"
+      },
+      "nearbyStays": [
+        {
+          "name": "Bhimashankar Temple Guest House",
+          "distance": "0 km from temple",
+          "cost": "₹500-1000 per person",
+          "contact": "+91 2132-222456",
+          "facilities": [
+            "Basic rooms",
+            "Temple managed",
+            "Vegetarian meals"
+          ]
+        },
+        {
+          "name": "MTDC Resort Bhimashankar",
+          "distance": "1 km from temple",
+          "cost": "₹2000-3500 per room",
+          "contact": "+91 2132-222789",
+          "facilities": [
+            "Comfortable rooms",
+            "Restaurant",
+            "Garden",
+            "Conference hall"
+          ]
+        },
+        {
+          "name": "Forest Rest House",
+          "distance": "2 km from temple",
+          "cost": "₹1200-2000 per room",
+          "contact": "+91 2132-222333",
+          "facilities": [
+            "Forest department",
+            "Basic amenities",
+            "Nature surroundings"
+          ]
+        }
+      ]
+    },
+    "permits": {
+      "required": false,
+      "forestDepartment": "Not required for waterfall",
+      "entry": "Free entry to waterfall",
+      "timings": "6:00 AM to 6:00 PM",
+      "templeEntry": "Temple open 5:00 AM to 9:00 PM"
+    },
+    "safety": {
+      "riskLevel": "Low to Moderate",
+      "commonRisks": [
+        "Slippery rocks near waterfall",
+        "Steep forest path",
+        "Wildlife"
+      ],
+      "precautions": [
+        "Non-slip footwear",
+        "Stay on marked trails",
+        "Don't swim alone"
+      ],
+      "rescuePoints": [
+        "Bhimashankar temple",
+        "Forest checkpost",
+        "Waterfall base"
+      ],
+      "nearestHospital": {
+        "name": "Khed Civil Hospital",
+        "distance": "35 km",
+        "contact": "+91 2132-220000"
+      }
+    },
+    "weather": {
+      "monsoon": {
+        "months": "June-September",
+        "conditions": "Waterfall at full flow, heavy rainfall, lush green forest",
+        "recommendation": "Best time to visit for waterfall experience"
+      },
+      "winter": {
+        "months": "December-February",
+        "conditions": "Moderate water flow, pleasant weather, clear skies",
+        "recommendation": "Good for temple visit and light trekking"
+      },
+      "summer": {
+        "months": "March-May",
+        "conditions": "Reduced water flow, hot weather",
+        "recommendation": "Early morning visits recommended"
+      }
+    },
+    "trekRoute": {
+      "totalDistance": "4 km (round trip)",
+      "ascent": "200 meters",
+      "difficulty": "Easy to moderate forest trail",
+      "waypoints": [
+        {
+          "name": "Bhimashankar Temple",
+          "elevation": "1000m",
+          "description": "Starting point with temple darshan"
+        },
+        {
+          "name": "Forest Trail Start",
+          "elevation": "1050m",
+          "description": "Entry into forest area"
+        },
+        {
+          "name": "Stream Crossing",
+          "elevation": "1150m",
+          "description": "Cross small stream, follow water sound"
+        },
+        {
+          "name": "Bhimashankar Waterfall",
+          "elevation": "1200m",
+          "description": "Beautiful waterfall with natural pool"
+        }
+      ]
+    },
+    "howToReach": {
+      "fromMumbai": {
+        "byTrain": {
+          "description": "Train to Pune, then bus to Bhimashankar",
+          "distance": "220 km",
+          "time": "6-7 hours",
+          "steps": [
+            "Take train from Mumbai to Pune Railway Station",
+            "Take MSRTC bus from Pune to Bhimashankar",
+            "Walk to temple, then trek to waterfall"
+          ]
+        },
+        "byBus": {
+          "description": "Direct bus to Bhimashankar",
+          "distance": "230 km",
+          "time": "7-8 hours",
+          "steps": [
+            "Take MSRTC bus from Mumbai to Bhimashankar",
+            "Get down at Bhimashankar temple",
+            "Trek starts from temple complex"
+          ]
+        },
+        "byPrivateVehicle": {
+          "description": "Drive via Mumbai-Pune-Bhimashankar route",
+          "distance": "220 km",
+          "time": "5-6 hours",
+          "steps": [
+            "Take Mumbai-Pune Expressway",
+            "Drive via Pune to Bhimashankar",
+            "Parking available at temple"
+          ]
+        }
+      },
+      "fromPune": {
+        "byTrain": {
+          "description": "No direct train, bus recommended",
+          "distance": "110 km",
+          "time": "3-4 hours",
+          "steps": [
+            "Take local train to Pune station",
+            "Take MSRTC bus to Bhimashankar",
+            "Trek starts from temple"
+          ]
+        },
+        "byBus": {
+          "description": "Direct MSRTC bus to Bhimashankar",
+          "distance": "110 km",
+          "time": "3-4 hours",
+          "steps": [
+            "Take MSRTC bus from Pune to Bhimashankar",
+            "Get down at temple complex",
+            "Trek starts from temple"
+          ]
+        },
+        "byPrivateVehicle": {
+          "description": "Drive directly to Bhimashankar",
+          "distance": "110 km",
+          "time": "2.5-3 hours",
+          "steps": [
+            "Take Pune-Manchar-Bhimashankar route",
+            "Drive to temple complex",
+            "Parking available at temple"
+          ]
+        }
+      }
+    },
+    "bestTimeToVisit": "June to September",
+    "localContacts": [
+      {
+        "name": "Bhimashankar Temple Office",
+        "phone": "+91 2132-222456",
+        "service": "Temple Information & Accommodation"
+      },
+      {
+        "name": "MTDC Bhimashankar",
+        "phone": "+91 2132-222789",
+        "service": "Tourism Information & Booking"
+      },
+      {
+        "name": "Forest Department",
+        "phone": "+91 2132-222333",
+        "service": "Wildlife & Forest Information"
+      }
+    ],
+    "imageKey": "bhimashankar",
+    "videos": [
+      "https://www.youtube.com/watch?v=bhimashankar123"
+    ],
+    "coordinates": {
+      "latitude": 19.0728,
+      "longitude": 73.5347
+    },
+    "featured": false,
+    "rating": 4.2,
+    "reviewCount": 345
+  },
+  {
+    "id": 23,
+    "name": "Bhivpuri Waterfalls",
+    "category": "waterfall",
+    "location": "Raigad District",
+    "difficulty": "Easy",
+    "duration": "1-2 hours",
+    "elevation": "150 meters",
+    "description": "A popular waterfall destination near Karjat, perfect for day trips and family outings. Multiple small waterfalls create natural pools.",
+    "startingPoint": {
+      "name": "Bhivpuri Village",
+      "coordinates": {
+        "latitude": 18.9167,
+        "longitude": 73.3333
+      },
+      "facilities": [
+        "Parking",
+        "Restaurants",
+        "Changing rooms",
+        "Local guides"
+      ],
+      "description": "Well-developed base with good facilities for tourists"
+    },
+    "imageKey": "bhivpuri_falls",
+    "coordinates": {
+      "latitude": 18.9167,
+      "longitude": 73.3333
+    },
+    "featured": false,
+    "rating": 4.1,
+    "reviewCount": 156,
+    "foodAndWater": {
+      "atBase": {
+        "restaurants": [
+          "Bhivpuri village restaurants",
+          "Karjat station canteen"
+        ],
+        "shops": [
+          "Local shops",
+          "Water bottles",
+          "Basic snacks"
+        ],
+        "waterSources": [
+          "Packaged water available",
+          "Village wells"
+        ]
+      },
+      "duringTrek": {
+        "waterSources": [
+          "Natural waterfall pools",
+          "Carry 2 liters recommended"
+        ],
+        "foodOptions": [
+          "No food stalls on route",
+          "Carry packed meals"
+        ],
+        "recommendations": [
+          "Swimming gear",
+          "Waterproof bags",
+          "Change of clothes"
+        ]
+      },
+      "atWaterfall": {
+        "facilities": [
+          "Natural pools for swimming",
+          "No food facilities"
+        ],
+        "recommendations": [
+          "Carry packed lunch",
+          "Enjoy swimming",
+          "Be careful on wet rocks"
+        ]
+      }
+    },
+    "howToReach": {
+      "fromMumbai": {
+        "byTrain": {
+          "description": "Train to Karjat, then local transport",
+          "distance": "90 km",
+          "time": "3-4 hours",
+          "steps": [
+            "Take train from Mumbai CST to Karjat Railway Station",
+            "From Karjat, take auto/taxi to Bhivpuri Village",
+            "Short walk to waterfall area"
+          ]
+        },
+        "byBus": {
+          "description": "Bus to Karjat, then local transport",
+          "distance": "90 km",
+          "time": "4-5 hours",
+          "steps": [
+            "Take MSRTC bus from Mumbai to Karjat",
+            "From Karjat, take local transport to Bhivpuri Village",
+            "Walk to waterfall"
+          ]
+        },
+        "byPrivateVehicle": {
+          "description": "Drive via Mumbai-Pune Highway",
+          "distance": "90 km",
+          "time": "3-4 hours",
+          "steps": [
+            "Take Mumbai-Pune Highway to Karjat exit",
+            "Drive to Bhivpuri Village via local roads",
+            "Park at village and walk to falls"
+          ]
+        }
+      },
+      "fromPune": {
+        "byTrain": {
+          "description": "Train to Karjat via Lonavala",
+          "distance": "120 km",
+          "time": "4-5 hours",
+          "steps": [
+            "Take train from Pune to Lonavala, then to Karjat",
+            "From Karjat, take auto/taxi to Bhivpuri Village",
+            "Short walk to waterfall area"
+          ]
+        },
+        "byBus": {
+          "description": "Bus to Karjat via Mumbai route",
+          "distance": "120 km",
+          "time": "5-6 hours",
+          "steps": [
+            "Take PMPML bus from Pune to Mumbai, get down at Karjat",
+            "From Karjat, take local transport to Bhivpuri Village",
+            "Walk to waterfall"
+          ]
+        },
+        "byPrivateVehicle": {
+          "description": "Drive via Pune-Mumbai Highway",
+          "distance": "120 km",
+          "time": "4-5 hours",
+          "steps": [
+            "Take Pune-Mumbai Highway to Karjat",
+            "Drive to Bhivpuri Village via local roads",
+            "Park at village and walk to falls"
+          ]
+        }
+      }
+    }
+  }
+]

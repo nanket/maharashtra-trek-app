@@ -11,7 +11,7 @@ import {
 import { LinearGradient } from 'expo-linear-gradient';
 import { COLORS, SHADOWS, SPACING, BORDER_RADIUS, createTextStyle, CATEGORY_COLORS, IMAGES } from '../utils/constants';
 import UserStorageService from '../utils/userStorage';
-import treksData from '../data/treksData.json';
+import LocalDataService from '../services/LocalDataService';
 import TrekCard from './TrekCard';
 
 const { width } = Dimensions.get('window');
@@ -25,7 +25,8 @@ const FavoritesTab = ({ navigation, favorites, onFavoritesChange }) => {
   }, [favorites]);
 
   const loadFavoriteTraks = () => {
-    const favTraks = treksData.filter(trek => favorites.includes(trek.id));
+    const allData = LocalDataService.getAllData();
+    const favTraks = allData.filter(trek => favorites.includes(trek.id));
     setFavoriteTraks(favTraks);
   };
 
@@ -84,8 +85,8 @@ const FavoritesTab = ({ navigation, favorites, onFavoritesChange }) => {
 
   const renderFavoriteCard = ({ item }) => (
     <View style={styles.favoriteCard}>
-      <TrekCard 
-        trek={item} 
+      <TrekCard
+        trek={item}
         onPress={handleTrekPress}
         showFavoriteButton={false}
       />

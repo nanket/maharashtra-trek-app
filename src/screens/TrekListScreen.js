@@ -8,26 +8,65 @@ import {
   TouchableOpacity,
   StatusBar,
   ScrollView,
+  Dimensions,
+  TextInput,
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import TrekCard from '../components/TrekCard';
-import { COLORS, CATEGORIES, CATEGORY_COLORS, SHADOWS } from '../utils/constants';
-import treksData from '../data/treksData.json';
+import { COLORS, CATEGORIES, CATEGORY_COLORS, SHADOWS, SPACING, BORDER_RADIUS, createTextStyle } from '../utils/constants';
+import LocalDataService from '../services/LocalDataService';
+
+const { width } = Dimensions.get('window');
 
 const TrekListScreen = ({ navigation, route }) => {
-  const { category } = route.params || {};
+  const { category, searchQuery } = route.params || {};
   const [filteredTreks, setFilteredTreks] = useState([]);
   const [selectedFilter, setSelectedFilter] = useState(category || 'all');
+  const [searchText, setSearchText] = useState(searchQuery || '');
+  const [isSearchMode, setIsSearchMode] = useState(!!searchQuery);
 
   useEffect(() => {
-    filterTreks(selectedFilter);
-  }, [selectedFilter]);
+    if (isSearchMode && searchText) {
+      performSearch(searchText);
+    } else {
+      filterTreks(selectedFilter);
+    }
+  }, [selectedFilter, searchText, isSearchMode]);
+
+  const performSearch = (query) => {
+    if (!query || query.trim().length < 2) {
+      setFilteredTreks([]);
+      return;
+    }
+
+    const searchResults = LocalDataService.searchData(query);
+    setFilteredTreks(searchResults);
+  };
 
   const filterTreks = (filter) => {
+    const allData = LocalDataService.getAllData();
+
     if (filter === 'all') {
-      setFilteredTreks(treksData);
+      setFilteredTreks(allData);
     } else {
-      setFilteredTreks(treksData.filter(trek => trek.category === filter));
+      // Map difficulty levels to filter criteria
+      const difficultyMapping = {
+        'beginner': ['Easy'],
+        'intermediate': ['Moderate', 'Easy to Moderate'],
+        'advanced': ['Difficult', 'Very difficult with rock climbing', 'Moderate to difficult']
+      };
+
+      if (difficultyMapping[filter]) {
+        setFilteredTreks(allData.filter(trek =>
+          difficultyMapping[filter].some(difficulty =>
+            trek.difficulty.toLowerCase().includes(difficulty.toLowerCase())
+          )
+        ));
+      } else {
+        // Category-based filtering using LocalDataService
+        const categoryData = LocalDataService.getDataByCategory(filter);
+        setFilteredTreks(categoryData);
+      }
     }
   };
 
@@ -37,26 +76,70 @@ const TrekListScreen = ({ navigation, route }) => {
 
   const handleFilterPress = (filter) => {
     setSelectedFilter(filter);
+    setIsSearchMode(false);
+    setSearchText('');
+  };
+
+  const handleSearchSubmit = () => {
+    if (searchText.trim()) {
+      setIsSearchMode(true);
+      performSearch(searchText);
+    }
+  };
+
+  const handleSearchClear = () => {
+    setSearchText('');
+    setIsSearchMode(false);
+    filterTreks(selectedFilter);
   };
 
   const getScreenTitle = () => {
+    if (isSearchMode && searchText) {
+      return `🔍 Search Results`;
+    }
+
     switch (selectedFilter) {
+      case 'beginner':
+        return '🌱 Beginner Treks';
+      case 'intermediate':
+        return '⛰️ Intermediate Treks';
+      case 'advanced':
+        return '🏔️ Advanced Treks';
       case CATEGORIES.FORT:
         return 'Forts';
       case CATEGORIES.WATERFALL:
         return 'Waterfalls';
       case CATEGORIES.TREK:
         return 'Treks';
+      case CATEGORIES.CAVE:
+        return 'Caves';
       default:
         return 'All Destinations';
     }
   };
 
+  const getScreenSubtitle = () => {
+    if (isSearchMode && searchText) {
+      return `Results for "${searchText}"`;
+    }
+
+    switch (selectedFilter) {
+      case 'beginner':
+        return 'Perfect for first-time trekkers';
+      case 'intermediate':
+        return 'For experienced adventurers';
+      case 'advanced':
+        return 'Challenge yourself with expert-level treks';
+      default:
+        return `${filteredTreks.length} destination${filteredTreks.length !== 1 ? 's' : ''} found`;
+    }
+  };
+
   const filters = [
-    { id: 'all', label: 'All' },
-    { id: CATEGORIES.FORT, label: 'Forts' },
-    { id: CATEGORIES.WATERFALL, label: 'Waterfalls' },
-    { id: CATEGORIES.TREK, label: 'Treks' },
+    { id: 'all', label: 'All', icon: '🗺️', color: COLORS.primary, gradient: [COLORS.primary, COLORS.primaryLight] },
+    { id: 'beginner', label: 'Beginner', icon: '🌱', color: COLORS.success, gradient: ['#10B981', '#059669'] },
+    { id: 'intermediate', label: 'Intermediate', icon: '⛰️', color: COLORS.warning, gradient: ['#F59E0B', '#D97706'] },
+    { id: 'advanced', label: 'Advanced', icon: '🏔️', color: COLORS.error, gradient: ['#EF4444', '#DC2626'] },
   ];
 
   const renderTrekCard = ({ item }) => (
@@ -64,53 +147,84 @@ const TrekListScreen = ({ navigation, route }) => {
   );
 
   const renderHeader = () => (
-    <LinearGradient
-      colors={[COLORS.primary, COLORS.primaryLight]}
-      style={styles.header}
-    >
-      <StatusBar barStyle="light-content" backgroundColor={COLORS.primary} />
-      <View style={styles.headerContent}>
-        <Text style={styles.title}>{getScreenTitle()}</Text>
-        <Text style={styles.subtitle}>
-          {filteredTreks.length} destination{filteredTreks.length !== 1 ? 's' : ''} found
-        </Text>
+    <View style={styles.headerContainer}>
+      <StatusBar barStyle="dark-content" backgroundColor={COLORS.background} />
 
-        <ScrollView
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          contentContainerStyle={styles.filtersContainer}
-        >
-          {filters.map((filter) => (
-            <TouchableOpacity
-              key={filter.id}
-              style={[
-                styles.filterButton,
-                selectedFilter === filter.id && styles.filterButtonActive
-              ]}
-              onPress={() => handleFilterPress(filter.id)}
-              activeOpacity={0.8}
-            >
-              {selectedFilter === filter.id ? (
-                <LinearGradient
-                  colors={[COLORS.accent, COLORS.secondary]}
-                  style={styles.filterGradient}
-                  start={{ x: 0, y: 0 }}
-                  end={{ x: 1, y: 0 }}
-                >
-                  <Text style={styles.filterTextActive}>
-                    {filter.label}
-                  </Text>
-                </LinearGradient>
-              ) : (
-                <Text style={styles.filterText}>
-                  {filter.label}
-                </Text>
-              )}
-            </TouchableOpacity>
-          ))}
-        </ScrollView>
+      {/* Modern Header with Clean Design */}
+      <View style={styles.modernHeader}>
+        <View style={styles.headerTextContainer}>
+          <Text style={styles.modernTitle}>{getScreenTitle()}</Text>
+          <Text style={styles.modernSubtitle}>{getScreenSubtitle()}</Text>
+        </View>
+
+        {/* Stats Card */}
+        <View style={styles.statsCard}>
+          <Text style={styles.statsNumber}>{filteredTreks.length}</Text>
+          <Text style={styles.statsLabel}>Destinations</Text>
+        </View>
       </View>
-    </LinearGradient>
+
+      {/* Search Bar */}
+      <View style={styles.searchContainer}>
+        <View style={styles.searchBar}>
+          <Text style={styles.searchIcon}>🔍</Text>
+          <TextInput
+            style={styles.searchInput}
+            placeholder="Search treks, forts, waterfalls..."
+            placeholderTextColor={COLORS.textSecondary}
+            value={searchText}
+            onChangeText={setSearchText}
+            onSubmitEditing={handleSearchSubmit}
+            returnKeyType="search"
+          />
+          {searchText.length > 0 && (
+            <TouchableOpacity onPress={handleSearchClear} style={styles.clearButton}>
+              <Text style={styles.clearIcon}>✕</Text>
+            </TouchableOpacity>
+          )}
+        </View>
+      </View>
+
+      {/* Modern Filter Tabs - Hide when in search mode */}
+      {!isSearchMode && (
+        <View style={styles.modernFiltersContainer}>
+          <ScrollView
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            contentContainerStyle={styles.filtersScrollContent}
+          >
+            {filters.map((filter, index) => (
+              <TouchableOpacity
+                key={filter.id}
+                style={[
+                  styles.modernFilterButton,
+                  selectedFilter === filter.id && styles.modernFilterButtonActive
+                ]}
+                onPress={() => handleFilterPress(filter.id)}
+                activeOpacity={0.7}
+              >
+                {selectedFilter === filter.id ? (
+                  <LinearGradient
+                    colors={filter.gradient}
+                    style={styles.modernFilterGradient}
+                    start={{ x: 0, y: 0 }}
+                    end={{ x: 1, y: 1 }}
+                  >
+                    <Text style={styles.modernFilterIcon}>{filter.icon}</Text>
+                    <Text style={styles.modernFilterTextActive}>{filter.label}</Text>
+                  </LinearGradient>
+                ) : (
+                  <View style={styles.modernFilterContent}>
+                    <Text style={styles.modernFilterIconInactive}>{filter.icon}</Text>
+                    <Text style={styles.modernFilterTextInactive}>{filter.label}</Text>
+                  </View>
+                )}
+              </TouchableOpacity>
+            ))}
+          </ScrollView>
+        </View>
+      )}
+    </View>
   );
 
   return (
@@ -133,65 +247,148 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.background,
   },
   listContainer: {
-    paddingBottom: 20,
+    paddingBottom: SPACING.xl,
   },
-  header: {
-    paddingTop: 20,
-    paddingBottom: 24,
+
+  // Modern Header Styles
+  headerContainer: {
+    backgroundColor: COLORS.background,
+    paddingTop: SPACING.lg,
+    paddingBottom: SPACING.md,
   },
-  headerContent: {
-    paddingHorizontal: 20,
-    alignItems: 'center',
-  },
-  title: {
-    fontSize: 28,
-    fontWeight: '900',
-    color: COLORS.surface,
-    marginBottom: 8,
-    textAlign: 'center',
-  },
-  subtitle: {
-    fontSize: 16,
-    color: COLORS.surface,
-    marginBottom: 20,
-    opacity: 0.9,
-    textAlign: 'center',
-  },
-  filtersContainer: {
+  modernHeader: {
     flexDirection: 'row',
-    justifyContent: 'center',
-    gap: 12,
-    paddingHorizontal: 20,
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
+    paddingHorizontal: SPACING.xl,
+    marginBottom: SPACING.lg,
   },
-  filterButton: {
-    borderRadius: 20,
-    overflow: 'hidden',
-    backgroundColor: 'rgba(255, 255, 255, 0.2)',
-    borderWidth: 1,
-    borderColor: 'rgba(255, 255, 255, 0.3)',
-    marginHorizontal: 4,
+  headerTextContainer: {
+    flex: 1,
+    marginRight: SPACING.md,
+  },
+  modernTitle: {
+    ...createTextStyle(28, 'bold'),
+    color: COLORS.text,
+    marginBottom: SPACING.xs,
+    lineHeight: 34,
+  },
+  modernSubtitle: {
+    ...createTextStyle(14, 'regular'),
+    color: COLORS.textSecondary,
+    lineHeight: 20,
+  },
+
+  // Stats Card
+  statsCard: {
+    backgroundColor: COLORS.backgroundCard,
+    paddingHorizontal: SPACING.lg,
+    paddingVertical: SPACING.md,
+    borderRadius: BORDER_RADIUS.lg,
+    alignItems: 'center',
+    minWidth: 80,
     ...SHADOWS.small,
   },
-  filterButtonActive: {
-    backgroundColor: 'transparent',
+  statsNumber: {
+    ...createTextStyle(24, 'bold'),
+    color: COLORS.primary,
+    lineHeight: 28,
+  },
+  statsLabel: {
+    ...createTextStyle(11, 'medium'),
+    color: COLORS.textSecondary,
+    textTransform: 'uppercase',
+    letterSpacing: 0.5,
+  },
+
+  // Search Bar Styles
+  searchContainer: {
+    paddingHorizontal: SPACING.xl,
+    marginBottom: SPACING.lg,
+  },
+  searchBar: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: COLORS.backgroundCard,
+    borderRadius: BORDER_RADIUS.lg,
+    paddingHorizontal: SPACING.md,
+    paddingVertical: SPACING.sm,
+    borderWidth: 1,
+    borderColor: COLORS.surfaceBorder,
+    ...SHADOWS.small,
+  },
+  searchIcon: {
+    fontSize: 16,
+    marginRight: SPACING.sm,
+    color: COLORS.textSecondary,
+  },
+  searchInput: {
+    flex: 1,
+    ...createTextStyle(16, 'regular'),
+    color: COLORS.text,
+    paddingVertical: SPACING.xs,
+  },
+  clearButton: {
+    padding: SPACING.xs,
+  },
+  clearIcon: {
+    fontSize: 16,
+    color: COLORS.textSecondary,
+    fontWeight: 'bold',
+  },
+
+  // Modern Filter Styles
+  modernFiltersContainer: {
+    paddingHorizontal: SPACING.xl,
+  },
+  filtersScrollContent: {
+    paddingRight: SPACING.xl,
+  },
+  modernFilterButton: {
+    marginRight: SPACING.sm,
+    borderRadius: BORDER_RADIUS.xl,
+    overflow: 'hidden',
+    backgroundColor: COLORS.backgroundCard,
+    borderWidth: 1,
+    borderColor: COLORS.surfaceBorder,
+    ...SHADOWS.small,
+  },
+  modernFilterButtonActive: {
     borderColor: 'transparent',
+    transform: [{ scale: 1.02 }],
+    ...SHADOWS.medium,
   },
-  filterGradient: {
-    paddingHorizontal: 16,
-    paddingVertical: 10,
+  modernFilterGradient: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: SPACING.lg,
+    paddingVertical: SPACING.md,
+    minWidth: 100,
   },
-  filterText: {
-    fontSize: 14,
-    color: COLORS.surface,
-    fontWeight: '600',
-    paddingHorizontal: 16,
-    paddingVertical: 10,
-    opacity: 0.8,
+  modernFilterContent: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: SPACING.lg,
+    paddingVertical: SPACING.md,
+    minWidth: 100,
   },
-  filterTextActive: {
-    fontSize: 14,
-    color: COLORS.surface,
-    fontWeight: '700',
+  modernFilterIcon: {
+    fontSize: 16,
+    marginRight: SPACING.sm,
+  },
+  modernFilterIconInactive: {
+    fontSize: 16,
+    marginRight: SPACING.sm,
+    opacity: 0.6,
+  },
+  modernFilterTextActive: {
+    ...createTextStyle(13, 'bold'),
+    color: COLORS.textInverse,
+    textAlign: 'center',
+  },
+  modernFilterTextInactive: {
+    ...createTextStyle(13, 'medium'),
+    color: COLORS.text,
     textAlign: 'center',
   },
 });

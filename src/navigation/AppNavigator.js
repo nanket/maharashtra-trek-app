@@ -9,6 +9,7 @@ import TrekDetailsScreen from '../screens/TrekDetailsScreen';
 import MapScreen from '../screens/MapScreen';
 import MyTreksScreen from '../screens/MyTreksScreen';
 import LoungeScreen from '../screens/LoungeScreen';
+import TrekScreen from '../screens/TrekScreen';
 import TrekPlannerScreen from '../screens/TrekPlannerScreen';
 import EmergencyScreen from '../screens/EmergencyScreen';
 import EmergencyContactsScreen from '../screens/EmergencyContactsScreen';
@@ -18,12 +19,21 @@ import { COLORS, FONTS, createTextStyle } from '../utils/constants';
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
-// Placeholder screens for bottom tabs
-const TrekScreen = () => (
-  <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-    <Text>Trek Screen</Text>
-  </View>
-);
+// Trek Stack Navigator
+const TrekStack = () => {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <Stack.Screen name="TrekMain" component={TrekScreen} />
+      <Stack.Screen name="TrekList" component={TrekListScreen} />
+      <Stack.Screen name="TrekDetails" component={TrekDetailsScreen} />
+      <Stack.Screen name="TrekPlanner" component={TrekPlannerScreen} />
+    </Stack.Navigator>
+  );
+};
 
 
 
@@ -86,6 +96,15 @@ const TabNavigator = () => {
         options={{
           tabBarIcon: ({ color, size }) => (
             <Text style={{ fontSize: 20, color }}>🏠</Text>
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Treks"
+        component={TrekStack}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <Text style={{ fontSize: 20, color }}>🏔️</Text>
           ),
         }}
       />

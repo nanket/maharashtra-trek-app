@@ -17,7 +17,7 @@ import LocationDetailsModal from '../components/LocationDetailsModal';
 import OfflineMapManager from '../components/OfflineMapManager';
 import MapboxOfflineManager from '../components/MapboxOfflineManager';
 import OfflineMapService from '../services/OfflineMapService';
-import treksData from '../data/treksData.json';
+import LocalDataService from '../services/LocalDataService';
 import { COLORS, SPACING, BORDER_RADIUS, SHADOWS } from '../utils/constants';
 // Map configuration
 const MAP_CONFIG = {
@@ -31,15 +31,16 @@ const MAP_CONFIG = {
 };
 
 const MapScreen = ({ navigation }) => {
-  const [locations] = useState(treksData);
-  const [filteredLocations, setFilteredLocations] = useState(treksData);
+  const allData = LocalDataService.getAllData();
+  const [locations] = useState(allData);
+  const [filteredLocations, setFilteredLocations] = useState(allData);
   const [selectedLocation, setSelectedLocation] = useState(null);
   const [modalVisible, setModalVisible] = useState(false);
   const [offlineModalVisible, setOfflineModalVisible] = useState(false);
   const [searchText, setSearchText] = useState('');
   const [activeFilter, setActiveFilter] = useState('all');
   const [mapType, setMapType] = useState('standard');
-  const [useMapbox, setUseMapbox] = useState(true);
+  const [useMapbox, setUseMapbox] = useState(false);
   const [offlineService, setOfflineService] = useState(null);
   const [isOfflineMode, setIsOfflineMode] = useState(false);
 
@@ -93,7 +94,7 @@ const MapScreen = ({ navigation }) => {
   const handleNavigate = (location) => {
     const { latitude, longitude } = location.coordinates;
     const url = `https://www.google.com/maps/dir/?api=1&destination=${latitude},${longitude}`;
-    
+
     Linking.canOpenURL(url)
       .then(supported => {
         if (supported) {
@@ -208,6 +209,7 @@ const MapScreen = ({ navigation }) => {
           {renderFilterButton('fort', 'Forts', '🏰')}
           {renderFilterButton('waterfall', 'Waterfalls', '💧')}
           {renderFilterButton('trek', 'Treks', '⛰️')}
+          {renderFilterButton('cave', 'Caves', '🕳️')}
         </ScrollView>
       </View>
 

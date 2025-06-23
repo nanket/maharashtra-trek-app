@@ -1,0 +1,159 @@
+name: Data Sync and Validation
+
+on:
+  push:
+    branches: [ main, develop ]
+    paths:
+      - 'src/data/**'
+      - 'data/**'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'src/data/**'
+      - 'data/**'
+  schedule:
+    # Run daily at 6 AM UTC to check for data updates
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+    inputs:
+      force_update:
+        description: 'Force update all data'
+        required: false
+        default: 'false'
+
+jobs:
+  validate-data:
+    runs-on: ubuntu-latest
+    name: Validate Trek Data
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Validate data structure
+      run: npm run validate-data
+      
+    - name: Check data consistency
+      run: |
+        echo "Checking for duplicate IDs..."
+        node -e "
+          const fs = require('fs');
+          const path = require('path');
+          const dataDir = './src/data';
+          const files = fs.readdirSync(dataDir).filter(f => f.endsWith('.json') && f !== 'treksData.json');
+          const ids = new Set();
+          let duplicates = [];
+          
+          files.forEach(file => {
+            try {
+              const data = JSON.parse(fs.readFileSync(path.join(dataDir, file), 'utf8'));
+              if (data.id && ids.has(data.id)) {
+                duplicates.push({file, id: data.id});
+              }
+              if (data.id) ids.add(data.id);
+            } catch (e) {
+              console.error('Error parsing', file, ':', e.message);
+              process.exit(1);
+            }
+          });
+          
+          if (duplicates.length > 0) {
+            console.error('Duplicate IDs found:', duplicates);
+            process.exit(1);
+          }
+          console.log('✅ No duplicate IDs found');
+        "
+
+  deploy-data:
+    needs: validate-data
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    name: Deploy Data to GitHub Pages
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Generate consolidated data
+      run: |
+        mkdir -p dist/api
+        node -e "
+          const fs = require('fs');
+          const path = require('path');
+          
+          // Copy individual data files
+          const dataDir = './src/data';
+          const distDir = './dist/api';
+          
+          if (!fs.existsSync(distDir)) {
+            fs.mkdirSync(distDir, { recursive: true });
+          }
+          
+          // Copy all JSON files
+          const files = fs.readdirSync(dataDir).filter(f => f.endsWith('.json'));
+          files.forEach(file => {
+            fs.copyFileSync(path.join(dataDir, file), path.join(distDir, file));
+          });
+          
+          // Generate API endpoints
+          const treksData = JSON.parse(fs.readFileSync('./src/data/treksData.json', 'utf8'));
+          
+          // Create category-specific endpoints
+          const categories = ['fort', 'waterfall', 'cave', 'trek'];
+          categories.forEach(category => {
+            const categoryData = treksData.filter(item => item.category === category);
+            fs.writeFileSync(
+              path.join(distDir, category + 's.json'),
+              JSON.stringify(categoryData, null, 2)
+            );
+          });
+          
+          // Create featured endpoint
+          const featuredData = treksData.filter(item => item.featured);
+          fs.writeFileSync(
+            path.join(distDir, 'featured.json'),
+            JSON.stringify(featuredData, null, 2)
+          );
+          
+          // Create metadata endpoint
+          const metadata = {
+            lastUpdated: new Date().toISOString(),
+            totalCount: treksData.length,
+            categories: categories.map(cat => ({
+              name: cat,
+              count: treksData.filter(item => item.category === cat).length
+            })),
+            version: '1.0.0'
+          };
+          fs.writeFileSync(
+            path.join(distDir, 'metadata.json'),
+            JSON.stringify(metadata, null, 2)
+          );
+          
+          console.log('✅ Data files generated successfully');
+        "
+        
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./dist
+        cname: maharashtra-trek-data.github.io

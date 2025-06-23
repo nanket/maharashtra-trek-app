@@ -18,7 +18,17 @@
     "ios": {
       "supportsTablet": true,
       "infoPlist": {
-        "NSLocationWhenInUseUsageDescription": "This app uses location to show your position on the map and provide navigation to trek locations."
+        "NSLocationWhenInUseUsageDescription": "This app uses location to show your position on the map and provide navigation to trek locations.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "This app uses background location to track your trek progress and provide safety features even when the app is in the background.",
+        "NSLocationAlwaysUsageDescription": "This app uses background location to track your trek progress and provide safety features even when the app is in the background.",
+        "NSLocationUsageDescription": "This app uses location services to track your trek progress and provide navigation assistance.",
+        "NSMotionUsageDescription": "This app uses motion data to track your trek activities and calculate distance and elevation.",
+        "UIBackgroundModes": ["location", "background-processing"]
+      },
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyDummy_Key_For_Development_Replace_With_Real_Key"
+        }
       }
     },
     "android": {
@@ -30,10 +40,14 @@
       "permissions": [
         "ACCESS_FINE_LOCATION",
         "ACCESS_COARSE_LOCATION",
-        "ACCESS_FINE_LOCATION",
-        "ACCESS_COARSE_LOCATION"
+        "ACCESS_BACKGROUND_LOCATION"
       ],
-      "package": "com.ninjaaniket.maharashtratrek"
+      "package": "com.ninjaaniket.maharashtratrek",
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyDummy_Key_For_Development_Replace_With_Real_Key"
+        }
+      }
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -44,6 +58,16 @@
         {
           "RNMapboxMapsImpl": "mapbox",
           "RNMapboxMapsDownloadToken": "sk.eyJ1IjoiaXJlYWN0bmluamEiLCJhIjoiY21iYnVkanJuMDRpYTJpcjB2bXgyYzE5NyJ9.0gNVm3mH-j6LCFuqCQaCpQ"
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "This app uses location to track your trek progress and provide navigation assistance.",
+          "locationAlwaysPermission": "This app uses background location to track your trek progress and provide safety features even when the app is in the background.",
+          "locationWhenInUsePermission": "This app uses location to show your position on the map and provide navigation to trek locations.",
+          "isIosBackgroundLocationEnabled": true,
+          "isAndroidBackgroundLocationEnabled": true
         }
       ]
     ]

@@ -1,7 +1,10 @@
+import { Platform } from 'react-native';
+
 export const CATEGORIES = {
   FORT: 'fort',
   WATERFALL: 'waterfall',
   TREK: 'trek',
+  CAVE: 'cave',
 };
 
 export const DIFFICULTY_LEVELS = {
@@ -38,9 +41,11 @@ export const COLORS = {
 
   // Text colors - Perfect contrast
   text: '#1E293B',           // Slate 800
+  textPrimary: '#1E293B',    // Slate 800 (alias for consistency)
   textSecondary: '#64748B',  // Slate 500
   textLight: '#94A3B8',      // Slate 400
   textInverse: '#FFFFFF',
+  white: '#FFFFFF',          // Pure white
 
   // Status colors - Modern and clear
   success: '#10B981',        // Emerald
@@ -52,6 +57,7 @@ export const COLORS = {
   fort: '#DC2626',           // Red for historic forts
   waterfall: '#0EA5E9',      // Sky blue for waterfalls
   trek: '#10B981',           // Emerald for treks
+  cave: '#8B5CF6',           // Purple for caves
 
   // Difficulty colors
   easy: '#10B981',           // Green
@@ -88,6 +94,13 @@ export const CATEGORY_COLORS = {
     emoji: '🥾',
     theme: 'adventure',
   },
+  [CATEGORIES.CAVE]: {
+    primary: COLORS.cave,
+    background: 'rgba(139, 92, 246, 0.1)',
+    icon: '🕳️',
+    emoji: '🏛️',
+    theme: 'heritage',
+  },
 };
 
 export const DIFFICULTY_COLORS = {
@@ -114,6 +127,7 @@ export const DIFFICULTY_COLORS = {
   },
 };
 
+// Platform-optimized shadows - Very subtle for Android
 export const SHADOWS = {
   none: {
     shadowColor: 'transparent',
@@ -122,34 +136,50 @@ export const SHADOWS = {
     shadowRadius: 0,
     elevation: 0,
   },
-  small: {
-    shadowColor: '#000000',
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.05,
-    shadowRadius: 2,
-    elevation: 1,
-  },
-  medium: {
-    shadowColor: '#000000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.08,
-    shadowRadius: 4,
-    elevation: 2,
-  },
-  large: {
-    shadowColor: '#000000',
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.12,
-    shadowRadius: 8,
-    elevation: 4,
-  },
-  xl: {
-    shadowColor: '#000000',
-    shadowOffset: { width: 0, height: 8 },
-    shadowOpacity: 0.15,
-    shadowRadius: 16,
-    elevation: 8,
-  },
+  small: Platform.select({
+    ios: {
+      shadowColor: '#000000',
+      shadowOffset: { width: 0, height: 0.5 },
+      shadowOpacity: 0.02,
+      shadowRadius: 1,
+    },
+    android: {
+      elevation: 0.5,
+    },
+  }),
+  medium: Platform.select({
+    ios: {
+      shadowColor: '#000000',
+      shadowOffset: { width: 0, height: 1 },
+      shadowOpacity: 0.04,
+      shadowRadius: 2,
+    },
+    android: {
+      elevation: 1,
+    },
+  }),
+  large: Platform.select({
+    ios: {
+      shadowColor: '#000000',
+      shadowOffset: { width: 0, height: 2 },
+      shadowOpacity: 0.06,
+      shadowRadius: 3,
+    },
+    android: {
+      elevation: 1.5,
+    },
+  }),
+  xl: Platform.select({
+    ios: {
+      shadowColor: '#000000',
+      shadowOffset: { width: 0, height: 3 },
+      shadowOpacity: 0.08,
+      shadowRadius: 4,
+    },
+    android: {
+      elevation: 2,
+    },
+  }),
 };
 
 export const SPACING = {
@@ -180,6 +210,24 @@ export const IMAGES = {
   harishchandragad: require('../../assets/img/harishchandra.png'),
   sinhagad: require('../../assets/img/raigad.jpg'), // Using raigad for sinhagad
   bhimashankar: require('../../assets/img/harihar.jpg'), // Using harihar for bhimashankar
+  kalsubai: require('../../assets/img/rajgad.jpg'), // Using rajgad for kalsubai (similar mountain fort)
+  lohagad: require('../../assets/img/raigad.jpg'), // Using raigad for lohagad (similar fort)
+  tikona: require('../../assets/img/rajgad.jpg'), // Using rajgad for tikona (similar fort)
+  visapur: require('../../assets/img/raigad.jpg'), // Using raigad for visapur (similar fort)
+  torna: require('../../assets/img/rajgad.jpg'), // Using rajgad for torna (similar fort)
+  andharban: require('../../assets/img/harihar.jpg'), // Using harihar for andharban (forest trek)
+
+  // Additional images for carousel (using existing images for variety)
+  rajgad2: require('../../assets/img/harishchandra.png'),
+  rajgad3: require('../../assets/img/raigad.jpg'),
+  dudhsagar2: require('../../assets/img/rajgad.jpg'),
+  dudhsagar3: require('../../assets/img/harihar.jpg'),
+  harishchandragad2: require('../../assets/img/waterfall.jpg'),
+  harishchandragad3: require('../../assets/img/rajgad.jpg'),
+  sinhagad2: require('../../assets/img/harishchandra.png'),
+  sinhagad3: require('../../assets/img/harihar.jpg'),
+  bhimashankar2: require('../../assets/img/waterfall.jpg'),
+  bhimashankar3: require('../../assets/img/raigad.jpg'),
 
   // Category background images
   fortBackground: require('../../assets/img/rajgad.jpg'),
@@ -188,4 +236,61 @@ export const IMAGES = {
 
   // Default fallback
   defaultImage: require('../../assets/icon.png'),
+};
+
+// Cloudinary image URLs for high-quality images
+export const CLOUDINARY_IMAGES = {
+  // Rajgad Fort images from Cloudinary
+  rajgad_main: 'https://res.cloudinary.com/dworlkdn8/image/upload/v1573202739/trekapp/trek%20images/raigad_dae0q5.jpg',
+  rajgad_detail1: 'https://res.cloudinary.com/dworlkdn8/image/upload/v1610637684/trekapp/detailpageimages/raigad/main_e1fgqe.jpg',
+  rajgad_detail2: 'https://res.cloudinary.com/dworlkdn8/image/upload/v1610637799/trekapp/detailpageimages/raigad/raigad1_hgyhxy.jpg',
+  rajgad_detail3: 'https://res.cloudinary.com/dworlkdn8/image/upload/v1610637800/trekapp/detailpageimages/raigad/raigad2_kqkjuw.jpg',
+  rajgad_detail4: 'https://res.cloudinary.com/dworlkdn8/image/upload/v1610637800/trekapp/detailpageimages/raigad/raigad3_qvxfqq.jpg',
+
+  // Harishchandragad Fort images - using high-quality public images
+  harishchandragad_main: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+  harishchandragad_detail1: 'https://images.unsplash.com/photo-1464822759844-d150baec4e84?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+  harishchandragad_detail2: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+  harishchandragad_detail3: 'https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+  harishchandragad_detail4: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+
+  // Sinhagad Fort images - using high-quality mountain/fort images
+  sinhagad_main: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+  sinhagad_detail1: 'https://images.unsplash.com/photo-1464822759844-d150baec4e84?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+  sinhagad_detail2: 'https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+  sinhagad_detail3: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+
+  // Lohagad Fort images - using high-quality landscape images
+  lohagad_main: 'https://images.unsplash.com/photo-1464822759844-d150baec4e84?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+  lohagad_detail1: 'https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+  lohagad_detail2: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+  lohagad_detail3: 'https://images.unsplash.com/photo-1464822759844-d150baec4e84?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+
+  // Kalsubai Peak images - using high-quality mountain peak images
+  kalsubai_main: 'https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+  kalsubai_detail1: 'https://images.unsplash.com/photo-1464822759844-d150baec4e84?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+  kalsubai_detail2: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+  kalsubai_detail3: 'https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+
+  // Dudhsagar Waterfall images - using high-quality waterfall images
+  dudhsagar_main: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+  dudhsagar_detail1: 'https://images.unsplash.com/photo-1464822759844-d150baec4e84?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+  dudhsagar_detail2: 'https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+  dudhsagar_detail3: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+};
+
+// Image collections for carousel
+export const TREK_IMAGE_COLLECTIONS = {
+  rajgad: ['rajgad_main', 'rajgad_detail1', 'rajgad_detail2', 'rajgad_detail3', 'rajgad_detail4'],
+  harishchandragad: ['harishchandragad_main', 'harishchandragad_detail1', 'harishchandragad_detail2', 'harishchandragad_detail3', 'harishchandragad_detail4'],
+  sinhagad: ['sinhagad_main', 'sinhagad_detail1', 'sinhagad_detail2', 'sinhagad_detail3'],
+  lohagad: ['lohagad_main', 'lohagad_detail1', 'lohagad_detail2', 'lohagad_detail3'],
+  kalsubai: ['kalsubai_main', 'kalsubai_detail1', 'kalsubai_detail2', 'kalsubai_detail3'],
+  dudhsagar: ['dudhsagar_main', 'dudhsagar_detail1', 'dudhsagar_detail2', 'dudhsagar_detail3'],
+  // Treks with single images for now - can be expanded with real images
+  bhimashankar: ['bhimashankar'],
+  tikona: ['tikona'],
+  visapur: ['visapur'],
+  torna: ['torna'],
+  andharban: ['andharban'],
 };

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
   View,
   Text,
@@ -11,16 +11,36 @@ import {
   Alert,
   Modal,
   TextInput,
+  Animated,
 } from 'react-native';
 import MapView from '../components/MapView';
 import MapboxMapView from '../components/MapboxMapView';
 import ComprehensiveTrekInfo from '../components/ComprehensiveTrekInfo';
 import LocationDetailsModal from '../components/LocationDetailsModal';
+import ImageCarousel from '../components/ImageCarousel';
+import PhotoGallery from '../components/PhotoGallery';
 import UserStorageService from '../utils/userStorage';
 import { COLORS, CATEGORIES, CATEGORY_COLORS, DIFFICULTY_COLORS, DIFFICULTY_LEVELS, SPACING, BORDER_RADIUS, SHADOWS, IMAGES, createTextStyle } from '../utils/constants';
 
 const TrekDetailsScreen = ({ route, navigation }) => {
   const { trek } = route.params;
+
+  // Early return if trek data is not available
+  if (!trek) {
+    return (
+      <SafeAreaView style={styles.container}>
+        <View style={styles.errorContainer}>
+          <Text style={styles.errorText}>Trek information not available</Text>
+          <TouchableOpacity
+            style={styles.backButton}
+            onPress={() => navigation.goBack()}
+          >
+            <Text style={styles.backButtonText}>Go Back</Text>
+          </TouchableOpacity>
+        </View>
+      </SafeAreaView>
+    );
+  }
   const [modalVisible, setModalVisible] = useState(false);
   const [completionModalVisible, setCompletionModalVisible] = useState(false);
   const [isFavorite, setIsFavorite] = useState(false);
@@ -28,7 +48,14 @@ const TrekDetailsScreen = ({ route, navigation }) => {
   const [rating, setRating] = useState(0);
   const [notes, setNotes] = useState('');
   const [loading, setLoading] = useState(false);
-  const [useMapbox, setUseMapbox] = useState(true);
+  const [useMapbox, setUseMapbox] = useState(false);
+  const [galleryVisible, setGalleryVisible] = useState(false);
+  const [galleryInitialIndex, setGalleryInitialIndex] = useState(0);
+
+  // Expandable FAB state
+  const [fabExpanded, setFabExpanded] = useState(false);
+  const fabAnimation = useRef(new Animated.Value(0)).current;
+  const fabRotation = useRef(new Animated.Value(0)).current;
 
   const categoryData = CATEGORY_COLORS[trek.category] || CATEGORY_COLORS[CATEGORIES.TREK];
   const difficultyData = DIFFICULTY_COLORS[trek.difficulty] || DIFFICULTY_COLORS[DIFFICULTY_LEVELS.EASY];
@@ -130,6 +157,38 @@ const TrekDetailsScreen = ({ route, navigation }) => {
     }
   };
 
+  const handleImagePress = (index) => {
+    setGalleryInitialIndex(index);
+    setGalleryVisible(true);
+  };
+
+  // FAB Animation Functions
+  const toggleFab = () => {
+    const toValue = fabExpanded ? 0 : 1;
+
+    Animated.parallel([
+      Animated.spring(fabAnimation, {
+        toValue,
+        useNativeDriver: true,
+        tension: 100,
+        friction: 8,
+      }),
+      Animated.timing(fabRotation, {
+        toValue,
+        duration: 300,
+        useNativeDriver: true,
+      }),
+    ]).start();
+
+    setFabExpanded(!fabExpanded);
+  };
+
+  const closeFab = () => {
+    if (fabExpanded) {
+      toggleFab();
+    }
+  };
+
   const renderStars = (rating, onPress = null) => {
     return (
       <View style={styles.starsContainer}>
@@ -151,34 +210,55 @@ const TrekDetailsScreen = ({ route, navigation }) => {
     );
   };
 
-  // Get image from local assets
-  const getImageSource = () => {
-    return IMAGES[trek.imageKey] || IMAGES.defaultImage;
-  };
-
-  const renderContactInfo = () => (
-    <View style={styles.section}>
-      <Text style={styles.sectionTitle}>Local Contacts</Text>
-      {trek.localContacts.map((contact, index) => (
-        <View key={index} style={styles.contactCard}>
-          <View style={styles.contactInfo}>
-            <Text style={styles.contactName}>{contact.name}</Text>
-            <Text style={styles.contactService}>{contact.service}</Text>
+  const renderContactInfo = () => {
+    // Check if localContacts exists and is an array
+    if (!trek.localContacts || !Array.isArray(trek.localContacts) || trek.localContacts.length === 0) {
+      return (
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>Local Contacts</Text>
+          <View style={styles.noDataContainer}>
+            <Text style={styles.noDataText}>No local contacts available</Text>
           </View>
-          <TouchableOpacity
-            style={styles.phoneButton}
-            onPress={() => handlePhonePress(contact.phone)}
-          >
-            <Text style={styles.phoneText}>📞 Call</Text>
-          </TouchableOpacity>
         </View>
-      ))}
-    </View>
-  );
+      );
+    }
+
+    return (
+      <View style={styles.section}>
+        <Text style={styles.sectionTitle}>Local Contacts</Text>
+        {trek.localContacts.map((contact, index) => (
+          <View key={index} style={styles.contactCard}>
+            <View style={styles.contactInfo}>
+              <Text style={styles.contactName}>{contact.name}</Text>
+              <Text style={styles.contactService}>{contact.service}</Text>
+            </View>
+            <TouchableOpacity
+              style={styles.phoneButton}
+              onPress={() => handlePhonePress(contact.phone)}
+            >
+              <Text style={styles.phoneText}>📞 Call</Text>
+            </TouchableOpacity>
+          </View>
+        ))}
+      </View>
+    );
+  };
 
   const [selectedCity, setSelectedCity] = useState('fromPune');
 
   const renderHowToReach = () => {
+    // Check if howToReach exists
+    if (!trek.howToReach) {
+      return (
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>How to Reach</Text>
+          <View style={styles.noDataContainer}>
+            <Text style={styles.noDataText}>Transportation information not available</Text>
+          </View>
+        </View>
+      );
+    }
+
     // Check if the new structure exists, otherwise fall back to old structure
     const hasNewStructure = trek.howToReach.fromMumbai || trek.howToReach.fromPune;
 
@@ -308,7 +388,7 @@ const TrekDetailsScreen = ({ route, navigation }) => {
               {typeof mode.data === 'object' ? mode.data.description : mode.data}
             </Text>
 
-            {typeof mode.data === 'object' && mode.data.steps && (
+            {typeof mode.data === 'object' && mode.data.steps && Array.isArray(mode.data.steps) && mode.data.steps.length > 0 && (
               <View style={styles.stepsContainer}>
                 <Text style={styles.stepsTitle}>Step-by-step directions:</Text>
                 {mode.data.steps.map((step, stepIndex) => (
@@ -330,12 +410,14 @@ const TrekDetailsScreen = ({ route, navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.scrollView}>
-        <View style={styles.imageContainer}>
-          <Image
-            source={getImageSource()}
-            style={styles.image}
-            resizeMode="cover"
-          />
+        <ImageCarousel
+          imageKey={trek.imageKey}
+          videos={trek.videos || []}
+          height={280}
+          style={styles.imageContainer}
+          onImagePress={handleImagePress}
+        >
+          {/* Category Badge */}
           <View style={[styles.categoryBadge, { backgroundColor: categoryData?.primary || COLORS.primary }]}>
             <Text style={styles.categoryIcon}>{categoryData?.emoji || '📍'}</Text>
             <Text style={styles.categoryText}>
@@ -343,6 +425,7 @@ const TrekDetailsScreen = ({ route, navigation }) => {
             </Text>
           </View>
 
+          {/* Rating Badge */}
           {trek.rating && (
             <View style={styles.ratingBadge}>
               <Text style={styles.ratingIcon}>⭐</Text>
@@ -350,7 +433,7 @@ const TrekDetailsScreen = ({ route, navigation }) => {
               <Text style={styles.reviewCount}>({trek.reviewCount} reviews)</Text>
             </View>
           )}
-        </View>
+        </ImageCarousel>
 
         <View style={styles.content}>
           <View style={styles.header}>
@@ -393,47 +476,56 @@ const TrekDetailsScreen = ({ route, navigation }) => {
           {renderHowToReach()}
 
           {/* Interactive Map Section */}
-          <View style={styles.section}>
-            <View style={styles.sectionHeader}>
+          {trek.coordinates && trek.coordinates.latitude && trek.coordinates.longitude ? (
+            <View style={styles.section}>
+              <View style={styles.sectionHeader}>
+                <Text style={styles.sectionTitle}>Location Map</Text>
+                <TouchableOpacity
+                  style={styles.mapToggleButton}
+                  onPress={() => setUseMapbox(!useMapbox)}
+                >
+                  <Text style={styles.mapToggleText}>
+                    {useMapbox ? 'Mapbox' : 'Google'}
+                  </Text>
+                </TouchableOpacity>
+              </View>
+              <View style={styles.mapContainer}>
+                {useMapbox ? (
+                  <MapboxMapView
+                    locations={[trek]}
+                    selectedLocation={trek}
+                    onLocationPress={handleLocationPress}
+                    showUserLocation={true}
+                    initialCenter={{
+                      latitude: trek.coordinates.latitude,
+                      longitude: trek.coordinates.longitude,
+                    }}
+                    style={styles.mapView}
+                  />
+                ) : (
+                  <MapView
+                    locations={[trek]}
+                    selectedLocation={trek}
+                    onLocationPress={handleLocationPress}
+                    showUserLocation={true}
+                    initialCenter={{
+                      latitude: trek.coordinates.latitude,
+                      longitude: trek.coordinates.longitude,
+                    }}
+                    mapType="standard"
+                    style={styles.mapView}
+                  />
+                )}
+              </View>
+            </View>
+          ) : (
+            <View style={styles.section}>
               <Text style={styles.sectionTitle}>Location Map</Text>
-              <TouchableOpacity
-                style={styles.mapToggleButton}
-                onPress={() => setUseMapbox(!useMapbox)}
-              >
-                <Text style={styles.mapToggleText}>
-                  {useMapbox ? 'Mapbox' : 'Google'}
-                </Text>
-              </TouchableOpacity>
+              <View style={styles.noDataContainer}>
+                <Text style={styles.noDataText}>Location coordinates not available</Text>
+              </View>
             </View>
-            <View style={styles.mapContainer}>
-              {useMapbox ? (
-                <MapboxMapView
-                  locations={[trek]}
-                  selectedLocation={trek}
-                  onLocationPress={handleLocationPress}
-                  showUserLocation={true}
-                  initialCenter={{
-                    latitude: trek.coordinates.latitude,
-                    longitude: trek.coordinates.longitude,
-                  }}
-                  style={styles.mapView}
-                />
-              ) : (
-                <MapView
-                  locations={[trek]}
-                  selectedLocation={trek}
-                  onLocationPress={handleLocationPress}
-                  showUserLocation={true}
-                  initialCenter={{
-                    latitude: trek.coordinates.latitude,
-                    longitude: trek.coordinates.longitude,
-                  }}
-                  mapType="standard"
-                  style={styles.mapView}
-                />
-              )}
-            </View>
-          </View>
+          )}
 
           {/* Comprehensive Trek Information */}
           <View style={styles.section}>
@@ -450,48 +542,222 @@ const TrekDetailsScreen = ({ route, navigation }) => {
         </View>
       </ScrollView>
 
-      {/* Floating Action Buttons */}
-      <View style={styles.floatingButtons}>
-        <TouchableOpacity
-          style={[styles.floatingButton, styles.favoriteFloatingButton]}
-          onPress={handleFavoriteToggle}
-          disabled={loading}
-        >
-          <Text style={styles.floatingButtonIcon}>
-            {isFavorite ? '❤️' : '🤍'}
-          </Text>
-        </TouchableOpacity>
+      {/* Expandable Floating Action Button */}
+      <View style={styles.fabContainer}>
+        {/* Secondary Action Buttons */}
+        {fabExpanded && (
+          <>
+            <Animated.View
+              style={[
+                styles.secondaryFab,
+                {
+                  transform: [
+                    {
+                      translateY: fabAnimation.interpolate({
+                        inputRange: [0, 1],
+                        outputRange: [0, -70],
+                      }),
+                    },
+                    {
+                      scale: fabAnimation.interpolate({
+                        inputRange: [0, 1],
+                        outputRange: [0, 1],
+                      }),
+                    },
+                  ],
+                  opacity: fabAnimation,
+                },
+              ]}
+            >
+              <TouchableOpacity
+                style={[styles.fabButton, styles.favoriteButton]}
+                onPress={() => {
+                  handleFavoriteToggle();
+                  closeFab();
+                }}
+                disabled={loading}
+              >
+                <Text style={styles.fabIcon}>
+                  {isFavorite ? '❤️' : '🤍'}
+                </Text>
+              </TouchableOpacity>
+              <Text style={styles.fabLabel}>Favorite</Text>
+            </Animated.View>
 
-        <TouchableOpacity
-          style={[styles.floatingButton, styles.planFloatingButton]}
-          onPress={() => navigation.navigate('TrekPlanner', { trek })}
-        >
-          <Text style={styles.floatingButtonIcon}>🧭</Text>
-        </TouchableOpacity>
+            <Animated.View
+              style={[
+                styles.secondaryFab,
+                {
+                  transform: [
+                    {
+                      translateY: fabAnimation.interpolate({
+                        inputRange: [0, 1],
+                        outputRange: [0, -140],
+                      }),
+                    },
+                    {
+                      scale: fabAnimation.interpolate({
+                        inputRange: [0, 1],
+                        outputRange: [0, 1],
+                      }),
+                    },
+                  ],
+                  opacity: fabAnimation,
+                },
+              ]}
+            >
+              <TouchableOpacity
+                style={[styles.fabButton, styles.planButton]}
+                onPress={() => {
+                  navigation.navigate('TrekPlanner', { trek });
+                  closeFab();
+                }}
+              >
+                <Text style={styles.fabIcon}>🧭</Text>
+              </TouchableOpacity>
+              <Text style={styles.fabLabel}>Plan Trek</Text>
+            </Animated.View>
 
-        <TouchableOpacity
-          style={[styles.floatingButton, styles.trackingFloatingButton]}
-          onPress={() => navigation.navigate('LiveTracking', { trek })}
-        >
-          <Text style={styles.floatingButtonIcon}>📍</Text>
-        </TouchableOpacity>
+            <Animated.View
+              style={[
+                styles.secondaryFab,
+                {
+                  transform: [
+                    {
+                      translateY: fabAnimation.interpolate({
+                        inputRange: [0, 1],
+                        outputRange: [0, -210],
+                      }),
+                    },
+                    {
+                      scale: fabAnimation.interpolate({
+                        inputRange: [0, 1],
+                        outputRange: [0, 1],
+                      }),
+                    },
+                  ],
+                  opacity: fabAnimation,
+                },
+              ]}
+            >
+              <TouchableOpacity
+                style={[styles.fabButton, styles.trackingButton]}
+                onPress={() => {
+                  navigation.navigate('LiveTracking', { trek });
+                  closeFab();
+                }}
+              >
+                <Text style={styles.fabIcon}>📍</Text>
+              </TouchableOpacity>
+              <Text style={styles.fabLabel}>Live Track</Text>
+            </Animated.View>
 
-        {!isCompleted && (
-          <TouchableOpacity
-            style={[styles.floatingButton, styles.completeFloatingButton]}
-            onPress={handleMarkCompleted}
-            disabled={loading}
+            <Animated.View
+              style={[
+                styles.secondaryFab,
+                {
+                  transform: [
+                    {
+                      translateY: fabAnimation.interpolate({
+                        inputRange: [0, 1],
+                        outputRange: [0, -280],
+                      }),
+                    },
+                    {
+                      scale: fabAnimation.interpolate({
+                        inputRange: [0, 1],
+                        outputRange: [0, 1],
+                      }),
+                    },
+                  ],
+                  opacity: fabAnimation,
+                },
+              ]}
+            >
+              <TouchableOpacity
+                style={[styles.fabButton, styles.galleryButton]}
+                onPress={() => {
+                  handleImagePress(0);
+                  closeFab();
+                }}
+              >
+                <Text style={styles.fabIcon}>📷</Text>
+              </TouchableOpacity>
+              <Text style={styles.fabLabel}>Gallery</Text>
+            </Animated.View>
+
+            {!isCompleted && (
+              <Animated.View
+                style={[
+                  styles.secondaryFab,
+                  {
+                    transform: [
+                      {
+                        translateY: fabAnimation.interpolate({
+                          inputRange: [0, 1],
+                          outputRange: [0, -350],
+                        }),
+                      },
+                      {
+                        scale: fabAnimation.interpolate({
+                          inputRange: [0, 1],
+                          outputRange: [0, 1],
+                        }),
+                      },
+                    ],
+                    opacity: fabAnimation,
+                  },
+                ]}
+              >
+                <TouchableOpacity
+                  style={[styles.fabButton, styles.completeButton]}
+                  onPress={() => {
+                    handleMarkCompleted();
+                    closeFab();
+                  }}
+                  disabled={loading}
+                >
+                  <Text style={styles.fabIcon}>✅</Text>
+                </TouchableOpacity>
+                <Text style={styles.fabLabel}>Complete</Text>
+              </Animated.View>
+            )}
+          </>
+        )}
+
+        {/* Main FAB */}
+        <TouchableOpacity
+          style={[styles.mainFab, isCompleted && styles.completedMainFab]}
+          onPress={toggleFab}
+          activeOpacity={0.8}
+        >
+          <Animated.View
+            style={{
+              transform: [
+                {
+                  rotate: fabRotation.interpolate({
+                    inputRange: [0, 1],
+                    outputRange: ['0deg', '45deg'],
+                  }),
+                },
+              ],
+            }}
           >
-            <Text style={styles.floatingButtonIcon}>✅</Text>
-          </TouchableOpacity>
-        )}
-
-        {isCompleted && (
-          <View style={[styles.floatingButton, styles.completedBadge]}>
-            <Text style={styles.floatingButtonIcon}>✅</Text>
-          </View>
-        )}
+            <Text style={styles.mainFabIcon}>
+              {isCompleted ? '✅' : '+'}
+            </Text>
+          </Animated.View>
+        </TouchableOpacity>
       </View>
+
+      {/* Overlay to close FAB when expanded */}
+      {fabExpanded && (
+        <TouchableOpacity
+          style={styles.fabOverlay}
+          onPress={closeFab}
+          activeOpacity={1}
+        />
+      )}
 
       {/* Location Details Modal */}
       <LocationDetailsModal
@@ -553,6 +819,15 @@ const TrekDetailsScreen = ({ route, navigation }) => {
           </View>
         </View>
       </Modal>
+
+      {/* Photo Gallery */}
+      <PhotoGallery
+        visible={galleryVisible}
+        imageKey={trek.imageKey}
+        initialIndex={galleryInitialIndex}
+        onClose={() => setGalleryVisible(false)}
+        onIndexChange={(index) => setGalleryInitialIndex(index)}
+      />
     </SafeAreaView>
   );
 };
@@ -567,12 +842,6 @@ const styles = StyleSheet.create({
   },
   imageContainer: {
     position: 'relative',
-    height: 280,
-  },
-  image: {
-    width: '100%',
-    height: '100%',
-    backgroundColor: COLORS.backgroundSecondary,
   },
   categoryBadge: {
     position: 'absolute',
@@ -832,6 +1101,40 @@ const styles = StyleSheet.create({
     fontWeight: '500',
   },
 
+  // City tabs styles
+  cityTabsContainer: {
+    flexDirection: 'row',
+    backgroundColor: COLORS.backgroundSecondary,
+    borderRadius: BORDER_RADIUS.lg,
+    padding: SPACING.xs,
+    marginBottom: SPACING.lg,
+  },
+  cityTab: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: SPACING.md,
+    paddingHorizontal: SPACING.lg,
+    borderRadius: BORDER_RADIUS.md,
+  },
+  activeCityTab: {
+    backgroundColor: COLORS.backgroundCard,
+    ...SHADOWS.small,
+  },
+  cityTabIcon: {
+    fontSize: 16,
+    marginRight: SPACING.sm,
+  },
+  cityTabText: {
+    fontSize: 14,
+    fontWeight: '600',
+    color: COLORS.textSecondary,
+  },
+  activeCityTabText: {
+    color: COLORS.text,
+  },
+
   // Contact styles
   contactCard: {
     backgroundColor: COLORS.backgroundCard,
@@ -884,40 +1187,86 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 
-  // Floating buttons
-  floatingButtons: {
+  // Expandable FAB styles
+  fabContainer: {
     position: 'absolute',
     bottom: SPACING.xl,
     right: SPACING.lg,
     alignItems: 'center',
   },
-  floatingButton: {
+  fabOverlay: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: 'rgba(0, 0, 0, 0.3)',
+    zIndex: 1,
+  },
+  mainFab: {
     width: 56,
     height: 56,
-    borderRadius: BORDER_RADIUS.full,
+    borderRadius: 28,
+    backgroundColor: COLORS.primary,
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: SPACING.md,
     ...SHADOWS.large,
+    zIndex: 3,
   },
-  favoriteFloatingButton: {
+  completedMainFab: {
+    backgroundColor: COLORS.success,
+  },
+  mainFabIcon: {
+    fontSize: 24,
+    fontWeight: '600',
+    color: COLORS.textInverse,
+  },
+  secondaryFab: {
+    position: 'absolute',
+    bottom: 0,
+    right: 0,
+    alignItems: 'center',
+    zIndex: 2,
+  },
+  fabButton: {
+    width: 48,
+    height: 48,
+    borderRadius: 24,
+    justifyContent: 'center',
+    alignItems: 'center',
+    ...SHADOWS.medium,
+    marginBottom: SPACING.xs,
+  },
+  favoriteButton: {
     backgroundColor: COLORS.backgroundCard,
   },
-  planFloatingButton: {
+  planButton: {
     backgroundColor: COLORS.primary,
   },
-  trackingFloatingButton: {
+  trackingButton: {
     backgroundColor: COLORS.secondary,
   },
-  completeFloatingButton: {
+  galleryButton: {
     backgroundColor: COLORS.accent,
   },
-  completedBadge: {
-    backgroundColor: COLORS.secondary,
-    opacity: 0.8,
+  completeButton: {
+    backgroundColor: COLORS.success,
   },
-  floatingButtonIcon: {
-    fontSize: 24,
+  fabIcon: {
+    fontSize: 20,
+  },
+  fabLabel: {
+    fontSize: 12,
+    fontWeight: '600',
+    color: COLORS.text,
+    backgroundColor: COLORS.backgroundCard,
+    paddingHorizontal: SPACING.sm,
+    paddingVertical: SPACING.xs,
+    borderRadius: BORDER_RADIUS.sm,
+    ...SHADOWS.small,
+    marginBottom: SPACING.sm,
+    textAlign: 'center',
+    minWidth: 60,
   },
 
   // Modal styles
@@ -1031,6 +1380,46 @@ const styles = StyleSheet.create({
   },
   activeCityTabText: {
     color: COLORS.textInverse,
+  },
+
+  // Error and no-data styles
+  errorContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: SPACING.xl,
+  },
+  errorText: {
+    fontSize: 18,
+    fontWeight: '600',
+    color: COLORS.textSecondary,
+    textAlign: 'center',
+    marginBottom: SPACING.lg,
+  },
+  backButton: {
+    backgroundColor: COLORS.primary,
+    paddingHorizontal: SPACING.xl,
+    paddingVertical: SPACING.md,
+    borderRadius: BORDER_RADIUS.md,
+  },
+  backButtonText: {
+    color: COLORS.textInverse,
+    fontSize: 16,
+    fontWeight: '600',
+  },
+  noDataContainer: {
+    backgroundColor: COLORS.backgroundSecondary,
+    padding: SPACING.lg,
+    borderRadius: BORDER_RADIUS.md,
+    alignItems: 'center',
+    borderWidth: 1,
+    borderColor: COLORS.surfaceBorder,
+  },
+  noDataText: {
+    fontSize: 14,
+    color: COLORS.textSecondary,
+    fontWeight: '500',
+    textAlign: 'center',
   },
 });
 

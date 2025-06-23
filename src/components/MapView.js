@@ -10,17 +10,18 @@ import * as Location from 'expo-location';
 import { LOCATION_CATEGORIES } from '../config/mapbox';
 import { COLORS, SHADOWS } from '../utils/constants';
 
-const MapView = ({
-  locations = [],
-  selectedLocation = null,
-  onLocationPress = () => {},
-  onMapPress = () => {},
-  showUserLocation = true,
-  style = {},
-  initialCenter = { latitude: 18.5204, longitude: 73.8567 }, // Pune, Maharashtra
-  initialZoom = 10,
-  mapType = 'standard',
-}) => {
+const MapView = (props = {}) => {
+  const {
+    locations = [],
+    selectedLocation = null,
+    onLocationPress = () => {},
+    onMapPress = () => {},
+    showUserLocation = true,
+    style = {},
+    initialCenter = { latitude: 18.5204, longitude: 73.8567 }, // Pune, Maharashtra
+    initialZoom = 10,
+    mapType = 'standard',
+  } = props;
   const mapRef = useRef(null);
   const [userLocation, setUserLocation] = useState(null);
   const [locationPermission, setLocationPermission] = useState(false);
@@ -87,20 +88,30 @@ const MapView = ({
   };
 
   // Create marker for location
-  const renderLocationMarker = (location) => {
+  const renderLocationMarker = (location, index) => {
+    // Validate location data
+    if (!location || !location.coordinates ||
+        typeof location.coordinates.latitude !== 'number' ||
+        typeof location.coordinates.longitude !== 'number') {
+      console.warn('Invalid location data:', location);
+      return null;
+    }
+
     const category = LOCATION_CATEGORIES[location.category] || LOCATION_CATEGORIES.trek;
     const isSelected = selectedLocation?.id === location.id;
+    // Create unique key combining category, id, and index to prevent duplicates
+    const uniqueKey = `${location.category || 'unknown'}-${location.id || index}-${index}`;
 
     return (
       <Marker
-        key={location.id}
+        key={uniqueKey}
         coordinate={{
           latitude: location.coordinates.latitude,
           longitude: location.coordinates.longitude,
         }}
         onPress={() => handleMarkerPress(location)}
-        title={location.name}
-        description={location.location}
+        title={location.name || 'Unknown Location'}
+        description={location.location || 'No description'}
       >
         <View style={[
           styles.markerContainer,
@@ -134,7 +145,10 @@ const MapView = ({
         loadingBackgroundColor={COLORS.background}
       >
         {/* Render location markers */}
-        {locations.map(renderLocationMarker)}
+        {Array.isArray(locations) && locations
+          .filter(location => location && location.coordinates)
+          .map((location, index) => renderLocationMarker(location, index))
+          .filter(marker => marker !== null)}
       </RNMapView>
     </View>
   );

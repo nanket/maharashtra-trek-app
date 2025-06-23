@@ -4,11 +4,11 @@ import { Platform } from 'react-native';
 export const MAPBOX_CONFIG = {
   // Access token from environment variables
   accessToken: process.env.MAPBOX_ACCESS_TOKEN || 'sk.eyJ1IjoiaXJlYWN0bmluamEiLCJhIjoiY21iYnVkanJuMDRpYTJpcjB2bXgyYzE5NyJ9.0gNVm3mH-j6LCFuqCQaCpQ',
-  
+
   // Default map settings
   defaultZoom: 10,
   defaultCenter: [73.8567, 18.5204], // Pune, Maharashtra coordinates [longitude, latitude]
-  
+
   // Map styles
   styles: {
     street: 'mapbox://styles/mapbox/streets-v12',
@@ -17,23 +17,23 @@ export const MAPBOX_CONFIG = {
     light: 'mapbox://styles/mapbox/light-v11',
     dark: 'mapbox://styles/mapbox/dark-v11',
   },
-  
+
   // Default style
   defaultStyle: 'mapbox://styles/mapbox/outdoors-v12',
-  
+
   // Offline map settings
   offline: {
     maxZoom: 16,
     minZoom: 8,
     tileCachePath: Platform.OS === 'ios' ? 'Documents/mapbox-cache' : 'mapbox-cache',
   },
-  
+
   // Animation settings
   animation: {
     duration: 1000,
     easing: 'easeInOutCubic',
   },
-  
+
   // Clustering settings
   clustering: {
     enabled: true,
@@ -58,7 +58,7 @@ export const TREK_REGIONS = {
     },
   },
   mumbai: {
-    name: 'Mumbai Region', 
+    name: 'Mumbai Region',
     bounds: {
       northeast: [73.2, 19.4],
       southwest: [72.7, 18.8],
@@ -99,6 +99,12 @@ export const LOCATION_CATEGORIES = {
     icon: 'mountain',
     size: 1.0,
     priority: 3,
+  },
+  cave: {
+    color: '#6B46C1',
+    icon: 'cave',
+    size: 1.0,
+    priority: 4,
   },
 };
 

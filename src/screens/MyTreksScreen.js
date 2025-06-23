@@ -13,7 +13,7 @@ import { useFocusEffect } from '@react-navigation/native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { COLORS, SHADOWS, SPACING, BORDER_RADIUS, createTextStyle } from '../utils/constants';
 import UserStorageService from '../utils/userStorage';
-import treksData from '../data/treksData.json';
+import LocalDataService from '../services/LocalDataService';
 import FavoritesTab from '../components/FavoritesTab';
 import CompletedTreksTab from '../components/CompletedTreksTab';
 import TripPlannerTab from '../components/TripPlannerTab';
@@ -69,13 +69,15 @@ const MyTreksScreen = ({ navigation }) => {
 
   // Get favorite treks data
   const getFavoriteTraks = () => {
-    return treksData.filter(trek => favorites.includes(trek.id));
+    const allData = LocalDataService.getAllData();
+    return allData.filter(trek => favorites.includes(trek.id));
   };
 
   // Get completed treks data
   const getCompletedTreksData = () => {
+    const allData = LocalDataService.getAllData();
     return completedTreks.map(completed => {
-      const trekData = treksData.find(trek => trek.id === completed.trekId);
+      const trekData = allData.find(trek => trek.id === completed.trekId);
       return { ...trekData, completionData: completed };
     }).filter(Boolean);
   };
@@ -84,13 +86,13 @@ const MyTreksScreen = ({ navigation }) => {
   const calculateStats = () => {
     const favoriteTreks = getFavoriteTraks();
     const completedTreksData = getCompletedTreksData();
-    
+
     const categories = completedTreksData.reduce((acc, trek) => {
       acc[trek.category] = (acc[trek.category] || 0) + 1;
       return acc;
     }, {});
 
-    const favoriteCategory = Object.keys(categories).reduce((a, b) => 
+    const favoriteCategory = Object.keys(categories).reduce((a, b) =>
       categories[a] > categories[b] ? a : b, 'trek'
     );
 

@@ -1,0 +1,3209 @@
+[
+  {
+    "id": 2,
+    "name": "Dudhsagar Waterfalls",
+    "category": "waterfall",
+    "location": "Goa-Karnataka Border",
+    "difficulty": "Easy",
+    "duration": "4-5 hours",
+    "elevation": "310 meters",
+    "description": "One of India's tallest waterfalls, Dudhsagar creates a spectacular milky cascade. Best visited during monsoon season.",
+    "startingPoint": {
+      "name": "Collem Railway Station",
+      "coordinates": {
+        "latitude": 15.3144,
+        "longitude": 74.3144
+      },
+      "facilities": [
+        "Railway station",
+        "Jeep booking counter",
+        "Basic shops",
+        "Restrooms"
+      ],
+      "description": "Main entry point for Dudhsagar with jeep safari services"
+    },
+    "networkAvailability": {
+      "baseStation": {
+        "airtel": "Excellent",
+        "jio": "Excellent",
+        "vodafone": "Good",
+        "bsnl": "Good"
+      },
+      "duringJeepSafari": {
+        "airtel": "Good",
+        "jio": "Good",
+        "vodafone": "Fair",
+        "bsnl": "Fair"
+      },
+      "atWaterfall": {
+        "airtel": "Poor",
+        "jio": "Poor",
+        "vodafone": "No signal",
+        "bsnl": "No signal"
+      },
+      "emergencyContact": "108 (works from Collem station)"
+    },
+    "foodAndWater": {
+      "atBase": {
+        "restaurants": [
+          "Collem Station Canteen",
+          "Local Goan restaurants",
+          "Street food stalls"
+        ],
+        "shops": [
+          "General stores",
+          "Water bottles",
+          "Snacks",
+          "Rain gear"
+        ],
+        "waterSources": [
+          "Station water",
+          "Packaged water readily available"
+        ]
+      },
+      "duringJeepSafari": {
+        "waterSources": [
+          "Carry sufficient water",
+          "No sources during safari"
+        ],
+        "foodOptions": [
+          "Carry packed snacks",
+          "No food stalls on route"
+        ],
+        "recommendations": [
+          "Light snacks",
+          "Energy drinks",
+          "Waterproof bags"
+        ]
+      },
+      "atWaterfall": {
+        "facilities": [
+          "Natural water source",
+          "No food stalls"
+        ],
+        "recommendations": [
+          "Carry packed lunch",
+          "Waterproof food storage",
+          "Extra water"
+        ]
+      }
+    },
+    "accommodation": {
+      "camping": {
+        "allowed": false,
+        "reason": "Protected forest area, camping not permitted"
+      },
+      "nearbyStays": [
+        {
+          "name": "Collem Forest Rest House",
+          "distance": "0 km from station",
+          "cost": "₹1500-2500 per room",
+          "contact": "+91 832-2612021",
+          "facilities": [
+            "Basic rooms",
+            "Forest department managed",
+            "Advance booking required"
+          ]
+        },
+        {
+          "name": "Dudhsagar Spa Resort",
+          "distance": "8 km from Collem",
+          "cost": "₹4000-8000 per room",
+          "contact": "+91 832-2612345",
+          "facilities": [
+            "Luxury rooms",
+            "Spa",
+            "Restaurant",
+            "Swimming pool"
+          ]
+        },
+        {
+          "name": "Mollem National Park Guest House",
+          "distance": "12 km from Collem",
+          "cost": "₹1200-2000 per room",
+          "contact": "+91 832-2612567",
+          "facilities": [
+            "Government guest house",
+            "Basic amenities",
+            "Nature surroundings"
+          ]
+        }
+      ]
+    },
+    "permits": {
+      "required": true,
+      "forestDepartment": "Entry permit required",
+      "entry": "₹30 per person + ₹100 camera fee",
+      "timings": "6:00 AM to 5:00 PM",
+      "jeepSafari": "₹3000-4000 per jeep (6 persons)",
+      "bookingRequired": "Advance booking recommended during peak season"
+    },
+    "safety": {
+      "riskLevel": "Low to Moderate",
+      "commonRisks": [
+        "Slippery rocks near waterfall",
+        "Strong water currents",
+        "Wildlife in forest"
+      ],
+      "precautions": [
+        "Non-slip footwear",
+        "Life jacket if swimming",
+        "Stay in designated areas"
+      ],
+      "rescuePoints": [
+        "Collem station",
+        "Forest checkpost",
+        "Jeep safari route"
+      ],
+      "nearestHospital": {
+        "name": "Goa Medical College",
+        "distance": "45 km",
+        "contact": "+91 832-2458700"
+      }
+    },
+    "weather": {
+      "monsoon": {
+        "months": "June-September",
+        "conditions": "Waterfall at full flow, heavy rainfall, muddy paths",
+        "recommendation": "Best time to visit for waterfall experience"
+      },
+      "winter": {
+        "months": "December-February",
+        "conditions": "Reduced water flow, pleasant weather, clear skies",
+        "recommendation": "Good for photography and easy access"
+      },
+      "summer": {
+        "months": "March-May",
+        "conditions": "Minimal water flow, hot and humid",
+        "recommendation": "Not recommended, waterfall may be dry"
+      }
+    },
+    "trekRoute": {
+      "totalDistance": "2 km (from jeep drop point)",
+      "ascent": "Minimal",
+      "difficulty": "Easy walk through forest",
+      "waypoints": [
+        {
+          "name": "Collem Railway Station",
+          "elevation": "76m",
+          "description": "Starting point with jeep booking"
+        },
+        {
+          "name": "Forest Checkpost",
+          "elevation": "120m",
+          "description": "Entry permit verification point"
+        },
+        {
+          "name": "Jeep Drop Point",
+          "elevation": "280m",
+          "description": "End of jeep safari, start of walking trail"
+        },
+        {
+          "name": "Dudhsagar Waterfall",
+          "elevation": "310m",
+          "description": "Main waterfall viewing area"
+        }
+      ]
+    },
+    "howToReach": {
+      "fromMumbai": {
+        "byTrain": {
+          "description": "Direct train to Dudhsagar Railway Station",
+          "distance": "450 km",
+          "time": "8-10 hours",
+          "steps": [
+            "Take train from Mumbai CST to Dudhsagar Station",
+            "Get down at Dudhsagar Railway Station",
+            "Short walk to waterfall viewpoint"
+          ]
+        },
+        "byBus": {
+          "description": "Bus to Collem, then jeep safari",
+          "distance": "460 km",
+          "time": "10-12 hours",
+          "steps": [
+            "Take bus from Mumbai to Collem",
+            "Book jeep safari from Collem",
+            "Jeep ride through forest to falls"
+          ]
+        },
+        "byPrivateVehicle": {
+          "description": "Drive to Collem, then jeep required",
+          "distance": "450 km",
+          "time": "8-9 hours",
+          "steps": [
+            "Drive to Collem village",
+            "Park vehicle at designated area",
+            "Take jeep safari to waterfall"
+          ]
+        }
+      },
+      "fromPune": {
+        "byTrain": {
+          "description": "Train via Mumbai to Dudhsagar Station",
+          "distance": "560 km",
+          "time": "10-12 hours",
+          "steps": [
+            "Take train from Pune to Mumbai CST",
+            "Change to train going to Dudhsagar Station",
+            "Short walk to waterfall viewpoint"
+          ]
+        },
+        "byBus": {
+          "description": "Bus via Mumbai to Collem, then jeep safari",
+          "distance": "570 km",
+          "time": "12-14 hours",
+          "steps": [
+            "Take bus from Pune to Mumbai",
+            "Change to bus going to Collem",
+            "Book jeep safari from Collem"
+          ]
+        },
+        "byPrivateVehicle": {
+          "description": "Drive via Mumbai-Goa Highway",
+          "distance": "560 km",
+          "time": "10-11 hours",
+          "steps": [
+            "Take Pune-Mumbai-Goa Highway",
+            "Drive to Collem village",
+            "Take jeep safari to waterfall"
+          ]
+        }
+      }
+    },
+    "bestTimeToVisit": "June to September",
+    "localContacts": [
+      {
+        "name": "Goa Tourism Office",
+        "phone": "+91 832-2438866",
+        "service": "Information & Permits"
+      },
+      {
+        "name": "Dudhsagar Jeep Association",
+        "phone": "+91 9822667149",
+        "service": "Transportation & Guides"
+      },
+      {
+        "name": "Forest Department Goa",
+        "phone": "+91 832-2224747",
+        "service": "Wildlife Permits"
+      }
+    ],
+    "imageKey": "dudhsagar",
+    "coordinates": {
+      "latitude": 15.3144,
+      "longitude": 74.3144
+    },
+    "featured": true,
+    "rating": 4.8,
+    "reviewCount": 456
+  },
+  {
+    "id": 7,
+    "name": "Lohagad Fort",
+    "category": "fort",
+    "location": "Pune District",
+    "difficulty": "Easy",
+    "duration": "1.5–2 hours ascent (total 3–4 hours roundtrip)",
+    "elevation": "1,033 meters",
+    "description": "Historic 'Iron Fort' near Lonavala, known for its iconic four gates, Vinchu Kata spur, and lush monsoon views.",
+    "startingPoint": {
+      "name": "Lohagad Wadi (Base village)",
+      "coordinates": {
+        "latitude": 18.7167,
+        "longitude": 73.4833
+      },
+      "facilities": [
+        "Parking",
+        "Tea & snack stalls",
+        "Shared autos from Malavli/Lonavala"
+      ],
+      "description": "Small village and trek base accessible from Malavli station or Lonavala."
+    },
+    "networkAvailability": {
+      "baseVillage": {
+        "airtel": "Good",
+        "jio": "Good",
+        "vodafone": "Fair",
+        "bsnl": "Fair"
+      },
+      "duringTrek": {
+        "airtel": "Fair",
+        "jio": "Fair",
+        "vodafone": "Poor",
+        "bsnl": "Poor"
+      },
+      "atSummit": {
+        "airtel": "Good",
+        "jio": "Good",
+        "vodafone": "Fair",
+        "bsnl": "Fair"
+      },
+      "emergencyContact": "108 (reachable intermittently)"
+    },
+    "foodAndWater": {
+      "atBase": {
+        "restaurants": [
+          "Tea & snack stalls",
+          "Small food carts"
+        ],
+        "shops": [
+          "Packaged water",
+          "Snacks"
+        ],
+        "waterSources": [
+          "Tap water at base"
+        ]
+      },
+      "duringTrek": {
+        "waterSources": [
+          "No formal sources"
+        ],
+        "foodOptions": [
+          "Carry small packets or snacks"
+        ],
+        "recommendations": [
+          "2 L water, energy bars"
+        ]
+      },
+      "atSummit": {
+        "facilities": [
+          "Old water tank (monsoon-season only)"
+        ],
+        "recommendations": [
+          "Carry food; water may be scarce"
+        ]
+      }
+    },
+    "accommodation": {
+      "camping": {
+        "allowed": false,
+        "reason": "Protected fort; no overnight camping permitted"
+      },
+      "nearbyStays": [
+        {
+          "name": "Lonavala Resorts / Hotels",
+          "distance": "10–15 km",
+          "cost": "₹1500–5000 per room",
+          "contact": "Various (book via Lonavala listings)",
+          "facilities": [
+            "Multiple options from budget to luxury"
+          ]
+        }
+      ]
+    },
+    "permits": {
+      "required": false,
+      "forestDepartment": "Not required",
+      "entry": "Free",
+      "timings": "6 AM–6 PM"
+    },
+    "safety": {
+      "riskLevel": "Low",
+      "commonRisks": [
+        "Slippery paths during monsoon",
+        "Crowds on weekends"
+      ],
+      "precautions": [
+        "Non-slip footwear",
+        "Avoid rain-soaked sections",
+        "Hydrate"
+      ],
+      "rescuePoints": [
+        "Base village",
+        "Along route with locals/guides"
+      ],
+      "nearestHospital": {
+        "name": "Lonavala Hospital",
+        "distance": "15 km",
+        "contact": "+91 2114‑273333"
+      }
+    },
+    "weather": {
+      "monsoon": {
+        "months": "June–September",
+        "conditions": "Heavy rain, lush greenery, slippery trail",
+        "recommendation": "Great scenic views but use caution"
+      },
+      "winter": {
+        "months": "October–February",
+        "conditions": "Cool, pleasant, clear views",
+        "recommendation": "Best season"
+      },
+      "summer": {
+        "months": "March–May",
+        "conditions": "Warm, early start recommended",
+        "recommendation": "Go early morning"
+      }
+    },
+    "trekRoute": {
+      "totalDistance": "≈5 km (roundtrip)",
+      "ascent": "≈300 m",
+      "difficulty": "Easy with well-marked steps",
+      "waypoints": [
+        {
+          "name": "Lohagad Wadi",
+          "elevation": "733 m",
+          "description": "Trek start; parking & stalls"
+        },
+        {
+          "name": "Ganesh, Narayan, Hanuman, Maha Darwaja",
+          "elevation": "850–950 m",
+          "description": "Four historic gates"
+        },
+        {
+          "name": "Laxmi Kothi & Dargah",
+          "elevation": "≈980 m",
+          "description": "Storerooms and old shrine"
+        },
+        {
+          "name": "Vinchu Kata",
+          "elevation": "1033 m",
+          "description": "Scorpion’s Tail viewpoint"
+        }
+      ]
+    },
+    "howToReach": {
+      "fromMumbai": {
+        "byTrain": {
+          "description": "Train to Malavli/Lonavala → shared auto to Lohagad Wadi",
+          "distance": "≈100 km",
+          "time": "3–4 hr"
+        },
+        "byBus": {
+          "description": "Bus to Lonavala → auto/taxi",
+          "distance": "≈105 km",
+          "time": "3.5–4.5 hr"
+        },
+        "byPrivateVehicle": {
+          "description": "Drive via Mumbai–Pune Expressway → exit at Lonavala/Malavli",
+          "distance": "≈100 km",
+          "time": "2.5–3 hr",
+          "steps": [
+            "Park at Lohagad Wadi"
+          ]
+        }
+      },
+      "fromPune": {
+        "byTrain": {
+          "description": "Train to Lonavala/Malavli → shared auto",
+          "distance": "≈65 km",
+          "time": "1.5–2 hr"
+        },
+        "byBus": {
+          "description": "Bus to Lonavala → auto/taxi",
+          "distance": "≈70 km",
+          "time": "2–2.5 hr"
+        },
+        "byPrivateVehicle": {
+          "description": "Drive via Pune–Mumbai Expressway → exit at Lonavala/Malavli",
+          "distance": "≈65 km",
+          "time": "1.5 hr",
+          "steps": [
+            "Park at Lohagad Wadi"
+          ]
+        }
+      }
+    },
+    "bestTimeToVisit": "October to February",
+    "localContacts": [
+      {
+        "name": "Shared Auto Drivers (Lonavala/Malavli)",
+        "phone": "No fixed number",
+        "service": "Transport base ↔ trek"
+      }
+    ],
+    "imageKey": "lohagad",
+    "coordinates": {
+      "latitude": 18.7167,
+      "longitude": 73.4833
+    },
+    "featured": false,
+    "rating": 4.3,
+    "reviewCount": 500
+  },
+  {
+    "id": 8,
+    "name": "Tikona Fort",
+    "category": "fort",
+    "location": "Pune District",
+    "difficulty": "Easy",
+    "duration": "2-3 hours",
+    "elevation": "1033 meters",
+    "description": "Triangular-shaped fort near Kamshet, perfect for beginners. Famous for its unique shape and panoramic views of Pawna Lake.",
+    "startingPoint": {
+      "name": "Tikona Peth Village",
+      "coordinates": {
+        "latitude": 18.7333,
+        "longitude": 73.4167
+      },
+      "facilities": [
+        "Village shops",
+        "Parking",
+        "Local guides",
+        "Basic refreshments"
+      ],
+      "description": "Small village at the base with basic facilities and friendly locals"
+    },
+    "networkAvailability": {
+      "baseVillage": {
+        "airtel": "Good",
+        "jio": "Good",
+        "vodafone": "Fair",
+        "bsnl": "Fair"
+      },
+      "duringTrek": {
+        "airtel": "Fair",
+        "jio": "Fair",
+        "vodafone": "Poor",
+        "bsnl": "Poor"
+      },
+      "atSummit": {
+        "airtel": "Good",
+        "jio": "Good",
+        "vodafone": "Fair",
+        "bsnl": "Fair"
+      },
+      "emergencyContact": "108 (works from base and summit)"
+    },
+    "foodAndWater": {
+      "atBase": {
+        "restaurants": [
+          "Village homes (on request)",
+          "Tea stalls",
+          "Local snacks"
+        ],
+        "shops": [
+          "Basic groceries",
+          "Water bottles",
+          "Snacks"
+        ],
+        "waterSources": [
+          "Village wells",
+          "Packaged water available"
+        ]
+      },
+      "duringTrek": {
+        "waterSources": [
+          "Natural springs",
+          "Carry 2 liters sufficient"
+        ],
+        "foodOptions": [
+          "No food stalls on route",
+          "Carry packed snacks"
+        ],
+        "recommendations": [
+          "Light snacks",
+          "Energy bars",
+          "Sufficient water"
+        ]
+      },
+      "atSummit": {
+        "facilities": [
+          "No permanent facilities",
+          "Seasonal tea stall"
+        ],
+        "recommendations": [
+          "Carry packed lunch",
+          "Enjoy panoramic views"
+        ]
+      }
+    },
+    "accommodation": {
+      "camping": {
+        "allowed": true,
+        "locations": [
+          "Near Pawna Lake",
+          "Village camping areas"
+        ],
+        "facilities": [
+          "Open camping grounds",
+          "Lake access",
+          "Basic facilities"
+        ],
+        "cost": "₹200-500 per person"
+      },
+      "nearbyStays": [
+        {
+          "name": "Tikona Palace Hotel",
+          "distance": "2 km from base",
+          "cost": "₹1200-2000 per room",
+          "contact": "+91 9545863824",
+          "facilities": [
+            "Basic rooms",
+            "Restaurant",
+            "Parking"
+          ]
+        },
+        {
+          "name": "Pawna Lake Camping",
+          "distance": "5 km from base",
+          "cost": "₹800-1500 per person",
+          "contact": "+91 9637148524",
+          "facilities": [
+            "Lakeside camping",
+            "Tents provided",
+            "Meals included"
+          ]
+        }
+      ]
+    },
+    "permits": {
+      "required": false,
+      "forestDepartment": "Not required",
+      "entry": "Free entry",
+      "timings": "6:00 AM to 6:00 PM"
+    },
+    "safety": {
+      "riskLevel": "Low",
+      "commonRisks": [
+        "Loose rocks",
+        "Steep sections near summit"
+      ],
+      "precautions": [
+        "Proper footwear",
+        "Avoid monsoon if inexperienced"
+      ],
+      "rescuePoints": [
+        "Base village",
+        "Midway rest point",
+        "Summit"
+      ],
+      "nearestHospital": {
+        "name": "Kamshet Primary Health Center",
+        "distance": "8 km",
+        "contact": "+91 2114-234567"
+      }
+    },
+    "weather": {
+      "monsoon": {
+        "months": "June-September",
+        "conditions": "Lush green, waterfalls, slippery rocks",
+        "recommendation": "Beautiful but requires caution"
+      },
+      "winter": {
+        "months": "December-February",
+        "conditions": "Pleasant weather, clear views of Pawna Lake",
+        "recommendation": "Best time to visit"
+      },
+      "summer": {
+        "months": "March-May",
+        "conditions": "Hot during day, clear views",
+        "recommendation": "Early morning or evening visits"
+      }
+    },
+    "trekRoute": {
+      "totalDistance": "3 km (round trip)",
+      "ascent": "400 meters",
+      "difficulty": "Easy to moderate",
+      "waypoints": [
+        {
+          "name": "Tikona Peth Village",
+          "elevation": "633m",
+          "description": "Starting point with basic facilities"
+        },
+        {
+          "name": "Forest Path",
+          "elevation": "800m",
+          "description": "Well-marked trail through forest"
+        },
+        {
+          "name": "Rock Patches",
+          "elevation": "950m",
+          "description": "Rocky terrain, requires careful climbing"
+        },
+        {
+          "name": "Tikona Summit",
+          "elevation": "1033m",
+          "description": "Triangular fort top with 360-degree views"
+        }
+      ]
+    },
+    "howToReach": {
+      "fromMumbai": {
+        "byTrain": {
+          "description": "Train to Lonavala, then local transport",
+          "distance": "120 km",
+          "time": "3.5-4 hours",
+          "steps": [
+            "Take train from Mumbai CST to Lonavala Railway Station",
+            "From Lonavala, take auto/taxi to Tikona Peth",
+            "Trek starts from village"
+          ]
+        },
+        "byBus": {
+          "description": "Bus to Kamshet, then local transport",
+          "distance": "125 km",
+          "time": "4-5 hours",
+          "steps": [
+            "Take MSRTC bus from Mumbai to Kamshet",
+            "From Kamshet, take local transport to Tikona Peth",
+            "Trek starts from village"
+          ]
+        },
+        "byPrivateVehicle": {
+          "description": "Drive via Mumbai-Pune Expressway",
+          "distance": "120 km",
+          "time": "3-3.5 hours",
+          "steps": [
+            "Take Mumbai-Pune Expressway",
+            "Exit at Kamshet, follow signs to Tikona Peth",
+            "Parking available at village"
+          ]
+        }
+      },
+      "fromPune": {
+        "byTrain": {
+          "description": "Train to Lonavala, then local transport",
+          "distance": "55 km",
+          "time": "2-2.5 hours",
+          "steps": [
+            "Take train from Pune to Lonavala Railway Station",
+            "From Lonavala, take auto/taxi to Tikona Peth",
+            "Trek starts from village"
+          ]
+        },
+        "byBus": {
+          "description": "Bus to Kamshet, then local transport",
+          "distance": "60 km",
+          "time": "2.5-3 hours",
+          "steps": [
+            "Take MSRTC bus from Pune to Kamshet",
+            "From Kamshet, take local transport to Tikona Peth",
+            "Trek starts from village"
+          ]
+        },
+        "byPrivateVehicle": {
+          "description": "Drive directly to Tikona Peth",
+          "distance": "55 km",
+          "time": "1.5-2 hours",
+          "steps": [
+            "Take Pune-Mumbai Expressway",
+            "Exit at Kamshet, follow signs to Tikona Peth",
+            "Parking available at village"
+          ]
+        }
+      }
+    },
+    "bestTimeToVisit": "October to March",
+    "localContacts": [
+      {
+        "name": "Sujit Mohol (Hotel Tikona Palace)",
+        "phone": "+91 9545863824",
+        "service": "Accommodation & Local Guide"
+      },
+      {
+        "name": "Tikona Village Guide",
+        "phone": "+91 9637148524",
+        "service": "Local Guide & Information"
+      },
+      {
+        "name": "Kamshet Tourism Office",
+        "phone": "+91 2114-234890",
+        "service": "Tourism Information"
+      }
+    ],
+    "imageKey": "tikona",
+    "coordinates": {
+      "latitude": 18.7333,
+      "longitude": 73.4167
+    },
+    "featured": false,
+    "rating": 4.1,
+    "reviewCount": 234
+  },
+  {
+    "id": 9,
+    "name": "Visapur Fort",
+    "category": "fort",
+    "location": "Pune District",
+    "difficulty": "Easy",
+    "duration": "3-4 hours",
+    "elevation": "1084 meters",
+    "description": "Twin fort of Lohagad, famous for its massive structure and monsoon waterfalls. Known for the spectacular waterfall stairs during monsoon.",
+    "startingPoint": {
+      "name": "Malavali Village",
+      "coordinates": {
+        "latitude": 18.75,
+        "longitude": 73.4
+      },
+      "facilities": [
+        "Railway station",
+        "Parking",
+        "Local shops",
+        "Restaurants"
+      ],
+      "description": "Village with railway station providing easy access from Mumbai and Pune"
+    },
+    "networkAvailability": {
+      "baseVillage": {
+        "airtel": "Excellent",
+        "jio": "Excellent",
+        "vodafone": "Good",
+        "bsnl": "Good"
+      },
+      "duringTrek": {
+        "airtel": "Good",
+        "jio": "Good",
+        "vodafone": "Fair",
+        "bsnl": "Fair"
+      },
+      "atSummit": {
+        "airtel": "Good",
+        "jio": "Good",
+        "vodafone": "Fair",
+        "bsnl": "Fair"
+      },
+      "emergencyContact": "108 (works throughout)"
+    },
+    "foodAndWater": {
+      "atBase": {
+        "restaurants": [
+          "Malavali Station Canteen",
+          "Local dhabas",
+          "Tea stalls"
+        ],
+        "shops": [
+          "General stores",
+          "Water bottles",
+          "Trekking supplies"
+        ],
+        "waterSources": [
+          "Station water",
+          "Packaged water available"
+        ]
+      },
+      "duringTrek": {
+        "waterSources": [
+          "Natural springs",
+          "Monsoon waterfalls",
+          "Carry 2-3 liters"
+        ],
+        "foodOptions": [
+          "No food stalls on route",
+          "Carry packed meals"
+        ],
+        "recommendations": [
+          "Energy snacks",
+          "Waterproof food storage",
+          "Extra water"
+        ]
+      },
+      "atSummit": {
+        "facilities": [
+          "Ancient water tanks",
+          "No food facilities"
+        ],
+        "recommendations": [
+          "Carry sufficient food",
+          "Explore fort ruins"
+        ]
+      }
+    },
+    "accommodation": {
+      "camping": {
+        "allowed": false,
+        "reason": "Day trek only, no overnight camping permitted"
+      },
+      "nearbyStays": [
+        {
+          "name": "Malavali Village Homestay",
+          "distance": "0 km from base",
+          "cost": "₹800-1200 per room",
+          "contact": "+91 9850234567",
+          "facilities": [
+            "Basic rooms",
+            "Home-cooked meals",
+            "Station pickup"
+          ]
+        },
+        {
+          "name": "Lonavala Hotels",
+          "distance": "10 km from base",
+          "cost": "₹1500-5000 per room",
+          "contact": "+91 2114-273456",
+          "facilities": [
+            "Wide range of options",
+            "All budgets",
+            "Easy access"
+          ]
+        }
+      ]
+    },
+    "permits": {
+      "required": false,
+      "forestDepartment": "Not required",
+      "entry": "Free entry",
+      "timings": "6:00 AM to 6:00 PM"
+    },
+    "safety": {
+      "riskLevel": "Low to Moderate",
+      "commonRisks": [
+        "Slippery during monsoon",
+        "Steep waterfall areas"
+      ],
+      "precautions": [
+        "Non-slip footwear",
+        "Avoid waterfall edges",
+        "Stay hydrated"
+      ],
+      "rescuePoints": [
+        "Base village",
+        "Midway plateau",
+        "Summit"
+      ],
+      "nearestHospital": {
+        "name": "Lonavala Hospital",
+        "distance": "10 km",
+        "contact": "+91 2114-273333"
+      }
+    },
+    "weather": {
+      "monsoon": {
+        "months": "June-September",
+        "conditions": "Spectacular waterfalls, lush green, slippery paths",
+        "recommendation": "Best time for waterfall experience"
+      },
+      "winter": {
+        "months": "December-February",
+        "conditions": "Pleasant weather, clear views, dry waterfalls",
+        "recommendation": "Good for beginners and families"
+      },
+      "summer": {
+        "months": "March-May",
+        "conditions": "Hot during day, no waterfalls",
+        "recommendation": "Early morning visits recommended"
+      }
+    },
+    "trekRoute": {
+      "totalDistance": "5 km (round trip)",
+      "ascent": "450 meters",
+      "difficulty": "Easy to moderate",
+      "waypoints": [
+        {
+          "name": "Malavali Railway Station",
+          "elevation": "634m",
+          "description": "Starting point with railway connectivity"
+        },
+        {
+          "name": "Village Path",
+          "elevation": "700m",
+          "description": "Well-marked village trail"
+        },
+        {
+          "name": "Waterfall Stairs",
+          "elevation": "900m",
+          "description": "Famous waterfall stairs (monsoon only)"
+        },
+        {
+          "name": "Visapur Fort Top",
+          "elevation": "1084m",
+          "description": "Largest fort plateau in the region"
+        }
+      ]
+    },
+    "howToReach": {
+      "fromMumbai": {
+        "byTrain": {
+          "description": "Direct train to Malavali Railway Station",
+          "distance": "100 km",
+          "time": "2.5-3 hours",
+          "steps": [
+            "Take train from Mumbai CST to Malavali Railway Station",
+            "Walk from station to trek starting point",
+            "Trek starts from village"
+          ]
+        },
+        "byBus": {
+          "description": "Bus to Lonavala, then local transport",
+          "distance": "105 km",
+          "time": "3.5-4 hours",
+          "steps": [
+            "Take MSRTC bus from Mumbai to Lonavala",
+            "From Lonavala, take local transport to Malavali",
+            "Trek starts from village"
+          ]
+        },
+        "byPrivateVehicle": {
+          "description": "Drive via Mumbai-Pune Expressway",
+          "distance": "100 km",
+          "time": "2.5-3 hours",
+          "steps": [
+            "Take Mumbai-Pune Expressway",
+            "Exit at Lonavala, drive to Malavali",
+            "Parking available at village"
+          ]
+        }
+      },
+      "fromPune": {
+        "byTrain": {
+          "description": "Direct train to Malavali Railway Station",
+          "distance": "55 km",
+          "time": "1.5-2 hours",
+          "steps": [
+            "Take train from Pune to Malavali Railway Station",
+            "Walk from station to trek starting point",
+            "Trek starts from village"
+          ]
+        },
+        "byBus": {
+          "description": "Bus to Lonavala, then local transport",
+          "distance": "60 km",
+          "time": "2-2.5 hours",
+          "steps": [
+            "Take MSRTC bus from Pune to Lonavala",
+            "From Lonavala, take local transport to Malavali",
+            "Trek starts from village"
+          ]
+        },
+        "byPrivateVehicle": {
+          "description": "Drive directly to Malavali",
+          "distance": "55 km",
+          "time": "1.5-2 hours",
+          "steps": [
+            "Take Pune-Mumbai Expressway",
+            "Exit at Lonavala, drive to Malavali",
+            "Parking available at village"
+          ]
+        }
+      }
+    },
+    "bestTimeToVisit": "June to March",
+    "localContacts": [
+      {
+        "name": "Malavali Station Master",
+        "phone": "+91 2114-234123",
+        "service": "Railway Information"
+      },
+      {
+        "name": "Local Guide Association",
+        "phone": "+91 9850345678",
+        "service": "Trekking Guides"
+      },
+      {
+        "name": "Visapur Village Head",
+        "phone": "+91 9421567890",
+        "service": "Village Information & Emergency"
+      }
+    ],
+    "imageKey": "visapur",
+    "coordinates": {
+      "latitude": 18.75,
+      "longitude": 73.4
+    },
+    "featured": false,
+    "rating": 4.2,
+    "reviewCount": 345
+  },
+  {
+    "id": 12,
+    "name": "Rajmachi Fort",
+    "category": "fort",
+    "location": "Pune District, Maharashtra",
+    "difficulty": "Easy to Moderate",
+    "duration": "11–12 hours (round trip)",
+    "elevation": "900 meters (Shrivardhan Fort at ~3000 ft)",
+    "description": "Rajmachi comprises two hill forts—Shrivardhan (~3000 ft) and Manaranjan (~2700 ft)—famous for lush forest trails, fireflies, camping, sunrise views, Kataldhar waterfall and twin fort ruins.",
+    "startingPoint": {
+      "name": "Udhewadi Village",
+      "coordinates": {
+        "latitude": 18.8268,
+        "longitude": 73.3948
+      },
+      "facilities": [
+        "Parking",
+        "Homestays/Tents",
+        "Tea stalls"
+      ],
+      "description": "Udhewadi (Rajmachi village) lies 16 km from Lonavala by forest road or 10 km by Karjat route; it's the base for both forts."
+    },
+    "networkAvailability": {
+      "baseVillage": {
+        "airtel": "Good",
+        "jio": "Good",
+        "vodafone": "Fair",
+        "bsnl": "Poor"
+      },
+      "duringTrek": {
+        "airtel": "Poor",
+        "jio": "Poor",
+        "vodafone": "Poor",
+        "bsnl": "No signal"
+      },
+      "atSummit": {
+        "airtel": "Intermittent",
+        "jio": "Intermittent",
+        "vodafone": "Intermittent",
+        "bsnl": "No signal"
+      },
+      "emergencyContact": "108/112; signal only near village or summit"
+    },
+    "foodAndWater": {
+      "atBase": {
+        "restaurants": [
+          "Tea stalls",
+          "Local village homes (homestay meals)"
+        ],
+        "shops": [
+          "Small grocery",
+          "Packaged water"
+        ],
+        "waterSources": [
+          "Village wells",
+          "Bottled water"
+        ]
+      },
+      "duringTrek": {
+        "waterSources": [
+          "None mid-trail; streams at dry season unreliable"
+        ],
+        "foodOptions": [
+          "Pack snacks; no stalls en route"
+        ],
+        "recommendations": [
+          "Carry 3–4 L water, energy snacks, dry fruits"
+        ]
+      },
+      "atSummit": {
+        "facilities": [
+          "Old water tanks on forts"
+        ],
+        "recommendations": [
+          "Refill at summit tanks",
+          "Carry lunch"
+        ]
+      }
+    },
+    "accommodation": {
+      "camping": {
+        "allowed": true,
+        "locations": [
+          "Udhewadi plateau",
+          "Fort caves"
+        ],
+        "facilities": [
+          "Tent space",
+          "Village-supplied dinner/breakfast ~₹600–700"
+        ],
+        "cost": "₹600–700 per person for food + ₹600 per tent"
+      },
+      "nearbyStays": [
+        {
+          "name": "Gonieda Wadi",
+          "distance": "0 km from base",
+          "contact": "9223579685",
+          "facilities": [
+            "Tent, meals, jeep transport"
+          ]
+        }
+      ]
+    },
+    "permits": {
+      "required": false,
+      "forestDepartment": "None",
+      "entry": "₹5 per person + vehicle tax (₹100/4‑wheeler; ₹20/2‑wheeler) collected by locals",
+      "timings": "Trek is open year‑round; camping allowed; night trekking popular but riskier"
+    },
+    "safety": {
+      "riskLevel": "Moderate",
+      "commonRisks": [
+        "Slippery stretches in monsoon",
+        "Rough off‑road approach"
+      ],
+      "precautions": [
+        "Non‑slip footwear",
+        "Flashlights if camping",
+        "Inform local guide"
+      ],
+      "rescuePoints": [
+        "Udhewadi Village",
+        "Shrivardhan Fort summit"
+      ],
+      "nearestHospital": {
+        "name": "Lonavala Hospital",
+        "distance": "15 km",
+        "contact": "+91 2114‑273333"
+      }
+    },
+    "weather": {
+      "monsoon": {
+        "months": "June–September",
+        "conditions": "Lush trails, fireflies, slippery rock sections",
+        "recommendation": "Ideal for campers; caution advised on trail"
+      },
+      "winter": {
+        "months": "October–February",
+        "conditions": "Clear skies, cool weather, perfect for trekking",
+        "recommendation": "Best season"
+      },
+      "summer": {
+        "months": "March–May",
+        "conditions": "Hot midday, easy daytime treks",
+        "recommendation": "Start early"
+      }
+    },
+    "trekRoute": {
+      "totalDistance": "16 km via Lonavala; 10 km via Karjat route",
+      "ascent": "350 m to Udhewadi + ~300 m to Shrivardhan",
+      "difficulty": "Easy to Moderate; forest roads and paved sections, mild rocky climb",
+      "waypoints": [
+        {
+          "name": "Lonavala Station",
+          "elevation": "650 m",
+          "description": "Start point for Lonavala route"
+        },
+        {
+          "name": "Tungarli Dam",
+          "elevation": "690 m",
+          "description": "Water source near trail start"
+        },
+        {
+          "name": "Udhewadi Village",
+          "elevation": "730 m",
+          "description": "Base village, camp homestays"
+        },
+        {
+          "name": "Bhairavnath Temple",
+          "elevation": "760 m",
+          "description": "Small temple midway"
+        },
+        {
+          "name": "Manaranjan Fort",
+          "elevation": "820 m",
+          "description": "Lower fort with plateau view"
+        },
+        {
+          "name": "Shrivardhan Fort",
+          "elevation": "900 m",
+          "description": "Main fort with water tanks and view"
+        }
+      ]
+    },
+    "howToReach": {
+      "fromMumbai": {
+        "byTrain": {
+          "description": "Mumbai to Lonavala (local/express); then auto/jeep to Tungarli dam/Udhewadi",
+          "distance": "100 km",
+          "time": "2.5–3 hrs",
+          "steps": [
+            "Local train to Lonavala",
+            "Auto to Tungarli dam/Udhewadi",
+            "Trek to Udhewadi",
+            "Continue to fort"
+          ]
+        },
+        "byBus": {
+          "description": "MSRTC to Lonavala, then local transport as above",
+          "time": "3–4 hrs"
+        },
+        "byPrivateVehicle": {
+          "description": "Drive via Mumbai–Pune Expressway, park at Lonavala or near village (off-road required)",
+          "warning": "16 km off-road; high‑clearance vehicle needed monsoon"
+        }
+      },
+      "fromPune": {
+        "byTrain": {
+          "description": "Pune → Lonavala train, then same local transport",
+          "distance": "65 km",
+          "time": "1.5–2 hrs"
+        },
+        "byBus": {
+          "description": "MSRTC to Lonavala + local transport"
+        },
+        "byPrivateVehicle": {
+          "description": "Drive via Expressway, same route"
+        }
+      }
+    },
+    "bestTimeToVisit": "October to February (winter); monsoon for fireflies experience",
+    "localContacts": [
+      {
+        "name": "Gonieda Wadi Homestay",
+        "phone": "9223579685",
+        "service": "Meals, tents, jeep pickup"
+      },
+      {
+        "name": "TrekRajmachi (Trekking Organizer)",
+        "phone": "+918484922623",
+        "service": "Guided camping treks"
+      }
+    ],
+    "imageKey": "rajmachi",
+    "coordinates": {
+      "latitude": 18.849,
+      "longitude": 73.405
+    },
+    "featured": true,
+    "rating": 4.7,
+    "reviewCount": 1054
+  },
+  {
+    "id": 14,
+    "name": "Lingmala Waterfalls",
+    "category": "waterfall",
+    "location": "Satara District",
+    "difficulty": "Easy",
+    "duration": "1-2 hours",
+    "elevation": "1267 meters",
+    "description": "A scenic waterfall near Mahabaleshwar, cascading from a height of 500 feet. Surrounded by lush green valleys and strawberry farms.",
+    "startingPoint": {
+      "name": "Mahabaleshwar",
+      "coordinates": {
+        "latitude": 17.9167,
+        "longitude": 73.65
+      },
+      "facilities": [
+        "Hotels",
+        "Restaurants",
+        "Parking",
+        "Tourist facilities"
+      ],
+      "description": "Popular hill station with excellent tourist infrastructure"
+    },
+    "imageKey": "lingmala_falls",
+    "coordinates": {
+      "latitude": 17.9167,
+      "longitude": 73.65
+    },
+    "featured": true,
+    "rating": 4.4,
+    "reviewCount": 234,
+    "foodAndWater": {
+      "atBase": {
+        "restaurants": [
+          "Mahabaleshwar restaurants",
+          "Hotel dining",
+          "Street food stalls"
+        ],
+        "shops": [
+          "Tourist shops",
+          "Water bottles",
+          "Local strawberries"
+        ],
+        "waterSources": [
+          "Hotel water",
+          "Packaged water readily available"
+        ]
+      },
+      "duringTrek": {
+        "waterSources": [
+          "Natural waterfall",
+          "Carry 1-2 liters sufficient"
+        ],
+        "foodOptions": [
+          "No food stalls on route",
+          "Carry light snacks"
+        ],
+        "recommendations": [
+          "Local strawberries",
+          "Energy snacks",
+          "Camera for photos"
+        ]
+      },
+      "atWaterfall": {
+        "facilities": [
+          "Natural water source",
+          "Scenic viewpoints"
+        ],
+        "recommendations": [
+          "Carry packed snacks",
+          "Enjoy the 500ft cascade",
+          "Photography"
+        ]
+      }
+    },
+    "howToReach": {
+      "fromMumbai": {
+        "byTrain": {
+          "description": "Train to Pune, then bus to Mahabaleshwar",
+          "distance": "280 km",
+          "time": "7-8 hours",
+          "steps": [
+            "Take train from Mumbai CST to Pune Railway Station",
+            "From Pune, take MSRTC bus to Mahabaleshwar",
+            "Local transport to Lingmala Waterfalls"
+          ]
+        },
+        "byBus": {
+          "description": "Direct bus to Mahabaleshwar",
+          "distance": "280 km",
+          "time": "8-9 hours",
+          "steps": [
+            "Take MSRTC bus from Mumbai to Mahabaleshwar",
+            "From Mahabaleshwar, take local transport to falls",
+            "Short walk to waterfall viewpoint"
+          ]
+        },
+        "byPrivateVehicle": {
+          "description": "Drive via Mumbai-Pune-Satara route",
+          "distance": "280 km",
+          "time": "6-7 hours",
+          "steps": [
+            "Take Mumbai-Pune Expressway to Pune",
+            "Continue via Satara to Mahabaleshwar",
+            "Drive to Lingmala Falls parking area"
+          ]
+        }
+      },
+      "fromPune": {
+        "byTrain": {
+          "description": "Train to Satara, then bus to Mahabaleshwar",
+          "distance": "120 km",
+          "time": "4-5 hours",
+          "steps": [
+            "Take train from Pune to Satara Railway Station",
+            "From Satara, take MSRTC bus to Mahabaleshwar",
+            "Local transport to Lingmala Waterfalls"
+          ]
+        },
+        "byBus": {
+          "description": "Direct bus to Mahabaleshwar",
+          "distance": "120 km",
+          "time": "4-5 hours",
+          "steps": [
+            "Take PMPML/MSRTC bus from Pune to Mahabaleshwar",
+            "From Mahabaleshwar, take local transport to falls",
+            "Short walk to waterfall viewpoint"
+          ]
+        },
+        "byPrivateVehicle": {
+          "description": "Drive via Pune-Satara Highway",
+          "distance": "120 km",
+          "time": "3-4 hours",
+          "steps": [
+            "Take Pune-Satara Highway",
+            "Continue to Mahabaleshwar via ghat roads",
+            "Drive to Lingmala Falls parking area"
+          ]
+        }
+      }
+    }
+  },
+  {
+    "id": 15,
+    "name": "Kune Falls",
+    "category": "waterfall",
+    "location": "Pune District",
+    "difficulty": "Easy",
+    "duration": "2-3 hours",
+    "elevation": "625 meters",
+    "description": "A beautiful three-tiered waterfall near Lonavala, best visited during monsoon season. The falls cascade down from a height of 200 meters.",
+    "startingPoint": {
+      "name": "Kune Village",
+      "coordinates": {
+        "latitude": 18.75,
+        "longitude": 73.4167
+      },
+      "facilities": [
+        "Parking",
+        "Local tea stalls",
+        "Basic shops"
+      ],
+      "description": "Small village near Lonavala with basic amenities"
+    },
+    "imageKey": "kune_falls",
+    "coordinates": {
+      "latitude": 18.75,
+      "longitude": 73.4167
+    },
+    "featured": true,
+    "rating": 4.3,
+    "reviewCount": 189,
+    "foodAndWater": {
+      "atBase": {
+        "restaurants": [
+          "Local tea stalls",
+          "Lonavala restaurants"
+        ],
+        "shops": [
+          "General stores",
+          "Water bottles",
+          "Snacks"
+        ],
+        "waterSources": [
+          "Packaged water available",
+          "Village wells"
+        ]
+      },
+      "duringTrek": {
+        "waterSources": [
+          "Natural waterfall",
+          "Carry 2-3 liters recommended"
+        ],
+        "foodOptions": [
+          "No food stalls on route",
+          "Carry packed snacks"
+        ],
+        "recommendations": [
+          "Light snacks",
+          "Energy drinks",
+          "Waterproof bags"
+        ]
+      },
+      "atWaterfall": {
+        "facilities": [
+          "Natural water source",
+          "No food facilities"
+        ],
+        "recommendations": [
+          "Carry packed lunch",
+          "Enjoy the natural beauty"
+        ]
+      }
+    },
+    "howToReach": {
+      "fromMumbai": {
+        "byTrain": {
+          "description": "Train to Lonavala, then local transport",
+          "distance": "110 km",
+          "time": "3-4 hours",
+          "steps": [
+            "Take train from Mumbai CST to Lonavala Railway Station",
+            "From Lonavala, take auto/taxi to Kune Village",
+            "Short walk to waterfall viewpoint"
+          ]
+        },
+        "byBus": {
+          "description": "Direct bus to Lonavala, then local transport",
+          "distance": "110 km",
+          "time": "4-5 hours",
+          "steps": [
+            "Take MSRTC bus from Mumbai to Lonavala",
+            "From Lonavala, take local transport to Kune Village",
+            "Walk to waterfall"
+          ]
+        },
+        "byPrivateVehicle": {
+          "description": "Drive via Mumbai-Pune Expressway",
+          "distance": "110 km",
+          "time": "3-4 hours",
+          "steps": [
+            "Take Mumbai-Pune Expressway to Lonavala exit",
+            "Drive to Kune Village via local roads",
+            "Park at designated area and walk to falls"
+          ]
+        }
+      },
+      "fromPune": {
+        "byTrain": {
+          "description": "Train to Lonavala, then local transport",
+          "distance": "65 km",
+          "time": "2-3 hours",
+          "steps": [
+            "Take train from Pune to Lonavala Railway Station",
+            "From Lonavala, take auto/taxi to Kune Village",
+            "Short walk to waterfall viewpoint"
+          ]
+        },
+        "byBus": {
+          "description": "Direct bus to Lonavala",
+          "distance": "65 km",
+          "time": "2.5-3 hours",
+          "steps": [
+            "Take PMPML/MSRTC bus from Pune to Lonavala",
+            "From Lonavala, take local transport to Kune Village",
+            "Walk to waterfall"
+          ]
+        },
+        "byPrivateVehicle": {
+          "description": "Drive via Pune-Mumbai Highway",
+          "distance": "65 km",
+          "time": "2-2.5 hours",
+          "steps": [
+            "Take Pune-Mumbai Highway to Lonavala",
+            "Drive to Kune Village via local roads",
+            "Park at designated area and walk to falls"
+          ]
+        }
+      }
+    }
+  },
+  {
+    "id": 16,
+    "name": "Bhaja Caves",
+    "category": "cave",
+    "location": "Pune District",
+    "difficulty": "Easy",
+    "duration": "1-2 hours",
+    "elevation": "400 meters",
+    "description": "Ancient Buddhist caves dating from 2nd century BC, featuring beautiful stupas and intricate rock carvings. A UNESCO World Heritage site.",
+    "startingPoint": {
+      "name": "Bhaja Village",
+      "coordinates": {
+        "latitude": 18.7333,
+        "longitude": 73.4833
+      },
+      "facilities": [
+        "Parking",
+        "Archaeological guide",
+        "Basic refreshments"
+      ],
+      "description": "Historic village near Lonavala with ancient cave complex"
+    },
+    "imageKey": "bhaja_caves",
+    "coordinates": {
+      "latitude": 18.7333,
+      "longitude": 73.4833
+    },
+    "featured": false,
+    "rating": 4.2,
+    "reviewCount": 198,
+    "foodAndWater": {
+      "atBase": {
+        "restaurants": [
+          "Bhaja village tea stalls",
+          "Lonavala restaurants"
+        ],
+        "shops": [
+          "Basic village shops",
+          "Water bottles",
+          "Archaeological guides"
+        ],
+        "waterSources": [
+          "Village wells",
+          "Packaged water available"
+        ]
+      },
+      "duringTrek": {
+        "waterSources": [
+          "Carry 1-2 liters sufficient",
+          "Short walking distance"
+        ],
+        "foodOptions": [
+          "No food inside caves",
+          "Carry light snacks"
+        ],
+        "recommendations": [
+          "Light refreshments",
+          "Camera",
+          "Respect heritage site"
+        ]
+      },
+      "atWaterfall": {
+        "facilities": [
+          "Ancient Buddhist caves",
+          "UNESCO World Heritage site"
+        ],
+        "recommendations": [
+          "Learn about Buddhist history",
+          "Photography allowed",
+          "Peaceful meditation"
+        ]
+      }
+    },
+    "howToReach": {
+      "fromMumbai": {
+        "byTrain": {
+          "description": "Train to Lonavala, then local transport",
+          "distance": "110 km",
+          "time": "3-4 hours",
+          "steps": [
+            "Take train from Mumbai CST to Lonavala Railway Station",
+            "From Lonavala, take auto/taxi to Bhaja Village",
+            "Short walk to cave complex"
+          ]
+        },
+        "byBus": {
+          "description": "Bus to Lonavala, then local transport",
+          "distance": "110 km",
+          "time": "4-5 hours",
+          "steps": [
+            "Take MSRTC bus from Mumbai to Lonavala",
+            "From Lonavala, take local transport to Bhaja Village",
+            "Walk to cave entrance"
+          ]
+        },
+        "byPrivateVehicle": {
+          "description": "Drive via Mumbai-Pune Expressway",
+          "distance": "110 km",
+          "time": "3-4 hours",
+          "steps": [
+            "Take Mumbai-Pune Expressway to Lonavala exit",
+            "Drive to Bhaja Village via local roads",
+            "Park at village and walk to caves"
+          ]
+        }
+      },
+      "fromPune": {
+        "byTrain": {
+          "description": "Train to Lonavala, then local transport",
+          "distance": "65 km",
+          "time": "2-3 hours",
+          "steps": [
+            "Take train from Pune to Lonavala Railway Station",
+            "From Lonavala, take auto/taxi to Bhaja Village",
+            "Short walk to cave complex"
+          ]
+        },
+        "byBus": {
+          "description": "Bus to Lonavala, then local transport",
+          "distance": "65 km",
+          "time": "2.5-3 hours",
+          "steps": [
+            "Take PMPML/MSRTC bus from Pune to Lonavala",
+            "From Lonavala, take local transport to Bhaja Village",
+            "Walk to cave entrance"
+          ]
+        },
+        "byPrivateVehicle": {
+          "description": "Drive via Pune-Mumbai Highway",
+          "distance": "65 km",
+          "time": "2-2.5 hours",
+          "steps": [
+            "Take Pune-Mumbai Highway to Lonavala",
+            "Drive to Bhaja Village via local roads",
+            "Park at village and walk to caves"
+          ]
+        }
+      }
+    }
+  },
+  {
+    "id": 17,
+    "name": "Bhimashankar Waterfall",
+    "category": "waterfall",
+    "location": "Pune District",
+    "difficulty": "Easy to Moderate",
+    "duration": "3-4 hours",
+    "elevation": "1200 meters",
+    "description": "Beautiful waterfall near the famous Bhimashankar Temple, one of the 12 Jyotirlingas. Perfect combination of spirituality and nature.",
+    "startingPoint": {
+      "name": "Bhimashankar Temple",
+      "coordinates": {
+        "latitude": 19.0728,
+        "longitude": 73.5347
+      },
+      "facilities": [
+        "Temple complex",
+        "Restaurants",
+        "Accommodation",
+        "Parking",
+        "ATM"
+      ],
+      "description": "Famous temple complex with all modern facilities"
+    },
+    "networkAvailability": {
+      "baseTemple": {
+        "airtel": "Good",
+        "jio": "Good",
+        "vodafone": "Fair",
+        "bsnl": "Fair"
+      },
+      "duringTrek": {
+        "airtel": "Fair",
+        "jio": "Fair",
+        "vodafone": "Poor",
+        "bsnl": "Poor"
+      },
+      "atWaterfall": {
+        "airtel": "Poor",
+        "jio": "Poor",
+        "vodafone": "No signal",
+        "bsnl": "No signal"
+      },
+      "emergencyContact": "108 (works from temple area)"
+    },
+    "foodAndWater": {
+      "atBase": {
+        "restaurants": [
+          "Temple prasadam",
+          "Bhimashankar restaurants",
+          "Local food stalls"
+        ],
+        "shops": [
+          "Temple shops",
+          "General stores",
+          "Water bottles",
+          "Snacks"
+        ],
+        "waterSources": [
+          "Temple water supply",
+          "Packaged water available"
+        ]
+      },
+      "duringTrek": {
+        "waterSources": [
+          "Natural streams",
+          "Carry 2-3 liters recommended"
+        ],
+        "foodOptions": [
+          "Carry packed food",
+          "No stalls on waterfall route"
+        ],
+        "recommendations": [
+          "Light snacks",
+          "Energy bars",
+          "Glucose"
+        ]
+      },
+      "atWaterfall": {
+        "facilities": [
+          "Natural water source",
+          "No food facilities"
+        ],
+        "recommendations": [
+          "Carry packed lunch",
+          "Enjoy natural spring water"
+        ]
+      }
+    },
+    "accommodation": {
+      "camping": {
+        "allowed": false,
+        "reason": "Religious area, camping not permitted near temple"
+      },
+      "nearbyStays": [
+        {
+          "name": "Bhimashankar Temple Guest House",
+          "distance": "0 km from temple",
+          "cost": "₹500-1000 per person",
+          "contact": "+91 2132-222456",
+          "facilities": [
+            "Basic rooms",
+            "Temple managed",
+            "Vegetarian meals"
+          ]
+        },
+        {
+          "name": "MTDC Resort Bhimashankar",
+          "distance": "1 km from temple",
+          "cost": "₹2000-3500 per room",
+          "contact": "+91 2132-222789",
+          "facilities": [
+            "Comfortable rooms",
+            "Restaurant",
+            "Garden",
+            "Conference hall"
+          ]
+        },
+        {
+          "name": "Forest Rest House",
+          "distance": "2 km from temple",
+          "cost": "₹1200-2000 per room",
+          "contact": "+91 2132-222333",
+          "facilities": [
+            "Forest department",
+            "Basic amenities",
+            "Nature surroundings"
+          ]
+        }
+      ]
+    },
+    "permits": {
+      "required": false,
+      "forestDepartment": "Not required for waterfall",
+      "entry": "Free entry to waterfall",
+      "timings": "6:00 AM to 6:00 PM",
+      "templeEntry": "Temple open 5:00 AM to 9:00 PM"
+    },
+    "safety": {
+      "riskLevel": "Low to Moderate",
+      "commonRisks": [
+        "Slippery rocks near waterfall",
+        "Steep forest path",
+        "Wildlife"
+      ],
+      "precautions": [
+        "Non-slip footwear",
+        "Stay on marked trails",
+        "Don't swim alone"
+      ],
+      "rescuePoints": [
+        "Bhimashankar temple",
+        "Forest checkpost",
+        "Waterfall base"
+      ],
+      "nearestHospital": {
+        "name": "Khed Civil Hospital",
+        "distance": "35 km",
+        "contact": "+91 2132-220000"
+      }
+    },
+    "weather": {
+      "monsoon": {
+        "months": "June-September",
+        "conditions": "Waterfall at full flow, heavy rainfall, lush green forest",
+        "recommendation": "Best time to visit for waterfall experience"
+      },
+      "winter": {
+        "months": "December-February",
+        "conditions": "Moderate water flow, pleasant weather, clear skies",
+        "recommendation": "Good for temple visit and light trekking"
+      },
+      "summer": {
+        "months": "March-May",
+        "conditions": "Reduced water flow, hot weather",
+        "recommendation": "Early morning visits recommended"
+      }
+    },
+    "trekRoute": {
+      "totalDistance": "4 km (round trip)",
+      "ascent": "200 meters",
+      "difficulty": "Easy to moderate forest trail",
+      "waypoints": [
+        {
+          "name": "Bhimashankar Temple",
+          "elevation": "1000m",
+          "description": "Starting point with temple darshan"
+        },
+        {
+          "name": "Forest Trail Start",
+          "elevation": "1050m",
+          "description": "Entry into forest area"
+        },
+        {
+          "name": "Stream Crossing",
+          "elevation": "1150m",
+          "description": "Cross small stream, follow water sound"
+        },
+        {
+          "name": "Bhimashankar Waterfall",
+          "elevation": "1200m",
+          "description": "Beautiful waterfall with natural pool"
+        }
+      ]
+    },
+    "howToReach": {
+      "fromMumbai": {
+        "byTrain": {
+          "description": "Train to Pune, then bus to Bhimashankar",
+          "distance": "220 km",
+          "time": "6-7 hours",
+          "steps": [
+            "Take train from Mumbai to Pune Railway Station",
+            "Take MSRTC bus from Pune to Bhimashankar",
+            "Walk to temple, then trek to waterfall"
+          ]
+        },
+        "byBus": {
+          "description": "Direct bus to Bhimashankar",
+          "distance": "230 km",
+          "time": "7-8 hours",
+          "steps": [
+            "Take MSRTC bus from Mumbai to Bhimashankar",
+            "Get down at Bhimashankar temple",
+            "Trek starts from temple complex"
+          ]
+        },
+        "byPrivateVehicle": {
+          "description": "Drive via Mumbai-Pune-Bhimashankar route",
+          "distance": "220 km",
+          "time": "5-6 hours",
+          "steps": [
+            "Take Mumbai-Pune Expressway",
+            "Drive via Pune to Bhimashankar",
+            "Parking available at temple"
+          ]
+        }
+      },
+      "fromPune": {
+        "byTrain": {
+          "description": "No direct train, bus recommended",
+          "distance": "110 km",
+          "time": "3-4 hours",
+          "steps": [
+            "Take local train to Pune station",
+            "Take MSRTC bus to Bhimashankar",
+            "Trek starts from temple"
+          ]
+        },
+        "byBus": {
+          "description": "Direct MSRTC bus to Bhimashankar",
+          "distance": "110 km",
+          "time": "3-4 hours",
+          "steps": [
+            "Take MSRTC bus from Pune to Bhimashankar",
+            "Get down at temple complex",
+            "Trek starts from temple"
+          ]
+        },
+        "byPrivateVehicle": {
+          "description": "Drive directly to Bhimashankar",
+          "distance": "110 km",
+          "time": "2.5-3 hours",
+          "steps": [
+            "Take Pune-Manchar-Bhimashankar route",
+            "Drive to temple complex",
+            "Parking available at temple"
+          ]
+        }
+      }
+    },
+    "bestTimeToVisit": "June to September",
+    "localContacts": [
+      {
+        "name": "Bhimashankar Temple Office",
+        "phone": "+91 2132-222456",
+        "service": "Temple Information & Accommodation"
+      },
+      {
+        "name": "MTDC Bhimashankar",
+        "phone": "+91 2132-222789",
+        "service": "Tourism Information & Booking"
+      },
+      {
+        "name": "Forest Department",
+        "phone": "+91 2132-222333",
+        "service": "Wildlife & Forest Information"
+      }
+    ],
+    "imageKey": "bhimashankar",
+    "videos": [
+      "https://www.youtube.com/watch?v=bhimashankar123"
+    ],
+    "coordinates": {
+      "latitude": 19.0728,
+      "longitude": 73.5347
+    },
+    "featured": false,
+    "rating": 4.2,
+    "reviewCount": 345
+  },
+  {
+    "id": 18,
+    "name": "Karla Caves",
+    "category": "cave",
+    "location": "Pune District",
+    "difficulty": "Easy",
+    "duration": "2-3 hours",
+    "elevation": "550 meters",
+    "description": "Ancient Buddhist rock-cut caves dating back to 2nd century BCE. Famous for the largest chaitya hall in India with intricate carvings.",
+    "startingPoint": {
+      "name": "Karla Caves Parking",
+      "coordinates": {
+        "latitude": 18.7608,
+        "longitude": 73.4856
+      },
+      "facilities": [
+        "Large parking area",
+        "Restaurants",
+        "Souvenir shops",
+        "Restrooms",
+        "ATM"
+      ],
+      "description": "Well-developed tourist area with all facilities"
+    },
+    "networkAvailability": {
+      "baseVillage": {
+        "airtel": "Excellent",
+        "jio": "Excellent",
+        "vodafone": "Good",
+        "bsnl": "Good"
+      },
+      "duringTrek": {
+        "airtel": "Good",
+        "jio": "Good",
+        "vodafone": "Fair",
+        "bsnl": "Fair"
+      },
+      "atCaves": {
+        "airtel": "Good",
+        "jio": "Good",
+        "vodafone": "Fair",
+        "bsnl": "Fair"
+      },
+      "emergencyContact": "108 (works throughout)"
+    },
+    "foodAndWater": {
+      "atBase": {
+        "restaurants": [
+          "Karla Restaurant",
+          "Local food stalls",
+          "Tea vendors"
+        ],
+        "shops": [
+          "Souvenir shops",
+          "General stores",
+          "Water bottles",
+          "Snacks"
+        ],
+        "waterSources": [
+          "Municipal water supply",
+          "Packaged water readily available"
+        ]
+      },
+      "duringTrek": {
+        "waterSources": [
+          "Water taps at intervals",
+          "Carry 1-2 liters"
+        ],
+        "foodOptions": [
+          "Snack vendors on route",
+          "Tea stalls"
+        ],
+        "recommendations": [
+          "Light snacks",
+          "Energy drinks",
+          "Local specialties"
+        ]
+      },
+      "atCaves": {
+        "facilities": [
+          "Water points",
+          "Snack vendors"
+        ],
+        "recommendations": [
+          "Enjoy local food",
+          "Stay hydrated"
+        ]
+      }
+    },
+    "accommodation": {
+      "camping": {
+        "allowed": false,
+        "reason": "Protected archaeological site, camping not permitted"
+      },
+      "nearbyStays": [
+        {
+          "name": "Lonavala Hill Resort",
+          "distance": "8 km from caves",
+          "cost": "₹3000-5000 per room",
+          "contact": "+91 2114-273456",
+          "facilities": [
+            "Luxury rooms",
+            "Restaurant",
+            "Swimming pool",
+            "Spa"
+          ]
+        },
+        {
+          "name": "Karla Village Homestay",
+          "distance": "2 km from caves",
+          "cost": "₹1000-2000 per room",
+          "contact": "+91 9823456789",
+          "facilities": [
+            "Basic rooms",
+            "Home-cooked meals",
+            "Local experience"
+          ]
+        }
+      ]
+    },
+    "permits": {
+      "required": false,
+      "forestDepartment": "Not required",
+      "entry": "₹25 per person (Indians), ₹300 (Foreigners)",
+      "timings": "9:00 AM to 5:00 PM",
+      "photography": "₹25 extra for camera"
+    },
+    "safety": {
+      "riskLevel": "Low",
+      "commonRisks": [
+        "Steep steps",
+        "Crowded during weekends",
+        "Slippery in monsoon"
+      ],
+      "precautions": [
+        "Comfortable walking shoes",
+        "Avoid peak hours",
+        "Stay with group"
+      ],
+      "rescuePoints": [
+        "Base parking area",
+        "Cave entrance",
+        "Security posts"
+      ],
+      "nearestHospital": {
+        "name": "Lonavala Civil Hospital",
+        "distance": "10 km",
+        "contact": "+91 2114-273333"
+      }
+    },
+    "weather": {
+      "monsoon": {
+        "months": "June-September",
+        "conditions": "Lush green surroundings, slippery steps, heavy crowds",
+        "recommendation": "Beautiful but crowded, carry rainwear"
+      },
+      "winter": {
+        "months": "December-February",
+        "conditions": "Pleasant weather, clear views, moderate crowds",
+        "recommendation": "Best time to visit"
+      },
+      "summer": {
+        "months": "March-May",
+        "conditions": "Hot during day, less crowded",
+        "recommendation": "Visit early morning or evening"
+      }
+    },
+    "trekRoute": {
+      "totalDistance": "2 km (round trip)",
+      "ascent": "150 meters",
+      "difficulty": "Easy walk with steps",
+      "waypoints": [
+        {
+          "name": "Karla Parking Area",
+          "elevation": "400m",
+          "description": "Starting point with facilities"
+        },
+        {
+          "name": "Steps Beginning",
+          "elevation": "450m",
+          "description": "Start of stone steps to caves"
+        },
+        {
+          "name": "Ekvira Devi Temple",
+          "elevation": "520m",
+          "description": "Hindu temple on the way"
+        },
+        {
+          "name": "Karla Caves",
+          "elevation": "550m",
+          "description": "Ancient Buddhist caves complex"
+        }
+      ]
+    },
+    "howToReach": {
+      "fromMumbai": {
+        "byTrain": {
+          "description": "Train to Lonavala, then local transport",
+          "distance": "120 km",
+          "time": "3-4 hours",
+          "steps": [
+            "Take train from Mumbai to Lonavala Railway Station",
+            "Take auto/taxi to Karla Caves",
+            "Walk up the steps to caves"
+          ]
+        },
+        "byBus": {
+          "description": "Bus to Lonavala, then local transport",
+          "distance": "125 km",
+          "time": "4-5 hours",
+          "steps": [
+            "Take MSRTC bus from Mumbai to Lonavala",
+            "Take local transport to Karla Caves",
+            "Walk up to caves"
+          ]
+        },
+        "byPrivateVehicle": {
+          "description": "Drive via Mumbai-Pune Expressway",
+          "distance": "120 km",
+          "time": "2.5-3 hours",
+          "steps": [
+            "Take Mumbai-Pune Expressway",
+            "Exit at Lonavala, follow signs to Karla Caves",
+            "Parking available at base"
+          ]
+        }
+      },
+      "fromPune": {
+        "byTrain": {
+          "description": "Train to Lonavala, then local transport",
+          "distance": "65 km",
+          "time": "2-2.5 hours",
+          "steps": [
+            "Take train from Pune to Lonavala",
+            "Take auto/taxi to Karla Caves",
+            "Walk up the steps to caves"
+          ]
+        },
+        "byBus": {
+          "description": "Bus to Lonavala, then local transport",
+          "distance": "70 km",
+          "time": "2.5-3 hours",
+          "steps": [
+            "Take MSRTC bus from Pune to Lonavala",
+            "Take local transport to Karla Caves",
+            "Walk up to caves"
+          ]
+        },
+        "byPrivateVehicle": {
+          "description": "Drive directly to Karla Caves",
+          "distance": "65 km",
+          "time": "1.5-2 hours",
+          "steps": [
+            "Take Pune-Mumbai Expressway",
+            "Exit at Lonavala, drive to Karla Caves",
+            "Parking available at base"
+          ]
+        }
+      }
+    },
+    "bestTimeToVisit": "October to March",
+    "localContacts": [
+      {
+        "name": "Archaeological Survey of India",
+        "phone": "+91 2114-273000",
+        "service": "Cave Information & Permits"
+      },
+      {
+        "name": "Lonavala Tourism Office",
+        "phone": "+91 2114-273456",
+        "service": "Tourist Information"
+      },
+      {
+        "name": "Local Guide Association",
+        "phone": "+91 9823456789",
+        "service": "Guided Tours"
+      }
+    ],
+    "imageKey": "karla",
+    "videos": [
+      "https://www.youtube.com/watch?v=karla123"
+    ],
+    "coordinates": {
+      "latitude": 18.7608,
+      "longitude": 73.4856
+    },
+    "featured": false,
+    "rating": 4.1,
+    "reviewCount": 678
+  },
+  {
+    "id": 20,
+    "name": "Sinhagad Fort",
+    "category": "fort",
+    "location": "Pune District",
+    "difficulty": "Easy",
+    "duration": "3-4 hours",
+    "elevation": "1312 meters",
+    "description": "Historic fort famous for the battle between Tanaji Malusare and Udaybhan. Popular weekend destination with easy accessibility from Pune.",
+    "startingPoint": {
+      "name": "Sinhagad Base Village",
+      "coordinates": {
+        "latitude": 18.3664,
+        "longitude": 73.7556
+      },
+      "facilities": [
+        "Parking",
+        "Restaurants",
+        "Local guides",
+        "Restrooms",
+        "ATM"
+      ],
+      "description": "Well-developed base with all modern amenities"
+    },
+    "networkAvailability": {
+      "baseVillage": {
+        "airtel": "Excellent",
+        "jio": "Excellent",
+        "vodafone": "Good",
+        "bsnl": "Good"
+      },
+      "duringTrek": {
+        "airtel": "Good",
+        "jio": "Good",
+        "vodafone": "Fair",
+        "bsnl": "Fair"
+      },
+      "atSummit": {
+        "airtel": "Excellent",
+        "jio": "Excellent",
+        "vodafone": "Good",
+        "bsnl": "Good"
+      },
+      "emergencyContact": "108 (works throughout)"
+    },
+    "foodAndWater": {
+      "atBase": {
+        "restaurants": [
+          "Sinhagad Dhaba",
+          "Khadakwasla Restaurant",
+          "Local food stalls"
+        ],
+        "shops": [
+          "General stores",
+          "Trek equipment",
+          "Water bottles",
+          "Snacks"
+        ],
+        "waterSources": [
+          "Municipal water supply",
+          "Packaged water available"
+        ]
+      },
+      "duringTrek": {
+        "waterSources": [
+          "Water taps at intervals",
+          "Carry 2 liters recommended"
+        ],
+        "foodOptions": [
+          "Tea stalls on route",
+          "Snack vendors"
+        ],
+        "recommendations": [
+          "Light snacks",
+          "Energy drinks",
+          "Local specialties"
+        ]
+      },
+      "atSummit": {
+        "facilities": [
+          "Multiple restaurants",
+          "Tea stalls",
+          "Water points"
+        ],
+        "recommendations": [
+          "Try Zunka Bhakar",
+          "Solkadhi",
+          "Fresh lime water"
+        ]
+      }
+    },
+    "accommodation": {
+      "camping": {
+        "allowed": false,
+        "reason": "Day trek only, no overnight camping permitted"
+      },
+      "nearbyStays": [
+        {
+          "name": "Sinhagad Resort",
+          "distance": "2 km from base",
+          "cost": "₹2500-4000 per room",
+          "contact": "+91 9822334455",
+          "facilities": [
+            "AC rooms",
+            "Restaurant",
+            "Conference hall",
+            "Garden"
+          ]
+        },
+        {
+          "name": "Khadakwasla Lake Resort",
+          "distance": "8 km from base",
+          "cost": "₹3000-5000 per room",
+          "contact": "+91 9876543210",
+          "facilities": [
+            "Lake view rooms",
+            "Boating",
+            "Restaurant",
+            "Swimming pool"
+          ]
+        }
+      ]
+    },
+    "permits": {
+      "required": false,
+      "forestDepartment": "Not required",
+      "entry": "Free entry",
+      "timings": "5:00 AM to 8:00 PM",
+      "parking": "₹20 for two-wheelers, ₹50 for cars"
+    },
+    "safety": {
+      "riskLevel": "Low",
+      "commonRisks": [
+        "Crowded paths",
+        "Steep steps",
+        "Monkeys"
+      ],
+      "precautions": [
+        "Comfortable shoes",
+        "Don't feed monkeys",
+        "Stay hydrated"
+      ],
+      "rescuePoints": [
+        "Base village",
+        "Midway rest point",
+        "Summit"
+      ],
+      "nearestHospital": {
+        "name": "Bharati Hospital Pune",
+        "distance": "25 km",
+        "contact": "+91 20-24372181"
+      }
+    },
+    "weather": {
+      "monsoon": {
+        "months": "June-September",
+        "conditions": "Lush green, slippery paths, heavy crowds",
+        "recommendation": "Beautiful but crowded, carry rainwear"
+      },
+      "winter": {
+        "months": "December-February",
+        "conditions": "Pleasant weather, clear views, moderate crowds",
+        "recommendation": "Best time to visit"
+      },
+      "summer": {
+        "months": "March-May",
+        "conditions": "Hot during day, less crowded",
+        "recommendation": "Visit early morning or evening"
+      }
+    },
+    "trekRoute": {
+      "totalDistance": "4 km (round trip)",
+      "ascent": "400 meters",
+      "difficulty": "Easy with some steep sections",
+      "waypoints": [
+        {
+          "name": "Sinhagad Base",
+          "elevation": "912m",
+          "description": "Starting point with parking and facilities"
+        },
+        {
+          "name": "Tanaji Samadhi",
+          "elevation": "1100m",
+          "description": "Memorial of Tanaji Malusare"
+        },
+        {
+          "name": "Kalyan Darwaja",
+          "elevation": "1250m",
+          "description": "Main entrance gate to the fort"
+        },
+        {
+          "name": "Sinhagad Summit",
+          "elevation": "1312m",
+          "description": "Fort top with restaurants and views"
+        }
+      ]
+    },
+    "howToReach": {
+      "fromMumbai": {
+        "byTrain": {
+          "description": "Train to Pune, then local transport",
+          "distance": "180 km",
+          "time": "4-5 hours",
+          "steps": [
+            "Take train from Mumbai to Pune Railway Station",
+            "Take PMPML bus to Sinhagad base",
+            "Trek starts from base village"
+          ]
+        },
+        "byBus": {
+          "description": "Direct bus to Pune, then local transport",
+          "distance": "185 km",
+          "time": "5-6 hours",
+          "steps": [
+            "Take Shivneri bus from Mumbai to Pune",
+            "Take local bus/taxi to Sinhagad base",
+            "Trek starts from base village"
+          ]
+        },
+        "byPrivateVehicle": {
+          "description": "Drive via Mumbai-Pune Expressway",
+          "distance": "180 km",
+          "time": "3.5-4 hours",
+          "steps": [
+            "Take Mumbai-Pune Expressway",
+            "Exit at Pune, follow signs to Sinhagad",
+            "Drive to base village, parking available"
+          ]
+        }
+      },
+      "fromPune": {
+        "byTrain": {
+          "description": "Local train to Khadki, then bus",
+          "distance": "25 km",
+          "time": "1 hour",
+          "steps": [
+            "Take local train to Khadki station",
+            "Take PMPML bus to Sinhagad base",
+            "Trek starts from base village"
+          ]
+        },
+        "byBus": {
+          "description": "Direct PMPML bus to Sinhagad base",
+          "distance": "25 km",
+          "time": "1 hour",
+          "steps": [
+            "Take PMPML bus from Pune to Sinhagad",
+            "Get down at Sinhagad base village",
+            "Trek starts from base"
+          ]
+        },
+        "byPrivateVehicle": {
+          "description": "Drive directly to Sinhagad base",
+          "distance": "25 km",
+          "time": "45 minutes",
+          "steps": [
+            "Take Sinhagad Road from Pune",
+            "Drive to Sinhagad base village",
+            "Parking available at base"
+          ]
+        }
+      }
+    },
+    "bestTimeToVisit": "October to March",
+    "localContacts": [
+      {
+        "name": "Sinhagad Tourism Office",
+        "phone": "+91 20-24372000",
+        "service": "Information & Assistance"
+      },
+      {
+        "name": "Local Guide Association",
+        "phone": "+91 9822445566",
+        "service": "Guided Tours"
+      },
+      {
+        "name": "Emergency Services",
+        "phone": "108",
+        "service": "Medical Emergency"
+      }
+    ],
+    "imageKey": "sinhagad",
+    "videos": [
+      "https://www.youtube.com/watch?v=sinhagad123"
+    ],
+    "coordinates": {
+      "latitude": 18.3664,
+      "longitude": 73.7556
+    },
+    "featured": true,
+    "rating": 4.3,
+    "reviewCount": 892
+  },
+  {
+    "id": 21,
+    "name": "Lohagad Fort",
+    "category": "fort",
+    "location": "Pune District",
+    "difficulty": "Easy to Moderate",
+    "duration": "4-5 hours",
+    "elevation": "1033 meters",
+    "description": "Historic hill fort with iron-like strength, famous for its monsoon beauty and the distinctive Vinchu Kata (Scorpion's Tail) formation.",
+    "startingPoint": {
+      "name": "Lohagadwadi Village",
+      "coordinates": {
+        "latitude": 18.7108,
+        "longitude": 73.4856
+      },
+      "facilities": [
+        "Parking",
+        "Tea stalls",
+        "Local guides",
+        "Basic shops"
+      ],
+      "description": "Small village at the base with basic trekking facilities"
+    },
+    "networkAvailability": {
+      "baseVillage": {
+        "airtel": "Good",
+        "jio": "Good",
+        "vodafone": "Fair",
+        "bsnl": "Fair"
+      },
+      "duringTrek": {
+        "airtel": "Fair",
+        "jio": "Fair",
+        "vodafone": "Poor",
+        "bsnl": "Poor"
+      },
+      "atSummit": {
+        "airtel": "Good",
+        "jio": "Good",
+        "vodafone": "Fair",
+        "bsnl": "Fair"
+      },
+      "emergencyContact": "108 (works from summit)"
+    },
+    "foodAndWater": {
+      "atBase": {
+        "restaurants": [
+          "Village tea stalls",
+          "Local food vendors"
+        ],
+        "shops": [
+          "Basic grocery",
+          "Water bottles",
+          "Snacks"
+        ],
+        "waterSources": [
+          "Village wells",
+          "Packaged water available"
+        ]
+      },
+      "duringTrek": {
+        "waterSources": [
+          "Natural springs",
+          "Carry 3 liters recommended"
+        ],
+        "foodOptions": [
+          "Carry packed food",
+          "No stalls on route"
+        ],
+        "recommendations": [
+          "Energy bars",
+          "Dry fruits",
+          "Electrolyte drinks"
+        ]
+      },
+      "atSummit": {
+        "facilities": [
+          "Seasonal tea stall",
+          "Water tanks"
+        ],
+        "recommendations": [
+          "Carry sufficient food",
+          "Enjoy packed lunch with views"
+        ]
+      }
+    },
+    "accommodation": {
+      "camping": {
+        "allowed": true,
+        "locations": [
+          "Lohagad plateau",
+          "Near water tanks"
+        ],
+        "facilities": [
+          "Open spaces",
+          "Water source",
+          "Shelter ruins"
+        ],
+        "cost": "Free (own tent required)"
+      },
+      "nearbyStays": [
+        {
+          "name": "Lohagadwadi Village Homestay",
+          "distance": "0 km from base",
+          "cost": "₹800-1500 per person",
+          "contact": "+91 9823456789",
+          "facilities": [
+            "Basic rooms",
+            "Home-cooked meals",
+            "Local experience"
+          ]
+        },
+        {
+          "name": "Lonavala Resort",
+          "distance": "12 km from base",
+          "cost": "₹3000-6000 per room",
+          "contact": "+91 2114-273456",
+          "facilities": [
+            "Luxury rooms",
+            "Restaurant",
+            "Swimming pool",
+            "Spa"
+          ]
+        }
+      ]
+    },
+    "permits": {
+      "required": false,
+      "forestDepartment": "Not required",
+      "entry": "Free entry",
+      "timings": "24 hours (night trek allowed)"
+    },
+    "safety": {
+      "riskLevel": "Low to Moderate",
+      "commonRisks": [
+        "Slippery rocks in monsoon",
+        "Steep sections",
+        "Weather changes"
+      ],
+      "precautions": [
+        "Good trekking shoes",
+        "Rain gear in monsoon",
+        "First aid kit"
+      ],
+      "rescuePoints": [
+        "Lohagadwadi village",
+        "Midway plateau",
+        "Summit"
+      ],
+      "nearestHospital": {
+        "name": "Lonavala Civil Hospital",
+        "distance": "15 km",
+        "contact": "+91 2114-273333"
+      }
+    },
+    "weather": {
+      "monsoon": {
+        "months": "June-September",
+        "conditions": "Lush green, waterfalls, slippery paths, leeches",
+        "recommendation": "Most beautiful time but challenging"
+      },
+      "winter": {
+        "months": "December-February",
+        "conditions": "Pleasant weather, clear views, dry paths",
+        "recommendation": "Best time for beginners"
+      },
+      "summer": {
+        "months": "March-May",
+        "conditions": "Hot during day, carry extra water",
+        "recommendation": "Start early morning"
+      }
+    },
+    "trekRoute": {
+      "totalDistance": "6 km (round trip)",
+      "ascent": "500 meters",
+      "difficulty": "Easy to moderate with some steep sections",
+      "waypoints": [
+        {
+          "name": "Lohagadwadi Village",
+          "elevation": "533m",
+          "description": "Starting point with basic facilities"
+        },
+        {
+          "name": "Lohagad Darwaja",
+          "elevation": "750m",
+          "description": "Main entrance gate to the fort"
+        },
+        {
+          "name": "Ganesh Darwaja",
+          "elevation": "900m",
+          "description": "Second gate with Ganesh temple"
+        },
+        {
+          "name": "Lohagad Summit",
+          "elevation": "1033m",
+          "description": "Fort top with Vinchu Kata formation"
+        }
+      ]
+    },
+    "howToReach": {
+      "fromMumbai": {
+        "byTrain": {
+          "description": "Train to Lonavala, then local transport",
+          "distance": "120 km",
+          "time": "3-4 hours",
+          "steps": [
+            "Take train from Mumbai to Lonavala Railway Station",
+            "Take auto/taxi to Lohagadwadi village",
+            "Trek starts from village"
+          ]
+        },
+        "byBus": {
+          "description": "Bus to Lonavala, then local transport",
+          "distance": "125 km",
+          "time": "4-5 hours",
+          "steps": [
+            "Take MSRTC bus from Mumbai to Lonavala",
+            "Take local transport to Lohagadwadi",
+            "Trek starts from village"
+          ]
+        },
+        "byPrivateVehicle": {
+          "description": "Drive via Mumbai-Pune Expressway",
+          "distance": "120 km",
+          "time": "2.5-3 hours",
+          "steps": [
+            "Take Mumbai-Pune Expressway",
+            "Exit at Lonavala, follow signs to Lohagadwadi",
+            "Parking available at village"
+          ]
+        }
+      },
+      "fromPune": {
+        "byTrain": {
+          "description": "Train to Lonavala, then local transport",
+          "distance": "65 km",
+          "time": "2-2.5 hours",
+          "steps": [
+            "Take train from Pune to Lonavala",
+            "Take auto/taxi to Lohagadwadi village",
+            "Trek starts from village"
+          ]
+        },
+        "byBus": {
+          "description": "Bus to Lonavala, then local transport",
+          "distance": "70 km",
+          "time": "2.5-3 hours",
+          "steps": [
+            "Take MSRTC bus from Pune to Lonavala",
+            "Take local transport to Lohagadwadi",
+            "Trek starts from village"
+          ]
+        },
+        "byPrivateVehicle": {
+          "description": "Drive directly to Lohagadwadi",
+          "distance": "65 km",
+          "time": "1.5-2 hours",
+          "steps": [
+            "Take Pune-Mumbai Expressway",
+            "Exit at Lonavala, drive to Lohagadwadi",
+            "Parking available at village"
+          ]
+        }
+      }
+    },
+    "bestTimeToVisit": "October to March",
+    "localContacts": [
+      {
+        "name": "Lohagadwadi Village Guide",
+        "phone": "+91 9823456789",
+        "service": "Local Guide & Information"
+      },
+      {
+        "name": "Lonavala Tourism Office",
+        "phone": "+91 2114-273000",
+        "service": "Tourist Information"
+      }
+    ],
+    "imageKey": "lohagad",
+    "videos": [
+      "https://www.youtube.com/watch?v=lohagad123"
+    ],
+    "coordinates": {
+      "latitude": 18.7108,
+      "longitude": 73.4856
+    },
+    "featured": false,
+    "rating": 4.4,
+    "reviewCount": 567
+  },
+  {
+    "id": 22,
+    "name": "Peb Fort (Vikatgad)",
+    "category": "fort",
+    "location": "Raigad District, Maharashtra",
+    "difficulty": "Easy to Moderate",
+    "duration": "5 hours (round trip)",
+    "elevation": "640 meters",
+    "description": "Peb Fort, also known as Vikatgad, is a scenic hill fort near Matheran. The trail passes through lush forest, rocky patches, and features a thrilling ladder climb near the top. It offers views of Neral, Matheran hill station, and nearby Sahyadri ranges.",
+    "startingPoint": {
+      "name": "Neral (Anandwadi)",
+      "coordinates": {
+        "latitude": 19.028694,
+        "longitude": 73.279056
+      },
+      "facilities": [
+        "Parking",
+        "Local tea stalls",
+        "Toilets at Neral station"
+      ],
+      "description": "Neral is well connected via local trains from Mumbai and Pune. Anandwadi is a 15–20 min walk from Neral station and serves as the entry point to the trail."
+    },
+    "networkAvailability": {
+      "baseVillage": {
+        "airtel": "Good",
+        "jio": "Good",
+        "vodafone": "Fair",
+        "bsnl": "Fair"
+      },
+      "duringTrek": {
+        "airtel": "Intermittent",
+        "jio": "Intermittent",
+        "vodafone": "Intermittent",
+        "bsnl": "Weak"
+      },
+      "atSummit": {
+        "airtel": "Weak",
+        "jio": "Intermittent",
+        "vodafone": "Intermittent",
+        "bsnl": "No signal"
+      },
+      "emergencyContact": "Pre-trek notification advised. Dial 108/112 in case of network availability. No dedicated medical/rescue post on trek."
+    },
+    "foodAccommodation": {
+      "homestays": [
+        {
+          "name": "Prerna Lodge",
+          "location": "Neral",
+          "contact": "9226417543"
+        },
+        {
+          "name": "Green Hill Homestay",
+          "location": "Matheran (top side)",
+          "contact": "9594561604"
+        }
+      ],
+      "foodOnTrek": "No food stalls mid-trek. Tea and snacks available in Neral only. Carry packed meals.",
+      "waterSources": "Small streams during monsoon; unreliable during dry season. Carry 2L minimum.",
+      "campingOptions": "Allowed near Anandwadi fields or summit cave with sleeping bags. No official campsites."
+    },
+    "safety": {
+      "currentRisks": [
+        "Slippery rocks in monsoon",
+        "Loose soil near ladder",
+        "Wild bees near summit"
+      ],
+      "nearestMedicalFacility": {
+        "name": "Matheran PHC",
+        "location": "Matheran Market Area",
+        "contact": "02148-230123"
+      },
+      "emergencyNumbers": {
+        "ambulance": "108",
+        "police": "100",
+        "localRescueVolunteers": "Requires verification"
+      },
+      "rescuePoints": [
+        "Matheran Hill Top",
+        "Neral Station"
+      ]
+    },
+    "localGuides": [
+      {
+        "name": "Dnyaneshwar Mirashi",
+        "contact": "7400174767",
+        "ratePerPerson": "₹500–700",
+        "services": [
+          "Guided trek",
+          "Local route briefing"
+        ]
+      },
+      {
+        "name": "Nature Knights Trek Team",
+        "contact": "9619182010",
+        "ratePerPerson": "₹650–800",
+        "services": [
+          "Group treks",
+          "Rope/ladders",
+          "Safety gear"
+        ]
+      }
+    ],
+    "routeDetails": {
+      "trail": [
+        "Start from Anandwadi village near Neral.",
+        "Walk along toy train track from marker 134 NM → 155 NM.",
+        "Turn into forest trail after marker 155.",
+        "Rocky climb with exposed ridge walk.",
+        "Reach iron ladder and climb to summit plateau.",
+        "Explore caves, Datta temple, and flagpole."
+      ],
+      "landmarks": [
+        "134 NM–155 NM Toy Train markers",
+        "Iron ladder",
+        "Flagpole at summit",
+        "Hanuman temple midway",
+        "Datta temple on top"
+      ],
+      "alternativeRoutes": [
+        "From Matheran via Sunset Point ridge (longer)",
+        "Steep ridge via Kadya Ganpati (technical)"
+      ],
+      "seasonalNotes": [
+        "Monsoon: lush & slippery, Summer: dry but hot, Winter: best for clear views"
+      ]
+    },
+    "permitInfo": {
+      "required": false,
+      "fee": "None",
+      "howToApply": "No permit needed for individuals or groups.",
+      "timingRestrictions": "Avoid after sunset. Local police may stop overnight campers during monsoon."
+    }
+  },
+  {
+    "id": 23,
+    "name": "Bhivpuri Waterfalls",
+    "category": "waterfall",
+    "location": "Raigad District",
+    "difficulty": "Easy",
+    "duration": "1-2 hours",
+    "elevation": "150 meters",
+    "description": "A popular waterfall destination near Karjat, perfect for day trips and family outings. Multiple small waterfalls create natural pools.",
+    "startingPoint": {
+      "name": "Bhivpuri Village",
+      "coordinates": {
+        "latitude": 18.9167,
+        "longitude": 73.3333
+      },
+      "facilities": [
+        "Parking",
+        "Restaurants",
+        "Changing rooms",
+        "Local guides"
+      ],
+      "description": "Well-developed base with good facilities for tourists"
+    },
+    "imageKey": "bhivpuri_falls",
+    "coordinates": {
+      "latitude": 18.9167,
+      "longitude": 73.3333
+    },
+    "featured": false,
+    "rating": 4.1,
+    "reviewCount": 156,
+    "foodAndWater": {
+      "atBase": {
+        "restaurants": [
+          "Bhivpuri village restaurants",
+          "Karjat station canteen"
+        ],
+        "shops": [
+          "Local shops",
+          "Water bottles",
+          "Basic snacks"
+        ],
+        "waterSources": [
+          "Packaged water available",
+          "Village wells"
+        ]
+      },
+      "duringTrek": {
+        "waterSources": [
+          "Natural waterfall pools",
+          "Carry 2 liters recommended"
+        ],
+        "foodOptions": [
+          "No food stalls on route",
+          "Carry packed meals"
+        ],
+        "recommendations": [
+          "Swimming gear",
+          "Waterproof bags",
+          "Change of clothes"
+        ]
+      },
+      "atWaterfall": {
+        "facilities": [
+          "Natural pools for swimming",
+          "No food facilities"
+        ],
+        "recommendations": [
+          "Carry packed lunch",
+          "Enjoy swimming",
+          "Be careful on wet rocks"
+        ]
+      }
+    },
+    "howToReach": {
+      "fromMumbai": {
+        "byTrain": {
+          "description": "Train to Karjat, then local transport",
+          "distance": "90 km",
+          "time": "3-4 hours",
+          "steps": [
+            "Take train from Mumbai CST to Karjat Railway Station",
+            "From Karjat, take auto/taxi to Bhivpuri Village",
+            "Short walk to waterfall area"
+          ]
+        },
+        "byBus": {
+          "description": "Bus to Karjat, then local transport",
+          "distance": "90 km",
+          "time": "4-5 hours",
+          "steps": [
+            "Take MSRTC bus from Mumbai to Karjat",
+            "From Karjat, take local transport to Bhivpuri Village",
+            "Walk to waterfall"
+          ]
+        },
+        "byPrivateVehicle": {
+          "description": "Drive via Mumbai-Pune Highway",
+          "distance": "90 km",
+          "time": "3-4 hours",
+          "steps": [
+            "Take Mumbai-Pune Highway to Karjat exit",
+            "Drive to Bhivpuri Village via local roads",
+            "Park at village and walk to falls"
+          ]
+        }
+      },
+      "fromPune": {
+        "byTrain": {
+          "description": "Train to Karjat via Lonavala",
+          "distance": "120 km",
+          "time": "4-5 hours",
+          "steps": [
+            "Take train from Pune to Lonavala, then to Karjat",
+            "From Karjat, take auto/taxi to Bhivpuri Village",
+            "Short walk to waterfall area"
+          ]
+        },
+        "byBus": {
+          "description": "Bus to Karjat via Mumbai route",
+          "distance": "120 km",
+          "time": "5-6 hours",
+          "steps": [
+            "Take PMPML bus from Pune to Mumbai, get down at Karjat",
+            "From Karjat, take local transport to Bhivpuri Village",
+            "Walk to waterfall"
+          ]
+        },
+        "byPrivateVehicle": {
+          "description": "Drive via Pune-Mumbai Highway",
+          "distance": "120 km",
+          "time": "4-5 hours",
+          "steps": [
+            "Take Pune-Mumbai Highway to Karjat",
+            "Drive to Bhivpuri Village via local roads",
+            "Park at village and walk to falls"
+          ]
+        }
+      }
+    }
+  }
+]

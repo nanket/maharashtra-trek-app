@@ -1,0 +1,1210 @@
+[
+  {
+    "id": 1,
+    "name": "Rajgad Fort",
+    "category": "fort",
+    "location": "Pune District",
+    "difficulty": "Moderate",
+    "duration": "6-7 hours",
+    "elevation": "1376 meters",
+    "description": "Rajgad was the capital of the Maratha Empire under Chhatrapati Shivaji Maharaj for almost 26 years. The fort is known for its historical significance and stunning views.",
+    "startingPoint": {
+      "name": "Gunjavane Village",
+      "coordinates": {
+        "latitude": 18.2467,
+        "longitude": 73.6815
+      },
+      "facilities": [
+        "Parking",
+        "Basic shops",
+        "Local guides",
+        "Restrooms"
+      ],
+      "description": "Small village at the base of Rajgad with basic amenities"
+    },
+    "networkAvailability": {
+      "baseVillage": {
+        "airtel": "Good",
+        "jio": "Good",
+        "vodafone": "Fair",
+        "bsnl": "Fair"
+      },
+      "duringTrek": {
+        "airtel": "Intermittent",
+        "jio": "Intermittent",
+        "vodafone": "Poor",
+        "bsnl": "Poor"
+      },
+      "atSummit": {
+        "airtel": "Good",
+        "jio": "Good",
+        "vodafone": "Fair",
+        "bsnl": "Fair"
+      },
+      "emergencyContact": "108 (works from summit)"
+    },
+    "foodAndWater": {
+      "atBase": {
+        "restaurants": [
+          "Shivaji Dhaba",
+          "Local Tea Stalls"
+        ],
+        "shops": [
+          "Grocery stores",
+          "Water bottles",
+          "Basic snacks"
+        ],
+        "waterSources": [
+          "Village wells",
+          "Packaged water available"
+        ]
+      },
+      "duringTrek": {
+        "waterSources": [
+          "Natural springs at 2 locations",
+          "Carry 3-4 liters recommended"
+        ],
+        "foodOptions": [
+          "Carry packed lunch",
+          "No food stalls on route"
+        ],
+        "recommendations": [
+          "Energy bars",
+          "Dry fruits",
+          "Glucose powder"
+        ]
+      },
+      "atSummit": {
+        "facilities": [
+          "Basic tea stall (seasonal)",
+          "Water tank"
+        ],
+        "recommendations": [
+          "Carry sufficient food",
+          "Refill water at tank"
+        ]
+      }
+    },
+    "accommodation": {
+      "camping": {
+        "allowed": true,
+        "locations": [
+          "Padmavati Machi",
+          "Suvela Machi",
+          "Sanjeevani Machi"
+        ],
+        "facilities": [
+          "Open spaces",
+          "Water source nearby",
+          "Basic shelter ruins"
+        ],
+        "cost": "Free (own tent required)"
+      },
+      "nearbyStays": [
+        {
+          "name": "Gunjavane Village Homestay",
+          "distance": "0 km from base",
+          "cost": "₹800-1200 per person",
+          "contact": "+91 9405754600",
+          "facilities": [
+            "Basic rooms",
+            "Home-cooked meals",
+            "Parking"
+          ]
+        },
+        {
+          "name": "Rajgad Resort",
+          "distance": "5 km from base",
+          "cost": "₹2000-3500 per room",
+          "contact": "+91 9529063480",
+          "facilities": [
+            "AC rooms",
+            "Restaurant",
+            "Swimming pool"
+          ]
+        }
+      ]
+    },
+    "permits": {
+      "required": false,
+      "forestDepartment": "Not required",
+      "entry": "Free entry",
+      "timings": "24 hours (night trek allowed)"
+    },
+    "safety": {
+      "riskLevel": "Moderate",
+      "commonRisks": [
+        "Steep climbs",
+        "Loose rocks",
+        "Weather changes"
+      ],
+      "precautions": [
+        "Proper trekking shoes",
+        "First aid kit",
+        "Sufficient water"
+      ],
+      "rescuePoints": [
+        "Gunjavane village",
+        "Padmavati Machi",
+        "Summit"
+      ],
+      "nearestHospital": {
+        "name": "Rural Hospital Bhor",
+        "distance": "25 km",
+        "contact": "+91 2113-222333"
+      }
+    },
+    "weather": {
+      "monsoon": {
+        "months": "June-September",
+        "conditions": "Heavy rainfall, slippery paths, leeches",
+        "recommendation": "Avoid during heavy rains"
+      },
+      "winter": {
+        "months": "December-February",
+        "conditions": "Cool and pleasant, clear views",
+        "recommendation": "Best time to visit"
+      },
+      "summer": {
+        "months": "March-May",
+        "conditions": "Hot during day, carry extra water",
+        "recommendation": "Start early morning"
+      }
+    },
+    "trekRoute": {
+      "totalDistance": "8 km (round trip)",
+      "ascent": "650 meters",
+      "difficulty": "Moderate to difficult sections",
+      "waypoints": [
+        {
+          "name": "Gunjavane Village",
+          "elevation": "726m",
+          "description": "Starting point with basic facilities"
+        },
+        {
+          "name": "Pali Darwaja",
+          "elevation": "950m",
+          "description": "First major checkpoint, stone gateway"
+        },
+        {
+          "name": "Padmavati Machi",
+          "elevation": "1200m",
+          "description": "Plateau with camping space and water"
+        },
+        {
+          "name": "Rajgad Summit",
+          "elevation": "1376m",
+          "description": "Main fort area with Balekilla"
+        }
+      ]
+    },
+    "howToReach": {
+      "fromMumbai": {
+        "byTrain": {
+          "description": "Take train from Mumbai to Pune, then local transport",
+          "distance": "150 km",
+          "time": "4-5 hours",
+          "steps": [
+            "Take train from Mumbai CST/LTT to Pune Railway Station",
+            "From Pune, take MSRTC bus to Gunjavane village",
+            "Trek starts from Gunjavane village base"
+          ]
+        },
+        "byBus": {
+          "description": "Direct bus from Mumbai to Pune, then local transport",
+          "distance": "155 km",
+          "time": "5-6 hours",
+          "steps": [
+            "Take Shivneri/MSRTC bus from Mumbai to Pune",
+            "From Pune, take local bus to Gunjavane village",
+            "Trek starts from village base"
+          ]
+        },
+        "byPrivateVehicle": {
+          "description": "Drive via Mumbai-Pune Expressway",
+          "distance": "150 km",
+          "time": "3.5-4 hours",
+          "steps": [
+            "Take Mumbai-Pune Expressway",
+            "Exit at Pune, take Pune-Satara highway",
+            "Turn towards Gunjavane village, parking available"
+          ]
+        }
+      },
+      "fromPune": {
+        "byTrain": {
+          "description": "Local train to nearest station, then bus",
+          "distance": "60 km",
+          "time": "1.5 hours",
+          "steps": [
+            "Take local train from Pune to Lonavala",
+            "From Lonavala, take bus to Gunjavane village",
+            "Trek starts from Gunjavane village base"
+          ]
+        },
+        "byBus": {
+          "description": "Direct MSRTC bus to Gunjavane village",
+          "distance": "65 km",
+          "time": "2 hours",
+          "steps": [
+            "Take MSRTC bus from Pune to Gunjavane",
+            "Get down at Gunjavane village",
+            "Trek starts from village base"
+          ]
+        },
+        "byPrivateVehicle": {
+          "description": "Drive directly to Gunjavane village base",
+          "distance": "60 km",
+          "time": "1.5 hours",
+          "steps": [
+            "Take Pune-Satara highway",
+            "Turn towards Gunjavane village",
+            "Parking available at village base"
+          ]
+        }
+      }
+    },
+    "bestTimeToVisit": "October to March",
+    "localContacts": [
+      {
+        "name": "Manohar (Local Guide)",
+        "phone": "+91 9403048768",
+        "service": "Local Guide, Food & Accommodation"
+      },
+      {
+        "name": "Dashrath Ainkar",
+        "phone": "+91 8888449434",
+        "service": "Local Guide & Accommodation"
+      },
+      {
+        "name": "Gunjavane Village Sarpanch",
+        "phone": "+91 9405754600",
+        "service": "Emergency Contact & Village Info"
+      }
+    ],
+    "imageKey": "rajgad",
+    "videos": [
+      "https://www.youtube.com/watch?v=jNPyn9A0EHo",
+      "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+    ],
+    "coordinates": {
+      "latitude": 18.2467,
+      "longitude": 73.6815
+    },
+    "featured": true,
+    "rating": 4.5,
+    "reviewCount": 234
+  },
+  {
+    "id": 5,
+    "name": "Bhimashankar Trek",
+    "category": "trek",
+    "location": "Pune District",
+    "difficulty": "Moderate",
+    "duration": "5-6 hours",
+    "elevation": "1033 meters",
+    "description": "One of the 12 Jyotirlingas, this trek combines spirituality with nature. Dense forests and wildlife sanctuary.",
+    "startingPoint": {
+      "name": "Bhimashankar Temple",
+      "coordinates": {
+        "latitude": 19.0717,
+        "longitude": 73.5333
+      },
+      "facilities": [
+        "Temple complex",
+        "Parking",
+        "Shops",
+        "Restrooms",
+        "Dharamshala"
+      ],
+      "description": "Sacred temple complex with basic facilities for pilgrims and trekkers"
+    },
+    "networkAvailability": {
+      "baseTemple": {
+        "airtel": "Good",
+        "jio": "Good",
+        "vodafone": "Fair",
+        "bsnl": "Fair"
+      },
+      "duringTrek": {
+        "airtel": "Poor",
+        "jio": "Poor",
+        "vodafone": "No signal",
+        "bsnl": "No signal"
+      },
+      "atSummit": {
+        "airtel": "Fair",
+        "jio": "Fair",
+        "vodafone": "Poor",
+        "bsnl": "Poor"
+      },
+      "emergencyContact": "108 (works from temple area)"
+    },
+    "foodAndWater": {
+      "atBase": {
+        "restaurants": [
+          "Temple prasadam",
+          "Local dhabas",
+          "Tea stalls"
+        ],
+        "shops": [
+          "Religious items",
+          "Basic groceries",
+          "Trekking supplies"
+        ],
+        "waterSources": [
+          "Temple water",
+          "Natural springs",
+          "Packaged water"
+        ]
+      },
+      "duringTrek": {
+        "waterSources": [
+          "Multiple natural streams",
+          "Carry 3-4 liters recommended"
+        ],
+        "foodOptions": [
+          "No food stalls in forest",
+          "Carry packed meals"
+        ],
+        "recommendations": [
+          "High-energy snacks",
+          "Dry fruits",
+          "Electrolyte drinks"
+        ]
+      },
+      "atSummit": {
+        "facilities": [
+          "Natural water sources",
+          "No food facilities"
+        ],
+        "recommendations": [
+          "Carry sufficient food",
+          "Water purification tablets"
+        ]
+      }
+    },
+    "accommodation": {
+      "camping": {
+        "allowed": true,
+        "locations": [
+          "Designated camping areas in sanctuary",
+          "Near temple complex"
+        ],
+        "facilities": [
+          "Basic camping grounds",
+          "Water sources",
+          "Forest department supervision"
+        ],
+        "cost": "₹100-200 per person (forest department fee)"
+      },
+      "nearbyStays": [
+        {
+          "name": "Temple Dharamshala",
+          "distance": "0 km from temple",
+          "cost": "₹200-500 per person",
+          "contact": "+91 2132-222444",
+          "facilities": [
+            "Basic rooms",
+            "Shared bathrooms",
+            "Temple meals available"
+          ]
+        },
+        {
+          "name": "Bhimashankar Resort",
+          "distance": "2 km from temple",
+          "cost": "₹2000-3500 per room",
+          "contact": "+91 2132-222555",
+          "facilities": [
+            "Comfortable rooms",
+            "Restaurant",
+            "Nature views"
+          ]
+        },
+        {
+          "name": "Forest Rest House",
+          "distance": "1 km from temple",
+          "cost": "₹800-1500 per room",
+          "contact": "+91 2132-222666",
+          "facilities": [
+            "Government rest house",
+            "Basic amenities",
+            "Advance booking required"
+          ]
+        }
+      ]
+    },
+    "permits": {
+      "required": true,
+      "forestDepartment": "Entry permit required for wildlife sanctuary",
+      "entry": "₹25 per person + ₹100 camera fee",
+      "timings": "6:00 AM to 6:00 PM",
+      "camping": "Additional ₹100-200 for camping",
+      "guide": "Local guide recommended for forest areas"
+    },
+    "safety": {
+      "riskLevel": "Moderate",
+      "commonRisks": [
+        "Wildlife encounters",
+        "Dense forest",
+        "Getting lost",
+        "Slippery paths"
+      ],
+      "precautions": [
+        "Stay on marked trails",
+        "Make noise while walking",
+        "Carry whistle",
+        "Don't trek alone"
+      ],
+      "rescuePoints": [
+        "Temple complex",
+        "Forest checkposts",
+        "Sanctuary office"
+      ],
+      "nearestHospital": {
+        "name": "Rural Hospital Rajgurunagar",
+        "distance": "35 km",
+        "contact": "+91 2553-222777"
+      }
+    },
+    "weather": {
+      "monsoon": {
+        "months": "June-September",
+        "conditions": "Heavy rainfall, lush forest, wildlife active, leeches",
+        "recommendation": "Beautiful but challenging, carry leech socks"
+      },
+      "winter": {
+        "months": "November-February",
+        "conditions": "Pleasant weather, clear trails, best wildlife viewing",
+        "recommendation": "Perfect time for trekking and wildlife photography"
+      },
+      "summer": {
+        "months": "March-May",
+        "conditions": "Hot during day, carry extra water, early morning start",
+        "recommendation": "Possible but start very early"
+      }
+    },
+    "trekRoute": {
+      "totalDistance": "12 km (various routes available)",
+      "ascent": "400 meters",
+      "difficulty": "Moderate with forest terrain",
+      "waypoints": [
+        {
+          "name": "Bhimashankar Temple",
+          "elevation": "633m",
+          "description": "Starting point, one of 12 Jyotirlingas"
+        },
+        {
+          "name": "Sanctuary Entry Gate",
+          "elevation": "700m",
+          "description": "Wildlife sanctuary checkpoint, permits verified"
+        },
+        {
+          "name": "Hanuman Lake",
+          "elevation": "850m",
+          "description": "Beautiful lake, good rest point"
+        },
+        {
+          "name": "Bhimashankar Peak",
+          "elevation": "1033m",
+          "description": "Highest point with panoramic views"
+        }
+      ]
+    },
+    "wildlife": {
+      "sanctuary": "Bhimashankar Wildlife Sanctuary",
+      "animals": [
+        "Indian Giant Squirrel",
+        "Leopard",
+        "Barking Deer",
+        "Wild Boar",
+        "Various bird species"
+      ],
+      "bestTime": "Early morning and evening",
+      "precautions": [
+        "Don't feed animals",
+        "Maintain distance",
+        "No loud noises"
+      ]
+    },
+    "howToReach": {
+      "fromMumbai": {
+        "byTrain": {
+          "description": "Take train from Mumbai to Pune, then bus to Bhimashankar",
+          "distance": "260 km",
+          "time": "6-7 hours",
+          "steps": [
+            "Take train from Mumbai CST/LTT to Pune Railway Station",
+            "From Pune, take MSRTC bus to Bhimashankar temple",
+            "Trek routes available from temple base"
+          ]
+        },
+        "byBus": {
+          "description": "Direct bus from Mumbai to Bhimashankar",
+          "distance": "265 km",
+          "time": "7-8 hours",
+          "steps": [
+            "Take MSRTC bus from Mumbai to Bhimashankar",
+            "Direct buses available from Dadar TT",
+            "Get down at Bhimashankar temple"
+          ]
+        },
+        "byPrivateVehicle": {
+          "description": "Drive via Mumbai-Pune Expressway to Bhimashankar",
+          "distance": "260 km",
+          "time": "5-6 hours",
+          "steps": [
+            "Take Mumbai-Pune Expressway",
+            "Exit at Rajgurunagar, follow signs to Bhimashankar",
+            "Drive to Bhimashankar temple base, parking available"
+          ]
+        }
+      },
+      "fromPune": {
+        "byTrain": {
+          "description": "Take train to Rajgurunagar, then bus",
+          "distance": "110 km",
+          "time": "3-4 hours",
+          "steps": [
+            "Take local train from Pune to Rajgurunagar",
+            "From Rajgurunagar, take bus to Bhimashankar",
+            "Trek routes available from temple base"
+          ]
+        },
+        "byBus": {
+          "description": "Direct MSRTC bus to Bhimashankar temple",
+          "distance": "110 km",
+          "time": "3 hours",
+          "steps": [
+            "Take MSRTC bus from Pune to Bhimashankar",
+            "Buses available from Shivajinagar, Swargate",
+            "Get down at Bhimashankar temple"
+          ]
+        },
+        "byPrivateVehicle": {
+          "description": "Drive directly to Bhimashankar temple",
+          "distance": "110 km",
+          "time": "2.5 hours",
+          "steps": [
+            "Take Pune-Rajgurunagar road",
+            "Follow signs to Bhimashankar temple",
+            "Parking available at temple base"
+          ]
+        }
+      }
+    },
+    "bestTimeToVisit": "October to March",
+    "localContacts": [
+      {
+        "name": "Temple Committee",
+        "phone": "+91 9623776849",
+        "service": "Information & Accommodation"
+      },
+      {
+        "name": "Wildlife Sanctuary Office",
+        "phone": "+91 8010074397",
+        "service": "Permits & Wildlife Info"
+      },
+      {
+        "name": "Nitin Lohkare (Homestay)",
+        "phone": "+91 9405754600",
+        "service": "Accommodation & Local Guide"
+      },
+      {
+        "name": "Aniket Lodge",
+        "phone": "+91 9325379068",
+        "service": "Budget Accommodation"
+      },
+      {
+        "name": "Ratwa Resort",
+        "phone": "+91 9421008880",
+        "service": "Resort Accommodation"
+      }
+    ],
+    "imageKey": "bhimashankar",
+    "coordinates": {
+      "latitude": 19.0717,
+      "longitude": 73.5333
+    },
+    "featured": false,
+    "rating": 4.4,
+    "reviewCount": 156
+  },
+  {
+    "id": 10,
+    "name": "Torna Fort",
+    "category": "fort",
+    "location": "Pune District",
+    "difficulty": "Moderate",
+    "duration": "4-5 hours",
+    "elevation": "1403 meters",
+    "description": "First fort captured by Chhatrapati Shivaji Maharaj at age 16. Also known as Prachandagad, it's the highest hill fort around Pune.",
+    "startingPoint": {
+      "name": "Velhe Village",
+      "coordinates": {
+        "latitude": 18.2833,
+        "longitude": 73.5167
+      },
+      "facilities": [
+        "Village shops",
+        "Local guides",
+        "Basic accommodation",
+        "Parking"
+      ],
+      "description": "Traditional village at the base with basic facilities and historical significance"
+    },
+    "networkAvailability": {
+      "baseVillage": {
+        "airtel": "Fair",
+        "jio": "Fair",
+        "vodafone": "Poor",
+        "bsnl": "Poor"
+      },
+      "duringTrek": {
+        "airtel": "Poor",
+        "jio": "Poor",
+        "vodafone": "No signal",
+        "bsnl": "No signal"
+      },
+      "atSummit": {
+        "airtel": "Good",
+        "jio": "Good",
+        "vodafone": "Fair",
+        "bsnl": "Fair"
+      },
+      "emergencyContact": "108 (works from summit)"
+    },
+    "foodAndWater": {
+      "atBase": {
+        "restaurants": [
+          "Hotel Torna Vihar",
+          "Village homes (on request)",
+          "Tea stalls"
+        ],
+        "shops": [
+          "Basic groceries",
+          "Trekking supplies",
+          "Water bottles"
+        ],
+        "waterSources": [
+          "Village wells",
+          "Packaged water available"
+        ]
+      },
+      "duringTrek": {
+        "waterSources": [
+          "Natural springs at 2 locations",
+          "Carry 4-5 liters recommended"
+        ],
+        "foodOptions": [
+          "No food stalls on route",
+          "Carry packed meals"
+        ],
+        "recommendations": [
+          "High-energy snacks",
+          "Dry fruits",
+          "Extra rations"
+        ]
+      },
+      "atSummit": {
+        "facilities": [
+          "Ancient water tanks",
+          "No food facilities"
+        ],
+        "recommendations": [
+          "Carry sufficient food",
+          "Water purification tablets"
+        ]
+      }
+    },
+    "accommodation": {
+      "camping": {
+        "allowed": true,
+        "locations": [
+          "Near Velhe village",
+          "Fort plateau (with permission)"
+        ],
+        "facilities": [
+          "Open camping grounds",
+          "Water sources",
+          "Basic shelter"
+        ],
+        "cost": "₹200-400 per person"
+      },
+      "nearbyStays": [
+        {
+          "name": "Hotel Torna Vihar",
+          "distance": "0 km from base",
+          "cost": "₹1000-1800 per room",
+          "contact": "+91 9404232845",
+          "facilities": [
+            "Basic rooms",
+            "Restaurant",
+            "Guide services"
+          ]
+        },
+        {
+          "name": "Velhe Village Homestay",
+          "distance": "0 km from base",
+          "cost": "₹600-1000 per person",
+          "contact": "+91 9850456123",
+          "facilities": [
+            "Village accommodation",
+            "Home-cooked meals",
+            "Local guides"
+          ]
+        }
+      ]
+    },
+    "permits": {
+      "required": false,
+      "forestDepartment": "Not required",
+      "entry": "Free entry",
+      "timings": "24 hours (night trek allowed)"
+    },
+    "safety": {
+      "riskLevel": "Moderate to High",
+      "commonRisks": [
+        "Steep climbs",
+        "Rock climbing sections",
+        "Weather changes"
+      ],
+      "precautions": [
+        "Experienced guide recommended",
+        "Proper climbing gear",
+        "Emergency whistle"
+      ],
+      "rescuePoints": [
+        "Velhe village",
+        "Midway rest point",
+        "Summit"
+      ],
+      "nearestHospital": {
+        "name": "Rural Hospital Bhor",
+        "distance": "30 km",
+        "contact": "+91 2113-222333"
+      }
+    },
+    "weather": {
+      "monsoon": {
+        "months": "June-September",
+        "conditions": "Heavy rainfall, slippery rocks, leeches",
+        "recommendation": "Avoid during heavy rains, experienced trekkers only"
+      },
+      "winter": {
+        "months": "November-February",
+        "conditions": "Cool and pleasant, clear views, perfect for camping",
+        "recommendation": "Best time to visit"
+      },
+      "summer": {
+        "months": "March-May",
+        "conditions": "Hot during day, carry extra water",
+        "recommendation": "Start very early morning"
+      }
+    },
+    "trekRoute": {
+      "totalDistance": "10 km (round trip)",
+      "ascent": "800 meters",
+      "difficulty": "Moderate to difficult",
+      "waypoints": [
+        {
+          "name": "Velhe Village",
+          "elevation": "603m",
+          "description": "Starting point with basic facilities"
+        },
+        {
+          "name": "Forest Trail",
+          "elevation": "900m",
+          "description": "Dense forest path with wildlife"
+        },
+        {
+          "name": "Rock Climbing Section",
+          "elevation": "1200m",
+          "description": "Steep rock patches requiring careful climbing"
+        },
+        {
+          "name": "Torna Summit",
+          "elevation": "1403m",
+          "description": "Highest hill fort around Pune with panoramic views"
+        }
+      ]
+    },
+    "howToReach": {
+      "fromMumbai": {
+        "byTrain": {
+          "description": "Train to Pune, then bus to Velhe",
+          "distance": "180 km",
+          "time": "5-6 hours",
+          "steps": [
+            "Take train from Mumbai CST to Pune Railway Station",
+            "From Pune, take MSRTC bus to Velhe village",
+            "Trek starts from Velhe village"
+          ]
+        },
+        "byBus": {
+          "description": "Bus to Pune, then local transport to Velhe",
+          "distance": "185 km",
+          "time": "6-7 hours",
+          "steps": [
+            "Take MSRTC bus from Mumbai to Pune",
+            "From Pune, take local bus to Velhe village",
+            "Trek starts from village"
+          ]
+        },
+        "byPrivateVehicle": {
+          "description": "Drive via Mumbai-Pune Expressway",
+          "distance": "180 km",
+          "time": "4-5 hours",
+          "steps": [
+            "Take Mumbai-Pune Expressway",
+            "Exit at Pune, drive towards Velhe via Bhor",
+            "Parking available at village"
+          ]
+        }
+      },
+      "fromPune": {
+        "byTrain": {
+          "description": "No direct train, use bus transport",
+          "distance": "50 km",
+          "time": "2-3 hours",
+          "steps": [
+            "Take local train to Pune Junction",
+            "From Pune, take MSRTC bus to Velhe",
+            "Trek starts from Velhe village"
+          ]
+        },
+        "byBus": {
+          "description": "Direct MSRTC bus to Velhe village",
+          "distance": "50 km",
+          "time": "2 hours",
+          "steps": [
+            "Take MSRTC bus from Pune to Velhe",
+            "Get down at Velhe village",
+            "Trek starts from village"
+          ]
+        },
+        "byPrivateVehicle": {
+          "description": "Drive directly to Velhe village",
+          "distance": "50 km",
+          "time": "1.5 hours",
+          "steps": [
+            "Take Pune-Satara highway",
+            "Turn towards Velhe village via Bhor",
+            "Parking available at village"
+          ]
+        }
+      }
+    },
+    "bestTimeToVisit": "October to March",
+    "localContacts": [
+      {
+        "name": "Hemant Kadam (Hotel Torna Vihar)",
+        "phone": "+91 9404232845",
+        "service": "Accommodation & Local Guide"
+      },
+      {
+        "name": "Bapu Sable",
+        "phone": "+91 9850789123",
+        "service": "Local Guide & Information"
+      },
+      {
+        "name": "Velhe Village Sarpanch",
+        "phone": "+91 9421345678",
+        "service": "Village Information & Emergency"
+      }
+    ],
+    "imageKey": "torna",
+    "coordinates": {
+      "latitude": 18.2833,
+      "longitude": 73.5167
+    },
+    "featured": true,
+    "rating": 4.5,
+    "reviewCount": 178
+  },
+  {
+    "id": 11,
+    "name": "Andharban Trek",
+    "category": "trek",
+    "location": "Pune District",
+    "difficulty": "Moderate",
+    "duration": "6-7 hours",
+    "elevation": "700 meters",
+    "description": "Famous 'Dark Forest' trek through dense jungle canopy. Known for its unique descending trail and rich biodiversity in the Western Ghats.",
+    "startingPoint": {
+      "name": "Pimpri Village (Tamhini Ghat)",
+      "coordinates": {
+        "latitude": 18.4167,
+        "longitude": 73.4333
+      },
+      "facilities": [
+        "Village shops",
+        "Local guides",
+        "Parking",
+        "Basic refreshments"
+      ],
+      "description": "Small village on Tamhini Ghat road, gateway to the dark forest"
+    },
+    "networkAvailability": {
+      "baseVillage": {
+        "airtel": "Fair",
+        "jio": "Fair",
+        "vodafone": "Poor",
+        "bsnl": "Poor"
+      },
+      "duringTrek": {
+        "airtel": "No signal",
+        "jio": "No signal",
+        "vodafone": "No signal",
+        "bsnl": "No signal"
+      },
+      "atSummit": {
+        "airtel": "Poor",
+        "jio": "Poor",
+        "vodafone": "No signal",
+        "bsnl": "No signal"
+      },
+      "emergencyContact": "108 (works from Tamhini Ghat road)"
+    },
+    "foodAndWater": {
+      "atBase": {
+        "restaurants": [
+          "Andharban Resort",
+          "Local tea stalls",
+          "Village homes (on request)"
+        ],
+        "shops": [
+          "Basic groceries",
+          "Water bottles",
+          "Trekking supplies"
+        ],
+        "waterSources": [
+          "Village wells",
+          "Packaged water available"
+        ]
+      },
+      "duringTrek": {
+        "waterSources": [
+          "Multiple natural streams",
+          "Carry 4-5 liters recommended"
+        ],
+        "foodOptions": [
+          "No food stalls in forest",
+          "Carry packed meals"
+        ],
+        "recommendations": [
+          "High-energy snacks",
+          "Waterproof food storage",
+          "Extra rations"
+        ]
+      },
+      "atSummit": {
+        "facilities": [
+          "Natural water sources",
+          "No food facilities"
+        ],
+        "recommendations": [
+          "Carry sufficient food",
+          "Water purification tablets"
+        ]
+      }
+    },
+    "accommodation": {
+      "camping": {
+        "allowed": false,
+        "reason": "Dense forest area, camping not recommended for safety"
+      },
+      "nearbyStays": [
+        {
+          "name": "Andharban Resort",
+          "distance": "2 km from base",
+          "cost": "₹2000-3500 per room",
+          "contact": "+91 9850234567",
+          "facilities": [
+            "Comfortable rooms",
+            "Restaurant",
+            "Trekking packages"
+          ]
+        },
+        {
+          "name": "Tamhini Ghat Homestays",
+          "distance": "5 km from base",
+          "cost": "₹800-1500 per room",
+          "contact": "+91 9421567890",
+          "facilities": [
+            "Basic accommodation",
+            "Local food",
+            "Nature views"
+          ]
+        }
+      ]
+    },
+    "permits": {
+      "required": false,
+      "forestDepartment": "Not required",
+      "entry": "Free entry",
+      "timings": "6:00 AM to 5:00 PM (daylight hours only)"
+    },
+    "safety": {
+      "riskLevel": "Moderate to High",
+      "commonRisks": [
+        "Dense forest",
+        "Getting lost",
+        "Wildlife encounters",
+        "Slippery paths"
+      ],
+      "precautions": [
+        "Experienced guide mandatory",
+        "Stay in group",
+        "Carry whistle",
+        "Inform someone about trek"
+      ],
+      "rescuePoints": [
+        "Pimpri village",
+        "Forest checkpoints",
+        "Bhira village"
+      ],
+      "nearestHospital": {
+        "name": "Khopoli Hospital",
+        "distance": "25 km",
+        "contact": "+91 2192-222333"
+      }
+    },
+    "weather": {
+      "monsoon": {
+        "months": "June-September",
+        "conditions": "Dense canopy, heavy rainfall, leeches, slippery paths",
+        "recommendation": "Best time for forest experience but requires caution"
+      },
+      "winter": {
+        "months": "November-February",
+        "conditions": "Cool and pleasant, clear forest paths, good visibility",
+        "recommendation": "Ideal time for beginners"
+      },
+      "summer": {
+        "months": "March-May",
+        "conditions": "Hot and humid, less water in streams",
+        "recommendation": "Early morning start essential"
+      }
+    },
+    "trekRoute": {
+      "totalDistance": "13 km (one way descending)",
+      "ascent": "Minimal (mostly descending)",
+      "difficulty": "Moderate due to forest navigation",
+      "waypoints": [
+        {
+          "name": "Pimpri Village",
+          "elevation": "700m",
+          "description": "Starting point on Tamhini Ghat"
+        },
+        {
+          "name": "Forest Entry",
+          "elevation": "650m",
+          "description": "Dense canopy begins, guide essential"
+        },
+        {
+          "name": "Stream Crossings",
+          "elevation": "400m",
+          "description": "Multiple stream crossings through forest"
+        },
+        {
+          "name": "Bhira Village",
+          "elevation": "200m",
+          "description": "End point near Kundalika river"
+        }
+      ]
+    },
+    "howToReach": {
+      "fromMumbai": {
+        "byTrain": {
+          "description": "Train to Karjat, then taxi to Pimpri village",
+          "distance": "120 km",
+          "time": "4-5 hours",
+          "steps": [
+            "Take train from Mumbai CST to Karjat Railway Station",
+            "From Karjat, take taxi to Pimpri village via Tamhini Ghat",
+            "Trek starts from Pimpri village"
+          ]
+        },
+        "byBus": {
+          "description": "Bus to Pune, then local transport to Tamhini Ghat",
+          "distance": "140 km",
+          "time": "5-6 hours",
+          "steps": [
+            "Take MSRTC bus from Mumbai to Pune",
+            "From Pune, take local transport to Tamhini Ghat",
+            "Get down at Pimpri village"
+          ]
+        },
+        "byPrivateVehicle": {
+          "description": "Drive via Mumbai-Pune Expressway",
+          "distance": "120 km",
+          "time": "3-4 hours",
+          "steps": [
+            "Take Mumbai-Pune Expressway",
+            "Exit at Tamhini Ghat road",
+            "Drive to Pimpri village, parking available"
+          ]
+        }
+      },
+      "fromPune": {
+        "byTrain": {
+          "description": "No direct train, use bus transport",
+          "distance": "70 km",
+          "time": "3-4 hours",
+          "steps": [
+            "Take local train to Pune Junction",
+            "From Pune, take bus to Tamhini Ghat",
+            "Get down at Pimpri village"
+          ]
+        },
+        "byBus": {
+          "description": "Direct bus to Tamhini Ghat",
+          "distance": "70 km",
+          "time": "2.5-3 hours",
+          "steps": [
+            "Take MSRTC bus from Pune to Tamhini Ghat",
+            "Get down at Pimpri village",
+            "Trek starts from village"
+          ]
+        },
+        "byPrivateVehicle": {
+          "description": "Drive directly via Tamhini Ghat road",
+          "distance": "70 km",
+          "time": "2-2.5 hours",
+          "steps": [
+            "Take Pune-Mumbai highway",
+            "Turn towards Tamhini Ghat road",
+            "Drive to Pimpri village"
+          ]
+        }
+      }
+    },
+    "bestTimeToVisit": "October to March",
+    "localContacts": [
+      {
+        "name": "Dhiraj Mengade (Andharban Resort)",
+        "phone": "+91 9850234567",
+        "service": "Accommodation & Trekking Guide"
+      },
+      {
+        "name": "Mahesh Kandhare",
+        "phone": "+91 9421567890",
+        "service": "Local Guide & Forest Navigation"
+      },
+      {
+        "name": "Tamhini Ghat Tourism Office",
+        "phone": "+91 2192-234567",
+        "service": "Tourism Information"
+      }
+    ],
+    "imageKey": "andharban",
+    "coordinates": {
+      "latitude": 18.4167,
+      "longitude": 73.4333
+    },
+    "featured": false,
+    "rating": 4.4,
+    "reviewCount": 267
+  }
+]

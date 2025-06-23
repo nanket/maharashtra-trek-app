@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import {
   View,
   Text,
@@ -25,6 +25,14 @@ import {
 
 const { width } = Dimensions.get('window');
 
+// Helper function to get current season
+const getCurrentSeason = () => {
+  const month = new Date().getMonth() + 1;
+  if (month >= 6 && month <= 9) return 'monsoon';
+  if (month >= 12 || month <= 2) return 'winter';
+  return 'summer';
+};
+
 const TrekPlannerScreen = ({ navigation, route }) => {
   const { trek } = route?.params || {};
   const [activeTab, setActiveTab] = useState('planner');
@@ -34,18 +42,20 @@ const TrekPlannerScreen = ({ navigation, route }) => {
     fitnessLevel: 'intermediate',
     plannedDate: '',
     duration: 1,
-    budget: 0
+    budget: 0,
+    season: getCurrentSeason() // Initialize with current season
   });
   const [packingList, setPackingList] = useState([]);
   const [checkedItems, setCheckedItems] = useState({});
 
-  useEffect(() => {
-    if (trek) {
-      generateTrekPlan();
-    }
-  }, [trek, plannerData]);
+  // Separate state for calculated values to avoid infinite loops
+  const [estimatedTime, setEstimatedTime] = useState(null);
+  const [currentSeason, setCurrentSeason] = useState(getCurrentSeason());
 
-  const generateTrekPlan = () => {
+  // Effect to calculate trek plan when relevant data changes
+  useEffect(() => {
+    if (!trek) return;
+
     const season = getCurrentSeason();
     const difficulty = trek?.difficulty?.toLowerCase() || 'moderate';
     const distance = parseFloat(trek?.distance) || 10;
@@ -53,9 +63,9 @@ const TrekPlannerScreen = ({ navigation, route }) => {
 
     // Calculate estimated time
     const timeEstimate = calculateTrekTime(
-      distance, 
-      elevation, 
-      plannerData.groupSize, 
+      distance,
+      elevation,
+      plannerData.groupSize,
       plannerData.fitnessLevel
     );
 
@@ -66,22 +76,13 @@ const TrekPlannerScreen = ({ navigation, route }) => {
       plannerData.duration,
       difficulty
     );
+
     setPackingList(list);
+    setEstimatedTime(timeEstimate);
+    setCurrentSeason(season);
+  }, [trek, plannerData.groupSize, plannerData.fitnessLevel, plannerData.duration]);
 
-    // Update planner data
-    setPlannerData(prev => ({
-      ...prev,
-      estimatedTime: timeEstimate,
-      season
-    }));
-  };
 
-  const getCurrentSeason = () => {
-    const month = new Date().getMonth() + 1;
-    if (month >= 6 && month <= 9) return 'monsoon';
-    if (month >= 12 || month <= 2) return 'winter';
-    return 'summer';
-  };
 
   const tabs = [
     { id: 'planner', label: 'Plan Trek', icon: '📋' },
@@ -192,7 +193,7 @@ const TrekPlannerScreen = ({ navigation, route }) => {
       </View>
 
       {/* Time Estimation */}
-      {plannerData.estimatedTime && (
+      {estimatedTime && (
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>⏱️ Time Estimation</Text>
           <LinearGradient
@@ -201,11 +202,11 @@ const TrekPlannerScreen = ({ navigation, route }) => {
           >
             <View style={styles.timeRow}>
               <Text style={styles.timeLabel}>Estimated Trek Time:</Text>
-              <Text style={styles.timeValue}>{plannerData.estimatedTime.estimatedTime} hours</Text>
+              <Text style={styles.timeValue}>{estimatedTime.estimatedTime} hours</Text>
             </View>
             <View style={styles.timeRow}>
-              <Text style={styles.timeSubLabel}>Base time: {plannerData.estimatedTime.baseTime}h</Text>
-              <Text style={styles.timeSubLabel}>Buffer: {plannerData.estimatedTime.bufferTime}h</Text>
+              <Text style={styles.timeSubLabel}>Base time: {estimatedTime.baseTime}h</Text>
+              <Text style={styles.timeSubLabel}>Buffer: {estimatedTime.bufferTime}h</Text>
             </View>
           </LinearGradient>
         </View>
@@ -216,9 +217,9 @@ const TrekPlannerScreen = ({ navigation, route }) => {
         <Text style={styles.sectionTitle}>🌤️ Seasonal Guidance</Text>
         <View style={styles.weatherCard}>
           <Text style={styles.weatherSeason}>
-            Current Season: {plannerData.season?.charAt(0).toUpperCase() + plannerData.season?.slice(1)}
+            Current Season: {currentSeason ? currentSeason.charAt(0).toUpperCase() + currentSeason.slice(1) : 'Loading...'}
           </Text>
-          {weatherGuidance[plannerData.season]?.recommendations.map((rec, index) => (
+          {weatherGuidance[currentSeason]?.recommendations.map((rec, index) => (
             <Text key={index} style={styles.weatherRec}>• {rec}</Text>
           ))}
         </View>
