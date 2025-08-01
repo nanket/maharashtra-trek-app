@@ -1,0 +1,201 @@
+{
+  "id": 4100,
+  "name": "Nanemachi Waterfall",
+  "category": "waterfall",
+  "location": "Gugulshi Village, Mahad Taluka, Raigad District, Maharashtra",
+  "difficulty": "Easy",
+  "duration": "1–1.5 hours trek from parking (one way)",
+  "elevation": "Approx. 410 feet (125 meters) waterfall height",
+  "description": "Nanemachi Waterfall is a spectacular 400+ ft jungle waterfall located deep in the dense forests near Gugulshi village, Mahad. Renowned for its turquoise blue pool that glows in different hues throughout the day, it's a monsoon trekker’s paradise and considered one of Maharashtra's most beautiful hidden falls. Best enjoyed from June to September.",
+  "startingPoint": {
+    "name": "Gugulshi Village",
+    "coordinates": {
+      "latitude": 17.8639,
+      "longitude": 73.4995
+    },
+    "facilities": [
+      "Paid parking (village-managed)",
+      "Simple village toilets at base only",
+      "Local tea stalls at parking/village",
+      "Guides and permit desk during monsoon weekends"
+    ],
+    "description": "Start your trek from Gugulshi. The route is a marked jungle trail, accessible for organized group batches and guided walks only during monsoon season. There is no assigned parking lot; locals manage parking on village farmlands and may charge a basic fee."
+  },
+  "networkAvailability": {
+    "baseVillage": {
+      "airtel": "Fair",
+      "jio": "Fair",
+      "vodafone": "Spotty",
+      "bsnl": "Spotty"
+    },
+    "duringTrek": {
+      "airtel": "None",
+      "jio": "None",
+      "vodafone": "None",
+      "bsnl": "None"
+    },
+    "atWaterfall": {
+      "airtel": "No network",
+      "jio": "No network",
+      "vodafone": "No network",
+      "bsnl": "No network"
+    },
+    "emergencyContact": "108 / 112 if signal is available in Gugulshi village."
+  },
+  "foodAndWater": {
+    "atBase": {
+      "restaurants": [
+        "Local tea & poha stalls at Gugulshi (seasonal)",
+        "Homestyle lunch by village families (pre-booked or via trek operator)"
+      ],
+      "shops": [
+        "Small local provision shop (limited snacks, packaged water)"
+      ],
+      "waterSources": [
+        "Village well (boil/filter advised)"
+      ]
+    },
+    "duringTrek": {
+      "waterSources": [
+        "No potable water on trail or at waterfall—carry at least 2 liters per person"
+      ],
+      "foodOptions": [
+        "No food stalls; bring packed food/snacks"
+      ]
+    },
+    "atWaterfall": {
+      "facilities": [
+        "No food or water facilities—leave no trash; carry back all waste"
+      ]
+    }
+  },
+  "accommodation": {
+    "camping": {
+      "allowed": false,
+      "reason": "No overnight camping permitted at or near waterfall; forest department regulation"
+    },
+    "nearbyStays": [
+      {
+        "name": "Local Homestays (Gugulshi/Mahad)",
+        "distance": "1–10 km from base",
+        "cost": "₹700–1200 per person with meals",
+        "contact": "9689872864, 9860182106",
+        "facilities": [
+          "Simple village rooms or dorm beds",
+          "Maharashtrian meals on request"
+        ]
+      }
+    ]
+  },
+  "permits": {
+    "required": true,
+    "notes": "Forest entry/eco permit compulsory (charged at base, includes local guide). No access after 3 PM.",
+    "fee": "₹100–250 per person depending on season/weekends; included in trek packages.",
+    "timings": "Trekking allowed 6:00 AM to 5:00 PM only. Entry after 3:00 PM not permitted."
+  },
+  "safety": {
+    "riskLevel": "Moderate (monsoon); otherwise low",
+    "commonRisks": [
+      "Slippery rocks near waterfall and stream crossings",
+      "High water and flash floods during heavy monsoon spells",
+      "Leeches and insects in forest",
+      "No lifeguards—strictly no swimming in pool in high flow"
+    ],
+    "precautions": [
+      "Trek only with a registered guide",
+      "Wear rain gear and trekking shoes with good grip",
+      "Do not wander off marked trail",
+      "Keep group together and follow guide’s safety brief"
+    ],
+    "emergencyNumbers": {
+      "ambulance": "108",
+      "police": "Mahad Police Station: 02141-222033"
+    }
+  },
+  "howToReach": {
+    "fromMumbai": {
+      "byTrain": {
+        "description": "Konkan Railway to Veer/Sape Wamane Station, then taxi/auto to Gugulshi",
+        "distance": "Approx. 230 km from Mumbai",
+        "time": "5–6 hours",
+        "steps": [
+          "Train to Veer or Sape Wamane",
+          "Auto/rickshaw or pre-booked cab to Gugulshi village (25–30 km)"
+        ]
+      },
+      "byBus": {
+        "description": "ST bus to Mahad from Mumbai, then taxi/auto to Gugulshi",
+        "distance": "240 km approx.",
+        "time": "6–7 hours",
+        "steps": [
+          "Bus to Mahad",
+          "Taxi/auto to Gugulshi"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive via Mumbai-Goa Highway (NH66) to Mahad, then local road to Gugulshi",
+        "distance": "240 km",
+        "time": "5–6 hours",
+        "steps": [
+          "NH66 to Mahad",
+          "Follow signage or GPS to Gugulshi"
+        ]
+      }
+    },
+    "fromPune": {
+      "byTrain": {
+        "description": "Train to Veer or Mangaon (Konkan route), then taxi/auto",
+        "distance": "Approx. 160 km",
+        "time": "4–5 hours",
+        "steps": [
+          "Train to Veer/Mangaon",
+          "Taxi/auto to Gugulshi"
+        ]
+      },
+      "byBus": {
+        "description": "ST bus to Mahad, then taxi/auto to Gugulshi",
+        "distance": "175 km",
+        "time": "5 hours",
+        "steps": [
+          "Bus to Mahad",
+          "Local transport to Gugulshi"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive via Pune–Tamhini Ghat–Mahad–Gugulshi",
+        "distance": "175 km",
+        "time": "4.5–5 hours",
+        "steps": [
+          "Pune–Mulshi–Tamhini–Mangaon–Mahad–Gugulshi"
+        ]
+      }
+    }
+  },
+  "bestTimeToVisit": "June to September (peak monsoon, waterfall at fullest; forest greenest)",
+  "localContacts": [
+    {
+      "name": "Nanemachi Waterfall Homestay",
+      "phone": "9689872864, 9860182106",
+      "service": "Homestay, meals, local trek arrangement"
+    },
+    {
+      "name": "Trek/Permit Booking Desk (WhatsApp)",
+      "phone": "9856112727, 9856122727",
+      "service": "Trek guide booking, permit info, group slots"
+    }
+  ],
+ "images": [
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754056326/treks/nanemachi/nanemachi_2.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754056326/treks/nanemachi/nanemachi_4.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754056326/treks/nanemachi/nanemachi_6.webp",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754056326/treks/nanemachi/nanemachi_8.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754056326/treks/nanemachi/nanemachi_10.jpg"
+  ],
+  "coordinates": {
+    "latitude": 17.8639,
+    "longitude": 73.4995
+  },
+  "featured": true,
+  "rating": 4.7,
+  "reviewCount": 95
+}

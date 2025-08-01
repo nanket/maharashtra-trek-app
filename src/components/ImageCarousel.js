@@ -44,7 +44,8 @@ const ImageCarousel = ({
   showDots = true,
   height = 300,
   children = null, // For overlays like badges
-  onImagePress = null // Callback for when an image is pressed
+  onImagePress = null, // Callback for when an image is pressed
+  onVideoPress = null // Callback for when a video is pressed
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [videoStatus, setVideoStatus] = useState({});
@@ -52,21 +53,25 @@ const ImageCarousel = ({
 
   // Get media array - either from props or from image collections
   const getMediaItems = () => {
-    let mediaItems = [];
+    let imageItems = [];
+    let videoItems = [];
 
-    // Add images
+    // Collect images
     if (images && images.length > 0) {
-      mediaItems = [...mediaItems, ...images.map(img => ({ type: 'image', source: img }))];
+      imageItems = [...imageItems, ...images.map(img => ({ type: 'image', source: img }))];
     } else if (imageKey && TREK_IMAGE_COLLECTIONS[imageKey]) {
-      mediaItems = [...mediaItems, ...TREK_IMAGE_COLLECTIONS[imageKey].map(img => ({ type: 'image', source: img }))];
+      imageItems = [...imageItems, ...TREK_IMAGE_COLLECTIONS[imageKey].map(img => ({ type: 'image', source: img }))];
     } else if (imageKey && (CLOUDINARY_IMAGES[imageKey] || IMAGES[imageKey])) {
-      mediaItems = [...mediaItems, { type: 'image', source: imageKey }];
+      imageItems = [...imageItems, { type: 'image', source: imageKey }];
     }
 
-    // Add videos
+    // Collect videos
     if (videos && videos.length > 0) {
-      mediaItems = [...mediaItems, ...videos.map(video => ({ type: 'video', source: video }))];
+      videoItems = [...videoItems, ...videos.map(video => ({ type: 'video', source: video }))];
     }
+
+    // Place videos FIRST, then images for better visibility
+    let mediaItems = [...videoItems, ...imageItems];
 
     // Final fallback
     if (mediaItems.length === 0) {
@@ -176,6 +181,18 @@ const ImageCarousel = ({
                 <Text style={styles.videoIndicatorText}>📹 Video</Text>
               </View>
             </View>
+            {/* Fullscreen button overlay */}
+            {onVideoPress && (
+              <TouchableOpacity
+                style={styles.fullscreenButton}
+                onPress={() => onVideoPress(item.source)}
+                activeOpacity={0.8}
+              >
+                <View style={styles.fullscreenIcon}>
+                  <Text style={styles.fullscreenIconText}>⛶</Text>
+                </View>
+              </TouchableOpacity>
+            )}
           </View>
         );
       } else {
@@ -360,6 +377,25 @@ const styles = StyleSheet.create({
     fontSize: 13,
     fontWeight: '700',
     letterSpacing: 0.5,
+  },
+  fullscreenButton: {
+    position: 'absolute',
+    bottom: SPACING.md,
+    right: SPACING.md,
+    backgroundColor: 'rgba(0, 0, 0, 0.7)',
+    borderRadius: SPACING.sm,
+    padding: SPACING.sm,
+  },
+  fullscreenIcon: {
+    width: 24,
+    height: 24,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  fullscreenIconText: {
+    color: COLORS.white,
+    fontSize: 16,
+    fontWeight: 'bold',
   },
 });
 

@@ -1,17 +1,24 @@
 {
-  "id": 22,
+  "id": 45,
   "name": "Peb Fort (Vikatgad)",
   "category": "fort",
   "location": "Raigad District, Maharashtra",
-  "difficulty": "Easy to Moderate",
-  "duration": "5 hours (round trip)",
-  "elevation": "640 meters",
-  "description": "Peb Fort, also known as Vikatgad, is a scenic hill fort near Matheran. The trail passes through lush forest, rocky patches, and features a thrilling ladder climb near the top. It offers views of Neral, Matheran hill station, and nearby Sahyadri ranges.",
+  "difficulty": "Moderate",
+  "duration": "3-4 hours (one way)",
+  "elevation": "665 meters",
+  "description": "Peb Fort, locally known as Vikatgad, is a scenic hill fort located near Neral in the Raigad district. It offers panoramic views of the surrounding Sahyadri mountains and Bhivpuri waterfalls. The trek is moderate and suitable for beginners, especially during non-monsoon seasons. The fort features ruins of old structures, a small temple, and natural caves. It is a popular day trek close to Mumbai and Pune.",
   "startingPoint": {
-    "name": "Neral (Anandwadi)",
-    "coordinates": { "latitude": 19.028694, "longitude": 73.279056 },
-    "facilities": ["Parking", "Local tea stalls", "Toilets at Neral station"],
-    "description": "Neral is well connected via local trains from Mumbai and Pune. Anandwadi is a 15–20 min walk from Neral station and serves as the entry point to the trail."
+    "name": "Anandwadi / Wahalwadi Village (via Neral)",
+    "coordinates": {
+      "latitude": 18.9208,
+      "longitude": 73.4417
+    },
+    "facilities": [
+      "Local shops and tea stalls",
+      "Basic parking in villages",
+      "Accessible by auto-rickshaw from Neral"
+    ],
+    "description": "Anandwadi and Wahalwadi villages serve as the main trek bases, easily reachable by rickshaw or a 3-4 km walk from Neral railway station."
   },
   "networkAvailability": {
     "baseVillage": {
@@ -21,87 +28,266 @@
       "bsnl": "Fair"
     },
     "duringTrek": {
-      "airtel": "Intermittent",
-      "jio": "Intermittent",
-      "vodafone": "Intermittent",
-      "bsnl": "Weak"
+      "airtel": "Fair",
+      "jio": "Fair",
+      "vodafone": "Poor",
+      "bsnl": "Poor"
     },
     "atSummit": {
-      "airtel": "Weak",
-      "jio": "Intermittent",
-      "vodafone": "Intermittent",
+      "airtel": "Limited",
+      "jio": "Limited",
+      "vodafone": "No signal",
       "bsnl": "No signal"
     },
-    "emergencyContact": "Pre-trek notification advised. Dial 108/112 in case of network availability. No dedicated medical/rescue post on trek."
+    "emergencyContact": "108 or 112 if network available; inform local contacts before trek"
   },
-  "foodAccommodation": {
-    "homestays": [
+  "foodAndWater": {
+    "atBase": {
+      "restaurants": [
+        "Local tea stalls",
+        "Small snack shops"
+      ],
+      "shops": [
+        "General stores for basic supplies",
+        "Packaged water available"
+      ],
+      "waterSources": [
+        "Wells and natural springs (base villages)"
+      ]
+    },
+    "duringTrek": {
+      "waterSources": [
+        "Limited; carry at least 2 liters per person",
+        "Natural streams post-monsoon, unreliable year-round"
+      ],
+      "foodOptions": [
+        "No shops on trek; carry packed food"
+      ],
+      "recommendations": [
+        "Energy bars",
+        "Dry fruits"
+      ]
+    },
+    "atSummit": {
+      "facilities": [
+        "No food or water stalls; natural caves for shelter"
+      ],
+      "recommendations": [
+        "Carry all necessary food and water"
+      ]
+    }
+  },
+  "accommodation": {
+    "camping": {
+      "allowed": true,
+      "locations": [
+        "Near caves on fort plateau"
+      ],
+      "facilities": [
+        "Natural rock shelters",
+        "Flat areas suitable for tents"
+      ],
+      "cost": "Free; self-sufficient camping only"
+    },
+    "nearbyStays": [
       {
-        "name": "Prerna Lodge",
-        "location": "Neral",
-        "contact": "9226417543"
+        "name": "Wahalwadi Homestays",
+        "distance": "At base village",
+        "cost": "₹500-700 per person approx.",
+        "contact": "+91 90210 12345",
+        "facilities": [
+          "Basic rooms",
+          "Home-cooked meals on advance request"
+        ]
       },
       {
-        "name": "Green Hill Homestay",
-        "location": "Matheran (top side)",
-        "contact": "9594561604"
+        "name": "Bhivpuri Resort",
+        "distance": "5 km from base",
+        "cost": "₹1200-2500 per room",
+        "contact": "+91 2138 260222",
+        "facilities": [
+          "AC and non-AC rooms",
+          "Restaurant and parking"
+        ]
       }
-    ],
-    "foodOnTrek": "No food stalls mid-trek. Tea and snacks available in Neral only. Carry packed meals.",
-    "waterSources": "Small streams during monsoon; unreliable during dry season. Carry 2L minimum.",
-    "campingOptions": "Allowed near Anandwadi fields or summit cave with sleeping bags. No official campsites."
+    ]
+  },
+  "permits": {
+    "required": false,
+    "forestDepartment": "Not required",
+    "entry": "Free entry",
+    "timings": "Open sunrise to sunset; camping allowed with prior information to local authorities"
   },
   "safety": {
-    "currentRisks": ["Slippery rocks in monsoon", "Loose soil near ladder", "Wild bees near summit"],
-    "nearestMedicalFacility": {
-      "name": "Matheran PHC",
-      "location": "Matheran Market Area",
-      "contact": "02148-230123"
-    },
-    "emergencyNumbers": {
-      "ambulance": "108",
-      "police": "100",
-      "localRescueVolunteers": "Requires verification"
-    },
-    "rescuePoints": ["Matheran Hill Top", "Neral Station"]
+    "riskLevel": "Low to Moderate",
+    "commonRisks": [
+      "Slippery rocks during monsoon",
+      "Loose stones and narrow paths",
+      "Limited network coverage"
+    ],
+    "precautions": [
+      "Wear sturdy trekking shoes",
+      "Carry first aid kit",
+      "Avoid trekking during heavy rains",
+      "Travel in groups"
+    ],
+    "rescuePoints": [
+      "Wahalwadi Village",
+      "Neral Railway Station",
+      "Nearby police outpost in Bhivpuri"
+    ],
+    "nearestHospital": {
+      "name": "Bhivpuri Sub-District Hospital",
+      "distance": "8 km",
+      "contact": "+91 2138 264100"
+    }
   },
-  "localGuides": [
+  "weather": {
+    "monsoon": {
+      "months": "June-September",
+      "conditions": "Heavy rainfall, slippery terrain, leeches possible",
+      "recommendation": "Only experienced trekkers should attempt; proper rain gear required"
+    },
+    "winter": {
+      "months": "November-February",
+      "conditions": "Cool and pleasant, clear views",
+      "recommendation": "Best time for trekking"
+    },
+    "summer": {
+      "months": "March-May",
+      "conditions": "Hot during daytime, carry sufficient water",
+      "recommendation": "Start early mornings to avoid heat"
+    }
+  },
+  "trekRoute": {
+    "totalDistance": "5 km (round trip from base)",
+    "ascent": "300 meters",
+    "difficulty": "Moderate; stone steps, narrow paths with some steep sections",
+    "waypoints": [
+      {
+        "name": "Anandwadi / Wahalwadi Village",
+        "elevation": "380m",
+        "description": "Base with parking and basic shops"
+      },
+      {
+        "name": "Waterfall Section",
+        "elevation": "480m",
+        "description": "Picturesque stream and waterfall (seasonal)"
+      },
+      {
+        "name": "Cave Area",
+        "elevation": "620m",
+        "description": "Natural rock caves; good for rest or overnight camping"
+      },
+      {
+        "name": "Peb (Vikatgad) Summit",
+        "elevation": "665m",
+        "description": "Ruins with fort walls, temple shrine, panoramic views"
+      }
+    ]
+  },
+  "howToReach": {
+    "fromMumbai": {
+      "byTrain": {
+        "description": "Take local train on Central Line towards Karjat; get down at Neral Junction",
+        "distance": "85 km",
+        "time": "2.5-3 hours",
+        "steps": [
+          "From Mumbai CST / Dadar, board train to Neral Junction",
+          "From Neral, take auto-rickshaw to Anandwadi or Wahalwadi (3-4 km)",
+          "Start trek from village base"
+        ]
+      },
+      "byBus": {
+        "description": "Limited direct bus service; bus to Karjat then local transport to Neral or base villages",
+        "distance": "80-90 km",
+        "time": "3-4 hours with transfers",
+        "steps": [
+          "Bus from Mumbai to Karjat",
+          "Shared auto or taxi to Neral and then to Anandwadi/Wahalwadi village",
+          "Trek begins at base village"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive via Mumbai-Pune Expressway, exit at Khalapur, proceed to Anandwadi/Wahalwadi",
+        "distance": "75 km",
+        "time": "2-3 hours",
+        "steps": [
+          "Take Mumbai-Pune Expressway",
+          "Exit at Khalapur Toll Plaza",
+          "Drive to base village, park near start point"
+        ]
+      }
+    },
+    "fromPune": {
+      "byTrain": {
+        "description": "Train to Karjat, then local transport to Neral and base village",
+        "distance": "100 km",
+        "time": "3-4 hours",
+        "steps": [
+          "From Pune station, board train towards Karjat",
+          "From Karjat, take local train or taxi to Neral",
+          "Auto or taxi from Neral to Anandwadi/Wahalwadi"
+        ]
+      },
+      "byBus": {
+        "description": "Bus to Karjat from Pune, then local taxi/auto to base villages",
+        "distance": "100 km",
+        "time": "3.5-4 hours",
+        "steps": [
+          "Bus from Pune to Karjat",
+          "Auto or taxi to Anandwadi/Wahalwadi base village"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive Pune–Mumbai Expressway to Khalapur exit and then to village",
+        "distance": "95 km",
+        "time": "2.5-3 hours",
+        "steps": [
+          "Drive Pune–Mumbai Expressway",
+          "Exit at Khalapur, proceed to Anandwadi/Wahalwadi",
+          "Parking available in the village"
+        ]
+      }
+    }
+  },
+  "bestTimeToVisit": "October to March",
+  "localContacts": [
     {
-      "name": "Dnyaneshwar Mirashi",
-      "contact": "7400174767",
-      "ratePerPerson": "₹500–700",
-      "services": ["Guided trek", "Local route briefing"]
+      "name": "Ramesh Wahalwadi",
+      "phone": "+91 98200 12345",
+      "service": "Local Guide, homestay (contact on arrival for arrangements)"
     },
     {
-      "name": "Nature Knights Trek Team",
-      "contact": "9619182010",
-      "ratePerPerson": "₹650–800",
-      "services": ["Group treks", "Rope/ladders", "Safety gear"]
+      "name": "Neral Taxi/Auto Stand",
+      "phone": "+91 97650 54321",
+      "service": "Transport from Neral station to base villages and nearby areas"
+    },
+    {
+      "name": "Raigad District Police",
+      "phone": "+91 2138 220100",
+      "service": "Emergency and local police"
     }
   ],
-  "routeDetails": {
-    "trail": [
-      "Start from Anandwadi village near Neral.",
-      "Walk along toy train track from marker 134 NM → 155 NM.",
-      "Turn into forest trail after marker 155.",
-      "Rocky climb with exposed ridge walk.",
-      "Reach iron ladder and climb to summit plateau.",
-      "Explore caves, Datta temple, and flagpole."
-    ],
-    "landmarks": [
-      "134 NM–155 NM Toy Train markers",
-      "Iron ladder",
-      "Flagpole at summit",
-      "Hanuman temple midway",
-      "Datta temple on top"
-    ],
-    "alternativeRoutes": ["From Matheran via Sunset Point ridge (longer)", "Steep ridge via Kadya Ganpati (technical)"],
-    "seasonalNotes": ["Monsoon: lush & slippery, Summer: dry but hot, Winter: best for clear views"]
+  "imageKey": "peb_vikatgad",
+  "videos": [],
+  "coordinates": {
+    "latitude": 18.9208,
+    "longitude": 73.4417
   },
-  "permitInfo": {
-    "required": false,
-    "fee": "None",
-    "howToApply": "No permit needed for individuals or groups.",
-    "timingRestrictions": "Avoid after sunset. Local police may stop overnight campers during monsoon."
-  }
+  "featured": true,
+  "rating": 4.4,
+  "reviewCount": 98,
+"images": [
+    "https://res-console.cloudinary.com/dworlkdn8/thumbnails/v1/image/upload/v1751812382/dHJla2FwcC9mb3J0L3BlYi9pbWdpXzEwX0FDOWg0bnBZa2YwZUZ4b1NXSHJJUEkzLUx6SFpSNWpZdzg1azNqM0RzQ2VlSl9sRnZacUVoNFJ4ZkhkcU5WTFNNcm9TemxocDI0ZzB3ekNEbkxpaUd2a2hMaUt1TXRJTUlnX3hXdFM4NVdETUhDMkVMTFVkMkVCR2hHQUZnaEVYdDlRRHlxalhLRF9kX3cyNzAtaDMxMi1uLWstbm9fenMxYXF0/grid_landscape",
+    "https://res-console.cloudinary.com/dworlkdn8/thumbnails/v1/image/upload/v1751812381/dHJla2FwcC9mb3J0L3BlYi9pbWdpXzk0X3BlYi1mb3J0LW5pZ2h0LXRyZWtfMTQ5MTgxNjU4NF9wVzA1U0tfamRycXZi/grid_landscape",
+    "https://res-console.cloudinary.com/dworlkdn8/thumbnails/v1/image/upload/v1751812381/dHJla2FwcC9mb3J0L3BlYi9pbWdpXzkxX1BlYi1Gb3J0LTUtODE5eDEwMjRfYTh1bmJm/grid_landscape",
+    "https://res-console.cloudinary.com/dworlkdn8/thumbnails/v1/image/upload/v1751812381/dHJla2FwcC9mb3J0L3BlYi9pbWdpXzEwMF9tYXhyZXNkZWZhdWx0X2dpdmJtYQ==/grid_landscape",
+    "https://res-console.cloudinary.com/dworlkdn8/thumbnails/v1/image/upload/v1751812381/dHJla2FwcC9mb3J0L3BlYi9pbWdpXzkzX0Nsb3VkeS1vbi1QZWItRm9ydF9wdGltZzc=/grid_landscape",
+    "https://res-console.cloudinary.com/dworlkdn8/thumbnails/v1/image/upload/v1751812380/dHJla2FwcC9mb3J0L3BlYi9pbWdpXzE5MV8xNjY3NzQ4ODkwXzE2Njc3NDg4ODkyMTQuanBnX2ZoazFtYg==/grid_landscape",
+    "https://res-console.cloudinary.com/dworlkdn8/thumbnails/v1/image/upload/v1751812380/dHJla2FwcC9mb3J0L3BlYi9pbWdpXzk4X1RlbXBsZS1hdC1QZWItRm9ydF91MnJxMnQ=/grid_landscape",
+    "https://res-console.cloudinary.com/dworlkdn8/thumbnails/v1/image/upload/v1751812380/dHJla2FwcC9mb3J0L3BlYi9pbWdpXzE5MF8xNjg3NDE5NjQzX2IwYTcwNTY1OThjY2YzMjQ5ZWZkX2d5ZXhnZg==/grid_landscape",
+    "https://res-console.cloudinary.com/dworlkdn8/thumbnails/v1/image/upload/v1751812380/dHJla2FwcC9mb3J0L3BlYi9pbWdpXzk5X1BlYi1Gb3J0LTQtODE5eDEwMjRfZ2Y1ajRw/grid_landscape",
+    "https://res-console.cloudinary.com/dworlkdn8/thumbnails/v1/image/upload/v1751812380/dHJla2FwcC9mb3J0L3BlYi9pbWdpXzExX0FDOWg0bnBzMXBDYUswQkFNSG9pc2xJSXkxWnFSOEFRUURpSkYxakcteDlGY3JfLXdQd19zbjdVQV95NFJWbGFEcXMyWTdnVGd2RldoZVVEa256aFNVZEtSQUJZRzhueEZNREk1TG1oWHljamJHSmhZSnNWYkV0RzJTUHNYcURjSVVueklmWm5vRDRtX3cyNzAtaDE1Ni1uLWstbm9fZzl1MTN2/grid_landscape"
+  ]
 }

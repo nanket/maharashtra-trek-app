@@ -1,0 +1,277 @@
+{
+  "id": 3100,
+  "name": "Devkund Waterfall",
+  "category": "waterfall",
+  "location": "Bhira, Patnus Village, Raigad District, Maharashtra",
+  "difficulty": "Moderate",
+  "duration": "2–3 hours (one way trek from Bhira/Patnus)",
+  "elevation": "270 meters (approx. 885 feet)",
+  "description": "Devkund is a hidden plunge waterfall nestled deep in the Bhira forest, at the confluence of three streams. Its turquoise basin and jungle setting make it one of Maharashtra's most beautiful day treks. The trail features forest paths, river crossings, and is famed for monsoon and early winter visits. Entry is now regulated for safety, with authorized guides mandatory.",
+  "startingPoint": {
+    "name": "Bhira Village (near Patnus, trek registration gate)",
+    "coordinates": {
+      "latitude": 18.5270,
+      "longitude": 73.3342
+    },
+    "facilities": [
+      "Paid parking at village",
+      "Registration checkpost (compulsory entry)",
+      "Guides and group booking counters",
+      "Basic restrooms",
+      "Tea/food stalls at base"
+    ],
+    "description": "Bhira or Patnus villages are trek bases, accessible by road from Mumbai/Pune via Mangaon/Indapur. Entry is only allowed for registered groups with a local guide."
+  },
+  "networkAvailability": {
+    "baseArea": {
+      "airtel": "Fair",
+      "jio": "Good",
+      "vodafone": "Fair",
+      "bsnl": "Spotty"
+    },
+    "duringTrek": {
+      "airtel": "Poor",
+      "jio": "Weak/intermittent",
+      "vodafone": "No signal",
+      "bsnl": "No signal"
+    },
+    "atWaterfall": {
+      "airtel": "No signal",
+      "jio": "No signal",
+      "vodafone": "No signal",
+      "bsnl": "No signal"
+    },
+    "emergencyContact": "108 (ambulance), 112 (general emergencies); notify local guide/villager if issues arise"
+  },
+  "foodAndWater": {
+    "atBase": {
+      "restaurants": [
+        "Small tea stalls (Poha, Maggi, vada-pav, chai)",
+        "Homestyle food on order at Patnus/Bhira"
+      ],
+      "shops": [
+        "General stores (water, snacks, biscuits)"
+      ],
+      "waterSources": [
+        "Packaged water available at base only"
+      ]
+    },
+    "duringTrek": {
+      "waterSources": [
+        "No potable water on trail or at waterfall; river water is unsafe for drinking"
+      ],
+      "foodOptions": [
+        "No shops on route or at site; carry packed food/snacks"
+      ],
+      "recommendations": [
+        "Energy bars",
+        "Dry fruits",
+        "Electrolyte drinks"
+      ]
+    },
+    "atWaterfall": {
+      "facilities": [
+        "No food or stalls at waterfall—pack out all trash"
+      ],
+      "recommendations": [
+        "Do not litter; carry back all plastic"
+      ]
+    }
+  },
+  "accommodation": {
+    "camping": {
+      "allowed": false,
+      "reason": "No overnight camping at waterfall or inside forest (forest department ban after 2017); village camping by prior arrangement only"
+    },
+    "nearbyStays": [
+      {
+        "name": "Patnus Village Homestay",
+        "distance": "500m from trek base",
+        "cost": "₹600–1000 per person incl. meals (2025)",
+        "contact": "8624924833, 9923649434",
+        "facilities": [
+          "Dorm beds or simple rooms",
+          "Home-cooked Maharashtrian thali"
+        ]
+      },
+      {
+        "name": "Bhira Riverside Camping (legal zone)",
+        "distance": "700m from start",
+        "cost": "₹1000–1500 including tent and meals",
+        "contact": "9960762994 (Swapnil), 8668391559 (Akash)",
+        "facilities": [
+          "Tent camping (post-monsoon only)",
+          "Toilets",
+          "Veg/non-veg food"
+        ]
+      }
+    ]
+  },
+  "permits": {
+    "required": true,
+    "forestDepartment": "Patnus/Bhira Forest Gate",
+    "entry": "Registration + local guide mandatory (group size and crowd control for safety)",
+    "fee": "₹150–200 per person (includes guide and entry); weekends/season charges may increase",
+    "timings": "Trek allowed 6:30 AM–2 PM (last entry); all to exit by 6 PM. Night stay not allowed at waterfall."
+  },
+  "safety": {
+    "riskLevel": "Moderate (increased in monsoon)",
+    "commonRisks": [
+      "River crossings can become dangerous after heavy rains",
+      "Strong currents—pool closed in floods or after warnings",
+      "Slippery rocks, rapid water-level rise, wildlife (occasional snakes, insects)"
+    ],
+    "precautions": [
+      "Do not attempt trek without a guide; group trekking only",
+      "Do not swim in waterfall pool in high water or when prohibited",
+      "Wear quality trekking shoes",
+      "Carry rain gear in monsoon"
+    ],
+    "rescuePoints": [
+      "Patnus/Bhira base village",
+      "Forest checkpost at trek start"
+    ],
+    "nearestHospital": {
+      "name": "Mangaon Rural Hospital",
+      "distance": "27 km",
+      "contact": "02140-262133"
+    }
+  },
+  "weather": {
+    "monsoon": {
+      "months": "June–September",
+      "conditions": "Heavy rain, cloudy skies, highest waterfall flow, frequent forest closures for safety",
+      "recommendation": "Best for lush greenery and dramatic pool—check local advisories before visiting"
+    },
+    "postMonsoon": {
+      "months": "October–February",
+      "conditions": "Clear weather, lower (but perennial) water flow, moderate crowds",
+      "recommendation": "Best for family/group trek and safe swimming in pool (if permitted)"
+    },
+    "summer": {
+      "months": "March–May",
+      "conditions": "Hot and humid; forest trail dusty, lower stream flow but pool remains",
+      "recommendation": "Early start required for comfortable trek"
+    }
+  },
+  "trekRoute": {
+    "totalDistance": "Approx. 5.5–6 km (one way, Patnus/Bhira to waterfall)",
+    "ascent": "Approx. 150 meters (gentle gradient)",
+    "difficulty": "Easy–Moderate (multiple river crossings, jungle paths, boulders)",
+    "waypoints": [
+      {
+        "name": "Patnus/Bhira Registration Gate",
+        "elevation": "265m",
+        "description": "Start point: guide & group entry checks, parking, food stalls"
+      },
+      {
+        "name": "River Crossing/Stone Bridge",
+        "elevation": "270m",
+        "description": "Seasonal wooden or stone footbridge (main crossing point)"
+      },
+      {
+        "name": "Forest Trail Junction",
+        "elevation": "280m",
+        "description": "Main jungle section, intersecting streams"
+      },
+      {
+        "name": "Devkund Waterfall Pool",
+        "elevation": "285m",
+        "description": "Spectacular plunge pool, swimming restricted by forest dept in rough water"
+      }
+    ]
+  },
+  "howToReach": {
+    "fromMumbai": {
+      "byTrain": {
+        "description": "Mumbai to Mangaon (Konkan Railway), then local taxi/auto to Bhira/Patnus",
+        "distance": "125 km + 27 km (from Mangaon)",
+        "time": "4–5 hours",
+        "steps": [
+          "Train: Mumbai CST/Dadar to Mangaon (Konkan line)",
+          "Taxi/auto to Bhira or Patnus village",
+          "Trek registration and entry from base"
+        ]
+      },
+      "byBus": {
+        "description": "MH State Transport (ST) bus to Mangaon or directly to Raigad, then local taxi to Patnus/Bhira",
+        "distance": "125–130 km",
+        "time": "5–6 hours",
+        "steps": [
+          "Board MSRTC bus from Mumbai to Mangaon",
+          "Local Jeep/auto to Bhira/Patnus",
+          "Begin trek"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive via Mumbai-Goa Highway (NH66) to Mangaon, then to Bhira via Nizampur",
+        "distance": "135 km",
+        "time": "3.5–4.5 hours",
+        "steps": [
+          "Expressway to Panvel, NH66 to Mangaon",
+          "Turn for Bhira/Patnus at Nizampur junction",
+          "Park at base village"
+        ]
+      }
+    },
+    "fromPune": {
+      "byTrain": {
+        "description": "Train to Mangaon (Konkan line), then taxi/auto",
+        "distance": "100 km to Mangaon + 27 km",
+        "time": "4–5 hours",
+        "steps": [
+          "Train from Pune to Mangaon (once daily at best—timing varies)",
+          "Taxi/auto to Bhira/Patnus"
+        ]
+      },
+      "byBus": {
+        "description": "MSRTC bus Pune to Mangaon, then local Jeep/taxi",
+        "distance": "120 km",
+        "time": "5 hours",
+        "steps": [
+          "Bus from Pune (Swargate) to Mangaon",
+          "Local transport to base village"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive via Tamhini Ghat and Nizampur to Bhira",
+        "distance": "110 km",
+        "time": "3.5 hours",
+        "steps": [
+          "Drive via Pirangut–Paud–Mulshi–Tamhini–Nizampur–Bhira",
+          "Park at Bhira/Patnus"
+        ]
+      }
+    }
+  },
+  "bestTimeToVisit": "October–February (safe water, less mud); July–September (for highest waterfall, follow local safety and forest advisories)",
+  "localContacts": [
+    {
+      "name": "Devkund Homestay (Patnus)",
+      "phone": "8624924833",
+      "service": "Homestay, meals, local logistics"
+    },
+    {
+      "name": "Bhira Camping & Trek Guide (Swapnil)",
+      "phone": "9960762994",
+      "service": "Guide, tent rental, group booking"
+    },
+    {
+      "name": "Forest Checkpost, Patnus Gate",
+      "phone": "Not advertised; available at site",
+      "service": "Permit office, emergency contact"
+    }
+  ],
+  "images": [
+"https://res.cloudinary.com/dworlkdn8/image/upload/v1754055087/treks/devkund/devkund_3.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754055086/treks/devkund/devkund_9.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754055087/treks/devkund/devkund_10.jpg"
+  ],
+  "coordinates": {
+    "latitude": 18.5270,
+    "longitude": 73.3342
+  },
+  "featured": true,
+  "rating": 4.6,
+  "reviewCount": 144
+}

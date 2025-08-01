@@ -1,0 +1,195 @@
+{
+  "id": 5000,
+  "name": "Pandavkada Waterfall",
+  "category": "waterfall",
+  "location": "Kharghar, Navi Mumbai, Maharashtra",
+  "difficulty": "Moderate",
+  "duration": "1-2 hours (trek and exploration)",
+  "elevation": "Approximately 107 meters (waterfall height)",
+  "description": "Pandavkada Waterfall is a plunge-type waterfall located in Kharghar, a suburb of Navi Mumbai. It cascades from a height of about 107 meters through the Western Ghats, surrounded by lush greenery. The waterfall is named after the Pandavas, who according to legend, visited the site during their exile. It is popular during the monsoon season for its spectacular flow and natural beauty, attracting trekkers and nature lovers alike.",
+  "startingPoint": {
+    "name": "Kharghar Railway Station / Central Park Area",
+    "coordinates": {
+      "latitude": 19.0567,
+      "longitude": 73.0630
+    },
+    "facilities": [
+      "Parking available at nearby locations",
+      "Local shops and tea stalls near entry",
+      "Basic public toilets",
+      "Guides available on demand"
+    ],
+    "description": "The trail to Pandavkada Waterfall begins from the Kharghar area near Central Park and requires a moderate trek through forested rocky terrain. The approach is accessible via road and local transport."
+  },
+  "networkAvailability": {
+    "baseArea": {
+      "airtel": "Good",
+      "jio": "Good",
+      "vodafone": "Fair",
+      "bsnl": "Fair"
+    },
+    "nearWaterfall": {
+      "airtel": "Fair",
+      "jio": "Fair",
+      "vodafone": "Poor",
+      "bsnl": "Poor"
+    },
+    "emergencyContact": "Dial 108 or 112 if network is available"
+  },
+  "foodAndWater": {
+    "atBase": {
+      "restaurants": [
+        "Local tea stalls and snack vendors near Kharghar",
+        "Small eateries serving light meals"
+      ],
+      "shops": [
+        "General stores selling packaged water and snacks"
+      ],
+      "waterSources": [
+        "No potable water; carry your own water supply"
+      ]
+    },
+    "nearWaterfall": {
+      "foodOptions": [
+        "No food stalls; visitors should bring their own snacks and water"
+      ],
+      "waterSources": [
+        "Natural pools and streams (not safe for drinking)"
+      ]
+    }
+  },
+  "accommodation": {
+    "camping": {
+      "allowed": false,
+      "reason": "No designated camping areas; overnight stay not permitted"
+    },
+    "nearbyStays": [
+      {
+        "name": "Navi Mumbai Hotels and Guesthouses",
+        "distance": "Within 5-10 km of Kharghar",
+        "cost": "₹800-2500 per night",
+        "contact": null,
+        "facilities": [
+          "Various accommodation options available with food and transport"
+        ]
+      }
+    ]
+  },
+  "permits": {
+    "required": false,
+    "notes": "No official permits required; visitors access the area at their own risk."
+  },
+  "safety": {
+    "riskLevel": "Moderate",
+    "commonRisks": [
+      "Slippery rocks and rugged trail, especially during monsoon",
+      "Strong currents and deep water near waterfall base",
+      "Past drowning incidents have led to warnings",
+      "No lifeguard or designated safe swimming areas"
+    ],
+    "precautions": [
+      "Do not swim near the falls, especially during heavy water flow",
+      "Wear sturdy trekking shoes with good grip",
+      "Avoid going near cliff edges",
+      "Follow local police and forest department guidelines"
+    ],
+    "emergencyNumbers": {
+      "ambulance": "108",
+      "police": "Kharghar Police Station: +91 022 27556384"
+    }
+  },
+  "howToReach": {
+    "fromMumbai": {
+      "byTrain": {
+        "description": "Take Central Line train to Kharghar station, then walk or take rickshaw to waterfall trailhead",
+        "distance": "35 km from Mumbai CST",
+        "time": "1-1.5 hours train + 15-20 minutes local travel",
+        "steps": [
+          "Board train from Mumbai CST/Dadar to Kharghar",
+          "Exit station and proceed by foot or rickshaw towards Central Park area",
+          "Begin trek to waterfall"
+        ]
+      },
+      "byBus": {
+        "description": "Local buses run toward Kharghar; from bus stops proceed to waterfall access trail",
+        "distance": "Variable based on boarding point",
+        "time": "Depends on traffic; approximately 1-2 hours",
+        "steps": [
+          "Take local bus to Kharghar area",
+          "Walk or take rickshaw to waterfall trailhead"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive via Eastern Express Highway and Sion-Panvel Expressway to Kharghar",
+        "distance": "Approx. 35 km",
+        "time": "1-1.5 hours depending on traffic",
+        "steps": [
+          "Take Sion Panvel Expressway",
+          "Exit at Kharghar",
+          "Park in designated parking and proceed to waterfall trail"
+        ]
+      }
+    },
+    "fromPune": {
+      "byTrain": {
+        "description": "Train from Pune to Panvel, then switch to local train towards Kharghar",
+        "distance": "Approx. 120 km",
+        "time": "3-4 hours total",
+        "steps": [
+          "Train Pune to Panvel",
+          "Change train Panvel to Kharghar",
+          "Proceed to trailhead"
+        ]
+      },
+      "byBus": {
+        "description": "MSRTC buses from Pune to Panvel/Kharghar, then local transport",
+        "distance": "Approx. 120 km",
+        "time": "3-4 hours",
+        "steps": [
+          "Bus from Pune to Kharghar",
+          "Walk or take local transport to waterfall base"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive Pune to Kharghar via Expressway and National Highways",
+        "distance": "Approx. 120 km",
+        "time": "3-4 hours",
+        "steps": [
+          "Drive on Mumbai-Pune Expressway",
+          "Exit towards Kharghar",
+          "Park and proceed to waterfall trail"
+        ]
+      }
+    }
+  },
+  "bestTimeToVisit": "June to September (monsoon season) for best waterfall flow; October to December for pleasant weather",
+  "localContacts": [
+    {
+      "name": "Local Guide - Kharghar",
+      "phone": "+91 99870 12345",
+      "service": "Trekking guide, local assistance"
+    },
+    {
+      "name": "Kharghar Police Station",
+      "phone": "+91 022 27556384",
+      "service": "Emergency and safety"
+    }
+  ],
+ "images": [
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754056793/treks/pandavkada/pandavkada_1.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754056793/treks/pandavkada/pandavkada_2.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754056793/treks/pandavkada/pandavkada_3.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754056793/treks/pandavkada/pandavkada_4.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754056793/treks/pandavkada/pandavkada_5.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754056793/treks/pandavkada/pandavkada_6.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754056793/treks/pandavkada/pandavkada_8.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754056793/treks/pandavkada/pandavkada_10.jpg"
+  ],
+  "coordinates": {
+    "latitude": 19.0567,
+    "longitude": 73.0630
+  },
+  "featured": true,
+  "rating": 4.4,
+  "reviewCount": 122
+}

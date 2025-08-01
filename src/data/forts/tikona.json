@@ -1,0 +1,301 @@
+{
+  "id": 70,
+  "name": "Tikona Fort (Vitandgad)",
+  "category": "fort",
+  "location": "Maval, Maharashtra",
+  "difficulty": "Easy to Moderate",
+  "duration": "1.5 - 2 hours (one way)",
+  "elevation": "1067 meters (approx. 3500 feet)",
+  "description": "Tikona Fort, also called Vitandgad, is a pyramidal hill fort near Kamshet in the Maval region. The fort offers spectacular views of Pawna Lake, Tung, Lohagad, and Visapur forts. Famous for its triangular shape, it features a large stone entrance gate, an ancient temple dedicated to Trimbakeshwar Mahadev, seven water tanks, and Satvahan caves. The trek is relatively moderate and suitable for beginners and families, especially in the monsoon season when the landscape is lush.",
+  "startingPoint": {
+    "name": "Tikona Peth Village",
+    "coordinates": {
+      "latitude": 18.6317,
+      "longitude": 73.5128
+    },
+    "facilities": [
+      "Basic parking",
+      "Local shops and eateries",
+      "Guides available on demand"
+    ],
+    "description": "Tikona Peth is the base village for the trek, easily reachable from Lonavala and Kamshet. It offers basic facilities and serves as the starting point for the trek."
+  },
+  "networkAvailability": {
+    "baseVillage": {
+      "airtel": "Good",
+      "jio": "Good",
+      "vodafone": "Fair",
+      "bsnl": "Fair"
+    },
+    "duringTrek": {
+      "airtel": "Fair",
+      "jio": "Fair",
+      "vodafone": "Poor",
+      "bsnl": "Poor"
+    },
+    "atSummit": {
+      "airtel": "Limited",
+      "jio": "Limited",
+      "vodafone": "No signal",
+      "bsnl": "No signal"
+    },
+    "emergencyContact": "Dial 108 or 112 if network available"
+  },
+  "foodAndWater": {
+    "atBase": {
+      "restaurants": [
+        "Local tea stalls near Tikona Peth",
+        "Small snack shops"
+      ],
+      "shops": [
+        "General stores with packaged water and snacks"
+      ],
+      "waterSources": [
+        "Wells and natural water tanks (filter/boil recommended)"
+      ]
+    },
+    "duringTrek": {
+      "waterSources": [
+        "Seven water tanks on the fort (quality varies; treat before drinking)"
+      ],
+      "foodOptions": [
+        "Carry packed snacks",
+        "No shops on trek route"
+      ],
+      "recommendations": [
+        "Energy bars",
+        "Dry fruits",
+        "Hydration liquids"
+      ]
+    },
+    "atSummit": {
+      "facilities": [
+        "Small temple and resting spots",
+        "Natural caves for shelter"
+      ],
+      "recommendations": [
+        "Carry sufficient food and water",
+        "No permanent food stalls"
+      ]
+    }
+  },
+  "accommodation": {
+    "camping": {
+      "allowed": true,
+      "locations": [
+        "Near temple on the fort plateau",
+        "Natural caves on the fort"
+      ],
+      "facilities": [
+        "Natural rock shelters",
+        "Flat areas suitable for tents"
+      ],
+      "cost": "Free (self-sufficient camping only)"
+    },
+    "nearbyStays": [
+      {
+        "name": "Lonavala Guesthouses",
+        "distance": "10-15 km from Tikona Peth",
+        "cost": "₹800-1500 per room",
+        "contact": "+91 98230 12345",
+        "facilities": [
+          "Various guesthouses and hotels available",
+          "Restaurants and travel services"
+        ]
+      },
+      {
+        "name": "Kamshet Homestays",
+        "distance": "12 km from base",
+        "cost": "₹700-1200 per person",
+        "contact": "+91 98241 54321",
+        "facilities": [
+          "Home-cooked meals",
+          "Guide services"
+        ]
+      }
+    ]
+  },
+  "permits": {
+    "required": false,
+    "forestDepartment": "Not required",
+    "entry": "Free",
+    "timings": "Open from sunrise to sunset"
+  },
+  "safety": {
+    "riskLevel": "Low to Moderate",
+    "commonRisks": [
+      "Steep rock steps in some sections",
+      "Slippery during monsoon season",
+      "Exposure to sun due to limited shade"
+    ],
+    "precautions": [
+      "Use handrails where available",
+      "Wear sturdy footwear",
+      "Carry sufficient water",
+      "Avoid trekking after dusk"
+    ],
+    "rescuePoints": [
+      "Tikona Peth village",
+      "Base of the ascent",
+      "Summit plateau"
+    ],
+    "nearestHospital": {
+      "name": "Lonavala Government Hospital",
+      "distance": "12 km",
+      "contact": "+91 2131 262100"
+    }
+  },
+  "weather": {
+    "monsoon": {
+      "months": "June to September",
+      "conditions": "Lush greenery; slippery trails; frequent light rains",
+      "recommendation": "Best for scenic beauty; trek with caution and proper rain gear"
+    },
+    "winter": {
+      "months": "November to February",
+      "conditions": "Cool, clear skies; pleasant trekking weather",
+      "recommendation": "Ideal season for trekking"
+    },
+    "summer": {
+      "months": "March to May",
+      "conditions": "Hot temperatures; limited shade on trail",
+      "recommendation": "Start early mornings; carry extra water"
+    }
+  },
+  "trekRoute": {
+    "totalDistance": "2.5 km (one way)",
+    "ascent": "Approx. 450 meters",
+    "difficulty": "Moderate; some steep rock-cut steps with handrails",
+    "waypoints": [
+      {
+        "name": "Tikona Peth Village",
+        "elevation": "620 meters",
+        "description": "Base village with parking and amenities"
+      },
+      {
+        "name": "Rock-Cut Steps",
+        "elevation": "900 meters",
+        "description": "Steep steps with steel wire handrails"
+      },
+      {
+        "name": "Main Fort Gate",
+        "elevation": "1000 meters",
+        "description": "Large entrance gate; prominent fort feature"
+      },
+      {
+        "name": "Trimbakeshwar Mahadev Temple",
+        "elevation": "1035 meters",
+        "description": "Historic temple at the fort summit"
+      },
+      {
+        "name": "Seven Water Tanks",
+        "elevation": "1025 meters",
+        "description": "Ancient water tanks scattered on the fort plateau"
+      },
+      {
+        "name": "Summit Plateau",
+        "elevation": "1067 meters",
+        "description": "Panoramic views of Pawna Lake, Tung, Visapur, and Lohagad forts"
+      }
+    ]
+  },
+  "howToReach": {
+    "fromMumbai": {
+      "byTrain": {
+        "description": "Take local train to Lonavala or Kamshet, then taxi or auto-rickshaw to Tikona Peth",
+        "distance": "90-100 km",
+        "time": "2.5-3 hours total",
+        "steps": [
+          "Board train from Mumbai CST to Lonavala/Kamshet",
+          "From stations, hire taxi or auto-rickshaw to Tikona Peth village",
+          "Start trek from the base village"
+        ]
+      },
+      "byBus": {
+        "description": "State transport buses to Lonavala or Kamshet, then local transport to Tikona Peth",
+        "distance": "95 km approx.",
+        "time": "3-4 hours with connections",
+        "steps": [
+          "Bus from Mumbai to Lonavala or Kamshet",
+          "Local transport to Tikona Peth",
+          "Begin trek"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive via Mumbai-Pune Expressway, exit at Lonavala/Kamshet junction, then local roads to Tikona Peth",
+        "distance": "95 km",
+        "time": "2.5-3 hours",
+        "steps": [
+          "Drive Mumbai-Pune Expressway to Lonavala or Kamshet exit",
+          "Follow local roads to Tikona Peth village",
+          "Park near trek base"
+        ]
+      }
+    },
+    "fromPune": {
+      "byTrain": {
+        "description": "Train to Lonavala or Kamshet, then local transport to Tikona Peth",
+        "distance": "65-70 km",
+        "time": "2-3 hours",
+        "steps": [
+          "Board train from Pune station to Lonavala or Kamshet",
+          "Taxi or auto-rickshaw to Tikona Peth",
+          "Start trek"
+        ]
+      },
+      "byBus": {
+        "description": "Bus from Pune to Lonavala or Kamshet, then shared transport to Tikona Peth",
+        "distance": "70 km approx.",
+        "time": "2.5-3 hours",
+        "steps": [
+          "MSRTC bus from Pune to Lonavala/Kamshet",
+          "Local auto or shared taxi to Tikona Peth",
+          "Begin trek"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive via Pune-Mumbai Expressway and local roads to Tikona Peth",
+        "distance": "70 km",
+        "time": "2-2.5 hours",
+        "steps": [
+          "Drive Pune-Mumbai Expressway to Lonavala/Kamshet",
+          "Proceed to Tikona Peth village",
+          "Park near trail start"
+        ]
+      }
+    }
+  },
+  "bestTimeToVisit": "June to February (Monsoon and winter seasons preferred)",
+  "localContacts": [
+    {
+      "name": "Tikona Trek Guide (Ganesh Pawar)",
+      "phone": "+91 98765 43210",
+      "service": "Local trekking guide and assistance"
+    },
+    {
+      "name": "Lonavala Tourism Office",
+      "phone": "+91 2131 262345",
+      "service": "Tourist information and assistance"
+    }
+  ],
+  "imageKey": "tikona",
+  "videos": [],
+  "coordinates": {
+    "latitude": 18.6317,
+    "longitude": 73.5128
+  },
+  "featured": true,
+  "rating": 4.6,
+  "reviewCount": 120,
+  "images": [
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754052717/treks/tikona/tikona_1.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754052716/treks/tikona/tikona_2.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754052716/treks/tikona/tikona_3.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754052716/treks/tikona/tikona_4.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754052716/treks/tikona/tikona_6.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754052716/treks/tikona/tikona_7.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754052716/treks/tikona/tikona_8.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754052716/treks/tikona/tikona_9.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754052716/treks/tikona/tikona_10.jpg"
+  ]
+}

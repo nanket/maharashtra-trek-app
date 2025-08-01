@@ -1,0 +1,197 @@
+{
+  "id": 6000,
+  "name": "Pratapgad Fort",
+  "category": "fort",
+  "location": "Satara District, Maharashtra",
+  "difficulty": "Easy to Moderate",
+  "duration": "2–3 hours (exploration, ascent from base 45–75 min)",
+  "elevation": "1,080 meters",
+  "description": "Pratapgad Fort is a significant Maratha hill fort built by Chhatrapati Shivaji Maharaj in 1656, famed for the decisive 1659 Battle of Pratapgad and the iconic bronze Shivaji statue at its summit. Surrounded by dense forests and panoramic views of Western Ghats, the fort features towering bastions, temples, historic gates, and well-preserved ramparts. It is a major heritage destination and a family-friendly trek, ideal in monsoon and winter.",
+  "startingPoint": {
+    "name": "Pratapgad Base/Ambenali (or Kshetra Mahabaleshwar)",
+    "coordinates": {
+      "latitude": 17.9233,
+      "longitude": 73.5835
+    },
+    "facilities": [
+      "Paid parking at base (Ambenali Naka/fort entrance)",
+      "Ticket counter and security gate",
+      "Local dhabas and tea stalls",
+      "Public toilets",
+      "Souvenir and local product stalls"
+    ],
+    "description": "Ambenali Naka (from Mahabaleshwar, 22 km) or direct via Poladpur leads to the base. Parking, food, and all trek services are available at the fort entrance."
+  },
+  "networkAvailability": {
+    "baseArea": {
+      "airtel": "Good",
+      "jio": "Good",
+      "vodafone": "Fair",
+      "bsnl": "Fair"
+    },
+    "onFort": {
+      "airtel": "Fair",
+      "jio": "Fair",
+      "vodafone": "Poor",
+      "bsnl": "Poor"
+    },
+    "emergencyContact": "Dial 108/112 if network; fort security post always manned"
+  },
+  "foodAndWater": {
+    "atBase": {
+      "restaurants": [
+        "Local Maharashtrian food dhabas",
+        "Tea stalls and snacks at fort base and summit",
+        "Family-run messes in nearby villages"
+      ],
+      "shops": [
+        "Souvenir stalls",
+        "Packaged water & cold drinks"
+      ],
+      "waterSources": [
+        "Village tap and packaged bottles"
+      ]
+    },
+    "onFort": {
+      "foodOptions": [
+        "Seasonal tea/snack, Bhakri-pithla stalls near temples and statue",
+        "Carry water, as crowding may exhaust supply on holiday weekends"
+      ],
+      "waterSources": [
+        "Packaged water only; old tanks not potable"
+      ]
+    }
+  },
+  "accommodation": {
+    "camping": {
+      "allowed": false,
+      "reason": "No camping at fort due to heritage/site restrictions"
+    },
+    "nearbyStays": [
+      {
+        "name": "Pratapgarh Fort Dhabas (basic stay)",
+        "distance": "at fort base",
+        "cost": "₹600–1,200 per person",
+        "contact": "9420870230, 9850935937",
+        "facilities": [
+          "Simple rooms/dorms in dhaba complexes",
+          "Local Maharashtrian meals"
+        ]
+      },
+      {
+        "name": "Mahabaleshwar Hotels and Guesthouses",
+        "distance": "22 km from Pratapgad",
+        "cost": "₹1,000–3,500 per room",
+        "contact": null,
+        "facilities": [
+          "All hotel facilities, restaurants"
+        ]
+      }
+    ]
+  },
+  "permits": {
+    "required": false,
+    "notes": "Entry ticket at base (nominal, ~₹40 per head for maintenance); no forest permits"
+  },
+  "safety": {
+    "riskLevel": "Low to Moderate",
+    "commonRisks": [
+      "Steep stone stairs (slick in rain)",
+      "Crowds and congestion at gates/festival time",
+      "Slippery paths on ramparts in monsoon"
+    ],
+    "precautions": [
+      "Wear good footwear, especially during rains",
+      "Supervise children on high ramparts/edges",
+      "Hydrate well; sun hats for open terraces"
+    ],
+    "emergencyNumbers": {
+      "ambulance": "108",
+      "police": "13104 (Mahabaleshwar PS), 02168 260233",
+      "localGuide": "Available at fort entrance"
+    }
+  },
+  "howToReach": {
+    "fromPune": {
+      "byBus": {
+        "description": "MSRTC bus to Mahabaleshwar (120 km), then local jeeps/bus to Pratapgad",
+        "distance": "140 km total",
+        "time": "4–5 hours",
+        "steps": [
+          "Bus from Pune Swargate to Mahabaleshwar ST stand",
+          "Shared jeep/taxi to Pratapgad (22 km, 45 min)"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive via Satara–Panchgani–Mahabaleshwar to Pratapgad",
+        "distance": "140 km",
+        "time": "3.5–4.5 hours",
+        "steps": [
+          "NH4 to Satara",
+          "Turn for Panchgani–Mahabaleshwar",
+          "Follow Mahad Road to Pratapgad base",
+          "Parking available"
+        ]
+      }
+    },
+    "fromMumbai": {
+      "byTrain": {
+        "description": "Train to Satara, then bus/taxi to Pratapgad via Mahabaleshwar",
+        "distance": "270 km",
+        "time": "7–8 hours",
+        "steps": [
+          "Train to Satara station",
+          "ST bus or taxi to Mahabaleshwar, then jeep to fort entrance"
+        ]
+      },
+      "byBus": {
+        "description": "ST bus to Mahabaleshwar from Mumbai (185 km), then jeep to fort",
+        "distance": "210 km total",
+        "time": "6–7 hours",
+        "steps": [
+          "Mumbai central/Sion/Thane bus to Mahabaleshwar",
+          "Jeep/bus to Pratapgad base"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive Mumbai-Pune Expressway–Satara–Mahabaleshwar–Pratapgad",
+        "distance": "225 km",
+        "time": "5.5–6.5 hours",
+        "steps": [
+          "NH4 or Expressway to Satara",
+          "Via Panchgani, Mahabaleshwar, signposted to Pratapgad"
+        ]
+      }
+    }
+  },
+  "bestTimeToVisit": "June–February (monsoon and winter; fort is open all year)",
+  "localContacts": [
+    {
+      "name": "Fort Guide Association (Pratapgad)",
+      "phone": "9420870230, 9850935937",
+      "service": "Guided walk, history narration, group bookings"
+    },
+    {
+      "name": "Mahabaleshwar Tourist Office",
+      "phone": "02168 260233",
+      "service": "Tourist information, logistics"
+    }
+  ],
+  "images": [
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754056929/treks/pratapgad/pratapgad_1.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754056929/treks/pratapgad/pratapgad_2.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754056929/treks/pratapgad/pratapgad_3.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754056929/treks/pratapgad/pratapgad_4.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754056929/treks/pratapgad/pratapgad_7.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754056929/treks/pratapgad/pratapgad_8.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754056929/treks/pratapgad/pratapgad_9.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754056930/treks/pratapgad/pratapgad_10.jpg"
+  ],
+  "coordinates": {
+    "latitude": 17.9233,
+    "longitude": 73.5835
+  },
+  "featured": true,
+  "rating": 4.7,
+  "reviewCount": 230
+}

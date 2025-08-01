@@ -1,0 +1,309 @@
+{
+  "id": 100,
+  "name": "Kalsubai Peak",
+  "category": "peak",
+  "location": "Ahmednagar District, Maharashtra",
+  "difficulty": "Easy to Moderate",
+  "duration": "3-4 hours (one way; base to summit)",
+  "elevation": "1,646 meters",
+  "description": "Kalsubai is the highest peak in Maharashtra, renowned for its sweeping Sahyadri views, the famous summit temple of Kalsubai Devi, and the thrilling trek route, which includes four steep iron ladders and rocky ascents. It’s a classic monsoon and winter trek, accessible for beginners and regular trekkers alike.",
+  "startingPoint": {
+    "name": "Bari Village (primary base)",
+    "coordinates": { "latitude": 19.6011, "longitude": 73.6997 },
+    "facilities": [
+      "Parking (cars, bikes, buses)",
+      "Local shops and eateries",
+      "Public toilets (base only)",
+      "Guides available on demand"
+    ],
+    "description": "Bari is the key base village, with approach roads from Igatpuri (Nashik-Kasara highway side) and Bhandardara (via Ghoti). Rickshaws and buses ply to base, ample parking available."
+  },
+  "networkAvailability": {
+    "baseVillage": {
+      "airtel": "Good",
+      "jio": "Good",
+      "vodafone": "Fair",
+      "bsnl": "Fair"
+    },
+    "duringTrek": {
+      "airtel": "Intermittent",
+      "jio": "Intermittent",
+      "vodafone": "Spotty",
+      "bsnl": "Spotty"
+    },
+    "atSummit": {
+      "airtel": "Fair",
+      "jio": "Fair",
+      "vodafone": "Spotty",
+      "bsnl": "No signal"
+    },
+    "emergencyContact": "108 (ambulance), 112 (any emergency); inform Bari locals before trek"
+  },
+  "foodAndWater": {
+    "atBase": {
+      "restaurants": [
+        "Local home kitchens (veg Maharashtrian thali, poha, tea)",
+        "Tea/snack stalls (seasonal)"
+      ],
+      "shops": [
+        "General stores with packaged water, snacks, and cereals"
+      ],
+      "waterSources": [
+        "Wells and pumps in village (filter/boil before drinking)"
+      ]
+    },
+    "duringTrek": {
+      "waterSources": [
+        "No perennial sources—carry minimum 2L per person",
+        "Some seasonal stalls on ladders route selling bottled water"
+      ],
+      "foodOptions": [
+        "Carry own packed food",
+        "Villager-run snack stalls on busy weekends (monsoon/winter)"
+      ],
+      "recommendations": [
+        "Energy bars",
+        "Dry snacks",
+        "Electrolyte drink"
+      ]
+    },
+    "atSummit": {
+      "facilities": [
+        "Temple platform and limited shaded area",
+        "Occasional stalls (peak season, holidays) at summit"
+      ],
+      "recommendations": [
+        "Carry all supplies to the top",
+        "No permanent food/water source"
+      ]
+    }
+  },
+  "accommodation": {
+    "camping": {
+      "allowed": true,
+      "locations": [
+        "Plateau near summit (below main temple, windy)",
+        "Farm fields, homestay lawns at Bari"
+      ],
+      "facilities": [
+        "Tent rental (advance booking); limited at summit; basic",
+        "Most camping organized at fields below the final ascent"
+      ],
+      "cost": "₹800–1,200 per person (tent + local food; pre-book with contacts below)"
+    },
+    "nearbyStays": [
+      {
+        "name": "Dadanche Hotel & Camping (Bari)",
+        "distance": "Village centre",
+        "cost": "₹600–1,000 per person incl. food (2025)",
+        "contact": "8390374971, 7507265841",
+        "facilities": [
+          "Dorm rooms/tents",
+          "Local meals"
+        ]
+      },
+      {
+        "name": "Balu Khade Homestay",
+        "distance": "Bari village",
+        "cost": "₹700–1,200 per night (with meals)",
+        "contact": "7745024547, 7350461553",
+        "facilities": [
+          "Basic rooms",
+          "Home-cooked veg meals"
+        ]
+      }
+    ]
+  },
+  "permits": {
+    "required": false,
+    "forestDepartment": "Not required",
+    "entry": "Free; nominal village maintenance donation (₹20–₹50 advisable)",
+    "timings": "Open: sunrise to sunset (night treks common in season; best to inform Bari Sarpanch prior to overnight plans)"
+  },
+  "safety": {
+    "riskLevel": "Moderate",
+    "commonRisks": [
+      "Slippery ladders in monsoon",
+      "Congested descent/ladder queues on weekends",
+      "Strong summit winds (tent use caution)"
+    ],
+    "precautions": [
+      "Wear good trekking shoes with grip",
+      "Climb ladders one-by-one; avoid crowd rush",
+      "Carry rain gear and headlamp for night trek",
+      "Travel in groups for night/midnight treks"
+    ],
+    "rescuePoints": [
+      "Bari village",
+      "Main plateau (pre-summit camping area)",
+      "Temple at summit"
+    ],
+    "nearestHospital": {
+      "name": "Primary Health Care Center, Bari (basic), Ghoti Rural Hospital (full)",
+      "distance": "2 km / 28 km",
+      "contact": "9762830880 (PHC), 9922264094 (Ghoti Hospital)"
+    },
+    "emergencyNumbers": {
+      "police": "Akole Police Station: 02424-221333",
+      "ambulance": "108"
+    }
+  },
+  "weather": {
+    "monsoon": {
+      "months": "June–September",
+      "conditions": "Heavy rain, waterfall-laced slopes, slippery ladder and rocks, thick mist",
+      "recommendation": "Scenic but challenging; pack rainwear, avoid weekends for crowd safety"
+    },
+    "winter": {
+      "months": "November–February",
+      "conditions": "Cool, clear skies, perfect for sunrise trek/camping",
+      "recommendation": "Best season for all trekkers, day and night"
+    },
+    "summer": {
+      "months": "March–May",
+      "conditions": "Hot, strong sun on ascent, dry and dusty till plateau",
+      "recommendation": "Early start for sunrise or evening descent advised"
+    }
+  },
+  "trekRoute": {
+    "totalDistance": "6.6 km (one way, Bari to summit)",
+    "ascent": "800 meters",
+    "difficulty": "Moderate for fit trekkers; ladders and rocky patches require care",
+    "waypoints": [
+      {
+        "name": "Bari Village",
+        "elevation": "850m",
+        "description": "Parking, home stays, base facilities"
+      },
+      {
+        "name": "Farm Fields & Stream",
+        "elevation": "900m",
+        "description": "Initial walk through village farms, water crossing"
+      },
+      {
+        "name": "First Plateau/Mango tree rest point",
+        "elevation": "1,000m",
+        "description": "Flat section post farm trail; last tree shade before climb"
+      },
+      {
+        "name": "First Ladder Section",
+        "elevation": "1,200m",
+        "description": "Series of iron ladders up steep rock; water/snack stall nearby in season"
+      },
+      {
+        "name": "Large Plateau/Night Camping Zone",
+        "elevation": "1,500m",
+        "description": "Common night halt, summit in sight"
+      },
+      {
+        "name": "Summit (Kalsubai Temple)",
+        "elevation": "1,646m",
+        "description": "Final ladders to temple, panoramic view"
+      }
+    ]
+  },
+  "howToReach": {
+    "fromMumbai": {
+      "byTrain": {
+        "description": "Mumbai CST/Dadar to Kasara (Central line), then jeep/auto to Bari (50 km road)",
+        "distance": "150 km",
+        "time": "4–5 hours",
+        "steps": [
+          "Mumbai–Kasara local train",
+          "Jeep/shared taxi to Bari via Ghoti",
+          "Start trek"
+        ]
+      },
+      "byBus": {
+        "description": "ST bus from Mumbai to Igatpuri/Ghoti, then jeep to Bari",
+        "distance": "160 km",
+        "time": "5-6 hours",
+        "steps": [
+          "ST bus Mumbai–Igatpuri/Ghoti",
+          "Jeep/taxi to Bari village"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive via NH160, exit at Ghoti, continue to Bari",
+        "distance": "160 km",
+        "time": "4 hours",
+        "steps": [
+          "Mumbai–Nashik highway to Igatpuri/Ghoti",
+          "Turn towards Bhandardara, follow Bari signage"
+        ]
+      }
+    },
+    "fromPune": {
+      "byTrain": {
+        "description": "Train to Igatpuri/Kasara, then local jeep/auto",
+        "distance": "180 km",
+        "time": "5–6 hours",
+        "steps": [
+          "Pune–Kalyan–Kasara by train",
+          "Jeep/auto to Bari"
+        ]
+      },
+      "byBus": {
+        "description": "Pune–Sangamner ST bus, then Sangamner to Bari by local vehicles",
+        "distance": "180 km",
+        "time": "6 hours",
+        "steps": [
+          "Bus to Sangamner",
+          "Local ST/jeep to Bari"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive via Pune–Sangamner–Rajur–Bhandardara–Bari",
+        "distance": "180 km",
+        "time": "5–6 hours",
+        "steps": [
+          "Pune–Nashik highway to Sangamner",
+          "Via Rajur and Bhandardara to Bari village"
+        ]
+      }
+    }
+  },
+  "bestTimeToVisit": "October–February (clear, cool, safe); Monsoon (for waterfalls, experienced trekkers only)",
+  "localContacts": [
+    {
+      "name": "Dadanche Hotel & Trekking/Guide (Mr. Ravindra Khade)",
+      "phone": "8390374971, 7507265841",
+      "service": "Local guide, tent booking, meals, group/camping"
+    },
+    {
+      "name": "Balu Khade Homestay",
+      "phone": "7745024547, 7350461553",
+      "service": "Homestay, camping, packed food"
+    },
+    {
+      "name": "Primary Health Centre Bari",
+      "phone": "9762830880",
+      "service": "Medical emergency (basic care)"
+    },
+    {
+      "name": "Akole Police Station",
+      "phone": "02424-221333",
+      "service": "Emergency police"
+    }
+  ],
+  "imageKey": "kalsubai",
+  "videos": [],
+  "coordinates": {
+    "latitude": 19.6011,
+    "longitude": 73.6997
+  },
+  "featured": true,
+  "rating": 4.8,
+  "reviewCount": 210,
+  "images": [
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754053416/treks/kalsubai/kalsubai_1.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754053415/treks/kalsubai/kalsubai_2.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754053416/treks/kalsubai/kalsubai_3.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754053415/treks/kalsubai/kalsubai_4.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754053415/treks/kalsubai/kalsubai_5.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754053415/treks/kalsubai/kalsubai_6.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754053415/treks/kalsubai/kalsubai_7.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754053415/treks/kalsubai/kalsubai_8.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754053415/treks/kalsubai/kalsubai_9.jpg"
+  ]
+}

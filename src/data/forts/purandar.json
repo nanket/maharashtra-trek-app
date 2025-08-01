@@ -1,0 +1,216 @@
+{
+  "id": 150,
+  "name": "Purandar Fort",
+  "category": "fort",
+  "location": "Pune District, Maharashtra",
+  "difficulty": "Moderate",
+  "duration": "5–6 hours (round trip)",
+  "elevation": "1,467 meters",
+  "description": "Purandar Fort is a historically important hill fort in the Western Ghats near Pune. It was the birthplace of Rajaram Maharaj and a strategic site during the Maratha Empire. The fort offers scenic views, ancient temples, water cisterns, and steep climbs. The trek is moderate, suitable for regular trekkers with some rocky and forested stretches.",
+  "startingPoint": {
+    "name": "Tungarli Village",
+    "coordinates": {
+      "latitude": 18.2933,
+      "longitude": 73.9650
+    },
+    "facilities": [
+      "Parking area",
+      "Local shops and tea stalls",
+      "Basic accommodations",
+      "Guide availability"
+    ],
+    "description": "Tungarli is the main base for Purandar Fort trek, reachable by road from Pune. Facilities are available for parking, refreshments, and local guide services."
+  },
+  "networkAvailability": {
+    "baseVillage": {
+      "airtel": "Good",
+      "jio": "Good",
+      "vodafone": "Fair",
+      "bsnl": "Fair"
+    },
+    "duringTrek": {
+      "airtel": "Moderate",
+      "jio": "Moderate",
+      "vodafone": "Weak",
+      "bsnl": "Weak"
+    },
+    "atSummit": {
+      "airtel": "Weak",
+      "jio": "Weak",
+      "vodafone": "No Signal",
+      "bsnl": "No Signal"
+    },
+    "emergencyContact": "Dial 108 or 112 if network available"
+  },
+  "foodAndWater": {
+    "atBase": {
+      "restaurants": [
+        "Local eateries and tea stalls",
+        "Small shops selling snacks and water"
+      ],
+      "shops": [
+        "Basic groceries and packaged water"
+      ],
+      "waterSources": [
+        "Tungarli village water sources; use with caution"
+      ]
+    },
+    "duringTrek": {
+      "waterSources": [
+        "Cisterns on fort (quality varies; suggest purification)"
+      ],
+      "foodOptions": [
+        "Carry sufficient packed food; no stalss on trail"
+      ],
+      "recommendations": [
+        "Energy bars",
+        "Dry fruits",
+        "Electrolytes"
+      ]
+    },
+    "atSummit": {
+      "waterSources": [
+        "Rock-cut tanks and cisterns with variable water availability"
+      ],
+      "foodOptions": [
+        "No food stalls; bring own supplies"
+      ]
+    }
+  },
+  "accommodation": {
+    "camping": {
+      "allowed": true,
+      "locations": [
+        "Rock shelters and flat areas on the fort"
+      ],
+      "facilities": [
+        "Basic shelter only",
+        "Self-sufficient camping required"
+      ],
+      "cost": "Free"
+    },
+    "nearbyStays": [
+      {
+        "name": "Tungarli Homestays",
+        "distance": "In Tungarli village",
+        "contact": "9822078562",
+        "cost": "₹600–900 per night",
+        "facilities": [
+          "Rooms with basic amenities",
+          "Home-cooked food",
+          "Guide services"
+        ]
+      },
+      {
+        "name": "Pune City Hotels",
+        "distance": "45 km from Purandar",
+        "contact": null,
+        "cost": "Varies",
+        "facilities": [
+          "Wide range of accommodation options"
+        ]
+      }
+    ]
+  },
+  "permits": {
+    "required": false,
+    "notes": "No permits required; entry free"
+  },
+  "safety": {
+    "level": "Moderate",
+    "commonRisks": [
+      "Steep rocky sections",
+      "Slippery trails during monsoon",
+      "Wildlife encounters possible",
+      "Limited safety infrastructure on fort"
+    ],
+    "precautions": [
+      "Wear sturdy trekking shoes",
+      "Keep group communication open",
+      "Carry first aid kit",
+      "Avoid trekking in heavy rain"
+    ],
+    "emergencyNumbers": {
+      "ambulance": "108",
+      "localPolice": "Mahad Police Station: +91 2130 261722"
+    }
+  },
+  "trekRoute": {
+    "distance": "Approximately 6 km round trip",
+    "ascent": "Around 800 meters",
+    "difficulty": "Moderate with steep climbs",
+    "waypoints": [
+      {
+        "name": "Tungarli Village",
+        "elevation": 700,
+        "description": "Trek starting point with guidance and facilities"
+      },
+      {
+        "name": "Water Cisterns",
+        "elevation": 1350,
+        "description": "Rock-cut water tanks and storage"
+      },
+      {
+        "name": "Shiv Mandir",
+        "elevation": 1450,
+        "description": "Ancient temple on the fort"
+      },
+      {
+        "name": "Purandar Fort Summit",
+        "elevation": 1467,
+        "description": "Top of the fort with panoramic views"
+      }
+    ]
+  },
+  "howToReach": {
+    "fromPune": {
+      "byBus": {
+        "description": "Bus from Pune to Mutha village, then shared auto or walk to Tungarli",
+        "distance": 40,
+        "time": "2 hours"
+      },
+      "byPrivateVehicle": {
+        "description": "Drive via Pune-Saswad road to Tungarli, parking available",
+        "distance": 45,
+        "time": "1.5 hours"
+      }
+    },
+    "fromMumbai": {
+      "byTrain": {
+        "description": "Train to Pune, then bus or taxi to Tungarli",
+        "distance": 150,
+        "time": "4-5 hours"
+      },
+      "byPrivateVehicle": {
+        "description": "Drive via Mumbai-Pune Expressway, Saswad road to Tungarli",
+        "distance": 150,
+        "time": "3.5 hours"
+      }
+    }
+  },
+  "bestTime": "October to March (post-monsoon and winter)",
+  "localContacts": [
+    {
+      "name": "Trekking Guide - Anil Gule",
+      "phone": "9823123456",
+      "service": "Local Trekking Guide, Homestay Arrangements"
+    },
+    {
+      "name": "Tungarli Village Sarpanch",
+      "phone": "9876543210",
+      "service": "Local Administration and Assistance"
+    }
+  ],
+ "images": [
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754058615/treks/purandar/purandar_2.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754058615/treks/purandar/purandar_4.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754058615/treks/purandar/purandar_5.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754058615/treks/purandar/purandar_6.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754058615/treks/purandar/purandar_7.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754058615/treks/purandar/purandar_8.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754058616/treks/purandar/purandar_9.png",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754058615/treks/purandar/purandar_10.jpg"
+  ],
+  "rating": 4.5,
+  "reviewCount": 89
+}

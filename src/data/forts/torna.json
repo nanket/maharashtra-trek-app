@@ -1,0 +1,294 @@
+{
+  "id": 80,
+  "name": "Torna Fort (Prachandgad)",
+  "category": "fort",
+  "location": "Pune District, Maharashtra",
+  "difficulty": "Moderate to Difficult",
+  "duration": "4–5 hours (one way, full ascent); 8–9 hours for full fort exploration",
+  "elevation": "1,403 meters (4,603 feet)",
+  "description": "Torna, known as Prachandgad owing to its massive fortifications, is the highest hill fort in Pune district and was the first fort won by Chhatrapati Shivaji Maharaj at age 16. The trek is famed for rugged paths, stunning monsoon wildflower slopes, and breathtaking Sahyadri views. The ascent is long but scenic, passing ancient temples, bastions, and cisterns. The fort is known for strong winds, exposed ridges, and a sense of true wilderness.",
+  "startingPoint": {
+    "name": "Velhe Village",
+    "coordinates": {
+      "latitude": 18.2786,
+      "longitude": 73.6703
+    },
+    "facilities": [
+      "Paid parking zone",
+      "Basic tea stalls and snack shops",
+      "Restrooms (limited at base)",
+      "Local guides"
+    ],
+    "description": "Velhe is the standard base village for Torna, situated about 50km from Pune city. The road is accessible year-round. Basic amenities available; start trek early to avoid sun and crowds."
+  },
+  "networkAvailability": {
+    "baseVillage": {
+      "airtel": "Good",
+      "jio": "Good",
+      "vodafone": "Fair",
+      "bsnl": "Fair"
+    },
+    "duringTrek": {
+      "airtel": "Fair",
+      "jio": "Fair",
+      "vodafone": "Poor",
+      "bsnl": "Intermittent"
+    },
+    "atSummit": {
+      "airtel": "Limited",
+      "jio": "Limited",
+      "vodafone": "Poor",
+      "bsnl": "No signal"
+    },
+    "emergencyContact": "108 (ambulance), 112 (general emergency). Inform local guides before trek for safety."
+  },
+  "foodAndWater": {
+    "atBase": {
+      "restaurants": [
+        "Hotel Shivaji (Velhe)",
+        "Tea and vada stalls"
+      ],
+      "shops": [
+        "Local grocery stores",
+        "Packaged water and basic supplies"
+      ],
+      "waterSources": [
+        "Village taps",
+        "Public wells"
+      ]
+    },
+    "duringTrek": {
+      "waterSources": [
+        "Cisterns on Torna (filter/boil before use)",
+        "Carry at least 2–3 liters per person"
+      ],
+      "foodOptions": [
+        "No shops on trek or fort; carry packed lunch, energy snacks"
+      ],
+      "recommendations": [
+        "Energy bars",
+        "Electrolytes"
+      ]
+    },
+    "atSummit": {
+      "facilities": [
+        "Small temple (Maal) can provide shelter",
+        "Natural caves for resting"
+      ],
+      "recommendations": [
+        "No permanent food/water stalls at summit",
+        "Plan meals and water accordingly"
+      ]
+    }
+  },
+  "accommodation": {
+    "camping": {
+      "allowed": true,
+      "locations": [
+        "Temple and flat areas on fort",
+        "Natural caves"
+      ],
+      "facilities": [
+        "Temple can accommodate 30–40 trekkers",
+        "Basic cave shelters for small groups"
+      ],
+      "cost": "Free (own tent/sleeping gear required; arrange with villagers for tent rental)"
+    },
+    "nearbyStays": [
+      {
+        "name": "Hotel Shivaji Velhe",
+        "distance": "500m from trek start",
+        "cost": "₹600–800 per person",
+        "contact": "9764908925",
+        "facilities": [
+          "Basic rooms",
+          "Hot meals",
+          "Parking"
+        ]
+      },
+      {
+        "name": "Torna Base Camping (Local Villagers)",
+        "distance": "At Velhe Village",
+        "cost": "₹1000–1400 per person (tent+meals)",
+        "contact": "9823718017, 9552006977",
+        "facilities": [
+          "Tents on request",
+          "Home-cooked meals",
+          "Toilet access"
+        ]
+      }
+    ]
+  },
+  "permits": {
+    "required": false,
+    "forestDepartment": "Not required",
+    "entry": "Free entry",
+    "timings": "Open from sunrise to sunset; night trekking and camping allowed with prior intimation to base villagers"
+  },
+  "safety": {
+    "riskLevel": "Moderate to High (especially in monsoon)",
+    "commonRisks": [
+      "Slippery and muddy trail during monsoon",
+      "Long, exposed ridges with strong winds",
+      "Loose stones and steep climbs",
+      "Dense fog reduces visibility in monsoon"
+    ],
+    "precautions": [
+      "Wear reliable trekking shoes",
+      "Carry rain gear in wet season",
+      "Avoid solo trekking in monsoon",
+      "Daylight trekking advised"
+    ],
+    "rescuePoints": [
+      "Velhe Village",
+      "Temple at top",
+      "Base of Budhla Machi (popular plateau on fort)"
+    ],
+    "nearestHospital": {
+      "name": "Velhe Primary Health Centre",
+      "distance": "1.5 km",
+      "contact": "02113-203412"
+    }
+  },
+  "weather": {
+    "monsoon": {
+      "months": "June–September",
+      "conditions": "Heavy rain, high winds, clouds/fog, slippery paths, waterfalls along route",
+      "recommendation": "Trek only with experience, rain gear; breathtaking wildflowers but challenging conditions"
+    },
+    "winter": {
+      "months": "November–February",
+      "conditions": "Cool, clear skies, excellent visibility, perfect for camping",
+      "recommendation": "Best season for trekking and fort camping"
+    },
+    "summer": {
+      "months": "March–May",
+      "conditions": "Hot, exposed trail; carry extra water",
+      "recommendation": "Early morning trek advised; ample hydration is crucial"
+    }
+  },
+  "trekRoute": {
+    "totalDistance": "7 km (one way from Velhe)",
+    "ascent": "900 meters",
+    "difficulty": "Moderate–Difficult (long and steep sections, especially near fort walls)",
+    "waypoints": [
+      {
+        "name": "Velhe Village",
+        "elevation": "500m",
+        "description": "Main trek base; shops and parking"
+      },
+      {
+        "name": "Maal Temple (mid-point)",
+        "elevation": "900m",
+        "description": "Small resting temple, shelter spot"
+      },
+      {
+        "name": "Zunjar Machi Base",
+        "elevation": "1200m",
+        "description": "Branch trail to Zunjar Machi, known for flora"
+      },
+      {
+        "name": "Bini Darwaza (Fort Entrance)",
+        "elevation": "1350m",
+        "description": "Main stone gate into fort interior"
+      },
+      {
+        "name": "Summit Plateau (Balekilla, Budhla Machi)",
+        "elevation": "1403m",
+        "description": "Main fort top, views of Sahyadris"
+      }
+    ]
+  },
+  "howToReach": {
+    "fromMumbai": {
+      "byTrain": {
+        "description": "Train to Pune, then bus/taxi to Velhe Village",
+        "distance": "165 km",
+        "time": "4–5 hours",
+        "steps": [
+          "Train from Mumbai CST/LTT to Pune",
+          "MSRTC bus or shared taxi from Pune Swargate to Velhe",
+          "Start trek from Velhe bus stand"
+        ]
+      },
+      "byBus": {
+        "description": "State bus to Pune, bus to Velhe",
+        "distance": "170 km",
+        "time": "5–6 hours",
+        "steps": [
+          "Mumbai to Pune bus (Shivneri/MSRTC)",
+          "Pune Swargate to Velhe bus",
+          "Walk 5 min to trek start"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive Mumbai–Pune Expressway to Nasrapur, local road to Velhe",
+        "distance": "160 km",
+        "time": "4 hours",
+        "steps": [
+          "Expressway to Pune, Satara Highway to Nasrapur",
+          "Local road from Nasrapur to Velhe village",
+          "Paid parking at base"
+        ]
+      }
+    },
+    "fromPune": {
+      "byBus": {
+        "description": "MSRTC/PMT buses from Swargate to Velhe",
+        "distance": "50 km",
+        "time": "1.5–2 hours",
+        "steps": [
+          "Swargate bus stand: Velhe bus (hourly)",
+          "Walk from Velhe to trek start"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive via Satara Highway – Nasrapur phata – Velhe",
+        "distance": "50 km",
+        "time": "1–1.5 hours",
+        "steps": [
+          "Follow Pune–Satara highway to Nasrapur phata",
+          "Branch to Velhe road, GPS to fort",
+          "Ample parking at Velhe"
+        ]
+      }
+    }
+  },
+  "bestTimeToVisit": "October–February (winter & post-monsoon for best conditions)",
+  "localContacts": [
+    {
+      "name": "Hotel Shivaji Velhe",
+      "phone": "9764908925",
+      "service": "Local homestay, food, packed lunch"
+    },
+    {
+      "name": "Torna Base Camping Villagers",
+      "phone": "9823718017, 9552006977",
+      "service": "Tent rental, camping, guide services"
+    },
+    {
+      "name": "Ramesh Gurav (Velhe, local guide)",
+      "phone": "9604263353",
+      "service": "Experienced trekking guide, fort history"
+    }
+  ],
+  "imageKey": "torna",
+  "videos": [],
+  "coordinates": {
+    "latitude": 18.2786,
+    "longitude": 73.6703
+  },
+  "featured": true,
+  "rating": 4.7,
+  "reviewCount": 150,
+  "images": [
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754052902/treks/torna/torna_2.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754052905/treks/torna/torna_3.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754052902/treks/torna/torna_4.webp",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754052903/treks/torna/torna_5.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754052902/treks/torna/torna_6.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754052902/treks/torna/torna_7.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754052902/treks/torna/torna_8.webp",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754052902/treks/torna/torna_10.jpg"
+  ]
+}

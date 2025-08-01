@@ -93,7 +93,11 @@ const TrekPlannerScreen = ({ navigation, route }) => {
 
   const renderTabButtons = () => (
     <View style={styles.tabContainer}>
-      <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+      <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        keyboardShouldPersistTaps="handled"
+      >
         {tabs.map((tab) => (
           <TouchableOpacity
             key={tab.id}
@@ -371,7 +375,12 @@ const TrekPlannerScreen = ({ navigation, route }) => {
 
       {renderTabButtons()}
       
-      <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
+      <ScrollView
+        style={styles.scrollView}
+        showsVerticalScrollIndicator={false}
+        keyboardShouldPersistTaps="handled"
+        keyboardDismissMode="on-drag"
+      >
         {renderContent()}
       </ScrollView>
     </SafeAreaView>

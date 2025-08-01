@@ -9,19 +9,19 @@
  */
 export const extractYouTubeVideoId = (url) => {
   if (!url) return null;
-  
+
   const patterns = [
     /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([^&\n?#]+)/,
     /youtube\.com\/watch\?.*v=([^&\n?#]+)/,
   ];
-  
+
   for (const pattern of patterns) {
     const match = url.match(pattern);
     if (match && match[1]) {
       return match[1];
     }
   }
-  
+
   return null;
 };
 
@@ -33,7 +33,7 @@ export const extractYouTubeVideoId = (url) => {
 export const getYouTubeEmbedUrl = (url) => {
   const videoId = extractYouTubeVideoId(url);
   if (!videoId) return null;
-  
+
   return `https://www.youtube.com/embed/${videoId}`;
 };
 
@@ -46,7 +46,7 @@ export const getYouTubeEmbedUrl = (url) => {
 export const getYouTubeThumbnail = (url, quality = 'hqdefault') => {
   const videoId = extractYouTubeVideoId(url);
   if (!videoId) return null;
-  
+
   return `https://img.youtube.com/vi/${videoId}/${quality}.jpg`;
 };
 
@@ -57,7 +57,7 @@ export const getYouTubeThumbnail = (url, quality = 'hqdefault') => {
  */
 export const isYouTubeUrl = (url) => {
   if (!url) return false;
-  
+
   return /(?:youtube\.com|youtu\.be)/.test(url);
 };
 
@@ -68,13 +68,14 @@ export const isYouTubeUrl = (url) => {
  */
 export const isDirectVideoUrl = (url) => {
   if (!url) return false;
-  
+
   const videoExtensions = ['.mp4', '.mov', '.avi', '.mkv', '.webm', '.m4v'];
   const lowerUrl = url.toLowerCase();
-  
-  return videoExtensions.some(ext => lowerUrl.includes(ext)) || 
+
+  return videoExtensions.some(ext => lowerUrl.includes(ext)) ||
          lowerUrl.includes('commondatastorage.googleapis.com') ||
-         lowerUrl.includes('sample-videos.com');
+         lowerUrl.includes('sample-videos.com') ||
+         lowerUrl.includes('res.cloudinary.com');
 };
 
 /**
@@ -92,7 +93,7 @@ export const getVideoInfo = (url) => {
       embedUrl: null
     };
   }
-  
+
   if (isYouTubeUrl(url)) {
     return {
       type: 'youtube',
@@ -103,7 +104,7 @@ export const getVideoInfo = (url) => {
       videoId: extractYouTubeVideoId(url)
     };
   }
-  
+
   if (isDirectVideoUrl(url)) {
     return {
       type: 'direct',
@@ -113,7 +114,7 @@ export const getVideoInfo = (url) => {
       embedUrl: null
     };
   }
-  
+
   return {
     type: 'unknown',
     url: url,

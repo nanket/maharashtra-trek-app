@@ -81,11 +81,27 @@ const TrekCard = ({ trek, onPress, showFavoriteButton = true }) => {
             </Text>
           </View>
 
+          {/* Distance Badge (for nearby treks) */}
+          {trek.distanceText && (
+            <View style={styles.distanceBadge}>
+              <Text style={styles.distanceIcon}>📍</Text>
+              <Text style={styles.distanceText}>{trek.distanceText}</Text>
+            </View>
+          )}
+
           {/* Rating Badge */}
-          {trek.rating && (
+          {trek.rating && !trek.distanceText && (
             <View style={styles.ratingBadge}>
               <Text style={styles.ratingIcon}>⭐</Text>
               <Text style={styles.ratingText}>{trek.rating}</Text>
+            </View>
+          )}
+
+          {/* Featured Badge (for featured treks when no location) */}
+          {trek.showAsFeatured && (
+            <View style={styles.featuredBadge}>
+              <Text style={styles.featuredIcon}>⭐</Text>
+              <Text style={styles.featuredText}>{trek.rating}</Text>
             </View>
           )}
 
@@ -197,6 +213,27 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     textTransform: 'capitalize',
   },
+  distanceBadge: {
+    position: 'absolute',
+    top: SPACING.md,
+    right: SPACING.md,
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: COLORS.info,
+    paddingHorizontal: SPACING.md,
+    paddingVertical: SPACING.sm,
+    borderRadius: BORDER_RADIUS.full,
+    ...SHADOWS.small,
+  },
+  distanceIcon: {
+    fontSize: 12,
+    marginRight: SPACING.xs,
+  },
+  distanceText: {
+    fontSize: 12,
+    fontWeight: '700',
+    color: COLORS.textInverse,
+  },
   ratingBadge: {
     position: 'absolute',
     top: SPACING.md,
@@ -217,6 +254,27 @@ const styles = StyleSheet.create({
     fontSize: 12,
     fontWeight: '700',
     color: COLORS.text,
+  },
+  featuredBadge: {
+    position: 'absolute',
+    top: SPACING.md,
+    right: SPACING.md,
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: COLORS.accent,
+    paddingHorizontal: SPACING.md,
+    paddingVertical: SPACING.sm,
+    borderRadius: BORDER_RADIUS.full,
+    ...SHADOWS.small,
+  },
+  featuredIcon: {
+    fontSize: 12,
+    marginRight: SPACING.xs,
+  },
+  featuredText: {
+    fontSize: 12,
+    fontWeight: '700',
+    color: COLORS.textInverse,
   },
   favoriteButton: {
     position: 'absolute',

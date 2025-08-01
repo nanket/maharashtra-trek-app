@@ -178,7 +178,11 @@ const TripPlannerTab = ({ navigation, tripPlans, onTripPlansChange }) => {
         <View style={styles.modalContent}>
           <Text style={styles.modalTitle}>Create Trip Plan</Text>
 
-          <ScrollView showsVerticalScrollIndicator={false}>
+          <ScrollView
+            showsVerticalScrollIndicator={false}
+            keyboardShouldPersistTaps="handled"
+            keyboardDismissMode="on-drag"
+          >
             <View style={styles.modalSection}>
               <Text style={styles.modalLabel}>Plan Title *</Text>
               <TextInput
@@ -187,6 +191,8 @@ const TripPlannerTab = ({ navigation, tripPlans, onTripPlansChange }) => {
                 onChangeText={setPlanTitle}
                 placeholder="e.g., Weekend Trek to Rajgad"
                 maxLength={50}
+                returnKeyType="next"
+                blurOnSubmit={false}
               />
             </View>
 
@@ -197,6 +203,8 @@ const TripPlannerTab = ({ navigation, tripPlans, onTripPlansChange }) => {
                 value={planDate}
                 onChangeText={setPlanDate}
                 placeholder="e.g., December 2024"
+                returnKeyType="next"
+                blurOnSubmit={false}
               />
             </View>
 
@@ -211,6 +219,8 @@ const TripPlannerTab = ({ navigation, tripPlans, onTripPlansChange }) => {
                 numberOfLines={4}
                 textAlignVertical="top"
                 maxLength={200}
+                returnKeyType="done"
+                blurOnSubmit={true}
               />
             </View>
           </ScrollView>
@@ -256,6 +266,8 @@ const TripPlannerTab = ({ navigation, tripPlans, onTripPlansChange }) => {
         ListHeaderComponent={renderHeader}
         contentContainerStyle={styles.listContainer}
         showsVerticalScrollIndicator={false}
+        keyboardShouldPersistTaps="handled"
+        keyboardDismissMode="on-drag"
       />
       {renderCreateModal()}
     </View>

@@ -1,0 +1,294 @@
+{
+  "id": 130,
+  "name": "Madan Fort (Madangad)",
+  "category": "fort",
+  "location": "Nashik District, Maharashtra",
+  "difficulty": "Hard (technical, strenuous, exposed sections requiring ropes/ladders)",
+  "duration": "9–12 hours (one way, including approach and full exploration); often done as part of the AMK (Alang–Madangad–Kulang) circuit over 2–3 days",
+  "elevation": "1,392 meters",
+  "description": "Madangad is a challenging hill fort famous for its vertical rock faces, iron ladders, and breathtaking views of the Sahyadri region. The fort is part of the renowned AMK trio, known for technical climbs, exposed ledges, and cave camping. It attracts experienced trekkers seeking adventure, technical sections, and rugged wilderness. The trail involves steep ascents with technical aids and requires strong navigation skills.",
+  "startingPoint": {
+    "name": "Ambewadi Village (primary), Ghatghar Village (alternative)",
+    "coordinates": {
+      "latitude": 19.5651,
+      "longitude": 73.6421
+    },
+    "facilities": [
+      "Limited parking at Ambewadi",
+      "Basic tea stalls in season",
+      "No public toilets nearby"
+    ],
+    "description": "Ambewadi is the standard base for Madangad, accessible via Ghoti or Kasara. Ghatghar can be used for alternate circuits and offers slightly better facilities."
+  },
+  "networkAvailability": {
+    "baseVillage": {
+      "airtel": "Fair",
+      "jio": "Fair",
+      "vodafone": "Weak",
+      "bsnl": "Fair"
+    },
+    "duringTrek": {
+      "airtel": "Intermittent",
+      "jio": "Intermittent",
+      "vodafone": "No signal",
+      "bsnl": "No signal"
+    },
+    "atSummit": {
+      "airtel": "No signal",
+      "jio": "No signal",
+      "vodafone": "No signal",
+      "bsnl": "No signal"
+    },
+    "emergencyContact": "Dial 108 or 112 if network is available; carry satellite phone or notify local contacts before trek."
+  },
+  "foodAndWater": {
+    "atBase": {
+      "restaurants": [
+        "Basic tea stalls in Ambewadi",
+        "Homestays providing home-cooked meals on prior arrangement"
+      ],
+      "shops": [
+        "Small grocery shop",
+        "Packaged water availability varies"
+      ],
+      "waterSources": [
+        "Village wells"
+      ]
+    },
+    "duringTrek": {
+      "waterSources": [
+        "Limited; carry minimum 3 liters per person",
+        "Rock pools and caves may have water; treat before consumption"
+      ],
+      "foodOptions": [
+        "No food stalls on trek; carry packed food"
+      ],
+      "recommendations": [
+        "High-energy snacks",
+        "Dry fruits",
+        "Electrolyte drinks"
+      ]
+    },
+    "atSummit": {
+      "facilities": [
+        "Caves for camping",
+        "Natural cisterns (water quality varies; advisable to treat)"
+      ],
+      "recommendations": [
+        "Carry water purification tablets or filters",
+        "No food availability; pack all needed supplies"
+      ]
+    }
+  },
+  "accommodation": {
+    "camping": {
+      "allowed": true,
+      "locations": [
+        "Caves on top of Madangad Fort"
+      ],
+      "facilities": [
+        "Natural caves provide basic shelter",
+        "No official campsites; campers must be self-sufficient"
+      ],
+      "cost": "Free; bring own tents and camping gear"
+    },
+    "nearbyStays": [
+      {
+        "name": "Lakhan Goikane Homestay",
+        "distance": "Located in Ambewadi village",
+        "cost": "₹500–800 per person",
+        "contact": "9975402070",
+        "facilities": [
+          "Basic rooms",
+          "Home-cooked meals",
+          "Trekking guidance"
+        ]
+      },
+      {
+        "name": "Reeva's Homestay",
+        "distance": "Located in Ghatghar village",
+        "cost": "₹400–800 per person",
+        "contact": "9764924535",
+        "facilities": [
+          "Basic amenities",
+          "Meals on advance booking"
+        ]
+      }
+    ]
+  },
+  "permits": {
+    "required": false,
+    "forestDepartment": "Not required",
+    "entry": "Free",
+    "timings": "Entry advised before noon; avoid entering after sunset. Camping allowed with village knowledge."
+  },
+  "safety": {
+    "riskLevel": "High",
+    "commonRisks": [
+      "Slippery and exposed ledges",
+      "Technical rock climbs requiring ropes and ladders",
+      "Fog and poor visibility hazards",
+      "Limited water availability in dry season"
+    ],
+    "precautions": [
+      "Trek with experienced guides familiar with AMK route",
+      "Carry first aid kits and safety harnesses",
+      "Notify local contacts before trek",
+      "Avoid monsoon or bad weather conditions"
+    ],
+    "rescuePoints": [
+      "Ambewadi village",
+      "Ghatghar village",
+      "Base of Kulang Fort (for AMK circuit)"
+    ],
+    "nearestHospital": {
+      "name": "Ghoti Rural Hospital",
+      "distance": "Approx. 40 km",
+      "contact": "02553-221379"
+    }
+  },
+  "weather": {
+    "monsoon": {
+      "months": "June–September",
+      "conditions": "Heavy rain, slippery rocks, leeches, fog, high risk",
+      "recommendation": "Only for highly experienced teams; avoid in strong rains"
+    },
+    "winter": {
+      "months": "December–February",
+      "conditions": "Cool, clear skies, best visibility",
+      "recommendation": "Best time for technical trek"
+    },
+    "summer": {
+      "months": "March–May",
+      "conditions": "Hot, scarce water, rock exposure",
+      "recommendation": "Start early; carry extra water"
+    }
+  },
+  "trekRoute": {
+    "totalDistance": "Approx. 12 km round trip (via Ambewadi)",
+    "ascent": "Approx. 900 meters",
+    "difficulty": "High; technical rock climbs, exposed traverses",
+    "waypoints": [
+      {
+        "name": "Ambewadi Village",
+        "elevation": "700 meters",
+        "description": "Trek base; limited facilities"
+      },
+      {
+        "name": "Forest Approach",
+        "elevation": "850 meters",
+        "description": "Dense forest trail to base ridge"
+      },
+      {
+        "name": "Rock Ladder Section",
+        "elevation": "1100 meters",
+        "description": "Climbing metal ladders up vertical rock"
+      },
+      {
+        "name": "Madangad Summit Caves",
+        "elevation": "1392 meters",
+        "description": "Cave camping spots and fort remains"
+      }
+    ]
+  },
+  "howToReach": {
+    "fromMumbai": {
+      "byTrain": {
+        "description": "Train to Kasara or Igatpuri, then shared taxi or jeep to Ambewadi",
+        "distance": "140 km to base",
+        "time": "4–5 hours",
+        "steps": [
+          "Train Mumbai CST/Dadar to Kasara or Igatpuri",
+          "Shared taxi/jeep from station to Ambewadi via Ghoti",
+          "Trek starts at Ambewadi village"
+        ]
+      },
+      "byBus": {
+        "description": "ST bus to Ghoti/Ghoti Phata, then local transport to Ambewadi",
+        "distance": "Approx. 140 km",
+        "time": "5–6 hours",
+        "steps": [
+          "ST bus Mumbai to Ghoti",
+          "Local taxi/shared jeep to Ambewadi",
+          "Begin trek"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive via Mumbai–Nashik highway; exit at Ghoti and proceed to Ambewadi",
+        "distance": "140 km",
+        "time": "3.5–4.5 hours",
+        "steps": [
+          "Mumbai–Nashik highway (NH160)",
+          "Exit Ghoti; drive Bhandardara road to Ambewadi",
+          "Parking limited at Ambewadi"
+        ]
+      }
+    },
+    "fromPune": {
+      "byTrain": {
+        "description": "Train to Igatpuri; shared taxi to Ambewadi",
+        "distance": "210 km",
+        "time": "6–7 hours",
+        "steps": [
+          "Pune to Igatpuri train",
+          "Shared jeep or taxi to Ambewadi"
+        ]
+      },
+      "byBus": {
+        "description": "ST bus to Nashik or Ghoti; local transport to Ambewadi",
+        "distance": "Approx. 210 km",
+        "time": "6–8 hours",
+        "steps": [
+          "ST bus from Pune to Nashik or Ghoti",
+          "Local shared taxi/jeep to Ambewadi"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive Pune–Nashik highway then Ghoti–Ambewadi road",
+        "distance": "210 km",
+        "time": "5.5–6.5 hours",
+        "steps": [
+          "Pune–Nashik highway to Ghoti",
+          "Ghoti–Bhandardara road to Ambewadi"
+        ]
+      }
+    }
+  },
+  "bestTimeToVisit": "October to March",
+  "localContacts": [
+    {
+      "name": "Lakhan Goikane",
+      "phone": "9975402070",
+      "service": "Local Guide, food, camping logistics"
+    },
+    {
+      "name": "Kailash Kekare",
+      "phone": "7972880016",
+      "service": "Technical guiding, rope and ladder setup"
+    },
+    {
+      "name": "Sunil Gawali",
+      "phone": "8007422062",
+      "service": "Navigation, camping support, transport facilitation"
+    }
+  ],
+  "imageKey": "madangad",
+  "videos": [],
+  "coordinates": {
+    "latitude": 19.5651,
+    "longitude": 73.6421
+  },
+  "featured": true,
+  "rating": 4.8,
+  "reviewCount": 60,
+ "images": [
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754057221/treks/madan/madan_1.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754057221/treks/madan/madan_4.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754057221/treks/madan/madan_5.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754057221/treks/madan/madan_6.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754057221/treks/madan/madan_7.webp",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754057221/treks/madan/madan_8.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754057221/treks/madan/madan_9.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754057221/treks/madan/madan_10.jpg"
+  ]
+}

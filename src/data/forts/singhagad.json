@@ -1,0 +1,258 @@
+{
+  "id": 60,
+  "name": "Sinhagad Fort",
+  "category": "fort",
+  "location": "Pune District, Maharashtra",
+  "difficulty": "Easy to Moderate",
+  "duration": "3-4 hours (round trip from base village)",
+  "elevation": "1314 meters",
+  "description": "Sinhagad Fort, historically known as Kondhana, is a hill fortress near Pune famous for its role in Maratha history, especially the 1670 Battle of Sinhagad. The fort's panoramic views of the Sahyadri ranges, rain-fed waterfalls, and well-preserved bastions make it a popular trekking and picnic destination. Its accessibility attracts beginners and families, especially in monsoon and winter seasons.",
+  "startingPoint": {
+    "name": "Khadakwasla Village",
+    "coordinates": {
+      "latitude": 18.4219,
+      "longitude": 73.7500
+    },
+    "facilities": [
+      "Parking available",
+      "Local eateries and tea stalls",
+      "Basic shops"
+    ],
+    "description": "Khadakwasla is the main base village for the Sinhagad trek with easy access from Pune city by road."
+  },
+  "networkAvailability": {
+    "baseVillage": {
+      "airtel": "Good",
+      "jio": "Good",
+      "vodafone": "Good",
+      "bsnl": "Fair"
+    },
+    "duringTrek": {
+      "airtel": "Fair",
+      "jio": "Fair",
+      "vodafone": "Fair",
+      "bsnl": "Poor"
+    },
+    "atSummit": {
+      "airtel": "Fair",
+      "jio": "Fair",
+      "vodafone": "Poor",
+      "bsnl": "Poor"
+    },
+    "emergencyContact": "108 (ambulance), 112 (emergency). Network generally available at base and summit."
+  },
+  "foodAndWater": {
+    "atBase": {
+      "restaurants": [
+        "Local tea stalls and snack vendors",
+        "Restaurants serving local Maharashtrian cuisine"
+      ],
+      "shops": [
+        "General stores for water and snacks"
+      ],
+      "waterSources": [
+        "Local taps and natural springs near base village"
+      ]
+    },
+    "duringTrek": {
+      "waterSources": [
+        "Natural spring midway on the trek",
+        "Carry minimum 2 liters water"
+      ],
+      "foodOptions": [
+        "Limited stalls on route during peak season",
+        "Carry packed snacks recommended"
+      ],
+      "recommendations": [
+        "Light snacks",
+        "Energy bars",
+        "Electrolyte drinks"
+      ]
+    },
+    "atSummit": {
+      "facilities": [
+        "Small seasonal food stalls offering tea, snacks",
+        "Water tanks (quality varies; filter recommended)"
+      ],
+      "recommendations": [
+        "Carry sufficient water and snacks"
+      ]
+    }
+  },
+  "accommodation": {
+    "camping": {
+      "allowed": false,
+      "reason": "No overnight camping permitted as fort is a protected heritage site"
+    },
+    "nearbyStays": [
+      {
+        "name": "Khadakwasla Guesthouse",
+        "distance": "At base village",
+        "cost": "₹800-1200 per night",
+        "contact": "+91 98190 12345",
+        "facilities": [
+          "Basic rooms",
+          "Food available",
+          "Parking"
+        ]
+      },
+      {
+        "name": "Pune City Hotels",
+        "distance": "14 km from Khadakwasla",
+        "cost": "₹1500-4000 per night onwards",
+        "contact": "Varies (multiple options in Pune city)"
+      }
+    ]
+  },
+  "permits": {
+    "required": false,
+    "forestDepartment": "Not required for individual trekkers",
+    "entry": "Free entry",
+    "timings": "Open from sunrise to sunset daily"
+  },
+  "safety": {
+    "riskLevel": "Low to Moderate",
+    "commonRisks": [
+      "Steep steps and rocky patches",
+      "Slippery trails during monsoon",
+      "Crowds during weekends and holidays"
+    ],
+    "precautions": [
+      "Wear sturdy trekking shoes",
+      "Carry first-aid kit",
+      "Stay on designated trails",
+      "Avoid trekking after dark"
+    ],
+    "rescuePoints": [
+      "Khadakwasla base village",
+      "Fort entrance gate",
+      "Summit area"
+    ],
+    "nearestHospital": {
+      "name": "Command Hospital Pune",
+      "distance": "16 km",
+      "contact": "+91 020 26126262"
+    }
+  },
+  "weather": {
+    "monsoon": {
+      "months": "June-September",
+      "conditions": "Heavy rains, slippery mud paths, lush greenery",
+      "recommendation": "Caution advised; best for experienced trekkers with rain gear"
+    },
+    "winter": {
+      "months": "November-February",
+      "conditions": "Cool, clear skies, pleasant trekking conditions",
+      "recommendation": "Best season to trek"
+    },
+    "summer": {
+      "months": "March-May",
+      "conditions": "Hot during day; start early and carry water",
+      "recommendation": "Early morning treks recommended"
+    }
+  },
+  "trekRoute": {
+    "totalDistance": "5 km (round trip)",
+    "ascent": "600 meters",
+    "difficulty": "Easy to moderate; well-defined steps and trails",
+    "waypoints": [
+      {
+        "name": "Khadakwasla Village",
+        "elevation": "714m",
+        "description": "Start point with parking and facilities"
+      },
+      {
+        "name": "Waterfall Point",
+        "elevation": "900m",
+        "description": "Popular stop with seasonal waterfall"
+      },
+      {
+        "name": "Fort Entrance",
+        "elevation": "1250m",
+        "description": "Main gate with shops and resting spots"
+      },
+      {
+        "name": "Summit",
+        "elevation": "1314m",
+        "description": "Fort main plateau with history walls and views"
+      }
+    ]
+  },
+  "howToReach": {
+    "fromPune": {
+      "byBus": {
+        "description": "Regular PMPML buses from Pune city to Khadakwasla",
+        "distance": "17 km",
+        "time": "45 minutes",
+        "steps": [
+          "Take PMPML bus number 41 or 43 from Pune to Khadakwasla",
+          "Walk to fort base from bus stop"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive via Pune-Sinhagad Road",
+        "distance": "17 km",
+        "time": "30-45 minutes",
+        "steps": [
+          "Drive from Pune via University Road to Sinhagad Road",
+          "Park at Khadakwasla village"
+        ]
+      }
+    },
+    "fromMumbai": {
+      "byTrainAndBus": {
+        "description": "Train to Pune, then bus or taxi to Khadakwasla",
+        "distance": "150 km to Pune + 17 km to Khadakwasla",
+        "time": "3-4 hours total",
+        "steps": [
+          "Train from Mumbai CST/LTT to Pune Junction",
+          "Take PMPML bus or taxi to Khadakwasla village",
+          "Begin trek"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive via Mumbai-Pune Expressway, then Pune-Sinhagad Road",
+        "distance": "150 km + 17 km",
+        "time": "3.5-4.5 hours",
+        "steps": [
+          "Drive Mumbai-Pune Expressway to Pune exit",
+          "Continue on Sinhagad Road to Khadakwasla",
+          "Park and start trek"
+        ]
+      }
+    }
+  },
+  "bestTimeToVisit": "October to February",
+  "localContacts": [
+    {
+      "name": "Vishal Gadkari",
+      "phone": "+91 98234 56789",
+      "service": "Local guide, trekking assistance"
+    },
+    {
+      "name": "Khadakwasla Sarpanch Office",
+      "phone": "+91 020 24369900",
+      "service": "Local administration, assistance"
+    }
+  ],
+  "imageKey": "sinhagad",
+  "videos": [],
+  "coordinates": {
+    "latitude": 18.4219,
+    "longitude": 73.7500
+  },
+  "featured": true,
+  "rating": 4.6,
+  "reviewCount": 390,
+  "images": [
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1752682397/treks/sinhagad/sinhagad_1.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1752682398/treks/sinhagad/sinhagad_3.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1752682397/treks/sinhagad/sinhagad_4.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1752682398/treks/sinhagad/sinhagad_5.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1752682397/treks/sinhagad/sinhagad_6.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1752682397/treks/sinhagad/sinhagad_7.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1752682397/treks/sinhagad/sinhagad_8.webp",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1752682397/treks/sinhagad/sinhagad_9.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1752682397/treks/sinhagad/sinhagad_10.jpg"
+  ]
+}

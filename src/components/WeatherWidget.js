@@ -1,343 +1,503 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   View,
   Text,
   StyleSheet,
-  ScrollView,
   TouchableOpacity,
-  Dimensions,
+  ScrollView,
+  ActivityIndicator,
+  Alert,
 } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
-import { COLORS, SHADOWS, SPACING, BORDER_RADIUS, createTextStyle } from '../utils/constants';
+import WeatherService from '../services/WeatherService';
+import { COLORS, SPACING, BORDER_RADIUS, SHADOWS, createTextStyle } from '../utils/constants';
 
-const { width } = Dimensions.get('window');
+/**
+ * Weather Widget Component
+ *
+ * Features:
+ * - Current weather display
+ * - 5-day forecast
+ * - Trek safety assessment
+ * - Weather-based recommendations
+ * - Auto-refresh functionality
+ */
+const WeatherWidget = ({
+  coordinates,
+  trekName = 'Trek Location',
+  showForecast = true,
+  showSafetyAssessment = true,
+  compact = false
+}) => {
+  const [currentWeather, setCurrentWeather] = useState(null);
+  const [forecast, setForecast] = useState(null);
+  const [safetyAssessment, setSafetyAssessment] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
+  const [lastUpdated, setLastUpdated] = useState(null);
 
-const WeatherWidget = ({ weatherData }) => {
-  const getTrekConditionColor = (condition) => {
-    switch (condition.toLowerCase()) {
-      case 'excellent': return COLORS.success;
-      case 'good': return COLORS.secondary;
+  useEffect(() => {
+    if (coordinates?.latitude && coordinates?.longitude) {
+      fetchWeatherData();
+    }
+  }, [coordinates]);
+
+  const fetchWeatherData = async () => {
+    if (!coordinates?.latitude || !coordinates?.longitude) {
+      setError(true);
+      setLoading(false);
+      return;
+    }
+
+    try {
+      setLoading(true);
+      setError(false);
+
+      const [weatherData, forecastData] = await Promise.all([
+        WeatherService.getCurrentWeather(coordinates.latitude, coordinates.longitude),
+        showForecast ? WeatherService.getWeatherForecast(coordinates.latitude, coordinates.longitude) : null,
+      ]);
+
+      setCurrentWeather(weatherData);
+      if (forecastData) {
+        setForecast(forecastData);
+      }
+
+      // Generate safety assessment
+      if (showSafetyAssessment && weatherData && !weatherData.error) {
+        const assessment = WeatherService.getTrekSafetyAssessment(
+          weatherData,
+          forecastData || { forecast: [] }
+        );
+        setSafetyAssessment(assessment);
+      }
+
+      setLastUpdated(new Date());
+    } catch (err) {
+      console.error('Weather fetch error:', err);
+      setError(true);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleRefresh = () => {
+    fetchWeatherData();
+  };
+  const formatTime = (date) => {
+    if (!date) return '';
+    return date.toLocaleTimeString('en-IN', {
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: true
+    });
+  };
+
+  const formatDate = (date) => {
+    if (!date) return '';
+    return date.toLocaleDateString('en-IN', {
+      weekday: 'short',
+      month: 'short',
+      day: 'numeric'
+    });
+  };
+
+  const getSafetyColor = (level) => {
+    switch (level) {
+      case 'safe': return COLORS.success;
       case 'caution': return COLORS.warning;
-      case 'poor': return COLORS.error;
+      case 'dangerous': return COLORS.error;
       default: return COLORS.textSecondary;
     }
   };
 
-  const getTrekConditionIcon = (condition) => {
-    switch (condition.toLowerCase()) {
-      case 'excellent': return '✅';
-      case 'good': return '👍';
+  const getSafetyIcon = (level) => {
+    switch (level) {
+      case 'safe': return '✅';
       case 'caution': return '⚠️';
-      case 'poor': return '❌';
-      default: return '❓';
+      case 'dangerous': return '🚨';
+      default: return 'ℹ️';
     }
   };
 
-  const renderWeatherCard = (weather, index) => {
-    const conditionColor = getTrekConditionColor(weather.trekCondition);
-    const conditionIcon = getTrekConditionIcon(weather.trekCondition);
-
+  if (loading) {
     return (
-      <View key={index} style={styles.weatherCard}>
-        <LinearGradient
-          colors={[COLORS.backgroundCard, COLORS.backgroundSecondary]}
-          style={styles.weatherGradient}
-          start={{ x: 0, y: 0 }}
-          end={{ x: 1, y: 1 }}
-        >
-          {/* Location Header */}
-          <View style={styles.weatherHeader}>
-            <Text style={styles.weatherIcon}>{weather.icon}</Text>
-            <View style={styles.locationInfo}>
-              <Text style={styles.locationName}>{weather.location}</Text>
-              <Text style={styles.weatherCondition}>{weather.condition}</Text>
-            </View>
-            <Text style={styles.temperature}>{weather.temperature}</Text>
-          </View>
-
-          {/* Weather Details */}
-          <View style={styles.weatherDetails}>
-            <View style={styles.detailItem}>
-              <Text style={styles.detailIcon}>💧</Text>
-              <Text style={styles.detailLabel}>Humidity</Text>
-              <Text style={styles.detailValue}>{weather.humidity}</Text>
-            </View>
-            
-            <View style={styles.detailItem}>
-              <Text style={styles.detailIcon}>💨</Text>
-              <Text style={styles.detailLabel}>Wind</Text>
-              <Text style={styles.detailValue}>{weather.windSpeed}</Text>
-            </View>
-          </View>
-
-          {/* Trek Condition */}
-          <View style={[styles.trekCondition, { backgroundColor: conditionColor + '15' }]}>
-            <Text style={styles.conditionIcon}>{conditionIcon}</Text>
-            <Text style={styles.conditionLabel}>Trek Condition:</Text>
-            <Text style={[styles.conditionValue, { color: conditionColor }]}>
-              {weather.trekCondition}
-            </Text>
-          </View>
-        </LinearGradient>
+      <View style={[styles.container, compact && styles.compactContainer]}>
+        <View style={styles.loadingContainer}>
+          <ActivityIndicator size="large" color={COLORS.primary} />
+          <Text style={styles.loadingText}>Loading weather data...</Text>
+        </View>
       </View>
     );
-  };
+  }
 
-  const renderWeatherTips = () => (
-    <View style={styles.tipsSection}>
-      <Text style={styles.tipsTitle}>🌦️ Weather Tips</Text>
-      <View style={styles.tipsList}>
-        <View style={styles.tipItem}>
-          <Text style={styles.tipIcon}>☀️</Text>
-          <Text style={styles.tipText}>
-            Clear skies are perfect for photography and panoramic views
-          </Text>
-        </View>
-        
-        <View style={styles.tipItem}>
-          <Text style={styles.tipIcon}>⛅</Text>
-          <Text style={styles.tipText}>
-            Partly cloudy conditions offer comfortable trekking temperatures
-          </Text>
-        </View>
-        
-        <View style={styles.tipItem}>
-          <Text style={styles.tipIcon}>🌧️</Text>
-          <Text style={styles.tipText}>
-            Avoid trekking during heavy rain - trails become slippery and dangerous
-          </Text>
-        </View>
-        
-        <View style={styles.tipItem}>
-          <Text style={styles.tipIcon}>🌪️</Text>
-          <Text style={styles.tipText}>
-            High winds can make ridge walks challenging - exercise extra caution
-          </Text>
+  if (error || !currentWeather) {
+    return (
+      <View style={[styles.container, compact && styles.compactContainer]}>
+        <View style={styles.errorContainer}>
+          <Text style={styles.errorIcon}>🌤️</Text>
+          <Text style={styles.errorText}>Weather data unavailable</Text>
+          <TouchableOpacity style={styles.retryButton} onPress={handleRefresh}>
+            <Text style={styles.retryButtonText}>Retry</Text>
+          </TouchableOpacity>
         </View>
       </View>
-    </View>
-  );
+    );
+  }
 
-  const renderWeatherAlert = () => (
-    <View style={styles.alertSection}>
-      <LinearGradient
-        colors={[COLORS.warning + '20', COLORS.error + '20']}
-        style={styles.alertGradient}
-        start={{ x: 0, y: 0 }}
-        end={{ x: 1, y: 0 }}
-      >
-        <View style={styles.alertContent}>
-          <Text style={styles.alertIcon}>⚠️</Text>
-          <View style={styles.alertText}>
-            <Text style={styles.alertTitle}>Weather Advisory</Text>
-            <Text style={styles.alertMessage}>
-              Monsoon season is approaching. Check local weather conditions before planning any treks.
-              Always carry rain gear and inform someone about your trekking plans.
+  if (compact) {
+    return (
+      <View style={styles.compactContainer}>
+        <View style={styles.compactWeather}>
+          <Text style={styles.compactEmoji}>
+            {WeatherService.getWeatherEmoji(currentWeather.main)}
+          </Text>
+          <View style={styles.compactInfo}>
+            <Text style={styles.compactTemp}>{currentWeather.temperature}°C</Text>
+            <Text style={styles.compactDesc}>{currentWeather.description}</Text>
+          </View>
+          {safetyAssessment && (
+            <Text style={[styles.compactSafety, { color: getSafetyColor(safetyAssessment.safetyLevel) }]}>
+              {getSafetyIcon(safetyAssessment.safetyLevel)}
+            </Text>
+          )}
+        </View>
+      </View>
+    );
+  }
+
+  return (
+    <View style={styles.container}>
+      {/* Header */}
+      <View style={styles.header}>
+        <Text style={styles.title}>🌦️ Weather Conditions</Text>
+        <TouchableOpacity style={styles.refreshButton} onPress={handleRefresh}>
+          <Text style={styles.refreshIcon}>🔄</Text>
+        </TouchableOpacity>
+      </View>
+
+      {/* Current Weather */}
+      <View style={styles.currentWeather}>
+        <View style={styles.currentMain}>
+          <Text style={styles.weatherEmoji}>
+            {WeatherService.getWeatherEmoji(currentWeather.main)}
+          </Text>
+          <View style={styles.currentInfo}>
+            <Text style={styles.temperature}>{currentWeather.temperature}°C</Text>
+            <Text style={styles.description}>{currentWeather.description}</Text>
+            <Text style={styles.feelsLike}>Feels like {currentWeather.feelsLike}°C</Text>
+          </View>
+        </View>
+
+        {/* Weather Details */}
+        <View style={styles.weatherDetails}>
+          <View style={styles.detailItem}>
+            <Text style={styles.detailIcon}>💧</Text>
+            <Text style={styles.detailLabel}>Humidity</Text>
+            <Text style={styles.detailValue}>{currentWeather.humidity}%</Text>
+          </View>
+          <View style={styles.detailItem}>
+            <Text style={styles.detailIcon}>💨</Text>
+            <Text style={styles.detailLabel}>Wind</Text>
+            <Text style={styles.detailValue}>{currentWeather.windSpeed} km/h</Text>
+          </View>
+          <View style={styles.detailItem}>
+            <Text style={styles.detailIcon}>👁️</Text>
+            <Text style={styles.detailLabel}>Visibility</Text>
+            <Text style={styles.detailValue}>
+              {currentWeather.visibility ? `${currentWeather.visibility} km` : 'N/A'}
             </Text>
           </View>
         </View>
-      </LinearGradient>
-    </View>
-  );
 
-  return (
-    <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
-      <View style={styles.content}>
-        {/* Header */}
-        <View style={styles.header}>
-          <Text style={styles.headerTitle}>🌤️ Weather Updates</Text>
-          <Text style={styles.headerSubtitle}>
-            Current conditions for popular trekking regions
-          </Text>
-        </View>
-
-        {/* Weather Alert */}
-        {renderWeatherAlert()}
-
-        {/* Weather Cards */}
-        <View style={styles.weatherSection}>
-          {weatherData.map((weather, index) => renderWeatherCard(weather, index))}
-        </View>
-
-        {/* Weather Tips */}
-        {renderWeatherTips()}
-
-        {/* Last Updated */}
-        <View style={styles.lastUpdated}>
-          <Text style={styles.lastUpdatedText}>
-            Last updated: {new Date().toLocaleTimeString()} • Tap to refresh
-          </Text>
-        </View>
+        {/* Sun Times */}
+        {currentWeather.sunrise && currentWeather.sunset && (
+          <View style={styles.sunTimes}>
+            <View style={styles.sunTime}>
+              <Text style={styles.sunIcon}>🌅</Text>
+              <Text style={styles.sunLabel}>Sunrise</Text>
+              <Text style={styles.sunValue}>{formatTime(currentWeather.sunrise)}</Text>
+            </View>
+            <View style={styles.sunTime}>
+              <Text style={styles.sunIcon}>🌇</Text>
+              <Text style={styles.sunLabel}>Sunset</Text>
+              <Text style={styles.sunValue}>{formatTime(currentWeather.sunset)}</Text>
+            </View>
+          </View>
+        )}
       </View>
-    </ScrollView>
+
+      {/* Safety Assessment */}
+      {showSafetyAssessment && safetyAssessment && (
+        <View style={[styles.safetyAssessment, { borderLeftColor: getSafetyColor(safetyAssessment.safetyLevel) }]}>
+          <View style={styles.safetyHeader}>
+            <Text style={styles.safetyIcon}>{getSafetyIcon(safetyAssessment.safetyLevel)}</Text>
+            <Text style={[styles.safetyLevel, { color: getSafetyColor(safetyAssessment.safetyLevel) }]}>
+              Trek Safety: {safetyAssessment.safetyLevel.toUpperCase()}
+            </Text>
+          </View>
+          <Text style={styles.safetyRecommendation}>{safetyAssessment.recommendation}</Text>
+          {safetyAssessment.warnings.length > 0 && (
+            <View style={styles.warningsContainer}>
+              {safetyAssessment.warnings.map((warning, index) => (
+                <Text key={index} style={styles.warningText}>• {warning}</Text>
+              ))}
+            </View>
+          )}
+        </View>
+      )}
+
+      {/* 5-Day Forecast */}
+      {showForecast && forecast && forecast.forecast.length > 0 && (
+        <View style={styles.forecastContainer}>
+          <Text style={styles.forecastTitle}>5-Day Forecast</Text>
+          <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.forecastScroll}>
+            {forecast.forecast.map((day, index) => (
+              <View key={index} style={styles.forecastDay}>
+                <Text style={styles.forecastDate}>{formatDate(day.date)}</Text>
+                <Text style={styles.forecastEmoji}>
+                  {WeatherService.getWeatherEmoji(day.condition.main)}
+                </Text>
+                <Text style={styles.forecastTemp}>{day.maxTemp}°</Text>
+                <Text style={styles.forecastTempMin}>{day.minTemp}°</Text>
+                {day.precipitation > 0 && (
+                  <Text style={styles.forecastRain}>💧 {day.precipitation}mm</Text>
+                )}
+              </View>
+            ))}
+          </ScrollView>
+        </View>
+      )}
+
+      {/* Last Updated */}
+      {lastUpdated && (
+        <Text style={styles.lastUpdated}>
+          Last updated: {formatTime(lastUpdated)}
+        </Text>
+      )}
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-  },
-  content: {
-    padding: SPACING.xl,
-  },
-  header: {
-    marginBottom: SPACING.lg,
-  },
-  headerTitle: {
-    ...createTextStyle(18, 'bold'),
-    color: COLORS.text,
-    marginBottom: SPACING.xs,
-  },
-  headerSubtitle: {
-    ...createTextStyle(14, 'regular'),
-    color: COLORS.textSecondary,
-  },
-  alertSection: {
-    marginBottom: SPACING.lg,
-  },
-  alertGradient: {
-    borderRadius: BORDER_RADIUS.lg,
-    padding: SPACING.lg,
-  },
-  alertContent: {
-    flexDirection: 'row',
-    alignItems: 'flex-start',
-  },
-  alertIcon: {
-    fontSize: 24,
-    marginRight: SPACING.sm,
-  },
-  alertText: {
-    flex: 1,
-  },
-  alertTitle: {
-    ...createTextStyle(14, 'bold'),
-    color: COLORS.text,
-    marginBottom: SPACING.xs,
-  },
-  alertMessage: {
-    ...createTextStyle(12, 'regular'),
-    color: COLORS.textSecondary,
-    lineHeight: 18,
-  },
-  weatherSection: {
-    marginBottom: SPACING.lg,
-  },
-  weatherCard: {
-    marginBottom: SPACING.lg,
-    borderRadius: BORDER_RADIUS.lg,
-    overflow: 'hidden',
-    ...SHADOWS.medium,
-  },
-  weatherGradient: {
-    padding: SPACING.lg,
-  },
-  weatherHeader: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: SPACING.md,
-  },
-  weatherIcon: {
-    fontSize: 32,
-    marginRight: SPACING.sm,
-  },
-  locationInfo: {
-    flex: 1,
-  },
-  locationName: {
-    ...createTextStyle(16, 'bold'),
-    color: COLORS.text,
-    marginBottom: SPACING.xs,
-  },
-  weatherCondition: {
-    ...createTextStyle(12, 'medium'),
-    color: COLORS.textSecondary,
-  },
-  temperature: {
-    ...createTextStyle(24, 'bold'),
-    color: COLORS.primary,
-  },
-  weatherDetails: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    marginBottom: SPACING.md,
-    paddingVertical: SPACING.sm,
-    backgroundColor: COLORS.background + '50',
-    borderRadius: BORDER_RADIUS.sm,
-  },
-  detailItem: {
-    alignItems: 'center',
-  },
-  detailIcon: {
-    fontSize: 16,
-    marginBottom: SPACING.xs,
-  },
-  detailLabel: {
-    ...createTextStyle(10, 'medium'),
-    color: COLORS.textSecondary,
-    marginBottom: SPACING.xs,
-  },
-  detailValue: {
-    ...createTextStyle(12, 'bold'),
-    color: COLORS.text,
-  },
-  trekCondition: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    padding: SPACING.sm,
-    borderRadius: BORDER_RADIUS.sm,
-  },
-  conditionIcon: {
-    fontSize: 16,
-    marginRight: SPACING.xs,
-  },
-  conditionLabel: {
-    ...createTextStyle(12, 'medium'),
-    color: COLORS.textSecondary,
-    marginRight: SPACING.xs,
-  },
-  conditionValue: {
-    ...createTextStyle(12, 'bold'),
-  },
-  tipsSection: {
-    marginBottom: SPACING.lg,
-  },
-  tipsTitle: {
-    ...createTextStyle(16, 'bold'),
-    color: COLORS.text,
-    marginBottom: SPACING.md,
-  },
-  tipsList: {
     backgroundColor: COLORS.backgroundCard,
     borderRadius: BORDER_RADIUS.lg,
     padding: SPACING.lg,
+    marginBottom: SPACING.lg,
+    ...SHADOWS.medium,
+  },
+  compactContainer: {
+    backgroundColor: COLORS.backgroundCard,
+    borderRadius: BORDER_RADIUS.md,
+    padding: SPACING.md,
+    marginBottom: SPACING.md,
     ...SHADOWS.small,
   },
-  tipItem: {
+  header: {
     flexDirection: 'row',
-    alignItems: 'flex-start',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: SPACING.lg,
+  },
+  title: {
+    ...createTextStyle(18, 'bold', COLORS.text),
+  },
+  refreshButton: {
+    padding: SPACING.sm,
+  },
+  refreshIcon: {
+    fontSize: 16,
+  },
+  loadingContainer: {
+    alignItems: 'center',
+    paddingVertical: SPACING.xl,
+  },
+  loadingText: {
+    ...createTextStyle(14, 'medium', COLORS.textSecondary),
+    marginTop: SPACING.md,
+  },
+  errorContainer: {
+    alignItems: 'center',
+    paddingVertical: SPACING.xl,
+  },
+  errorIcon: {
+    fontSize: 48,
     marginBottom: SPACING.md,
   },
-  tipIcon: {
-    fontSize: 16,
-    marginRight: SPACING.sm,
-    marginTop: 2,
+  errorText: {
+    ...createTextStyle(16, 'medium', COLORS.textSecondary),
+    marginBottom: SPACING.lg,
   },
-  tipText: {
-    ...createTextStyle(12, 'regular'),
-    color: COLORS.textSecondary,
+  retryButton: {
+    backgroundColor: COLORS.primary,
+    paddingHorizontal: SPACING.lg,
+    paddingVertical: SPACING.md,
+    borderRadius: BORDER_RADIUS.md,
+  },
+  retryButtonText: {
+    ...createTextStyle(14, 'semibold', COLORS.white),
+  },
+  currentWeather: {
+    marginBottom: SPACING.lg,
+  },
+  currentMain: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: SPACING.lg,
+  },
+  weatherEmoji: {
+    fontSize: 64,
+    marginRight: SPACING.lg,
+  },
+  currentInfo: {
     flex: 1,
-    lineHeight: 18,
+  },
+  temperature: {
+    ...createTextStyle(36, 'bold', COLORS.text),
+    lineHeight: 40,
+  },
+  description: {
+    ...createTextStyle(16, 'medium', COLORS.textSecondary),
+    textTransform: 'capitalize',
+    marginBottom: SPACING.xs,
+  },
+  feelsLike: {
+    ...createTextStyle(14, 'regular', COLORS.textLight),
+  },
+  weatherDetails: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: SPACING.lg,
+  },
+  detailItem: {
+    alignItems: 'center',
+    flex: 1,
+  },
+  detailIcon: {
+    fontSize: 20,
+    marginBottom: SPACING.xs,
+  },
+  detailLabel: {
+    ...createTextStyle(12, 'medium', COLORS.textSecondary),
+    marginBottom: SPACING.xs,
+  },
+  detailValue: {
+    ...createTextStyle(14, 'semibold', COLORS.text),
+  },
+  sunTimes: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    backgroundColor: COLORS.backgroundSecondary,
+    borderRadius: BORDER_RADIUS.md,
+    paddingVertical: SPACING.md,
+  },
+  sunTime: {
+    alignItems: 'center',
+  },
+  sunIcon: {
+    fontSize: 20,
+    marginBottom: SPACING.xs,
+  },
+  sunLabel: {
+    ...createTextStyle(12, 'medium', COLORS.textSecondary),
+    marginBottom: SPACING.xs,
+  },
+  sunValue: {
+    ...createTextStyle(14, 'semibold', COLORS.text),
+  },
+  safetyAssessment: {
+    backgroundColor: COLORS.backgroundSecondary,
+    borderRadius: BORDER_RADIUS.md,
+    padding: SPACING.lg,
+    marginBottom: SPACING.lg,
+    borderLeftWidth: 4,
+  },
+  safetyHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: SPACING.md,
+  },
+  safetyIcon: {
+    fontSize: 20,
+    marginRight: SPACING.md,
+  },
+  safetyLevel: {
+    ...createTextStyle(16, 'bold'),
+  },
+  safetyRecommendation: {
+    ...createTextStyle(14, 'medium', COLORS.text),
+    marginBottom: SPACING.md,
+  },
+  warningsContainer: {
+    marginTop: SPACING.sm,
+  },
+  warningText: {
+    ...createTextStyle(13, 'regular', COLORS.textSecondary),
+    marginBottom: SPACING.xs,
+  },
+  forecastContainer: {
+    marginBottom: SPACING.lg,
+  },
+  forecastTitle: {
+    ...createTextStyle(16, 'bold', COLORS.text),
+    marginBottom: SPACING.md,
+  },
+  forecastScroll: {
+    marginHorizontal: -SPACING.sm,
+  },
+  forecastDay: {
+    alignItems: 'center',
+    backgroundColor: COLORS.backgroundSecondary,
+    borderRadius: BORDER_RADIUS.md,
+    padding: SPACING.md,
+    marginHorizontal: SPACING.sm,
+    minWidth: 80,
+  },
+  forecastDate: {
+    ...createTextStyle(12, 'semibold', COLORS.textSecondary),
+    marginBottom: SPACING.sm,
+  },
+  forecastEmoji: {
+    fontSize: 24,
+    marginBottom: SPACING.sm,
+  },
+  forecastTemp: {
+    ...createTextStyle(16, 'bold', COLORS.text),
+  },
+  forecastTempMin: {
+    ...createTextStyle(14, 'regular', COLORS.textSecondary),
+  },
+  forecastRain: {
+    ...createTextStyle(10, 'medium', COLORS.primary),
+    marginTop: SPACING.xs,
   },
   lastUpdated: {
-    alignItems: 'center',
-    paddingTop: SPACING.lg,
-    borderTopWidth: 1,
-    borderTopColor: COLORS.surfaceBorder,
+    ...createTextStyle(12, 'regular', COLORS.textLight),
+    textAlign: 'center',
+    marginTop: SPACING.md,
   },
-  lastUpdatedText: {
-    ...createTextStyle(11, 'regular'),
-    color: COLORS.textLight,
+  // Compact styles
+  compactWeather: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  compactEmoji: {
+    fontSize: 32,
+    marginRight: SPACING.md,
+  },
+  compactInfo: {
+    flex: 1,
+  },
+  compactTemp: {
+    ...createTextStyle(18, 'bold', COLORS.text),
+  },
+  compactDesc: {
+    ...createTextStyle(12, 'medium', COLORS.textSecondary),
+    textTransform: 'capitalize',
+  },
+  compactSafety: {
+    fontSize: 20,
+    marginLeft: SPACING.md,
   },
 });
 

@@ -9,20 +9,20 @@
  */
 
 // Import all fort data
-import RajgadFort from '../data/forts/Rajgad_Fort.json';
-import SinhagadFort from '../data/forts/Sinhagad_Fort.json';
-import LohagadFort from '../data/forts/Lohagad_Fort.json';
-import TikonaFort from '../data/forts/Tikona_Fort.json';
-import TornaFort from '../data/forts/Torna_Fort.json';
-import VisapurFort from '../data/forts/Visapur_Fort.json';
+import RajgadFort from '../data/forts/raigad.json';
+import SinhagadFort from '../data/forts/singhagad.json';
+import LohagadFort from '../data/forts/lohagad.json';
+import TikonaFort from '../data/forts/tikona.json';
+import TornaFort from '../data/forts/torna.json';
+import VisapurFort from '../data/forts/visapur.json';
 import HarishchandragadFort from '../data/forts/harishchandragad.json';
 import LohagadData from '../data/forts/lohagad.json';
 import PebFort from '../data/forts/peb.json';
 
 // Import all trek data
-import AndharbandTrek from '../data/treks/Andharban_Trek.json';
-import BhimashankarTrek from '../data/treks/Bhimashankar_Trek.json';
-import KalsubaiPeak from '../data/treks/Kalsubai_Peak.json';
+import AndharbandTrek from '../data/treks/andharbhan.json';
+import BhimashankarTrek from '../data/treks/bhimashankar.json';
+import KalsubaiPeak from '../data/treks/kalsubai.json';
 import RajmachiTrek from '../data/treks/rajmachi.json';
 
 // Import all waterfall data

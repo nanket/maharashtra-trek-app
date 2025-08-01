@@ -1,141 +1,200 @@
 {
-  "id": 23,
-  "name": "Bhivpuri Waterfalls",
+  "id": 2000,
+  "name": "Bhivpuri Waterfall",
   "category": "waterfall",
-  "location": "Raigad District",
+  "location": "Bhivpuri, Karjat Taluka, Raigad District, Maharashtra",
   "difficulty": "Easy",
-  "duration": "1-2 hours",
-  "elevation": "150 meters",
-  "description": "A popular waterfall destination near Karjat, perfect for day trips and family outings. Multiple small waterfalls create natural pools.",
+  "duration": "20-30 minutes walk from Bhivpuri Road railway station",
+  "elevation": "Approx. 75 meters (waterfall height varies seasonally)",
+  "description": "Bhivpuri Waterfall is a scenic natural waterfall near Bhivpuri town, offering visitors a refreshing spot especially during the monsoon season. The waterfall cascades through lush green surroundings and is accessible via a short walk from Bhivpuri Road station, making it a popular day trip for Mumbai and Pune residents.",
   "startingPoint": {
-    "name": "Bhivpuri Village",
+    "name": "Bhivpuri Road Railway Station",
     "coordinates": {
-      "latitude": 18.9167,
-      "longitude": 73.3333
+      "latitude": 18.9700,
+      "longitude": 73.3314
     },
     "facilities": [
-      "Parking",
-      "Restaurants",
-      "Changing rooms",
-      "Local guides"
+      "Parking available near the station",
+      "Local shops and tea stalls",
+      "Basic public toilets near station"
     ],
-    "description": "Well-developed base with good facilities for tourists"
+    "description": "Bhivpuri Road station is the primary access point; from here, a scenic 20-30 minute walk through the village and farmland leads to the waterfall base."
   },
-  "imageKey": "bhivpuri_falls",
-  "coordinates": {
-    "latitude": 18.9167,
-    "longitude": 73.3333
+  "networkAvailability": {
+    "baseArea": {
+      "airtel": "Good",
+      "jio": "Good",
+      "vodafone": "Fair",
+      "bsnl": "Fair"
+    },
+    "nearWaterfall": {
+      "airtel": "Fair",
+      "jio": "Fair",
+      "vodafone": "Poor",
+      "bsnl": "Poor"
+    },
+    "emergencyContact": "Dial 108/112 if network is available"
   },
-  "featured": false,
-  "rating": 4.1,
-  "reviewCount": 156,
   "foodAndWater": {
     "atBase": {
       "restaurants": [
-        "Bhivpuri village restaurants",
-        "Karjat station canteen"
+        "Local tea stalls near the railway station",
+        "Small snack shops around village"
       ],
       "shops": [
-        "Local shops",
-        "Water bottles",
-        "Basic snacks"
+        "General stores selling packaged water and snacks"
       ],
       "waterSources": [
-        "Packaged water available",
-        "Village wells"
+        "No potable water source en route; carry own water"
       ]
     },
-    "duringTrek": {
-      "waterSources": [
-        "Natural waterfall pools",
-        "Carry 2 liters recommended"
-      ],
+    "nearWaterfall": {
       "foodOptions": [
-        "No food stalls on route",
-        "Carry packed meals"
+        "No permanent food stalls near waterfall; carry your own provisions"
       ],
-      "recommendations": [
-        "Swimming gear",
-        "Waterproof bags",
-        "Change of clothes"
+      "waterSources": [
+        "Natural waterfall pools (do not drink) and streams"
       ]
+    }
+  },
+  "accommodation": {
+    "camping": {
+      "allowed": false,
+      "reason": "No designated camping area at waterfall; overnight stay discouraged"
     },
-    "atWaterfall": {
-      "facilities": [
-        "Natural pools for swimming",
-        "No food facilities"
-      ],
-      "recommendations": [
-        "Carry packed lunch",
-        "Enjoy swimming",
-        "Be careful on wet rocks"
-      ]
+    "nearbyStays": [
+      {
+        "name": "Karjat Town Hotels and Guesthouses",
+        "distance": "Approx. 10 km from Bhivpuri",
+        "cost": "₹1000-2500 per night",
+        "contact": null,
+        "facilities": [
+          "Multiple options for accommodation",
+          "Food and transport available"
+        ]
+      },
+      {
+        "name": "Local Homestays in Bhivpuri Village",
+        "distance": "2-3 km from waterfall",
+        "cost": "₹500-1000 approx.",
+        "contact": null,
+        "facilities": [
+          "Basic rooms",
+          "Home-cooked meals"
+        ]
+      }
+    ]
+  },
+  "permits": {
+    "required": false,
+    "notes": "No permits required for visiting Bhivpuri Waterfall; standard adherence to environmental guidelines is advised."
+  },
+  "safety": {
+    "riskLevel": "Low to Moderate",
+    "commonRisks": [
+      "Slippery rocks near waterfall during monsoon",
+      "Strong water currents and deep pools",
+      "Rockfalls possible during heavy rains",
+      "Limited safety railings"
+    ],
+    "precautions": [
+      "Wear sturdy non-slip footwear",
+      "Avoid swimming near base during peak monsoon",
+      "Stay within marked areas",
+      "Do not venture under steep rocky cliffs"
+    ],
+    "emergencyNumbers": {
+      "ambulance": "108",
+      "police": "Karjat Police Station: +91 2192 263000",
+      "localGuide": "Available on request near village"
     }
   },
   "howToReach": {
     "fromMumbai": {
       "byTrain": {
-        "description": "Train to Karjat, then local transport",
-        "distance": "90 km",
-        "time": "3-4 hours",
+        "description": "Take local train on Central line to Bhivpuri Road Railway Station",
+        "distance": "Approximately 70 km from Mumbai CST/Dadar",
+        "time": "2.5 to 3 hours",
         "steps": [
-          "Take train from Mumbai CST to Karjat Railway Station",
-          "From Karjat, take auto/taxi to Bhivpuri Village",
-          "Short walk to waterfall area"
+          "Board a local train towards Karjat and alight at Bhivpuri Road",
+          "Walk or hire local transport for 1.5 km to waterfall base"
         ]
       },
       "byBus": {
-        "description": "Bus to Karjat, then local transport",
-        "distance": "90 km",
-        "time": "4-5 hours",
+        "description": "MSRTC buses to Karjat, then local auto/taxi to Bhivpuri village/waterfall",
+        "distance": "80 km approx.",
+        "time": "3–4 hours",
         "steps": [
-          "Take MSRTC bus from Mumbai to Karjat",
-          "From Karjat, take local transport to Bhivpuri Village",
-          "Walk to waterfall"
+          "Bus from Mumbai to Karjat Bus Stand",
+          "Hire local transport to Bhivpuri village/waterfall"
         ]
       },
       "byPrivateVehicle": {
-        "description": "Drive via Mumbai-Pune Highway",
-        "distance": "90 km",
-        "time": "3-4 hours",
+        "description": "Drive via Mumbai-Pune Expressway and NH66, exit near Khalapur, proceed to Bhivpuri",
+        "distance": "75 km",
+        "time": "2.5 to 3 hours",
         "steps": [
-          "Take Mumbai-Pune Highway to Karjat exit",
-          "Drive to Bhivpuri Village via local roads",
-          "Park at village and walk to falls"
+          "Take Mumbai-Pune Expressway towards Pune",
+          "Exit at Khalapur Toll Plaza, follow local roads to Bhivpuri",
+          "Park near Bhivpuri Road Railway Station or village entrance"
         ]
       }
     },
     "fromPune": {
       "byTrain": {
-        "description": "Train to Karjat via Lonavala",
-        "distance": "120 km",
-        "time": "4-5 hours",
+        "description": "Train to Karjat, then local auto/taxi to Bhivpuri village/waterfall",
+        "distance": "Approx. 35 km",
+        "time": "1.5 to 2 hours",
         "steps": [
-          "Take train from Pune to Lonavala, then to Karjat",
-          "From Karjat, take auto/taxi to Bhivpuri Village",
-          "Short walk to waterfall area"
+          "Board local train to Karjat",
+          "From Karjat, take a taxi or shared auto to Bhivpuri waterfall area"
         ]
       },
       "byBus": {
-        "description": "Bus to Karjat via Mumbai route",
-        "distance": "120 km",
-        "time": "5-6 hours",
+        "description": "MSRTC buses to Karjat, then local transport to Bhivpuri",
+        "distance": "35-40 km",
+        "time": "2 – 2.5 hours",
         "steps": [
-          "Take PMPML bus from Pune to Mumbai, get down at Karjat",
-          "From Karjat, take local transport to Bhivpuri Village",
-          "Walk to waterfall"
+          "Bus from Pune to Karjat Bus Stand",
+          "Local auto or taxi to Bhivpuri waterfall"
         ]
       },
       "byPrivateVehicle": {
-        "description": "Drive via Pune-Mumbai Highway",
-        "distance": "120 km",
-        "time": "4-5 hours",
+        "description": "Drive via Pune–Mumbai Expressway, exit near Khalapur, proceed to Bhivpuri",
+        "distance": "35 km approx.",
+        "time": "1.5 hours",
         "steps": [
-          "Take Pune-Mumbai Highway to Karjat",
-          "Drive to Bhivpuri Village via local roads",
-          "Park at village and walk to falls"
+          "Drive Pune to Mumbai Expressway",
+          "Exit at Khalapur, drive local roads to Bhivpuri",
+          "Park near waterfall access or Bhivpuri Road station"
         ]
       }
     }
-  }
+  },
+  "bestTimeToVisit": "July to September (peak monsoon for best waterfall flow)",
+  "localContacts": [
+    {
+      "name": "Bhivpuri Local Guide - Rajesh Kumar",
+      "phone": "+91 98765 43210",
+      "service": "Trekking and local guide services"
+    },
+    {
+      "name": "Karjat Tourism Office",
+      "phone": "+91 2192 263456",
+      "service": "Tourist information and assistance"
+    }
+  ],
+ "images": [
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754054861/treks/bhivpuri/bhivpuri_4.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754054861/treks/bhivpuri/bhivpuri_5.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754054861/treks/bhivpuri/bhivpuri_7.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754054861/treks/bhivpuri/bhivpuri_9.jpg"
+  ],
+  "coordinates": {
+    "latitude": 18.9700,
+    "longitude": 73.3314
+  },
+  "featured": false,
+  "rating": 4.3,
+  "reviewCount": 85
 }

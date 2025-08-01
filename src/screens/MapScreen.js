@@ -189,6 +189,8 @@ const MapScreen = ({ navigation }) => {
             placeholderTextColor={COLORS.textSecondary}
             value={searchText}
             onChangeText={setSearchText}
+            returnKeyType="search"
+            blurOnSubmit={false}
           />
           {searchText.length > 0 && (
             <TouchableOpacity onPress={() => setSearchText('')}>

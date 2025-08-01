@@ -207,6 +207,10 @@ export const IMAGES = {
   // Trek images from assets/img folder
   rajgad: require('../../assets/img/rajgad.jpg'),
   dudhsagar: require('../../assets/img/waterfall.jpg'), // Using waterfall image for Dudhsagar
+  bhivpuri_falls: require('../../assets/img/waterfall.jpg'), // Using waterfall image for Bhivpuri
+  kune_falls: require('../../assets/img/waterfall.jpg'), // Using waterfall image for Kune Falls
+  lingmala_falls: require('../../assets/img/waterfall.jpg'), // Using waterfall image for Lingmala
+  bhimashankar_waterfall: require('../../assets/img/waterfall.jpg'), // Using waterfall image for Bhimashankar Waterfall
   harishchandragad: require('../../assets/img/harishchandra.png'),
   sinhagad: require('../../assets/img/raigad.jpg'), // Using raigad for sinhagad
   bhimashankar: require('../../assets/img/harihar.jpg'), // Using harihar for bhimashankar
@@ -251,32 +255,64 @@ export const CLOUDINARY_IMAGES = {
   harishchandragad_main: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
   harishchandragad_detail1: 'https://images.unsplash.com/photo-1464822759844-d150baec4e84?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
   harishchandragad_detail2: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+
+  // Kalsubai Peak images - Maharashtra's highest peak
+  kalsubai_main: 'https://images.unsplash.com/photo-1614202223024-68de9ee90bbb?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c2FoeWFkcml8ZW58MHx8MHx8fDA%3D',
+  kalsubai_detail1: 'https://images.unsplash.com/photo-1625843019067-7e4c203a5d19?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHNhaHlhZHJpfGVufDB8fDB8fHww',
+  kalsubai_detail2: 'https://images.unsplash.com/photo-1708547981655-e67e6dada4c3?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHNhaHlhZHJpfGVufDB8fDB8fHww',
+  kalsubai_detail3: 'https://images.unsplash.com/photo-1708547981669-a28c8171727e?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHNhaHlhZHJpfGVufDB8fDB8fHww',
+
+  // Sinhagad Fort images - Historic fort near Pune
+  sinhagad_main: 'https://images.unsplash.com/photo-1572782252655-9c8771392601?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c2FoeWFkcml8ZW58MHx8MHx8fDA%3D',
+  sinhagad_detail1: 'https://images.unsplash.com/photo-1599108656750-54572dae5c9f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8c2FoeWFkcml8ZW58MHx8MHx8fDA%3D',
+  sinhagad_detail2: 'https://images.unsplash.com/photo-1609925286391-68d9dd26302c?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHNhaHlhZHJpfGVufDB8fDB8fHww',
+  sinhagad_detail3: 'https://images.unsplash.com/photo-1663745430674-180c6858f46c?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8c2FoeWFkcml8ZW58MHx8MHx8fDA%3D',
+
+  // Lohagad Fort images - Popular trekking destination
+  lohagad_main: 'https://images.unsplash.com/photo-1663079156029-a170af256f67?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c2FoeWFkcml8ZW58MHx8MHx8fDA%3D',
+  lohagad_detail1: 'https://images.unsplash.com/photo-1708547977769-5280488f442f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHNhaHlhZHJpfGVufDB8fDB8fHww',
+  lohagad_detail2: 'https://images.unsplash.com/photo-1708547981355-a10126d2f02e?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHNhaHlhZHJpfGVufDB8fDB8fHww',
+  lohagad_detail3: 'https://images.unsplash.com/photo-1708547982364-1ec84415a2db?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHNhaHlhZHJpfGVufDB8fDB8fHww',
+
+  // Additional Harishchandragad images
   harishchandragad_detail3: 'https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
   harishchandragad_detail4: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
 
-  // Sinhagad Fort images - using high-quality mountain/fort images
-  sinhagad_main: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-  sinhagad_detail1: 'https://images.unsplash.com/photo-1464822759844-d150baec4e84?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-  sinhagad_detail2: 'https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-  sinhagad_detail3: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+  // Tikona Fort images - Triangle-shaped fort
+  tikona_main: 'https://images.unsplash.com/photo-1608019425630-bec4810ccb60?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHNhaHlhZHJpfGVufDB8fDB8fHww',
+  tikona_detail1: 'https://images.unsplash.com/photo-1663781912183-2fe306596986?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHNhaHlhZHJpfGVufDB8fDB8fHww',
+  tikona_detail2: 'https://images.unsplash.com/photo-1572782252655-9c8771392601?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c2FoeWFkcml8ZW58MHx8MHx8fDA%3D',
+  tikona_detail3: 'https://images.unsplash.com/photo-1663745430674-180c6858f46c?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8c2FoeWFkcml8ZW58MHx8MHx8fDA%3D',
 
-  // Lohagad Fort images - using high-quality landscape images
-  lohagad_main: 'https://images.unsplash.com/photo-1464822759844-d150baec4e84?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-  lohagad_detail1: 'https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-  lohagad_detail2: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-  lohagad_detail3: 'https://images.unsplash.com/photo-1464822759844-d150baec4e84?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+  // Torna Fort images - Historic fort
+  torna_main: 'https://images.unsplash.com/photo-1599108656750-54572dae5c9f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8c2FoeWFkcml8ZW58MHx8MHx8fDA%3D',
+  torna_detail1: 'https://images.unsplash.com/photo-1609925286391-68d9dd26302c?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHNhaHlhZHJpfGVufDB8fDB8fHww',
+  torna_detail2: 'https://images.unsplash.com/photo-1708547977769-5280488f442f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHNhaHlhZHJpfGVufDB8fDB8fHww',
+  torna_detail3: 'https://images.unsplash.com/photo-1708547981355-a10126d2f02e?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHNhaHlhZHJpfGVufDB8fDB8fHww',
 
-  // Kalsubai Peak images - using high-quality mountain peak images
-  kalsubai_main: 'https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-  kalsubai_detail1: 'https://images.unsplash.com/photo-1464822759844-d150baec4e84?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-  kalsubai_detail2: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-  kalsubai_detail3: 'https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+  // Visapur Fort images - Twin fort with Lohagad
+  visapur_main: 'https://images.unsplash.com/photo-1708547982364-1ec84415a2db?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHNhaHlhZHJpfGVufDB8fDB8fHww',
+  visapur_detail1: 'https://images.unsplash.com/photo-1614202223024-68de9ee90bbb?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c2FoeWFkcml8ZW58MHx8MHx8fDA%3D',
+  visapur_detail2: 'https://images.unsplash.com/photo-1625843019067-7e4c203a5d19?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHNhaHlhZHJpfGVufDB8fDB8fHww',
+  visapur_detail3: 'https://images.unsplash.com/photo-1708547981655-e67e6dada4c3?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHNhaHlhZHJpfGVufDB8fDB8fHww',
 
-  // Dudhsagar Waterfall images - using high-quality waterfall images
-  dudhsagar_main: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-  dudhsagar_detail1: 'https://images.unsplash.com/photo-1464822759844-d150baec4e84?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-  dudhsagar_detail2: 'https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-  dudhsagar_detail3: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+  // Dudhsagar Waterfalls images - Spectacular waterfall
+  dudhsagar_main: 'https://images.unsplash.com/photo-1692626453173-7af2d5b64426?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2FoeWFkcml8ZW58MHx8MHx8fDA%3D',
+  dudhsagar_detail1: 'https://images.unsplash.com/photo-1692626453173-7af2d5b64426?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2FoeWFkcml8ZW58MHx8MHx8fDA%3D',
+  dudhsagar_detail2: 'https://images.unsplash.com/photo-1708547977769-5280488f442f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHNhaHlhZHJpfGVufDB8fDB8fHww',
+  dudhsagar_detail3: 'https://images.unsplash.com/photo-1663079156029-a170af256f67?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c2FoeWFkcml8ZW58MHx8MHx8fDA%3D',
+
+  // Bhimashankar images - Temple and trek destination
+  bhimashankar_main: 'https://images.unsplash.com/photo-1625843019067-7e4c203a5d19?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHNhaHlhZHJpfGVufDB8fDB8fHww',
+  bhimashankar_detail1: 'https://images.unsplash.com/photo-1708547981669-a28c8171727e?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHNhaHlhZHJpfGVufDB8fDB8fHww',
+  bhimashankar_detail2: 'https://images.unsplash.com/photo-1663079156029-a170af256f67?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c2FoeWFkcml8ZW58MHx8MHx8fDA%3D',
+  bhimashankar_detail3: 'https://images.unsplash.com/photo-1708547977769-5280488f442f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHNhaHlhZHJpfGVufDB8fDB8fHww',
+
+  // Andharban Trek images - Dense forest trek
+  andharban_main: 'https://images.unsplash.com/photo-1708547981355-a10126d2f02e?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHNhaHlhZHJpfGVufDB8fDB8fHww',
+  andharban_detail1: 'https://images.unsplash.com/photo-1708547982364-1ec84415a2db?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHNhaHlhZHJpfGVufDB8fDB8fHww',
+  andharban_detail2: 'https://images.unsplash.com/photo-1692626453173-7af2d5b64426?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2FoeWFkcml8ZW58MHx8MHx8fDA%3D',
+  andharban_detail3: 'https://images.unsplash.com/photo-1663745430674-180c6858f46c?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8c2FoeWFkcml8ZW58MHx8MHx8fDA%3D',
 };
 
 // Image collections for carousel
@@ -287,10 +323,13 @@ export const TREK_IMAGE_COLLECTIONS = {
   lohagad: ['lohagad_main', 'lohagad_detail1', 'lohagad_detail2', 'lohagad_detail3'],
   kalsubai: ['kalsubai_main', 'kalsubai_detail1', 'kalsubai_detail2', 'kalsubai_detail3'],
   dudhsagar: ['dudhsagar_main', 'dudhsagar_detail1', 'dudhsagar_detail2', 'dudhsagar_detail3'],
-  // Treks with single images for now - can be expanded with real images
-  bhimashankar: ['bhimashankar'],
-  tikona: ['tikona'],
-  visapur: ['visapur'],
-  torna: ['torna'],
-  andharban: ['andharban'],
+  bhimashankar: ['bhimashankar_main', 'bhimashankar_detail1', 'bhimashankar_detail2', 'bhimashankar_detail3'],
+  tikona: ['tikona_main', 'tikona_detail1', 'tikona_detail2', 'tikona_detail3'],
+  visapur: ['visapur_main', 'visapur_detail1', 'visapur_detail2', 'visapur_detail3'],
+  torna: ['torna_main', 'torna_detail1', 'torna_detail2', 'torna_detail3'],
+  andharban: ['andharban_main', 'andharban_detail1', 'andharban_detail2', 'andharban_detail3'],
+  // Additional trek image collections can be added here
+  raigad: ['rajgad_main', 'rajgad_detail1', 'rajgad_detail2', 'rajgad_detail3'], // Alias for raigad
+  peb: ['lohagad_main', 'lohagad_detail1', 'lohagad_detail2'], // Using similar fort images for Peb
+  rajmachi: ['sinhagad_main', 'sinhagad_detail1', 'sinhagad_detail2'], // Using similar trek images
 };

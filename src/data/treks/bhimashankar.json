@@ -1,0 +1,288 @@
+{
+  "id": 100,
+  "name": "Bhimashankar Trek",
+  "category": "jungle trek",
+  "location": "Khed, Pune District, Maharashtra",
+  "difficulty": "Moderate to Difficult (via Shidi Ghat/Ganesh Ghat)",
+  "duration": "3.5-4 hours (one way, Shidi Ghat); 5-7 hours (one way, Ganesh Ghat)",
+  "elevation": "1,131 meters",
+  "description": "Bhimashankar Trek is a popular Sahyadri trail leading to the Bhimashankar Jyotirlinga temple, set amidst thick forest and abundant wildlife. There are two principal routes: the adventurous Shidi (ladder) Ghat and the longer, gentler Ganesh Ghat. The trek is famous for misty valleys, cloud forests, rare Giant Squirrel sightings, and historic ladders bolted onto cliffs. Ideal post-monsoon until early spring.",
+  "startingPoint": {
+    "name": "Khandas Village (base for both routes)",
+    "coordinates": { "latitude": 19.0471, "longitude": 73.5380 },
+    "facilities": [
+      "Parking for cars and bikes",
+      "Tea/snack shops and homestays",
+      "Basic restrooms (at village)"
+    ],
+    "description": "Khandas (near Karjat) is the start for both Shidi Ghat and Ganesh Ghat. Locals offer food, guiding, and camping on advance request."
+  },
+  "networkAvailability": {
+    "baseVillage": {
+      "airtel": "Good",
+      "jio": "Good",
+      "vodafone": "Good",
+      "bsnl": "Good"
+    },
+    "duringTrek": {
+      "airtel": "Intermittent",
+      "jio": "Intermittent",
+      "vodafone": "Spotty",
+      "bsnl": "Spotty"
+    },
+    "atSummit": {
+      "airtel": "Fair",
+      "jio": "Good",
+      "vodafone": "Fair",
+      "bsnl": "Fair"
+    },
+    "emergencyContact": "108 (ambulance), 112 (any emergency); inform Khandas village before trek"
+  },
+  "foodAndWater": {
+    "atBase": {
+      "restaurants": [
+        "Nana’s Tea House",
+        "Khandas Village Dhabas"
+      ],
+      "shops": [
+        "General stores (water, sandwiches, snacks)"
+      ],
+      "waterSources": [
+        "Village wells and borewells (filtered/boiled advised)"
+      ]
+    },
+    "duringTrek": {
+      "waterSources": [
+        "Seasonal streams (monsoon/post-monsoon) – filtering recommended",
+        "Carry minimum 2-3 liters per person"
+      ],
+      "foodOptions": [
+        "No food stalls after base; carry your own packed food"
+      ],
+      "recommendations": [
+        "Electrolyte",
+        "Dry snacks",
+        "Energy bars"
+      ]
+    },
+    "atSummit": {
+      "facilities": [
+        "Restaurants and stalls near Bhimashankar temple (limited early morning/late evening)"
+      ],
+      "recommendations": [
+        "Multiple stalls for hot poha, tea, full meal (temple area)"
+      ]
+    }
+  },
+  "accommodation": {
+    "camping": {
+      "allowed": true,
+      "locations": [
+        "Khandas village (open ground, tents by villagers)",
+        "Near Hanuman temple (just outside forest border)"
+      ],
+      "facilities": [
+        "Local tent rental with mat, blanket",
+        "Home-cooked meals on order"
+      ],
+      "cost": "₹800–1,200 per person (tent + meals; varies by season)"
+    },
+    "nearbyStays": [
+      {
+        "name": "Patil Homestay Khandas",
+        "distance": "At base village",
+        "cost": "₹700–1,000 per night",
+        "contact": "9823213343",
+        "facilities": [
+          "Private/shared rooms",
+          "Food on order",
+          "Parking"
+        ]
+      },
+      {
+        "name": "Bhimashankar Temple Dharmashala",
+        "distance": "At temple (summit)",
+        "cost": "Donation-based (₹150–250 per bed)",
+        "contact": "9423993333",
+        "facilities": [
+          "Dormitories/dorm beds",
+          "Meals at temple canteen"
+        ]
+      }
+    ]
+  },
+  "permits": {
+    "required": false,
+    "forestDepartment": "Not required for trek; temple entry open to all.",
+    "entry": "Free for trek, ₹50-100 for parking, camera tickets at temple (as applicable)",
+    "timings": "Open sunrise to sunset; forest gate sometimes closed in dark for solo travelers"
+  },
+  "safety": {
+    "riskLevel": "Moderate to High (monsoon and for Shidi Ghat ladder sections)",
+    "commonRisks": [
+      "Slippery ladders, steep rock faces (Shidi Ghat)",
+      "Loose stones, mud, leech bites (monsoon)",
+      "Dense fog, poor visibility",
+      "Wildlife (snakes, insects; rare leopard in forest)"
+    ],
+    "precautions": [
+      "Sturdy trekking shoes",
+      "Use ladders/rails with caution",
+      "Start trek early morning",
+      "Travel in groups",
+      "Carry rain gear and first aid"
+    ],
+    "rescuePoints": [
+      "Khandas base",
+      "Shidi Ghat exit/bridge",
+      "Bhimashankar temple checkpost"
+    ],
+    "nearestHospital": {
+      "name": "Sub District Hospital Karjat",
+      "distance": "32 km",
+      "contact": "02148-222438"
+    }
+  },
+  "weather": {
+    "monsoon": {
+      "months": "June–September",
+      "conditions": "Heavy rain, waterfalls, slippery ladders, thick fog",
+      "recommendation": "Only for experienced/fit trekkers; avoid solo. Check with Khandas locals about ladder condition beforehand."
+    },
+    "winter": {
+      "months": "October–February",
+      "conditions": "Cool, mistless, crisp air, clear trails",
+      "recommendation": "Best for beginners and families"
+    },
+    "summer": {
+      "months": "March–May",
+      "conditions": "Hot afternoons, little shade in lower stretches",
+      "recommendation": "Early morning start advised; carry extra water"
+    }
+  },
+  "trekRoute": {
+    "totalDistance": "Shidi Ghat: 8 km (one way); Ganesh Ghat: 13-15 km (one way)",
+    "ascent": "From 600m (Khandas) to 1,131m (Bhimashankar plateau)",
+    "difficulty": "Moderate (Ganesh Ghat), Moderate-Difficult (Shidi Ghat, especially in rain)",
+    "waypoints": [
+      {
+        "name": "Khandas Village",
+        "elevation": "600m",
+        "description": "Trek base; shops, stays, parking"
+      },
+      {
+        "name": "Shidi Ghat Junction",
+        "elevation": "750m",
+        "description": "Start of ladder climb (becomes river crossing in monsoon)"
+      },
+      {
+        "name": "Ganesh Ghat Forest Stretch",
+        "elevation": "780m",
+        "description": "Longer, less steep but exposed to sun/forest"
+      },
+      {
+        "name": "Bhimashankar Plateau",
+        "elevation": "1,131m",
+        "description": "Temple, canteen, housing, and local market"
+      }
+    ]
+  },
+  "howToReach": {
+    "fromMumbai": {
+      "byTrain": {
+        "description": "Central Line local train to Karjat, then shared jeep/autos to Khandas",
+        "distance": "90 km to Karjat; another 37 km by road",
+        "time": "3–4 hours total",
+        "steps": [
+          "Train from Mumbai CST/Dadar to Karjat",
+          "Bus/jeep/auto to Khandas (via Kashele, 60–90 min)"
+        ]
+      },
+      "byBus": {
+        "description": "ST bus from Mumbai to Karjat, then to Kashele/Khandas",
+        "distance": "110 km",
+        "time": "4–5 hours",
+        "steps": [
+          "Bus: Mumbai to Karjat",
+          "Change to Kashele bus, then auto to Khandas"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive via Mumbai–Pune Expressway to Karjat then to Khandas",
+        "distance": "110 km",
+        "time": "3 hours",
+        "steps": [
+          "Drive Mumbai-CST/LTT to Karjat via Panvel",
+          "Follow Kashele road, signage to Khandas, parking at village"
+        ]
+      }
+    },
+    "fromPune": {
+      "byTrain": {
+        "description": "Train to Karjat; local transport to Khandas",
+        "distance": "105 km",
+        "time": "3.5–4 hours",
+        "steps": [
+          "Train Pune to Karjat (via Lonavala)",
+          "Auto/jeep to Khandas (via Kashele)"
+        ]
+      },
+      "byBus": {
+        "description": "Bus Pune–Karjat, then to Khandas",
+        "distance": "107 km",
+        "time": "4 hours",
+        "steps": [
+          "MSRTC bus to Karjat",
+          "Change to Kashele bus, then auto to Khandas"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive via Lonavala and Karjat to Khandas",
+        "distance": "110 km",
+        "time": "3 hours",
+        "steps": [
+          "Pune Expressway to Lonavala",
+          "Exit to Karjat road, onward to Khandas"
+        ]
+      }
+    }
+  },
+  "bestTimeToVisit": "October to February (post-monsoon, clear skies, minimal crowds)",
+  "localContacts": [
+    {
+      "name": "Khandas Village Guide (Sunil Patil)",
+      "phone": "9823322551",
+      "service": "Guide, tent rental, food"
+    },
+    {
+      "name": "Khandas Trekking Logistics (Patil Family)",
+      "phone": "9892396767",
+      "service": "Homestay, camping, supplies, emergency"
+    },
+    {
+      "name": "Bhimashankar Forest Department Desk",
+      "phone": "02114-222134",
+      "service": "Wildlife sanctuary details, emergencies"
+    }
+  ],
+  "imageKey": "bhimashankar",
+  "videos": [],
+  "coordinates": {
+    "latitude": 19.0471,
+    "longitude": 73.5380
+  },
+  "featured": true,
+  "rating": 4.8,
+  "reviewCount": 154,
+ "images": [
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754053327/treks/bhimashankar/bhimashankar_1.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754053327/treks/bhimashankar/bhimashankar_2.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754053327/treks/bhimashankar/bhimashankar_3.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754053327/treks/bhimashankar/bhimashankar_4.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754053327/treks/bhimashankar/bhimashankar_6.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754053327/treks/bhimashankar/bhimashankar_7.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754053327/treks/bhimashankar/bhimashankar_8.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754053327/treks/bhimashankar/bhimashankar_9.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754053327/treks/bhimashankar/bhimashankar_10.jpg"
+  ]
+}

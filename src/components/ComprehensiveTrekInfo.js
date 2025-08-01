@@ -707,6 +707,7 @@ const ComprehensiveTrekInfo = ({ trek }) => {
           horizontal
           showsHorizontalScrollIndicator={false}
           contentContainerStyle={styles.tabsScrollContent}
+          keyboardShouldPersistTaps="handled"
         >
           {tabs.map((tab) => (
             <TouchableOpacity
@@ -743,7 +744,12 @@ const ComprehensiveTrekInfo = ({ trek }) => {
       </View>
 
       {/* Tab Content */}
-      <ScrollView style={styles.contentContainer} showsVerticalScrollIndicator={false}>
+      <ScrollView
+        style={styles.contentContainer}
+        showsVerticalScrollIndicator={false}
+        keyboardShouldPersistTaps="handled"
+        keyboardDismissMode="on-drag"
+      >
         {renderTabContent()}
       </ScrollView>
     </View>

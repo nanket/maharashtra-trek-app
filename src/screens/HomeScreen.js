@@ -22,9 +22,35 @@ const { width, height } = Dimensions.get('window');
 const HomeScreen = ({ navigation }) => {
   const [searchText, setSearchText] = useState('');
 
+  // Dynamic greeting based on time of day
+  const getGreeting = () => {
+    const hour = new Date().getHours();
+    if (hour < 12) {
+      return 'Good morning 👋';
+    } else if (hour < 17) {
+      return 'Good afternoon ☀️';
+    } else if (hour < 21) {
+      return 'Good evening 🌅';
+    } else {
+      return 'Good night 🌙';
+    }
+  };
+
   // Get data from LocalDataService
   const allData = LocalDataService.getAllData();
   const topTreks = LocalDataService.getFeaturedData(5);
+
+  // Get dynamic waterfall data - prioritize top rated, fallback to all waterfalls
+  const getWaterfallData = () => {
+    const topRated = LocalDataService.getTopRatedByCategory('waterfall', 5);
+    if (topRated.length > 0) {
+      return topRated;
+    }
+    // Fallback to all waterfalls if no ratings available
+    return LocalDataService.getDataByCategory('waterfall').slice(0, 5);
+  };
+
+  const waterfallTreks = getWaterfallData();
 
   const handleTrekPress = (trek) => {
     navigation.navigate('TrekDetails', { trek });
@@ -60,7 +86,7 @@ const HomeScreen = ({ navigation }) => {
       <View style={styles.header}>
         <View style={styles.headerTop}>
           <View>
-            <Text style={styles.greeting}>Good morning 👋</Text>
+            <Text style={styles.greeting}>{getGreeting()}</Text>
             <Text style={styles.appName}>Explore Maharashtra</Text>
           </View>
           <TouchableOpacity style={styles.profileButton}>
@@ -82,12 +108,19 @@ const HomeScreen = ({ navigation }) => {
               value={searchText}
               onChangeText={setSearchText}
               onSubmitEditing={handleSearchPress}
+              returnKeyType="search"
+              blurOnSubmit={false}
             />
           </View>
         </View>
       </View>
 
-      <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
+      <ScrollView
+        style={styles.scrollView}
+        showsVerticalScrollIndicator={false}
+        keyboardShouldPersistTaps="handled"
+        keyboardDismissMode="on-drag"
+      >
 
         {/* Categories - Clean Icons */}
         <View style={styles.categoriesSection}>
@@ -133,6 +166,49 @@ const HomeScreen = ({ navigation }) => {
 
           <FlatList
             data={topTreks}
+            renderItem={({ item }) => (
+              <TouchableOpacity
+                style={styles.featuredCard}
+                onPress={() => handleTrekPress(item)}
+                activeOpacity={0.8}
+              >
+                <Image
+                  source={getImageSource(item)}
+                  style={styles.featuredImage}
+                />
+                <View style={styles.featuredContent}>
+                  <View style={styles.featuredHeader}>
+                    <Text style={styles.featuredTitle}>{item.name}</Text>
+                    <View style={styles.ratingContainer}>
+                      <Text style={styles.ratingText}>⭐ {item.rating}</Text>
+                    </View>
+                  </View>
+                  <Text style={styles.featuredLocation}>{item.location}</Text>
+                  <View style={styles.featuredFooter}>
+                    <Text style={styles.featuredDifficulty}>{item.difficulty}</Text>
+                    <Text style={styles.featuredDuration}>{item.duration}</Text>
+                  </View>
+                </View>
+              </TouchableOpacity>
+            )}
+            keyExtractor={(item) => item.id.toString()}
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            contentContainerStyle={styles.featuredList}
+          />
+        </View>
+
+        {/* Popular Waterfalls - Clean Cards */}
+        <View style={styles.section}>
+          <View style={styles.sectionHeader}>
+            <Text style={styles.sectionTitle}>🏞️ Top Rated Waterfalls</Text>
+            <TouchableOpacity onPress={() => navigation.navigate('TrekList', { category: 'waterfall' })}>
+              <Text style={styles.viewAllText}>View all</Text>
+            </TouchableOpacity>
+          </View>
+
+          <FlatList
+            data={waterfallTreks}
             renderItem={({ item }) => (
               <TouchableOpacity
                 style={styles.featuredCard}

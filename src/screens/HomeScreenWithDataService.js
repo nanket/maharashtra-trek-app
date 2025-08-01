@@ -129,7 +129,12 @@ const HomeScreen = ({ navigation }) => {
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="light-content" backgroundColor={COLORS.primary} />
       
-      <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
+      <ScrollView
+        style={styles.scrollView}
+        showsVerticalScrollIndicator={false}
+        keyboardShouldPersistTaps="handled"
+        keyboardDismissMode="on-drag"
+      >
         {/* Header */}
         <LinearGradient
           colors={[COLORS.primary, COLORS.primaryDark]}
@@ -161,6 +166,8 @@ const HomeScreen = ({ navigation }) => {
                 value={searchText}
                 onChangeText={setSearchText}
                 onSubmitEditing={handleSearchPress}
+                returnKeyType="search"
+                blurOnSubmit={false}
               />
               <TouchableOpacity style={styles.searchButton} onPress={handleSearchPress}>
                 <Text style={styles.searchIcon}>🔍</Text>

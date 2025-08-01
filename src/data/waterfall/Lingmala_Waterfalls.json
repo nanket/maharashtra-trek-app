@@ -1,142 +1,161 @@
 {
-  "id": 14,
-  "name": "Lingmala Waterfalls",
+  "id": 4000,
+  "name": "Lingmala Waterfall",
   "category": "waterfall",
-  "location": "Satara District",
-  "difficulty": "Easy",
-  "duration": "1-2 hours",
-  "elevation": "1267 meters",
-  "description": "A scenic waterfall near Mahabaleshwar, cascading from a height of 500 feet. Surrounded by lush green valleys and strawberry farms.",
+  "location": "Mahabaleshwar, Satara District, Maharashtra",
+  "difficulty": "Easy to Moderate",
+  "duration": "1.5 to 2 hours (including 1.5 km walk from gate to mini waterfall and 2.5 km to main waterfall viewpoint)",
+  "elevation": "Approx. 1,278 meters",
+  "description": "Lingmala Waterfall is a spectacular natural waterfall located between Mahabaleshwar and Panchgani on the Venna River. It features a main waterfall dropping nearly 500 feet and a smaller mini waterfall closer to the entry point which is safe for swimming and splashing. Surrounded by lush greenery and rocky mountains, it offers a tranquil atmosphere and scenic views, popular especially during monsoon and post-monsoon seasons.",
   "startingPoint": {
-    "name": "Mahabaleshwar",
+    "name": "Lingmala Waterfall Gate",
     "coordinates": {
-      "latitude": 17.9167,
-      "longitude": 73.65
+      "latitude": 17.9230,
+      "longitude": 73.6545
     },
     "facilities": [
-      "Hotels",
-      "Restaurants",
-      "Parking",
-      "Tourist facilities"
+      "Parking area",
+      "Ticket counter",
+      "Entry gate",
+      "Basic washrooms"
     ],
-    "description": "Popular hill station with excellent tourist infrastructure"
+    "description": "The entry gate is accessible by road from Mahabaleshwar town (6 km away). Visitors park here and trek down stairs to reach the waterfalls. The path includes steps and two main trails branching to mini waterfall and main waterfall viewpoints."
   },
-  "imageKey": "lingmala_falls",
-  "coordinates": {
-    "latitude": 17.9167,
-    "longitude": 73.65
+  "networkAvailability": {
+    "parkingArea": {
+      "airtel": "Good",
+      "jio": "Good",
+      "vodafone": "Fair",
+      "bsnl": "Fair"
+    },
+    "waterfallArea": {
+      "airtel": "Fair",
+      "jio": "Fair",
+      "vodafone": "Poor",
+      "bsnl": "Poor"
+    },
+    "emergencyContact": "Dial 108 or 112 if network is available"
   },
-  "featured": true,
-  "rating": 4.4,
-  "reviewCount": 234,
   "foodAndWater": {
     "atBase": {
       "restaurants": [
-        "Mahabaleshwar restaurants",
-        "Hotel dining",
-        "Street food stalls"
+        "Local tea stalls and snack vendors near entry gate"
       ],
       "shops": [
-        "Tourist shops",
-        "Water bottles",
-        "Local strawberries"
+        "Small shops selling packaged water and snacks"
       ],
       "waterSources": [
-        "Hotel water",
-        "Packaged water readily available"
+        "No potable water except shops; carry own water"
       ]
     },
-    "duringTrek": {
-      "waterSources": [
-        "Natural waterfall",
-        "Carry 1-2 liters sufficient"
-      ],
+    "nearWaterfall": {
       "foodOptions": [
-        "No food stalls on route",
-        "Carry light snacks"
+        "No food stalls on trek; carry snacks if needed"
       ],
-      "recommendations": [
-        "Local strawberries",
-        "Energy snacks",
-        "Camera for photos"
-      ]
-    },
-    "atWaterfall": {
-      "facilities": [
-        "Natural water source",
-        "Scenic viewpoints"
-      ],
-      "recommendations": [
-        "Carry packed snacks",
-        "Enjoy the 500ft cascade",
-        "Photography"
+      "waterSources": [
+        "Natural water from waterfall pools (not for drinking)"
       ]
     }
   },
+  "accommodation": {
+    "camping": {
+      "allowed": false,
+      "reason": "No camping permitted at or near Lingmala Waterfall site"
+    },
+    "nearbyStays": [
+      {
+        "name": "Mahabaleshwar Hotels and Guesthouses",
+        "distance": "6 km from waterfall gate",
+        "cost": "₹1000 - ₹3500 per night",
+        "contact": null,
+        "facilities": [
+          "Various accommodation options with restaurants and amenities"
+        ]
+      }
+    ]
+  },
+  "permits": {
+    "required": true,
+    "fee": "INR 20 per person; INR 10 for camera",
+    "timings": "Open daily 8:00 AM to 5:30 PM",
+    "notes": "Entry tickets collected at the gate; avoid littering and follow safety rules."
+  },
+  "safety": {
+    "riskLevel": "Low to Moderate",
+    "commonRisks": [
+      "Slippery stairs and rocky areas especially during monsoon",
+      "Steep descent and ascent requiring caution",
+      "No swimming allowed at main waterfall; swimming only at mini waterfall"
+    ],
+    "precautions": [
+      "Wear sturdy footwear",
+      "Avoid visiting during heavy rains",
+      "Supervise children near water",
+      "Use handrails on steps"
+    ],
+    "emergencyNumbers": {
+      "ambulance": "108",
+      "police": "Satara Police",
+      "localHelp": "Entry gate staff"
+    }
+  },
   "howToReach": {
-    "fromMumbai": {
-      "byTrain": {
-        "description": "Train to Pune, then bus to Mahabaleshwar",
-        "distance": "280 km",
-        "time": "7-8 hours",
+    "fromMahabaleshwar": {
+      "byRoad": {
+        "description": "Drive or take taxi from Mahabaleshwar town to Lingmala Waterfall gate (6 km)",
+        "time": "15-20 minutes",
         "steps": [
-          "Take train from Mumbai CST to Pune Railway Station",
-          "From Pune, take MSRTC bus to Mahabaleshwar",
-          "Local transport to Lingmala Waterfalls"
+          "Start from Mahabaleshwar town center",
+          "Drive towards Panchgani on SH73",
+          "Turn right at signboard for Lingmala Waterfall",
+          "Park at waterfall gate"
         ]
       },
-      "byBus": {
-        "description": "Direct bus to Mahabaleshwar",
-        "distance": "280 km",
-        "time": "8-9 hours",
-        "steps": [
-          "Take MSRTC bus from Mumbai to Mahabaleshwar",
-          "From Mahabaleshwar, take local transport to falls",
-          "Short walk to waterfall viewpoint"
-        ]
-      },
-      "byPrivateVehicle": {
-        "description": "Drive via Mumbai-Pune-Satara route",
-        "distance": "280 km",
-        "time": "6-7 hours",
-        "steps": [
-          "Take Mumbai-Pune Expressway to Pune",
-          "Continue via Satara to Mahabaleshwar",
-          "Drive to Lingmala Falls parking area"
-        ]
+      "byWalk": {
+        "description": "Trek from Mahabaleshwar town via forest trails (alternative route, longer)",
+        "time": "1.5-2 hours",
+        "notes": "Suitable for experienced trekkers"
       }
     },
     "fromPune": {
-      "byTrain": {
-        "description": "Train to Satara, then bus to Mahabaleshwar",
-        "distance": "120 km",
-        "time": "4-5 hours",
-        "steps": [
-          "Take train from Pune to Satara Railway Station",
-          "From Satara, take MSRTC bus to Mahabaleshwar",
-          "Local transport to Lingmala Waterfalls"
-        ]
-      },
-      "byBus": {
-        "description": "Direct bus to Mahabaleshwar",
-        "distance": "120 km",
-        "time": "4-5 hours",
-        "steps": [
-          "Take PMPML/MSRTC bus from Pune to Mahabaleshwar",
-          "From Mahabaleshwar, take local transport to falls",
-          "Short walk to waterfall viewpoint"
-        ]
-      },
-      "byPrivateVehicle": {
-        "description": "Drive via Pune-Satara Highway",
-        "distance": "120 km",
-        "time": "3-4 hours",
-        "steps": [
-          "Take Pune-Satara Highway",
-          "Continue to Mahabaleshwar via ghat roads",
-          "Drive to Lingmala Falls parking area"
-        ]
+      "byRoad": {
+        "description": "Take NH48 to Wai, then SH72 to Mahabaleshwar; proceed as above",
+        "distance": "Approx. 120 km",
+        "time": "3.5-4 hours"
+      }
+    },
+    "fromMumbai": {
+      "byRoad": {
+        "description": "Drive via NH48 to Pune, then NH48 to Wai and SH72 to Mahabaleshwar",
+        "distance": "Approx. 260 km",
+        "time": "5-6 hours"
       }
     }
-  }
+  },
+  "bestTimeToVisit": "July to October (monsoon and post-monsoon for best flow and greenery)",
+  "localContacts": [
+    {
+      "name": "Mahabaleshwar Tourist Information Centre",
+      "phone": "+91 2168 273025",
+      "service": "Tourist assistance, permits, and local info"
+    }
+  ],
+"images": [
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754055949/treks/lingmala/lingmala_1.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754055947/treks/lingmala/lingmala_2.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754055947/treks/lingmala/lingmala_3.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754055947/treks/lingmala/lingmala_5.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754055948/treks/lingmala/lingmala_6.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754055948/treks/lingmala/lingmala_7.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754055947/treks/lingmala/lingmala_8.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754055947/treks/lingmala/lingmala_9.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754055947/treks/lingmala/lingmala_10.jpg"
+  ],
+  "coordinates": {
+    "latitude": 17.9230,
+    "longitude": 73.6545
+  },
+  "featured": true,
+  "rating": 4.6,
+  "reviewCount": 240
 }

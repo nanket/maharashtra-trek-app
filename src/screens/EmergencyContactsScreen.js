@@ -144,7 +144,11 @@ const EmergencyContactsScreen = ({ navigation }) => {
           </TouchableOpacity>
         </View>
 
-        <ScrollView style={styles.formContainer}>
+        <ScrollView
+          style={styles.formContainer}
+          keyboardShouldPersistTaps="handled"
+          keyboardDismissMode="on-drag"
+        >
           <View style={styles.inputGroup}>
             <Text style={styles.inputLabel}>Name *</Text>
             <TextInput
@@ -153,6 +157,8 @@ const EmergencyContactsScreen = ({ navigation }) => {
               onChangeText={(text) => setFormData({ ...formData, name: text })}
               placeholder="Enter contact name"
               placeholderTextColor={COLORS.textSecondary}
+              returnKeyType="next"
+              blurOnSubmit={false}
             />
           </View>
 
@@ -165,6 +171,8 @@ const EmergencyContactsScreen = ({ navigation }) => {
               placeholder="Enter phone number"
               placeholderTextColor={COLORS.textSecondary}
               keyboardType="phone-pad"
+              returnKeyType="next"
+              blurOnSubmit={false}
             />
           </View>
 
@@ -176,6 +184,8 @@ const EmergencyContactsScreen = ({ navigation }) => {
               onChangeText={(text) => setFormData({ ...formData, relation: text })}
               placeholder="e.g., Family, Friend, Doctor"
               placeholderTextColor={COLORS.textSecondary}
+              returnKeyType="done"
+              blurOnSubmit={true}
             />
           </View>
         </ScrollView>
@@ -202,7 +212,12 @@ const EmergencyContactsScreen = ({ navigation }) => {
         </TouchableOpacity>
       </View>
 
-      <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
+      <ScrollView
+        style={styles.scrollView}
+        showsVerticalScrollIndicator={false}
+        keyboardShouldPersistTaps="handled"
+        keyboardDismissMode="on-drag"
+      >
         {/* Info Section */}
         <View style={styles.infoSection}>
           <Text style={styles.infoTitle}>👥 Emergency Contacts</Text>

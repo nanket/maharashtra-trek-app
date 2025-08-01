@@ -1,0 +1,274 @@
+{
+  "id": 95,
+  "name": "Andharban Trek",
+  "category": "jungle trek",
+  "location": "Mulshi/Tamhini, Pune District, Maharashtra",
+  "difficulty": "Moderate (long walk, slippery in monsoon)",
+  "duration": "5–6 hours (one way, full ridge to Bhira Dam); 13–14 km",
+  "elevation": "2,160 feet (start at Pimpri village)",
+  "description": "Andharban ('dark forest') is Maharashtra's classic one-way jungle trek. Descend through dense, shaded forest trails with panoramic views of Kundalika Valley and Tamhini Ghat, cross multiple waterfalls (seasonal), and finish at Bhira Dam. Expect lush greenery, fog, crystal streams, and rich birdlife in monsoon/post-monsoon.",
+  "startingPoint": {
+    "name": "Pimpri Village (Mulshi, Pune district)",
+    "coordinates": {"latitude": 18.4640, "longitude": 73.3903},
+    "facilities": [
+      "Parking zone at village",
+      "Basic public toilets (at start, not en route)",
+      "Tea/snack stalls open during season"
+    ],
+    "description": "The trek begins at Independence Point, about 200 m from Pimpri village, near Pimpri Dam. Trail entry is marked by a temporary forest office post in monsoon."
+  },
+  "networkAvailability": {
+    "baseVillage": {
+      "airtel": "Good",
+      "jio": "Good",
+      "vodafone": "Fair",
+      "bsnl": "Fair"
+    },
+    "duringTrek": {
+      "airtel": "Weak/intermittent",
+      "jio": "Weak/intermittent",
+      "vodafone": "No signal",
+      "bsnl": "No signal"
+    },
+    "atSummit": {
+      "airtel": "Poor",
+      "jio": "No signal",
+      "vodafone": "No signal",
+      "bsnl": "No signal"
+    },
+    "emergencyContact": "108 or 112 (if signal available); inform local contacts before trek"
+  },
+  "foodAndWater": {
+    "atBase": {
+      "restaurants": [
+        "Tea/snack stalls in Pimpri (monsoon season)",
+        "Eateries at Bhira Dam (end-point)"
+      ],
+      "shops": [
+        "Small grocery shops at base and Bhira",
+        "Packaged water (subject to stock)"
+      ],
+      "waterSources": [
+        "Wells in Pimpri; non-potable river near Bhira. Carry minimum 2–3L per person"
+      ]
+    },
+    "duringTrek": {
+      "waterSources": [
+        "No reliable potable sources; streams are seasonal and unfiltered"
+      ],
+      "foodOptions": [
+        "No shops on forest trail; carry packed snacks/meal"
+      ],
+      "recommendations": [
+        "Energy bars, dry fruits, electrolyte"
+      ]
+    },
+    "atSummit": {
+      "facilities": [
+        "No permanent food or water facilities at end-point"
+      ],
+      "recommendations": [
+        "Refuel in base/end villages post-trek"
+      ]
+    }
+  },
+  "accommodation": {
+    "camping": {
+      "allowed": false,
+      "reason": "Not permitted—protected forest zone"
+    },
+    "nearbyStays": [
+      {
+        "name": "Andharban Resort & Hotel (Pimpri)",
+        "distance": "Near start point",
+        "cost": "₹800–1200 per person (meals extra)",
+        "contact": "7447898181, 9764787828",
+        "facilities": [
+          "Simple rooms",
+          "Home-cooked meals by pre-booking"
+        ]
+      },
+      {
+        "name": "Guesthouses (Bhira Dam region)",
+        "distance": "Walkable from trek endpoint",
+        "cost": "₹800–1500 per room",
+        "contact": "Local booking at site"
+      }
+    ]
+  },
+  "permits": {
+    "required": true,
+    "forestDepartment": "Tamhini Wildlife Sanctuary",
+    "entry": "Online or on the spot at Pimpri gate (Independence Point); limited permits issued",
+    "fee": "₹150 per person (2025 monsoon rate); bring ID proof",
+    "timings": "Officially sunrise to 4 PM (no entry after 2 PM); night trekking not allowed in monsoon"
+  },
+  "safety": {
+    "riskLevel": "Moderate (increased during heavy rain)",
+    "commonRisks": [
+      "Slippery rock and roots",
+      "Steep descents (midway)",
+      "Water crossings during peak monsoon",
+      "Leeches, dense fog (in season)"
+    ],
+    "precautions": [
+      "Proper trekking shoes",
+      "Rain gear/poncho",
+      "Travel in groups; follow marked route or local guide",
+      "Carry first aid kit",
+      "Register entry and exit at forest post"
+    ],
+    "rescuePoints": [
+      "Pimpri village (start)",
+      "Hirdi Junction (midpoint on main trail)",
+      "Bhira Dam (end; nearest road and village)"
+    ],
+    "nearestHospital": {
+      "name": "Mulshi Rural Hospital",
+      "distance": "32 km to base",
+      "contact": "+91 2114 202037"
+    }
+  },
+  "weather": {
+    "monsoon": {
+      "months": "June–September",
+      "conditions": "Heavy rain, lush greenery, multiple waterfalls, slippery rocks; fog and stream crossings common",
+      "recommendation": "Best for experienced, fit trekkers during fair-weather windows"
+    },
+    "winter": {
+      "months": "November–February",
+      "conditions": "Cool, mistless, clear views. Dryer but still shaded and pleasant",
+      "recommendation": "Ideal for families/beginners"
+    },
+    "summer": {
+      "months": "March–May",
+      "conditions": "Warm, foliage sparse, dry ground",
+      "recommendation": "Early start advised; not popular"
+    }
+  },
+  "trekRoute": {
+    "totalDistance": "13–14 km (one-way)",
+    "ascent": "Mostly descent (start at 2,160 ft, end at 650 ft, Bhira)",
+    "difficulty": "Moderate (long walk, few ascents, exposed tree roots and rocks)",
+    "waypoints": [
+      {
+        "name": "Pimpri Village Start/Independence Point",
+        "elevation": "660m",
+        "description": "Entry gate, ticket check, parking, toilets"
+      },
+      {
+        "name": "Hirdi Village Junction",
+        "elevation": "490m",
+        "description": "Midway rest/exit option, exit point for some short routes"
+      },
+      {
+        "name": "Hirdi Waterfalls (in season)",
+        "elevation": "490m",
+        "description": "Major scenic falls and crossing"
+      },
+      {
+        "name": "Bhira Dam End Point",
+        "elevation": "230m",
+        "description": "Trek end, road access, parking, shops"
+      }
+    ]
+  },
+  "howToReach": {
+    "fromMumbai": {
+      "byTrain": {
+        "description": "Mumbai–Lonavala local; hired jeep/taxi to Pimpri (start)",
+        "distance": "120 km",
+        "time": "3.5–4 hours incl. transfers",
+        "steps": [
+          "Train: CST/Dadar → Lonavala",
+          "Hire shared jeep/taxi or bus: Lonavala → Pimpri via Tamhini Ghat"
+        ]
+      },
+      "byBus": {
+        "description": "MSRTC/Ekra buses to Mulshi or Tamhini Ghat, then local transport",
+        "distance": "130 km",
+        "time": "4–5 hours incl. changes",
+        "steps": [
+          "Bus: Mumbai → Mulshi/Paud",
+          "Auto/taxi/bus to Pimpri via Tamhini"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive via Mumbai–Pune Expressway to Lonavala, then Tamhini to Pimpri",
+        "distance": "125 km",
+        "time": "3–4 hours",
+        "steps": [
+          "Expressway Mumbai → Lonavala",
+          "Tamhini–Mulshi road to Pimpri"
+        ]
+      }
+    },
+    "fromPune": {
+      "byTrain": {
+        "description": "Limited; best to use road transport",
+        "distance": "75 km by road",
+        "time": "2.5–3 hours total",
+        "steps": [
+          "Pune Station to Paud (local bus)",
+          "Local bus/auto to Pimpri village via Mulshi, Tamhini"
+        ]
+      },
+      "byBus": {
+        "description": "Bus from Pune Swargate or Shivajinagar to Paud–Mulshi, then to Pimpri",
+        "distance": "75 km",
+        "time": "2.5–3 hours",
+        "steps": [
+          "Pune → Paud bus, change for Mulshi/Phata",
+          "Local bus/auto to Pimpri"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive via Pirangut – Mulshi – Tamhini Ghat to Pimpri",
+        "distance": "70 km",
+        "time": "2–2.5 hours",
+        "steps": [
+          "Pune – Pirangut – Mulshi Dam – Tamhini Ghat – Pimpri"
+        ]
+      }
+    }
+  },
+  "bestTimeToVisit": "July to September (monsoon for waterfalls), November to February (for less mud and families)",
+  "localContacts": [
+    {
+      "name": "Dhondiba Nade",
+      "phone": "9765084380",
+      "service": "Local guide, food on order (Pimpri/Hirdi)"
+    },
+    {
+      "name": "Mahesh Kandhare (Andharban Resort & Hotel)",
+      "phone": "7447898181, 9764787828",
+      "service": "Homestay, food, local logistics"
+    },
+    {
+      "name": "Aditya Joshi (Trek Leader)",
+      "phone": "9822763638",
+      "service": "Group trek leader (Marathi, Hindi, English)"
+    },
+    {
+      "name": "Prasad Danve",
+      "phone": "9673632374",
+      "service": "Backup trek operations/contact"
+    }
+  ],
+  "imageKey": "andharban",
+  "videos": [],
+  "coordinates": {
+    "latitude": 18.4640,
+    "longitude": 73.3903
+  },
+  "featured": true,
+  "rating": 4.7,
+  "reviewCount": 170,
+  "images": [
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754053151/treks/andharban/andharban_1.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754053151/treks/andharban/andharban_2.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754053151/treks/andharban/andharban_4.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754053151/treks/andharban/andharban_8.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754053151/treks/andharban/andharban_10.jpg"
+  ]
+}

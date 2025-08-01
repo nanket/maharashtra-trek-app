@@ -86,7 +86,11 @@ const LoungeScreen = ({ navigation }) => {
 
   const renderTabButtons = () => (
     <View style={styles.tabContainer}>
-      <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+      <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        keyboardShouldPersistTaps="handled"
+      >
         {tabs.map((tab) => (
           <TouchableOpacity
             key={tab.id}
@@ -114,7 +118,11 @@ const LoungeScreen = ({ navigation }) => {
   const renderFeaturedTrekkers = () => (
     <View style={styles.featuredSection}>
       <Text style={styles.sectionTitle}>🌟 Featured Trekkers</Text>
-      <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+      <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        keyboardShouldPersistTaps="handled"
+      >
         {featuredTrekkers.map((trekker) => (
           <View key={trekker.id} style={styles.trekkerCard}>
             <View style={styles.trekkerAvatar}>
@@ -250,6 +258,8 @@ const LoungeScreen = ({ navigation }) => {
         refreshControl={
           <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
         }
+        keyboardShouldPersistTaps="handled"
+        keyboardDismissMode="on-drag"
       >
         {renderContent()}
       </ScrollView>

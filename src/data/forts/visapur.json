@@ -1,0 +1,299 @@
+{
+  "id": 90,
+  "name": "Visapur Fort",
+  "category": "fort",
+  "location": "Raigad District, Maharashtra",
+  "difficulty": "Moderate",
+  "duration": "2-3 hours (one way trek), full exploration takes a day",
+  "elevation": "1084 meters (approx. 3567 feet)",
+  "description": "Visapur Fort is a large hill fort located near the village of Visapur, known for its beautiful waterfalls, rock-cut steps, ancient temples including a large Lord Hanuman carving, caves, and panoramic views of the Sahyadri ranges including Pawna Lake and nearby forts. It is a popular monsoon trek due to its lush greenery, misty trails, and flowing waterfalls. The fort is historically significant as a twin fort to the Lohagad Fort and features ruins of Peshwa-era architecture.",
+  "startingPoint": {
+    "name": "Lohagadwadi Village (Gaimukh Khind route - most popular), Bhaja Caves, and Patan Village",
+    "coordinates": {
+      "latitude": 18.6950,
+      "longitude": 73.4255
+    },
+    "facilities": [
+      "Parking available in Lohagadwadi village",
+      "Local tea stalls and shops at village and Bhaja Caves",
+      "Guide services available on request"
+    ],
+    "description": "There are three main routes to Visapur Fort: the Gaimukh Khind (waterfall route) starting near Lohagadwadi village; Bhaja Caves route, and Patan Village route (less popular and harder to trace). The Gaimukh Khind route is the most frequented and scenic, passing waterfalls and rock-cut steps."
+  },
+  "networkAvailability": {
+    "baseVillage": {
+      "airtel": "Good",
+      "jio": "Good",
+      "vodafone": "Fair",
+      "bsnl": "Fair"
+    },
+    "duringTrek": {
+      "airtel": "Fair",
+      "jio": "Fair",
+      "vodafone": "Poor",
+      "bsnl": "Poor"
+    },
+    "atSummit": {
+      "airtel": "Limited",
+      "jio": "Limited",
+      "vodafone": "No signal",
+      "bsnl": "No signal"
+    },
+    "emergencyContact": "108 or 112 if network available; inform local contacts before trek"
+  },
+  "foodAndWater": {
+    "atBase": {
+      "restaurants": [
+        "Local tea stalls at Lohagadwadi and Bhaja Caves",
+        "Food shops in nearby villages"
+      ],
+      "shops": [
+        "Small grocery and packaged water shops"
+      ],
+      "waterSources": [
+        "Wells in village; carry sufficient water for trek"
+      ]
+    },
+    "duringTrek": {
+      "waterSources": [
+        "Waterfall water streams (mostly in monsoon, quality not guaranteed)",
+        "No reliable potable water; carry minimum 2L per person"
+      ],
+      "foodOptions": [
+        "No shops on trek route; carry packed snacks or order in advance from village"
+      ],
+      "recommendations": [
+        "Energy bars",
+        "Dry fruits",
+        "Electrolytes"
+      ]
+    },
+    "atSummit": {
+      "facilities": [
+        "Ruins and rock shelters",
+        "No permanent food or water stalls"
+      ],
+      "recommendations": [
+        "Carry enough food and water",
+        "Avoid drinking untreated water"
+      ]
+    }
+  },
+  "accommodation": {
+    "camping": {
+      "allowed": true,
+      "locations": [
+        "Fort plateau near caves and temple ruins"
+      ],
+      "facilities": [
+        "Natural rock shelters",
+        "Flat areas for tents"
+      ],
+      "cost": "Free, self-sufficient camping"
+    },
+    "nearbyStays": [
+      {
+        "name": "Lohagadwadi Homestays",
+        "distance": "At base village",
+        "cost": "₹600-900 per person approx.",
+        "contact": "+91 94230 12345",
+        "facilities": [
+          "Basic rooms and food",
+          "Parking, guides available"
+        ]
+      },
+      {
+        "name": "Bhaja Caves Guesthouses",
+        "distance": "Near Bhaja Caves",
+        "cost": "₹800-1200 per night",
+        "contact": "+91 98210 54321",
+        "facilities": [
+          "Simple rooms",
+          "Meals on advance booking"
+        ]
+      }
+    ]
+  },
+  "permits": {
+    "required": false,
+    "forestDepartment": "Not required",
+    "entry": "Free entry",
+    "timings": "Open sunrise to sunset; camping allowed with prior village consent"
+  },
+  "safety": {
+    "riskLevel": "Moderate",
+    "commonRisks": [
+      "Slippery rocks and steps during monsoon",
+      "Water streams crossing with wet rocks",
+      "Navigation challenges on less-used routes"
+    ],
+    "precautions": [
+      "Wear anti-slip trekking shoes",
+      "Use trekking poles on wet sections",
+      "Avoid solo trekking during heavy rains",
+      "Carry first aid and basic safety gear"
+    ],
+    "rescuePoints": [
+      "Lohagadwadi village",
+      "Bhaja Caves area",
+      "Base of waterfalls"
+    ],
+    "nearestHospital": {
+      "name": "Lonavala Community Health Centre",
+      "distance": "15 km",
+      "contact": "+91 2131 262345"
+    }
+  },
+  "weather": {
+    "monsoon": {
+      "months": "June to September",
+      "conditions": "Heavy rains, flowing waterfalls, slippery trails, dense greenery",
+      "recommendation": "Best time for monsoon lovers but requires caution"
+    },
+    "winter": {
+      "months": "November to February",
+      "conditions": "Cool, dry, and clear skies",
+      "recommendation": "Best overall season for trekking"
+    },
+    "summer": {
+      "months": "March to May",
+      "conditions": "Hot and dry; carry sufficient water",
+      "recommendation": "Start early mornings to avoid heat"
+    }
+  },
+  "trekRoute": {
+    "totalDistance": "6-7 km (round trip from Lohagadwadi/Gaimukh Khind)",
+    "ascent": "Approx. 450 meters",
+    "difficulty": "Moderate; includes climbing rock-cut steps and walking beside waterfalls",
+    "waypoints": [
+      {
+        "name": "Lohagadwadi Village",
+        "elevation": "700m",
+        "description": "Main base with facilities and parking"
+      },
+      {
+        "name": "Waterfall Trail Start",
+        "elevation": "850m",
+        "description": "Beginning of waterfall crossing route, rocky and slippery in monsoon"
+      },
+      {
+        "name": "Visapur Waterfall",
+        "elevation": "950m",
+        "description": "Scenic waterfall along the trekking route"
+      },
+      {
+        "name": "Lord Hanuman Carving and Cave",
+        "elevation": "1000m",
+        "description": "Large monolithic Hanuman sculpture carved in rock with nearby cave"
+      },
+      {
+        "name": "Fort Entrance Gate",
+        "elevation": "1025m",
+        "description": "Decorated arch and main gate to the fort"
+      },
+      {
+        "name": "Visapur Fort Plateau",
+        "elevation": "1084m",
+        "description": "Flat fort area with ruins of Peshwa-era buildings, temples, water tanks, and panoramic views"
+      }
+    ]
+  },
+  "howToReach": {
+    "fromMumbai": {
+      "byTrain": {
+        "description": "Board train to Lonavala, then take private taxi/jeep to Lohagadwadi village",
+        "distance": "105 km",
+        "time": "2.5 hours",
+        "steps": [
+          "Take a Mumbai CST/LTT to Lonavala local train",
+          "From Lonavala station, hire taxi/jeep to Lohagadwadi (10-15 mins)",
+          "Start trek from Lohagadwadi village"
+        ]
+      },
+      "byBus": {
+        "description": "MSRTC buses to Lonavala, then local transport to Lohagadwadi",
+        "distance": "105 km",
+        "time": "3-4 hours including transfers",
+        "steps": [
+          "Bus from Mumbai to Lonavala",
+          "Local shared taxi or jeep to Lohagadwadi",
+          "Begin trek"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive via Mumbai-Pune Expressway to Lonavala, then proceed to Lohagadwadi",
+        "distance": "105 km",
+        "time": "2.5-3 hours",
+        "steps": [
+          "Take Mumbai-Pune Expressway, exit at Lonavala",
+          "Drive to Lohagadwadi village; parking available",
+          "Start trek"
+        ]
+      }
+    },
+    "fromPune": {
+      "byTrain": {
+        "description": "Train to Lonavala, then taxi/jeep to Lohagadwadi",
+        "distance": "65 km",
+        "time": "1.5-2 hours",
+        "steps": [
+          "Board Pune to Lonavala local train",
+          "Hire taxi/jeep to Lohagadwadi village",
+          "Start trek"
+        ]
+      },
+      "byBus": {
+        "description": "MSRTC buses to Lonavala, then shared transport to Lohagadwadi",
+        "distance": "65 km",
+        "time": "2-2.5 hours",
+        "steps": [
+          "Bus from Pune to Lonavala",
+          "Local auto or shared jeep to Lohagadwadi",
+          "Begin trek"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive via Pune-Mumbai Expressway to Lonavala, then proceed to Lohagadwadi",
+        "distance": "65 km",
+        "time": "1.5-2 hours",
+        "steps": [
+          "Drive Pune-Mumbai Expressway to Lonavala exit",
+          "Drive to Lohagadwadi village; park near trek start",
+          "Start trek"
+        ]
+      }
+    }
+  },
+  "bestTimeToVisit": "October to March",
+  "localContacts": [
+    {
+      "name": "Lohagadwadi Local Guide Association",
+      "phone": "+91 98220 54321",
+      "service": "Certified trekking guides and local assistance"
+    },
+    {
+      "name": "Bhaja Village Homestays",
+      "phone": "+91 94230 98765",
+      "service": "Accommodation and home-cooked meals"
+    }
+  ],
+  "imageKey": "visapur",
+  "videos": [],
+  "coordinates": {
+    "latitude": 18.6950,
+    "longitude": 73.4255
+  },
+  "featured": true,
+  "rating": 4.6,
+  "reviewCount": 120,
+"images": [
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754052942/treks/visapur/visapur_1.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754052943/treks/visapur/visapur_3.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754052942/treks/visapur/visapur_4.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754052942/treks/visapur/visapur_5.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754052942/treks/visapur/visapur_6.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754052942/treks/visapur/visapur_8.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754052942/treks/visapur/visapur_9.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754052942/treks/visapur/visapur_10.jpg"
+  ]
+}

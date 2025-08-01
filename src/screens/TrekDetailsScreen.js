@@ -19,6 +19,9 @@ import ComprehensiveTrekInfo from '../components/ComprehensiveTrekInfo';
 import LocationDetailsModal from '../components/LocationDetailsModal';
 import ImageCarousel from '../components/ImageCarousel';
 import PhotoGallery from '../components/PhotoGallery';
+import FullscreenVideoPlayer from '../components/FullscreenVideoPlayer';
+import VideoSection from '../components/VideoSection';
+import WeatherWidget from '../components/WeatherWidget';
 import UserStorageService from '../utils/userStorage';
 import { COLORS, CATEGORIES, CATEGORY_COLORS, DIFFICULTY_COLORS, DIFFICULTY_LEVELS, SPACING, BORDER_RADIUS, SHADOWS, IMAGES, createTextStyle } from '../utils/constants';
 
@@ -51,6 +54,8 @@ const TrekDetailsScreen = ({ route, navigation }) => {
   const [useMapbox, setUseMapbox] = useState(false);
   const [galleryVisible, setGalleryVisible] = useState(false);
   const [galleryInitialIndex, setGalleryInitialIndex] = useState(0);
+  const [videoPlayerVisible, setVideoPlayerVisible] = useState(false);
+  const [currentVideoUrl, setCurrentVideoUrl] = useState(null);
 
   // Expandable FAB state
   const [fabExpanded, setFabExpanded] = useState(false);
@@ -110,6 +115,54 @@ const TrekDetailsScreen = ({ route, navigation }) => {
     setModalVisible(false);
   };
 
+  // Open location in Google Maps (view mode)
+  const openInGoogleMaps = (location) => {
+    if (!location.coordinates) {
+      Alert.alert('Error', 'Location coordinates not available');
+      return;
+    }
+
+    const { latitude, longitude } = location.coordinates;
+    const url = `https://www.google.com/maps/search/?api=1&query=${latitude},${longitude}&query_place_id=${encodeURIComponent(location.name)}`;
+
+    Linking.canOpenURL(url)
+      .then(supported => {
+        if (supported) {
+          Linking.openURL(url);
+        } else {
+          Alert.alert('Error', 'Unable to open Google Maps');
+        }
+      })
+      .catch(err => {
+        console.error('Google Maps error:', err);
+        Alert.alert('Error', 'Unable to open Google Maps');
+      });
+  };
+
+  // Get directions in Google Maps
+  const getDirectionsInGoogleMaps = (location) => {
+    if (!location.coordinates) {
+      Alert.alert('Error', 'Location coordinates not available');
+      return;
+    }
+
+    const { latitude, longitude } = location.coordinates;
+    const url = `https://www.google.com/maps/dir/?api=1&destination=${latitude},${longitude}&destination_place_id=${encodeURIComponent(location.name)}`;
+
+    Linking.canOpenURL(url)
+      .then(supported => {
+        if (supported) {
+          Linking.openURL(url);
+        } else {
+          Alert.alert('Error', 'Unable to open Google Maps for directions');
+        }
+      })
+      .catch(err => {
+        console.error('Google Maps directions error:', err);
+        Alert.alert('Error', 'Unable to open Google Maps for directions');
+      });
+  };
+
   const handleFavoriteToggle = async () => {
     if (loading) return;
 
@@ -160,6 +213,11 @@ const TrekDetailsScreen = ({ route, navigation }) => {
   const handleImagePress = (index) => {
     setGalleryInitialIndex(index);
     setGalleryVisible(true);
+  };
+
+  const handleVideoPress = (videoUrl) => {
+    setCurrentVideoUrl(videoUrl);
+    setVideoPlayerVisible(true);
   };
 
   // FAB Animation Functions
@@ -409,13 +467,18 @@ const TrekDetailsScreen = ({ route, navigation }) => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView style={styles.scrollView}>
+      <ScrollView
+        style={styles.scrollView}
+        keyboardShouldPersistTaps="handled"
+        keyboardDismissMode="on-drag"
+      >
         <ImageCarousel
           imageKey={trek.imageKey}
           videos={trek.videos || []}
           height={280}
           style={styles.imageContainer}
           onImagePress={handleImagePress}
+          onVideoPress={handleVideoPress}
         >
           {/* Category Badge */}
           <View style={[styles.categoryBadge, { backgroundColor: categoryData?.primary || COLORS.primary }]}>
@@ -464,6 +527,26 @@ const TrekDetailsScreen = ({ route, navigation }) => {
             <Text style={styles.sectionTitle}>Description</Text>
             <Text style={styles.description}>{trek.description}</Text>
           </View>
+
+          {/* Dedicated Video Section */}
+          {trek.videos && trek.videos.length > 0 && (
+            <VideoSection
+              videos={trek.videos}
+              onVideoPress={handleVideoPress}
+              title="📹 Trek Videos"
+            />
+          )}
+
+          {/* Real-time Weather Widget */}
+          {trek.coordinates && (
+            <WeatherWidget
+              coordinates={trek.coordinates}
+              trekName={trek.name}
+              showForecast={true}
+              showSafetyAssessment={true}
+              compact={false}
+            />
+          )}
 
           <View style={styles.section}>
             <Text style={styles.sectionTitle}>Best Time to Visit</Text>
@@ -517,6 +600,27 @@ const TrekDetailsScreen = ({ route, navigation }) => {
                   />
                 )}
               </View>
+
+              {/* Google Maps Actions */}
+              <View style={styles.mapActionsContainer}>
+                <TouchableOpacity
+                  style={styles.mapActionButton}
+                  onPress={() => openInGoogleMaps(trek)}
+                  activeOpacity={0.8}
+                >
+                  <Text style={styles.mapActionIcon}>🗺️</Text>
+                  <Text style={styles.mapActionText}>Open in Google Maps</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity
+                  style={styles.mapActionButton}
+                  onPress={() => getDirectionsInGoogleMaps(trek)}
+                  activeOpacity={0.8}
+                >
+                  <Text style={styles.mapActionIcon}>🧭</Text>
+                  <Text style={styles.mapActionText}>Get Directions</Text>
+                </TouchableOpacity>
+              </View>
             </View>
           ) : (
             <View style={styles.section}>
@@ -555,7 +659,7 @@ const TrekDetailsScreen = ({ route, navigation }) => {
                     {
                       translateY: fabAnimation.interpolate({
                         inputRange: [0, 1],
-                        outputRange: [0, -70],
+                        outputRange: [0, -80],
                       }),
                     },
                     {
@@ -569,6 +673,7 @@ const TrekDetailsScreen = ({ route, navigation }) => {
                 },
               ]}
             >
+              <Text style={styles.fabLabel}>Favorite</Text>
               <TouchableOpacity
                 style={[styles.fabButton, styles.favoriteButton]}
                 onPress={() => {
@@ -581,7 +686,6 @@ const TrekDetailsScreen = ({ route, navigation }) => {
                   {isFavorite ? '❤️' : '🤍'}
                 </Text>
               </TouchableOpacity>
-              <Text style={styles.fabLabel}>Favorite</Text>
             </Animated.View>
 
             <Animated.View
@@ -592,7 +696,7 @@ const TrekDetailsScreen = ({ route, navigation }) => {
                     {
                       translateY: fabAnimation.interpolate({
                         inputRange: [0, 1],
-                        outputRange: [0, -140],
+                        outputRange: [0, -160],
                       }),
                     },
                     {
@@ -606,6 +710,7 @@ const TrekDetailsScreen = ({ route, navigation }) => {
                 },
               ]}
             >
+              <Text style={styles.fabLabel}>Plan Trek</Text>
               <TouchableOpacity
                 style={[styles.fabButton, styles.planButton]}
                 onPress={() => {
@@ -615,7 +720,6 @@ const TrekDetailsScreen = ({ route, navigation }) => {
               >
                 <Text style={styles.fabIcon}>🧭</Text>
               </TouchableOpacity>
-              <Text style={styles.fabLabel}>Plan Trek</Text>
             </Animated.View>
 
             <Animated.View
@@ -626,7 +730,7 @@ const TrekDetailsScreen = ({ route, navigation }) => {
                     {
                       translateY: fabAnimation.interpolate({
                         inputRange: [0, 1],
-                        outputRange: [0, -210],
+                        outputRange: [0, -240],
                       }),
                     },
                     {
@@ -640,6 +744,7 @@ const TrekDetailsScreen = ({ route, navigation }) => {
                 },
               ]}
             >
+              <Text style={styles.fabLabel}>Live Track</Text>
               <TouchableOpacity
                 style={[styles.fabButton, styles.trackingButton]}
                 onPress={() => {
@@ -649,7 +754,6 @@ const TrekDetailsScreen = ({ route, navigation }) => {
               >
                 <Text style={styles.fabIcon}>📍</Text>
               </TouchableOpacity>
-              <Text style={styles.fabLabel}>Live Track</Text>
             </Animated.View>
 
             <Animated.View
@@ -660,7 +764,7 @@ const TrekDetailsScreen = ({ route, navigation }) => {
                     {
                       translateY: fabAnimation.interpolate({
                         inputRange: [0, 1],
-                        outputRange: [0, -280],
+                        outputRange: [0, -320],
                       }),
                     },
                     {
@@ -674,6 +778,7 @@ const TrekDetailsScreen = ({ route, navigation }) => {
                 },
               ]}
             >
+              <Text style={styles.fabLabel}>Gallery</Text>
               <TouchableOpacity
                 style={[styles.fabButton, styles.galleryButton]}
                 onPress={() => {
@@ -683,7 +788,6 @@ const TrekDetailsScreen = ({ route, navigation }) => {
               >
                 <Text style={styles.fabIcon}>📷</Text>
               </TouchableOpacity>
-              <Text style={styles.fabLabel}>Gallery</Text>
             </Animated.View>
 
             {!isCompleted && (
@@ -695,7 +799,7 @@ const TrekDetailsScreen = ({ route, navigation }) => {
                       {
                         translateY: fabAnimation.interpolate({
                           inputRange: [0, 1],
-                          outputRange: [0, -350],
+                          outputRange: [0, -400],
                         }),
                       },
                       {
@@ -709,6 +813,7 @@ const TrekDetailsScreen = ({ route, navigation }) => {
                   },
                 ]}
               >
+                <Text style={styles.fabLabel}>Complete</Text>
                 <TouchableOpacity
                   style={[styles.fabButton, styles.completeButton]}
                   onPress={() => {
@@ -719,7 +824,6 @@ const TrekDetailsScreen = ({ route, navigation }) => {
                 >
                   <Text style={styles.fabIcon}>✅</Text>
                 </TouchableOpacity>
-                <Text style={styles.fabLabel}>Complete</Text>
               </Animated.View>
             )}
           </>
@@ -827,6 +931,17 @@ const TrekDetailsScreen = ({ route, navigation }) => {
         initialIndex={galleryInitialIndex}
         onClose={() => setGalleryVisible(false)}
         onIndexChange={(index) => setGalleryInitialIndex(index)}
+      />
+
+      {/* Fullscreen Video Player */}
+      <FullscreenVideoPlayer
+        visible={videoPlayerVisible}
+        videoUrl={currentVideoUrl}
+        title={`${trek.name} - Trek Video`}
+        onClose={() => {
+          setVideoPlayerVisible(false);
+          setCurrentVideoUrl(null);
+        }}
       />
     </SafeAreaView>
   );
@@ -1186,6 +1301,31 @@ const styles = StyleSheet.create({
   mapView: {
     flex: 1,
   },
+  mapActionsContainer: {
+    flexDirection: 'row',
+    marginTop: SPACING.md,
+    gap: SPACING.sm,
+  },
+  mapActionButton: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: COLORS.primary,
+    paddingVertical: SPACING.md,
+    paddingHorizontal: SPACING.lg,
+    borderRadius: BORDER_RADIUS.md,
+    ...SHADOWS.small,
+  },
+  mapActionIcon: {
+    fontSize: 18,
+    marginRight: SPACING.sm,
+  },
+  mapActionText: {
+    color: COLORS.white,
+    fontSize: 14,
+    fontWeight: '600',
+  },
 
   // Expandable FAB styles
   fabContainer: {
@@ -1193,6 +1333,7 @@ const styles = StyleSheet.create({
     bottom: SPACING.xl,
     right: SPACING.lg,
     alignItems: 'center',
+    zIndex: 10,
   },
   fabOverlay: {
     position: 'absolute',
@@ -1201,7 +1342,7 @@ const styles = StyleSheet.create({
     right: 0,
     bottom: 0,
     backgroundColor: 'rgba(0, 0, 0, 0.3)',
-    zIndex: 1,
+    zIndex: 9,
   },
   mainFab: {
     width: 56,
@@ -1211,7 +1352,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     ...SHADOWS.large,
-    zIndex: 3,
+    zIndex: 12,
+    elevation: 12,
   },
   completedMainFab: {
     backgroundColor: COLORS.success,
@@ -1226,7 +1368,8 @@ const styles = StyleSheet.create({
     bottom: 0,
     right: 0,
     alignItems: 'center',
-    zIndex: 2,
+    zIndex: 11,
+    elevation: 11,
   },
   fabButton: {
     width: 48,
@@ -1235,10 +1378,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     ...SHADOWS.medium,
-    marginBottom: SPACING.xs,
+    marginBottom: SPACING.sm,
+    elevation: 8,
   },
   favoriteButton: {
     backgroundColor: COLORS.backgroundCard,
+    borderWidth: 1,
+    borderColor: COLORS.surfaceBorder,
   },
   planButton: {
     backgroundColor: COLORS.primary,
@@ -1256,17 +1402,22 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
   fabLabel: {
-    fontSize: 12,
+    fontSize: 11,
     fontWeight: '600',
     color: COLORS.text,
     backgroundColor: COLORS.backgroundCard,
     paddingHorizontal: SPACING.sm,
-    paddingVertical: SPACING.xs,
+    paddingVertical: 4,
     borderRadius: BORDER_RADIUS.sm,
     ...SHADOWS.small,
-    marginBottom: SPACING.sm,
+    marginBottom: SPACING.xs,
     textAlign: 'center',
-    minWidth: 60,
+    minWidth: 65,
+    maxWidth: 80,
+    borderWidth: 1,
+    borderColor: COLORS.surfaceBorder,
+    elevation: 6,
+    alignSelf: 'center',
   },
 
   // Modal styles

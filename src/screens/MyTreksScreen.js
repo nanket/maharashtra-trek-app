@@ -117,7 +117,11 @@ const MyTreksScreen = ({ navigation }) => {
   // Render tab buttons
   const renderTabButtons = () => (
     <View style={styles.tabContainer}>
-      <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+      <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        keyboardShouldPersistTaps="handled"
+      >
         {tabs.map((tab) => (
           <TouchableOpacity
             key={tab.id}
@@ -292,6 +296,8 @@ const MyTreksScreen = ({ navigation }) => {
           <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
         }
         showsVerticalScrollIndicator={false}
+        keyboardShouldPersistTaps="handled"
+        keyboardDismissMode="on-drag"
       >
         {renderContent()}
       </ScrollView>

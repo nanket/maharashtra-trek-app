@@ -1,0 +1,307 @@
+{
+  "id": 50,
+  "name": "Raigad Fort",
+  "category": "fort",
+  "location": "Raigad District, Maharashtra",
+  "difficulty": "Moderate",
+  "duration": "5-6 hours (round trip)",
+  "elevation": "820 meters",
+  "description": "Raigad Fort was the capital of the Maratha Empire under Chhatrapati Shivaji Maharaj and is one of the most historically significant forts in Maharashtra. The fort is perched on a hilltop in the Western Ghats and offers panoramic views of the surrounding Sahyadri ranges. The trek combines natural beauty, history, and cultural heritage, featuring the famous Maha Darwaja (main gate), Queen's quarters, watchtowers, and ancient temples.",
+  "startingPoint": {
+    "name": "Raigad Peth",
+    "coordinates": {
+      "latitude": 18.2311,
+      "longitude": 73.4143
+    },
+    "facilities": [
+      "Parking area",
+      "Ticket office for Entry",
+      "Shops and restaurants",
+      "Public toilets",
+      "Electric ropeway station nearby"
+    ],
+    "description": "Raigad Peth is the base village at the foothill and serves as the primary access point. Visitors can trek up or use the modern electric ropeway for ascent/descent."
+  },
+  "networkAvailability": {
+    "baseVillage": {
+      "airtel": "Good",
+      "jio": "Good",
+      "vodafone": "Good",
+      "bsnl": "Fair"
+    },
+    "duringTrek": {
+      "airtel": "Intermittent",
+      "jio": "Intermittent",
+      "vodafone": "Poor",
+      "bsnl": "Poor"
+    },
+    "atSummit": {
+      "airtel": "Poor",
+      "jio": "Poor",
+      "vodafone": "Poor",
+      "bsnl": "Poor"
+    },
+    "emergencyContact": "Dial 108/112 in case of emergency; network coverage limited at summit"
+  },
+  "foodAndWater": {
+    "atBase": {
+      "restaurants": [
+        "Local eateries in Raigad Peth",
+        "Small tea/food stalls"
+      ],
+      "shops": [
+        "Snack vendors",
+        "Water bottles",
+        "Basic necessities"
+      ],
+      "waterSources": [
+        "Tap water and wells in the base village (boil recommended)"
+      ]
+    },
+    "duringTrek": {
+      "waterSources": [
+        "No reliable water sources on trail; carry sufficient water"
+      ],
+      "foodOptions": [
+        "No food stalls on trail; carry packed snacks"
+      ],
+      "recommendations": [
+        "Energy bars",
+        "Dry fruits"
+      ]
+    },
+    "atSummit": {
+      "facilities": [
+        "Small tea stalls near historical sites (seasonal)",
+        "No guaranteed water supply"
+      ],
+      "recommendations": [
+        "Carry sufficient water and food"
+      ]
+    }
+  },
+  "accommodation": {
+    "camping": {
+      "allowed": false,
+      "reason": "Fort area protected cultural site; no overnight camping allowed"
+    },
+    "nearbyStays": [
+      {
+        "name": "Raigad Peth Guesthouse",
+        "distance": "At base village",
+        "cost": "₹800-1200 per person approx.",
+        "contact": "+91 98230 45678",
+        "facilities": [
+          "Basic rooms",
+          "Home-cooked meals",
+          "Parking"
+        ]
+      },
+      {
+        "name": "Kokan Holiday Home",
+        "distance": "15 km from Raigad Peth (Khed)",
+        "cost": "₹1500-3000 per room",
+        "contact": "+91 2136 202030",
+        "facilities": [
+          "AC and non-AC rooms",
+          "Restaurant",
+          "Garden and parking"
+        ]
+      }
+    ]
+  },
+  "permits": {
+    "required": true,
+    "forestDepartment": "Raigad Forest Office",
+    "entry": "Entry ticket required for all visitors (Government regulated)",
+    "fee": "₹20-50 per person (varies for Indian and foreign tourists)",
+    "timings": "9:00 AM to 5:00 PM; entry before 3:30 PM recommended",
+    "howToApply": "Tickets can be purchased at Raigad Peth ticket counter or online through official Maharashtra Forest Dept portal"
+  },
+  "safety": {
+    "riskLevel": "Moderate",
+    "commonRisks": [
+      "Steep and uneven stone steps",
+      "Slippery surfaces during monsoon",
+      "Crowds during weekends and holidays",
+      "Limited shade on trail"
+    ],
+    "precautions": [
+      "Wear sturdy trekking shoes",
+      "Carry water and sun protection",
+      "Avoid trekking during heavy rains",
+      "Travel in groups or with guide"
+    ],
+    "rescuePoints": [
+      "Raigad Peth",
+      "Field area near Maha Darwaja",
+      "Ticket counter and forest office"
+    ],
+    "nearestHospital": {
+      "name": "Khed District Hospital",
+      "distance": "15 km",
+      "contact": "+91 2136 221234"
+    },
+    "emergencyNumbers": {
+      "ambulance": "108",
+      "police": "100",
+      "forestDepartment": "+91 2136 201234"
+    }
+  },
+  "weather": {
+    "monsoon": {
+      "months": "June–September",
+      "conditions": "Heavy rainfall with slippery trails and occasional landslides",
+      "recommendation": "Not recommended for casual trekkers; only experienced with proper gear"
+    },
+    "winter": {
+      "months": "November–February",
+      "conditions": "Cool and pleasant; best time for trekking and sightseeing",
+      "recommendation": "Ideal season with clear views"
+    },
+    "summer": {
+      "months": "March–May",
+      "conditions": "Hot and dry, especially on open trail sections",
+      "recommendation": "Start early and carry enough water"
+    }
+  },
+  "trekRoute": {
+    "totalDistance": "10 km (round trip from Raigad Peth)",
+    "ascent": "820 meters",
+    "difficulty": "Moderate; well-marked but steep with many stone steps",
+    "waypoints": [
+      {
+        "name": "Raigad Peth",
+        "elevation": "0m (base)",
+        "description": "Starting point with facilities"
+      },
+      {
+        "name": "Electric Ropeway Base Station",
+        "elevation": "100m",
+        "description": "Option to use ropeway for ascent"
+      },
+      {
+        "name": "Maha Darwaja (Main Gate)",
+        "elevation": "800m",
+        "description": "Iconic large gate marking fort entrance"
+      },
+      {
+        "name": "Queen's Quarters",
+        "elevation": "810m",
+        "description": "Ruins of living quarters with historical significance"
+      },
+      {
+        "name": "Jagadishwar Temple",
+        "elevation": "820m",
+        "description": "Ancient temple inside fort complex"
+      },
+      {
+        "name": "Raigad Summit",
+        "elevation": "820m",
+        "description": "Highest point with panoramic viewpoints"
+      }
+    ]
+  },
+  "howToReach": {
+    "fromMumbai": {
+      "byTrain": {
+        "description": "Fast trains to Panvel or Khed, then local transport to Raigad Peth",
+        "distance": "150-165 km",
+        "time": "4-5 hours",
+        "steps": [
+          "Take train from Mumbai CST to Panvel or Khed",
+          "From Panvel/Khed, hire taxi or bus to Raigad Peth",
+          "Begin trek or use ropeway"
+        ]
+      },
+      "byBus": {
+        "description": "MSRTC buses to Khed or Poladpur then local transport to Raigad Peth",
+        "distance": "150 km approx.",
+        "time": "5-6 hours",
+        "steps": [
+          "Take MSRTC bus from Mumbai to Khed or Poladpur",
+          "Hire local taxi or share jeep to Raigad Peth",
+          "Start trek or take ropeway"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive via Mumbai–Pune Expressway to Khalapur, then state highways to Raigad Peth",
+        "distance": "150 km approx.",
+        "time": "4-5 hours",
+        "steps": [
+          "Drive Mumbai–Pune Expressway up to Khalapur exit",
+          "Follow NH66 and local roads to Raigad Peth",
+          "Parking at base village"
+        ]
+      }
+    },
+    "fromPune": {
+      "byTrain": {
+        "description": "Train to Panvel/Khed, then local transport to Raigad Peth",
+        "distance": "130-150 km",
+        "time": "4-5 hours",
+        "steps": [
+          "Take train from Pune station to Panvel or Khed",
+          "Hire taxi/bus to Raigad Peth",
+          "Trek or electric ropeway"
+        ]
+      },
+      "byBus": {
+        "description": "MSRTC bus to Panvel/Khed, then local transport to Raigad Peth",
+        "distance": "130 km approx.",
+        "time": "5-6 hours",
+        "steps": [
+          "MSRTC buses ply from Pune to Panvel or Khed",
+          "Local transport options to Raigad Peth",
+          "Begin trek"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive via Pune–Mumbai Expressway and local highways to Raigad Peth",
+        "distance": "130 km approx.",
+        "time": "3.5-4.5 hours",
+        "steps": [
+          "Drive Pune–Mumbai Expressway towards Khalapur exit",
+          "Follow NH66 and local roads to Raigad Peth",
+          "Parking at base village"
+        ]
+      }
+    }
+  },
+  "bestTimeToVisit": "November to February",
+  "localContacts": [
+    {
+      "name": "Raigad Trek Guide Association",
+      "phone": "+91 98220 12345",
+      "service": "Certified Guides for Raigad Fort Trek"
+    },
+    {
+      "name": "Raigad Peth Forest Department Office",
+      "phone": "+91 2136 201234",
+      "service": "Tourist information, emergency services"
+    },
+    {
+      "name": "Khed Police Station",
+      "phone": "+91 2136 221000",
+      "service": "Law enforcement, emergencies"
+    }
+  ],
+  "imageKey": "raigad",
+  "coordinates": {
+    "latitude": 18.2311,
+    "longitude": 73.4143
+  },
+  "featured": true,
+  "rating": 4.8,
+  "reviewCount": 450,
+"images": [
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1573202739/trekapp/trek%20images/raigad_dae0q5.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1610637684/trekapp/detailpageimages/raigad/main_e1fgqe.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1610637799/trekapp/detailpageimages/raigad/raigad1_hgyhxy.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1610637800/trekapp/detailpageimages/raigad/raigad2_kqkjuw.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1610637800/trekapp/detailpageimages/raigad/raigad3_qvxfqq.jpg"
+  ],
+  "videos": [
+    "https://res.cloudinary.com/dworlkdn8/video/upload/v1750749974/trekapp/raigads/SnapInsta.to_AQP_uZXQ8dlkNpYT8a4K1VTHt8gNT-Xln9aRQo_3hlOggEMVwsVIx7jZeyxWO5phzS_16EcKIPvJjUDjfDmvOMq7DSF2X2nl9p66hNQ_whhkrq.mp4"
+  ]
+}

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
   View,
   Text,
@@ -15,6 +15,18 @@ import { COLORS, SPACING, BORDER_RADIUS, SHADOWS, IMAGES, createTextStyle } from
 
 const { width } = Dimensions.get('window');
 
+// Cache for nearby treks to avoid repeated calculations
+let nearbyTreksCache = {
+  data: null,
+  locationStatus: null,
+  userLocationName: null,
+  timestamp: null,
+  treksHash: null,
+  locationHash: null,
+};
+
+const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
+
 /**
  * NearbyTreks Component
  *
@@ -24,20 +36,61 @@ const { width } = Dimensions.get('window');
  * - Handles location permissions gracefully
  * - Provides fallback when location is unavailable
  * - Refreshable content
+ * - Caches results to avoid repeated API calls
  */
 const NearbyTreks = ({ treks = [], navigation, maxDistance = 100, limit = 6 }) => {
   const [nearbyTreks, setNearbyTreks] = useState([]);
   const [loading, setLoading] = useState(true);
   const [locationStatus, setLocationStatus] = useState({ available: false, message: 'Getting location...' });
   const [userLocationName, setUserLocationName] = useState('Your Location');
+  const initializationRef = useRef(false);
 
   useEffect(() => {
-    initializeLocation();
+    if (!initializationRef.current) {
+      initializationRef.current = true;
+      initializeLocation();
+    }
+  }, []);
+
+  // Check if treks data changed and invalidate cache if needed
+  useEffect(() => {
+    const treksHash = JSON.stringify(treks.map(t => ({ id: t.id, coordinates: t.coordinates })));
+    if (nearbyTreksCache.treksHash && nearbyTreksCache.treksHash !== treksHash) {
+      console.log('📍 NearbyTreks: Treks data changed, invalidating cache');
+      nearbyTreksCache = { data: null, locationStatus: null, userLocationName: null, timestamp: null, treksHash: null, locationHash: null };
+      initializeLocation();
+    }
   }, [treks]);
 
-  const initializeLocation = async () => {
+  const initializeLocation = async (forceRefresh = false) => {
     setLoading(true);
+
     try {
+      // Create hashes for cache validation
+      const treksHash = JSON.stringify(treks.map(t => ({ id: t.id, coordinates: t.coordinates })));
+      const locationHash = LocationService.userLocation ?
+        JSON.stringify({ lat: LocationService.userLocation.latitude, lng: LocationService.userLocation.longitude, isReal: LocationService.userLocation.isReal }) :
+        null;
+
+      // Check if we can use cached data
+      if (!forceRefresh && nearbyTreksCache.data && nearbyTreksCache.timestamp) {
+        const cacheAge = Date.now() - nearbyTreksCache.timestamp;
+        const isCacheValid = cacheAge < CACHE_DURATION &&
+                           nearbyTreksCache.treksHash === treksHash &&
+                           nearbyTreksCache.locationHash === locationHash;
+
+        if (isCacheValid) {
+          console.log('📍 NearbyTreks: Using cached data');
+          setNearbyTreks(nearbyTreksCache.data);
+          setLocationStatus(nearbyTreksCache.locationStatus);
+          setUserLocationName(nearbyTreksCache.userLocationName);
+          setLoading(false);
+          return;
+        }
+      }
+
+      console.log('📍 NearbyTreks: Fetching fresh data');
+
       // Initialize location service
       const hasPermission = await LocationService.initialize();
 
@@ -56,11 +109,25 @@ const NearbyTreks = ({ treks = [], navigation, maxDistance = 100, limit = 6 }) =
           ? `Found ${nearby.length} treks (distances from Pune area)`
           : `Found ${nearby.length} treks near you`;
 
-        setLocationStatus({
+        const newLocationStatus = {
           available: true,
           message: statusMessage,
           isUsingFallback,
-        });
+        };
+
+        setLocationStatus(newLocationStatus);
+
+        // Cache the results
+        nearbyTreksCache = {
+          data: nearby,
+          locationStatus: newLocationStatus,
+          userLocationName: locationName,
+          timestamp: Date.now(),
+          treksHash,
+          locationHash: LocationService.userLocation ?
+            JSON.stringify({ lat: LocationService.userLocation.latitude, lng: LocationService.userLocation.longitude, isReal: LocationService.userLocation.isReal }) :
+            null,
+        };
       } else {
         // No permission - show featured/popular treks instead
         const featuredTreks = treks
@@ -69,12 +136,24 @@ const NearbyTreks = ({ treks = [], navigation, maxDistance = 100, limit = 6 }) =
           .slice(0, limit)
           .map(trek => ({ ...trek, distance: null, distanceText: null, showAsFeatured: true }));
 
-        setNearbyTreks(featuredTreks);
-        setLocationStatus({
+        const newLocationStatus = {
           available: false,
           message: 'Enable location to see nearby treks',
           action: 'Enable Location',
-        });
+        };
+
+        setNearbyTreks(featuredTreks);
+        setLocationStatus(newLocationStatus);
+
+        // Cache the fallback results
+        nearbyTreksCache = {
+          data: featuredTreks,
+          locationStatus: newLocationStatus,
+          userLocationName: 'Your Location',
+          timestamp: Date.now(),
+          treksHash,
+          locationHash: null,
+        };
       }
     } catch (error) {
       console.warn('Error initializing nearby treks:', error);
@@ -95,11 +174,11 @@ const NearbyTreks = ({ treks = [], navigation, maxDistance = 100, limit = 6 }) =
         'To show treks near you, please enable location permission in your device settings.',
         [
           { text: 'Cancel', style: 'cancel' },
-          { text: 'Retry', onPress: initializeLocation },
+          { text: 'Retry', onPress: () => initializeLocation(true) },
         ]
       );
     } else if (locationStatus.action === 'Retry') {
-      initializeLocation();
+      initializeLocation(true);
     }
   };
 
@@ -108,11 +187,14 @@ const NearbyTreks = ({ treks = [], navigation, maxDistance = 100, limit = 6 }) =
   };
 
   const handleViewAllNearby = () => {
-    // Navigate to trek list with location filter
+    // Navigate to trek list with location filter and nearby treks data
     navigation.navigate('TrekList', {
       category: 'nearby',
       userLocation: LocationService.userLocation,
-      title: `Near ${userLocationName}`
+      title: `Near ${userLocationName}`,
+      nearbyTreks: nearbyTreks,
+      maxDistance: maxDistance,
+      allTreks: treks
     });
   };
 
@@ -185,7 +267,7 @@ const NearbyTreks = ({ treks = [], navigation, maxDistance = 100, limit = 6 }) =
           )}
           {/* Refresh location button for accurate distances */}
           {locationStatus.available && (
-            <TouchableOpacity onPress={initializeLocation} style={styles.refreshButton}>
+            <TouchableOpacity onPress={() => initializeLocation(true)} style={styles.refreshButton}>
               <Text style={styles.refreshButtonText}>📍</Text>
             </TouchableOpacity>
           )}
@@ -208,7 +290,7 @@ const NearbyTreks = ({ treks = [], navigation, maxDistance = 100, limit = 6 }) =
       <Text style={styles.emptySubtitle}>
         Try expanding your search radius or check your location settings
       </Text>
-      <TouchableOpacity style={styles.retryButton} onPress={initializeLocation}>
+      <TouchableOpacity style={styles.retryButton} onPress={() => initializeLocation(true)}>
         <Text style={styles.retryButtonText}>Retry</Text>
       </TouchableOpacity>
     </View>

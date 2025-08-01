@@ -1,20 +1,24 @@
 {
-  "id": 13,
-  "name": "Harishchandragad",
+  "id": 35,
+  "name": "Harishchandra Gad",
   "category": "fort",
   "location": "Ahmednagar District, Maharashtra",
-  "difficulty": "Moderate to Difficult",
-  "duration": "8-10 hours (round trip from Pachnai/Khireshwar)",
-  "elevation": "1,422 meters (4,665 feet)",
-  "description": "Harishchandragad is a historic hill fort in the Sahyadri range, known for its challenging treks, ancient caves, and the magnificent Konkankada cliff. It offers panoramic views of the surrounding valleys and peaks, making it a popular destination for trekkers and nature enthusiasts. Key attractions include the Kedareshwar Cave, Harishchandreshwar Temple, and Taramati Shikhar.",
+  "difficulty": "Moderate (via Pachnai)/Hard (Khireshwar/Nalichi Vaat)",
+  "duration": "2–3 hours (Pachnai, one way), 5–6 hours (Khireshwar, one way), 8–10 hours (Nalichi Vaat)",
+  "elevation": "1,424 meters",
+  "description": "Harishchandra Gad is a legendary hill fort towering in the Western Ghats, known for its vast caves, the iconic Konkan Kada (crescent-shaped cliff), ancient temples, and diverse trekking challenges. With origins as old as the 6th century, the fort blends adventure, panoramic Sahyadri vistas, and historic reverence, making it a bucket-list trek for beginners and experienced trekkers alike.",
   "startingPoint": {
-    "name": "Pachnai Village / Khireshwar Village",
+    "name": "Khireshwar (classic), Pachnai (easiest), Walhivale/Belpada (Nalichi Vaat, most difficult)",
     "coordinates": {
-      "latitude": 19.388889,
-      "longitude": 73.785278
+      "latitude": 19.3891,
+      "longitude": 73.7768
     },
-    "facilities": ["Parking", "Local tea stalls", "Basic dhabas"],
-    "description": "There are two main starting points: Pachnai, which is the easiest route (2-3 hours to top), and Khireshwar, which is more challenging (4-5 hours to top) and passes through the Junnar region. Both are accessible by public transport and private vehicles."
+    "facilities": [
+      "Basic parking at villages",
+      "Small tea/snacks stalls (seasonal)",
+      "Basic restrooms (mostly in villages)"
+    ],
+    "description": "Most trekkers start from Pachnai (easier, well-marked), or Khireshwar (picturesque, moderate). Belpada base is for extreme routes such as Nalichi Vaat requiring technical experience."
   },
   "networkAvailability": {
     "baseVillage": {
@@ -26,66 +30,324 @@
     "duringTrek": {
       "airtel": "Intermittent",
       "jio": "Intermittent",
-      "vodafone": "Weak",
-      "bsnl": "Weak"
+      "vodafone": "Poor",
+      "bsnl": "Poor"
     },
     "atSummit": {
-      "airtel": "Weak",
-      "jio": "Intermittent",
+      "airtel": "Limited",
+      "jio": "Limited",
       "vodafone": "No signal",
       "bsnl": "No signal"
     },
-    "emergencyContact": "Pre-trek notification advised. Dial 108/112 in case of network availability. No dedicated medical/rescue post on trek."
+    "emergencyContact": "108 (ambulance), 112 (emergency), inform local guides/village head before trek"
   },
-  "foodAccommodation": {
-    "homestays": [{
-      "name": "Several local homestays",
-      "location": "Pachnai / Khireshwar",
-      "contact": "Check locally or through trek organizers"
-    }],
-    "foodOnTrek": "Basic food (Pithla Bhakri, Maggie, Tea) available at small shacks near the temple/caves on the fort. Carry packed meals for the trek.",
-    "waterSources": "Natural springs near the temple and Kedareshwar cave (reliable during and post-monsoon). Carry sufficient water (2-3L minimum).",
-    "campingOptions": "Allowed in the caves (like Kedareshwar cave surroundings) or open ground on the fort plateau. Bring your own tents and sleeping bags."
+  "foodAndWater": {
+    "atBase": {
+      "restaurants": [
+        "Simple home meals (pre-arranged with villagers)",
+        "Tea/Maggi stalls (Pachnai/Khireshwar, seasonal)"
+      ],
+      "shops": [
+        "General stores (limited)",
+        "Packaged water (stock can run out in season)"
+      ],
+      "waterSources": [
+        "Village wells",
+        "Filtered water by villagers (ask in advance)"
+      ]
+    },
+    "duringTrek": {
+      "waterSources": [
+        "Natural cisterns/tanks at plateau and caves (boil/filter recommended)",
+        "Carry 2–3 liters per person"
+      ],
+      "foodOptions": [
+        "No shops/stalls on trail; carry packed meals",
+        "Homemade tiffin by villagers (order ahead)"
+      ],
+      "recommendations": [
+        "Dry fruits",
+        "High-calorie snacks",
+        "Glucose tablets"
+      ]
+    },
+    "atSummit": {
+      "facilities": [
+        "Caves for camping/shelter",
+        "Water tanks (filter/boil suggested)"
+      ],
+      "recommendations": [
+        "No food supply at summit",
+        "Manage water wisely in late summer"
+      ]
+    }
+  },
+  "accommodation": {
+    "camping": {
+      "allowed": true,
+      "locations": [
+        "Caves on fort (Kedareshwar, others)",
+        "Open plateau near temple"
+      ],
+      "facilities": [
+        "Rock caves provide shelter",
+        "Flat space for tents"
+      ],
+      "cost": "Free (own tent/sleeping bag required, caves can be musty/damp)"
+    },
+    "nearbyStays": [
+      {
+        "name": "Village Homestays (Pachnai, Khireshwar)",
+        "distance": "at base",
+        "cost": "₹500–800 per person (approx.)",
+        "contact": "9561566229, 9423169404, 9370933916",
+        "facilities": [
+          "Basic sharing rooms/mats",
+          "Simple home-cooked food"
+        ]
+      },
+      {
+        "name": "Bhaskar Accommodation & Meals",
+        "distance": "at base villages",
+        "cost": "₹500–800 per person (approx.)",
+        "contact": "8308081939",
+        "facilities": [
+          "Can arrange stay/food on prior request"
+        ]
+      }
+    ]
+  },
+  "permits": {
+    "required": false,
+    "forestDepartment": "Not required",
+    "entry": "Free entry (register at checkpost if open)",
+    "timings": "No strict restrictions; night treks/camping allowed, but inform base village for safety"
   },
   "safety": {
-    "currentRisks": ["Slippery rocks in monsoon", "Steep ascents and descents", "Foggy conditions", "Risk of falls near Konkankada"],
-    "nearestMedicalFacility": {
-      "name": "Primary Health Centre",
-      "location": "Junnar / Kotul (nearest towns)",
-      "contact": "Local emergency numbers will be provided by villagers."
+    "riskLevel": "Moderate/High (depends on route and season)",
+    "commonRisks": [
+      "Slippery paths in monsoon",
+      "Steep/rocky ascents (Nalichi Vaat is highly technical)",
+      "Dense fog reduces visibility",
+      "Wild honeybees/wasps (seasonal near caves)"
+    ],
+    "precautions": [
+      "Proper trekking shoes",
+      "Travel in group",
+      "Torch/headlamp for caves/early starts",
+      "Carry first-aid kit",
+      "Hire guide for difficult routes"
+    ],
+    "rescuePoints": [
+      "Base villages (Pachnai, Khireshwar, Belpada)",
+      "Main Temple (shelter, congregation point)",
+      "Kedareshwar cave"
+    ],
+    "nearestHospital": {
+      "name": "Primary Health Centre Rajur",
+      "distance": "40 km (approx.)",
+      "contact": "02433-250160"
     },
     "emergencyNumbers": {
       "ambulance": "108",
-      "police": "100",
-      "localRescueVolunteers": "Local villagers are often the first responders; connect with them upon arrival."
+      "police": "Otur Police Station: 02132-264250, 9552157100; Walhiware Police: 02524-650750; Junnar Police: 20 km from start",
+      "forestDept": "1926"
+    }
+  },
+  "weather": {
+    "monsoon": {
+      "months": "June–September",
+      "conditions": "Heavy rainfall, mist, leeches, high risk of slips",
+      "recommendation": "Good for experienced trekkers; avoid technical routes"
     },
-    "rescuePoints": ["Harishchandreshwar Temple area", "Pachnai base village", "Khireshwar base village"]
+    "winter": {
+      "months": "November–February",
+      "conditions": "Cool, pleasant, clear skies",
+      "recommendation": "Best for trekking and camping"
+    },
+    "summer": {
+      "months": "March–May",
+      "conditions": "Hot days, little water on summit",
+      "recommendation": "Start early; carry extra water"
+    }
   },
-  "localGuides": [{
-    "name": "Various local guides",
-    "contact": "Available in Pachnai and Khireshwar villages. Inquire upon arrival.",
-    "ratePerPerson": "₹500-1000 (negotiable based on group size and services)",
-    "services": ["Guided trek", "Route briefing", "Local insights"]
-  }],
-  "routeDetails": {
-    "trail": [
-      "Pachnai Route: Relatively straightforward climb from Pachnai village directly to the fort plateau.",
-      "Khireshwar Route: Begins from Khireshwar, passes through Tolar Khind, and involves a steep climb and rock patches before reaching the fort."
-    ],
-    "landmarks": [
-      "Kedareshwar Cave (with a Shiva Lingam surrounded by water)",
-      "Konkankada (huge semicircular cliff)",
-      "Taramati Shikhar (highest point)",
-      "Harishchandreshwar Temple",
-      "Saptatirtha Pushkarni (lake)"
-    ],
-    "alternativeRoutes": ["Nalichi Vaat (extremely difficult, requires technical climbing skills and equipment)", "Radeon via Belpada (moderate to difficult)"],
-    "seasonalNotes": ["Monsoon: Lush green, waterfalls, but very slippery and foggy. Best for views of Konkankada and clouds.", "Winter: Ideal for trekking with clear skies and pleasant weather.", "Summer: Very hot, carry extra water."]
+  "trekRoute": {
+    "totalDistance": "3–6 km (one way, depending on start point)",
+    "ascent": "900 meters (approx. from base)",
+    "difficulty": "Moderate from Pachnai, Moderate–Hard from Khireshwar, Very Hard from Nalichi Vaat",
+    "waypoints": [
+      {
+        "name": "Pachnai Village",
+        "elevation": "780m",
+        "description": "Easiest route base; wide, gradual climb"
+      },
+      {
+        "name": "Khireshwar Village",
+        "elevation": "742m",
+        "description": "Classic, scenic approach"
+      },
+      {
+        "name": "Tolar Khind",
+        "elevation": "1,115m",
+        "description": "Mid-point forested pass (from Khireshwar)"
+      },
+      {
+        "name": "Harishchandreshwar Temple",
+        "elevation": "strategic fort plateau",
+        "description": "Ancient temple; water tanks and caves nearby"
+      },
+      {
+        "name": "Kedareshwar Cave",
+        "elevation": "fort plateau",
+        "description": "Cave with massive Shivling and water pool"
+      },
+      {
+        "name": "Konkan Kada",
+        "elevation": "edge, near summit",
+        "description": "Stunning cliff and sunset view"
+      }
+    ]
   },
-  "permitInfo": {
-    "required": false,
-    "fee": "None",
-    "howToApply": "No permit needed for individuals or groups.",
-    "timingRestrictions": "No specific timing restrictions, but advisable to start early for safety and to avoid heat. Overnight camping is common."
-  }
+  "howToReach": {
+    "fromMumbai": {
+      "byTrain": {
+        "description": "Train to Kasara/Igatpuri, taxi/jeep to Pachnai/Khireshwar",
+        "distance": "190–210 km",
+        "time": "6–7 hours (incl. road transfer)",
+        "steps": [
+          "Central Line train from CSMT to Kasara or outstation train to Igatpuri",
+          "Hire shared/private jeep or ST bus to Rajur/Akole (Ahmednagar)",
+          "Auto/jeep to Pachnai (easiest) or Khireshwar (scenic/longer)"
+        ]
+      },
+      "byBus": {
+        "description": "ST bus to Akole/Rajur, then shared jeep to Pachnai/Khireshwar",
+        "distance": "200 km",
+        "time": "7–8 hours (connections needed)",
+        "steps": [
+          "ST bus from Mumbai to Akole or Rajur",
+          "Jeep/shared vehicle to base village (Pachnai or Khireshwar)"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive up to Pachnai/Khireshwar via Malshej Ghat/Rajur",
+        "distance": "190–200 km",
+        "time": "6–7 hours",
+        "steps": [
+          "Mumbai–Kalyan–Malshej Ghat–Alephata–Rajur–Pachnai/Khireshwar",
+          "Parking available at villages"
+        ]
+      }
+    },
+    "fromPune": {
+      "byTrain": {
+        "description": "Train to Ahmednagar, then bus/jeep to Rajur/Pachnai",
+        "distance": "180 km",
+        "time": "6–7 hours (not frequent—private travel preferred)",
+        "steps": [
+          "Pune to Ahmednagar by train",
+          "Bus/jeep to Rajur",
+          "Local jeep to base (Pachnai/Khireshwar)"
+        ]
+      },
+      "byBus": {
+        "description": "ST bus to Rajur, then to Pachnai or Khireshwar",
+        "distance": "175 km",
+        "time": "6–7 hours",
+        "steps": [
+          "Pune Shivajinagar bus to Rajur",
+          "Jeep/auto to Pachnai base or Khireshwar"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive Pune–Alephata–Rajur–Pachnai/Khireshwar",
+        "distance": "175–180 km",
+        "time": "5–6 hours",
+        "steps": [
+          "Pune–Nashik highway or Malshej Ghat–Rajur–Pachnai/Khireshwar",
+          "Parking at base villages"
+        ]
+      }
+    }
+  },
+  "bestTimeToVisit": "October to March",
+  "localContacts": [
+    {
+      "name": "Nagesh Bote",
+      "phone": "9561566229, 9423169404",
+      "service": "Guide, local food, camping"
+    },
+    {
+      "name": "Chintaman Kavate",
+      "phone": "9370933916",
+      "service": "Guide (Khireshwar base)"
+    },
+    {
+      "name": "Tukaram Boir",
+      "phone": "9372108481, 9921425325",
+      "service": "Guide (fort top)"
+    },
+    {
+      "name": "Bhaskar",
+      "phone": "8308081939",
+      "service": "Accommodation, Meals"
+    },
+    {
+      "name": "Treks and Trails India (logistics/camping)",
+      "phone": "8828004949",
+      "service": "Group bookings, camping"
+    },
+    {
+      "name": "Save Tours and Travels",
+      "phone": "8655563635",
+      "service": "Local villager support, WhatsApp/UPI payments"
+    },
+    {
+      "name": "Otur Police Station",
+      "phone": "02132-264250, 9552157100",
+      "service": "Emergency Police"
+    },
+    {
+      "name": "Walhiware (Tokawade) Police",
+      "phone": "02524-650750",
+      "service": "Emergency Police"
+    },
+    {
+      "name": "Forest Dept. Emergency",
+      "phone": "1926",
+      "service": "Forest Emergency"
+    },
+    {
+      "name": "Ambulance",
+      "phone": "108",
+      "service": "Medical Emergency"
+    }
+  ],
+  "imageKey": "harishchandragad",
+  "videos": [],
+  "coordinates": {
+    "latitude": 19.3891,
+    "longitude": 73.7768
+  },
+  "featured": true,
+  "rating": 4.7,
+  "reviewCount": 197,
+  "images": [
+    "https://res-console.cloudinary.com/dworlkdn8/thumbnails/v1/image/upload/v1751815984/dHJla2FwcC9mb3J0L2hhcmlzaGNoYW5kcmEvaW1naV8yMzFfSU1HXzYxNDRfbmZ5dm80/list_v2",
+    "https://res-console.cloudinary.com/dworlkdn8/thumbnails/v1/image/upload/v1751815980/dHJla2FwcC9mb3J0L2hhcmlzaGNoYW5kcmEvaW1naV8yMjJfMzE4NTZkMTIxNjgxNTY0Mi10cmVrLWhhcmlzaGNoYW5kcmFnYWQtdHdvLWRheXMtY29tcGFueS1jbG91ZHMtZHNjMDMzODFfZTlqbXlj/list_v2",
+    "https://res-console.cloudinary.com/dworlkdn8/thumbnails/v1/image/upload/v1751815980/dHJla2FwcC9mb3J0L2hhcmlzaGNoYW5kcmEvaW1naV8yMjlfbXVtYmFpLXB1bmUtYWR2ZW50dXJlcy1oYXJpc2hjaGFuZHJhZ2FkLXRyZWstNF9tbnRxaGk=/list_v2",
+    "https://res-console.cloudinary.com/dworlkdn8/thumbnails/v1/image/upload/v1751815977/dHJla2FwcC9mb3J0L2hhcmlzaGNoYW5kcmEvaW1naV8xNDhfV2hhdHNBcHBfSW1hZ2VfMjAyNC0wNi0xMF9hdF8zXzU3XzQzX1BNX2FqbG5rdw==/list_v2",
+    "https://res-console.cloudinary.com/dworlkdn8/thumbnails/v1/image/upload/v1751815976/dHJla2FwcC9mb3J0L2hhcmlzaGNoYW5kcmEvaW1naV8xNzhfSW5kcmF2YWpyYV9TaWRkYXJ0aF9HYWlrd2FkX3R6bGl2Zw==/list_v2",
+    "https://res-console.cloudinary.com/dworlkdn8/thumbnails/v1/image/upload/v1751815976/dHJla2FwcC9mb3J0L2hhcmlzaGNoYW5kcmEvaW1naV8yMDRfV2hhdHNBcHAtSW1hZ2UtMjAyNC0wNi0yMi1hdC0xNy40My40M184NTE3NDRkZV9yY3BhbnM=/list_v2",
+    "https://res-console.cloudinary.com/dworlkdn8/thumbnails/v1/image/upload/v1751815973/dHJla2FwcC9mb3J0L2hhcmlzaGNoYW5kcmEvaW1naV8xNzZfaGFyaXNoY2hhbmRyYWdhZF93OGVkNng=/list_v2",
+    "https://res-console.cloudinary.com/dworlkdn8/thumbnails/v1/image/upload/v1751815973/dHJla2FwcC9mb3J0L2hhcmlzaGNoYW5kcmEvaW1naV8yMThfS01NczZ1bF9mMHNlcW4=/list_v2",
+    "https://res-console.cloudinary.com/dworlkdn8/thumbnails/v1/image/upload/v1751815969/dHJla2FwcC9mb3J0L2hhcmlzaGNoYW5kcmEvaW1naV8xNjFfaGFyaXNoY2hhbmRyYWdhZC10cmVrX211dHA2ag==/list_v2",
+    "https://res-console.cloudinary.com/dworlkdn8/thumbnails/v1/image/upload/v1751815968/dHJla2FwcC9mb3J0L2hhcmlzaGNoYW5kcmEvaW1naV8yMDVfNDI4NzM2OTU2Ml8zZjNhMGYwMWQyX2hfYXpjZDZi/list_v2",
+    "https://res-console.cloudinary.com/dworlkdn8/thumbnails/v1/image/upload/v1751815967/dHJla2FwcC9mb3J0L2hhcmlzaGNoYW5kcmEvaW1naV8xNjVfQ2FtcGluZy1VbmRlcndhdGVyZmFsbC1IYXJpc2hjaGFuZHJhZ2FkLTFfcWhwYmRt/list_v2",
+    "https://res-console.cloudinary.com/dworlkdn8/thumbnails/v1/image/upload/v1751815966/dHJla2FwcC9mb3J0L2hhcmlzaGNoYW5kcmEvaW1naV8xNDNfSGFyaXNoY2hhbmRyYWdhZC02LTEyMDB4OTAwX2NtZHRwNg==/list_v2",
+    "https://res-console.cloudinary.com/dworlkdn8/thumbnails/v1/image/upload/v1751815965/dHJla2FwcC9mb3J0L2hhcmlzaGNoYW5kcmEvaW1naV8xMzlfS2FsYmhhaXJhdl9waW5uYWNsZV9TY2pfbjc2eTdq/list_v2",
+    "https://res-console.cloudinary.com/dworlkdn8/thumbnails/v1/image/upload/v1751815965/dHJla2FwcC9mb3J0L2hhcmlzaGNoYW5kcmEvaW1naV8xNTNfbXVtYmFpLXB1bmUtYWR2ZW50dXJlcy1oYXJpc2hjaGFuZHJhZ2FkLXRyZWstNV9yaHBxbXI=/list_v2",
+    "https://res-console.cloudinary.com/dworlkdn8/thumbnails/v1/image/upload/v1751815965/dHJla2FwcC9mb3J0L2hhcmlzaGNoYW5kcmEvaW1naV8xOTdfa2VkYXJlc2h3YXItc2hpdmxpbmdhLXNjYWxlZF94bjQxZGQ=/list_v2",
+    "https://res-console.cloudinary.com/dworlkdn8/thumbnails/v1/image/upload/v1751815964/dHJla2FwcC9mb3J0L2hhcmlzaGNoYW5kcmEvaW1naV8xNzFfaGFyaXNoY2hhbmRyYWdhZC10cmVrX2hndGZpdA==/list_v2"
+  ]
 }

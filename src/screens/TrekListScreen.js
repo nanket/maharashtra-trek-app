@@ -19,7 +19,7 @@ import LocalDataService from '../services/LocalDataService';
 const { width } = Dimensions.get('window');
 
 const TrekListScreen = ({ navigation, route }) => {
-  const { category, searchQuery } = route.params || {};
+  const { category, searchQuery, nearbyTreks, userLocation, maxDistance, allTreks } = route.params || {};
   const [filteredTreks, setFilteredTreks] = useState([]);
   const [selectedFilter, setSelectedFilter] = useState(category || 'all');
   const [searchText, setSearchText] = useState(searchQuery || '');
@@ -44,6 +44,28 @@ const TrekListScreen = ({ navigation, route }) => {
   };
 
   const filterTreks = (filter) => {
+    // Handle nearby category specially
+    if (filter === 'nearby') {
+      if (nearbyTreks && nearbyTreks.length > 0) {
+        // Use the passed nearby treks data
+        setFilteredTreks(nearbyTreks);
+      } else if (userLocation && allTreks) {
+        // Calculate nearby treks if we have location and all treks data
+        const LocationService = require('../services/LocationService').default;
+        const nearby = LocationService.findNearbyTreks(allTreks, maxDistance || 100, 50); // Show more in list view
+        setFilteredTreks(nearby);
+      } else {
+        // Fallback to featured treks if no location data
+        const allData = LocalDataService.getAllData();
+        const featuredTreks = allData
+          .filter(trek => trek.featured || trek.rating >= 4.0)
+          .sort((a, b) => (b.rating || 0) - (a.rating || 0))
+          .map(trek => ({ ...trek, distance: null, distanceText: null, showAsFeatured: true }));
+        setFilteredTreks(featuredTreks);
+      }
+      return;
+    }
+
     const allData = LocalDataService.getAllData();
 
     if (filter === 'all') {
@@ -124,6 +146,10 @@ const TrekListScreen = ({ navigation, route }) => {
     }
 
     switch (selectedFilter) {
+      case 'nearby':
+        return userLocation ?
+          `Treks within ${maxDistance || 100}km of your location` :
+          'Featured destinations (location not available)';
       case 'beginner':
         return 'Perfect for first-time trekkers';
       case 'intermediate':
@@ -135,12 +161,26 @@ const TrekListScreen = ({ navigation, route }) => {
     }
   };
 
-  const filters = [
-    { id: 'all', label: 'All', icon: '🗺️', color: COLORS.primary, gradient: [COLORS.primary, COLORS.primaryLight] },
-    { id: 'beginner', label: 'Beginner', icon: '🌱', color: COLORS.success, gradient: ['#10B981', '#059669'] },
-    { id: 'intermediate', label: 'Intermediate', icon: '⛰️', color: COLORS.warning, gradient: ['#F59E0B', '#D97706'] },
-    { id: 'advanced', label: 'Advanced', icon: '🏔️', color: COLORS.error, gradient: ['#EF4444', '#DC2626'] },
-  ];
+  const getFilters = () => {
+    const baseFilters = [
+      { id: 'all', label: 'All', icon: '🗺️', color: COLORS.primary, gradient: [COLORS.primary, COLORS.primaryLight] },
+      { id: 'beginner', label: 'Beginner', icon: '🌱', color: COLORS.success, gradient: ['#10B981', '#059669'] },
+      { id: 'intermediate', label: 'Intermediate', icon: '⛰️', color: COLORS.warning, gradient: ['#F59E0B', '#D97706'] },
+      { id: 'advanced', label: 'Advanced', icon: '🏔️', color: COLORS.error, gradient: ['#EF4444', '#DC2626'] },
+    ];
+
+    // Add nearby filter if we're in nearby category
+    if (category === 'nearby') {
+      return [
+        { id: 'nearby', label: 'Nearby', icon: '📍', color: COLORS.info, gradient: ['#3B82F6', '#2563EB'] },
+        ...baseFilters
+      ];
+    }
+
+    return baseFilters;
+  };
+
+  const filters = getFilters();
 
   const renderTrekCard = ({ item }) => (
     <TrekCard trek={item} onPress={handleTrekPress} />
@@ -176,6 +216,7 @@ const TrekListScreen = ({ navigation, route }) => {
             onChangeText={setSearchText}
             onSubmitEditing={handleSearchSubmit}
             returnKeyType="search"
+            blurOnSubmit={false}
           />
           {searchText.length > 0 && (
             <TouchableOpacity onPress={handleSearchClear} style={styles.clearButton}>
@@ -192,6 +233,7 @@ const TrekListScreen = ({ navigation, route }) => {
             horizontal
             showsHorizontalScrollIndicator={false}
             contentContainerStyle={styles.filtersScrollContent}
+            keyboardShouldPersistTaps="handled"
           >
             {filters.map((filter, index) => (
               <TouchableOpacity
@@ -236,6 +278,8 @@ const TrekListScreen = ({ navigation, route }) => {
         ListHeaderComponent={renderHeader}
         contentContainerStyle={styles.listContainer}
         showsVerticalScrollIndicator={false}
+        keyboardShouldPersistTaps="handled"
+        keyboardDismissMode="on-drag"
       />
     </SafeAreaView>
   );

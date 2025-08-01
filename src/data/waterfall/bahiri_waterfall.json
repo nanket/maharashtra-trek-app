@@ -1,0 +1,184 @@
+{
+  "id": 3201,
+  "name": "Bahiri Waterfall",
+  "category": "waterfall",
+  "location": "Karjat, Raigad District, Maharashtra",
+  "difficulty": "Moderate to Hard",
+  "duration": "1.5 to 2 hours trek to waterfall and caves",
+  "elevation": "Approximately 600 meters above sea level",
+  "description": "Bahiri Waterfall lies near the famous Dhak Bahiri Caves, located on the Dhak Fort cliffs in the Sahyadri range. The waterfall is surrounded by dense jungle and is a key scenic feature during the trek. The area offers panoramic views of the surrounding valleys and mountain peaks including Rajmachi, Visapur, and Manikgad forts. The trek involves trekking steep slopes and a vertical climb with ropes and iron railings. There are no food stalls at the waterfall, so carrying water and snacks is advised.",
+  "startingPoint": {
+    "name": "Sandashi Village (common base for trek)",
+    "coordinates": {
+      "latitude": 18.8749,
+      "longitude": 73.4188
+    },
+    "facilities": [
+      "Parking available in village",
+      "Basic local shops and tea stalls",
+      "Limited public toilets"
+    ],
+    "description": "Sandashi Village serves as the typical trek base to Bahiri Waterfall and Dhak Bahiri Caves. It is accessible by road and local transport from Karjat and Kamshet railway stations."
+  },
+  "networkAvailability": {
+    "baseVillage": {
+      "airtel": "Good",
+      "jio": "Good",
+      "vodafone": "Fair",
+      "bsnl": "Fair"
+    },
+    "duringTrek": {
+      "airtel": "Weak to intermittent",
+      "jio": "Weak to intermittent",
+      "vodafone": "Poor",
+      "bsnl": "Poor"
+    },
+    "atWaterfall": {
+      "airtel": "No signal",
+      "jio": "No signal",
+      "vodafone": "No signal",
+      "bsnl": "No signal"
+    },
+    "emergencyContact": "Dial 108 or 112 when network is available"
+  },
+  "foodAndWater": {
+    "atBase": {
+      "restaurants": [
+        "Local tea stalls and snack vendors in Sandashi"
+      ],
+      "shops": [
+        "Basic provision shops for water and snacks"
+      ],
+      "waterSources": [
+        "Village wells and small springs (water treatment recommended)"
+      ]
+    },
+    "duringTrek": {
+      "foodOptions": [
+        "No food stalls en route or at the waterfall",
+        "Carry packed food and sufficient water"
+      ],
+      "waterSources": [
+        "Limited natural water streams near waterfall; treat before drinking"
+      ]
+    },
+    "atWaterfall": {
+      "facilities": [
+        "No permanent food or water stalls"
+      ]
+    }
+  },
+  "accommodation": {
+    "camping": {
+      "allowed": false,
+      "reason": "No designated camping areas near the waterfall; visits are usually day treks"
+    },
+    "nearbyStays": [
+      {
+        "name": "Local Homestays in Sandashi and nearby villages",
+        "distance": "In and around Sandashi",
+        "cost": "₹500-1000 per person approx.",
+        "contact": "Local contacts available on arrival or via trekking groups",
+        "facilities": [
+          "Basic rooms and home-cooked meals",
+          "Guide and trekking support services"
+        ]
+      }
+    ]
+  },
+  "permits": {
+    "required": false,
+    "notes": "No official permits required; follow local guidelines and environmental practices"
+  },
+  "safety": {
+    "riskLevel": "Moderate (due to steep climb and slippery rocks during rains)",
+    "commonRisks": [
+      "Steep, vertical ascent sections requiring care",
+      "Slippery rocks near waterfalls",
+      "Remote forested area with low network",
+      "No access to food or water on trek"
+    ],
+    "precautions": [
+      "Wear sturdy trekking shoes",
+      "Carry sufficient water and energy snacks",
+      "Use helmets or safety equipment for climbing",
+      "Avoid trekking in heavy rain or low visibility"
+    ],
+    "emergencyNumbers": {
+      "ambulance": "108",
+      "police": "Karjat Police Station: +91 2192 263000"
+    }
+  },
+  "howToReach": {
+    "fromMumbai": {
+      "byTrain": {
+        "description": "Train to Karjat or Kamshet, then local transport to Sandashi village",
+        "distance": "Approx. 70 km to Karjat",
+        "time": "2.5-3 hours to Karjat plus local transport",
+        "steps": [
+          "Train from Mumbai CST/Dadar to Karjat/Kamshet",
+          "Local bus, taxi or shared auto to Sandashi",
+          "Start trek from Sandashi village"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive via Mumbai-Pune Expressway to Karjat, then local roads to Sandashi",
+        "distance": "Approx. 75-80 km",
+        "time": "3-4 hours",
+        "steps": [
+          "Take Mumbai-Pune Expressway to Karjat exit",
+          "Follow signboards/local maps to Sandashi village",
+          "Park and begin trek"
+        ]
+      }
+    },
+    "fromPune": {
+      "byTrain": {
+        "description": "Train to Kamshet or Karjat, then taxi or local transport to Sandashi",
+        "distance": "Approx. 60 km to Kamshet",
+        "time": "2-2.5 hours",
+        "steps": [
+          "Board train Pune to Kamshet/Karjat",
+          "Hire taxi/auto to Sandashi",
+          "Begin trek"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive Pune-Karjat route via local roads to Sandashi",
+        "distance": "Approx. 65-70 km",
+        "time": "2-3 hours",
+        "steps": [
+          "Drive via Pune-Mumbai highway towards Karjat",
+          "Turn toward Sandashi village via local roads",
+          "Park and start trek"
+        ]
+      }
+    }
+  },
+  "bestTimeToVisit": "June to September (monsoon) for best waterfall experience; post-monsoon periods are also pleasant",
+  "localContacts": [
+    {
+      "name": "Local Trek Guide Services",
+      "phone": "+91 98765 43210",
+      "service": "Guides available from Sandashi/Karjat for Bahiri trek"
+    }
+  ],
+ "images": [
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754056464/treks/bahiri/bahiri_2.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754056464/treks/bahiri/bahiri_3.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754056464/treks/bahiri/bahiri_4.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754056464/treks/bahiri/bahiri_5.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754056464/treks/bahiri/bahiri_6.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754056464/treks/bahiri/bahiri_7.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754056465/treks/bahiri/bahiri_8.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754056464/treks/bahiri/bahiri_9.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754056464/treks/bahiri/bahiri_10.jpg"
+  ],
+  "coordinates": {
+    "latitude": 18.8749,
+    "longitude": 73.4188
+  },
+  "featured": false,
+  "rating": 4.4,
+  "reviewCount": 38
+}

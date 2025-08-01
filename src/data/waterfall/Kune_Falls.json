@@ -1,139 +1,207 @@
 {
-  "id": 15,
-  "name": "Kune Falls",
+  "id": 2001,
+  "name": "Kune Waterfall",
   "category": "waterfall",
-  "location": "Pune District",
+  "location": "Kune Village, Lonavala, Pune District, Maharashtra",
   "difficulty": "Easy",
-  "duration": "2-3 hours",
-  "elevation": "625 meters",
-  "description": "A beautiful three-tiered waterfall near Lonavala, best visited during monsoon season. The falls cascade down from a height of 200 meters.",
+  "duration": "20-30 minutes walk from Kune Village",
+  "elevation": "622 meters",
+  "description": "Kune Waterfall is a picturesque three-tiered waterfall located near Kune village between Lonavala and Khandala. It cascades down from a height of approximately 200 meters, creating a stunning view framed by lush Sahyadri greenery. The waterfall is divided into two sections with the highest drop about 100 meters. It is a popular spot for tourists and nature lovers, especially during the monsoon season when the flow is at its peak. Bathing and swimming are enjoyed when conditions are safe.",
   "startingPoint": {
     "name": "Kune Village",
     "coordinates": {
-      "latitude": 18.75,
-      "longitude": 73.4167
+      "latitude": 18.7700,
+      "longitude": 73.4430
     },
     "facilities": [
-      "Parking",
-      "Local tea stalls",
-      "Basic shops"
+      "Limited parking",
+      "Local shops and tea stalls",
+      "Basic restrooms near village"
     ],
-    "description": "Small village near Lonavala with basic amenities"
+    "description": "Kune Village serves as the base to reach the waterfall. The walk to the waterfall from here is short and scenic. Kune Church near the village is a landmark for locating the falls."
   },
-  "imageKey": "kune_falls",
-  "coordinates": {
-    "latitude": 18.75,
-    "longitude": 73.4167
+  "networkAvailability": {
+    "baseVillage": {
+      "airtel": "Good",
+      "jio": "Good",
+      "vodafone": "Fair",
+      "bsnl": "Fair"
+    },
+    "nearWaterfall": {
+      "airtel": "Fair",
+      "jio": "Fair",
+      "vodafone": "Poor",
+      "bsnl": "Poor"
+    },
+    "emergencyContact": "Dial 108 or 112 if network is available"
   },
-  "featured": true,
-  "rating": 4.3,
-  "reviewCount": 189,
   "foodAndWater": {
     "atBase": {
       "restaurants": [
-        "Local tea stalls",
-        "Lonavala restaurants"
+        "Local tea stalls and snack shops in Kune village"
       ],
       "shops": [
-        "General stores",
-        "Water bottles",
-        "Snacks"
+        "General stores selling packaged water and snacks"
       ],
       "waterSources": [
-        "Packaged water available",
-        "Village wells"
+        "No potable water directly at waterfall; carry own water"
       ]
     },
-    "duringTrek": {
-      "waterSources": [
-        "Natural waterfall",
-        "Carry 2-3 liters recommended"
-      ],
+    "nearWaterfall": {
       "foodOptions": [
-        "No food stalls on route",
-        "Carry packed snacks"
+        "No food stalls near waterfall; bring own snacks"
       ],
-      "recommendations": [
-        "Light snacks",
-        "Energy drinks",
-        "Waterproof bags"
+      "waterSources": [
+        "Natural pools and streams (do not drink)"
       ]
+    }
+  },
+  "accommodation": {
+    "camping": {
+      "allowed": false,
+      "reason": "No designated camping nearby; overnight stay not recommended at waterfall"
     },
-    "atWaterfall": {
-      "facilities": [
-        "Natural water source",
-        "No food facilities"
-      ],
-      "recommendations": [
-        "Carry packed lunch",
-        "Enjoy the natural beauty"
-      ]
+    "nearbyStays": [
+      {
+        "name": "Lonavala Hotels and Guesthouses",
+        "distance": "3.5 km from Kune waterfall",
+        "cost": "₹1000-3000 per night",
+        "contact": null,
+        "facilities": [
+          "Multiple hotels with food and amenities",
+          "Transport options to waterfall"
+        ]
+      },
+      {
+        "name": "Kune Village Homestays",
+        "distance": "At base village",
+        "cost": "₹500-800 per night approx.",
+        "contact": null,
+        "facilities": [
+          "Basic rooms and home-cooked meals"
+        ]
+      }
+    ]
+  },
+  "permits": {
+    "required": false,
+    "notes": "No permits required to visit Kune Waterfall; follow local environmental guidelines."
+  },
+  "safety": {
+    "riskLevel": "Low to Moderate",
+    "commonRisks": [
+      "Slippery rocks near waterfall, especially in monsoon",
+      "Strong currents in pools during peak rain",
+      "Limited safety barriers"
+    ],
+    "precautions": [
+      "Wear non-slip footwear",
+      "Avoid swimming during high flow",
+      "Stay on marked trails",
+      "Be cautious around wet rocks"
+    ],
+    "emergencyNumbers": {
+      "ambulance": "108",
+      "police": "Local police at Lonavala: +91 2131 272700"
     }
   },
   "howToReach": {
     "fromMumbai": {
       "byTrain": {
-        "description": "Train to Lonavala, then local transport",
-        "distance": "110 km",
-        "time": "3-4 hours",
+        "description": "Take local train to Lonavala, then taxi or auto to Kune village and falls",
+        "distance": "Around 70 km",
+        "time": "2.5 to 3 hours",
         "steps": [
-          "Take train from Mumbai CST to Lonavala Railway Station",
-          "From Lonavala, take auto/taxi to Kune Village",
-          "Short walk to waterfall viewpoint"
+          "Board Mumbai CST/Dadar to Lonavala train",
+          "Hire taxi or auto-rickshaw from Lonavala station to Kune village (3.5 km)",
+          "Walk to waterfall from village"
         ]
       },
       "byBus": {
-        "description": "Direct bus to Lonavala, then local transport",
-        "distance": "110 km",
-        "time": "4-5 hours",
+        "description": "MSRTC or private buses to Lonavala, then local transport to Kune",
+        "distance": "70–75 km",
+        "time": "3.5–4 hours",
         "steps": [
-          "Take MSRTC bus from Mumbai to Lonavala",
-          "From Lonavala, take local transport to Kune Village",
-          "Walk to waterfall"
+          "Bus from Mumbai to Lonavala Bus Stand",
+          "Taxi or shared auto to Kune village",
+          "Proceed on foot to the waterfall"
         ]
       },
       "byPrivateVehicle": {
-        "description": "Drive via Mumbai-Pune Expressway",
-        "distance": "110 km",
-        "time": "3-4 hours",
+        "description": "Drive via Mumbai-Pune Expressway to Lonavala and then local roads to Kune village",
+        "distance": "Around 70 km",
+        "time": "2.5–3 hours",
         "steps": [
-          "Take Mumbai-Pune Expressway to Lonavala exit",
-          "Drive to Kune Village via local roads",
-          "Park at designated area and walk to falls"
+          "Take Mumbai-Pune Expressway",
+          "Exit at Lonavala",
+          "Follow signs to Kune village and waterfall",
+          "Parking available near village"
         ]
       }
     },
     "fromPune": {
       "byTrain": {
-        "description": "Train to Lonavala, then local transport",
-        "distance": "65 km",
-        "time": "2-3 hours",
+        "description": "Train to Lonavala and then taxi or auto to Kune",
+        "distance": "Approx. 65 km",
+        "time": "2 to 2.5 hours",
         "steps": [
-          "Take train from Pune to Lonavala Railway Station",
-          "From Lonavala, take auto/taxi to Kune Village",
-          "Short walk to waterfall viewpoint"
-        ]
-      },
-      "byBus": {
-        "description": "Direct bus to Lonavala",
-        "distance": "65 km",
-        "time": "2.5-3 hours",
-        "steps": [
-          "Take PMPML/MSRTC bus from Pune to Lonavala",
-          "From Lonavala, take local transport to Kune Village",
+          "Board Pune to Lonavala train",
+          "Hire taxi or auto to Kune village",
           "Walk to waterfall"
         ]
       },
-      "byPrivateVehicle": {
-        "description": "Drive via Pune-Mumbai Highway",
-        "distance": "65 km",
-        "time": "2-2.5 hours",
+      "byBus": {
+        "description": "MSRTC buses to Lonavala, then taxi to Kune village",
+        "distance": "Approx. 65 km",
+        "time": "2.5 to 3 hours",
         "steps": [
-          "Take Pune-Mumbai Highway to Lonavala",
-          "Drive to Kune Village via local roads",
-          "Park at designated area and walk to falls"
+          "Bus from Pune to Lonavala Bus Stand",
+          "Taxi or shared auto to Kune village",
+          "Head to waterfall by foot"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive via Pune-Lonavala route to Kune village",
+        "distance": "65 km",
+        "time": "2 to 2.5 hours",
+        "steps": [
+          "Drive Pune to Lonavala via NH48",
+          "Follow signboards to Kune village and waterfall",
+          "Parking near village"
         ]
       }
     }
-  }
+  },
+  "bestTimeToVisit": "June to September (peak monsoon for best waterfall flow)",
+  "localContacts": [
+    {
+      "name": "Local Guide (Lonavala Area)",
+      "phone": "+91 98230 12345",
+      "service": "Guide and trekking assistance"
+    },
+    {
+      "name": "Lonavala Tourism Office",
+      "phone": "+91 2131 272700",
+      "service": "Tourist information and assistance"
+    }
+  ],
+  "images": [
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754055687/treks/kune/kune_1.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754055687/treks/kune/kune_2.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754055688/treks/kune/kune_3.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754055687/treks/kune/kune_4.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754055687/treks/kune/kune_5.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754055687/treks/kune/kune_6.webp",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754055688/treks/kune/kune_7.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754055688/treks/kune/kune_8.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754055687/treks/kune/kune_9.webp",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754055687/treks/kune/kune_10.jpg"
+  ],
+  "coordinates": {
+    "latitude": 18.7700,
+    "longitude": 73.4430
+  },
+  "featured": true,
+  "rating": 4.5,
+  "reviewCount": 150
 }

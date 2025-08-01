@@ -250,6 +250,8 @@ const CompletedTreksTab = ({ navigation, completedTreks, onCompletedChange }) =>
               multiline
               numberOfLines={4}
               textAlignVertical="top"
+              returnKeyType="done"
+              blurOnSubmit={true}
             />
           </View>
 

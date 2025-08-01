@@ -1,0 +1,330 @@
+{
+  "id": 1,
+  "name": "Rajgad Fort",
+  "category": "fort",
+  "location": "Pune District, Maharashtra",
+  "difficulty": "Moderate",
+  "duration": "6-7 hours (full exploration; ascent typically 2-3 hours)",
+  "elevation": "1,376 meters",
+  "description": "Rajgad, the 'King of Forts,' was the Maratha Empire capital for 26 years under Chhatrapati Shivaji Maharaj. It is famed for its massive walls, bastions, Padmavati Machi, and breathtaking Sahyadri views. A historic, strategic site for the Maratha kingdom, Rajgad is a must-trek for every enthusiast.",
+  "startingPoint": {
+    "name": "Gunjavane Village (most popular), Pali Village (alternate)",
+    "coordinates": {
+      "latitude": 18.2467,
+      "longitude": 73.6815
+    },
+    "facilities": [
+      "Parking",
+      "Basic shops and tea stalls",
+      "Public restrooms (at base and on fort)",
+      "Local guides"
+    ],
+    "description": "Gunjavane is the main base village (2.5 hours from Pune by road). Parking is available. Pali is another entry point, slightly longer but with a gentler gradient."
+  },
+  "networkAvailability": {
+    "baseVillage": {
+      "airtel": "Good",
+      "jio": "Good",
+      "vodafone": "Fair",
+      "bsnl": "Fair"
+    },
+    "duringTrek": {
+      "airtel": "Intermittent",
+      "jio": "Intermittent",
+      "vodafone": "Poor",
+      "bsnl": "Poor"
+    },
+    "atSummit": {
+      "airtel": "Good",
+      "jio": "Good",
+      "vodafone": "Fair",
+      "bsnl": "Fair"
+    },
+    "emergencyContact": "108 (ambulance); all providers work at base, some at summit."
+  },
+  "foodAndWater": {
+    "atBase": {
+      "restaurants": [
+        "Hotel Rajgad Niwara",
+        "Local tea stalls and snacks"
+      ],
+      "shops": [
+        "General stores for water, energy bars",
+        "Small stalls for Pithla Bhakri, Wada Pav"
+      ],
+      "waterSources": [
+        "Village wells",
+        "Packaged water available"
+      ]
+    },
+    "duringTrek": {
+      "waterSources": [
+        "Natural springs at Padmavati Machi and fort cisterns (filter/boil recommended)",
+        "Carry minimum 2–3L per person"
+      ],
+      "foodOptions": [
+        "No reliable stalls on trek; carry packed food",
+        "Villagers may provide basic items on weekends"
+      ],
+      "recommendations": [
+        "Energy bars",
+        "Snacks",
+        "Electrolyte drink"
+      ]
+    },
+    "atSummit": {
+      "facilities": [
+        "Teas stalls near Padmavati Temple (mostly weekends)",
+        "Water tanks"
+      ],
+      "recommendations": [
+        "Carry sufficient water",
+        "No guaranteed food supply at summit"
+      ]
+    }
+  },
+  "accommodation": {
+    "camping": {
+      "allowed": true,
+      "locations": [
+        "Padmavati Machi (temple and surrounding grounds)",
+        "Suvela Machi and Sanjivani Machi (sheltered locations)"
+      ],
+      "facilities": [
+        "Padmavati Temple can accommodate 50–70 trekkers indoors",
+        "Villagers can arrange tents, firewood"
+      ],
+      "cost": "Free if using own tent; Rs. 1,000+ per person (tent+meal packages)"
+    },
+    "nearbyStays": [
+      {
+        "name": "Hotel Rajgad Niwara",
+        "distance": "0.5 km from Gunjavane base",
+        "cost": "₹800–1600 per room",
+        "contact": "7083829002",
+        "facilities": [
+          "Private rooms",
+          "Home-cooked meals"
+        ]
+      },
+      {
+        "name": "Rajgad EcoStay",
+        "distance": "At Gunjavane village",
+        "cost": "₹800–1200 per person",
+        "contact": "9422343161, 7218486356",
+        "facilities": [
+          "Home-cooked food",
+          "Tents or rooms",
+          "Parking"
+        ]
+      },
+      {
+        "name": "Rajgad Base Camp Night Camping",
+        "distance": "Pimpri village (near Rajgad fort base)",
+        "cost": "₹1,250 adult/₹800 child (tent+meals)",
+        "contact": "8686003747, 9890989897, 9823171740",
+        "facilities": [
+          "Tents",
+          "Meals (veg/non-veg)",
+          "Bonfire, games"
+        ]
+      }
+    ]
+  },
+  "permits": {
+    "required": false,
+    "forestDepartment": "Not required",
+    "entry": "Free entry",
+    "timings": "Open sunrise to sunset; night camping allowed in temple and tents"
+  },
+  "safety": {
+    "riskLevel": "Moderate",
+    "commonRisks": [
+      "Steep steps and rocks, especially in monsoon",
+      "Crowds on weekends",
+      "Loose stones on Sanjivani Machi and Balekilla climbs"
+    ],
+    "precautions": [
+      "Trekking shoes",
+      "First aid kit",
+      "Avoid venturing off-trail",
+      "Travel in groups during night trek"
+    ],
+    "rescuePoints": [
+      "Padmavati Machi",
+      "Gunjavane base village",
+      "Pali base village"
+    ],
+    "nearestHospital": {
+      "name": "Rural Hospital Bhor",
+      "distance": "25 km",
+      "contact": "02113-222333"
+    }
+  },
+  "weather": {
+    "monsoon": {
+      "months": "June–September",
+      "conditions": "Heavy rain, slippery steps, leeches likely, stunning green views",
+      "recommendation": "Best for views, caution for slips, check with local guides"
+    },
+    "winter": {
+      "months": "November–February",
+      "conditions": "Cool, clear, excellent visibility",
+      "recommendation": "Best for trekking and camping"
+    },
+    "summer": {
+      "months": "March–May",
+      "conditions": "Hot afternoons, limited water sources",
+      "recommendation": "Start early, carry extra water"
+    }
+  },
+  "trekRoute": {
+    "totalDistance": "6–8 km (round trip, depending on entry; full fort exploration is longer)",
+    "ascent": "650 meters",
+    "difficulty": "Moderate (occasional steep climbs, but well-marked)",
+    "waypoints": [
+      {
+        "name": "Gunjavane Village",
+        "elevation": "726m",
+        "description": "Main trek base, all amenities"
+      },
+      {
+        "name": "Pali Darwaja",
+        "elevation": "950m",
+        "description": "Sturdy gateway en route"
+      },
+      {
+        "name": "Padmavati Machi",
+        "elevation": "1200m",
+        "description": "Large plateau, temple, camping, water"
+      },
+      {
+        "name": "Balekilla (Citadel)",
+        "elevation": "1376m",
+        "description": "Highest, main fortification, 360° Sahyadri view"
+      },
+      {
+        "name": "Sanjivani Machi",
+        "elevation": "1200m",
+        "description": "Top fortification, great for sunset"
+      },
+      {
+        "name": "Suvela Machi/Nedhe",
+        "elevation": "1200m",
+        "description": "Natural Elephant Hole, unique photo spot"
+      }
+    ]
+  },
+  "howToReach": {
+    "fromMumbai": {
+      "byTrain": {
+        "description": "Take train to Pune, then local bus or taxi to Gunjavane (via Swargate bus stand)",
+        "distance": "150 km",
+        "time": "4–5 hours",
+        "steps": [
+          "Mumbai CST/LTT to Pune",
+          "Pune Swargate bus to Gunjavane",
+          "Start trek from village"
+        ]
+      },
+      "byBus": {
+        "description": "MSRTC/Semi-luxury buses to Pune, then bus/taxi to Gunjavane",
+        "distance": "155 km",
+        "time": "5–6 hours",
+        "steps": [
+          "Mumbai to Pune",
+          "Local bus to Velhe or Nasrapur",
+          "Jeep/auto to Gunjavane"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive via Mumbai–Pune Expressway, Pune–Satara Highway to Gunjavane",
+        "distance": "150 km",
+        "time": "3.5–4 hours",
+        "steps": [
+          "Expressway to Pune",
+          "Pune–Satara highway, exit at Nasrapur",
+          "Drive to Gunjavane (parking at base)"
+        ]
+      }
+    },
+    "fromPune": {
+      "byTrain": {
+        "description": "Not ideal; prefer road access.",
+        "distance": "60 km",
+        "time": "1.5 hours",
+        "steps": [
+          "Use MSRTC bus/taxi via Swargate to Gunjavane",
+          "Or drive directly"
+        ]
+      },
+      "byBus": {
+        "description": "Direct MSRTC bus to Gunjavane/Nasrapur; jeep to base",
+        "distance": "65 km",
+        "time": "2 hours",
+        "steps": [
+          "Bus from Swargate to Nasrapur/Velhe",
+          "Jeep/auto to Gunjavane"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive Pune–Satara Highway to Nasrapur, then Gunjavane",
+        "distance": "60 km",
+        "time": "1.5 hours",
+        "steps": [
+          "Pune–Satara highway",
+          "Exit at Nasrapur",
+          "Road to Gunjavane"
+        ]
+      }
+    }
+  },
+  "bestTimeToVisit": "October–February",
+  "localContacts": [
+    {
+      "name": "Hotel Rajgad Niwara",
+      "phone": "07083829002",
+      "service": "Homestay, food, tent rental"
+    },
+    {
+      "name": "Rajgad Ecostay (Gunjavane)",
+      "phone": "9422343161, 7218486356",
+      "service": "Tent/room stay, food"
+    },
+    {
+      "name": "Rajgad Nivasi Camping",
+      "phone": "8686003747, 9890989897, 9823171740",
+      "service": "Camping, tents, guide, local food"
+    },
+    {
+      "name": "Mr. Bhosle (Guide)",
+      "phone": "9619399746, 7276885060",
+      "service": "Guide, tent rental"
+    }
+  ],
+  "imageKey": "rajgad",
+  "videos": [],
+  "coordinates": {
+    "latitude": 18.2467,
+    "longitude": 73.6815
+  },
+  "featured": true,
+  "rating": 4.7,
+  "reviewCount": 350,
+"videos": [
+    "https://res.cloudinary.com/dworlkdn8/video/upload/v1750749974/trekapp/raigads/SnapInsta.to_AQP_uZXQ8dlkNpYT8a4K1VTHt8gNT-Xln9aRQo_3hlOggEMVwsVIx7jZeyxWO5phzS_16EcKIPvJjUDjfDmvOMq7DSF2X2nl9p66hNQ_whhkrq.mp4"
+  ],
+
+"images": [
+    "https://res-console.cloudinary.com/dworlkdn8/thumbnails/v1/image/upload/v1751816507/dHJla2FwcC9mb3J0L3JhamdhZC9pbWdpXzE1OV9SYWpnYWQtRm9ydC1UcmVrX2t1ZXFkcg==/list_v2",
+    "https://res-console.cloudinary.com/dworlkdn8/thumbnails/v1/image/upload/v1751816504/dHJla2FwcC9mb3J0L3JhamdhZC9pbWdpXzE2N19SYWpnYWQtVHJlay1Ecm9uZS1WaWV3LTgyMHgxMDI0X3h2YWNlbw==/list_v2",
+    "https://res-console.cloudinary.com/dworlkdn8/thumbnails/v1/image/upload/v1751816503/dHJla2FwcC9mb3J0L3JhamdhZC9pbWdpXzE0MF9pbWdfMjAxOTA5MjFfMTIwMzMwX2Z4cXRueg==/list_v2",
+    "https://res-console.cloudinary.com/dworlkdn8/thumbnails/v1/image/upload/v1751816503/dHJla2FwcC9mb3J0L3JhamdhZC9pbWdpXzE3NF80X3h1ZGxncQ==/list_v2",
+    "https://res-console.cloudinary.com/dworlkdn8/thumbnails/v1/image/upload/v1751816501/dHJla2FwcC9mb3J0L3JhamdhZC9pbWdpXzE4Nl9JTUdfMjAxOTA0MDdfMDcyMjE5LTIwNDh4OTY3X3J2YmdjbQ==/list_v2",
+    "https://res-console.cloudinary.com/dworlkdn8/thumbnails/v1/image/upload/v1751816498/dHJla2FwcC9mb3J0L3JhamdhZC9pbWdpXzE1Ml92aWJyYW50X2V4cGxvcmVyX19fY2k0czhsaGplNm1fX19feDlodnZ1/list_v2",
+    "https://res-console.cloudinary.com/dworlkdn8/thumbnails/v1/image/upload/v1751816496/dHJla2FwcC9mb3J0L3JhamdhZC9pbWdpXzE4NF9SYWpnYWQtRm9ydC1Ub3Bfa2RramNq/list_v2",
+    "https://res-console.cloudinary.com/dworlkdn8/thumbnails/v1/image/upload/v1751816495/dHJla2FwcC9mb3J0L3JhamdhZC9pbWdpXzE5OF9SYWpnYWQtTW9vbmxpZ2h0LVRyZWtfYW5xbWdp/list_v2",
+    "https://res-console.cloudinary.com/dworlkdn8/thumbnails/v1/image/upload/v1751816495/dHJla2FwcC9mb3J0L3JhamdhZC9pbWdpXzEzOV8yNTYwcHgtQW5fYWVyaWFsX3ZpZXdfb2ZfUmFqZ2FkX2ZvcnRfTWFoYXJhc2h0cmFfSW5kaWFfcmp6bm5h/list_v2",
+    "https://res-console.cloudinary.com/dworlkdn8/thumbnails/v1/image/upload/v1751816493/dHJla2FwcC9mb3J0L3JhamdhZC9pbWdpXzEzMF9SYWpnYWQtdG8tdG9ybmEtNF9sY2JlZ2c=/list_v2"
+  ]
+}

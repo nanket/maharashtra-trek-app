@@ -1,0 +1,301 @@
+{
+  "id": 33,
+  "name": "Alang Fort (Alang–Madangad–Kulang / AMK)",
+  "category": "fort",
+  "location": "Nashik District, Maharashtra",
+  "difficulty": "Hard (Technical, strenuous, exposed sections)",
+  "duration": "9–12 hours (one way, Alang only); 2–3 days for full AMK circuit",
+  "elevation": "1372 meters",
+  "description": "Alang Fort is part of the remote AMK trio (Alang, Madangad, Kulang), revered by seasoned trekkers for its challenging trails, iron ladders, rock climbs, thrilling exposed ledges, and large caves for camping. The summit delivers sweeping Sahyadri vistas and adventures of real wilderness trekking. Only for experienced trekkers with technical gear and strong navigation skills.",
+  "startingPoint": {
+    "name": "Ambewadi (primary), Ghatghar (alternative)",
+    "coordinates": { "latitude": 19.5691, "longitude": 73.6411 },
+    "facilities": [
+      "Limited parking in village",
+      "Basic tea/snacks (seasonal)",
+      "No public toilets nearby"
+    ],
+    "description": "Ambewadi village is the most common base for Alang, reachable via Igatpuri–Ghoti or Kasara routes. Ghatghar is used by some for alternate circuits and is slightly more developed."
+  },
+  "networkAvailability": {
+    "baseVillage": {
+      "airtel": "Fair",
+      "jio": "Fair",
+      "vodafone": "Weak",
+      "bsnl": "Fair"
+    },
+    "duringTrek": {
+      "airtel": "Intermittent",
+      "jio": "Intermittent",
+      "vodafone": "No signal",
+      "bsnl": "No signal"
+    },
+    "atSummit": {
+      "airtel": "No signal",
+      "jio": "No signal",
+      "vodafone": "No signal",
+      "bsnl": "No signal"
+    },
+    "emergencyContact": "Pre-trek notification highly recommended. Dial 108/112 if/when network is available. No medical/rescue post en route."
+  },
+  "foodAndWater": {
+    "atBase": {
+      "restaurants": [
+        "Home-cooked meals (pre-arrange at homestays)",
+        "Basic snacks at tea stalls (seasonal)"
+      ],
+      "shops": [
+        "Small grocery shop (Ambewadi)",
+        "Water bottles (availability not guaranteed)"
+      ],
+      "waterSources": [
+        "Village wells (treatment recommended)"
+      ]
+    },
+    "duringTrek": {
+      "waterSources": [
+        "Large cisterns/caves (quality varies, especially late season)",
+        "Carry minimum 3L per person"
+      ],
+      "foodOptions": [
+        "No food stalls after base. Carry packed meals.",
+        "Arrange basic meals in Ambewadi (dal–rice/poha on request)"
+      ],
+      "recommendations": [
+        "High-energy food",
+        "Dry fruits",
+        "Chocolate/energy bars"
+      ]
+    },
+    "atSummit": {
+      "facilities": [
+        "Caves for camping",
+        "Cisterns for water (treatment required)"
+      ],
+      "recommendations": [
+        "Boil/filter cistern water before use",
+        "No food available—carry all supplies"
+      ]
+    }
+  },
+  "accommodation": {
+    "camping": {
+      "allowed": true,
+      "locations": [
+        "Alang Fort caves",
+        "Plateau near summit"
+      ],
+      "facilities": [
+        "Natural caves (basic shelter)",
+        "Flat ground for tents"
+      ],
+      "cost": "Free (must be fully self-sufficient)"
+    },
+    "nearbyStays": [
+      {
+        "name": "Lakhan Goikane Homestay",
+        "distance": "in Ambewadi village",
+        "cost": "₹500-800 per person (approx.)",
+        "contact": "9975402070",
+        "facilities": [
+          "Basic rooms",
+          "Home-cooked meals",
+          "Pre-trek arrangements"
+        ]
+      },
+      {
+        "name": "Reeva's Homestay",
+        "distance": "in Ghatghar village",
+        "cost": "₹400-800 per person (approx.)",
+        "contact": "9764924535",
+        "facilities": [
+          "Basic rooms",
+          "Meals (on advance booking)"
+        ]
+      }
+    ]
+  },
+  "permits": {
+    "required": false,
+    "forestDepartment": "Not required",
+    "entry": "Free entry",
+    "timings": "Entry before noon advised; overnight camping permitted with village knowledge"
+  },
+  "safety": {
+    "riskLevel": "High",
+    "commonRisks": [
+      "Slippery, exposed ledges (monsoon risk)",
+      "Technical/vertical sections requiring ropes/ladder",
+      "Navigation errors due to fog/rocky terrain",
+      "Limited water in summer"
+    ],
+    "precautions": [
+      "Experienced team with technical gear",
+      "First aid kit",
+      "Notify local contacts before starting",
+      "GPS/GPX route tracking"
+    ],
+    "rescuePoints": [
+      "Ambewadi village",
+      "Ghatghar village",
+      "Base of Kulang Fort (AMK circuit)"
+    ],
+    "nearestHospital": {
+      "name": "Ghoti Rural Hospital",
+      "distance": "40 km (approx.)",
+      "contact": "02553-221379"
+    }
+  },
+  "weather": {
+    "monsoon": {
+      "months": "June-September",
+      "conditions": "Heavy rain, slippery rock, high exposure, frequent fog, leeches",
+      "recommendation": "Attempt ONLY by highly experienced, fully prepared teams during dry days"
+    },
+    "winter": {
+      "months": "December-February",
+      "conditions": "Cool, mostly dry, best visibility, good water (post-monsoon)",
+      "recommendation": "Best time for trek"
+    },
+    "summer": {
+      "months": "March-May",
+      "conditions": "Hot, harsh sun, scarce water, rocky sections exposed",
+      "recommendation": "Avoid unless fully prepared. Carry extra water."
+    }
+  },
+  "trekRoute": {
+    "totalDistance": "12 km (approx. round trip to Alang only)",
+    "ascent": "950 meters",
+    "difficulty": "High – technical sections, exposed traverses",
+    "waypoints": [
+      {
+        "name": "Ambewadi Village",
+        "elevation": "700m",
+        "description": "Main base; basic facilities"
+      },
+      {
+        "name": "Ridge/Base",
+        "elevation": "900m",
+        "description": "Start steep rocky ascent"
+      },
+      {
+        "name": "Exposed Ledge Section",
+        "elevation": "1100m",
+        "description": "Rope/ladder often necessary"
+      },
+      {
+        "name": "Iron Ladder Entry",
+        "elevation": "1250m",
+        "description": "Technical access to fort"
+      },
+      {
+        "name": "Summit/Caves",
+        "elevation": "1372m",
+        "description": "Caves for camping; sweeping views"
+      }
+    ]
+  },
+  "howToReach": {
+    "fromMumbai": {
+      "byTrain": {
+        "description": "Train to Kasara/Igatpuri, then private vehicle to Ambewadi",
+        "distance": "140 km (to base)",
+        "time": "4-5 hours (to base)",
+        "steps": [
+          "Take local train Mumbai CST to Kasara or outstation train to Igatpuri",
+          "Hire shared/private jeep from Kasara/Igatpuri to Ambewadi (via Ghoti)",
+          "Trek starts from Ambewadi village"
+        ]
+      },
+      "byBus": {
+        "description": "ST bus via Ghoti or Igatpuri to Ambewadi (irregular services)",
+        "distance": "145 km",
+        "time": "5-6 hours",
+        "steps": [
+          "ST bus to Ghoti or Igatpuri from Mumbai/Pune",
+          "Change for local bus or jeep to Ambewadi",
+          "Start trek from Ambewadi"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive via Mumbai–Nashik highway, exit at Ghoti to Ambewadi",
+        "distance": "140 km",
+        "time": "3.5–4.5 hours",
+        "steps": [
+          "Take NH160 Mumbai–Nashik highway",
+          "At Ghoti, take Ghoti–Bhandardara road to Ambewadi",
+          "Limited parking in Ambewadi"
+        ]
+      }
+    },
+    "fromPune": {
+      "byTrain": {
+        "description": "Train Pune to Igatpuri, then jeep/taxi onward",
+        "distance": "210 km",
+        "time": "6–7 hours",
+        "steps": [
+          "Long-distance train to Igatpuri",
+          "Jeep/taxi to Ambewadi (via Ghoti/Bhandardara)",
+          "Trek starts from Ambewadi"
+        ]
+      },
+      "byBus": {
+        "description": "ST bus via Ghoti/Igatpuri; connection to Ambewadi",
+        "distance": "220 km",
+        "time": "6–8 hours with connections",
+        "steps": [
+          "ST bus to Nashik or Ghoti",
+          "Change to Ghoti–Ambewadi local bus/jeep (if available)",
+          "Start trek from Ambewadi"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive via Pune–Nashik–Ghoti–Ambewadi",
+        "distance": "210 km",
+        "time": "5.5–6.5 hours",
+        "steps": [
+          "Pune–Nashik highway to Ghoti",
+          "Ghoti–Bhandardara road to Ambewadi",
+          "Limited parking at Ambewadi"
+        ]
+      }
+    }
+  },
+  "bestTimeToVisit": "October to March (post-monsoon, water available, safe conditions)",
+  "localContacts": [
+    {
+      "name": "Lakhan Goikane",
+      "phone": "9975402070",
+      "service": "Local Guide, Food & Homestay"
+    },
+    {
+      "name": "Kailash Kekare",
+      "phone": "7972880016",
+      "service": "Technical Guiding, Rope/Ladder Setup"
+    },
+    {
+      "name": "Sunil Gawali",
+      "phone": "8007422062",
+      "service": "Navigation, Camping, Transport"
+    }
+  ],
+  "imageKey": "alang",
+  "videos": [],
+  "coordinates": {
+    "latitude": 19.5691,
+    "longitude": 73.6411
+  },
+  "featured": true,
+  "rating": 4.8,
+  "reviewCount": 59,
+  "images": [
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754044791/treks/alang/alang_1.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754044791/treks/alang/alang_4.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754044791/treks/alang/alang_5.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754044791/treks/alang/alang_6.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754044791/treks/alang/alang_7.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754044791/treks/alang/alang_8.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754044791/treks/alang/alang_10.jpg"
+  ]
+}
+  

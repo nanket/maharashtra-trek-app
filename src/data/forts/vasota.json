@@ -1,0 +1,278 @@
+{
+  "id": 120,
+  "name": "Vasota Fort (Vyaghragad)",
+  "category": "fort",
+  "location": "Satara District, Maharashtra",
+  "difficulty": "Moderate",
+  "duration": "3–5 hours (one way trek to fort top)",
+  "elevation": "1,171 meters (3,841 feet)",
+  "description": "Vasota Fort, also known as Vyaghragad (meaning Tiger Fort), is an ancient hill fort located in the dense forests of Koyna Wildlife Sanctuary near Bamnoli village in Satara district. The fort is perched on a hill surrounded by Shivsagar Lake on three sides, making it a captivating destination for nature lovers and adventure seekers. The trek involves a jungle trail, boat ride, and exploration of the fort ruins within a protected wildlife sanctuary.",
+  "startingPoint": {
+    "name": "Bamnoli Village",
+    "coordinates": {
+      "latitude": 17.8695,
+      "longitude": 73.7900
+    },
+    "facilities": [
+      "Basic parking",
+      "Local shops and eateries",
+      "Boat boarding point for ferry to Met Indavli",
+      "Tent camping ground"
+    ],
+    "description": "Bamnoli is the main base village to start the Vasota trek. Trekkers often take a boat ride across Shivsagar backwaters to Met Indavli, the start of the forest trek to Vasota Fort. Basic facilities are available here including tent camping options."
+  },
+  "networkAvailability": {
+    "baseVillage": {
+      "airtel": "Fair",
+      "jio": "Good",
+      "vodafone": "Fair",
+      "bsnl": "Fair"
+    },
+    "duringTrek": {
+      "airtel": "Intermittent",
+      "jio": "Intermittent",
+      "vodafone": "Poor",
+      "bsnl": "No signal"
+    },
+    "atSummit": {
+      "airtel": "Weak to No signal",
+      "jio": "Weak to No signal",
+      "vodafone": "No signal",
+      "bsnl": "No signal"
+    },
+    "emergencyContact": "Dial 108 or 112 if network available; local guides to assist in emergencies"
+  },
+  "foodAndWater": {
+    "atBase": {
+      "restaurants": [
+        "Local tea stalls and small eateries",
+        "Village shops for snacks and bottled water"
+      ],
+      "shops": [
+        "Provision stores with basic supplies"
+      ],
+      "waterSources": [
+        "Packaged water recommended; local wells available"
+      ]
+    },
+    "duringTrek": {
+      "waterSources": [
+        "Streams and natural water sources in forest (treat before drinking)",
+        "Carry at least 2-3 liters of water per person"
+      ],
+      "foodOptions": [
+        "No food stalls en route; carry packed snacks/energy bars"
+      ]
+    },
+    "atSummit": {
+      "facilities": [
+        "Ruined fort structures offer resting spots",
+        "No permanent food or water stalls"
+      ],
+      "recommendations": [
+        "Bring sufficient food and water",
+        "Pack out all trash to preserve the sanctuary"
+      ]
+    }
+  },
+  "accommodation": {
+    "camping": {
+      "allowed": true,
+      "locations": [
+        "Tent camping at base village Bamnoli",
+        "Allowed in designated areas near the lake"
+      ],
+      "facilities": [
+        "Basic tent setup provided by some local operators",
+        "No permanent cabins or lodges"
+      ],
+      "cost": "₹800–1500 per person approx. (varies by operator)"
+    },
+    "nearbyStays": [
+      {
+        "name": "Local Homestays in Bamnoli",
+        "distance": "At base village",
+        "cost": "₹500–1000 per person",
+        "contact": "+91 9876543210",
+        "facilities": [
+          "Simple rooms and home-cooked meals",
+          "Basic amenities"
+        ]
+      },
+      {
+        "name": "Eco Resorts near Koyna Wildlife Sanctuary",
+        "distance": "10–15 km",
+        "cost": "₹1500–3500 per night",
+        "contact": "+91 9123456789",
+        "facilities": [
+          "Comfortable lodging",
+          "Guided tours and nature walks",
+          "Meals and transport"
+        ]
+      }
+    ]
+  },
+  "permits": {
+    "required": true,
+    "forestDepartment": "Koyna Wildlife Sanctuary Forest Office",
+    "entry": "Permit and entry fees applicable for sanctuary and fort visitation",
+    "fee": "Varies based on group size and tour operators; approx. ₹100–300 per person",
+    "timings": "Daylight hours only; night stay inside sanctuary requires special permission",
+    "howToApply": "Permits available through forest department or organized trekking groups"
+  },
+  "safety": {
+    "riskLevel": "Moderate",
+    "commonRisks": [
+      "Dense forest with wildlife presence (leopards, snakes)",
+      "Slippery and uneven trails especially during rains",
+      "Limited network and remote location",
+      "Boat crossing safety during monsoon"
+    ],
+    "precautions": [
+      "Travel in groups or with local guide",
+      "Carry sufficient water and first aid kit",
+      "Avoid trekking during heavy rains or night",
+      "Inform local authorities or guides of your route"
+    ],
+    "rescuePoints": [
+      "Bamnoli village",
+      "Forest ranger outposts on route",
+      "Nearby medical facilities in Satara"
+    ],
+    "nearestHospital": {
+      "name": "District Hospital, Satara",
+      "distance": "Around 60 km",
+      "contact": "+91 2162 265500"
+    },
+    "emergencyNumbers": {
+      "ambulance": "108",
+      "forestDepartment": "+91 2162 265611",
+      "police": "Satara Police Station: +91 2162 230100"
+    }
+  },
+  "weather": {
+    "monsoon": {
+      "months": "June to September",
+      "conditions": "Heavy rainfall, lush greenery, slippery trails, and high water levels in streams",
+      "recommendation": "Suitable for experienced trekkers; proper rain gear essential"
+    },
+    "postMonsoon": {
+      "months": "October to February",
+      "conditions": "Clear skies, cooler temperatures, good trekking conditions",
+      "recommendation": "Best season for trekking and sightseeing"
+    },
+    "summer": {
+      "months": "March to May",
+      "conditions": "Hot and dry; water sources scarce",
+      "recommendation": "Start early; carry sufficient water"
+    }
+  },
+  "trekRoute": {
+    "totalDistance": "6.6 km one way (Met Indavli to Vasota Fort)",
+    "ascent": "Approx. 700 meters",
+    "difficulty": "Moderate; gradual ascent through forest paths and rocky terrain",
+    "waypoints": [
+      {
+        "name": "Bamnoli Village",
+        "elevation": "450 meters",
+        "description": "Trek base with boat boarding point"
+      },
+      {
+        "name": "Boat Crossing at Shivsagar Lake",
+        "elevation": "450 meters",
+        "description": "Two-hour scenic boat ride to Met Indavli"
+      },
+      {
+        "name": "Met Indavli",
+        "elevation": "500 meters",
+        "description": "Starting point of the jungle trek"
+      },
+      {
+        "name": "Forest Trail",
+        "elevation": "Between 500 to 1000 meters",
+        "description": "Dense forest with wildlife and water streams"
+      },
+      {
+        "name": "Vasota Fort Summit",
+        "elevation": "1,171 meters",
+        "description": "Ruins of the fort with panoramic views of lake and forest"
+      }
+    ]
+  },
+  "howToReach": {
+    "fromPune": {
+      "byPrivateVehicle": {
+        "description": "Drive via Pune-Satara highway to Bamnoli village",
+        "distance": "Approx. 140 km",
+        "time": "3.5 to 4 hours",
+        "steps": [
+          "Take Pune-Satara highway (NH48)",
+          "Turn towards Bamnoli at appropriate junction",
+          "Park at base village"
+        ]
+      },
+      "byPublicTransport": {
+        "description": "Bus to Satara or nearby town, then local transport to Bamnoli",
+        "distance": "Approx. 140 km",
+        "time": "5 hours plus local transit",
+        "steps": [
+          "Bus from Pune to Satara or vicinity",
+          "Jeep/shared taxi to Bamnoli village"
+        ]
+      }
+    },
+    "fromMumbai": {
+      "byPrivateVehicle": {
+        "description": "Drive via Mumbai-Pune Expressway to Satara, then to Bamnoli",
+        "distance": "Approx. 240 km",
+        "time": "5 to 6 hours",
+        "steps": [
+          "Mumbai-Pune Expressway to Satara",
+          "Follow local roads to Bamnoli village",
+          "Park and start trek"
+        ]
+      },
+      "byPublicTransport": {
+        "description": "Train or bus to Satara, then local transport to Bamnoli",
+        "distance": "Approx. 240 km",
+        "time": "6 to 7 hours total",
+        "steps": [
+          "Train from Mumbai to Satara",
+          "Bus or shared auto to Bamnoli village"
+        ]
+      }
+    }
+  },
+  "bestTimeToVisit": "October to February (post-monsoon and winter months)",
+  "localContacts": [
+    {
+      "name": "Local Guide - Bamnoli",
+      "phone": "+91 98230 12345",
+      "service": "Trekking guide, boat booking, camping arrangements"
+    },
+    {
+      "name": "Koyna Wildlife Sanctuary Forest Office",
+      "phone": "+91 2162 265611",
+      "service": "Forest permits, emergencies"
+    }
+  ],
+  "imageKey": "vasota",
+  "videos": [],
+  "coordinates": {
+    "latitude": 17.8695,
+    "longitude": 73.7900
+  },
+  "featured": true,
+  "rating": 4.7,
+  "reviewCount": 120,
+ "images": [
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754057069/treks/vasota/vasota_1.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754057069/treks/vasota/vasota_2.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754057069/treks/vasota/vasota_4.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754057069/treks/vasota/vasota_5.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754057069/treks/vasota/vasota_6.webp",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754057069/treks/vasota/vasota_7.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754057069/treks/vasota/vasota_8.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754057069/treks/vasota/vasota_9.jpg"
+  ]
+}
