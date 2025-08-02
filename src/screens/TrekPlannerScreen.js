@@ -37,6 +37,7 @@ const getCurrentSeason = () => {
 const TrekPlannerScreen = ({ navigation, route }) => {
   const { trek } = route?.params || {};
   const [activeTab, setActiveTab] = useState('planner');
+  const [selectedTrek, setSelectedTrek] = useState(trek || null);
   const [plannerData, setPlannerData] = useState({
     selectedTrek: trek || null,
     groupSize: 1,
@@ -52,6 +53,25 @@ const TrekPlannerScreen = ({ navigation, route }) => {
   // Separate state for calculated values to avoid infinite loops
   const [estimatedTime, setEstimatedTime] = useState(null);
   const [currentSeason, setCurrentSeason] = useState(getCurrentSeason());
+
+  // Listen for trek selection from TrekListScreen
+  useEffect(() => {
+    const unsubscribe = navigation.addListener('focus', () => {
+      const params = route?.params;
+      if (params?.selectedTrek && params.selectedTrek !== selectedTrek) {
+        setSelectedTrek(params.selectedTrek);
+        setPlannerData(prev => ({
+          ...prev,
+          selectedTrek: params.selectedTrek
+        }));
+
+        // Clear the parameter to avoid re-triggering
+        navigation.setParams({ selectedTrek: null });
+      }
+    });
+
+    return unsubscribe;
+  }, [navigation, route?.params, selectedTrek]);
 
   // Effect to calculate trek plan when relevant data changes
   useEffect(() => {
@@ -128,17 +148,27 @@ const TrekPlannerScreen = ({ navigation, route }) => {
       {/* Trek Selection */}
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>🏔️ Selected Trek</Text>
-        {trek ? (
+        {selectedTrek ? (
           <View style={styles.trekCard}>
-            <Text style={styles.trekName}>{trek.name}</Text>
+            <Text style={styles.trekName}>{selectedTrek.name}</Text>
             <Text style={styles.trekDetails}>
-              {trek.difficulty} • {trek.duration} • {trek.location}
+              {selectedTrek.difficulty} • {selectedTrek.duration} • {selectedTrek.location}
             </Text>
+            <TouchableOpacity
+              style={styles.changeTrekButton}
+              onPress={() => navigation.navigate('TrekList', {
+                selectionMode: true
+              })}
+            >
+              <Text style={styles.changeTrekText}>Change Trek</Text>
+            </TouchableOpacity>
           </View>
         ) : (
-          <TouchableOpacity 
+          <TouchableOpacity
             style={styles.selectTrekButton}
-            onPress={() => navigation.navigate('TrekList')}
+            onPress={() => navigation.navigate('TrekList', {
+              selectionMode: true
+            })}
           >
             <Text style={styles.selectTrekText}>Select a Trek</Text>
           </TouchableOpacity>
@@ -484,6 +514,20 @@ const styles = StyleSheet.create({
   selectTrekText: {
     ...createTextStyle(16, 'bold'),
     color: COLORS.textInverse,
+  },
+  changeTrekButton: {
+    backgroundColor: COLORS.background,
+    borderWidth: 1,
+    borderColor: COLORS.primary,
+    borderRadius: BORDER_RADIUS.md,
+    paddingHorizontal: SPACING.md,
+    paddingVertical: SPACING.sm,
+    marginTop: SPACING.md,
+    alignItems: 'center',
+  },
+  changeTrekText: {
+    ...createTextStyle(14, 'medium'),
+    color: COLORS.primary,
   },
   inputRow: {
     flexDirection: 'row',

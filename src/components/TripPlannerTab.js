@@ -10,7 +10,10 @@ import {
   TextInput,
   ScrollView,
   Dimensions,
+  Switch,
+  Platform,
 } from 'react-native';
+import DateTimePicker from '@react-native-community/datetimepicker';
 import { LinearGradient } from 'expo-linear-gradient';
 import { COLORS, SHADOWS, SPACING, BORDER_RADIUS, createTextStyle } from '../utils/constants';
 import UserStorageService from '../utils/userStorage';
@@ -19,15 +22,47 @@ const { width } = Dimensions.get('window');
 
 const TripPlannerTab = ({ navigation, tripPlans, onTripPlansChange }) => {
   const [modalVisible, setModalVisible] = useState(false);
+  const [editingPlan, setEditingPlan] = useState(null);
   const [planTitle, setPlanTitle] = useState('');
   const [planDescription, setPlanDescription] = useState('');
-  const [planDate, setPlanDate] = useState('');
+  const [planDate, setPlanDate] = useState(new Date());
+  const [showDatePicker, setShowDatePicker] = useState(false);
+  const [difficulty, setDifficulty] = useState('moderate');
+  const [duration, setDuration] = useState('1');
+  const [isCompleted, setIsCompleted] = useState(false);
+  const [completionNotes, setCompletionNotes] = useState('');
+  const [rating, setRating] = useState(0);
   const [loading, setLoading] = useState(false);
 
   const handleCreatePlan = () => {
+    setEditingPlan(null);
     setPlanTitle('');
     setPlanDescription('');
-    setPlanDate('');
+
+    // Set date to tomorrow as default for new plans
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    setPlanDate(tomorrow);
+
+    setDifficulty('moderate');
+    setDuration('1');
+    setIsCompleted(false);
+    setCompletionNotes('');
+    setRating(0);
+    setShowDatePicker(false);
+    setModalVisible(true);
+  };
+
+  const handleEditPlan = (plan) => {
+    setEditingPlan(plan);
+    setPlanTitle(plan.title || '');
+    setPlanDescription(plan.description || '');
+    setPlanDate(plan.plannedDate ? new Date(plan.plannedDate) : new Date());
+    setDifficulty(plan.difficulty || 'moderate');
+    setDuration(plan.duration || '1');
+    setIsCompleted(plan.status === 'completed');
+    setCompletionNotes(plan.completionNotes || '');
+    setRating(plan.rating || 0);
     setModalVisible(true);
   };
 
@@ -42,20 +77,114 @@ const TripPlannerTab = ({ navigation, tripPlans, onTripPlansChange }) => {
       const planData = {
         title: planTitle.trim(),
         description: planDescription.trim(),
-        plannedDate: planDate.trim(),
-        status: 'planned',
-        treks: [],
+        plannedDate: planDate.toISOString(),
+        difficulty: difficulty,
+        duration: duration,
+        status: isCompleted ? 'completed' : 'planned',
+        treks: editingPlan?.treks || [],
       };
 
-      const updatedPlans = await UserStorageService.addTripPlan(planData);
+      // Add completion data if marked as completed
+      if (isCompleted) {
+        planData.completionNotes = completionNotes.trim();
+        planData.rating = rating;
+        planData.completedDate = new Date().toISOString();
+      }
+
+      let updatedPlans;
+      if (editingPlan) {
+        // Update existing plan
+        updatedPlans = await UserStorageService.updateTripPlan(editingPlan.id, planData);
+        Alert.alert('Success', 'Trip plan updated successfully!');
+      } else {
+        // Create new plan
+        updatedPlans = await UserStorageService.addTripPlan(planData);
+        Alert.alert('Success', 'Trip plan created successfully!');
+      }
+
       onTripPlansChange(updatedPlans);
       setModalVisible(false);
     } catch (error) {
-      console.error('Error creating trip plan:', error);
-      Alert.alert('Error', 'Failed to create trip plan');
+      console.error('Error saving trip plan:', error);
+      Alert.alert('Error', `Failed to ${editingPlan ? 'update' : 'create'} trip plan`);
     } finally {
       setLoading(false);
     }
+  };
+
+  const handleDateChange = (event, selectedDate) => {
+    // Handle different event types
+    if (event?.type === 'dismissed' || event?.type === 'neutralButtonPressed') {
+      // User cancelled - hide picker but don't update date
+      setShowDatePicker(false);
+      return;
+    }
+
+    // On Android, hide picker after any interaction
+    if (Platform.OS === 'android') {
+      setShowDatePicker(false);
+    }
+
+    // Update date if user selected a date
+    if (selectedDate && selectedDate instanceof Date) {
+      setPlanDate(selectedDate);
+    }
+  };
+
+  const handleDatePickerPress = () => {
+    setShowDatePicker(true);
+  };
+
+  const handleDatePickerDone = () => {
+    setShowDatePicker(false);
+  };
+
+  const formatDate = (date) => {
+    try {
+      if (!date) {
+        return 'Select Date';
+      }
+
+      // Ensure we have a valid Date object
+      const dateObj = date instanceof Date ? date : new Date(date);
+
+      // Check if date is valid
+      if (isNaN(dateObj.getTime())) {
+        return 'Select Date';
+      }
+
+      return dateObj.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+      });
+    } catch (error) {
+      console.error('Error formatting date:', error);
+      return 'Select Date';
+    }
+  };
+
+  const handleMarkCompleted = async (planId) => {
+    Alert.alert(
+      'Mark as Completed',
+      'Mark this trek plan as completed?',
+      [
+        { text: 'Cancel', style: 'cancel' },
+        {
+          text: 'Mark Completed',
+          onPress: async () => {
+            try {
+              const updatedPlans = await UserStorageService.markTripPlanCompleted(planId);
+              onTripPlansChange(updatedPlans);
+              Alert.alert('Success', 'Trek plan marked as completed!');
+            } catch (error) {
+              console.error('Error marking plan completed:', error);
+              Alert.alert('Error', 'Failed to mark plan as completed');
+            }
+          },
+        },
+      ]
+    );
   };
 
   const handleDeletePlan = async (planId) => {
@@ -71,6 +200,7 @@ const TripPlannerTab = ({ navigation, tripPlans, onTripPlansChange }) => {
             try {
               const updatedPlans = await UserStorageService.removeTripPlan(planId);
               onTripPlansChange(updatedPlans);
+              Alert.alert('Success', 'Trip plan deleted successfully!');
             } catch (error) {
               console.error('Error deleting trip plan:', error);
               Alert.alert('Error', 'Failed to delete trip plan');
@@ -81,9 +211,18 @@ const TripPlannerTab = ({ navigation, tripPlans, onTripPlansChange }) => {
     );
   };
 
-  const formatDate = (dateString) => {
+  const formatDateString = (dateString) => {
     if (!dateString) return 'Date not set';
-    return dateString;
+    try {
+      const date = new Date(dateString);
+      return date.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+      });
+    } catch (error) {
+      return dateString;
+    }
   };
 
   const renderEmptyState = () => (
@@ -109,42 +248,115 @@ const TripPlannerTab = ({ navigation, tripPlans, onTripPlansChange }) => {
     </View>
   );
 
-  const renderPlanCard = ({ item }) => (
-    <View style={styles.planCard}>
-      <View style={styles.planHeader}>
-        <View style={styles.planInfo}>
-          <Text style={styles.planTitle}>{item.title}</Text>
-          <Text style={styles.planDate}>{formatDate(item.plannedDate)}</Text>
-          {item.description && (
-            <Text style={styles.planDescription} numberOfLines={2}>
-              {item.description}
+  const renderStars = (rating, onPress = null) => {
+    return (
+      <View style={styles.starsContainer}>
+        {[1, 2, 3, 4, 5].map((star) => (
+          <TouchableOpacity
+            key={star}
+            onPress={() => onPress && onPress(star)}
+            disabled={!onPress}
+          >
+            <Text style={[
+              styles.star,
+              star <= rating && styles.starFilled
+            ]}>
+              ⭐
             </Text>
-          )}
-        </View>
-        <View style={styles.planStatus}>
-          <Text style={styles.statusBadge}>Planned</Text>
-        </View>
+          </TouchableOpacity>
+        ))}
       </View>
+    );
+  };
 
-      <View style={styles.planActions}>
-        <TouchableOpacity
-          style={styles.actionButton}
-          onPress={() => {
-            // Navigate to plan details or edit
-            Alert.alert('Coming Soon', 'Plan editing feature will be available soon!');
-          }}
-        >
-          <Text style={styles.actionButtonText}>Edit</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={[styles.actionButton, styles.deleteButton]}
-          onPress={() => handleDeletePlan(item.id)}
-        >
-          <Text style={[styles.actionButtonText, styles.deleteButtonText]}>Delete</Text>
-        </TouchableOpacity>
+  const renderPlanCard = ({ item }) => {
+    const isCompleted = item.status === 'completed';
+
+    return (
+      <View style={[styles.planCard, isCompleted && styles.completedCard]}>
+        <View style={styles.planHeader}>
+          <View style={styles.planInfo}>
+            <View style={styles.titleRow}>
+              <Text style={[styles.planTitle, isCompleted && styles.completedTitle]}>
+                {item.title}
+              </Text>
+              {isCompleted && <Text style={styles.completedIcon}>✅</Text>}
+            </View>
+
+            <Text style={styles.planDate}>
+              📅 {formatDateString(item.plannedDate)}
+            </Text>
+
+            {item.difficulty && (
+              <Text style={styles.planDifficulty}>
+                🏔️ {item.difficulty.charAt(0).toUpperCase() + item.difficulty.slice(1)}
+              </Text>
+            )}
+
+            {item.duration && (
+              <Text style={styles.planDuration}>
+                ⏱️ {item.duration} day{item.duration !== '1' ? 's' : ''}
+              </Text>
+            )}
+
+            {item.description && (
+              <Text style={styles.planDescription} numberOfLines={2}>
+                {item.description}
+              </Text>
+            )}
+
+            {isCompleted && item.completedDate && (
+              <Text style={styles.completedDate}>
+                ✅ Completed on {formatDateString(item.completedDate)}
+              </Text>
+            )}
+
+            {isCompleted && item.rating > 0 && (
+              <View style={styles.ratingContainer}>
+                {renderStars(item.rating)}
+              </View>
+            )}
+          </View>
+
+          <View style={styles.planStatus}>
+            <Text style={[
+              styles.statusBadge,
+              isCompleted ? styles.completedBadge : styles.plannedBadge
+            ]}>
+              {isCompleted ? 'Completed' : 'Planned'}
+            </Text>
+          </View>
+        </View>
+
+        <View style={styles.planActions}>
+          <TouchableOpacity
+            style={styles.actionButton}
+            onPress={() => handleEditPlan(item)}
+          >
+            <Text style={styles.actionButtonText}>✏️ Edit</Text>
+          </TouchableOpacity>
+
+          {!isCompleted && (
+            <TouchableOpacity
+              style={[styles.actionButton, styles.completeButton]}
+              onPress={() => handleMarkCompleted(item.id)}
+            >
+              <Text style={[styles.actionButtonText, styles.completeButtonText]}>
+                ✅ Complete
+              </Text>
+            </TouchableOpacity>
+          )}
+
+          <TouchableOpacity
+            style={[styles.actionButton, styles.deleteButton]}
+            onPress={() => handleDeletePlan(item.id)}
+          >
+            <Text style={[styles.actionButtonText, styles.deleteButtonText]}>🗑️ Delete</Text>
+          </TouchableOpacity>
+        </View>
       </View>
-    </View>
-  );
+    );
+  };
 
   const renderHeader = () => (
     <View style={styles.headerContainer}>
@@ -176,7 +388,9 @@ const TripPlannerTab = ({ navigation, tripPlans, onTripPlansChange }) => {
     >
       <View style={styles.modalOverlay}>
         <View style={styles.modalContent}>
-          <Text style={styles.modalTitle}>Create Trip Plan</Text>
+          <Text style={styles.modalTitle}>
+            {editingPlan ? 'Edit Trip Plan' : 'Create Trip Plan'}
+          </Text>
 
           <ScrollView
             showsVerticalScrollIndicator={false}
@@ -200,17 +414,119 @@ const TripPlannerTab = ({ navigation, tripPlans, onTripPlansChange }) => {
             </View>
 
             <View style={styles.modalSection}>
-              <Text style={styles.modalLabel}>Planned Date</Text>
+              <Text style={styles.modalLabel}>Planned Date *</Text>
+              <TouchableOpacity
+                style={styles.datePickerButton}
+                onPress={handleDatePickerPress}
+              >
+                <Text style={styles.datePickerText}>
+                  📅 {formatDate(planDate)}
+                </Text>
+              </TouchableOpacity>
+
+              {showDatePicker && Platform.OS === 'ios' && (
+                <View style={styles.iosDatePickerContainer}>
+                  <DateTimePicker
+                    value={planDate instanceof Date && !isNaN(planDate.getTime()) ? planDate : new Date()}
+                    mode="date"
+                    display="spinner"
+                    onChange={handleDateChange}
+                    minimumDate={new Date()}
+                    style={styles.iosDatePicker}
+                  />
+                  <TouchableOpacity
+                    style={styles.datePickerDoneButton}
+                    onPress={handleDatePickerDone}
+                  >
+                    <Text style={styles.datePickerDoneText}>Done</Text>
+                  </TouchableOpacity>
+                </View>
+              )}
+
+              {showDatePicker && Platform.OS === 'android' && (
+                <DateTimePicker
+                  value={planDate instanceof Date && !isNaN(planDate.getTime()) ? planDate : new Date()}
+                  mode="date"
+                  display="default"
+                  onChange={handleDateChange}
+                  minimumDate={new Date()}
+                />
+              )}
+
+              {/* Web fallback - HTML5 date input */}
+              {showDatePicker && Platform.OS === 'web' && (
+                <View style={styles.webDatePicker}>
+                  <Text style={styles.webDateLabel}>Select Date:</Text>
+                  <input
+                    type="date"
+                    value={planDate instanceof Date && !isNaN(planDate.getTime())
+                      ? planDate.toISOString().split('T')[0]
+                      : new Date().toISOString().split('T')[0]
+                    }
+                    min={new Date().toISOString().split('T')[0]}
+                    onChange={(e) => {
+                      try {
+                        const newDate = new Date(e.target.value + 'T00:00:00');
+                        if (!isNaN(newDate.getTime())) {
+                          setPlanDate(newDate);
+                        }
+                      } catch (error) {
+                        console.error('Invalid date:', error);
+                      }
+                    }}
+                    style={{
+                      padding: '12px',
+                      borderRadius: '8px',
+                      border: '1px solid #E5E7EB',
+                      fontSize: '16px',
+                      width: '100%',
+                      marginTop: '8px',
+                      marginBottom: '12px'
+                    }}
+                  />
+                  <TouchableOpacity
+                    style={styles.datePickerCloseButton}
+                    onPress={() => setShowDatePicker(false)}
+                  >
+                    <Text style={styles.datePickerCloseText}>Done</Text>
+                  </TouchableOpacity>
+                </View>
+              )}
+            </View>
+
+            <View style={styles.modalSection}>
+              <Text style={styles.modalLabel}>Difficulty Level</Text>
+              <View style={styles.difficultyContainer}>
+                {['easy', 'moderate', 'difficult'].map((level) => (
+                  <TouchableOpacity
+                    key={level}
+                    style={[
+                      styles.difficultyButton,
+                      difficulty === level && styles.selectedDifficulty
+                    ]}
+                    onPress={() => setDifficulty(level)}
+                  >
+                    <Text style={[
+                      styles.difficultyText,
+                      difficulty === level && styles.selectedDifficultyText
+                    ]}>
+                      {level.charAt(0).toUpperCase() + level.slice(1)}
+                    </Text>
+                  </TouchableOpacity>
+                ))}
+              </View>
+            </View>
+
+            <View style={styles.modalSection}>
+              <Text style={styles.modalLabel}>Duration (Days)</Text>
               <TextInput
                 style={styles.textInput}
-                value={planDate}
-                onChangeText={setPlanDate}
-                placeholder="e.g., December 2024"
+                value={duration}
+                onChangeText={setDuration}
+                placeholder="1"
+                keyboardType="numeric"
                 returnKeyType="next"
                 blurOnSubmit={false}
-                autoCorrect={false}
-                autoCapitalize="words"
-                keyboardType="default"
               />
             </View>
 
@@ -232,6 +548,48 @@ const TripPlannerTab = ({ navigation, tripPlans, onTripPlansChange }) => {
                 keyboardType="default"
               />
             </View>
+
+            <View style={styles.modalSection}>
+              <View style={styles.completionToggle}>
+                <Text style={styles.modalLabel}>Mark as Completed</Text>
+                <Switch
+                  value={isCompleted}
+                  onValueChange={setIsCompleted}
+                  trackColor={{ false: COLORS.border, true: COLORS.success }}
+                  thumbColor={isCompleted ? COLORS.white : COLORS.textSecondary}
+                />
+              </View>
+            </View>
+
+            {isCompleted && (
+              <>
+                <View style={styles.modalSection}>
+                  <Text style={styles.modalLabel}>Rating</Text>
+                  <View style={styles.ratingSelector}>
+                    {renderStars(rating, setRating)}
+                  </View>
+                </View>
+
+                <View style={styles.modalSection}>
+                  <Text style={styles.modalLabel}>Completion Notes</Text>
+                  <TextInput
+                    style={[styles.textInput, styles.textArea]}
+                    value={completionNotes}
+                    onChangeText={setCompletionNotes}
+                    placeholder="How was your trek experience?"
+                    multiline
+                    numberOfLines={3}
+                    textAlignVertical="top"
+                    maxLength={300}
+                    returnKeyType="done"
+                    blurOnSubmit={true}
+                    autoCorrect={true}
+                    autoCapitalize="sentences"
+                    keyboardType="default"
+                  />
+                </View>
+              </>
+            )}
           </ScrollView>
 
           <View style={styles.modalActions}>
@@ -247,7 +605,10 @@ const TripPlannerTab = ({ navigation, tripPlans, onTripPlansChange }) => {
               disabled={loading}
             >
               <Text style={styles.saveButtonText}>
-                {loading ? 'Creating...' : 'Create Plan'}
+                {loading
+                  ? (editingPlan ? 'Updating...' : 'Creating...')
+                  : (editingPlan ? 'Update Plan' : 'Create Plan')
+                }
               </Text>
             </TouchableOpacity>
           </View>
@@ -491,6 +852,167 @@ const styles = StyleSheet.create({
   saveButtonText: {
     ...createTextStyle(16, 'medium'),
     color: COLORS.textInverse,
+  },
+  // Enhanced styles for new features
+  titleRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginBottom: SPACING.xs,
+  },
+  completedTitle: {
+    textDecorationLine: 'line-through',
+    color: COLORS.textSecondary,
+  },
+  completedIcon: {
+    fontSize: 16,
+    marginLeft: SPACING.xs,
+  },
+  planDifficulty: {
+    ...createTextStyle(12, 'medium'),
+    color: COLORS.textSecondary,
+    marginBottom: SPACING.xs,
+  },
+  planDuration: {
+    ...createTextStyle(12, 'medium'),
+    color: COLORS.textSecondary,
+    marginBottom: SPACING.xs,
+  },
+  completedDate: {
+    ...createTextStyle(12, 'medium'),
+    color: COLORS.success,
+    marginTop: SPACING.xs,
+  },
+  completedCard: {
+    backgroundColor: COLORS.successLight,
+    borderColor: COLORS.success,
+    borderWidth: 1,
+  },
+  completedBadge: {
+    backgroundColor: COLORS.success,
+  },
+  plannedBadge: {
+    backgroundColor: COLORS.primary,
+  },
+  completeButton: {
+    backgroundColor: COLORS.success,
+  },
+  completeButtonText: {
+    color: COLORS.white,
+  },
+  datePickerButton: {
+    backgroundColor: COLORS.background,
+    borderWidth: 1,
+    borderColor: COLORS.border,
+    borderRadius: BORDER_RADIUS.md,
+    padding: SPACING.md,
+    marginTop: SPACING.xs,
+    minHeight: 48,
+    justifyContent: 'center',
+    ...SHADOWS.small,
+  },
+  datePickerText: {
+    ...createTextStyle(16, 'regular'),
+    color: COLORS.text,
+    textAlign: 'left',
+  },
+  difficultyContainer: {
+    flexDirection: 'row',
+    marginTop: SPACING.xs,
+  },
+  difficultyButton: {
+    flex: 1,
+    backgroundColor: COLORS.background,
+    borderWidth: 1,
+    borderColor: COLORS.border,
+    borderRadius: BORDER_RADIUS.md,
+    padding: SPACING.md,
+    marginRight: SPACING.xs,
+    alignItems: 'center',
+  },
+  selectedDifficulty: {
+    backgroundColor: COLORS.primary,
+    borderColor: COLORS.primary,
+  },
+  difficultyText: {
+    ...createTextStyle(14, 'medium'),
+    color: COLORS.text,
+  },
+  selectedDifficultyText: {
+    color: COLORS.white,
+  },
+  completionToggle: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  ratingSelector: {
+    marginTop: SPACING.xs,
+  },
+  starsContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  star: {
+    fontSize: 24,
+    marginRight: SPACING.xs,
+    opacity: 0.3,
+  },
+  starFilled: {
+    opacity: 1,
+  },
+  ratingContainer: {
+    marginTop: SPACING.xs,
+  },
+  iosDatePickerContainer: {
+    backgroundColor: COLORS.background,
+    borderRadius: BORDER_RADIUS.lg,
+    padding: SPACING.lg,
+    marginTop: SPACING.md,
+    borderWidth: 1,
+    borderColor: COLORS.border,
+    ...SHADOWS.small,
+  },
+  iosDatePicker: {
+    height: 200,
+    width: '100%',
+  },
+  webDatePicker: {
+    marginTop: SPACING.xs,
+    padding: SPACING.md,
+    backgroundColor: COLORS.background,
+    borderRadius: BORDER_RADIUS.md,
+    borderWidth: 1,
+    borderColor: COLORS.border,
+    ...SHADOWS.small,
+  },
+  webDateLabel: {
+    ...createTextStyle(14, 'medium'),
+    color: COLORS.text,
+    marginBottom: SPACING.xs,
+  },
+  datePickerCloseButton: {
+    backgroundColor: COLORS.primary,
+    padding: SPACING.sm,
+    borderRadius: BORDER_RADIUS.sm,
+    alignItems: 'center',
+    marginTop: SPACING.xs,
+  },
+  datePickerCloseText: {
+    color: COLORS.white,
+    ...createTextStyle(14, 'medium'),
+  },
+  datePickerDoneButton: {
+    backgroundColor: COLORS.primary,
+    padding: SPACING.md,
+    borderRadius: BORDER_RADIUS.md,
+    alignItems: 'center',
+    marginTop: SPACING.md,
+    ...SHADOWS.small,
+  },
+  datePickerDoneText: {
+    color: COLORS.white,
+    ...createTextStyle(16, 'medium'),
   },
 });
 

@@ -17,7 +17,7 @@ import LocalDataService from '../services/LocalDataService';
 
 const { width } = Dimensions.get('window');
 
-const CompletedTreksTab = ({ navigation, completedTreks, onCompletedChange }) => {
+const CompletedTreksTab = ({ navigation, completedTreks, onCompletedChange, tripPlans }) => {
   const [completedTreksData, setCompletedTreksData] = useState([]);
   const [modalVisible, setModalVisible] = useState(false);
   const [selectedTrek, setSelectedTrek] = useState(null);
@@ -27,19 +27,50 @@ const CompletedTreksTab = ({ navigation, completedTreks, onCompletedChange }) =>
 
   useEffect(() => {
     loadCompletedTreksData();
-  }, [completedTreks]);
+  }, [completedTreks, tripPlans]);
 
   const loadCompletedTreksData = () => {
     const allData = LocalDataService.getAllData();
-    const completed = completedTreks.map(completed => {
+
+    // Load completed treks from the old system
+    const completedFromOldSystem = completedTreks.map(completed => {
       const trekData = allData.find(trek => trek.id === completed.trekId);
-      return { ...trekData, completionData: completed };
+      return { ...trekData, completionData: completed, source: 'completed' };
     }).filter(Boolean);
 
-    // Sort by completion date (most recent first)
-    completed.sort((a, b) => new Date(b.completionData.completedDate) - new Date(a.completionData.completedDate));
+    // Load completed treks from trip plans
+    const completedFromTripPlans = (tripPlans || [])
+      .filter(plan => plan.status === 'completed')
+      .map(plan => {
+        // For trip plans, we create a synthetic trek object
+        return {
+          id: `plan_${plan.id}`,
+          name: plan.title,
+          location: 'Custom Trek Plan',
+          difficulty: plan.difficulty || 'moderate',
+          duration: plan.duration || '1 day',
+          category: 'trek',
+          completionData: {
+            rating: plan.rating || 0,
+            notes: plan.completionNotes || '',
+            completedDate: plan.completedDate || plan.updatedDate,
+          },
+          source: 'tripPlan',
+          originalPlan: plan,
+        };
+      });
 
-    setCompletedTreksData(completed);
+    // Combine both sources
+    const allCompleted = [...completedFromOldSystem, ...completedFromTripPlans];
+
+    // Sort by completion date (most recent first)
+    allCompleted.sort((a, b) => {
+      const dateA = new Date(a.completionData.completedDate);
+      const dateB = new Date(b.completionData.completedDate);
+      return dateB - dateA;
+    });
+
+    setCompletedTreksData(allCompleted);
   };
 
   const handleMarkCompleted = async (trek) => {
@@ -160,7 +191,8 @@ const CompletedTreksTab = ({ navigation, completedTreks, onCompletedChange }) =>
   );
 
   const renderCompletedCard = ({ item }) => {
-    const categoryData = CATEGORY_COLORS[item.category];
+    const categoryData = CATEGORY_COLORS[item.category] || CATEGORY_COLORS.trek;
+    const isFromTripPlan = item.source === 'tripPlan';
 
     return (
       <TouchableOpacity
@@ -170,14 +202,30 @@ const CompletedTreksTab = ({ navigation, completedTreks, onCompletedChange }) =>
       >
         <View style={styles.cardHeader}>
           <View style={styles.cardInfo}>
-            <Text style={styles.cardTitle}>{item.name}</Text>
-            <Text style={styles.cardLocation}>{item.location}</Text>
-            <Text style={styles.completedDate}>
-              Completed on {formatDate(item.completionData.completedDate)}
+            <View style={styles.titleRow}>
+              <Text style={styles.cardTitle}>{item.name}</Text>
+              {isFromTripPlan && (
+                <View style={styles.tripPlanBadge}>
+                  <Text style={styles.tripPlanBadgeText}>Plan</Text>
+                </View>
+              )}
+            </View>
+            <Text style={styles.cardLocation}>
+              {isFromTripPlan ? `📅 ${item.originalPlan?.difficulty || 'Moderate'} • ${item.originalPlan?.duration || '1'} day(s)` : item.location}
             </Text>
+            <Text style={styles.completedDate}>
+              ✅ Completed on {formatDate(item.completionData.completedDate)}
+            </Text>
+            {isFromTripPlan && item.originalPlan?.description && (
+              <Text style={styles.planDescription} numberOfLines={1}>
+                {item.originalPlan.description}
+              </Text>
+            )}
           </View>
-          <View style={[styles.categoryBadge, { backgroundColor: categoryData?.primary }]}>
-            <Text style={styles.categoryIcon}>{categoryData?.emoji}</Text>
+          <View style={[styles.categoryBadge, { backgroundColor: categoryData?.primary || COLORS.primary }]}>
+            <Text style={styles.categoryIcon}>
+              {isFromTripPlan ? '📅' : (categoryData?.emoji || '🏔️')}
+            </Text>
           </View>
         </View>
 
@@ -512,6 +560,29 @@ const styles = StyleSheet.create({
   saveButtonText: {
     ...createTextStyle(16, 'medium'),
     color: COLORS.textInverse,
+  },
+  // Enhanced styles for trip plan completions
+  titleRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: SPACING.xs,
+  },
+  tripPlanBadge: {
+    backgroundColor: COLORS.primary,
+    paddingHorizontal: SPACING.sm,
+    paddingVertical: 2,
+    borderRadius: BORDER_RADIUS.sm,
+    marginLeft: SPACING.sm,
+  },
+  tripPlanBadgeText: {
+    ...createTextStyle(10, 'bold'),
+    color: COLORS.white,
+  },
+  planDescription: {
+    ...createTextStyle(12, 'regular'),
+    color: COLORS.textSecondary,
+    fontStyle: 'italic',
+    marginTop: SPACING.xs,
   },
 });
 

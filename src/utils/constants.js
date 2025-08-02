@@ -49,6 +49,7 @@ export const COLORS = {
 
   // Status colors - Modern and clear
   success: '#10B981',        // Emerald
+  successLight: '#D1FAE5',   // Light emerald background
   warning: '#F59E0B',        // Amber
   error: '#EF4444',          // Red
   info: '#3B82F6',           // Blue

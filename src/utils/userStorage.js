@@ -203,6 +203,52 @@ export class UserStorageService {
     }
   }
 
+  static async updateTripPlan(planId, planData) {
+    try {
+      const plans = await this.getTripPlans();
+      const planIndex = plans.findIndex(plan => plan.id === planId);
+
+      if (planIndex >= 0) {
+        plans[planIndex] = {
+          ...plans[planIndex],
+          ...planData,
+          updatedDate: new Date().toISOString()
+        };
+        await AsyncStorage.setItem(STORAGE_KEYS.TRIP_PLANS, JSON.stringify(plans));
+      }
+
+      return plans;
+    } catch (error) {
+      console.error('Error updating trip plan:', error);
+      return [];
+    }
+  }
+
+  static async markTripPlanCompleted(planId, completionData = {}) {
+    try {
+      const plans = await this.getTripPlans();
+      const planIndex = plans.findIndex(plan => plan.id === planId);
+
+      if (planIndex >= 0) {
+        plans[planIndex] = {
+          ...plans[planIndex],
+          status: 'completed',
+          completedDate: new Date().toISOString(),
+          completionNotes: completionData.notes || '',
+          rating: completionData.rating || null,
+          actualDuration: completionData.actualDuration || null,
+          updatedDate: new Date().toISOString()
+        };
+        await AsyncStorage.setItem(STORAGE_KEYS.TRIP_PLANS, JSON.stringify(plans));
+      }
+
+      return plans;
+    } catch (error) {
+      console.error('Error marking trip plan completed:', error);
+      return [];
+    }
+  }
+
   static async removeTripPlan(planId) {
     try {
       const plans = await this.getTripPlans();

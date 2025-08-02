@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import {
   View,
+  Text,
   StyleSheet,
   Alert,
   Platform,
@@ -9,6 +10,17 @@ import RNMapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
 import * as Location from 'expo-location';
 import { LOCATION_CATEGORIES } from '../config/mapbox';
 import { COLORS, SHADOWS } from '../utils/constants';
+
+// Category-specific icons for map markers
+const getCategoryIcon = (category) => {
+  const icons = {
+    fort: '🏰',      // Fort/Castle icon
+    waterfall: '💧', // Waterfall icon
+    trek: '🥾',      // Hiking boot icon
+    cave: '🕳️',      // Cave icon
+  };
+  return icons[category] || '📍'; // Default location pin
+};
 
 const MapView = (props = {}) => {
   const {
@@ -99,6 +111,8 @@ const MapView = (props = {}) => {
 
     const category = LOCATION_CATEGORIES[location.category] || LOCATION_CATEGORIES.trek;
     const isSelected = selectedLocation?.id === location.id;
+    const categoryIcon = getCategoryIcon(location.category);
+
     // Create unique key combining category, id, and index to prevent duplicates
     const uniqueKey = `${location.category || 'unknown'}-${location.id || index}-${index}`;
 
@@ -118,9 +132,18 @@ const MapView = (props = {}) => {
           { backgroundColor: category.color },
           isSelected && styles.selectedMarker,
         ]}>
-          <View style={styles.markerInner}>
-            <View style={[styles.markerDot, { backgroundColor: category.color }]} />
-          </View>
+          {isSelected && (
+            <View style={[
+              styles.selectionRing,
+              { borderColor: category.color }
+            ]} />
+          )}
+          <Text style={[
+            styles.markerIcon,
+            isSelected && styles.selectedMarkerIcon
+          ]}>
+            {categoryIcon}
+          </Text>
         </View>
       </Marker>
     );
@@ -162,9 +185,9 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   markerContainer: {
-    width: 32,
-    height: 32,
-    borderRadius: 16,
+    width: 40,
+    height: 40,
+    borderRadius: 20,
     justifyContent: 'center',
     alignItems: 'center',
     borderWidth: 3,
@@ -173,21 +196,37 @@ const styles = StyleSheet.create({
   },
   selectedMarker: {
     transform: [{ scale: 1.3 }],
-    borderColor: COLORS.primary,
-    borderWidth: 4,
+    backgroundColor: COLORS.white,
+    borderColor: COLORS.white,
+    borderWidth: 3,
+    shadowColor: COLORS.text,
+    shadowOffset: { width: 0, height: 6 },
+    shadowOpacity: 0.25,
+    shadowRadius: 12,
+    elevation: 15,
   },
-  markerInner: {
-    width: 20,
-    height: 20,
-    borderRadius: 10,
-    backgroundColor: COLORS.background,
-    justifyContent: 'center',
-    alignItems: 'center',
+  selectionRing: {
+    position: 'absolute',
+    width: 56,
+    height: 56,
+    borderRadius: 28,
+    borderWidth: 3,
+    top: -8,
+    left: -8,
+    backgroundColor: 'transparent',
   },
-  markerDot: {
-    width: 12,
-    height: 12,
-    borderRadius: 6,
+  markerIcon: {
+    fontSize: 20,
+    textAlign: 'center',
+    textShadowColor: 'rgba(0, 0, 0, 0.3)',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 2,
+  },
+  selectedMarkerIcon: {
+    fontSize: 24,
+    textShadowColor: 'rgba(0, 0, 0, 0.5)',
+    textShadowOffset: { width: 2, height: 2 },
+    textShadowRadius: 4,
   },
 });
 

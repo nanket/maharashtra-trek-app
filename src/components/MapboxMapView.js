@@ -11,6 +11,17 @@ import * as Location from 'expo-location';
 import { MAPBOX_CONFIG, LOCATION_CATEGORIES } from '../config/mapbox';
 import { COLORS, SHADOWS } from '../utils/constants';
 
+// Category-specific icons for map markers
+const getCategoryIcon = (category) => {
+  const icons = {
+    fort: '🏰',      // Fort/Castle icon
+    waterfall: '💧', // Waterfall icon
+    trek: '🥾',      // Hiking boot icon
+    cave: '🕳️',      // Cave icon
+  };
+  return icons[category] || '📍'; // Default location pin
+};
+
 // Safely import Mapbox with error handling
 let Mapbox = null;
 let isMapboxAvailable = false;
@@ -118,6 +129,8 @@ const MapboxMapView = ({
   const renderLocationMarker = (location, index) => {
     const category = LOCATION_CATEGORIES[location.category] || LOCATION_CATEGORIES.trek;
     const isSelected = selectedLocation?.id === location.id;
+    const categoryIcon = getCategoryIcon(location.category);
+
     // Create unique key and id combining category, id, and index to prevent duplicates
     const uniqueKey = `${location.category}-${location.id}-${index}`;
     const uniqueId = `marker-${location.category}-${location.id}-${index}`;
@@ -134,9 +147,18 @@ const MapboxMapView = ({
           { backgroundColor: category.color },
           isSelected && styles.selectedMarker,
         ]}>
-          <View style={styles.markerInner}>
-            <Text style={styles.markerIcon}>{category.icon}</Text>
-          </View>
+          {isSelected && (
+            <View style={[
+              styles.selectionRing,
+              { borderColor: category.color }
+            ]} />
+          )}
+          <Text style={[
+            styles.markerIcon,
+            isSelected && styles.selectedMarkerIcon
+          ]}>
+            {categoryIcon}
+          </Text>
         </View>
 
         <Mapbox.Callout title={location.name} />
@@ -236,24 +258,42 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderWidth: 3,
-    borderColor: COLORS.white,
+    borderColor: COLORS.background,
     ...SHADOWS.medium,
   },
   selectedMarker: {
-    borderColor: COLORS.primary,
-    borderWidth: 4,
-    transform: [{ scale: 1.2 }],
+    transform: [{ scale: 1.3 }],
+    backgroundColor: COLORS.white,
+    borderColor: COLORS.white,
+    borderWidth: 3,
+    shadowColor: COLORS.text,
+    shadowOffset: { width: 0, height: 6 },
+    shadowOpacity: 0.25,
+    shadowRadius: 12,
+    elevation: 15,
   },
-  markerInner: {
-    width: 30,
-    height: 30,
-    borderRadius: 15,
-    justifyContent: 'center',
-    alignItems: 'center',
+  selectionRing: {
+    position: 'absolute',
+    width: 56,
+    height: 56,
+    borderRadius: 28,
+    borderWidth: 3,
+    top: -8,
+    left: -8,
+    backgroundColor: 'transparent',
   },
   markerIcon: {
-    fontSize: 16,
-    color: COLORS.white,
+    fontSize: 20,
+    textAlign: 'center',
+    textShadowColor: 'rgba(0, 0, 0, 0.3)',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 2,
+  },
+  selectedMarkerIcon: {
+    fontSize: 24,
+    textShadowColor: 'rgba(0, 0, 0, 0.5)',
+    textShadowOffset: { width: 2, height: 2 },
+    textShadowRadius: 4,
   },
   offlineIndicator: {
     position: 'absolute',

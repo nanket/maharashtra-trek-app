@@ -501,8 +501,22 @@ const TrekDetailsScreen = ({ route, navigation }) => {
 
         <View style={styles.content}>
           <View style={styles.header}>
-            <Text style={styles.title}>{trek.name}</Text>
-            <Text style={styles.location}>📍 {trek.location}</Text>
+            <View style={styles.titleRow}>
+              <View style={styles.titleContainer}>
+                <Text style={styles.title}>{trek.name}</Text>
+                <Text style={styles.location}>📍 {trek.location}</Text>
+              </View>
+              <TouchableOpacity
+                style={[styles.headerFavoriteButton, isFavorite && styles.headerFavoriteButtonActive]}
+                onPress={handleFavoriteToggle}
+                disabled={loading}
+                activeOpacity={0.8}
+              >
+                <Text style={[styles.headerFavoriteIcon, isFavorite && styles.headerFavoriteIconActive]}>
+                  {isFavorite ? '❤️' : '🤍'}
+                </Text>
+              </TouchableOpacity>
+            </View>
           </View>
 
           <View style={styles.quickInfo}>
@@ -1014,12 +1028,43 @@ const styles = StyleSheet.create({
   header: {
     marginBottom: SPACING.xl,
   },
+  titleRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
+  },
+  titleContainer: {
+    flex: 1,
+    marginRight: SPACING.md,
+  },
   title: {
     fontSize: 26,
     fontWeight: '900',
     color: COLORS.text,
     marginBottom: SPACING.sm,
     lineHeight: 32,
+  },
+  headerFavoriteButton: {
+    width: 50,
+    height: 50,
+    borderRadius: BORDER_RADIUS.full,
+    backgroundColor: COLORS.backgroundCard,
+    borderWidth: 2,
+    borderColor: COLORS.surfaceBorder,
+    justifyContent: 'center',
+    alignItems: 'center',
+    ...SHADOWS.medium,
+    elevation: 8,
+  },
+  headerFavoriteButtonActive: {
+    backgroundColor: '#FEF2F2',
+    borderColor: '#EF4444',
+  },
+  headerFavoriteIcon: {
+    fontSize: 24,
+  },
+  headerFavoriteIconActive: {
+    fontSize: 24,
   },
   location: {
     fontSize: 16,

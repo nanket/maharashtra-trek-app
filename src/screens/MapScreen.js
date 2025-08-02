@@ -214,7 +214,7 @@ const MapScreen = ({ navigation }) => {
           {renderFilterButton('all', 'All', '🗺️')}
           {renderFilterButton('fort', 'Forts', '🏰')}
           {renderFilterButton('waterfall', 'Waterfalls', '💧')}
-          {renderFilterButton('trek', 'Treks', '⛰️')}
+          {renderFilterButton('trek', 'Treks', '🥾')}
           {renderFilterButton('cave', 'Caves', '🕳️')}
         </ScrollView>
       </View>

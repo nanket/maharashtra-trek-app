@@ -19,7 +19,7 @@ import LocalDataService from '../services/LocalDataService';
 const { width } = Dimensions.get('window');
 
 const TrekListScreen = ({ navigation, route }) => {
-  const { category, searchQuery, nearbyTreks, userLocation, maxDistance, allTreks } = route.params || {};
+  const { category, searchQuery, nearbyTreks, userLocation, maxDistance, allTreks, selectionMode } = route.params || {};
   const [filteredTreks, setFilteredTreks] = useState([]);
   const [selectedFilter, setSelectedFilter] = useState(category || 'all');
   const [searchText, setSearchText] = useState(searchQuery || '');
@@ -147,8 +147,14 @@ const TrekListScreen = ({ navigation, route }) => {
   };
 
   const handleTrekPress = useCallback((trek) => {
-    navigation.navigate('TrekDetails', { trek });
-  }, [navigation]);
+    if (selectionMode) {
+      // In selection mode, navigate back to TrekPlanner with selected trek
+      navigation.navigate('TrekPlanner', { selectedTrek: trek });
+    } else {
+      // Normal mode, navigate to trek details
+      navigation.navigate('TrekDetails', { trek });
+    }
+  }, [navigation, selectionMode]);
 
   const handleFilterPress = (filter) => {
     setSelectedFilter(filter);
@@ -170,6 +176,10 @@ const TrekListScreen = ({ navigation, route }) => {
   };
 
   const getScreenTitle = () => {
+    if (selectionMode) {
+      return '🎯 Select a Trek';
+    }
+
     if (isSearchMode && searchText) {
       const categoryName = selectedFilter === 'fort' ? 'Forts' :
                           selectedFilter === 'trek' ? 'Treks' :
@@ -211,6 +221,10 @@ const TrekListScreen = ({ navigation, route }) => {
   }, [selectedFilter]);
 
   const getScreenSubtitle = () => {
+    if (selectionMode) {
+      return 'Tap on any trek to add it to your plan';
+    }
+
     if (isSearchMode && searchText) {
       return `Results for "${searchText}"`;
     }
