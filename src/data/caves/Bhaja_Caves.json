@@ -136,5 +136,20 @@
         ]
       }
     }
-  }
+  },
+  "bestTimeToVisit": "October to March",
+  "coordinates": {
+    "latitude": 18.7333,
+    "longitude": 73.4833
+  },
+  "featured": false,
+  "rating": 4.2,
+  "reviewCount": 156,
+  "images": [
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754055300/caves/bhaja/bhaja_1.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754055301/caves/bhaja/bhaja_2.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754055302/caves/bhaja/bhaja_3.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754055303/caves/bhaja/bhaja_4.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754055304/caves/bhaja/bhaja_5.jpg"
+  ]
 }

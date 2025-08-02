@@ -11,7 +11,7 @@ import {
   Dimensions,
 } from 'react-native';
 import LocationService from '../services/LocationService';
-import { COLORS, SPACING, BORDER_RADIUS, SHADOWS, IMAGES, createTextStyle } from '../utils/constants';
+import { COLORS, SPACING, BORDER_RADIUS, SHADOWS, IMAGES, CLOUDINARY_IMAGES, createTextStyle } from '../utils/constants';
 
 const { width } = Dimensions.get('window');
 
@@ -199,9 +199,25 @@ const NearbyTreks = ({ treks = [], navigation, maxDistance = 100, limit = 6 }) =
   };
 
   const getImageSource = (trek) => {
+    // First check if there's a direct images array with URLs
+    if (trek.images && trek.images.length > 0) {
+      const firstImage = trek.images[0];
+      if (firstImage && firstImage.startsWith('http')) {
+        return { uri: firstImage };
+      }
+    }
+
+    // Check if imageKey points to a Cloudinary image
+    if (trek.imageKey && CLOUDINARY_IMAGES[trek.imageKey]) {
+      return { uri: CLOUDINARY_IMAGES[trek.imageKey] };
+    }
+
+    // Check if imageKey points to a local image
     if (trek.imageKey && IMAGES[trek.imageKey]) {
       return IMAGES[trek.imageKey];
     }
+
+    // Fallback to default image
     return IMAGES.defaultImage;
   };
 

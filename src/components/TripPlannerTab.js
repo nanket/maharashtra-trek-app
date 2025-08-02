@@ -193,6 +193,9 @@ const TripPlannerTab = ({ navigation, tripPlans, onTripPlansChange }) => {
                 maxLength={50}
                 returnKeyType="next"
                 blurOnSubmit={false}
+                autoCorrect={false}
+                autoCapitalize="words"
+                keyboardType="default"
               />
             </View>
 
@@ -205,6 +208,9 @@ const TripPlannerTab = ({ navigation, tripPlans, onTripPlansChange }) => {
                 placeholder="e.g., December 2024"
                 returnKeyType="next"
                 blurOnSubmit={false}
+                autoCorrect={false}
+                autoCapitalize="words"
+                keyboardType="default"
               />
             </View>
 
@@ -221,6 +227,9 @@ const TripPlannerTab = ({ navigation, tripPlans, onTripPlansChange }) => {
                 maxLength={200}
                 returnKeyType="done"
                 blurOnSubmit={true}
+                autoCorrect={true}
+                autoCapitalize="sentences"
+                keyboardType="default"
               />
             </View>
           </ScrollView>

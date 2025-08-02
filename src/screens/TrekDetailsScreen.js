@@ -474,6 +474,7 @@ const TrekDetailsScreen = ({ route, navigation }) => {
       >
         <ImageCarousel
           imageKey={trek.imageKey}
+          images={trek.images || []}
           videos={trek.videos || []}
           height={280}
           style={styles.imageContainer}
@@ -927,6 +928,7 @@ const TrekDetailsScreen = ({ route, navigation }) => {
       {/* Photo Gallery */}
       <PhotoGallery
         visible={galleryVisible}
+        images={trek.images || []}
         imageKey={trek.imageKey}
         initialIndex={galleryInitialIndex}
         onClose={() => setGalleryVisible(false)}
@@ -1330,7 +1332,7 @@ const styles = StyleSheet.create({
   // Expandable FAB styles
   fabContainer: {
     position: 'absolute',
-    bottom: SPACING.xl,
+    bottom: SPACING.xl + 10, // Add extra spacing to avoid tab bar overlap
     right: SPACING.lg,
     alignItems: 'center',
     zIndex: 10,

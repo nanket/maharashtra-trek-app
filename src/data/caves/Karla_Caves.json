@@ -286,5 +286,12 @@
   },
   "featured": false,
   "rating": 4.1,
-  "reviewCount": 678
+  "reviewCount": 678,
+  "images": [
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754055500/caves/karla/karla_1.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754055501/caves/karla/karla_2.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754055502/caves/karla/karla_3.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754055503/caves/karla/karla_4.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754055504/caves/karla/karla_5.jpg"
+  ]
 }

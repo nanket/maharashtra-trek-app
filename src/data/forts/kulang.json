@@ -1,0 +1,68 @@
+{
+  "id": 51,
+  "name": "Kulang Fort",
+  "category": "fort",
+  "location": "Ahmednagar District, Maharashtra",
+  "difficulty": "Difficult",
+  "duration": "6-8 hours (round trip)",
+  "elevation": "1,050 meters",
+  "description": "Kulang Fort is part of the famous AMK (Alang-Madan-Kulang) trek, one of the most challenging and adventurous treks in Maharashtra. The fort requires technical rock climbing skills and is known for its steep rock patches and thrilling ascent. It offers spectacular views of the Sahyadri ranges and is a favorite among experienced trekkers.",
+  "startingPoint": {
+    "name": "Samrad Village",
+    "coordinates": {
+      "latitude": 19.3167,
+      "longitude": 73.7167
+    },
+    "facilities": [
+      "Basic parking",
+      "Local guides available",
+      "Village shops for basic supplies"
+    ],
+    "description": "Samrad village serves as the base for the AMK trek. The village has basic facilities and local guides who are essential for this challenging trek."
+  },
+  "permits": {
+    "required": false,
+    "forestDepartment": "Not required",
+    "entry": "Free entry",
+    "timings": "Daylight hours recommended"
+  },
+  "safety": {
+    "riskLevel": "High",
+    "commonRisks": [
+      "Technical rock climbing sections",
+      "Steep drops and exposed ridges",
+      "Weather changes",
+      "Navigation challenges"
+    ],
+    "precautions": [
+      "Experienced guide mandatory",
+      "Proper climbing gear required",
+      "Travel in groups only",
+      "Check weather conditions"
+    ],
+    "rescuePoints": [
+      "Samrad village",
+      "Madan fort plateau"
+    ],
+    "nearestHospital": {
+      "name": "Kalyan Rural Hospital",
+      "distance": "45 km",
+      "contact": "+91 2522 664455"
+    }
+  },
+  "bestTimeToVisit": "October to March",
+  "coordinates": {
+    "latitude": 19.3167,
+    "longitude": 73.7167
+  },
+  "featured": false,
+  "rating": 4.7,
+  "reviewCount": 89,
+  "images": [
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754055200/forts/kulang/kulang_1.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754055201/forts/kulang/kulang_2.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754055202/forts/kulang/kulang_3.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754055203/forts/kulang/kulang_4.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754055204/forts/kulang/kulang_5.jpg"
+  ]
+}

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import {
   View,
   Text,
@@ -24,24 +24,78 @@ const TrekListScreen = ({ navigation, route }) => {
   const [selectedFilter, setSelectedFilter] = useState(category || 'all');
   const [searchText, setSearchText] = useState(searchQuery || '');
   const [isSearchMode, setIsSearchMode] = useState(!!searchQuery);
+  const [searchTimeout, setSearchTimeout] = useState(null);
 
   useEffect(() => {
-    if (isSearchMode && searchText) {
-      performSearch(searchText);
-    } else {
+    if (searchText.trim().length >= 2) {
+      // Auto-search when user types 2+ characters
+      setIsSearchMode(true);
+      debouncedSearch(searchText);
+    } else if (searchText.trim().length === 0) {
+      // Clear search when text is empty
+      setIsSearchMode(false);
+      filterTreks(selectedFilter);
+    } else if (!isSearchMode) {
       filterTreks(selectedFilter);
     }
-  }, [selectedFilter, searchText, isSearchMode]);
+  }, [selectedFilter, searchText]);
 
-  const performSearch = (query) => {
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (searchTimeout) {
+        clearTimeout(searchTimeout);
+      }
+    };
+  }, [searchTimeout]);
+
+  const performSearch = useCallback((query) => {
     if (!query || query.trim().length < 2) {
       setFilteredTreks([]);
       return;
     }
 
-    const searchResults = LocalDataService.searchData(query);
+    console.log('🔍 Searching for:', query, 'in category:', selectedFilter);
+    let searchResults = LocalDataService.searchData(query);
+
+    // If we're in a specific category filter, filter results by that category
+    if (selectedFilter !== 'all' && selectedFilter !== 'nearby') {
+      // Check if it's a difficulty filter
+      const difficultyMapping = {
+        'beginner': ['Easy'],
+        'intermediate': ['Moderate', 'Easy to Moderate'],
+        'advanced': ['Difficult', 'Very difficult with rock climbing', 'Moderate to difficult']
+      };
+
+      if (difficultyMapping[selectedFilter]) {
+        searchResults = searchResults.filter(trek =>
+          difficultyMapping[selectedFilter].some(difficulty =>
+            trek.difficulty && trek.difficulty.toLowerCase().includes(difficulty.toLowerCase())
+          )
+        );
+      } else {
+        // Category filter (fort, trek, waterfall, cave)
+        searchResults = searchResults.filter(item => item.category === selectedFilter);
+      }
+    }
+
+    console.log('🔍 Filtered search results:', searchResults.length, 'items found for category:', selectedFilter);
     setFilteredTreks(searchResults);
-  };
+  }, [selectedFilter]);
+
+  const debouncedSearch = useCallback((query) => {
+    // Clear existing timeout
+    if (searchTimeout) {
+      clearTimeout(searchTimeout);
+    }
+
+    // Set new timeout for debounced search
+    const timeout = setTimeout(() => {
+      performSearch(query);
+    }, 300); // 300ms delay
+
+    setSearchTimeout(timeout);
+  }, [performSearch]);
 
   const filterTreks = (filter) => {
     // Handle nearby category specially
@@ -92,9 +146,9 @@ const TrekListScreen = ({ navigation, route }) => {
     }
   };
 
-  const handleTrekPress = (trek) => {
+  const handleTrekPress = useCallback((trek) => {
     navigation.navigate('TrekDetails', { trek });
-  };
+  }, [navigation]);
 
   const handleFilterPress = (filter) => {
     setSelectedFilter(filter);
@@ -117,7 +171,11 @@ const TrekListScreen = ({ navigation, route }) => {
 
   const getScreenTitle = () => {
     if (isSearchMode && searchText) {
-      return `🔍 Search Results`;
+      const categoryName = selectedFilter === 'fort' ? 'Forts' :
+                          selectedFilter === 'trek' ? 'Treks' :
+                          selectedFilter === 'waterfall' ? 'Waterfalls' :
+                          selectedFilter === 'cave' ? 'Caves' : '';
+      return `🔍 Search${categoryName ? ` in ${categoryName}` : ' Results'}`;
     }
 
     switch (selectedFilter) {
@@ -139,6 +197,18 @@ const TrekListScreen = ({ navigation, route }) => {
         return 'All Destinations';
     }
   };
+
+  const searchPlaceholder = useMemo(() => {
+    const placeholders = {
+      'fort': 'Search forts (e.g., Raigad, Sinhagad)...',
+      'trek': 'Search treks (e.g., Kalsubai, Andharban)...',
+      'waterfall': 'Search waterfalls (e.g., Kune, Lingmala)...',
+      'cave': 'Search caves (e.g., Bhaja, Karla)...',
+      'all': 'Search treks, forts, waterfalls...'
+    };
+
+    return placeholders[selectedFilter] || placeholders['all'];
+  }, [selectedFilter]);
 
   const getScreenSubtitle = () => {
     if (isSearchMode && searchText) {
@@ -182,9 +252,9 @@ const TrekListScreen = ({ navigation, route }) => {
 
   const filters = getFilters();
 
-  const renderTrekCard = ({ item }) => (
+  const renderTrekCard = useCallback(({ item }) => (
     <TrekCard trek={item} onPress={handleTrekPress} />
-  );
+  ), [handleTrekPress]);
 
   const renderHeader = () => (
     <View style={styles.headerContainer}>
@@ -210,13 +280,17 @@ const TrekListScreen = ({ navigation, route }) => {
           <Text style={styles.searchIcon}>🔍</Text>
           <TextInput
             style={styles.searchInput}
-            placeholder="Search treks, forts, waterfalls..."
+            placeholder={searchPlaceholder}
             placeholderTextColor={COLORS.textSecondary}
             value={searchText}
             onChangeText={setSearchText}
             onSubmitEditing={handleSearchSubmit}
             returnKeyType="search"
             blurOnSubmit={false}
+            autoCorrect={false}
+            autoCapitalize="none"
+            keyboardType="default"
+            clearButtonMode="while-editing"
           />
           {searchText.length > 0 && (
             <TouchableOpacity onPress={handleSearchClear} style={styles.clearButton}>

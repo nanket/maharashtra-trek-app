@@ -297,5 +297,12 @@
   },
   "featured": false,
   "rating": 4.2,
-  "reviewCount": 345
+  "reviewCount": 345,
+  "images": [
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754055400/waterfalls/bhimashankar/bhimashankar_1.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754055401/waterfalls/bhimashankar/bhimashankar_2.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754055402/waterfalls/bhimashankar/bhimashankar_3.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754055403/waterfalls/bhimashankar/bhimashankar_4.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754055404/waterfalls/bhimashankar/bhimashankar_5.jpg"
+  ]
 }

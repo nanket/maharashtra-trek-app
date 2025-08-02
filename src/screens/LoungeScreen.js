@@ -523,12 +523,14 @@ const styles = StyleSheet.create({
   },
   fab: {
     position: 'absolute',
-    bottom: 20,
+    bottom: 30, // Increased spacing to avoid tab bar overlap
     right: 20,
     width: 56,
     height: 56,
     borderRadius: 28,
     ...SHADOWS.large,
+    zIndex: 10, // Ensure FAB is above other elements
+    elevation: 10,
   },
   fabGradient: {
     width: '100%',

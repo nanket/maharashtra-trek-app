@@ -252,6 +252,9 @@ const CompletedTreksTab = ({ navigation, completedTreks, onCompletedChange }) =>
               textAlignVertical="top"
               returnKeyType="done"
               blurOnSubmit={true}
+              autoCorrect={true}
+              autoCapitalize="sentences"
+              keyboardType="default"
             />
           </View>
 

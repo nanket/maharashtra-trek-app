@@ -208,10 +208,25 @@ const ImageCarousel = ({
         );
       }
     } else {
-      // Handle image
-      const imageSource = CLOUDINARY_IMAGES[item.source]
-        ? { uri: CLOUDINARY_IMAGES[item.source] }
-        : (IMAGES[item.source] || IMAGES.defaultImage);
+      // Handle image - support direct URLs, Cloudinary keys, and local images
+      let imageSource;
+
+      // Check if it's a direct URL (starts with http)
+      if (item.source && item.source.startsWith('http')) {
+        imageSource = { uri: item.source };
+      }
+      // Check if it's a Cloudinary key
+      else if (CLOUDINARY_IMAGES[item.source]) {
+        imageSource = { uri: CLOUDINARY_IMAGES[item.source] };
+      }
+      // Check if it's a local image key
+      else if (IMAGES[item.source]) {
+        imageSource = IMAGES[item.source];
+      }
+      // Fallback to default image
+      else {
+        imageSource = IMAGES.defaultImage;
+      }
 
       return (
         <TouchableOpacity

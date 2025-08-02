@@ -168,6 +168,10 @@ const HomeScreen = ({ navigation }) => {
                 onSubmitEditing={handleSearchPress}
                 returnKeyType="search"
                 blurOnSubmit={false}
+                autoCorrect={false}
+                autoCapitalize="none"
+                keyboardType="default"
+                clearButtonMode="while-editing"
               />
               <TouchableOpacity style={styles.searchButton} onPress={handleSearchPress}>
                 <Text style={styles.searchIcon}>🔍</Text>

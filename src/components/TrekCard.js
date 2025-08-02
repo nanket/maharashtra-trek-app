@@ -7,7 +7,7 @@ import {
   Image,
   Dimensions,
 } from 'react-native';
-import { COLORS, CATEGORIES, CATEGORY_COLORS, DIFFICULTY_COLORS, DIFFICULTY_LEVELS, SHADOWS, SPACING, BORDER_RADIUS, IMAGES } from '../utils/constants';
+import { COLORS, CATEGORIES, CATEGORY_COLORS, DIFFICULTY_COLORS, DIFFICULTY_LEVELS, SHADOWS, SPACING, BORDER_RADIUS, IMAGES, CLOUDINARY_IMAGES } from '../utils/constants';
 import UserStorageService from '../utils/userStorage';
 
 const { width } = Dimensions.get('window');
@@ -53,9 +53,28 @@ const TrekCard = ({ trek, onPress, showFavoriteButton = true }) => {
     }
   };
 
-  // Get image from local assets
+  // Get image from multiple sources - direct URLs, images array, imageKey, or local assets
   const getImageSource = () => {
-    return IMAGES[trek.imageKey] || IMAGES.defaultImage;
+    // First check if there's a direct images array with URLs
+    if (trek.images && trek.images.length > 0) {
+      const firstImage = trek.images[0];
+      if (firstImage && firstImage.startsWith('http')) {
+        return { uri: firstImage };
+      }
+    }
+
+    // Check if imageKey points to a Cloudinary image
+    if (trek.imageKey && CLOUDINARY_IMAGES[trek.imageKey]) {
+      return { uri: CLOUDINARY_IMAGES[trek.imageKey] };
+    }
+
+    // Check if imageKey points to a local image
+    if (trek.imageKey && IMAGES[trek.imageKey]) {
+      return IMAGES[trek.imageKey];
+    }
+
+    // Fallback to default image
+    return IMAGES.defaultImage;
   };
 
   return (

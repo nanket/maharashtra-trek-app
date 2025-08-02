@@ -191,6 +191,10 @@ const MapScreen = ({ navigation }) => {
             onChangeText={setSearchText}
             returnKeyType="search"
             blurOnSubmit={false}
+            autoCorrect={false}
+            autoCapitalize="none"
+            keyboardType="default"
+            clearButtonMode="while-editing"
           />
           {searchText.length > 0 && (
             <TouchableOpacity onPress={() => setSearchText('')}>

@@ -1,38 +1,51 @@
 /**
  * LocalDataService - Loads data from separate JSON files organized by category
  *
- * Replaces the single treksData.json with organized category-based files:
+ * Loads ALL data from organized category-based files:
  * - Forts: src/data/forts/
  * - Treks: src/data/treks/
  * - Waterfalls: src/data/waterfall/
  * - Caves: src/data/caves/
  */
 
-// Import all fort data
-import RajgadFort from '../data/forts/raigad.json';
-import SinhagadFort from '../data/forts/singhagad.json';
+// Import ALL fort data
+import AlangFort from '../data/forts/alang.json';
+import AvchitgadFort from '../data/forts/avchitgad.json';
+import HarishchandragadFort from '../data/forts/harishchandragad.json';
+import JivdhanFort from '../data/forts/jivdhan.json';
+import KorigadFort from '../data/forts/korigad.json';
+import KulangFort from '../data/forts/kulang.json';
 import LohagadFort from '../data/forts/lohagad.json';
+import MadanFort from '../data/forts/madan.json';
+import PebFort from '../data/forts/peb.json';
+import PratapgadhFort from '../data/forts/pratapgadh.json';
+import PurandarFort from '../data/forts/purandar.json';
+import RaigadFort from '../data/forts/raigad.json';
+import RajgadFort from '../data/forts/rajgad.json';
+import ShivneriFort from '../data/forts/shivneri.json';
+import SinhagadFort from '../data/forts/singhagad.json';
 import TikonaFort from '../data/forts/tikona.json';
 import TornaFort from '../data/forts/torna.json';
+import VasotaFort from '../data/forts/vasota.json';
 import VisapurFort from '../data/forts/visapur.json';
-import HarishchandragadFort from '../data/forts/harishchandragad.json';
-import LohagadData from '../data/forts/lohagad.json';
-import PebFort from '../data/forts/peb.json';
 
-// Import all trek data
-import AndharbandTrek from '../data/treks/andharbhan.json';
+// Import ALL trek data
+import AndharbhanTrek from '../data/treks/andharbhan.json';
 import BhimashankarTrek from '../data/treks/bhimashankar.json';
-import KalsubaiPeak from '../data/treks/kalsubai.json';
+import KalsubaiTrek from '../data/treks/kalsubai.json';
 import RajmachiTrek from '../data/treks/rajmachi.json';
 
-// Import all waterfall data
+// Import ALL waterfall data
+import BahiriWaterfall from '../data/waterfall/bahiri_waterfall.json';
 import BhimashankarWaterfall from '../data/waterfall/Bhimashankar_Waterfall.json';
-import BhivpuriWaterfalls from '../data/waterfall/Bhivpuri_Waterfalls.json';
-
+import BhivpuriWaterfall from '../data/waterfall/Bhivpuri_Waterfalls.json';
+import DevkundWaterfall from '../data/waterfall/devkund_waterfall.json';
 import KuneFalls from '../data/waterfall/Kune_Falls.json';
-import LingmalaWaterfalls from '../data/waterfall/Lingmala_Waterfalls.json';
+import LingmalaWaterfall from '../data/waterfall/Lingmala_Waterfalls.json';
+import NanemachiWaterfall from '../data/waterfall/nanemachi_waterfall.json';
+import PandavkadaWaterfall from '../data/waterfall/pandavkada_waterfall.json';
 
-// Import all cave data
+// Import ALL cave data
 import BhajaCaves from '../data/caves/Bhaja_Caves.json';
 import KarlaCaves from '../data/caves/Karla_Caves.json';
 
@@ -52,36 +65,50 @@ class LocalDataService {
     }
 
     try {
-      // Combine all fort data
+      // Combine ALL fort data
       const forts = [
-        RajgadFort,
-        SinhagadFort,
+        AlangFort,
+        AvchitgadFort,
+        HarishchandragadFort,
+        JivdhanFort,
+        KorigadFort,
+        KulangFort,
         LohagadFort,
+        MadanFort,
+        PebFort,
+        PratapgadhFort,
+        PurandarFort,
+        RaigadFort,
+        RajgadFort,
+        ShivneriFort,
+        SinhagadFort,
         TikonaFort,
         TornaFort,
+        VasotaFort,
         VisapurFort,
-        HarishchandragadFort,
-        LohagadData,
-        PebFort,
       ].filter(item => item && item.id); // Filter out any null/undefined items
 
-      // Combine all trek data
+      // Combine ALL trek data
       const treks = [
-        AndharbandTrek,
+        AndharbhanTrek,
         BhimashankarTrek,
-        KalsubaiPeak,
+        KalsubaiTrek,
         RajmachiTrek,
       ].filter(item => item && item.id);
 
-      // Combine all waterfall data
+      // Combine ALL waterfall data
       const waterfalls = [
+        BahiriWaterfall,
         BhimashankarWaterfall,
-        BhivpuriWaterfalls,
+        BhivpuriWaterfall,
+        DevkundWaterfall,
         KuneFalls,
-        LingmalaWaterfalls,
+        LingmalaWaterfall,
+        NanemachiWaterfall,
+        PandavkadaWaterfall,
       ].filter(item => item && item.id);
 
-      // Combine all cave data
+      // Combine ALL cave data
       const caves = [
         BhajaCaves,
         KarlaCaves,

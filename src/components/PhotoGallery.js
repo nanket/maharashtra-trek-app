@@ -48,11 +48,15 @@ const PhotoGallery = ({
 
   // Get image array from props or image collections
   const getImageArray = () => {
+    // Prioritize direct images array from JSON data
     if (images && images.length > 0) {
       return images;
-    } else if (imageKey && TREK_IMAGE_COLLECTIONS[imageKey]) {
+    }
+    // Fallback to image collections using imageKey
+    else if (imageKey && TREK_IMAGE_COLLECTIONS[imageKey]) {
       return TREK_IMAGE_COLLECTIONS[imageKey];
     }
+    // Final fallback to empty array
     return [];
   };
 

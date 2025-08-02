@@ -13,7 +13,7 @@ import {
   TextInput,
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { COLORS, CATEGORIES, CATEGORY_COLORS, SHADOWS, SPACING, BORDER_RADIUS, IMAGES, FONTS, TYPOGRAPHY, createTextStyle } from '../utils/constants';
+import { COLORS, CATEGORIES, CATEGORY_COLORS, SHADOWS, SPACING, BORDER_RADIUS, IMAGES, CLOUDINARY_IMAGES, FONTS, TYPOGRAPHY, createTextStyle } from '../utils/constants';
 import LocalDataService from '../services/LocalDataService';
 import NearbyTreks from '../components/NearbyTreks';
 
@@ -66,7 +66,26 @@ const HomeScreen = ({ navigation }) => {
   };
 
   const getImageSource = (trek) => {
-    return IMAGES[trek.imageKey] || IMAGES.defaultImage;
+    // First check if there's a direct images array with URLs
+    if (trek.images && trek.images.length > 0) {
+      const firstImage = trek.images[0];
+      if (firstImage && firstImage.startsWith('http')) {
+        return { uri: firstImage };
+      }
+    }
+
+    // Check if imageKey points to a Cloudinary image
+    if (trek.imageKey && CLOUDINARY_IMAGES[trek.imageKey]) {
+      return { uri: CLOUDINARY_IMAGES[trek.imageKey] };
+    }
+
+    // Check if imageKey points to a local image
+    if (trek.imageKey && IMAGES[trek.imageKey]) {
+      return IMAGES[trek.imageKey];
+    }
+
+    // Fallback to default image
+    return IMAGES.defaultImage;
   };
 
   const getDifficultyColor = (difficulty) => {
@@ -110,6 +129,10 @@ const HomeScreen = ({ navigation }) => {
               onSubmitEditing={handleSearchPress}
               returnKeyType="search"
               blurOnSubmit={false}
+              autoCorrect={false}
+              autoCapitalize="none"
+              keyboardType="default"
+              clearButtonMode="while-editing"
             />
           </View>
         </View>

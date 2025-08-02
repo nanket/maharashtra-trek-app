@@ -148,6 +148,7 @@ const EmergencyContactsScreen = ({ navigation }) => {
           style={styles.formContainer}
           keyboardShouldPersistTaps="handled"
           keyboardDismissMode="on-drag"
+          showsVerticalScrollIndicator={false}
         >
           <View style={styles.inputGroup}>
             <Text style={styles.inputLabel}>Name *</Text>
@@ -159,6 +160,9 @@ const EmergencyContactsScreen = ({ navigation }) => {
               placeholderTextColor={COLORS.textSecondary}
               returnKeyType="next"
               blurOnSubmit={false}
+              autoCorrect={false}
+              autoCapitalize="words"
+              keyboardType="default"
             />
           </View>
 
@@ -173,6 +177,8 @@ const EmergencyContactsScreen = ({ navigation }) => {
               keyboardType="phone-pad"
               returnKeyType="next"
               blurOnSubmit={false}
+              autoCorrect={false}
+              autoCapitalize="none"
             />
           </View>
 
@@ -186,6 +192,9 @@ const EmergencyContactsScreen = ({ navigation }) => {
               placeholderTextColor={COLORS.textSecondary}
               returnKeyType="done"
               blurOnSubmit={true}
+              autoCorrect={false}
+              autoCapitalize="words"
+              keyboardType="default"
             />
           </View>
         </ScrollView>
