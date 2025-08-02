@@ -1,0 +1,255 @@
+{
+  "id": 180,
+  "name": "Jivdhan Fort",
+  "category": "fort",
+  "location": "Nashik District, Maharashtra",
+  "difficulty": "Hard (technical, steep climbs, requires ropes and experienced trekking skills)",
+  "duration": "6–8 hours (one way; full exploration)",
+  "elevation": "1,145 meters",
+  "description": "Jivdhan Fort is a historic hill fort famous for its challenging and technical trek involving steep rock-cut stairways, vertical rock faces, and narrow ledges requiring safety gear and expert navigation. It offers spectacular views of the Sahyadri range and is culturally important for its Maratha history. The fort is part of the Matheran range and is a favorite for adventure trekkers seeking a thrilling wild experience.",
+  "startingPoint": {
+    "name": "Ghatghar Village",
+    "coordinates": {
+      "latitude": 19.5715,
+      "longitude": 73.6468
+    },
+    "facilities": [
+      "Limited parking",
+      "Basic tea stalls (seasonal)",
+      "Local guides available on request",
+      "No public restrooms"
+    ],
+    "description": "Ghatghar village serves as the main base point for the Jivdhan Fort trek. The route from here involves steep forest trails leading to the fort’s vertical approach. Facilities are limited, so preparation is necessary."
+  },
+  "networkAvailability": {
+    "baseVillage": {
+      "airtel": "Fair",
+      "jio": "Fair",
+      "vodafone": "Weak",
+      "bsnl": "Fair"
+    },
+    "duringTrek": {
+      "airtel": "Intermittent",
+      "jio": "Intermittent",
+      "vodafone": "No signal",
+      "bsnl": "No signal"
+    },
+    "atSummit": {
+      "airtel": "No signal",
+      "jio": "No signal",
+      "vodafone": "No signal",
+      "bsnl": "No signal"
+    },
+    "emergencyContact": "Dial 108 or 112 when network available; inform local contacts before trekking"
+  },
+  "foodAndWater": {
+    "atBase": {
+      "restaurants": [
+        "Seasonal tea stalls",
+        "Home-cooked meals arranged via local guides or homestays"
+      ],
+      "shops": [
+        "Small provision shops",
+        "Packaged water (availability may vary)"
+      ],
+      "waterSources": [
+        "Village wells (water treatment strongly recommended)"
+      ]
+    },
+    "duringTrek": {
+      "waterSources": [
+        "Limited water sources on trek; carry 3+ liters of drinking water",
+        "Rock pools/cisterns may have water; treat before use"
+      ],
+      "foodOptions": [
+        "No food stalls on trek; carry high energy compact food"
+      ],
+      "recommendations": [
+        "Energy bars",
+        "Dry fruits",
+        "Glucose tablets"
+      ]
+    },
+    "atSummit": {
+      "facilities": [
+        "Natural caves and rock shelters provide basic shelter",
+        "No formal food or water stalls"
+      ],
+      "recommendations": [
+        "Carry sufficient food and water for the entire trek"
+      ]
+    }
+  },
+  "accommodation": {
+    "camping": {
+      "allowed": true,
+      "locations": [
+        "Caves on the fort",
+        "Flatter plateau areas near summit"
+      ],
+      "facilities": [
+        "Natural rock shelter",
+        "No amenities; self-sufficient camping required"
+      ],
+      "cost": "Free (own tents and equipment required)"
+    },
+    "nearbyStays": [
+      {
+        "name": "Ghatghar Homestays",
+        "distance": "At Ghatghar village",
+        "contact": "+91 9764924535",
+        "cost": "₹500–900 per person approx.",
+        "facilities": [
+          "Basic rooms",
+          "Home-cooked food",
+          "Guiding and trek support"
+        ]
+      }
+    ]
+  },
+  "permits": {
+    "required": false,
+    "forestDepartment": "No formal permits required",
+    "entry": "Free entry; night stay and camping advised only after informing locals",
+    "timings": "Entry allowed any time; start trekking early due to technical difficulty"
+  },
+  "safety": {
+    "riskLevel": "High",
+    "commonRisks": [
+      "Steep vertical rock surfaces",
+      "Exposure and narrow ledges",
+      "Unstable weather causes slippery rocks",
+      "Wildlife encounters (snakes, insects)",
+      "No medical facilities on trek"
+    ],
+    "precautions": [
+      "Only experienced trekkers with safety equipment should attempt",
+      "Trek with local guides familiar with terrain",
+      "Wear good trekking shoes with grip",
+      "Use ropes and harness where applicable",
+      "Carry comprehensive first aid kit"
+    ],
+    "rescuePoints": [
+      "Ghatghar village",
+      "Base of vertical rock climb",
+      "Summit caves"
+    ],
+    "nearestHospital": {
+      "name": "Ghoti Rural Hospital",
+      "distance": "Approx. 40 km from base",
+      "contact": "02553-221379"
+    }
+  },
+  "weather": {
+    "monsoon": {
+      "months": "June–September",
+      "conditions": "Heavy rain, fog, slippery rocks, leeches; very dangerous weather conditions",
+      "recommendation": "Avoid trekking during monsoon season to prevent accidents"
+    },
+    "winter": {
+      "months": "October–February",
+      "conditions": "Clear, cool, ideal visibility and conditions for trekking",
+      "recommendation": "Best season for trekking Jivdhan Fort"
+    },
+    "summer": {
+      "months": "March–May",
+      "conditions": "Hot and dry on trail; water scarcity is common",
+      "recommendation": "Start very early; carry sufficient water"
+    }
+  },
+  "trekRoute": {
+    "totalDistance": "Approx. 10 km round trip",
+    "ascent": "Approx. 900 meters",
+    "difficulty": "Hard; technical with rope sections and climbing ladders",
+    "waypoints": [
+      {
+        "name": "Ghatghar Village",
+        "elevation": "720 meters",
+        "description": "Trek base with limited amenities"
+      },
+      {
+        "name": "Forest Trail",
+        "elevation": "850 meters",
+        "description": "Shaded forest path leading to base of rock face"
+      },
+      {
+        "name": "Vertical Rock Climb and Ladders",
+        "elevation": "1,100 meters",
+        "description": "Technical ascent involving ropes and metal ladders"
+      },
+      {
+        "name": "Main Summit Caves",
+        "elevation": "1,145 meters",
+        "description": "Camping caves with panoramic views"
+      }
+    ]
+  },
+  "howToReach": {
+    "fromMumbai": {
+      "byTrain": {
+        "description": "Train from Mumbai CST/Dadar to Ghoti or Kasara, then taxi or shared jeep to Ghatghar village",
+        "distance": "Approx. 140 km to base",
+        "time": "4–5 hours total",
+        "steps": [
+          "Take train to Ghoti/Kasara",
+          "Shared taxi or jeep to Ghatghar village",
+          "Trekking starts at village"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive via Mumbai-Nashik highway; exit at Ghoti; then drive to Ghatghar",
+        "distance": "Approx. 140 km",
+        "time": "4 hours",
+        "steps": [
+          "Mumbai-Nashik highway (NH160)",
+          "Exit Ghoti and proceed to Ghatghar village",
+          "Park and start trek"
+        ]
+      }
+    },
+    "fromPune": {
+      "byTrain": {
+        "description": "Train to Igatpuri, then taxi/shared jeep to Ghatghar village",
+        "distance": "Approx. 210 km to base",
+        "time": "6–7 hours",
+        "steps": [
+          "Pune to Igatpuri train",
+          "Taxi or shared jeep to Ghatghar",
+          "Start trek"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive Pune-Nashik highway to Ghoti, then to Ghatghar village",
+        "distance": "Approx. 210 km",
+        "time": "6 hours",
+        "steps": [
+          "Drive Pune-Nashik highway",
+          "Exit Ghoti and proceed to Ghatghar village",
+          "Park and commence trek"
+        ]
+      }
+    }
+  },
+  "bestTimeToVisit": "October to March (cool, clear weather)",
+  "localContacts": [
+    {
+      "name": "Ghatghar Trek Guide - Sunil Pawar",
+      "phone": "+91 98234 56789",
+      "service": "Guide, camping arrangements, local support"
+    }
+  ],
+  "imageKey": "jivdhan",
+  "videos": [],
+  "coordinates": {
+    "latitude": 19.5715,
+    "longitude": 73.6468
+  },
+  "featured": true,
+  "rating": 4.7,
+  "reviewCount": 42,
+  "images": [
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754059454/treks/jivdhan/jivdhan_5.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754059454/treks/jivdhan/jivdhan_7.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754059454/treks/jivdhan/jivdhan_9.jpg"
+  ]
+}

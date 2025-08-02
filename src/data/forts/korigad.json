@@ -1,0 +1,252 @@
+{
+  "id": 160,
+  "name": "Korigad Fort",
+  "category": "fort",
+  "location": "Pune District, Maharashtra",
+  "difficulty": "Easy to Moderate",
+  "duration": "2 to 3 hours (round trip)",
+  "elevation": "930 meters",
+  "description": "Korigad Fort is a historic hill fort located near Lonavala in the Pune district. Known for its well-preserved fortifications, water cisterns, and ancient temples, it offers a relatively easy trek suitable for families and beginners. The fort stands amidst lush greenery and provides panoramic views of the surrounding Sahyadri ranges. It is a favorite monsoon destination due to its rich flora and seasonal waterfalls nearby.",
+  "startingPoint": {
+    "name": "Jambhe Village",
+    "coordinates": {
+      "latitude": 18.7201,
+      "longitude": 73.4197
+    },
+    "facilities": [
+      "Parking area",
+      "Tea stalls and local eateries",
+      "Basic shops for snacks and water",
+      "Local guide availability"
+    ],
+    "description": "Jambhe village is the main base for Korigad Fort trek. It is accessible by road and has facilities for parking, refreshments, and guides."
+  },
+  "networkAvailability": {
+    "baseVillage": {
+      "airtel": "Good",
+      "jio": "Good",
+      "vodafone": "Fair",
+      "bsnl": "Fair"
+    },
+    "duringTrek": {
+      "airtel": "Moderate",
+      "jio": "Moderate",
+      "vodafone": "Fair",
+      "bsnl": "Poor"
+    },
+    "atFort": {
+      "airtel": "Poor",
+      "jio": "Poor",
+      "vodafone": "No Signal",
+      "bsnl": "No Signal"
+    },
+    "emergencyContact": "Dial 108 or 112 in case of emergencies"
+  },
+  "foodAndWater": {
+    "atBase": {
+      "restaurants": [
+        "Local tea stalls",
+        "Small eateries serving snacks"
+      ],
+      "shops": [
+        "Provision stores selling packaged water and snacks"
+      ],
+      "waterSources": [
+        "Tap and well water at base village"
+      ]
+    },
+    "duringTrek": {
+      "waterSources": [
+        "Several water cisterns on the fort; quality varies, so water should be treated before drinking"
+      ],
+      "foodOptions": [
+        "No food stalls on the fort; carry your own snacks"
+      ],
+      "recommendations": [
+        "Carry sufficient drinking water and light snacks"
+      ]
+    }
+  },
+  "accommodation": {
+    "camping": {
+      "allowed": true,
+      "locations": [
+        "Fort plateau",
+        "Nearby flat areas with permission"
+      ],
+      "facilities": [
+        "Basic natural shelter; no installed facilities",
+        "Self-sufficient camping suggested"
+      ],
+      "cost": "Free, bring your own gear"
+    },
+    "nearbyStays": [
+      {
+        "name": "Jambhe Homestay",
+        "distance": "At Jambhe village",
+        "contact": "+91 9823456789",
+        "cost": "₹800 to ₹1200 per night",
+        "facilities": [
+          "Basic rooms",
+          "Home-cooked meals",
+          "Pick-up and drop services"
+        ]
+      },
+      {
+        "name": "Lonavala Hotels and Resorts",
+        "distance": "Around 10 km",
+        "contact": null,
+        "cost": "₹1500 to ₹5000+ per night",
+        "facilities": [
+          "Various accommodation types",
+          "Restaurants and amenities"
+        ]
+      }
+    ]
+  },
+  "permits": {
+    "required": false,
+    "notes": "Entry is free; no official permits needed"
+  },
+  "safety": {
+    "level": "Low to Moderate",
+    "commonRisks": [
+      "Slippery rocks during monsoon",
+      "Steep steps and uneven terrain",
+      "Exposure to sun on open sections"
+    ],
+    "precautions": [
+      "Wear appropriate trekking shoes",
+      "Avoid trekking during heavy rains",
+      "Carry sun protection and sufficient water"
+    ],
+    "emergencyContacts": {
+      "ambulance": "108",
+      "localPolice": "+91 2131 270000"
+    }
+  },
+  "trekRoute": {
+    "distance": "Approx. 4 km round trip",
+    "ascent": "Around 400 meters",
+    "difficulty": "Easy to moderate; suitable for beginners",
+    "waypoints": [
+      {
+        "name": "Jambhe Village",
+        "elevation": "530 meters",
+        "description": "Base village with all facilities"
+      },
+      {
+        "name": "Waterfall and Stream Crossing",
+        "elevation": "600 meters",
+        "description": "Natural waterfall, seasonal, on the trekking path"
+      },
+      {
+        "name": "Fort Gate",
+        "elevation": "900 meters",
+        "description": "Main entrance to the fort"
+      },
+      {
+        "name": "Fort Plateau",
+        "elevation": "930 meters",
+        "description": "Flat area with fort ruins, water cisterns, and temples"
+      }
+    ]
+  },
+  "howToReach": {
+    "fromMumbai": {
+      "byTrain": {
+        "description": "Take local train to Lonavala, then taxi or auto to Jambhe village",
+        "distance": "85 km",
+        "time": "2.5 to 3 hours",
+        "steps": [
+          "Board local train at Mumbai CST towards Lonavala",
+          "From Lonavala station, hire taxi or auto rickshaw to Jambhe village",
+          "Start trek from Jambhe"
+        ]
+      },
+      "byBus": {
+        "description": "MSRTC buses to Lonavala, then local transport to Jambhe",
+        "distance": "85 km",
+        "time": "3 to 4 hours",
+        "steps": [
+          "Board bus from Mumbai to Lonavala",
+          "From Lonavala bus station, take local taxi or bus to Jambhe",
+          "Proceed to trekking start point"
+        ]
+      },
+      "byCar": {
+        "description": "Drive via Mumbai-Pune Expressway to Lonavala, then local roads to Jambhe village",
+        "distance": "85 km",
+        "time": "2 to 3 hours",
+        "steps": [
+          "Take Mumbai-Pune Expressway towards Lonavala",
+          "Exit at Lonavala and follow local signage to Jambhe village",
+          "Park vehicle and start trek"
+        ]
+      }
+    },
+    "fromPune": {
+      "byTrain": {
+        "description": "Take train to Lonavala, then taxi or auto to Jambhe village",
+        "distance": "65 km",
+        "time": "2 hours",
+        "steps": [
+          "Board local train at Pune station towards Lonavala",
+          "From Lonavala, hire taxi or auto rickshaw to Jambhe",
+          "Begin trek"
+        ]
+      },
+      "byBus": {
+        "description": "MSRTC buses to Lonavala, then taxi or bus to Jambhe",
+        "distance": "65 km",
+        "time": "2 to 3 hours",
+        "steps": [
+          "Take bus from Pune to Lonavala",
+          "From Lonavala, take local taxi or bus to Jambhe",
+          "Proceed to trekking point"
+        ]
+      },
+      "byCar": {
+        "description": "Drive via Pune-Lonavala highway to Jambhe village",
+        "distance": "65 km",
+        "time": "1.5 to 2 hours",
+        "steps": [
+          "Drive from Pune to Lonavala",
+          "Follow signage towards Jambhe",
+          "Park and start trek"
+        ]
+      }
+    }
+  },
+  "bestTime": "October to March",
+  "localContacts": [
+    {
+      "name": "Jambhe Homestay Owner - Mr. Shinde",
+      "phone": "+91 9876543210",
+      "service": "Homestay accommodation and guide services"
+    },
+    {
+      "name": "Local Guide - Suresh Patil",
+      "phone": "+91 9765432109",
+      "service": "Guided treks and transportation"
+    }
+  ],
+ "images": [
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754059065/treks/korigad/korigad_1.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754059065/treks/korigad/korigad_2.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754059065/treks/korigad/korigad_3.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754059065/treks/korigad/korigad_4.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754059065/treks/korigad/korigad_5.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754059065/treks/korigad/korigad_7.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754059065/treks/korigad/korigad_8.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754059065/treks/korigad/korigad_9.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754059065/treks/korigad/korigad_10.webp"
+  ],
+  "rating": 4.3,
+  "reviewCount": 70,
+  "featured": true,
+  "coordinates": {
+    "latitude": 18.7201,
+    "longitude": 73.4197
+  }
+}

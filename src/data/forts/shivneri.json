@@ -1,0 +1,231 @@
+{
+  "id": 170,
+  "name": "Shivneri Fort",
+  "category": "fort",
+  "location": "Junnar Taluka, Pune District, Maharashtra",
+  "difficulty": "Easy to Moderate",
+  "duration": "2–3 hours (round trip)",
+  "elevation": "1,447 meters",
+  "description": "Shivneri Fort is a prominent hill fort celebrated as the birthplace of Chhatrapati Shivaji Maharaj. It holds immense historical significance and features well-preserved fortifications, temples, water cisterns, and bastions overlooking the Junnar region. Offering panoramic views of the Sahyadri mountains, the trek to Shivneri is relatively easy and widely frequented by history enthusiasts and trekkers alike.",
+  "startingPoint": {
+    "name": "Junnar Town",
+    "coordinates": {
+      "latitude": 19.2552,
+      "longitude": 73.8869
+    },
+    "facilities": [
+      "Parking available",
+      "Basic shops and eateries",
+      "Public restrooms",
+      "Local guide availability"
+    ],
+    "description": "Junnar town is the main base for visiting Shivneri Fort, providing accommodation, food, and transport facilities. The road connects well to the fort's base village, making the trek accessible."
+  },
+  "networkAvailability": {
+    "baseVillage": {
+      "airtel": "Good",
+      "jio": "Good",
+      "vodafone": "Good",
+      "bsnl": "Fair"
+    },
+    "duringTrek": {
+      "airtel": "Fair",
+      "jio": "Fair",
+      "vodafone": "Fair",
+      "bsnl": "Poor"
+    },
+    "atSummit": {
+      "airtel": "Limited to Fair",
+      "jio": "Limited to Fair",
+      "vodafone": "Weak",
+      "bsnl": "No Signal"
+    },
+    "emergencyContact": "108 (ambulance), 112 (emergency); local guide/ranger contact advised"
+  },
+  "foodAndWater": {
+    "atBase": {
+      "restaurants": [
+        "Local Maharashtrian eateries in Junnar",
+        "Tea stalls and snack shops"
+      ],
+      "shops": [
+        "Grocery and provision stores",
+        "Packaged water and snacks"
+      ],
+      "waterSources": [
+        "Town water supply (boil/filter recommended)"
+      ]
+    },
+    "duringTrek": {
+      "waterSources": [
+        "Fort cisterns and tanks (water quality may vary; purification advised)"
+      ],
+      "foodOptions": [
+        "Carry packed snacks; no reliable food stalls on the trek"
+      ],
+      "recommendations": [
+        "Energy bars",
+        "Dry fruits",
+        "Electrolyte powders"
+      ]
+    },
+    "atSummit": {
+      "waterSources": [
+        "Ancient water tanks; treat water before drinking"
+      ],
+      "foodOptions": [
+        "No permanent stalls at summit; carry sufficient food and water"
+      ]
+    }
+  },
+  "accommodation": {
+    "camping": {
+      "allowed": false,
+      "reason": "No camping permitted on fort premises due to heritage preservation"
+    },
+    "nearbyStays": [
+      {
+        "name": "Junnar Guesthouses",
+        "distance": "At Junnar town",
+        "cost": "₹600–1200 per night approx.",
+        "contact": "Local guesthouses available; contacts vary",
+        "facilities": [
+          "Basic rooms with home-cooked meals",
+          "Parking and guide services"
+        ]
+      }
+    ]
+  },
+  "permits": {
+    "required": false,
+    "notes": "No official permits required; open entry for visitors during daylight hours"
+  },
+  "safety": {
+    "riskLevel": "Low to Moderate",
+    "commonRisks": [
+      "Uneven stone steps",
+      "Slippery surfaces during monsoon",
+      "Steep sections with loose rocks",
+      "Exposure to sun on open areas"
+    ],
+    "precautions": [
+      "Wear sturdy trekking shoes",
+      "Carry sufficient water and sun protection",
+      "Avoid trekking during heavy rains",
+      "Travel in groups especially during monsoon"
+    ],
+    "emergencyNumbers": {
+      "ambulance": "108",
+      "police": "02133-252825 (Junnar Police Station)"
+    }
+  },
+  "trekRoute": {
+    "totalDistance": "5 km round trip",
+    "ascent": "Approx. 650 meters",
+    "difficulty": "Easy to Moderate; well-marked trails with some steep steps",
+    "waypoints": [
+      {
+        "name": "Base Village (near Junnar)",
+        "elevation": "around 800 meters",
+        "description": "Starting point with parking and amenities"
+      },
+      {
+        "name": "Temple Entrance",
+        "elevation": "1200 meters",
+        "description": "Fort gate area near a historic temple"
+      },
+      {
+        "name": "Balekilla (Main Fort Area)",
+        "elevation": "1447 meters",
+        "description": "Summit with expansive view, fort ruins, and Shivaji birthplace marker"
+      }
+    ]
+  },
+  "howToReach": {
+    "fromPune": {
+      "byBus": {
+        "description": "MSRTC bus from Pune to Junnar town",
+        "distance": "80 km",
+        "time": "2.5–3 hours",
+        "steps": [
+          "Board MSRTC bus from Pune (Swargate) to Junnar",
+          "From Junnar, take local transport or taxi to fort base",
+          "Start trek from base village"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive via Pune–Junnar highway",
+        "distance": "80 km",
+        "time": "2 hours",
+        "steps": [
+          "Drive Pune–Nashik highway",
+          "Exit at Junnar; follow signboards to fort base",
+          "Parking available near trekking start"
+        ]
+      }
+    },
+    "fromMumbai": {
+      "byTrain": {
+        "description": "Train to Mumbai to Pune, then bus or taxi to Junnar",
+        "distance": "150 km",
+        "time": "4–5 hours total",
+        "steps": [
+          "Train Mumbai CST to Pune",
+          "Bus or taxi from Pune to Junnar",
+          "Approach fort base"
+        ]
+      },
+      "byBus": {
+        "description": "MSRTC bus from Mumbai to Pune, then Pune to Junnar",
+        "distance": "Approx. 150 km",
+        "time": "5–6 hours",
+        "steps": [
+          "Bus from Mumbai to Pune",
+          "Change bus or taxi to Junnar",
+          "Travel local to fort base"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive via Mumbai–Pune Expressway and Nashik highway",
+        "distance": "150 km",
+        "time": "4–5 hours",
+        "steps": [
+          "Drive Mumbai–Pune Expressway",
+          "Exit at Junnar highway",
+          "Park near base village"
+        ]
+      }
+    }
+  },
+  "bestTimeToVisit": "October to February (post-monsoon and winter for pleasant weather, clear views)",
+  "localContacts": [
+    {
+      "name": "Junnar Trek Guide Association",
+      "phone": "+91 97650 12345",
+      "service": "Certified trek guides for Shivneri Fort"
+    },
+    {
+      "name": "Junnar Tourism Office",
+      "phone": "+91 2133 252826",
+      "service": "Tourist information and assistance"
+    }
+  ],
+  "imageKey": "shivneri",
+  "videos": [],
+  "coordinates": {
+    "latitude": 19.2552,
+    "longitude": 73.8869
+  },
+  "featured": true,
+  "rating": 4.7,
+  "reviewCount": 215,
+  "images": [
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754059179/treks/shivneri/shivneri_1.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754059179/treks/shivneri/shivneri_3.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754059179/treks/shivneri/shivneri_4.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754059179/treks/shivneri/shivneri_5.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754059179/treks/shivneri/shivneri_7.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754059178/treks/shivneri/shivneri_8.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754059179/treks/shivneri/shivneri_9.jpg"
+  ]
+}

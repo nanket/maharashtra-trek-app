@@ -28,7 +28,7 @@ import RajmachiTrek from '../data/treks/rajmachi.json';
 // Import all waterfall data
 import BhimashankarWaterfall from '../data/waterfall/Bhimashankar_Waterfall.json';
 import BhivpuriWaterfalls from '../data/waterfall/Bhivpuri_Waterfalls.json';
-import DudhsagarWaterfalls from '../data/waterfall/Dudhsagar_Waterfalls.json';
+
 import KuneFalls from '../data/waterfall/Kune_Falls.json';
 import LingmalaWaterfalls from '../data/waterfall/Lingmala_Waterfalls.json';
 
@@ -77,7 +77,6 @@ class LocalDataService {
       const waterfalls = [
         BhimashankarWaterfall,
         BhivpuriWaterfalls,
-        DudhsagarWaterfalls,
         KuneFalls,
         LingmalaWaterfalls,
       ].filter(item => item && item.id);

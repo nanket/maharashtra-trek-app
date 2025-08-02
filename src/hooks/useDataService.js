@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import DataService from '../services/DataService';
+import SupabaseService from '../services/SupabaseService';
 
 /**
  * Custom hook for accessing trek data with loading states and error handling
@@ -27,29 +27,35 @@ export const useDataService = () => {
   return {
     loading,
     error,
-    getAllTreks: useCallback((forceRefresh = false) => 
-      handleAsyncOperation(() => DataService.getAllTreks(forceRefresh)), [handleAsyncOperation]),
-    
-    getTreksByCategory: useCallback((category, forceRefresh = false) => 
-      handleAsyncOperation(() => DataService.getTreksByCategory(category, forceRefresh)), [handleAsyncOperation]),
-    
-    getFeaturedTreks: useCallback((forceRefresh = false) => 
-      handleAsyncOperation(() => DataService.getFeaturedTreks(forceRefresh)), [handleAsyncOperation]),
-    
-    getTrekById: useCallback((id) => 
-      handleAsyncOperation(() => DataService.getTrekById(id)), [handleAsyncOperation]),
-    
-    searchTreks: useCallback((query, category = null) => 
-      handleAsyncOperation(() => DataService.searchTreks(query, category)), [handleAsyncOperation]),
-    
-    getMetadata: useCallback((forceRefresh = false) => 
-      handleAsyncOperation(() => DataService.getMetadata(forceRefresh)), [handleAsyncOperation]),
-    
-    refreshAllData: useCallback(() => 
-      handleAsyncOperation(() => DataService.refreshAllData()), [handleAsyncOperation]),
-    
-    clearCache: useCallback(() => 
-      handleAsyncOperation(() => DataService.clearCache()), [handleAsyncOperation])
+    getAllTreks: useCallback((forceRefresh = false) =>
+      handleAsyncOperation(() => SupabaseService.getAllTreks(forceRefresh)), [handleAsyncOperation]),
+
+    getTreksByCategory: useCallback((category, forceRefresh = false) =>
+      handleAsyncOperation(() => SupabaseService.getTreksByCategory(category, forceRefresh)), [handleAsyncOperation]),
+
+    getFeaturedTreks: useCallback((forceRefresh = false) =>
+      handleAsyncOperation(() => SupabaseService.getFeaturedTreks(forceRefresh)), [handleAsyncOperation]),
+
+    getTrekById: useCallback((id) =>
+      handleAsyncOperation(() => SupabaseService.getTrekById(id)), [handleAsyncOperation]),
+
+    searchTreks: useCallback((query, category = null) =>
+      handleAsyncOperation(() => SupabaseService.searchTreks(query, category)), [handleAsyncOperation]),
+
+    getTreksByDifficulty: useCallback((difficulty, forceRefresh = false) =>
+      handleAsyncOperation(() => SupabaseService.getTreksByDifficulty(difficulty, forceRefresh)), [handleAsyncOperation]),
+
+    getNearbyTreks: useCallback((latitude, longitude, radiusKm = 50, limit = 10) =>
+      handleAsyncOperation(() => SupabaseService.getNearbyTreks(latitude, longitude, radiusKm, limit)), [handleAsyncOperation]),
+
+    getMetadata: useCallback((forceRefresh = false) =>
+      handleAsyncOperation(() => SupabaseService.getMetadata(forceRefresh)), [handleAsyncOperation]),
+
+    refreshAllData: useCallback(() =>
+      handleAsyncOperation(() => SupabaseService.clearCache()), [handleAsyncOperation]),
+
+    clearCache: useCallback(() =>
+      handleAsyncOperation(() => SupabaseService.clearCache()), [handleAsyncOperation])
   };
 };
 
@@ -67,7 +73,7 @@ export const useAllTreks = (forceRefresh = false) => {
       setError(null);
       
       try {
-        const data = await DataService.getAllTreks(forceRefresh);
+        const data = await SupabaseService.getAllTreks(forceRefresh);
         setTreks(data || []);
       } catch (err) {
         setError(err.message || 'Failed to load treks');
@@ -97,7 +103,7 @@ export const useFeaturedTreks = (forceRefresh = false) => {
       setError(null);
       
       try {
-        const data = await DataService.getFeaturedTreks(forceRefresh);
+        const data = await SupabaseService.getFeaturedTreks(forceRefresh);
         setFeaturedTreks(data || []);
       } catch (err) {
         setError(err.message || 'Failed to load featured treks');
@@ -133,7 +139,7 @@ export const useTreksByCategory = (category, forceRefresh = false) => {
       setError(null);
       
       try {
-        const data = await DataService.getTreksByCategory(category, forceRefresh);
+        const data = await SupabaseService.getTreksByCategory(category, forceRefresh);
         setTreks(data || []);
       } catch (err) {
         setError(err.message || `Failed to load ${category} treks`);
@@ -167,7 +173,7 @@ export const useSearchTreks = () => {
     setError(null);
     
     try {
-      const data = await DataService.searchTreks(query.trim(), category);
+      const data = await SupabaseService.searchTreks(query.trim(), category);
       setResults(data || []);
     } catch (err) {
       setError(err.message || 'Search failed');
@@ -200,7 +206,7 @@ export const useDataMetadata = () => {
       setError(null);
       
       try {
-        const data = await DataService.getMetadata();
+        const data = await SupabaseService.getMetadata();
         setMetadata(data);
       } catch (err) {
         setError(err.message || 'Failed to load metadata');
@@ -214,4 +220,40 @@ export const useDataMetadata = () => {
   }, []);
 
   return { metadata, loading, error };
+};
+
+/**
+ * Hook for getting nearby treks based on location
+ */
+export const useNearbyTreks = (latitude, longitude, radiusKm = 50, limit = 10) => {
+  const [nearbyTreks, setNearbyTreks] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    if (!latitude || !longitude) {
+      setNearbyTreks([]);
+      setLoading(false);
+      return;
+    }
+
+    const loadNearbyTreks = async () => {
+      setLoading(true);
+      setError(null);
+
+      try {
+        const data = await SupabaseService.getNearbyTreks(latitude, longitude, radiusKm, limit);
+        setNearbyTreks(data || []);
+      } catch (err) {
+        setError(err.message || 'Failed to load nearby treks');
+        console.error('Failed to load nearby treks:', err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadNearbyTreks();
+  }, [latitude, longitude, radiusKm, limit]);
+
+  return { nearbyTreks, loading, error };
 };

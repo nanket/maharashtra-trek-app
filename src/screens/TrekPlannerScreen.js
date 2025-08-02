@@ -13,15 +13,16 @@ import {
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { COLORS, SHADOWS, SPACING, BORDER_RADIUS, createTextStyle } from '../utils/constants';
-import { 
-  trekPreparationGuide, 
-  fitnessPreparation, 
+import {
+  trekPreparationGuide,
+  fitnessPreparation,
   safetyGuidelines,
   weatherGuidance,
   calculateTrekTime,
   generatePackingList,
   budgetPlanning
 } from '../data/trekPlanningData';
+
 
 const { width } = Dimensions.get('window');
 
@@ -373,8 +374,9 @@ const TrekPlannerScreen = ({ navigation, route }) => {
         <View style={styles.headerSpacer} />
       </View>
 
+
       {renderTabButtons()}
-      
+
       <ScrollView
         style={styles.scrollView}
         showsVerticalScrollIndicator={false}

@@ -1,0 +1,252 @@
+{
+  "id": 190,
+  "name": "Avchitgad Fort",
+  "category": "fort",
+  "location": "Roha Taluka, Raigad District, Maharashtra",
+  "difficulty": "Easy to Moderate",
+  "duration": "2–3 hours (round trip trek)",
+  "elevation": "300 meters",
+  "description": "Avchitgad Fort is a hill fort located near Roha in the Raigad district. Known for its lush forest approach, extensive ramparts, bastions, and scenic Sahyadri views, the fort has historical roots with the Marathas and features ancient water tanks, ruins, and temples. The fort is covered in dense foliage, making the trek enjoyable throughout the year—especially in monsoon when the greenery and wildflowers are at their peak.",
+  "startingPoint": {
+    "name": "Medha Village",
+    "coordinates": {
+      "latitude": 18.4372,
+      "longitude": 73.1357
+    },
+    "facilities": [
+      "Parking area at village entry",
+      "Basic village shops",
+      "Public restrooms (limited)",
+      "Local guide availability"
+    ],
+    "description": "Medha is the primary trek base for Avchitgad, accessible by road from Roha (approx. 10 km). The trail starts from near the Hanuman temple in the village and ascends through a forested ridge to the fort."
+  },
+  "networkAvailability": {
+    "baseVillage": {
+      "airtel": "Good",
+      "jio": "Good",
+      "vodafone": "Fair",
+      "bsnl": "Spotty"
+    },
+    "duringTrek": {
+      "airtel": "Intermittent",
+      "jio": "Intermittent",
+      "vodafone": "Weak",
+      "bsnl": "Weak/none"
+    },
+    "atSummit": {
+      "airtel": "Intermittent",
+      "jio": "Weak",
+      "vodafone": "No signal",
+      "bsnl": "No signal"
+    },
+    "emergencyContact": "108 (ambulance), 112 (general emergency); village help available"
+  },
+  "foodAndWater": {
+    "atBase": {
+      "restaurants": [
+        "Home-cooked meals by villagers (advance request)",
+        "Small tea and snack stalls (seasonal)"
+      ],
+      "shops": [
+        "General stores with snacks, biscuits, and cold drinks"
+      ],
+      "waterSources": [
+        "Village wells (boil/filter recommended)"
+      ]
+    },
+    "duringTrek": {
+      "waterSources": [
+        "Cisterns and tanks on fort (water not always potable, treat before use)"
+      ],
+      "foodOptions": [
+        "No stalls on trek; carry own snacks and water"
+      ],
+      "recommendations": [
+        "Energy bars",
+        "Dry fruits",
+        "Electrolyte packs"
+      ]
+    },
+    "atSummit": {
+      "facilities": [
+        "Ruined structures and covered temple for rest",
+        "Water tanks (water quality variable, treat if used)"
+      ],
+      "foodOptions": [
+        "No food stalls—pack in and pack out policy"
+      ]
+    }
+  },
+  "accommodation": {
+    "camping": {
+      "allowed": true,
+      "locations": [
+        "Fort plateau near temple ruins",
+        "Flat clearings inside ramparts"
+      ],
+      "facilities": [
+        "No built infrastructure; self-sufficient camping only"
+      ],
+      "cost": "Free (no official facilities, bring own tents)"
+    },
+    "nearbyStays": [
+      {
+        "name": "Medha Village Homestay",
+        "distance": "At base village",
+        "contact": "+91 9422719630",
+        "cost": "₹600–900 per person incl. meals",
+        "facilities": [
+          "Rooms with local food",
+          "Guide arrangements",
+          "Parking"
+        ]
+      },
+      {
+        "name": "Roha City Hotels",
+        "distance": "10 km from Medha",
+        "contact": null,
+        "cost": "₹1000–2500 per room",
+        "facilities": [
+          "All basic hotel amenities"
+        ]
+      }
+    ]
+  },
+  "permits": {
+    "required": false,
+    "notes": "No special permit needed; free entry. Follow village and environmental guidelines."
+  },
+  "safety": {
+    "riskLevel": "Low to Moderate",
+    "commonRisks": [
+      "Slippery paths and loose stones in monsoon",
+      "Dense undergrowth hiding rocks or uneven steps",
+      "Minimal safety railings on fort ramparts"
+    ],
+    "precautions": [
+      "Wear trekking shoes with good grip",
+      "Travel in small groups",
+      "Carry first aid",
+      "Drink treated or packed water only"
+    ],
+    "emergencyNumbers": {
+      "ambulance": "108",
+      "police": "Roha Police Station: +91 2144 233333"
+    }
+  },
+  "trekRoute": {
+    "distance": "Approx. 4 km round trip",
+    "ascent": "Around 200 meters",
+    "difficulty": "Easy to moderate; trail includes forest, gradual slope, stone steps",
+    "waypoints": [
+      {
+        "name": "Medha Village Hanuman Temple",
+        "elevation": "120 meters",
+        "description": "Start point, meets main forest trail"
+      },
+      {
+        "name": "Forest Ridge",
+        "elevation": "200 meters",
+        "description": "Shaded forest, gradual incline"
+      },
+      {
+        "name": "Main Fort Entrance",
+        "elevation": "280 meters",
+        "description": "Broken main gate, first bastion"
+      },
+      {
+        "name": "Fort Plateau and Temple Ruins",
+        "elevation": "300 meters",
+        "description": "Main area with panoramic views, water tanks"
+      }
+    ]
+  },
+  "howToReach": {
+    "fromMumbai": {
+      "byTrain": {
+        "description": "Konkan Railway train to Roha, then taxi/auto to Medha village (10 km)",
+        "distance": "120 km to Roha + 10 km",
+        "time": "3.5–4.5 hours",
+        "steps": [
+          "Train Mumbai to Roha",
+          "Local auto/taxi to Medha",
+          "Trek begins at village"
+        ]
+      },
+      "byBus": {
+        "description": "MSRTC bus to Roha, then local transport to Medha",
+        "distance": "130 km",
+        "time": "5–6 hours",
+        "steps": [
+          "MSRTC bus Dadar/Panvel to Roha",
+          "Auto/taxi to Medha village"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive via Mumbai-Goa Highway (NH66) to Roha, then to Medha",
+        "distance": "130 km total",
+        "time": "4 hours",
+        "steps": [
+          "Mumbai-Goa Highway to Roha",
+          "Roha to Medha via paved road",
+          "Parking at village"
+        ]
+      }
+    },
+    "fromPune": {
+      "byTrain": {
+        "description": "Train to Roha (Panvel route), then taxi/auto",
+        "distance": "140 km + 10 km",
+        "time": "4.5–5.5 hours",
+        "steps": [
+          "Train via Lonavala or Panvel to Roha",
+          "Taxi/auto to Medha"
+        ]
+      },
+      "byBus": {
+        "description": "MSRTC bus to Roha, then local to Medha",
+        "distance": "140 km",
+        "time": "5 hours",
+        "steps": [
+          "Bus from Pune to Roha",
+          "Taxi/auto to Medha"
+        ]
+      },
+      "byPrivateVehicle": {
+        "description": "Drive via Mulshi, Mangaon, Roha to Medha",
+        "distance": "135 km",
+        "time": "4.5 hours",
+        "steps": [
+          "Drive Pune–Mulshi–Mangaon–Roha–Medha",
+          "Parking at village entrance"
+        ]
+      }
+    }
+  },
+  "bestTimeToVisit": "June to February (monsoon and winter months for best views and greenery)",
+  "localContacts": [
+    {
+      "name": "Medha Village Homestay",
+      "phone": "+91 9422719630",
+      "service": "Homestay, local food, guide services"
+    },
+    {
+      "name": "Roha Tourism Office",
+      "phone": "+91 2144 233400",
+      "service": "Tourist assistance, transport info"
+    }
+  ],
+  "images": [
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754048000/treks/avchitgad/avchitgad_1.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754048001/treks/avchitgad/avchitgad_2.jpg",
+    "https://res.cloudinary.com/dworlkdn8/image/upload/v1754048002/treks/avchitgad/avchitgad_3.jpg"
+  ],
+  "coordinates": {
+    "latitude": 18.4372,
+    "longitude": 73.1357
+  },
+  "featured": false,
+  "rating": 4.4,
+  "reviewCount": 53
+}
