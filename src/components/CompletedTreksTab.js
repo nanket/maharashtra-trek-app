@@ -9,6 +9,7 @@ import {
   Modal,
   TextInput,
   Dimensions,
+  RefreshControl,
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { COLORS, SHADOWS, SPACING, BORDER_RADIUS, createTextStyle, CATEGORY_COLORS } from '../utils/constants';
@@ -24,6 +25,7 @@ const CompletedTreksTab = ({ navigation, completedTreks, onCompletedChange, trip
   const [rating, setRating] = useState(0);
   const [notes, setNotes] = useState('');
   const [loading, setLoading] = useState(false);
+  const [refreshing, setRefreshing] = useState(false);
 
   useEffect(() => {
     loadCompletedTreksData();
@@ -71,6 +73,22 @@ const CompletedTreksTab = ({ navigation, completedTreks, onCompletedChange, trip
     });
 
     setCompletedTreksData(allCompleted);
+  };
+
+  const handleRefresh = async () => {
+    setRefreshing(true);
+    try {
+      // Reload completed treks from storage
+      const updatedCompleted = await UserStorageService.getCompletedTreks();
+      const updatedTripPlans = await UserStorageService.getTripPlans();
+      onCompletedChange(updatedCompleted);
+      // Note: tripPlans are passed as props, so we rely on parent to update them
+      loadCompletedTreksData();
+    } catch (error) {
+      console.error('Error refreshing completed treks:', error);
+    } finally {
+      setRefreshing(false);
+    }
   };
 
   const handleMarkCompleted = async (trek) => {
@@ -347,6 +365,9 @@ const CompletedTreksTab = ({ navigation, completedTreks, onCompletedChange, trip
         ListHeaderComponent={renderHeader}
         contentContainerStyle={styles.listContainer}
         showsVerticalScrollIndicator={false}
+        refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={handleRefresh} />
+        }
       />
       {renderCompletionModal()}
     </View>

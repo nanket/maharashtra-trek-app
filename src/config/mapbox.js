@@ -80,28 +80,28 @@ export const TREK_REGIONS = {
   },
 };
 
-// Location categories with map styling
+// Location categories with map styling - Orange for forts/treks, appropriate colors for others
 export const LOCATION_CATEGORIES = {
   fort: {
-    color: '#8B4513',
+    color: '#FF9933', // Maratha flag orange for forts
     icon: 'castle',
     size: 1.2,
     priority: 1,
   },
   waterfall: {
-    color: '#1E40AF',
+    color: '#1E40AF', // Blue for waterfalls (natural water color)
     icon: 'water',
     size: 1.1,
     priority: 2,
   },
   trek: {
-    color: '#059669',
+    color: '#FF9933', // Maratha flag orange for treks
     icon: 'mountain',
     size: 1.0,
     priority: 3,
   },
   cave: {
-    color: '#6B46C1',
+    color: '#6B46C1', // Purple for caves (mysterious/underground)
     icon: 'cave',
     size: 1.0,
     priority: 4,

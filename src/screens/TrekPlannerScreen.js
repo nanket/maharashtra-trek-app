@@ -10,9 +10,12 @@ import {
   Modal,
   Alert,
   Dimensions,
+  Platform,
 } from 'react-native';
+import DateTimePicker from '@react-native-community/datetimepicker';
 import { LinearGradient } from 'expo-linear-gradient';
 import { COLORS, SHADOWS, SPACING, BORDER_RADIUS, createTextStyle } from '../utils/constants';
+import UserStorageService from '../utils/userStorage';
 import {
   trekPreparationGuide,
   fitnessPreparation,
@@ -49,6 +52,7 @@ const TrekPlannerScreen = ({ navigation, route }) => {
   });
   const [packingList, setPackingList] = useState([]);
   const [checkedItems, setCheckedItems] = useState({});
+  const [showDatePicker, setShowDatePicker] = useState(false);
 
   // Separate state for calculated values to avoid infinite loops
   const [estimatedTime, setEstimatedTime] = useState(null);
@@ -72,6 +76,119 @@ const TrekPlannerScreen = ({ navigation, route }) => {
 
     return unsubscribe;
   }, [navigation, route?.params, selectedTrek]);
+
+// Clear form data when navigating away from the screen
+useEffect(() => {
+  const unsubscribe = navigation.addListener('blur', () => {
+    // Clear form data when leaving the screen
+    setSelectedTrek(null);
+    setPlannerData({
+      selectedTrek: null,
+      groupSize: 1,
+      fitnessLevel: 'intermediate',
+      plannedDate: '',
+      duration: 1,
+      budget: 0,
+      season: getCurrentSeason()
+    });
+    setShowDatePicker(false);
+  });
+
+  return unsubscribe;
+}, [navigation]);
+
+// Date picker handlers
+const handleDateChange = (_, selectedDate) => {
+  if (Platform.OS === 'android') {
+    setShowDatePicker(false);
+  }
+
+  if (selectedDate) {
+    setPlannerData(prev => ({
+      ...prev,
+      plannedDate: selectedDate.toISOString()
+    }));
+  }
+};
+
+const handleDatePickerDone = () => {
+  setShowDatePicker(false);
+};
+
+// Save plan functionality
+const handleSavePlan = async () => {
+  if (!selectedTrek) {
+    Alert.alert('Error', 'Please select a trek first');
+    return;
+  }
+
+  if (!plannerData.plannedDate) {
+    Alert.alert('Error', 'Please select a planned date');
+    return;
+  }
+
+  try {
+    const planData = {
+      title: `${selectedTrek.name} Trek`,
+      description: `Trek to ${selectedTrek.name} - ${selectedTrek.difficulty} level`,
+      plannedDate: plannerData.plannedDate,
+      difficulty: selectedTrek.difficulty?.toLowerCase() || 'moderate',
+      duration: selectedTrek.duration || '1',
+      status: 'planned',
+      trekDetails: {
+        trekId: selectedTrek.id,
+        trekName: selectedTrek.name,
+        location: selectedTrek.location,
+        groupSize: plannerData.groupSize,
+        fitnessLevel: plannerData.fitnessLevel,
+        season: plannerData.season,
+        estimatedBudget: plannerData.budget,
+      },
+      createdDate: new Date().toISOString(),
+      updatedDate: new Date().toISOString(),
+    };
+
+    const savedPlan = await UserStorageService.addTripPlan(planData);
+    console.log('Trek plan saved successfully:', savedPlan);
+
+    Alert.alert(
+      'Success!',
+      'Your trek plan has been saved successfully!',
+      [
+        {
+          text: 'View Plans',
+          onPress: () => {
+            // Navigate to MyTreks and set the planned tab as active
+            navigation.navigate('My Treks');
+            // Use a timeout to ensure the screen has loaded before setting the tab
+            setTimeout(() => {
+              navigation.setParams({ initialTab: 'planned' });
+            }, 100);
+          }
+        },
+        {
+          text: 'Plan Another',
+          onPress: () => {
+            // Reset form
+            setSelectedTrek(null);
+            setPlannerData({
+              selectedTrek: null,
+              groupSize: 1,
+              fitnessLevel: 'intermediate',
+              plannedDate: '',
+              duration: 1,
+              budget: 0,
+              season: getCurrentSeason()
+            });
+          }
+        }
+      ]
+    );
+  } catch (error) {
+    console.error('Error saving trek plan:', error);
+    Alert.alert('Error', 'Failed to save trek plan. Please try again.');
+  }
+};
 
   // Effect to calculate trek plan when relevant data changes
   useEffect(() => {
@@ -225,6 +342,47 @@ const TrekPlannerScreen = ({ navigation, route }) => {
             ))}
           </View>
         </View>
+
+        <View style={styles.inputRow}>
+          <Text style={styles.inputLabel}>Planned Date:</Text>
+          <TouchableOpacity
+            style={styles.dateInput}
+            onPress={() => setShowDatePicker(true)}
+          >
+            <Text style={[styles.dateInputText, !plannerData.plannedDate && styles.placeholderText]}>
+              {plannerData.plannedDate ?
+                new Date(plannerData.plannedDate).toLocaleDateString('en-US', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric',
+                }) :
+                'Select Date'
+              }
+            </Text>
+            <Text style={styles.dateInputIcon}>📅</Text>
+          </TouchableOpacity>
+        </View>
+
+        {/* Date Picker */}
+        {showDatePicker && (
+          <View style={styles.datePickerContainer}>
+            <DateTimePicker
+              value={plannerData.plannedDate ? new Date(plannerData.plannedDate) : new Date()}
+              mode="date"
+              display={Platform.OS === 'ios' ? 'spinner' : 'default'}
+              onChange={handleDateChange}
+              minimumDate={new Date()}
+            />
+            {Platform.OS === 'ios' && (
+              <TouchableOpacity
+                style={styles.datePickerDoneButton}
+                onPress={handleDatePickerDone}
+              >
+                <Text style={styles.datePickerDoneText}>Done</Text>
+              </TouchableOpacity>
+            )}
+          </View>
+        )}
       </View>
 
       {/* Time Estimation */}
@@ -415,6 +573,28 @@ const TrekPlannerScreen = ({ navigation, route }) => {
       >
         {renderContent()}
       </ScrollView>
+
+      {/* Save Plan Button - Show when trek is selected and basic details are filled */}
+      {selectedTrek && plannerData.plannedDate && (
+        <View style={styles.savePlanContainer}>
+          <TouchableOpacity
+            style={styles.savePlanButton}
+            onPress={handleSavePlan}
+            activeOpacity={0.8}
+          >
+            <LinearGradient
+              colors={[COLORS.primary, COLORS.primaryDark]}
+              style={styles.savePlanGradient}
+              start={{ x: 0, y: 0 }}
+              end={{ x: 1, y: 0 }}
+            >
+              <Text style={styles.savePlanIcon}>💾</Text>
+              <Text style={styles.savePlanText}>Save Trek Plan</Text>
+              <Text style={styles.savePlanArrow}>→</Text>
+            </LinearGradient>
+          </TouchableOpacity>
+        </View>
+      )}
     </SafeAreaView>
   );
 };
@@ -719,6 +899,92 @@ const styles = StyleSheet.create({
     ...createTextStyle(12, 'regular'),
     color: COLORS.textSecondary,
     fontStyle: 'italic',
+  },
+  // Save Plan Button Styles
+  savePlanContainer: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    backgroundColor: COLORS.background,
+    paddingHorizontal: SPACING.xl,
+    paddingVertical: SPACING.lg,
+    borderTopWidth: 1,
+    borderTopColor: COLORS.surfaceBorder,
+    ...SHADOWS.large,
+  },
+  savePlanButton: {
+    borderRadius: BORDER_RADIUS.lg,
+    overflow: 'hidden',
+    ...SHADOWS.medium,
+    elevation: 8,
+  },
+  savePlanGradient: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: SPACING.lg,
+    paddingHorizontal: SPACING.xl,
+  },
+  savePlanIcon: {
+    fontSize: 24,
+    marginRight: SPACING.md,
+  },
+  savePlanText: {
+    ...createTextStyle(18, 'bold'),
+    color: COLORS.white,
+    flex: 1,
+    textAlign: 'center',
+  },
+  savePlanArrow: {
+    fontSize: 20,
+    color: COLORS.white,
+    marginLeft: SPACING.md,
+  },
+  // Date Input Styles
+  dateInput: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    backgroundColor: COLORS.backgroundCard,
+    borderWidth: 1,
+    borderColor: COLORS.surfaceBorder,
+    borderRadius: BORDER_RADIUS.md,
+    paddingHorizontal: SPACING.md,
+    paddingVertical: SPACING.md,
+    marginLeft: SPACING.md,
+  },
+  dateInputText: {
+    ...createTextStyle(16, 'regular'),
+    color: COLORS.text,
+    flex: 1,
+  },
+  dateInputIcon: {
+    fontSize: 20,
+  },
+  placeholderText: {
+    color: COLORS.textSecondary,
+  },
+  datePickerContainer: {
+    backgroundColor: COLORS.backgroundCard,
+    borderRadius: BORDER_RADIUS.lg,
+    padding: SPACING.lg,
+    marginTop: SPACING.md,
+    borderWidth: 1,
+    borderColor: COLORS.surfaceBorder,
+    ...SHADOWS.small,
+  },
+  datePickerDoneButton: {
+    backgroundColor: COLORS.primary,
+    padding: SPACING.md,
+    borderRadius: BORDER_RADIUS.md,
+    alignItems: 'center',
+    marginTop: SPACING.md,
+  },
+  datePickerDoneText: {
+    ...createTextStyle(16, 'medium'),
+    color: COLORS.white,
   },
 });
 

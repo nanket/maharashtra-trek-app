@@ -147,7 +147,6 @@ const HomeScreen = ({ navigation }) => {
 
         {/* Categories - Clean Icons */}
         <View style={styles.categoriesSection}>
-          <Text style={styles.sectionTitle}>Explore Maharashtra</Text>
           <View style={styles.categoriesGrid}>
             {[
               { id: 'fort', title: 'Forts', icon: '🏰', color: COLORS.fort },
@@ -170,12 +169,13 @@ const HomeScreen = ({ navigation }) => {
           </View>
         </View>
 
-        {/* Nearby Treks */}
+        {/* Nearby Treks - Exclude featured destinations */}
         <NearbyTreks
           treks={allData}
           navigation={navigation}
           maxDistance={100}
           limit={6}
+          excludeTreks={topTreks} // Exclude featured destinations
         />
 
         {/* Featured Destinations - Clean Cards */}
@@ -201,15 +201,39 @@ const HomeScreen = ({ navigation }) => {
                 />
                 <View style={styles.featuredContent}>
                   <View style={styles.featuredHeader}>
-                    <Text style={styles.featuredTitle}>{item.name}</Text>
+                    <Text
+                      style={styles.featuredTitle}
+                      numberOfLines={2}
+                      ellipsizeMode="tail"
+                    >
+                      {item.name}
+                    </Text>
                     <View style={styles.ratingContainer}>
                       <Text style={styles.ratingText}>⭐ {item.rating}</Text>
                     </View>
                   </View>
-                  <Text style={styles.featuredLocation}>{item.location}</Text>
+                  <Text
+                    style={styles.featuredLocation}
+                    numberOfLines={2}
+                    ellipsizeMode="tail"
+                  >
+                    {item.location}
+                  </Text>
                   <View style={styles.featuredFooter}>
-                    <Text style={styles.featuredDifficulty}>{item.difficulty}</Text>
-                    <Text style={styles.featuredDuration}>{item.duration}</Text>
+                    <Text
+                      style={styles.featuredDifficulty}
+                      numberOfLines={1}
+                      ellipsizeMode="tail"
+                    >
+                      {item.difficulty}
+                    </Text>
+                    <Text
+                      style={styles.featuredDuration}
+                      numberOfLines={1}
+                      ellipsizeMode="tail"
+                    >
+                      {item.duration}
+                    </Text>
                   </View>
                 </View>
               </TouchableOpacity>
@@ -244,15 +268,39 @@ const HomeScreen = ({ navigation }) => {
                 />
                 <View style={styles.featuredContent}>
                   <View style={styles.featuredHeader}>
-                    <Text style={styles.featuredTitle}>{item.name}</Text>
+                    <Text
+                      style={styles.featuredTitle}
+                      numberOfLines={2}
+                      ellipsizeMode="tail"
+                    >
+                      {item.name}
+                    </Text>
                     <View style={styles.ratingContainer}>
                       <Text style={styles.ratingText}>⭐ {item.rating}</Text>
                     </View>
                   </View>
-                  <Text style={styles.featuredLocation}>{item.location}</Text>
+                  <Text
+                    style={styles.featuredLocation}
+                    numberOfLines={2}
+                    ellipsizeMode="tail"
+                  >
+                    {item.location}
+                  </Text>
                   <View style={styles.featuredFooter}>
-                    <Text style={styles.featuredDifficulty}>{item.difficulty}</Text>
-                    <Text style={styles.featuredDuration}>{item.duration}</Text>
+                    <Text
+                      style={styles.featuredDifficulty}
+                      numberOfLines={1}
+                      ellipsizeMode="tail"
+                    >
+                      {item.difficulty}
+                    </Text>
+                    <Text
+                      style={styles.featuredDuration}
+                      numberOfLines={1}
+                      ellipsizeMode="tail"
+                    >
+                      {item.duration}
+                    </Text>
                   </View>
                 </View>
               </TouchableOpacity>
@@ -452,12 +500,13 @@ const styles = StyleSheet.create({
     paddingLeft: SPACING.xl,
   },
   featuredCard: {
-    width: width * 0.7,
+    width: width * 0.75, // Increased width for better text display
     marginRight: SPACING.lg,
     backgroundColor: COLORS.backgroundCard,
     borderRadius: BORDER_RADIUS.lg,
     overflow: 'hidden',
     ...SHADOWS.medium,
+    minHeight: 240, // Ensure consistent card height
   },
   featuredImage: {
     width: '100%',
@@ -466,18 +515,23 @@ const styles = StyleSheet.create({
   },
   featuredContent: {
     padding: SPACING.lg,
+    flex: 1, // Allow content to expand
+    justifyContent: 'space-between', // Distribute content evenly
   },
   featuredHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'flex-start',
     marginBottom: SPACING.sm,
+    minHeight: 40, // Ensure consistent header height
   },
   featuredTitle: {
     ...createTextStyle(16, 'bold'),
     color: COLORS.text,
     flex: 1,
     marginRight: SPACING.sm,
+    lineHeight: 20, // Better line spacing
+    numberOfLines: 2, // Allow 2 lines for longer names
   },
   ratingContainer: {
     backgroundColor: COLORS.backgroundSecondary,
@@ -493,11 +547,15 @@ const styles = StyleSheet.create({
     ...createTextStyle(13, 'regular'),
     color: COLORS.textSecondary,
     marginBottom: SPACING.md,
+    lineHeight: 18, // Better line spacing
+    flexWrap: 'wrap', // Allow text wrapping
   },
   featuredFooter: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+    flexWrap: 'wrap', // Allow wrapping if needed
+    gap: SPACING.xs, // Add gap between elements
   },
   featuredDifficulty: {
     ...createTextStyle(12, 'medium'),
@@ -506,10 +564,14 @@ const styles = StyleSheet.create({
     paddingHorizontal: SPACING.sm,
     paddingVertical: SPACING.xs,
     borderRadius: BORDER_RADIUS.sm,
+    textAlign: 'center',
+    minWidth: 60, // Ensure consistent width
   },
   featuredDuration: {
     ...createTextStyle(12, 'regular'),
     color: COLORS.textSecondary,
+    textAlign: 'right',
+    flex: 1, // Allow to take remaining space
   },
 
   // Quick Actions Section

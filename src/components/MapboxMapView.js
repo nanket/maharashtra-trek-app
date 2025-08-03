@@ -127,13 +127,26 @@ const MapboxMapView = ({
 
   // Create marker for location
   const renderLocationMarker = (location, index) => {
-    const category = LOCATION_CATEGORIES[location.category] || LOCATION_CATEGORIES.trek;
+    // Use mapCategory if available, fallback to category
+    const categoryKey = location.mapCategory || location.category || 'trek';
+    const category = LOCATION_CATEGORIES[categoryKey] || LOCATION_CATEGORIES.trek;
     const isSelected = selectedLocation?.id === location.id;
-    const categoryIcon = getCategoryIcon(location.category);
+    const categoryIcon = getCategoryIcon(categoryKey);
 
     // Create unique key and id combining category, id, and index to prevent duplicates
-    const uniqueKey = `${location.category}-${location.id}-${index}`;
-    const uniqueId = `marker-${location.category}-${location.id}-${index}`;
+    const uniqueKey = `${categoryKey}-${location.id}-${index}`;
+    const uniqueId = `marker-${categoryKey}-${location.id}-${index}`;
+
+    // Debug log for trek markers
+    if (location.category === 'trek' || location.mapCategory === 'trek' || categoryKey === 'trek') {
+      console.log('🥾 Rendering trek marker (Mapbox):', {
+        name: location.name,
+        category: location.category,
+        mapCategory: location.mapCategory,
+        categoryKey,
+        coordinates: location.coordinates
+      });
+    }
 
     return (
       <Mapbox.PointAnnotation

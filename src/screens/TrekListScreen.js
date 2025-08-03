@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import React, { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import {
   View,
   Text,
@@ -24,7 +24,24 @@ const TrekListScreen = ({ navigation, route }) => {
   const [selectedFilter, setSelectedFilter] = useState(category || 'all');
   const [searchText, setSearchText] = useState(searchQuery || '');
   const [isSearchMode, setIsSearchMode] = useState(!!searchQuery);
-  const [searchTimeout, setSearchTimeout] = useState(null);
+  const searchInputRef = useRef(null);
+  const searchTimeoutRef = useRef(null);
+
+  // Store the original category to maintain context during filtering
+  const originalCategory = useRef(category || 'all');
+
+  // Initial data loading
+  useEffect(() => {
+    // Load initial data based on route params
+    if (searchQuery) {
+      // If we have a search query from navigation, perform search
+      setIsSearchMode(true);
+      performSearch(searchQuery);
+    } else {
+      // Otherwise, filter by selected category
+      filterTreks(selectedFilter);
+    }
+  }, []); // Only run on mount
 
   useEffect(() => {
     if (searchText.trim().length >= 2) {
@@ -35,19 +52,20 @@ const TrekListScreen = ({ navigation, route }) => {
       // Clear search when text is empty
       setIsSearchMode(false);
       filterTreks(selectedFilter);
-    } else if (!isSearchMode) {
+    } else {
+      // For single character, just filter normally without search mode
       filterTreks(selectedFilter);
     }
-  }, [selectedFilter, searchText]);
+  }, [selectedFilter, searchText, debouncedSearch, filterTreks]);
 
-  // Cleanup timeout on unmount
+  // Cleanup timeout on unmount - no dependencies to avoid re-renders
   useEffect(() => {
     return () => {
-      if (searchTimeout) {
-        clearTimeout(searchTimeout);
+      if (searchTimeoutRef.current) {
+        clearTimeout(searchTimeoutRef.current);
       }
     };
-  }, [searchTimeout]);
+  }, []);
 
   const performSearch = useCallback((query) => {
     if (!query || query.trim().length < 2) {
@@ -80,24 +98,23 @@ const TrekListScreen = ({ navigation, route }) => {
     }
 
     console.log('🔍 Filtered search results:', searchResults.length, 'items found for category:', selectedFilter);
+    console.log('📱 About to update filteredTreks state - this might cause re-render');
     setFilteredTreks(searchResults);
   }, [selectedFilter]);
 
   const debouncedSearch = useCallback((query) => {
     // Clear existing timeout
-    if (searchTimeout) {
-      clearTimeout(searchTimeout);
+    if (searchTimeoutRef.current) {
+      clearTimeout(searchTimeoutRef.current);
     }
 
     // Set new timeout for debounced search
-    const timeout = setTimeout(() => {
+    searchTimeoutRef.current = setTimeout(() => {
       performSearch(query);
     }, 300); // 300ms delay
-
-    setSearchTimeout(timeout);
   }, [performSearch]);
 
-  const filterTreks = (filter) => {
+  const filterTreks = useCallback((filter) => {
     // Handle nearby category specially
     if (filter === 'nearby') {
       if (nearbyTreks && nearbyTreks.length > 0) {
@@ -120,10 +137,18 @@ const TrekListScreen = ({ navigation, route }) => {
       return;
     }
 
-    const allData = LocalDataService.getAllData();
+    // Get base data - either all data or category-specific data
+    let baseData;
+    if (originalCategory.current === 'all') {
+      baseData = LocalDataService.getAllData();
+    } else {
+      // If we have an original category, always filter by that category first
+      baseData = LocalDataService.getDataByCategory(originalCategory.current);
+    }
 
     if (filter === 'all') {
-      setFilteredTreks(allData);
+      // When "All" is selected, show all data from the original category context
+      setFilteredTreks(baseData);
     } else {
       // Map difficulty levels to filter criteria
       const difficultyMapping = {
@@ -133,18 +158,21 @@ const TrekListScreen = ({ navigation, route }) => {
       };
 
       if (difficultyMapping[filter]) {
-        setFilteredTreks(allData.filter(trek =>
+        // Apply difficulty filter to the base category data
+        const filteredByDifficulty = baseData.filter(trek =>
           difficultyMapping[filter].some(difficulty =>
             trek.difficulty.toLowerCase().includes(difficulty.toLowerCase())
           )
-        ));
+        );
+        setFilteredTreks(filteredByDifficulty);
       } else {
-        // Category-based filtering using LocalDataService
+        // This is a category filter - update the original category and filter accordingly
+        originalCategory.current = filter;
         const categoryData = LocalDataService.getDataByCategory(filter);
         setFilteredTreks(categoryData);
       }
     }
-  };
+  }, [nearbyTreks, userLocation, allTreks, maxDistance]);
 
   const handleTrekPress = useCallback((trek) => {
     if (selectionMode) {
@@ -160,6 +188,7 @@ const TrekListScreen = ({ navigation, route }) => {
     setSelectedFilter(filter);
     setIsSearchMode(false);
     setSearchText('');
+    // Let keyboard dismiss naturally when user switches filters
   };
 
   const handleSearchSubmit = () => {
@@ -173,7 +202,17 @@ const TrekListScreen = ({ navigation, route }) => {
     setSearchText('');
     setIsSearchMode(false);
     filterTreks(selectedFilter);
+    // Don't automatically focus - let user tap to search again naturally
   };
+
+  // Memoized search text change handler to prevent unnecessary re-renders
+  const handleSearchTextChange = useCallback((text) => {
+    console.log('🔤 Search text changed:', text);
+    setSearchText(text);
+  }, []);
+
+  // Removed focus/blur handlers to match HomeScreen's natural behavior
+  // Search mode is now managed purely by text content and user actions
 
   const getScreenTitle = () => {
     if (selectionMode) {
@@ -293,11 +332,13 @@ const TrekListScreen = ({ navigation, route }) => {
         <View style={styles.searchBar}>
           <Text style={styles.searchIcon}>🔍</Text>
           <TextInput
+            key="search-input"
+            ref={searchInputRef}
             style={styles.searchInput}
             placeholder={searchPlaceholder}
             placeholderTextColor={COLORS.textSecondary}
             value={searchText}
-            onChangeText={setSearchText}
+            onChangeText={handleSearchTextChange}
             onSubmitEditing={handleSearchSubmit}
             returnKeyType="search"
             blurOnSubmit={false}
@@ -305,6 +346,11 @@ const TrekListScreen = ({ navigation, route }) => {
             autoCapitalize="none"
             keyboardType="default"
             clearButtonMode="while-editing"
+            multiline={false}
+            numberOfLines={1}
+            textContentType="none"
+            autoComplete="off"
+            spellCheck={false}
           />
           {searchText.length > 0 && (
             <TouchableOpacity onPress={handleSearchClear} style={styles.clearButton}>
@@ -323,7 +369,7 @@ const TrekListScreen = ({ navigation, route }) => {
             contentContainerStyle={styles.filtersScrollContent}
             keyboardShouldPersistTaps="handled"
           >
-            {filters.map((filter, index) => (
+            {filters.map((filter) => (
               <TouchableOpacity
                 key={filter.id}
                 style={[
@@ -359,15 +405,106 @@ const TrekListScreen = ({ navigation, route }) => {
 
   return (
     <SafeAreaView style={styles.container}>
+      {/* Fixed Header with Search - Outside FlatList */}
+      <View style={styles.fixedHeader}>
+        <StatusBar barStyle="dark-content" backgroundColor={COLORS.background} />
+
+        {/* Header Title */}
+        <View style={styles.headerTitleContainer}>
+          <Text style={styles.screenTitle}>{getScreenTitle()}</Text>
+          <Text style={styles.screenSubtitle}>
+            {isSearchMode && searchText ?
+              `${filteredTreks.length} results found` :
+              `${filteredTreks.length} destinations available`
+            }
+          </Text>
+        </View>
+
+        {/* Search Bar */}
+        <View style={styles.searchContainer}>
+          <View style={styles.searchBar}>
+            <Text style={styles.searchIcon}>🔍</Text>
+            <TextInput
+              key="search-input"
+              ref={searchInputRef}
+              style={styles.searchInput}
+              placeholder={searchPlaceholder}
+              placeholderTextColor={COLORS.textSecondary}
+              value={searchText}
+              onChangeText={handleSearchTextChange}
+              onSubmitEditing={handleSearchSubmit}
+              returnKeyType="search"
+              blurOnSubmit={false}
+              autoCorrect={false}
+              autoCapitalize="none"
+              keyboardType="default"
+              clearButtonMode="while-editing"
+              multiline={false}
+              numberOfLines={1}
+              textContentType="none"
+              autoComplete="off"
+              spellCheck={false}
+            />
+            {searchText.length > 0 && (
+              <TouchableOpacity onPress={handleSearchClear} style={styles.clearButton}>
+                <Text style={styles.clearIcon}>✕</Text>
+              </TouchableOpacity>
+            )}
+          </View>
+        </View>
+
+        {/* Modern Filter Tabs - Hide when in search mode */}
+        {!isSearchMode && (
+          <View style={styles.modernFiltersContainer}>
+            <ScrollView
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              contentContainerStyle={styles.filtersScrollContent}
+              keyboardShouldPersistTaps="handled"
+            >
+              {filters.map((filter) => (
+                <TouchableOpacity
+                  key={filter.id}
+                  style={[
+                    styles.modernFilterButton,
+                    selectedFilter === filter.id && styles.modernFilterButtonActive
+                  ]}
+                  onPress={() => handleFilterPress(filter.id)}
+                  activeOpacity={0.7}
+                >
+                  {selectedFilter === filter.id ? (
+                    <LinearGradient
+                      colors={filter.gradient}
+                      style={styles.modernFilterGradient}
+                      start={{ x: 0, y: 0 }}
+                      end={{ x: 1, y: 1 }}
+                    >
+                      <Text style={styles.modernFilterIcon}>{filter.icon}</Text>
+                      <Text style={styles.modernFilterTextActive}>{filter.label}</Text>
+                    </LinearGradient>
+                  ) : (
+                    <View style={styles.modernFilterContent}>
+                      <Text style={styles.modernFilterIconInactive}>{filter.icon}</Text>
+                      <Text style={styles.modernFilterTextInactive}>{filter.label}</Text>
+                    </View>
+                  )}
+                </TouchableOpacity>
+              ))}
+            </ScrollView>
+          </View>
+        )}
+      </View>
+
+      {/* FlatList without header */}
       <FlatList
         data={filteredTreks}
         renderItem={renderTrekCard}
         keyExtractor={(item) => item.id.toString()}
-        ListHeaderComponent={renderHeader}
         contentContainerStyle={styles.listContainer}
         showsVerticalScrollIndicator={false}
-        keyboardShouldPersistTaps="handled"
-        keyboardDismissMode="on-drag"
+        keyboardShouldPersistTaps="always"
+        keyboardDismissMode="none"
+        style={styles.treksList}
       />
     </SafeAreaView>
   );
@@ -522,6 +659,29 @@ const styles = StyleSheet.create({
     ...createTextStyle(13, 'medium'),
     color: COLORS.text,
     textAlign: 'center',
+  },
+  // Fixed Header Styles
+  fixedHeader: {
+    backgroundColor: COLORS.background,
+    paddingTop: SPACING.sm,
+    paddingBottom: SPACING.md,
+    borderBottomWidth: 1,
+    borderBottomColor: COLORS.surfaceBorder,
+  },
+  headerTitleContainer: {
+    paddingHorizontal: SPACING.xl,
+    marginBottom: SPACING.md,
+  },
+  modernFilterText: {
+    ...createTextStyle(13, 'medium'),
+    color: COLORS.text,
+    textAlign: 'center',
+  },
+  activeModernFilterText: {
+    color: COLORS.white,
+  },
+  treksList: {
+    flex: 1,
   },
 });
 

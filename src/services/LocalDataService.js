@@ -114,21 +114,50 @@ class LocalDataService {
         KarlaCaves,
       ].filter(item => item && item.id);
 
-      // Ensure each item has the correct category
+      // Ensure each item has the correct category - preserve original categories but normalize for map display
       forts.forEach(fort => {
         if (!fort.category) fort.category = 'fort';
+        // Store original category for reference
+        if (!fort.originalCategory) fort.originalCategory = fort.category;
+        // Normalize fort categories for map display
+        if (fort.category === 'fort' || fort.category.includes('fort')) {
+          fort.mapCategory = 'fort';
+        } else {
+          fort.mapCategory = 'fort'; // Default for forts array
+        }
       });
 
       treks.forEach(trek => {
-        if (!trek.category) trek.category = 'trek';
+        // Store original category for reference
+        if (!trek.originalCategory) trek.originalCategory = trek.category;
+        // Normalize trek-related categories for map display
+        if (!trek.category ||
+            trek.category === 'peak' ||
+            trek.category === 'jungle trek' ||
+            trek.category.includes('trek')) {
+          trek.category = 'trek';
+          trek.mapCategory = 'trek';
+        } else if (trek.category === 'fort' || trek.category.includes('fort')) {
+          // Keep fort category for items like Rajmachi
+          trek.mapCategory = 'fort';
+        } else {
+          trek.category = 'trek'; // Default for treks array
+          trek.mapCategory = 'trek';
+        }
       });
 
       waterfalls.forEach(waterfall => {
         if (!waterfall.category) waterfall.category = 'waterfall';
+        // Store original category for reference
+        if (!waterfall.originalCategory) waterfall.originalCategory = waterfall.category;
+        waterfall.mapCategory = 'waterfall';
       });
 
       caves.forEach(cave => {
         if (!cave.category) cave.category = 'cave';
+        // Store original category for reference
+        if (!cave.originalCategory) cave.originalCategory = cave.category;
+        cave.mapCategory = 'cave';
       });
 
       // Combine all data

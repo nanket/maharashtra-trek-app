@@ -339,37 +339,42 @@ const styles = StyleSheet.create({
     fontWeight: '500',
   },
 
-  // Stats section
+  // Stats section - Compact design
   statsContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: SPACING.lg,
-    gap: SPACING.md,
+    marginBottom: SPACING.md,
+    gap: SPACING.sm,
   },
   statItem: {
     flex: 1,
-  },
-  difficultyBadge: {
-    paddingHorizontal: SPACING.md,
-    paddingVertical: SPACING.sm,
-    borderRadius: BORDER_RADIUS.md,
     alignItems: 'center',
   },
+  difficultyBadge: {
+    paddingHorizontal: SPACING.sm,
+    paddingVertical: SPACING.xs,
+    borderRadius: BORDER_RADIUS.sm,
+    alignItems: 'center',
+    minWidth: 60,
+  },
   difficultyText: {
-    fontSize: 12,
+    fontSize: 10,
     fontWeight: '700',
     textTransform: 'uppercase',
+    letterSpacing: 0.5,
   },
   statLabel: {
-    fontSize: 12,
+    fontSize: 10,
     color: COLORS.textLight,
     fontWeight: '600',
-    marginBottom: SPACING.xs,
+    marginBottom: 2,
+    textAlign: 'center',
   },
   statValue: {
-    fontSize: 14,
+    fontSize: 12,
     fontWeight: '700',
     color: COLORS.text,
+    textAlign: 'center',
   },
 
   // Action button

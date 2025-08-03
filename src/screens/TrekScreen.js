@@ -161,6 +161,35 @@ const TrekScreen = ({ navigation }) => {
       </View>
 
       <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
+        {/* Plan Trek - Prominent Section */}
+        <View style={styles.planTrekSection}>
+          <TouchableOpacity
+            style={styles.planTrekButton}
+            onPress={() => navigation.navigate('TrekPlanner')}
+            activeOpacity={0.8}
+          >
+            <LinearGradient
+              colors={[COLORS.primary, COLORS.primaryDark]}
+              style={styles.planTrekGradient}
+              start={{ x: 0, y: 0 }}
+              end={{ x: 1, y: 1 }}
+            >
+              <View style={styles.planTrekContent}>
+                <View style={styles.planTrekIconContainer}>
+                  <Text style={styles.planTrekIcon}>📋</Text>
+                </View>
+                <View style={styles.planTrekTextContainer}>
+                  <Text style={styles.planTrekTitle}>Plan Your Trek</Text>
+                  <Text style={styles.planTrekSubtitle}>Create a detailed itinerary for your next adventure</Text>
+                </View>
+                <View style={styles.planTrekArrow}>
+                  <Text style={styles.planTrekArrowText}>→</Text>
+                </View>
+              </View>
+            </LinearGradient>
+          </TouchableOpacity>
+        </View>
+
         {/* Trek Statistics */}
         <View style={styles.statsSection}>
           <Text style={styles.sectionTitle}>Trek Statistics</Text>
@@ -257,47 +286,78 @@ const TrekScreen = ({ navigation }) => {
           </View>
         </View>
 
-        {/* Quick Access - Featured Treks */}
-        {featuredTreks.length > 0 && (
-          <View style={styles.section}>
-            <View style={styles.sectionHeader}>
-              <Text style={styles.sectionTitle}>⭐ Featured Treks</Text>
-              <TouchableOpacity onPress={handleViewAllPress}>
-                <Text style={styles.viewAllText}>View all</Text>
-              </TouchableOpacity>
-            </View>
-            <FlatList
-              data={featuredTreks}
-              renderItem={({ item }) => (
-                <TrekCard trek={item} onPress={handleTrekPress} />
-              )}
-              keyExtractor={(item) => item.id.toString()}
-              horizontal
-              showsHorizontalScrollIndicator={false}
-              contentContainerStyle={styles.featuredList}
-            />
-          </View>
-        )}
 
-        {/* Quick Actions */}
+
+        {/* Enhanced Quick Actions */}
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Quick Actions</Text>
-          <View style={styles.quickActionsGrid}>
+          <View style={styles.enhancedQuickActionsGrid}>
             <TouchableOpacity
-              style={styles.quickActionItem}
+              style={styles.enhancedQuickActionItem}
               onPress={handleViewAllPress}
+              activeOpacity={0.7}
             >
-              <Text style={styles.quickActionIcon}>🗺️</Text>
-              <Text style={styles.quickActionTitle}>All Treks</Text>
-              <Text style={styles.quickActionSubtitle}>Browse complete list</Text>
+              <LinearGradient
+                colors={['#FF9933', '#FF7700']}
+                style={styles.quickActionGradient}
+                start={{ x: 0, y: 0 }}
+                end={{ x: 1, y: 1 }}
+              >
+                <Text style={styles.enhancedQuickActionIcon}>🗺️</Text>
+                <Text style={styles.enhancedQuickActionTitle}>All Treks</Text>
+                <Text style={styles.enhancedQuickActionSubtitle}>Browse complete list</Text>
+              </LinearGradient>
             </TouchableOpacity>
+
             <TouchableOpacity
-              style={styles.quickActionItem}
-              onPress={() => navigation.navigate('TrekPlanner')}
+              style={styles.enhancedQuickActionItem}
+              onPress={() => navigation.navigate('Map')}
+              activeOpacity={0.7}
             >
-              <Text style={styles.quickActionIcon}>📋</Text>
-              <Text style={styles.quickActionTitle}>Plan Trek</Text>
-              <Text style={styles.quickActionSubtitle}>Create your itinerary</Text>
+              <LinearGradient
+                colors={['#10B981', '#059669']}
+                style={styles.quickActionGradient}
+                start={{ x: 0, y: 0 }}
+                end={{ x: 1, y: 1 }}
+              >
+                <Text style={styles.enhancedQuickActionIcon}>🗺️</Text>
+                <Text style={styles.enhancedQuickActionTitle}>Trek Map</Text>
+                <Text style={styles.enhancedQuickActionSubtitle}>Interactive map view</Text>
+              </LinearGradient>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              style={styles.enhancedQuickActionItem}
+              onPress={() => navigation.navigate('My Treks')}
+              activeOpacity={0.7}
+            >
+              <LinearGradient
+                colors={['#8B5CF6', '#7C3AED']}
+                style={styles.quickActionGradient}
+                start={{ x: 0, y: 0 }}
+                end={{ x: 1, y: 1 }}
+              >
+                <Text style={styles.enhancedQuickActionIcon}>📚</Text>
+                <Text style={styles.enhancedQuickActionTitle}>My Treks</Text>
+                <Text style={styles.enhancedQuickActionSubtitle}>View your collection</Text>
+              </LinearGradient>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              style={styles.enhancedQuickActionItem}
+              onPress={() => navigation.navigate('Emergency')}
+              activeOpacity={0.7}
+            >
+              <LinearGradient
+                colors={['#EF4444', '#DC2626']}
+                style={styles.quickActionGradient}
+                start={{ x: 0, y: 0 }}
+                end={{ x: 1, y: 1 }}
+              >
+                <Text style={styles.enhancedQuickActionIcon}>🚨</Text>
+                <Text style={styles.enhancedQuickActionTitle}>Emergency</Text>
+                <Text style={styles.enhancedQuickActionSubtitle}>Safety resources</Text>
+              </LinearGradient>
             </TouchableOpacity>
           </View>
         </View>
@@ -526,6 +586,97 @@ const styles = StyleSheet.create({
   loadingText: {
     ...createTextStyle(16, 'medium'),
     color: COLORS.textSecondary,
+  },
+  // Plan Trek Section Styles
+  planTrekSection: {
+    marginHorizontal: SPACING.lg,
+    marginBottom: SPACING.xl,
+  },
+  planTrekButton: {
+    borderRadius: BORDER_RADIUS.lg,
+    overflow: 'hidden',
+    ...SHADOWS.large,
+    elevation: 12,
+  },
+  planTrekGradient: {
+    padding: SPACING.lg,
+  },
+  planTrekContent: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  planTrekIconContainer: {
+    width: 60,
+    height: 60,
+    borderRadius: BORDER_RADIUS.full,
+    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginRight: SPACING.lg,
+  },
+  planTrekIcon: {
+    fontSize: 28,
+  },
+  planTrekTextContainer: {
+    flex: 1,
+  },
+  planTrekTitle: {
+    ...createTextStyle(20, 'bold'),
+    color: COLORS.white,
+    marginBottom: SPACING.xs,
+  },
+  planTrekSubtitle: {
+    ...createTextStyle(14, 'regular'),
+    color: 'rgba(255, 255, 255, 0.9)',
+    lineHeight: 20,
+  },
+  planTrekArrow: {
+    width: 40,
+    height: 40,
+    borderRadius: BORDER_RADIUS.full,
+    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  planTrekArrowText: {
+    ...createTextStyle(20, 'bold'),
+    color: COLORS.white,
+  },
+  // Enhanced Quick Actions Styles
+  enhancedQuickActionsGrid: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: SPACING.md,
+    marginTop: SPACING.md,
+  },
+  enhancedQuickActionItem: {
+    width: (width - SPACING.lg * 2 - SPACING.md) / 2,
+    borderRadius: BORDER_RADIUS.lg,
+    overflow: 'hidden',
+    ...SHADOWS.medium,
+    elevation: 6,
+  },
+  quickActionGradient: {
+    padding: SPACING.lg,
+    alignItems: 'center',
+    minHeight: 120,
+    justifyContent: 'center',
+  },
+  enhancedQuickActionIcon: {
+    fontSize: 32,
+    marginBottom: SPACING.sm,
+  },
+  enhancedQuickActionTitle: {
+    ...createTextStyle(16, 'bold'),
+    color: COLORS.white,
+    marginBottom: SPACING.xs,
+    textAlign: 'center',
+  },
+  enhancedQuickActionSubtitle: {
+    ...createTextStyle(12, 'regular'),
+    color: 'rgba(255, 255, 255, 0.9)',
+    textAlign: 'center',
+    lineHeight: 16,
   },
 });
 

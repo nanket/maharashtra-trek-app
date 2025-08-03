@@ -12,6 +12,7 @@ import {
   Dimensions,
   Switch,
   Platform,
+  RefreshControl,
 } from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -33,6 +34,20 @@ const TripPlannerTab = ({ navigation, tripPlans, onTripPlansChange }) => {
   const [completionNotes, setCompletionNotes] = useState('');
   const [rating, setRating] = useState(0);
   const [loading, setLoading] = useState(false);
+  const [refreshing, setRefreshing] = useState(false);
+
+  const handleRefresh = async () => {
+    setRefreshing(true);
+    try {
+      // Reload trip plans from storage
+      const updatedPlans = await UserStorageService.getTripPlans();
+      onTripPlansChange(updatedPlans);
+    } catch (error) {
+      console.error('Error refreshing trip plans:', error);
+    } finally {
+      setRefreshing(false);
+    }
+  };
 
   const handleCreatePlan = () => {
     setEditingPlan(null);
@@ -358,26 +373,48 @@ const TripPlannerTab = ({ navigation, tripPlans, onTripPlansChange }) => {
     );
   };
 
-  const renderHeader = () => (
-    <View style={styles.headerContainer}>
-      <View style={styles.headerTop}>
-        <View>
-          <Text style={styles.headerTitle}>
-            Trip Plans ({tripPlans.length})
-          </Text>
-          <Text style={styles.headerSubtitle}>
-            Organize your future adventures
-          </Text>
+  const renderHeader = () => {
+    const plannedTrips = tripPlans.filter(plan => plan.status === 'planned');
+
+    return (
+      <View style={styles.headerContainer}>
+        <View style={styles.headerTop}>
+          <View>
+            <Text style={styles.headerTitle}>
+              Planned Treks ({plannedTrips.length})
+            </Text>
+            <Text style={styles.headerSubtitle}>
+              Organize your future adventures
+            </Text>
+          </View>
+          <View style={styles.headerButtons}>
+            <TouchableOpacity
+              style={styles.planNewTrekButton}
+              onPress={() => navigation.navigate('TrekPlanner')}
+              activeOpacity={0.8}
+            >
+              <LinearGradient
+                colors={[COLORS.primary, COLORS.primaryDark]}
+                style={styles.planNewTrekGradient}
+                start={{ x: 0, y: 0 }}
+                end={{ x: 1, y: 0 }}
+              >
+                <Text style={styles.planNewTrekIcon}>🏔️</Text>
+                <Text style={styles.planNewTrekText}>Plan New Trek</Text>
+              </LinearGradient>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              style={styles.addButton}
+              onPress={handleCreatePlan}
+            >
+              <Text style={styles.addButtonText}>+ Quick Plan</Text>
+            </TouchableOpacity>
+          </View>
         </View>
-        <TouchableOpacity
-          style={styles.addButton}
-          onPress={handleCreatePlan}
-        >
-          <Text style={styles.addButtonText}>+ Add Plan</Text>
-        </TouchableOpacity>
       </View>
-    </View>
-  );
+    );
+  };
 
   const renderCreateModal = () => (
     <Modal
@@ -617,7 +654,10 @@ const TripPlannerTab = ({ navigation, tripPlans, onTripPlansChange }) => {
     </Modal>
   );
 
-  if (tripPlans.length === 0) {
+  // Filter for planned trips only
+  const plannedTrips = tripPlans.filter(plan => plan.status === 'planned');
+
+  if (plannedTrips.length === 0) {
     return (
       <View style={styles.container}>
         {renderHeader()}
@@ -630,7 +670,7 @@ const TripPlannerTab = ({ navigation, tripPlans, onTripPlansChange }) => {
   return (
     <View style={styles.container}>
       <FlatList
-        data={tripPlans}
+        data={plannedTrips}
         renderItem={renderPlanCard}
         keyExtractor={(item) => item.id.toString()}
         ListHeaderComponent={renderHeader}
@@ -638,6 +678,9 @@ const TripPlannerTab = ({ navigation, tripPlans, onTripPlansChange }) => {
         showsVerticalScrollIndicator={false}
         keyboardShouldPersistTaps="handled"
         keyboardDismissMode="on-drag"
+        refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={handleRefresh} />
+        }
       />
       {renderCreateModal()}
     </View>
@@ -1013,6 +1056,32 @@ const styles = StyleSheet.create({
   datePickerDoneText: {
     color: COLORS.white,
     ...createTextStyle(16, 'medium'),
+  },
+  // Plan New Trek Button Styles
+  headerButtons: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: SPACING.md,
+  },
+  planNewTrekButton: {
+    borderRadius: BORDER_RADIUS.lg,
+    overflow: 'hidden',
+    ...SHADOWS.medium,
+    elevation: 8,
+  },
+  planNewTrekGradient: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: SPACING.lg,
+    paddingVertical: SPACING.md,
+  },
+  planNewTrekIcon: {
+    fontSize: 18,
+    marginRight: SPACING.sm,
+  },
+  planNewTrekText: {
+    ...createTextStyle(16, 'bold'),
+    color: COLORS.white,
   },
 });
 

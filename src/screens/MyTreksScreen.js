@@ -171,180 +171,185 @@ const MyTreksScreen = ({ navigation }) => {
         </LinearGradient>
       </View>
 
-      {/* Enhanced Stats Cards */}
+      {/* Simplified Stats Cards */}
       <View style={styles.statsContainer}>
         <View style={styles.statsRow}>
           <TouchableOpacity
-            style={styles.enhancedStatCard}
+            style={styles.cleanStatCard}
             onPress={() => setActiveTab('completed')}
-            activeOpacity={0.8}
+            activeOpacity={0.7}
           >
-            <LinearGradient
-              colors={['#10B981', '#059669']}
-              style={styles.statGradient}
-              start={{ x: 0, y: 0 }}
-              end={{ x: 1, y: 1 }}
-            >
-              <View style={styles.statIconContainer}>
-                <Text style={styles.statIcon}>✅</Text>
+            <View style={styles.cleanStatContent}>
+              <View style={[styles.cleanStatIconContainer, { backgroundColor: '#F0FDF4' }]}>
+                <Text style={[styles.cleanStatIcon, { color: '#16A34A' }]}>✅</Text>
               </View>
-              <View style={styles.statContent}>
-                <Text style={styles.statNumber}>{stats.totalCompleted}</Text>
-                <Text style={styles.statLabel}>Completed Treks</Text>
-              </View>
-            </LinearGradient>
+              <Text style={styles.cleanStatNumber}>{stats.totalCompleted}</Text>
+              <Text style={styles.cleanStatLabel}>Completed</Text>
+            </View>
           </TouchableOpacity>
 
           <TouchableOpacity
-            style={styles.enhancedStatCard}
+            style={styles.cleanStatCard}
             onPress={() => setActiveTab('favorites')}
-            activeOpacity={0.8}
+            activeOpacity={0.7}
           >
-            <LinearGradient
-              colors={['#EF4444', '#DC2626']}
-              style={styles.statGradient}
-              start={{ x: 0, y: 0 }}
-              end={{ x: 1, y: 1 }}
-            >
-              <View style={styles.statIconContainer}>
-                <Text style={styles.statIcon}>❤️</Text>
+            <View style={styles.cleanStatContent}>
+              <View style={[styles.cleanStatIconContainer, { backgroundColor: '#FEF2F2' }]}>
+                <Text style={[styles.cleanStatIcon, { color: '#DC2626' }]}>❤️</Text>
               </View>
-              <View style={styles.statContent}>
-                <Text style={styles.statNumber}>{stats.totalFavorites}</Text>
-                <Text style={styles.statLabel}>Wishlist</Text>
-              </View>
-            </LinearGradient>
+              <Text style={styles.cleanStatNumber}>{stats.totalFavorites}</Text>
+              <Text style={styles.cleanStatLabel}>Favorites</Text>
+            </View>
           </TouchableOpacity>
         </View>
 
         <View style={styles.statsRow}>
           <TouchableOpacity
-            style={styles.enhancedStatCard}
+            style={styles.cleanStatCard}
             onPress={() => navigation.navigate('TrekList', { category: 'fort' })}
-            activeOpacity={0.8}
+            activeOpacity={0.7}
           >
-            <LinearGradient
-              colors={['#F59E0B', '#D97706']}
-              style={styles.statGradient}
-              start={{ x: 0, y: 0 }}
-              end={{ x: 1, y: 1 }}
-            >
-              <View style={styles.statIconContainer}>
-                <Text style={styles.statIcon}>🏰</Text>
+            <View style={styles.cleanStatContent}>
+              <View style={[styles.cleanStatIconContainer, { backgroundColor: '#FEF3C7' }]}>
+                <Text style={[styles.cleanStatIcon, { color: '#D97706' }]}>🏰</Text>
               </View>
-              <View style={styles.statContent}>
-                <Text style={styles.statNumber}>{stats.categories.fort || 0}</Text>
-                <Text style={styles.statLabel}>Forts Visited</Text>
-              </View>
-            </LinearGradient>
+              <Text style={styles.cleanStatNumber}>{stats.categories.fort || 0}</Text>
+              <Text style={styles.cleanStatLabel}>Forts</Text>
+            </View>
           </TouchableOpacity>
 
           <TouchableOpacity
-            style={styles.enhancedStatCard}
+            style={styles.cleanStatCard}
             onPress={() => navigation.navigate('TrekList', { category: 'waterfall' })}
-            activeOpacity={0.8}
+            activeOpacity={0.7}
           >
-            <LinearGradient
-              colors={['#3B82F6', '#2563EB']}
-              style={styles.statGradient}
-              start={{ x: 0, y: 0 }}
-              end={{ x: 1, y: 1 }}
-            >
-              <View style={styles.statIconContainer}>
-                <Text style={styles.statIcon}>💧</Text>
+            <View style={styles.cleanStatContent}>
+              <View style={[styles.cleanStatIconContainer, { backgroundColor: '#EFF6FF' }]}>
+                <Text style={[styles.cleanStatIcon, { color: '#2563EB' }]}>💧</Text>
               </View>
-              <View style={styles.statContent}>
-                <Text style={styles.statNumber}>{stats.categories.waterfall || 0}</Text>
-                <Text style={styles.statLabel}>Waterfalls</Text>
-              </View>
-            </LinearGradient>
+              <Text style={styles.cleanStatNumber}>{stats.categories.waterfall || 0}</Text>
+              <Text style={styles.cleanStatLabel}>Waterfalls</Text>
+            </View>
           </TouchableOpacity>
         </View>
       </View>
 
-      {/* Enhanced Quick Actions */}
+      {/* Planned Treks Section */}
+      {renderPlannedTreksSection()}
+
+      {/* Simplified Quick Actions */}
       <View style={styles.quickActionsContainer}>
         <Text style={styles.sectionTitle}>Quick Actions</Text>
-        <View style={styles.quickActionsGrid}>
+        <View style={styles.cleanQuickActionsGrid}>
           <TouchableOpacity
-            style={styles.enhancedQuickActionCard}
+            style={styles.cleanQuickActionCard}
             onPress={() => setActiveTab('planned')}
-            activeOpacity={0.8}
+            activeOpacity={0.7}
           >
-            <LinearGradient
-              colors={[COLORS.primary, COLORS.primaryDark]}
-              style={styles.quickActionGradient}
-              start={{ x: 0, y: 0 }}
-              end={{ x: 1, y: 1 }}
-            >
-              <View style={styles.quickActionIconContainer}>
-                <Text style={styles.quickActionIcon}>📅</Text>
+            <View style={styles.cleanQuickActionContent}>
+              <View style={[styles.cleanQuickActionIconContainer, { backgroundColor: '#EEF2FF' }]}>
+                <Text style={[styles.cleanQuickActionIcon, { color: COLORS.primary }]}>📅</Text>
               </View>
-              <Text style={styles.quickActionLabel}>Plan New Trek</Text>
-              <Text style={styles.quickActionSubtitle}>Create your next adventure</Text>
-            </LinearGradient>
+              <Text style={styles.cleanQuickActionLabel}>Plan Trek</Text>
+            </View>
           </TouchableOpacity>
 
           <TouchableOpacity
-            style={styles.enhancedQuickActionCard}
+            style={styles.cleanQuickActionCard}
             onPress={() => navigation.navigate('Home')}
-            activeOpacity={0.8}
+            activeOpacity={0.7}
           >
-            <LinearGradient
-              colors={['#8B5CF6', '#7C3AED']}
-              style={styles.quickActionGradient}
-              start={{ x: 0, y: 0 }}
-              end={{ x: 1, y: 1 }}
-            >
-              <View style={styles.quickActionIconContainer}>
-                <Text style={styles.quickActionIcon}>🔍</Text>
+            <View style={styles.cleanQuickActionContent}>
+              <View style={[styles.cleanQuickActionIconContainer, { backgroundColor: '#F3E8FF' }]}>
+                <Text style={[styles.cleanQuickActionIcon, { color: '#8B5CF6' }]}>🔍</Text>
               </View>
-              <Text style={styles.quickActionLabel}>Discover New</Text>
-              <Text style={styles.quickActionSubtitle}>Find amazing destinations</Text>
-            </LinearGradient>
+              <Text style={styles.cleanQuickActionLabel}>Discover</Text>
+            </View>
           </TouchableOpacity>
 
           <TouchableOpacity
-            style={styles.enhancedQuickActionCard}
+            style={styles.cleanQuickActionCard}
             onPress={() => navigation.navigate('Map')}
-            activeOpacity={0.8}
+            activeOpacity={0.7}
           >
-            <LinearGradient
-              colors={['#06B6D4', '#0891B2']}
-              style={styles.quickActionGradient}
-              start={{ x: 0, y: 0 }}
-              end={{ x: 1, y: 1 }}
-            >
-              <View style={styles.quickActionIconContainer}>
-                <Text style={styles.quickActionIcon}>🗺️</Text>
+            <View style={styles.cleanQuickActionContent}>
+              <View style={[styles.cleanQuickActionIconContainer, { backgroundColor: '#ECFEFF' }]}>
+                <Text style={[styles.cleanQuickActionIcon, { color: '#06B6D4' }]}>🗺️</Text>
               </View>
-              <Text style={styles.quickActionLabel}>Explore Map</Text>
-              <Text style={styles.quickActionSubtitle}>Navigate with confidence</Text>
-            </LinearGradient>
+              <Text style={styles.cleanQuickActionLabel}>Map</Text>
+            </View>
           </TouchableOpacity>
 
           <TouchableOpacity
-            style={styles.enhancedQuickActionCard}
+            style={styles.cleanQuickActionCard}
             onPress={() => navigation.navigate('Emergency')}
-            activeOpacity={0.8}
+            activeOpacity={0.7}
           >
-            <LinearGradient
-              colors={['#F97316', '#EA580C']}
-              style={styles.quickActionGradient}
-              start={{ x: 0, y: 0 }}
-              end={{ x: 1, y: 1 }}
-            >
-              <View style={styles.quickActionIconContainer}>
-                <Text style={styles.quickActionIcon}>🚨</Text>
+            <View style={styles.cleanQuickActionContent}>
+              <View style={[styles.cleanQuickActionIconContainer, { backgroundColor: '#FFF7ED' }]}>
+                <Text style={[styles.cleanQuickActionIcon, { color: '#F97316' }]}>🚨</Text>
               </View>
-              <Text style={styles.quickActionLabel}>Emergency</Text>
-              <Text style={styles.quickActionSubtitle}>Safety first</Text>
-            </LinearGradient>
+              <Text style={styles.cleanQuickActionLabel}>Emergency</Text>
+            </View>
           </TouchableOpacity>
         </View>
       </View>
     </View>
   );
+
+  // Render planned treks section for overview
+  const renderPlannedTreksSection = () => {
+    const plannedTrips = tripPlans.filter(plan => plan.status === 'planned');
+    const nextTrek = plannedTrips
+      .sort((a, b) => new Date(a.plannedDate) - new Date(b.plannedDate))[0];
+
+    const formatDate = (dateString) => {
+      try {
+        const date = new Date(dateString);
+        return date.toLocaleDateString('en-US', {
+          month: 'short',
+          day: 'numeric',
+          year: 'numeric',
+        });
+      } catch (error) {
+        return 'Date not set';
+      }
+    };
+
+    return (
+      <View style={styles.plannedTreksContainer}>
+        <Text style={styles.sectionTitle}>Upcoming Treks</Text>
+        <View style={styles.plannedTreksCard}>
+          <View style={styles.plannedTreksHeader}>
+            <View style={styles.plannedTreksInfo}>
+              <View style={[styles.cleanStatIconContainer, { backgroundColor: '#EEF2FF' }]}>
+                <Text style={[styles.cleanStatIcon, { color: COLORS.primary }]}>📅</Text>
+              </View>
+              <View style={styles.plannedTreksTextContainer}>
+                <Text style={styles.plannedTreksCount}>{plannedTrips.length}</Text>
+                <Text style={styles.plannedTreksLabel}>Planned Treks</Text>
+                {nextTrek && (
+                  <Text style={styles.nextTrekInfo}>
+                    Next: {nextTrek.title} • {formatDate(nextTrek.plannedDate)}
+                  </Text>
+                )}
+                {plannedTrips.length === 0 && (
+                  <Text style={styles.noPlannedTreks}>No treks planned yet</Text>
+                )}
+              </View>
+            </View>
+            <TouchableOpacity
+              style={styles.viewAllPlannedButton}
+              onPress={() => setActiveTab('planned')}
+              activeOpacity={0.7}
+            >
+              <Text style={styles.viewAllPlannedText}>View All</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </View>
+    );
+  };
 
   // Render content based on active tab
   const renderContent = () => {
@@ -405,17 +410,23 @@ const MyTreksScreen = ({ navigation }) => {
       {renderTabButtons()}
 
       {/* Content */}
-      <ScrollView
-        style={styles.content}
-        refreshControl={
-          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
-        }
-        showsVerticalScrollIndicator={false}
-        keyboardShouldPersistTaps="handled"
-        keyboardDismissMode="on-drag"
-      >
-        {renderContent()}
-      </ScrollView>
+      {activeTab === 'overview' ? (
+        <ScrollView
+          style={styles.content}
+          refreshControl={
+            <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+          }
+          showsVerticalScrollIndicator={false}
+          keyboardShouldPersistTaps="handled"
+          keyboardDismissMode="on-drag"
+        >
+          {renderContent()}
+        </ScrollView>
+      ) : (
+        <View style={styles.content}>
+          {renderContent()}
+        </View>
+      )}
     </SafeAreaView>
   );
 };
@@ -654,6 +665,129 @@ const styles = StyleSheet.create({
     color: 'rgba(255, 255, 255, 0.8)',
     textAlign: 'center',
     marginTop: SPACING.xs,
+  },
+  // Clean/Simplified Design Styles
+  cleanStatCard: {
+    flex: 1,
+    backgroundColor: COLORS.backgroundCard,
+    borderRadius: BORDER_RADIUS.lg,
+    marginHorizontal: SPACING.xs,
+    borderWidth: 1,
+    borderColor: COLORS.surfaceBorder,
+    ...SHADOWS.small,
+  },
+  cleanStatContent: {
+    padding: SPACING.lg,
+    alignItems: 'center',
+  },
+  cleanStatIconContainer: {
+    width: 48,
+    height: 48,
+    borderRadius: BORDER_RADIUS.full,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: SPACING.md,
+  },
+  cleanStatIcon: {
+    fontSize: 24,
+  },
+  cleanStatNumber: {
+    ...createTextStyle(28, 'bold'),
+    color: COLORS.text,
+    marginBottom: SPACING.xs,
+  },
+  cleanStatLabel: {
+    ...createTextStyle(14, 'medium'),
+    color: COLORS.textSecondary,
+    textAlign: 'center',
+  },
+  cleanQuickActionsGrid: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
+  },
+  cleanQuickActionCard: {
+    width: (width - SPACING.xl * 2 - SPACING.md) / 2,
+    backgroundColor: COLORS.backgroundCard,
+    borderRadius: BORDER_RADIUS.lg,
+    marginBottom: SPACING.md,
+    borderWidth: 1,
+    borderColor: COLORS.surfaceBorder,
+    ...SHADOWS.small,
+  },
+  cleanQuickActionContent: {
+    padding: SPACING.lg,
+    alignItems: 'center',
+  },
+  cleanQuickActionIconContainer: {
+    width: 56,
+    height: 56,
+    borderRadius: BORDER_RADIUS.full,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: SPACING.md,
+  },
+  cleanQuickActionIcon: {
+    fontSize: 28,
+  },
+  cleanQuickActionLabel: {
+    ...createTextStyle(16, 'semibold'),
+    color: COLORS.text,
+    textAlign: 'center',
+  },
+  // Planned Treks Section Styles
+  plannedTreksContainer: {
+    marginHorizontal: SPACING.lg,
+    marginBottom: SPACING.xl,
+  },
+  plannedTreksCard: {
+    backgroundColor: COLORS.backgroundCard,
+    borderRadius: BORDER_RADIUS.lg,
+    borderWidth: 1,
+    borderColor: COLORS.surfaceBorder,
+    ...SHADOWS.small,
+  },
+  plannedTreksHeader: {
+    padding: SPACING.lg,
+  },
+  plannedTreksInfo: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: SPACING.md,
+  },
+  plannedTreksTextContainer: {
+    flex: 1,
+    marginLeft: SPACING.md,
+  },
+  plannedTreksCount: {
+    ...createTextStyle(24, 'bold'),
+    color: COLORS.text,
+  },
+  plannedTreksLabel: {
+    ...createTextStyle(14, 'medium'),
+    color: COLORS.textSecondary,
+    marginBottom: SPACING.xs,
+  },
+  nextTrekInfo: {
+    ...createTextStyle(12, 'regular'),
+    color: COLORS.primary,
+    fontStyle: 'italic',
+  },
+  noPlannedTreks: {
+    ...createTextStyle(12, 'regular'),
+    color: COLORS.textSecondary,
+    fontStyle: 'italic',
+  },
+  viewAllPlannedButton: {
+    backgroundColor: COLORS.primary,
+    paddingHorizontal: SPACING.md,
+    paddingVertical: SPACING.sm,
+    borderRadius: BORDER_RADIUS.md,
+    ...SHADOWS.small,
+  },
+  viewAllPlannedText: {
+    ...createTextStyle(14, 'medium'),
+    color: COLORS.white,
   },
 });
 

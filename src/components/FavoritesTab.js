@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   Alert,
   Dimensions,
+  RefreshControl,
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { COLORS, SHADOWS, SPACING, BORDER_RADIUS, createTextStyle, CATEGORY_COLORS, IMAGES } from '../utils/constants';
@@ -19,6 +20,7 @@ const { width } = Dimensions.get('window');
 const FavoritesTab = ({ navigation, favorites, onFavoritesChange }) => {
   const [favoriteTraks, setFavoriteTraks] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [refreshing, setRefreshing] = useState(false);
 
   useEffect(() => {
     loadFavoriteTraks();
@@ -28,6 +30,20 @@ const FavoritesTab = ({ navigation, favorites, onFavoritesChange }) => {
     const allData = LocalDataService.getAllData();
     const favTraks = allData.filter(trek => favorites.includes(trek.id));
     setFavoriteTraks(favTraks);
+  };
+
+  const handleRefresh = async () => {
+    setRefreshing(true);
+    try {
+      // Reload favorites from storage
+      const updatedFavorites = await UserStorageService.getFavorites();
+      onFavoritesChange(updatedFavorites);
+      loadFavoriteTraks();
+    } catch (error) {
+      console.error('Error refreshing favorites:', error);
+    } finally {
+      setRefreshing(false);
+    }
   };
 
   const handleRemoveFromFavorites = async (trekId) => {
@@ -129,6 +145,9 @@ const FavoritesTab = ({ navigation, favorites, onFavoritesChange }) => {
         ListHeaderComponent={renderHeader}
         contentContainerStyle={styles.listContainer}
         showsVerticalScrollIndicator={false}
+        refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={handleRefresh} />
+        }
       />
     </View>
   );

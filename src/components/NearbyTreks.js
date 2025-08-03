@@ -22,6 +22,7 @@ let nearbyTreksCache = {
   userLocationName: null,
   timestamp: null,
   treksHash: null,
+  excludeHash: null,
   locationHash: null,
 };
 
@@ -38,19 +39,24 @@ const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
  * - Refreshable content
  * - Caches results to avoid repeated API calls
  */
-const NearbyTreks = ({ treks = [], navigation, maxDistance = 100, limit = 6 }) => {
+const NearbyTreks = ({ treks = [], navigation, maxDistance = 100, limit = 6, excludeTreks = [] }) => {
   const [nearbyTreks, setNearbyTreks] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [locationStatus, setLocationStatus] = useState({ available: false, message: 'Getting location...' });
+  const [loading, setLoading] = useState(false);
+  const [locationStatus, setLocationStatus] = useState({
+    available: false,
+    message: 'Tap "Find Treks Near Me" to discover nearby adventures',
+    showButton: true
+  });
   const [userLocationName, setUserLocationName] = useState('Your Location');
-  const initializationRef = useRef(false);
+  const [hasInitialized, setHasInitialized] = useState(false);
 
-  useEffect(() => {
-    if (!initializationRef.current) {
-      initializationRef.current = true;
-      initializeLocation();
-    }
-  }, []);
+  // Remove automatic initialization - now user-triggered only
+  // useEffect(() => {
+  //   if (!initializationRef.current) {
+  //     initializationRef.current = true;
+  //     initializeLocation();
+  //   }
+  // }, []);
 
   // Check if treks data changed and invalidate cache if needed
   useEffect(() => {
@@ -58,16 +64,31 @@ const NearbyTreks = ({ treks = [], navigation, maxDistance = 100, limit = 6 }) =
     if (nearbyTreksCache.treksHash && nearbyTreksCache.treksHash !== treksHash) {
       console.log('📍 NearbyTreks: Treks data changed, invalidating cache');
       nearbyTreksCache = { data: null, locationStatus: null, userLocationName: null, timestamp: null, treksHash: null, locationHash: null };
-      initializeLocation();
+      // Only re-initialize if user has already triggered search
+      if (hasInitialized) {
+        initializeLocation();
+      }
     }
-  }, [treks]);
+  }, [treks, hasInitialized]);
+
+  // User-triggered search function
+  const handleFindNearbyTreks = () => {
+    setHasInitialized(true);
+    initializeLocation();
+  };
 
   const initializeLocation = async (forceRefresh = false) => {
     setLoading(true);
+    setLocationStatus({
+      available: false,
+      message: 'Finding treks near you...',
+      showButton: false
+    });
 
     try {
       // Create hashes for cache validation
       const treksHash = JSON.stringify(treks.map(t => ({ id: t.id, coordinates: t.coordinates })));
+      const excludeHash = JSON.stringify(excludeTreks.map(t => t.id).sort()); // Include exclude list in cache
       const locationHash = LocationService.userLocation ?
         JSON.stringify({ lat: LocationService.userLocation.latitude, lng: LocationService.userLocation.longitude, isReal: LocationService.userLocation.isReal }) :
         null;
@@ -77,6 +98,7 @@ const NearbyTreks = ({ treks = [], navigation, maxDistance = 100, limit = 6 }) =
         const cacheAge = Date.now() - nearbyTreksCache.timestamp;
         const isCacheValid = cacheAge < CACHE_DURATION &&
                            nearbyTreksCache.treksHash === treksHash &&
+                           nearbyTreksCache.excludeHash === excludeHash &&
                            nearbyTreksCache.locationHash === locationHash;
 
         if (isCacheValid) {
@@ -99,8 +121,10 @@ const NearbyTreks = ({ treks = [], navigation, maxDistance = 100, limit = 6 }) =
         const locationName = await LocationService.getCurrentLocationName();
         setUserLocationName(locationName);
 
-        // Find nearby treks
-        const nearby = LocationService.findNearbyTreks(treks, maxDistance, limit);
+        // Find nearby treks and exclude featured destinations
+        const excludeIds = excludeTreks.map(trek => trek.id);
+        const filteredTreks = treks.filter(trek => !excludeIds.includes(trek.id));
+        const nearby = LocationService.findNearbyTreks(filteredTreks, maxDistance, limit);
         setNearbyTreks(nearby);
 
         // Check if distances are calculated from real or fallback location
@@ -124,13 +148,16 @@ const NearbyTreks = ({ treks = [], navigation, maxDistance = 100, limit = 6 }) =
           userLocationName: locationName,
           timestamp: Date.now(),
           treksHash,
+          excludeHash,
           locationHash: LocationService.userLocation ?
             JSON.stringify({ lat: LocationService.userLocation.latitude, lng: LocationService.userLocation.longitude, isReal: LocationService.userLocation.isReal }) :
             null,
         };
       } else {
-        // No permission - show featured/popular treks instead
+        // No permission - show featured/popular treks instead (excluding already featured ones)
+        const excludeIds = excludeTreks.map(trek => trek.id);
         const featuredTreks = treks
+          .filter(trek => !excludeIds.includes(trek.id)) // Exclude already featured treks
           .filter(trek => trek.featured || trek.rating >= 4.0)
           .sort((a, b) => (b.rating || 0) - (a.rating || 0))
           .slice(0, limit)
@@ -152,6 +179,7 @@ const NearbyTreks = ({ treks = [], navigation, maxDistance = 100, limit = 6 }) =
           userLocationName: 'Your Location',
           timestamp: Date.now(),
           treksHash,
+          excludeHash,
           locationHash: null,
         };
       }
@@ -273,9 +301,15 @@ const NearbyTreks = ({ treks = [], navigation, maxDistance = 100, limit = 6 }) =
     <View style={styles.headerContainer}>
       <View style={styles.titleContainer}>
         <Text style={styles.sectionTitle}>
-          {locationStatus.available ? `Near ${userLocationName}` : 'Featured Destinations'}
+          {locationStatus.available ? `Near ${userLocationName}` : 'Discover Nearby Treks'}
         </Text>
         <View style={styles.headerActions}>
+          {/* Show "Find Treks Near Me" button when not initialized */}
+          {locationStatus.showButton && !hasInitialized && (
+            <TouchableOpacity onPress={handleFindNearbyTreks} style={styles.findNearbyButton}>
+              <Text style={styles.findNearbyButtonText}>Find Treks Near Me</Text>
+            </TouchableOpacity>
+          )}
           {locationStatus.available && nearbyTreks.length > 0 && (
             <TouchableOpacity onPress={handleViewAllNearby} style={styles.viewAllButton}>
               <Text style={styles.viewAllButtonText}>View All</Text>
@@ -312,6 +346,7 @@ const NearbyTreks = ({ treks = [], navigation, maxDistance = 100, limit = 6 }) =
     </View>
   );
 
+  // Show loading only when actively searching
   if (loading) {
     return (
       <View style={styles.container}>
@@ -324,6 +359,40 @@ const NearbyTreks = ({ treks = [], navigation, maxDistance = 100, limit = 6 }) =
     );
   }
 
+  // Show initial state with featured treks when not initialized
+  if (!hasInitialized) {
+    const featuredTreks = treks
+      .filter(trek => trek.featured || trek.rating >= 4.0)
+      .sort((a, b) => (b.rating || 0) - (a.rating || 0))
+      .slice(0, limit)
+      .map(trek => ({ ...trek, distance: null, distanceText: null, showAsFeatured: true }));
+
+    return (
+      <View style={styles.container}>
+        {renderHeader()}
+        {featuredTreks.length > 0 ? (
+          <FlatList
+            data={featuredTreks}
+            renderItem={renderTrekCard}
+            keyExtractor={(item) => item.id.toString()}
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            contentContainerStyle={styles.treksList}
+          />
+        ) : (
+          <View style={styles.emptyContainer}>
+            <Text style={styles.emptyIcon}>🏔️</Text>
+            <Text style={styles.emptyTitle}>Discover Amazing Treks</Text>
+            <Text style={styles.emptySubtitle}>
+              Find treks near your location or explore featured destinations
+            </Text>
+          </View>
+        )}
+      </View>
+    );
+  }
+
+  // Show empty state when initialized but no results
   if (nearbyTreks.length === 0) {
     return (
       <View style={styles.container}>
@@ -391,6 +460,17 @@ const styles = StyleSheet.create({
   actionButtonText: {
     ...createTextStyle(12, 'medium'),
     color: COLORS.primary,
+  },
+  findNearbyButton: {
+    backgroundColor: COLORS.primary,
+    paddingHorizontal: SPACING.lg,
+    paddingVertical: SPACING.md,
+    borderRadius: BORDER_RADIUS.lg,
+    ...SHADOWS.small,
+  },
+  findNearbyButtonText: {
+    ...createTextStyle(14, 'bold'),
+    color: COLORS.white,
   },
   refreshButton: {
     backgroundColor: COLORS.success + '15',

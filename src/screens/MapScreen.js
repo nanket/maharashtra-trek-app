@@ -70,9 +70,12 @@ const MapScreen = ({ navigation }) => {
   useEffect(() => {
     let filtered = locations;
 
-    // Filter by category
+    // Filter by category - use mapCategory for consistent filtering
     if (activeFilter !== 'all') {
-      filtered = filtered.filter(location => location.category === activeFilter);
+      filtered = filtered.filter(location => {
+        const categoryToCheck = location.mapCategory || location.category;
+        return categoryToCheck === activeFilter;
+      });
     }
 
     // Filter by search text
@@ -82,6 +85,13 @@ const MapScreen = ({ navigation }) => {
         location.location.toLowerCase().includes(searchText.toLowerCase())
       );
     }
+
+    console.log('🗺️ Map filtering:', {
+      activeFilter,
+      totalLocations: locations.length,
+      filteredCount: filtered.length,
+      trekCount: filtered.filter(l => (l.mapCategory || l.category) === 'trek').length
+    });
 
     setFilteredLocations(filtered);
   }, [searchText, activeFilter, locations]);
