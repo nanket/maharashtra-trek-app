@@ -11,7 +11,10 @@ import {
   Alert,
   Dimensions,
   Platform,
+  ActivityIndicator,
+  StatusBar,
 } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import { LinearGradient } from 'expo-linear-gradient';
 import { COLORS, SHADOWS, SPACING, BORDER_RADIUS, createTextStyle } from '../utils/constants';
@@ -39,6 +42,7 @@ const getCurrentSeason = () => {
 
 const TrekPlannerScreen = ({ navigation, route }) => {
   const { trek } = route?.params || {};
+  const insets = useSafeAreaInsets();
   const [activeTab, setActiveTab] = useState('planner');
   const [selectedTrek, setSelectedTrek] = useState(trek || null);
   const [plannerData, setPlannerData] = useState({
@@ -53,10 +57,33 @@ const TrekPlannerScreen = ({ navigation, route }) => {
   const [packingList, setPackingList] = useState([]);
   const [checkedItems, setCheckedItems] = useState({});
   const [showDatePicker, setShowDatePicker] = useState(false);
+  const [tempSelectedDate, setTempSelectedDate] = useState(null); // For iOS modal
+
+  // Loading states
+  const [isLoading, setIsLoading] = useState(true);
+  const [isSaving, setIsSaving] = useState(false);
+  const [loadingMessage, setLoadingMessage] = useState('Loading trek data...');
 
   // Separate state for calculated values to avoid infinite loops
   const [estimatedTime, setEstimatedTime] = useState(null);
   const [currentSeason, setCurrentSeason] = useState(getCurrentSeason());
+
+  // Initial loading effect
+  useEffect(() => {
+    const initializeScreen = async () => {
+      try {
+        setLoadingMessage('Loading trek data...');
+        // Simulate data loading time
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        setIsLoading(false);
+      } catch (error) {
+        console.error('Error initializing screen:', error);
+        setIsLoading(false);
+      }
+    };
+
+    initializeScreen();
+  }, []);
 
   // Listen for trek selection from TrekListScreen
   useEffect(() => {
@@ -92,6 +119,7 @@ useEffect(() => {
       season: getCurrentSeason()
     });
     setShowDatePicker(false);
+    setTempSelectedDate(null);
   });
 
   return unsubscribe;
@@ -101,18 +129,45 @@ useEffect(() => {
 const handleDateChange = (_, selectedDate) => {
   if (Platform.OS === 'android') {
     setShowDatePicker(false);
-  }
-
-  if (selectedDate) {
-    setPlannerData(prev => ({
-      ...prev,
-      plannedDate: selectedDate.toISOString()
-    }));
+    // For Android, save immediately
+    if (selectedDate) {
+      setPlannerData(prev => ({
+        ...prev,
+        plannedDate: selectedDate.toISOString()
+      }));
+    }
+  } else if (Platform.OS === 'ios') {
+    // For iOS, just store temporarily until user taps Done
+    if (selectedDate) {
+      setTempSelectedDate(selectedDate);
+    }
   }
 };
 
-const handleDatePickerDone = () => {
+// iOS Modal date picker handlers
+const handleModalCancel = () => {
   setShowDatePicker(false);
+  setTempSelectedDate(null); // Clear temp date on cancel
+};
+
+const handleModalDone = () => {
+  // Save the temporary date to the actual planner data
+  if (tempSelectedDate) {
+    setPlannerData(prev => ({
+      ...prev,
+      plannedDate: tempSelectedDate.toISOString()
+    }));
+  }
+  setShowDatePicker(false);
+  setTempSelectedDate(null);
+};
+
+// Function to open date picker with current date
+const openDatePicker = () => {
+  // Initialize temp date with current planned date or today
+  const initialDate = plannerData.plannedDate ? new Date(plannerData.plannedDate) : new Date();
+  setTempSelectedDate(initialDate);
+  setShowDatePicker(true);
 };
 
 // Save plan functionality
@@ -128,6 +183,8 @@ const handleSavePlan = async () => {
   }
 
   try {
+    setIsSaving(true);
+    setLoadingMessage('Saving your trek plan...');
     const planData = {
       title: `${selectedTrek.name} Trek`,
       description: `Trek to ${selectedTrek.name} - ${selectedTrek.difficulty} level`,
@@ -180,6 +237,7 @@ const handleSavePlan = async () => {
               budget: 0,
               season: getCurrentSeason()
             });
+            setTempSelectedDate(null);
           }
         }
       ]
@@ -187,6 +245,8 @@ const handleSavePlan = async () => {
   } catch (error) {
     console.error('Error saving trek plan:', error);
     Alert.alert('Error', 'Failed to save trek plan. Please try again.');
+  } finally {
+    setIsSaving(false);
   }
 };
 
@@ -347,7 +407,7 @@ const handleSavePlan = async () => {
           <Text style={styles.inputLabel}>Planned Date:</Text>
           <TouchableOpacity
             style={styles.dateInput}
-            onPress={() => setShowDatePicker(true)}
+            onPress={openDatePicker}
           >
             <Text style={[styles.dateInputText, !plannerData.plannedDate && styles.placeholderText]}>
               {plannerData.plannedDate ?
@@ -363,24 +423,16 @@ const handleSavePlan = async () => {
           </TouchableOpacity>
         </View>
 
-        {/* Date Picker */}
-        {showDatePicker && (
+        {/* Date Picker - Android inline version */}
+        {showDatePicker && Platform.OS === 'android' && (
           <View style={styles.datePickerContainer}>
             <DateTimePicker
               value={plannerData.plannedDate ? new Date(plannerData.plannedDate) : new Date()}
               mode="date"
-              display={Platform.OS === 'ios' ? 'spinner' : 'default'}
+              display="default"
               onChange={handleDateChange}
               minimumDate={new Date()}
             />
-            {Platform.OS === 'ios' && (
-              <TouchableOpacity
-                style={styles.datePickerDoneButton}
-                onPress={handleDatePickerDone}
-              >
-                <Text style={styles.datePickerDoneText}>Done</Text>
-              </TouchableOpacity>
-            )}
           </View>
         )}
       </View>
@@ -548,10 +600,36 @@ const handleSavePlan = async () => {
     }
   };
 
+  // Loading screen component
+  const renderLoadingScreen = () => (
+    <SafeAreaView style={styles.container}>
+      <StatusBar
+        barStyle="dark-content"
+        backgroundColor={COLORS.background}
+        translucent={false}
+      />
+      <View style={styles.loadingContainer}>
+        <ActivityIndicator size="large" color={COLORS.primary} />
+        <Text style={styles.loadingText}>{loadingMessage}</Text>
+        <Text style={styles.loadingSubtext}>Please wait...</Text>
+      </View>
+    </SafeAreaView>
+  );
+
+  // Show loading screen during initial load
+  if (isLoading) {
+    return renderLoadingScreen();
+  }
+
   return (
     <SafeAreaView style={styles.container}>
+      <StatusBar
+        barStyle="dark-content"
+        backgroundColor={COLORS.background}
+        translucent={false}
+      />
       {/* Header */}
-      <View style={styles.header}>
+      <View style={[styles.header, { paddingTop: Platform.OS === 'android' ? insets.top : 0 }]}>
         <TouchableOpacity 
           style={styles.backButton}
           onPress={() => navigation.goBack()}
@@ -576,24 +654,76 @@ const handleSavePlan = async () => {
 
       {/* Save Plan Button - Show when trek is selected and basic details are filled */}
       {selectedTrek && plannerData.plannedDate && (
-        <View style={styles.savePlanContainer}>
+        <View style={[styles.savePlanContainer, { paddingBottom: Math.max(insets.bottom, 20) }]}>
           <TouchableOpacity
-            style={styles.savePlanButton}
+            style={[styles.savePlanButton, isSaving && styles.savePlanButtonDisabled]}
             onPress={handleSavePlan}
             activeOpacity={0.8}
+            disabled={isSaving}
           >
             <LinearGradient
-              colors={[COLORS.primary, COLORS.primaryDark]}
+              colors={isSaving ? [COLORS.textSecondary, COLORS.textSecondary] : [COLORS.primary, COLORS.primaryDark]}
               style={styles.savePlanGradient}
               start={{ x: 0, y: 0 }}
               end={{ x: 1, y: 0 }}
             >
-              <Text style={styles.savePlanIcon}>💾</Text>
-              <Text style={styles.savePlanText}>Save Trek Plan</Text>
-              <Text style={styles.savePlanArrow}>→</Text>
+              {isSaving ? (
+                <>
+                  <ActivityIndicator size="small" color={COLORS.white} style={{ marginRight: 8 }} />
+                  <Text style={styles.savePlanText}>Saving...</Text>
+                </>
+              ) : (
+                <>
+                  <Text style={styles.savePlanIcon}>💾</Text>
+                  <Text style={styles.savePlanText}>Save Trek Plan</Text>
+                  <Text style={styles.savePlanArrow}>→</Text>
+                </>
+              )}
             </LinearGradient>
           </TouchableOpacity>
         </View>
+      )}
+
+      {/* iOS Date Picker Modal */}
+      {Platform.OS === 'ios' && (
+        <Modal
+          visible={showDatePicker}
+          transparent={true}
+          animationType="slide"
+          onRequestClose={handleModalCancel}
+        >
+          <TouchableOpacity
+            style={styles.modalOverlay}
+            activeOpacity={1}
+            onPress={handleModalCancel}
+          >
+            <TouchableOpacity
+              style={[styles.modalContainer, { paddingBottom: Math.max(insets.bottom, 20) }]}
+              activeOpacity={1}
+              onPress={(e) => e.stopPropagation()}
+            >
+              <View style={styles.modalHeader}>
+                <TouchableOpacity onPress={handleModalCancel}>
+                  <Text style={styles.modalCancelText}>Cancel</Text>
+                </TouchableOpacity>
+                <Text style={styles.modalTitle}>Select Date</Text>
+                <TouchableOpacity onPress={handleModalDone}>
+                  <Text style={styles.modalDoneText}>Done</Text>
+                </TouchableOpacity>
+              </View>
+              <View style={styles.datePickerModalContainer}>
+                <DateTimePicker
+                  value={tempSelectedDate || (plannerData.plannedDate ? new Date(plannerData.plannedDate) : new Date())}
+                  mode="date"
+                  display="spinner"
+                  onChange={handleDateChange}
+                  minimumDate={new Date()}
+                  style={styles.iosDatePicker}
+                />
+              </View>
+            </TouchableOpacity>
+          </TouchableOpacity>
+        </Modal>
       )}
     </SafeAreaView>
   );
@@ -985,6 +1115,74 @@ const styles = StyleSheet.create({
   datePickerDoneText: {
     ...createTextStyle(16, 'medium'),
     color: COLORS.white,
+  },
+  // iOS Modal Date Picker Styles
+  modalOverlay: {
+    flex: 1,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    justifyContent: 'flex-end',
+  },
+  modalContainer: {
+    backgroundColor: COLORS.backgroundCard,
+    borderTopLeftRadius: BORDER_RADIUS.xl,
+    borderTopRightRadius: BORDER_RADIUS.xl,
+    maxHeight: '50%',
+    ...SHADOWS.large,
+  },
+  modalHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingHorizontal: SPACING.xl,
+    paddingVertical: SPACING.lg,
+    borderBottomWidth: 1,
+    borderBottomColor: COLORS.surfaceBorder,
+  },
+  modalTitle: {
+    ...createTextStyle(18, 'bold'),
+    color: COLORS.text,
+  },
+  modalCancelText: {
+    ...createTextStyle(16, 'medium'),
+    color: COLORS.textSecondary,
+  },
+  modalDoneText: {
+    ...createTextStyle(16, 'bold'),
+    color: COLORS.primary,
+  },
+  datePickerModalContainer: {
+    paddingHorizontal: SPACING.xl,
+    paddingVertical: SPACING.lg,
+    minHeight: 200,
+    justifyContent: 'center',
+  },
+  iosDatePicker: {
+    height: 200,
+    width: '100%',
+  },
+  // Loading Screen Styles
+  loadingContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: COLORS.background,
+    paddingHorizontal: SPACING.xl,
+  },
+  loadingText: {
+    ...createTextStyle(18, 'medium'),
+    color: COLORS.text,
+    marginTop: SPACING.lg,
+    textAlign: 'center',
+  },
+  loadingSubtext: {
+    ...createTextStyle(14, 'regular'),
+    color: COLORS.textSecondary,
+    marginTop: SPACING.sm,
+    textAlign: 'center',
+  },
+  // Save Button Disabled State
+  savePlanButtonDisabled: {
+    opacity: 0.7,
   },
 });
 

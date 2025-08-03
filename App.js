@@ -2,6 +2,7 @@ import 'react-native-gesture-handler';
 import React, { useState, useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { View, Text, StyleSheet } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import * as Font from 'expo-font';
 import AppNavigator from './src/navigation/AppNavigator';
 import { COLORS } from './src/utils/constants';
@@ -38,10 +39,10 @@ export default function App() {
   }
 
   return (
-    <>
+    <SafeAreaProvider>
       <AppNavigator />
       <StatusBar style="dark" />
-    </>
+    </SafeAreaProvider>
   );
 }
 

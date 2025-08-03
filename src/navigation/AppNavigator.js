@@ -2,7 +2,8 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Text, View } from 'react-native';
+import { Text, View, Platform } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import HomeScreen from '../screens/HomeScreen';
 import TrekListScreen from '../screens/TrekListScreen';
 import TrekDetailsScreen from '../screens/TrekDetailsScreen';
@@ -73,6 +74,8 @@ const HomeStack = () => {
 };
 
 const TabNavigator = () => {
+  const insets = useSafeAreaInsets();
+
   return (
     <Tab.Navigator
       screenOptions={{
@@ -81,9 +84,13 @@ const TabNavigator = () => {
           backgroundColor: COLORS.backgroundCard,
           borderTopWidth: 1,
           borderTopColor: COLORS.surfaceBorder,
-          paddingBottom: 8,
+          paddingBottom: Math.max(insets.bottom, 8), // Respect safe area
           paddingTop: 8,
-          height: 70,
+          height: Platform.OS === 'ios' ? 70 + insets.bottom : 70,
+          position: 'absolute',
+          bottom: 0,
+          left: 0,
+          right: 0,
         },
         tabBarActiveTintColor: COLORS.primary,
         tabBarInactiveTintColor: COLORS.textSecondary,

@@ -702,6 +702,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'flex-start',
+    flexWrap: 'wrap',
+    gap: SPACING.md,
   },
   headerTitle: {
     ...createTextStyle(24, 'bold'),
@@ -760,13 +762,14 @@ const styles = StyleSheet.create({
     marginLeft: SPACING.md,
   },
   statusBadge: {
-    ...createTextStyle(12, 'medium'),
-    color: COLORS.accent,
-    backgroundColor: `${COLORS.accent}20`,
+    ...createTextStyle(12, 'bold'),
+    color: COLORS.white,
     paddingHorizontal: SPACING.md,
     paddingVertical: SPACING.xs,
-    borderRadius: BORDER_RADIUS.full,
-    textTransform: 'uppercase',
+    borderRadius: BORDER_RADIUS.md,
+    textAlign: 'center',
+    minWidth: 80,
+    overflow: 'hidden',
   },
   planActions: {
     flexDirection: 'row',
@@ -933,9 +936,13 @@ const styles = StyleSheet.create({
   },
   completedBadge: {
     backgroundColor: COLORS.success,
+    borderWidth: 1,
+    borderColor: COLORS.success,
   },
   plannedBadge: {
     backgroundColor: COLORS.primary,
+    borderWidth: 1,
+    borderColor: COLORS.primary,
   },
   completeButton: {
     backgroundColor: COLORS.success,
@@ -1074,14 +1081,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: SPACING.lg,
     paddingVertical: SPACING.md,
+    minWidth: 140, // Ensure minimum width
+    justifyContent: 'center',
   },
   planNewTrekIcon: {
     fontSize: 18,
     marginRight: SPACING.sm,
   },
   planNewTrekText: {
-    ...createTextStyle(16, 'bold'),
+    ...createTextStyle(14, 'bold'), // Slightly smaller font
     color: COLORS.white,
+    flexShrink: 1, // Allow text to shrink if needed
   },
 });
 
